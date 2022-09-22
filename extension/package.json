@@ -1,0 +1,24 @@
+{
+	"name": "wink-vscode-extension",
+	"description": "VSCode part of a language server",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"version": "0.0.1",
+	"publisher": "vscode",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/artrayme/WINK-vscode-extension"
+	},
+	"engines": {
+		"vscode": "^1.26.0"
+	},
+	"scripts": {},
+	"dependencies": {
+		"vscode-languageclient": "^5.1.0-next.9",
+		"ws": "^6.2.2"
+	},
+	"devDependencies": {
+		"@types/ws": "^6.0.0",
+		"vscode": "^1.1.34"
+	}
+}

@@ -1,0 +1,39 @@
+{
+
+    "Main Identifier": {
+        "prefix": "main idtf",
+        "body": [
+            "=> nrel_main_idtf:",
+            "\t[$1]",
+            "\t(* <- lang_$2;; *);$0"
+        ]
+    },
+
+    "Relation": {
+        "prefix": "=>",
+        "body": [
+            "=> ${1:relation}:",
+            "\t${2:subject};$0"
+        ],
+        "description": "Binary relation"
+    },
+
+    "Relation-back": {
+        "prefix": "<=",
+        "body": [
+            "<= ${1:relation}:",
+            "\t${2:subject};$0"
+        ],
+        "description": "Binary relation reversed"
+    },
+
+    "Tuple rel": {
+        "prefix": "set",
+        "body": [
+            "{",
+            "\t${1:element};",
+            "\t${2:element}",
+            "};$0"
+        ]
+    }
+}

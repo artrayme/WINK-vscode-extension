@@ -1,0 +1,217 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "scs",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#connectors"
+		},
+		{
+			"include": "#aliases"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#contents"
+		}
+	],
+	"repository": {
+
+		"aliases": {
+			"patterns": [
+				{
+					"match": "\\b(sc_node|sc_link|sc_edge_dcommon|sc_edge_ucommon|sc_edge_main|sc_edge_access)(#)(([.]{3})|([.]{0,2}\\w+))\\b",
+					"captures": {
+						"1": {
+							"name": "keyword.control.scs"
+						},
+						"2": {
+							"name": "keyword.operator.scs"
+						},
+						"3": {
+							"name": "variable.language.scs"
+						}
+					}
+				},
+				{
+					"match": "\\bsc_const|sc_var\\b",
+					"name": "storage.type.scs"
+				},
+				{
+					"match": "\\b(sc_node_(not_binary_tuple|struct|role_relation|norole_relation|(class|not_relation)|abstract|material))\\b",
+					"name": "storage.type.scs"
+				},
+				{
+					"match": "\\b(sc_edge_(pos|neg|fuz|perm|temp))\\b",
+					"name": "storage.type.scs"
+				},
+				{
+					"match": "\\b(sc_node|sc_link|sc_edge_dcommon|sc_edge_ucommon|sc_edge_main|sc_edge_access)\\b",
+					"name": "keyword.control.scs"
+				},
+				{
+					"match": "\\b([_]?[.]{0,2})?([a-zA-Z0-9_]+)\\b",
+					"name": "variable.other.scs"
+				}
+			]
+		},
+
+		"strings": {
+			"name": "string.quoted.double.scs",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.scs",
+					"match": "\\\\."
+				}
+			]
+		},
+
+		"contents": {
+			"patterns": [
+				{
+					"begin": "\\[(?!\\*)",
+					"beginCaptures": {
+						"0": {
+							"name": "keyword.operator.scs"
+						}
+					},
+					"end": "\\]",
+					"endCaptures": {
+						"0": {
+							"name": "keyword.operator.scs"
+						}
+					},
+					"name": "markup.italic.scs"
+				}
+			]
+		},
+
+		"operators": {
+			"patterns": [
+				{
+					"match": "\\||;|;;|#|=",
+					"name": "keyword.operator.scs"
+				},
+				{
+					"include": "#connectors"
+				},
+				{
+					"match": "((\\[\\*)|(\\*\\]))",
+					"name": "string.regexp.scs"
+				}
+			]
+		},
+
+		"connectors": {
+			"patterns": [
+				{
+					"match": "\\s*[_]?([-~][/|]?)>\\s*",
+					"name": "keyword.operator.scs"
+				},
+				{
+					"match": "\\s*[_]?<([/|]?[-~])\\s*",
+					"name": "keyword.operator.scs"
+				},
+				{
+					"match": "\\s*[_]?(=>)|(<=)\\s*",
+					"name": "keyword.operator.scs"
+				},
+				{
+					"match": "\\s*([_]?<=>)|([.]{0,2}>|<[.]{0,2})\\s*",
+					"name": "keyword.operator.scs"
+				}
+			]
+		},
+
+		"comments": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "meta.toc-list.banner.block.scs"
+						}
+					},
+					"match": "^/\\* =(\\s*.*?)\\s*= \\*/$\\n?",
+					"name": "comment.block.scs"
+				},
+				{
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.scs"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.scs"
+						}
+					},
+					"name": "comment.block.scs"
+				},
+				{
+					"match": "\\*/.*\\n",
+					"name": "invalid.illegal.stray-comment-end.scs"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "meta.toc-list.banner.line.scs"
+						}
+					},
+					"match": "^// =(\\s*.*?)\\s*=\\s*$\\n?",
+					"name": "comment.line.banner.scs"
+				},
+				{
+					"begin": "(^[ \\t]+)?(?=//)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.scs"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"begin": "//",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.scs"
+								}
+							},
+							"end": "\\n",
+							"name": "comment.line.double-slash.scs",
+							"patterns": [
+								{
+									"include": "#line_continuation_character"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+
+		"line_continuation_character": {
+			"patterns": [
+				{
+					"match": "(\\\\)\\n",
+					"captures": {
+						"1": {
+							"name": "constant.character.escape.line-continuation.scs"
+						}
+					}
+				}
+			]
+		}
+
+	},
+	"scopeName": "source.scs"
+}

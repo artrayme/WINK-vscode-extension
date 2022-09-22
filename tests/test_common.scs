@@ -1,0 +1,80 @@
+sc_type_node -> .node1;;
+..node -> node2;;
+
+auto -> [test content];;
+
+fix -> [*
+	begin -> test;;
+	end -> [test content];;
+*];;
+
+
+/* Comment */
+vars = {
+	_var1;
+	_var2	
+};;
+
+// errors
+begin_el _-> end_el;;
+end_el _~> end_el2;;
+
+// comment
+
+
+link = "file:///test.html";;
+
+light_led_el_dl_25cw
+	=> nrel_main_idtf:
+		[светодиодная лампа EL-DL-25CW] (* <- lang_ru;; *);
+	=> nrel_main_idtf:
+		[led EL-DL-25CW] (* <- lang_en;; *);
+	=> nrel_light_color:
+		light_led_color_cold_white;
+    => nrel_standby_energy_usage:
+        [^"float:1"]
+        (* <- binary_float;; *);
+    => nrel_energy_usage:
+        [^"float:15"]
+        (* <- binary_float;; *);;
+
+literary_source
+=> nrel_main_idtf:
+	[литературный источник]
+	(* <- lang_ru;;*);;
+
+nrel_reference_standard
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+	[ссылка по стандарту]
+	(* <- lang_ru;;*);;
+
+aizenman_m_a_1988kn_dinamgkfcog
+<-literary_source;
+=> nrel_main_idtf:
+	[Айзерман М.А.1988кн-ДинамПкФСОГ]
+	(* <- lang_ru;;*);
+<- nrel_reference_standard:
+	...
+	(*
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> [Айзерман, М.А. Динамический подход к анализу структур, описываемых графами (основы графодинамики) / М. А. Айзерман,  Л. А. Гусев, С. В. Петров, И. М. Смирнова, Л. А. Тененбаум // Исследования по теории структур. - М. : Наука, 1988. - С. 5-76.]
+					(*<- lang_ru;;*);;
+			*);;
+	*);
+	=>nrel_author:
+	{
+		[Айзерман М.А.];
+		[Гусев Л.А.];
+		[Петров С.В.];
+		[Смирнова И.М.];
+		[Тенненбаум Л.А.]
+	};;
+
+facebook 
+	=> nrel_main_idtf:
+		[facebook] (* <- lang_en;; *);
+	=> nrel_main_idtf:
+		[фейсбук] (* <- lang_ru;; *);;
