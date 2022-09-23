@@ -1,18 +1,14 @@
 'use strict';
 
 import * as vs from 'vscode-languageserver';
-
 import { SCsSession } from './scsSession';
 import { getFilesInDirectory, getFileContent, normalizeFilePath } from './scsUtils';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport
 const connection: vs.IConnection = vs.createConnection(new vs.IPCMessageReader(process), new vs.IPCMessageWriter(process));
+connection.console.info(`Sample server running in node ${process.version}`);
 
-// Create a simple text document manager. The text document manager
-// supports full document sync only
 const documents: vs.TextDocuments = new vs.TextDocuments();
-// Make the text document manager listen on the connection
-// for open, change and close text document events
 documents.listen(connection);
 
 const  session: SCsSession = new SCsSession(connection, documents);
@@ -23,6 +19,7 @@ function parseAllOpenedDocuments() {
         session.parsedData.parseDocument(doc.getText(), doc.uri);
     });
 }
+
 
 function parseDocumentsInFolder(path: string) {
     connection.console.log("Parse files in: " + path);
@@ -53,6 +50,8 @@ connection.onInitialize((params): vs.InitializeResult => {
             renameProvider: true
             }
 		};
+
+    
 });
 
 connection.onDidChangeConfiguration((params) => {
