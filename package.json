@@ -64,8 +64,8 @@
 		},
 		"commands": [
 			{
-				"command": "languageServerExample.startStreaming",
-				"title": "Start Stream Logs into languageServerExample.port"
+				"command": "ostis.save-scs",
+				"title": "Save current SCs to the connected OSTIS instance"
 			}
 		]
 	},
