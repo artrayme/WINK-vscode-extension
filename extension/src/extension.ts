@@ -13,10 +13,12 @@ import {
 	ServerOptions,
 	TransportKind
 } from 'vscode-languageclient';
+import { ScAddr, ScClient, ScConstruction, ScLinkContent, ScLinkContentType, ScType } from 'ts-sc-client';
+// import WebSocket = require('ws');
 
 let client: LanguageClient;
 
-export function activate(context: ExtensionContext) {
+export async function activate(context: ExtensionContext) {
 	// The server is implemented in node
 	const serverModule = context.asAbsolutePath(
 		path.join('SCs-language-server', 'out', 'scsServer.js')
@@ -50,6 +52,30 @@ export function activate(context: ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World!');
 	});
 	context.subscriptions.push(disposable);
+
+	
+	const scClient = new ScClient(new WebSocket('https://localhost:8090'));
+    const myNode = "_node";
+    const myLink = "_link";
+
+    const linkContent = "my_content";
+    const fakeNodeAddr = new ScAddr(123);
+
+    const construction = new ScConstruction();
+
+    construction.createNode(ScType.NodeConst, myNode);
+    construction.createLink(
+      ScType.LinkConst,
+      new ScLinkContent(linkContent, ScLinkContentType.String),
+      myLink
+    );
+    construction.createEdge(
+      ScType.EdgeAccessConstPosPerm,
+      myNode,
+      fakeNodeAddr
+    );
+
+    await scClient.createElements(construction);
 }
 
 export function deactivate(): Thenable<void> {
