@@ -14,8 +14,6 @@ import {
 	TransportKind
 } from 'vscode-languageclient';
 import { ScAddr, ScClient, ScConstruction, ScLinkContent, ScLinkContentType, ScType } from 'ts-sc-client';
-// import WebSocket = require('ws');
-
 let client: LanguageClient;
 
 export async function activate(context: ExtensionContext) {
@@ -54,7 +52,7 @@ export async function activate(context: ExtensionContext) {
 	context.subscriptions.push(disposable);
 
 	
-	const scClient = new ScClient(new WebSocket('https://localhost:8090'));
+	const scClient = new ScClient('https://localhost:8090');
     const myNode = "_node";
     const myLink = "_link";
 

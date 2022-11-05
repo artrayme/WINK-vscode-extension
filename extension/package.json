@@ -12,11 +12,25 @@
 	"engines": {
 		"vscode": "^1.26.0"
 	},
+	"contributes": {
+		"commands": [
+		  {
+			"command": "scs.load",
+			"title": "Load current SCs to the connected sc-machine",
+			"category": "SCs"
+		  },
+		  {
+			"command": "scs.unload",
+			"title": "Delete current SCs from the connected sc-machine",
+			"category": "SCs"
+		  }
+		]
+	  },
 	"scripts": {},
 	"dependencies": {
 		"vscode-languageclient": "^5.1.0-next.9",
-		"ws": "^6.2.2",
-		"ts-sc-client": "0.2.1"
+		"ts-sc-client-ws": "0.3.0"
+
 	},
 	"devDependencies": {
 		"@types/ws": "^6.0.0",
