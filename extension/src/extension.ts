@@ -13,7 +13,7 @@ import {
 	ServerOptions,
 	TransportKind
 } from 'vscode-languageclient';
-import { ScAddr, ScClient, ScConstruction, ScLinkContent, ScLinkContentType, ScType } from 'ts-sc-client';
+import { ScAddr, ScClient, ScConstruction, ScLinkContent, ScLinkContentType, ScType } from 'ts-sc-client-ws';
 let client: LanguageClient;
 
 export async function activate(context: ExtensionContext) {
@@ -45,35 +45,54 @@ export async function activate(context: ExtensionContext) {
 		clientOptions
 	);
 
+
 	client.start();
 	const disposable = vscode.commands.registerCommand('ostis.save-scs', () => {
+		vscode.window.createWebviewPanel(
+			'scsLoad', // Identifies the type of the webview. Used internally
+			'SCs', // Title of the panel displayed to the user
+			vscode.ViewColumn.One, // Editor column to show the new webview panel in.
+			{} // Webview options. More on these later.
+		);
 		vscode.window.showInformationMessage('Hello World!');
 	});
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(
+		vscode.commands.registerCommand('scs.load', () => {
+			// Create and show a new webview
+			vscode.window.createWebviewPanel(
+				'scsLoad', // Identifies the type of the webview. Used internally
+				'SCs', // Title of the panel displayed to the user
+				vscode.ViewColumn.Beside, // Editor column to show the new webview panel in.
+				{} // Webview options. More on these later.
+			);
+		})
+	);
 
-	
 	const scClient = new ScClient('https://localhost:8090');
-    const myNode = "_node";
-    const myLink = "_link";
+	const myNode = "_node";
+	const myLink = "_link";
 
-    const linkContent = "my_content";
-    const fakeNodeAddr = new ScAddr(123);
+	const linkContent = "my_content";
+	const fakeNodeAddr = new ScAddr(123);
 
-    const construction = new ScConstruction();
+	const construction = new ScConstruction();
 
-    construction.createNode(ScType.NodeConst, myNode);
-    construction.createLink(
-      ScType.LinkConst,
-      new ScLinkContent(linkContent, ScLinkContentType.String),
-      myLink
-    );
-    construction.createEdge(
-      ScType.EdgeAccessConstPosPerm,
-      myNode,
-      fakeNodeAddr
-    );
+	construction.createNode(ScType.NodeConst, myNode);
+	construction.createLink(
+		ScType.LinkConst,
+		new ScLinkContent(linkContent, ScLinkContentType.String),
+		myLink
+	);
+	construction.createEdge(
+		ScType.EdgeAccessConstPosPerm,
+		myNode,
+		fakeNodeAddr
+	);
 
-    await scClient.createElements(construction);
+	await scClient.createElements(construction);
+
+
 }
 
 export function deactivate(): Thenable<void> {

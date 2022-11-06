@@ -66,6 +66,16 @@
 			{
 				"command": "ostis.save-scs",
 				"title": "Save current SCs to the connected OSTIS instance"
+			},
+			{
+				"command": "scs.load",
+				"title": "Load current SCs to the connected sc-machine",
+				"category": "SCs"
+			},
+			{
+				"command": "scs.unload",
+				"title": "Delete current SCs from the connected sc-machine",
+				"category": "SCs"
 			}
 		]
 	},
@@ -83,6 +93,7 @@
 	"devDependencies": {
 		"@types/mocha": "^5.2.0",
 		"@types/node": "^16.11.7",
+		"@types/ws": "^8.5.3",
 		"@typescript-eslint/eslint-plugin": "^5.30.0",
 		"@typescript-eslint/parser": "^5.30.0",
 		"eslint": "^8.13.0",
