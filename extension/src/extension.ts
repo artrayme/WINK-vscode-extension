@@ -6,6 +6,7 @@
 import * as path from 'path';
 import { workspace, ExtensionContext } from 'vscode';
 import * as vscode from 'vscode';
+import { ScsLoader } from './ScsLoader'
 
 import {
 	LanguageClient,
@@ -13,8 +14,9 @@ import {
 	ServerOptions,
 	TransportKind
 } from 'vscode-languageclient';
-import { ScAddr, ScClient, ScConstruction, ScLinkContent, ScLinkContentType, ScType } from 'ts-sc-client-ws';
+
 let client: LanguageClient;
+let scsLoader = new ScsLoader();
 
 export async function activate(context: ExtensionContext) {
 	// The server is implemented in node
@@ -48,49 +50,58 @@ export async function activate(context: ExtensionContext) {
 
 	client.start();
 	const disposable = vscode.commands.registerCommand('ostis.save-scs', () => {
-		vscode.window.createWebviewPanel(
-			'scsLoad', // Identifies the type of the webview. Used internally
-			'SCs', // Title of the panel displayed to the user
-			vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-			{} // Webview options. More on these later.
-		);
 		vscode.window.showInformationMessage('Hello World!');
 	});
 	context.subscriptions.push(disposable);
+
 	context.subscriptions.push(
-		vscode.commands.registerCommand('scs.load', () => {
+		vscode.commands.registerCommand('scs.load', async () => {
 			// Create and show a new webview
-			vscode.window.createWebviewPanel(
+			const panel = vscode.window.createWebviewPanel(
 				'scsLoad', // Identifies the type of the webview. Used internally
 				'SCs', // Title of the panel displayed to the user
-				vscode.ViewColumn.Beside, // Editor column to show the new webview panel in.
-				{} // Webview options. More on these later.
+				vscode.ViewColumn.Beside,
+				{   // params to unlock sc-web scripts 
+					enableScripts: true,
+					enableFindWidget: true,
+					enableCommandUris: true,
+				}
 			);
+			const editor = vscode.window.activeTextEditor;
+
+			if (editor) {
+				const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0]
+				vscode.window.showInformationMessage(loadedScs);
+				if (loadedScs.length>0) {
+					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`
+				} 
+			}
 		})
+
 	);
 
-	const scClient = new ScClient('https://localhost:8090');
-	const myNode = "_node";
-	const myLink = "_link";
 
-	const linkContent = "my_content";
-	const fakeNodeAddr = new ScAddr(123);
+	// const myNode = "_node";
+	// const myLink = "_link";
 
-	const construction = new ScConstruction();
+	// const linkContent = "my_content";
+	// const fakeNodeAddr = new ScAddr(123);
 
-	construction.createNode(ScType.NodeConst, myNode);
-	construction.createLink(
-		ScType.LinkConst,
-		new ScLinkContent(linkContent, ScLinkContentType.String),
-		myLink
-	);
-	construction.createEdge(
-		ScType.EdgeAccessConstPosPerm,
-		myNode,
-		fakeNodeAddr
-	);
+	// const construction = new ScConstruction();
 
-	await scClient.createElements(construction);
+	// construction.createNode(ScType.NodeConst, myNode);
+	// construction.createLink(
+	// 	ScType.LinkConst,
+	// 	new ScLinkContent(linkContent, ScLinkContentType.String),
+	// 	myLink
+	// );
+	// construction.createEdge(
+	// 	ScType.EdgeAccessConstPosPerm,
+	// 	myNode,
+	// 	fakeNodeAddr
+	// );
+
+	// await scClient.createElements(construction);
 
 
 }
