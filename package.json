@@ -14,7 +14,7 @@
 		"multi-root ready"
 	],
 	"engines": {
-		"vscode": "^1.26.0"
+		"vscode": "^1.67.0"
 	},
 	"activationEvents": [
 		"onLanguage:scs"
@@ -64,17 +64,23 @@
 		},
 		"commands": [
 			{
-				"command": "ostis.save-scs",
-				"title": "Save current SCs to the connected OSTIS instance"
-			},
-			{
-				"command": "scs.load",
-				"title": "Load current SCs to the connected sc-machine",
+				"command": "scs.upload",
+				"title": "Save current SCs to the connected sc-machine",
 				"category": "SCs"
 			},
 			{
 				"command": "scs.unload",
 				"title": "Delete current SCs from the connected sc-machine",
+				"category": "SCs"
+			},
+			{
+				"command": "scs.uploadAll",
+				"title": "Save all scs files from the open project in sc-machine",
+				"category": "SCs"
+			},
+			{
+				"command": "scs.unloadAll",
+				"title": "Delete all SCss from the connected sc-machine",
 				"category": "SCs"
 			}
 		]
