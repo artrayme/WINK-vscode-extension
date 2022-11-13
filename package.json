@@ -75,12 +75,12 @@
 			},
 			{
 				"command": "scs.uploadAll",
-				"title": "Save all scs files from the open project in sc-machine",
+				"title": "Save all SCs files from the open project in sc-machine",
 				"category": "SCs"
 			},
 			{
 				"command": "scs.unloadAll",
-				"title": "Delete all SCss from the connected sc-machine",
+				"title": "Delete all SCs from the connected sc-machine",
 				"category": "SCs"
 			}
 		]
