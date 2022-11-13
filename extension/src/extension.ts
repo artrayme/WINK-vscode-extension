@@ -47,15 +47,10 @@ export async function activate(context: ExtensionContext) {
 		clientOptions
 	);
 
-
 	client.start();
-	const disposable = vscode.commands.registerCommand('ostis.save-scs', () => {
-		vscode.window.showInformationMessage('Hello World!');
-	});
-	context.subscriptions.push(disposable);
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('scs.load', async () => {
+		vscode.commands.registerCommand('scs.upload', async () => {
 			// Create and show a new webview
 			const panel = vscode.window.createWebviewPanel(
 				'scsLoad', // Identifies the type of the webview. Used internally
@@ -72,37 +67,80 @@ export async function activate(context: ExtensionContext) {
 			if (editor) {
 				const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0]
 				vscode.window.showInformationMessage(loadedScs);
-				if (loadedScs.length>0) {
+				if (loadedScs.length > 0) {
 					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`
-				} 
+					panel.title = loadedScs
+				}
 			}
 		})
+	);
+	context.subscriptions.push(
+		vscode.commands.registerCommand('scs.uploadAll', async () => {
+			// Create and show a new webview
+			const panel = vscode.window.createWebviewPanel(
+				'scsLoad', // Identifies the type of the webview. Used internally
+				'SCs', // Title of the panel displayed to the user
+				vscode.ViewColumn.Beside,
+				{   // params to unlock sc-web scripts 
+					enableScripts: true,
+					enableFindWidget: true,
+					enableCommandUris: true,
+				}
+			);
 
+			const allScsFiles = await vscode.workspace.findFiles("**/*.scs");
+			if (allScsFiles) {
+				const loadedScs = (await scsLoader.loadScs(allScsFiles))
+				if (loadedScs.length > 0) {
+					// ToDo fix link and size
+					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true height="1000" width="100%" title="SCs"></iframe>`
+				}
+			}
+		})
 	);
 
+	context.subscriptions.push(
+		vscode.commands.registerCommand('scs.unload', async () => {
+			const editor = vscode.window.activeTextEditor;
+			if (editor) {
+				const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0]
+				if (unloadedScs.idtf) {
 
-	// const myNode = "_node";
-	// const myLink = "_link";
+					vscode.window.showInformationMessage(`Succesfully deleted ${unloadedScs.idtf}. You can close the tab`);
+					// ToDo after new vscode API from this issue -> https://github.com/microsoft/vscode/issues/41909
 
-	// const linkContent = "my_content";
-	// const fakeNodeAddr = new ScAddr(123);
+					vscode.window.tabGroups.all
+						.flatMap(({ tabs }) => tabs)
+						.filter(document => document.label === unloadedScs.idtf)
+						.forEach(label => { vscode.window.tabGroups.close(label) })
+					// filteredTextDocuments;
+					// const filteredTextDocuments = vscode.workspace.textDocuments.filter(td => td.fileName === unloadedScs.idtf)
+					// for (const td of filteredTextDocuments) {
+					// 	vscode.window.tabGroups.close()
 
-	// const construction = new ScConstruction();
+					// 	await vscode.window.showTextDocument(td, { preview: true, preserveFocus: false });
+					// 	await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
+					// }
+				} else {
+					vscode.window.showErrorMessage(unloadedScs.errorMsg)
+				}
+			}
+		})
+	);
 
-	// construction.createNode(ScType.NodeConst, myNode);
-	// construction.createLink(
-	// 	ScType.LinkConst,
-	// 	new ScLinkContent(linkContent, ScLinkContentType.String),
-	// 	myLink
-	// );
-	// construction.createEdge(
-	// 	ScType.EdgeAccessConstPosPerm,
-	// 	myNode,
-	// 	fakeNodeAddr
-	// );
-
-	// await scClient.createElements(construction);
-
+	context.subscriptions.push(
+		vscode.commands.registerCommand('scs.unloadAll', async () => {
+			const allProjectDocuments = vscode.workspace.textDocuments.map(document => document.uri);
+			if (allProjectDocuments) {
+				const unloadedScs = (await scsLoader.unloadAll())
+				if (unloadedScs) {
+					vscode.window.showInformationMessage("All successfully unloaded ");
+				} else {
+					vscode.window.showErrorMessage("Nothing to unload")
+				}
+			}
+		})
+	);
 
 }
 
