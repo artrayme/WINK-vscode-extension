@@ -45,19 +45,8 @@ export class ScsLoader {
             if (this.loadedScs.has(filename)) {
                 const contourNodeIdtf = this.loadedScs.get(filename).id;
                 const contourAddr = (await scClient.resolveKeynodes([{ id: contourNodeIdtf, type: ScType.Node }]))[contourNodeIdtf]
-                const unloadingTemplate = new ScTemplate().triple(
-                    contourAddr,
-                    ScType.EdgeAccessVarPosPerm,
-                    ScType.Node
-                )
-                const foundConstruction = await scClient.templateSearch(unloadingTemplate)
-                let foundAddrs = new Set<ScAddr>();
-                for (const triplet of foundConstruction) {
-                    triplet.forEachTriple((element) => {
-                        foundAddrs.add(element)
-                    })
-                }
-                await scClient.deleteElements(Array.from(foundAddrs))
+                const foundAddrs = await this.findElementsInContour(contourAddr);
+                await scClient.deleteElements(Array.from(foundAddrs).map(e=>new ScAddr(e)))
                 if (foundAddrs.size > 0) result.push({ idtf: contourNodeIdtf, errorMsg: "" })
                 else result.push({ idtf: "", errorMsg: "Can't find this construction in connected sc-machine. Maybe someone else deleted this construction from the base? " })
             } else {
@@ -69,22 +58,15 @@ export class ScsLoader {
 
     public async unloadAll() {
         const allIdtfs = this.loadedScs.values()
-        let foundAddrs = new Set<ScAddr>()
+        let foundAddrs = new Set<number>()
         for (const scsIdtf of allIdtfs) {
             const contourAddr = (await scClient.resolveKeynodes([{ id: scsIdtf.id, type: ScType.Node }]))[scsIdtf.id]
-            const unloadingTemplate = new ScTemplate().triple(
-                contourAddr,
-                ScType.EdgeAccessVarPosPerm,
-                ScType.Node
-            )
-            const foundConstruction = await scClient.templateSearch(unloadingTemplate)
-            for (const triplet of foundConstruction) {
-                triplet.forEachTriple((element) => {
-                    foundAddrs.add(element)
-                })
-            }
+            const temp = await this.findElementsInContour(contourAddr);
+            temp.forEach(element => {
+                foundAddrs.add(element)
+            });
         }
-        await scClient.deleteElements(Array.from(foundAddrs))
+        await scClient.deleteElements(Array.from(foundAddrs).map(e=>new ScAddr(e)))
         return foundAddrs
     }
 
@@ -96,5 +78,37 @@ export class ScsLoader {
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
         return result;
+    }
+
+    private async findElementsInContour(contourNode: ScAddr){
+        const unloadingTemplate1 = new ScTemplate().triple(
+            contourNode,
+            ScType.EdgeAccessVarPosPerm,
+            ScType.EdgeAccess
+        );
+        const unloadingTemplate2 = new ScTemplate().triple(
+            contourNode,
+            ScType.EdgeAccessVarPosPerm,
+            ScType.EdgeUCommon
+        );
+        const unloadingTemplate3 = new ScTemplate().triple(
+            contourNode,
+            ScType.EdgeAccessVarPosPerm,
+            ScType.EdgeDCommon
+        );
+        const templates = [unloadingTemplate1, unloadingTemplate2, unloadingTemplate3];
+
+        let foundAddrs = new Set<number>();
+        const found = [];
+        for (const template of templates) {
+            found.push(await scClient.templateSearch(template));
+        }
+        found.reduce((prev, current)=> prev.concat(current))
+        .forEach(triplet=>triplet.forEachTriple((addr1, addr2, addr3) => {
+            foundAddrs.add(addr1.value)
+            foundAddrs.add(addr2.value)
+            foundAddrs.add(addr3.value)
+        }));
+        return foundAddrs;
     }
 } 
