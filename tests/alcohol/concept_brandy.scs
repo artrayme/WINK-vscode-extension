@@ -1,0 +1,38 @@
+concept_brandy=>nrel_idtf:[brandy] (* <- lang_en;; *);;
+concept_brandy=>nrel_main_idtf:[бренди] (* <- lang_ru;; *);;
+
+concept_brandy<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(бренди)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Бренди — крепкий алкогольный напиток, общий термин для обозначения продуктов дистилляции виноградного вина, фруктовой или ягодной браги с крепостью свыше 37.5 % об. Если явно не указано иное, то бренди изготавливается из виноградного вина.](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_strong_alcoholic_drink;;
+                ->nrel_distillation;;
+                ->concept_wine;;
+                ->concept_braga;;
+	*);;
+
+*);;
+
+concept_brandy<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_brandy;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, бренди)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 37.5% и выше](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_squeezy_brandy<-...
+	(*
+		->concept_fruit_brandy;;
+		->concept_grape_brandy;;
+		=>nrel_main_idtf:[Разбиение по сырью](* <- lang_ru;; *);;
+		=>nrel_subdividing:concept_brandy;;
+	*);;
+

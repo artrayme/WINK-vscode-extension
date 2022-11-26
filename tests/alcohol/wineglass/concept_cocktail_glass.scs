@@ -1,0 +1,42 @@
+concept_cocktail_glass=>nrel_idtf:[cocktail glass] (* <- lang_en;; *);;
+concept_cocktail_glass=>nrel_main_idtf:[коктейльный бокал] (* <- lang_ru;; *);;
+
+concept_cocktail_glass<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(коктейльный бокал)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Коктейльный бокал - бокал для вина в виде конической чаши с направленным вниз остриём](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+
+	*);;
+
+*);;
+
+
+concept_cocktail_glass<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//cocktail glass.jpeg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_cocktail_glass<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_cocktail_glass;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, коктейльный бокал)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала : 130 мл](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_cocktail_glass<=nrel_inclusion:concept_traditional_glass;;

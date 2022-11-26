@@ -1,0 +1,115 @@
+sc_node_not_relation -> concept_beer;;
+concept_beer=>nrel_idtf:[beer] (* <- lang_en;; *);;
+concept_beer=>nrel_main_idtf:[пиво] (* <- lang_ru;; *);;
+
+concept_beer<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(пиво)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Пиво  — слабоалкогольный напиток, получаемый брожением cолодового сусла](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_low_alcoholic_drink;;
+                ->concept_juice;;
+
+	*);;
+
+*);;
+
+
+concept_beer<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//beer.jpeg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_beer<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_beer;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, пиво)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 3-14 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_beer<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(пиво)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Пиво обычно употребляют вместе с сушённой рыбой,колбасой и  чипсами.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+                ->concept_dried_fish;;
+                ->concept_sausage;;
+                ->concept_chips;;
+
+	*);;
+
+*);;
+
+
+concept_beer<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(пиво)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Пиво - полезный напиток, но как и с любым алкогольным напитком нужно знать меру!](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_alcholic_drink;;
+
+	*);;
+
+*);;
+
+concept_beer<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(пиво)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок пива- Antarctic Nail Ale](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_beer<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//Antarctic Nail Ale.jpg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_rye_beer<-...
+	(*
+		->concept_rice_beer;;
+                ->concept_barley_beer;;
+                ->concept_wheat_beer;;
+                ->concept_corn_beer;;
+                ->concept_special_beer;; 
+		=>nrel_main_idtf:[Разбиение по сырью](* <- lang_ru;; *);;
+		=>nrel_subdividing:concept_beer;;
+	*);;
+
+
+concept_beer<=nrel_inclusion:concept_low_alcoholic_drink;;

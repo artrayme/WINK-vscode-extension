@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_alcohol;;
+concept_alcohol => nrel_main_idtf:
+[алкоголь] (* <- lang_ru;; *);
+[alcohol] (* <- lang_en;; *);;
+
+concept_alcohol<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(алкоголь)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Алкоголь(алкогольные напитки) - напитки, содержащие спирт.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drink;;
+           
+	*);;
+
+*);;
+
+concept_alcohol<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(алкоголь)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Алкогольные напитки могут быть крепкими или слабоалкогольными ](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+  
+                ->concept_low_alcoholic_drink;;
+                ->concept_strong_alcoholic_drink;;
+               
+
+	*);;
+
+*);;

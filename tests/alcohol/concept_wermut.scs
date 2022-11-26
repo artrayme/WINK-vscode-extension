@@ -1,0 +1,110 @@
+sc_node_not_relation -> concept_wermut;;
+concept_wermut=>nrel_idtf:[wermut] (* <- lang_en;; *);;
+concept_wermut=>nrel_main_idtf:[вермут] (* <- lang_ru;; *);;
+
+concept_wermut<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(вермут)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Вермут  — креплёное вино ,ароматизированное полынью, а так же другими травами и прянастями. Обычно используюется в коктейлях](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_low_alcoholic_drink;;
+                ->concept_sagebrush;;
+                ->concept_herbs;;
+                ->concept_spice;;
+                ->concept_cocktail;;
+
+	*);;
+
+*);;
+
+
+concept_wermut<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//wermut.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_wermut<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_wermut;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, вермут)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 16-18  %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_wermut<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(вермут)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Вермут очень часто используют в коктейлях,поэтому традиционный бокал для вермута - это коктейльный бокал](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_cocktail_glass;;
+                
+
+	
+	*);;
+*);;
+
+
+concept_wermut<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(вермут)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Вермут получают, добавляя в белое, нейтральное вино пряностей и трав.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_herbs;;
+                ->concept_spice;;
+                ->concept_wine;;
+
+	*);;
+
+*);;
+
+concept_wermut<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(вермут)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок вермута - MARTINI](* <- lang_ru;; *);;
+	*);;
+	
+
+
+*);;
+
+concept_wermut<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//martini.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_wermut<=nrel_inclusion:concept_wine;concept_low_alcoholic_drink;;
+concept_wermut <= nrel_national_dish: concept_italy;;

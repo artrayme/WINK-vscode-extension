@@ -1,0 +1,119 @@
+sc_node_not_relation -> concept_champagne;;
+concept_champagne=>nrel_idtf:[champagne] (* <- lang_en;; *);;
+concept_champagne=>nrel_main_idtf:[шампанское] (* <- lang_ru;; *);;
+
+concept_champagne<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(шампанское)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Шампанское  — Игристое вино, произведённое из определённых сортов винограда методом вторичного брожения в регионе Шампань, Франция.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_sparkling_wine;;
+		->concept_fermentation;;
+
+	*);;
+
+*);;
+
+
+concept_champagne<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//champagne.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_champagne<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_champagne;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, шампанское)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 10-12 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_champagne<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(шампанское)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Критики советуют открывать бутылку следующим способом: охладить бутылку, снять фольгу, обхватить рукой пробку, ослабить,но не снимать мюзле, крепко взять пробку в проволке в руку и поворачивать бутылку, держа бутылку под углом 45 градусов](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+
+	*);;
+
+*);;
+
+concept_champagne<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(шампанское)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Традиционным бокалом для шампанского является фужер.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_wine_glass;;
+
+	*);;
+
+*);;
+
+
+concept_champagne<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(шампанское)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Вино получают из различных сортах винограда,отжимая сок и потом подвиргают брожению](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->nrel_spin;;
+                ->concept_juice;;
+                ->concept_grade;;
+                ->nrel_fermentation;;
+
+	*);;
+
+*);;
+
+concept_champagne<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(шампанское)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых дорогих марок шампанского- Dom Perignon Rose Gold](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_champagne<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//Dom Perignon Rose Gold.jpeg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_champagne<=nrel_inclusion:concept_sparkling_wine;;

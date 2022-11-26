@@ -1,0 +1,44 @@
+concept_tulip=>nrel_idtf:[tulip] (* <- lang_en;; *);;
+concept_tulip=>nrel_main_idtf:[тюльпан] (* <- lang_ru;; *);;
+
+concept_tulip<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(тюльпан)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Тюльпан - традиционный бокал для рома и вина](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+                ->concept_rum;;
+                ->concept_wine;;
+
+	*);;
+
+*);;
+
+
+concept_tulip<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//tulip.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_tulip<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_tulip;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, тюльпан)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала : 400  мл](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_tulip<=nrel_inclusion:concept_traditional_glass;;

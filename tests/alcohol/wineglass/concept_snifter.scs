@@ -1,0 +1,43 @@
+concept_snifter=>nrel_idtf:[snifter] (* <- lang_en;; *);;
+concept_snifter=>nrel_main_idtf:[снифтер] (* <- lang_ru;; *);;
+
+concept_snifter<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(снифтер)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Снифтер - традиционный бокал для коньяка.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+                ->concept_cognac;;
+
+	*);;
+
+*);;
+
+
+concept_snifter<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//snifter.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_snifter<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_snifter;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, снифтер)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала : 180-240  мл](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_snifter<=nrel_inclusion:concept_traditional_glass;;

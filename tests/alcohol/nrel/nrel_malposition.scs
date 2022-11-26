@@ -1,0 +1,62 @@
+nrel_malposition=>nrel_idtf:[malposition*] (* <- lang_en;; *);;
+nrel_malposition=>nrel_system_identifier:[nrel_malposition] (* <- lang_en;; *);;
+nrel_malposition=>nrel_main_idtf:[соложение*] (* <- lang_ru;; *);;
+nrel_malposition<-rrel_key_sc_element:...
+(*
+	<-definition;;=>nrel_main_idtf:[Опр.(соложение*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Соложение - процесс в ходе, которого намачивают и проращивают злаки,  добиваясь ферментации](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+            ->concept_water;;
+	    ->nrel_fermentation;;
+	*);;
+*);;	
+nrel_malposition=>nrel_first_domain:concept_product;;
+nrel_malposition=>nrel_second_domain:concept_result;;
+concept_value<-...
+(*
+	->concept_drink;;
+	=>nrel_combination:...
+	(*
+		<=nrel_definitional_domain:nrel_malposition;;
+	*);;
+*);;
+nrel_malpositionn<-binary_relation;;
+parameter->arity;;
+arity->binary_relation;;
+binary_relation=>nrel_measurement:2;;
+2<-number;;
+
+nrel_malposition<-oriented_relation;;
+antisymmetric_relation->nrel_malposition;;
+antitransitive_relation->nrel_malposition;;
+antireflexive_relation->nrel_malposition;;
+binary_relation=>nrel_inclusion:antisymmetric_relation;;
+binary_relation=>nrel_inclusion:antitransitive_relation;;
+binary_relation=>nrel_inclusion:antireflexive_relation;;
+relation=>nrel_inclusion:binary_relation;;
+relation=>nrel_inclusion:oriented_relation;;
+nrel_malposition<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_malposition;concept_starch;concept_sugar;;
+	<-statement;;
+	=>nrel_idtf:[Утв.(соложение*,крахмал, сахар)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Цель соложения образовать диастазы,которая из крахмала образует мальтоза-сахар, котороый и способен забродить](* <- lang_ru;; *);;
+	*);;
+*);;
+
+nrel_malposition<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//malposition.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+

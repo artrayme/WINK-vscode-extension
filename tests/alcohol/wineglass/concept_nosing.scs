@@ -1,0 +1,43 @@
+concept_nosing=>nrel_idtf:[nosing] (* <- lang_en;; *);;
+concept_nosing=>nrel_main_idtf:[ноузинг] (* <- lang_ru;; *);;
+
+concept_nosing<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(ноузинг)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[ноузинг- традиционный бокал для виски, зауженный кверху, с нормальной чашей и очень короткой ножкой](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+                ->concept_whiskey;;
+
+	*);;
+
+*);;
+
+
+concept_nosing<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//nosing.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_nosing<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_nosing;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, ноузинг)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала : 100  мл](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_nosing<=nrel_inclusion:concept_traditional_glass;;

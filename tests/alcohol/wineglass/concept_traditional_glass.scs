@@ -1,0 +1,32 @@
+concept_traditional_glass=>nrel_idtf:[traditional glass] (* <- lang_en;; *);;
+concept_traditional_glass=>nrel_main_idtf:[традиционный бокал] (* <- lang_ru;; *);;
+
+concept_traditional_glass<-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:[Опр.(традиционный бокал)] (* <- lang_ru;; *);;
+		<=nrel_sc_text_translation:...
+	(*
+        ->[Традиционный бокал - это бокал, предназначенный для определённого напитка](* <- lang_ru;; *);;
+	*);;
+
+	<=nrel_using_constants:...
+	(*
+                ->concept_drink;;
+	*);;
+
+*);;
+
+concept_traditional_glass<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//traditional glass.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+
+

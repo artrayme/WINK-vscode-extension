@@ -1,0 +1,57 @@
+sc_node_not_relation -> concept_bloody_mary;;
+
+concept_bloody_mary => nrel_main_idtf:
+[кровавая мэри] (* <- lang_ru;; *);
+[bloody mary] (* <- lang_en;; *);;
+
+concept_bloody_mary<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(кровавая мэри)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Кровавая мэри - лонг дринк на основе томатного сока и водки.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_long_drink;;
+		->concept_vodka;;
+		->concept_tomato_juice;;
+	*);;
+
+*);;
+
+
+
+concept_bloody_mary<-rrel_key_sc_element:...
+	(*
+	<-statement;;=>nrel_main_idtf:[Утв.(кровавая мэри,рецепт*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:"file://html//bloody mary recipe.html"(* <- lang_ru;; *);;
+	*);;
+
+
+*);;
+
+concept_bloody_mary<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//bloody.jpeg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_bloody_mary<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_bloody_mary;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, кровавая мэри)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 12 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_bloody_mary<=nrel_inclusion:concept_aperitif;;

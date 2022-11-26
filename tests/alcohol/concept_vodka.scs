@@ -1,0 +1,86 @@
+sc_node_not_relation -> concept_vodka;;
+concept_vodka=>nrel_idtf:[vodka] (* <- lang_en;; *);;
+concept_vodka=>nrel_main_idtf:[водка] (* <- lang_ru;; *);;
+
+concept_vodka<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(водка)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[vodka  — крепкий алкогольный напиток , бесцветный водно-спиртовой раствор](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_strong_alcoholic_drink;;
+
+	*);;
+
+*);;
+
+
+concept_vodka<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//vodka.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_vodka<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_vodka;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, водка)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 40 и выше  %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_vodka<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(водка)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Традиционный бокал для водки - рюмка](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_glass;;
+                
+
+	
+	*);;
+*);;
+
+concept_vodka<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(водка)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок водки- Diva](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_vodka<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//diva.jpeg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_vodka<=nrel_inclusion:concept_strong_alcoholic_drink;;
+concept_vodka <= nrel_national_dish: concept_poland;;

@@ -1,0 +1,181 @@
+sc_node_not_relation -> concept_rye_beer;;
+concept_rye_beer=>nrel_idtf:[rye beer] (* <- lang_en;; *);;
+concept_rye_beer=>nrel_main_idtf:[ржаное пиво] (* <- lang_ru;; *);;
+concept_rye_bee<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(ржаное пиво)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Пиво из ржи](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_beer;;
+                ->concept_rye;;
+	*);;
+
+*);;
+sc_node_not_relation -> concept_wheat_beer;;
+concept_wheat_beer=>nrel_idtf:[wheat beer] (* <- lang_en;; *);;
+concept_wheat_beer=>nrel_main_idtf:[пшеничное пиво] (* <- lang_ru;; *);;
+concept_wheat_beer<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(пшеничное пиво)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Пиво из ячменя](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_beer;;
+                ->concept_wheat_beer;;
+	*);;
+
+*);;
+
+sc_node_not_relation -> concept_special_beer;;
+concept_special_beer=>nrel_idtf:[special beer] (* <- lang_en;; *);;
+concept_special_beer=>nrel_main_idtf:[особое пиво] (* <- lang_ru;; *);;
+concept_special_beer<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(особое пиво)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Пиво c разными добавками](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_beer;;
+	*);;
+
+*);;
+
+sc_node_not_relation -> concept_barley_beer;;
+concept_barley_beer=>nrel_idtf:[barley beer] (* <- lang_en;; *);;
+concept_barley_beer=>nrel_main_idtf:[яменное пиво] (* <- lang_ru;; *);;
+concept_barley_beer<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(яменное пиво)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Пиво из ячменя](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_beer;;
+                ->concept_barley;;
+	*);;
+
+*);;
+
+sc_node_not_relation -> concept_corn_beer;;
+concept_corn_beer=>nrel_idtf:[corn beer] (* <- lang_en;; *);;
+concept_corn_beer=>nrel_main_idtf:[кукурузное пиво] (* <- lang_ru;; *);;
+concept_corn_beer<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(кукурузное пиво)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Пиво из кукурузы ](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_beer;;
+                ->concept_corn;;
+	*);;
+
+*);;
+
+sc_node_not_relation -> concept_fruit_brandy;;
+concept_fruit_brandy=>nrel_idtf:[fruit brandy] (* <- lang_en;; *);;
+concept_fruit_brandy=>nrel_main_idtf:[фруктовое бренди] (* <- lang_ru;; *);;
+concept_fruit_brandy<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(фруктовое бренди)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Бренди из фруктов ](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_brandy;;
+                ->concept_fruit;;
+	*);;
+
+*);;
+
+sc_node_not_relation -> concept_squeezy_brandy;;
+concept_squeezy_brandy=>nrel_idtf:[fruit brandy] (* <- lang_en;; *);;
+concept_squeezy_brandy=>nrel_main_idtf:[бренди из выжимок] (* <- lang_ru;; *);;
+concept_squeezy_brandy<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(бренди из выжимок)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Бренди из ягодной браги ](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_braga;;
+                ->concept_brandy;;
+	*);;
+
+*);;
+
+sc_node_not_relation->concept_grape_brandy;;
+concept_grape_brandy=>nrel_idtf:[grape brandy] (* <- lang_en;; *);;
+concept_grape_brandy=>nrel_main_idtf:[виноградное бренди] (* <- lang_ru;; *);;
+concept_grape_brandy<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(виноградное бренди)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Бренди из винограда](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_brandy;;
+                ->concept_grape;;
+	*);;
+
+*);;
+
+sc_node_not_relation->concept_long_drink;;
+concept_long_drink=>nrel_idtf:[long drink] (* <- lang_en;; *);;
+concept_long_drink=>nrel_main_idtf:[лонг дринк] (* <- lang_ru;; *);;
+concept_long_drink<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(лонг дринк)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Лонг дринк - тип коктейлей для утоления жажды](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_cocktail;;
+	*);;
+
+*);;
+
+sc_node_not_relation->concept_digestiv;;
+concept_digestiv=>nrel_idtf:[digestiv] (* <- lang_en;; *);;
+concept_digestiv=>nrel_main_idtf:[дижестив] (* <- lang_ru;; *);;
+concept_digestiv<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(дижестив)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Дижестив - тип коктейлей, способствующий перевариванию пищи после приёма её приёма](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_cocktail;;
+	*);;
+
+*);;
+
+sc_node_not_relation->concept_aperitif;;
+concept_aperitif=>nrel_idtf:[aperitif] (* <- lang_en;; *);;
+concept_aperitif=>nrel_main_idtf:[аперитив] (* <- lang_ru;; *);;
+concept_aperitif<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(аперитив)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Аперитив - тип коктейлей для подогревания апетита](* <- lang_ru;; *);;
+	*);;
+	<=nrel_using_constants:...
+	(*
+		->concept_cocktail;;
+	*);;
+
+*);;

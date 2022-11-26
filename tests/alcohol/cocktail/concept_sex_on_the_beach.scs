@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_sex_on_the_beach;;
+
+concept_sex_on_the_beach => nrel_main_idtf:
+[секс на пляже] (* <- lang_ru;; *);
+[sex on the beach] (* <- lang_en;; *);;
+
+concept_sex_on_the_beach<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(секс на пляже)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Секс на пляже - лонг дринк, содержащий водку, персиковый ликёр, апельсиновый и клюквенный сок.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_long_drink;;
+		->concept_peach_liquor;;
+		->concept_vodka;;
+		->concept_orange_juice;;
+		->concept_cranberry_juice;;
+	*);;
+
+*);;
+
+
+
+concept_sex_on_the_beach<-rrel_key_sc_element:...
+	(*
+	<-statement;;=>nrel_main_idtf:[Утв.(секс на пляже,рецепт*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:"file://html//sex recipe.html"(* <- lang_ru;; *);;
+	*);;
+
+
+*);;
+
+concept_sex_on_the_beach<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//sex.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_sex_on_the_beach<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_sex_on_the_beach;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, секс на пляже)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 15 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_sex_on_the_beach<=nrel_inclusion:concept_long_drink;;

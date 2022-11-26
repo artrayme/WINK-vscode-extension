@@ -1,0 +1,24 @@
+sc_node_not_relation -> concept_low_alcoholic_drink;;
+
+concept_low_alcoholic_drink => nrel_main_idtf:
+[слабоалкогольный напиток] (* <- lang_ru;; *);
+[strong alcoholic drink] (* <- lang_en;; *);;
+
+concept_low_alcoholic_drink<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(слабоалкогольный напиток)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Слабоалкогольные напитки - это алкогольные напитки с содержанием спирта менее 40 градусов](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_alcohol;;
+                ->concept_value;;
+                ->nrel_beverage_strength;;
+	*);;
+
+*);;
+
+
+concept_low_alcoholic_drink<=nrel_inclusion:concept_alcohol;;

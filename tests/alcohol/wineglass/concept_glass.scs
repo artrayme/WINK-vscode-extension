@@ -1,0 +1,44 @@
+concept_glass=>nrel_idtf:[glass] (* <- lang_en;; *);;
+concept_glass=>nrel_main_idtf:[рюмка] (* <- lang_ru;; *);;
+
+concept_glass<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(рюмка)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Рюмка - вид посуды небольшого размера для употребления спиртных напитков](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+		->concept_alcoholic_dring;;
+
+	*);;
+
+*);;
+
+
+concept_glass<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//glass.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_glass<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_glass;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, рюмка)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала : 50  мл](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_glass<=nrel_inclusion:concept_traditional_glass;;
+

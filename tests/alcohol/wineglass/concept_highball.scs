@@ -1,0 +1,41 @@
+concept_highball=>nrel_idtf:[highball] (* <- lang_en;; *);;
+concept_highball=>nrel_main_idtf:[хайбол] (* <- lang_ru;; *);;
+
+concept_highball<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(хайбол)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Хайбол - высокий стакан,правильной цилидрической формы](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+	*);;
+
+*);;
+
+
+concept_highball<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//highball.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_highball<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_highball;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, хайбол)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала : 270  мл](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_highball<=nrel_inclusion:concept_traditional_glass;;
