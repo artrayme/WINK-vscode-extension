@@ -13,9 +13,8 @@ export class ScsLoader {
 
         for (const filename of filenames) {
             const exists = this.loadedScs.has(filename);
-            if (exists) {
-                await this.unloadScs([filename]) // ToDo add after template search fix
-            }
+            if (exists) await this.unloadScs([filename]) 
+            
             const doc = await vscode.workspace.openTextDocument(filename);
 
             const preparedScs = this.wrapScs(doc.getText());
