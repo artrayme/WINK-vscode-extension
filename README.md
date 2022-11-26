@@ -53,7 +53,7 @@ npm install
 ```
 npm run compile
 ```
-3. Open file extension/src/extension and click F5. After that, either a new window with the activated plug-in should open immediately, or a configuration selection menu will open where you should select "VS extension development" or something similar
+3. Open file extension/src/extension and click F5. After that, either a new window with the activated plug-in should open immediately, or a configuration selection menu will open where you should select "VS extension development" or something similar. SCs test files you can find in the tests/alcohol folder 
 
 ## How to debug
 To debug the extension code, all you need to do is set breakpoints and run the extension. 
