@@ -17,7 +17,8 @@
 		"vscode": "^1.67.0"
 	},
 	"activationEvents": [
-		"onLanguage:scs"
+		"onLanguage:scs",
+		"onLanguage:gwf"
 	],
 	"main": "./extension/out/extension",
 	"contributes": {
@@ -26,10 +27,12 @@
 				"id": "scs",
 				"aliases": [
 					"scs",
+					"gwf",
 					"scsi"
 				],
 				"extensions": [
 					".scs",
+					".gwf",
 					".scsi"
 				],
 				"configuration": "./language-configuration.json"
@@ -106,6 +109,7 @@
 		"typescript": "^4.7.7"
 	},
 	"dependencies": {
-		"@types/websocket": "^1.0.5"
+		"@types/websocket": "^1.0.5",
+		"dom-parser": "^0.1.6"
 	}
 }

@@ -16,7 +16,7 @@ import {
 } from 'vscode-languageclient';
 
 let client: LanguageClient;
-let scsLoader = new ScsLoader();
+const scsLoader = new ScsLoader();
 
 export async function activate(context: ExtensionContext) {
 	// The server is implemented in node
@@ -56,7 +56,7 @@ export async function activate(context: ExtensionContext) {
 				'scsLoad', // Identifies the type of the webview. Used internally
 				'SCs', // Title of the panel displayed to the user
 				vscode.ViewColumn.Beside,
-				{   // params to unlock sc-web scripts 
+				{   // params to unlock sc-web scripts
 					enableScripts: true,
 					enableFindWidget: true,
 					enableCommandUris: true,
@@ -65,11 +65,11 @@ export async function activate(context: ExtensionContext) {
 			const editor = vscode.window.activeTextEditor;
 
 			if (editor) {
-				const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0]
+				const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0];
 				vscode.window.showInformationMessage(loadedScs);
 				if (loadedScs.length > 0) {
 					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`
-					panel.title = loadedScs
+					panel.title = loadedScs;
 				}
 			}
 		})
@@ -81,7 +81,7 @@ export async function activate(context: ExtensionContext) {
 				'scsLoad', // Identifies the type of the webview. Used internally
 				'SCs', // Title of the panel displayed to the user
 				vscode.ViewColumn.Beside,
-				{   // params to unlock sc-web scripts 
+				{   // params to unlock sc-web scripts
 					enableScripts: true,
 					enableFindWidget: true,
 					enableCommandUris: true,
