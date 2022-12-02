@@ -4,139 +4,163 @@
  * ------------------------------------------------------------------------------------------ */
 
 import * as path from 'path';
-import { workspace, ExtensionContext } from 'vscode';
 import * as vscode from 'vscode';
-import { ScsLoader } from './ScsLoader';
+import {ExtensionContext, workspace} from 'vscode';
+import {ScsLoader} from './ScsLoader';
 
-import {
-	LanguageClient,
-	LanguageClientOptions,
-	ServerOptions,
-	TransportKind
-} from 'vscode-languageclient';
+import {LanguageClient, LanguageClientOptions, ServerOptions, TransportKind} from 'vscode-languageclient';
+import {SearcherByTemplate} from "./SearcherByTemplate";
 
 let client: LanguageClient;
 const scsLoader = new ScsLoader();
+const scsSearcher = new SearcherByTemplate();
 
 export async function activate(context: ExtensionContext) {
-	// The server is implemented in node
-	const serverModule = context.asAbsolutePath(
-		path.join('SCs-language-server', 'out', 'scsServer.js')
-	);
-	// The debug options for the server
-	// --inspect=6009: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
-	const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
+    // The server is implemented in node
+    const serverModule = context.asAbsolutePath(
+        path.join('SCs-language-server', 'out', 'scsServer.js')
+    );
+    // The debug options for the server
+    // --inspect=6009: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
+    const debugOptions = {execArgv: ['--nolazy', '--inspect=6009']};
 
-	const serverOptions: ServerOptions = {
-		run: { module: serverModule, transport: TransportKind.ipc },
-		debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
-	};
+    const serverOptions: ServerOptions = {
+        run: {module: serverModule, transport: TransportKind.ipc},
+        debug: {module: serverModule, transport: TransportKind.ipc, options: debugOptions}
+    };
 
-	const clientOptions: LanguageClientOptions = {
-		documentSelector: ['scs', 'scsi'],
-		synchronize: {
-			fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
-		},
-	};
+    const clientOptions: LanguageClientOptions = {
+        documentSelector: ['scs', 'scsi'],
+        synchronize: {
+            fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
+        },
+    };
 
-	// Create the language client and start the client.
-	client = new LanguageClient(
-		'languageServerExample',
-		'Language Server Example',
-		serverOptions,
-		clientOptions
-	);
+    // Create the language client and start the client.
+    client = new LanguageClient(
+        'languageServerExample',
+        'Language Server Example',
+        serverOptions,
+        clientOptions
+    );
 
-	client.start();
+    client.start();
 
-	context.subscriptions.push(
-		vscode.commands.registerCommand('scs.upload', async () => {
-			// Create and show a new webview
-			const panel = vscode.window.createWebviewPanel(
-				'scsLoad', // Identifies the type of the webview. Used internally
-				'SCs', // Title of the panel displayed to the user
-				vscode.ViewColumn.Beside,
-				{   // params to unlock sc-web scripts
-					enableScripts: true,
-					enableFindWidget: true,
-					enableCommandUris: true,
-				}
-			);
-			const editor = vscode.window.activeTextEditor;
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.upload', async () => {
+            // Create and show a new webview
+            const panel = vscode.window.createWebviewPanel(
+                'scsLoad', // Identifies the type of the webview. Used internally
+                'SCs', // Title of the panel displayed to the user
+                vscode.ViewColumn.Beside,
+                {   // params to unlock sc-web scripts
+                    enableScripts: true,
+                    enableFindWidget: true,
+                    enableCommandUris: true,
+                }
+            );
+            const editor = vscode.window.activeTextEditor;
 
-			if (editor) {
-				const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0];
-				vscode.window.showInformationMessage(loadedScs);
-				if (loadedScs.length > 0) {
-					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
-					panel.title = loadedScs;
-				}
-			}
-		})
-	);
-	context.subscriptions.push(
-		vscode.commands.registerCommand('scs.uploadAll', async () => {
-			// Create and show a new webview
-			const panel = vscode.window.createWebviewPanel(
-				'scsLoad', // Identifies the type of the webview. Used internally
-				'SCs', // Title of the panel displayed to the user
-				vscode.ViewColumn.Beside,
-				{   // params to unlock sc-web scripts
-					enableScripts: true,
-					enableFindWidget: true,
-					enableCommandUris: true,
-				}
-			);
+            if (editor) {
+                const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0];
+                vscode.window.showInformationMessage(loadedScs);
+                if (loadedScs.length > 0) {
+                    panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
+                    panel.title = loadedScs;
+                }
+            }
+        })
+    );
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.uploadAll', async () => {
+            // Create and show a new webview
+            const panel = vscode.window.createWebviewPanel(
+                'scsLoad', // Identifies the type of the webview. Used internally
+                'SCs', // Title of the panel displayed to the user
+                vscode.ViewColumn.Beside,
+                {   // params to unlock sc-web scripts
+                    enableScripts: true,
+                    enableFindWidget: true,
+                    enableCommandUris: true,
+                }
+            );
 
-			const allScsFiles = await vscode.workspace.findFiles("**/*.scs");
-			if (allScsFiles) {
-				const loadedScs = (await scsLoader.loadScs(allScsFiles));
-				if (loadedScs.length > 0) {
-					// ToDo fix link and size
-					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
-				}
-			}
-		})
-	);
+            const allScsFiles = await vscode.workspace.findFiles("**/*.scs");
+            if (allScsFiles) {
+                const loadedScs = (await scsLoader.loadScs(allScsFiles));
+                if (loadedScs.length > 0) {
+                    // ToDo fix link
+                    panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
+                }
+            }
+        })
+    );
 
-	context.subscriptions.push(
-		vscode.commands.registerCommand('scs.unload', async () => {
-			const editor = vscode.window.activeTextEditor;
-			if (editor) {
-				const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
-				if (unloadedScs.idtf) {
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.unload', async () => {
+            const editor = vscode.window.activeTextEditor;
+            if (editor) {
+                const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
+                if (unloadedScs.idtf) {
 
-					vscode.window.showInformationMessage(`Succesfully deleted ${unloadedScs.idtf}`);
-					vscode.window.tabGroups.all
-						.flatMap(({ tabs }) => tabs)
-						.filter(document => document.label === unloadedScs.idtf)
-						.forEach(label => { vscode.window.tabGroups.close(label); });
-				} else {
-					vscode.window.showErrorMessage(unloadedScs.errorMsg);
-				}
-			}
-		})
-	);
+                    vscode.window.showInformationMessage(`Successfully deleted ${unloadedScs.idtf}`);
+                    vscode.window.tabGroups.all
+                        .flatMap(({tabs}) => tabs)
+                        .filter(document => document.label === unloadedScs.idtf)
+                        .forEach(label => {
+                            vscode.window.tabGroups.close(label);
+                        });
+                } else {
+                    vscode.window.showErrorMessage(unloadedScs.errorMsg);
+                }
+            }
+        })
+    );
 
-	context.subscriptions.push(
-		vscode.commands.registerCommand('scs.unloadAll', async () => {
-			const allProjectDocuments = vscode.workspace.textDocuments.map(document => document.uri);
-			if (allProjectDocuments) {
-				const unloadedScs = (await scsLoader.unloadAll());
-				if (unloadedScs) {
-					vscode.window.showInformationMessage("All successfully unloaded");
-				} else {
-					vscode.window.showErrorMessage("Nothing to unload");
-				}
-			}
-		})
-	);
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.unloadAll', async () => {
+            const allProjectDocuments = vscode.workspace.textDocuments.map(document => document.uri);
+            if (allProjectDocuments) {
+                const unloadedScs = (await scsLoader.unloadAll());
+                if (unloadedScs) {
+                    vscode.window.showInformationMessage("All successfully unloaded");
+                } else {
+                    vscode.window.showErrorMessage("Nothing to unload");
+                }
+            }
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.findByTemplate', async () => {
+            // Create and show a new webview
+            const panel = vscode.window.createWebviewPanel(
+                'scsFind', // Identifies the type of the webview. Used internally
+                'Found', // Title of the panel displayed to the user
+                vscode.ViewColumn.Beside,
+                {   // params to unlock sc-web scripts
+                    enableScripts: true,
+                    enableFindWidget: true,
+                    enableCommandUris: true,
+                }
+            );
+            const editor = vscode.window.activeTextEditor;
+
+            if (editor) {
+                const itdfOfSearchingResults = await scsSearcher.findByScsTemplate(editor.document.getText());
+                vscode.window.showInformationMessage(itdfOfSearchingResults);
+                panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${itdfOfSearchingResults}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
+                panel.title = itdfOfSearchingResults;
+            }
+        })
+    );
+
 
 }
 
 export function deactivate(): Thenable<void> {
-	if (!client) {
-		return undefined;
-	}
-	return client.stop();
+    if (!client) {
+        return undefined;
+    }
+    return client.stop();
 }
