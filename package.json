@@ -85,6 +85,16 @@
 				"command": "scs.unloadAll",
 				"title": "Delete all SCs from the connected sc-machine",
 				"category": "SCs"
+			},
+			{
+				"command": "scs.findByTemplate",
+				"title": "Find all constructions by scs-template",
+				"category": "SCs"
+			},
+			{
+				"command": "scs.gwf2scs",
+				"title": "Convert GWF file to SCs",
+				"category": "SCs"
 			}
 		]
 	},
