@@ -6,7 +6,7 @@
 import * as path from 'path';
 import { workspace, ExtensionContext } from 'vscode';
 import * as vscode from 'vscode';
-import { ScsLoader } from './ScsLoader'
+import { ScsLoader } from './ScsLoader';
 
 import {
 	LanguageClient,
@@ -68,7 +68,7 @@ export async function activate(context: ExtensionContext) {
 				const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0];
 				vscode.window.showInformationMessage(loadedScs);
 				if (loadedScs.length > 0) {
-					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`
+					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
 					panel.title = loadedScs;
 				}
 			}
@@ -90,10 +90,10 @@ export async function activate(context: ExtensionContext) {
 
 			const allScsFiles = await vscode.workspace.findFiles("**/*.scs");
 			if (allScsFiles) {
-				const loadedScs = (await scsLoader.loadScs(allScsFiles))
+				const loadedScs = (await scsLoader.loadScs(allScsFiles));
 				if (loadedScs.length > 0) {
 					// ToDo fix link and size
-					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true height="1000" width="100%" title="SCs"></iframe>`
+					panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
 				}
 			}
 		})
@@ -103,16 +103,16 @@ export async function activate(context: ExtensionContext) {
 		vscode.commands.registerCommand('scs.unload', async () => {
 			const editor = vscode.window.activeTextEditor;
 			if (editor) {
-				const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0]
+				const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
 				if (unloadedScs.idtf) {
 
 					vscode.window.showInformationMessage(`Succesfully deleted ${unloadedScs.idtf}`);
 					vscode.window.tabGroups.all
 						.flatMap(({ tabs }) => tabs)
 						.filter(document => document.label === unloadedScs.idtf)
-						.forEach(label => { vscode.window.tabGroups.close(label) })
+						.forEach(label => { vscode.window.tabGroups.close(label); });
 				} else {
-					vscode.window.showErrorMessage(unloadedScs.errorMsg)
+					vscode.window.showErrorMessage(unloadedScs.errorMsg);
 				}
 			}
 		})
@@ -122,11 +122,11 @@ export async function activate(context: ExtensionContext) {
 		vscode.commands.registerCommand('scs.unloadAll', async () => {
 			const allProjectDocuments = vscode.workspace.textDocuments.map(document => document.uri);
 			if (allProjectDocuments) {
-				const unloadedScs = (await scsLoader.unloadAll())
+				const unloadedScs = (await scsLoader.unloadAll());
 				if (unloadedScs) {
 					vscode.window.showInformationMessage("All successfully unloaded");
 				} else {
-					vscode.window.showErrorMessage("Nothing to unload")
+					vscode.window.showErrorMessage("Nothing to unload");
 				}
 			}
 		})
