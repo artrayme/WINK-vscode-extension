@@ -1,8 +1,9 @@
 import * as vscode from 'vscode';
 
 import {ScAddr, ScClient, ScTemplate, ScType} from 'ts-sc-client-ws';
-import {convertOldGwfToNew} from "./Old2NewScgConverter";
-import {convertGwfToScs} from "./Scg2ScsConverterOld";
+import {createTechnicalWinkId} from "./Utils";
+// import {convertOldGwfToNew} from "./Old2NewScgConverter";
+// import {convertGwfToScs} from "./Scg2ScsConverterOld";
 // import {convertGwfToScs} from "./Scg2ScsConverter";
 
 const scClient = new ScClient('ws://localhost:8090');
@@ -19,9 +20,10 @@ export class ScsLoader {
             const doc = await vscode.workspace.openTextDocument(filename);
             let preparedScs: { id: string, text: string };
             if (filename.path.endsWith('.gwf')) {
-                const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
-                const scsText: string = convertGwfToScs(gwfInNewFormat);
-                preparedScs = this.wrapScs(scsText);
+                // const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
+                // const scsText: string = convertGwfToScs(gwfInNewFormat);
+                // preparedScs = this.wrapScs(scsText);
+                continue;
             } else {
                 preparedScs = this.wrapScs(doc.getText());
             }
@@ -40,7 +42,7 @@ export class ScsLoader {
     }
 
     private wrapScs(text: string): { id: string; text: string } {
-        const technicalIdtf = "wink_vscode_extension_" + this.makeid(8);
+        const technicalIdtf = createTechnicalWinkId();
         const resultSCs = technicalIdtf + " = [* " + text + " *];;";
         return {id: technicalIdtf, text: resultSCs};
     }
@@ -85,15 +87,7 @@ export class ScsLoader {
         return foundAddrs;
     }
 
-    private makeid(length: number): string {
-        let result = '';
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const charactersLength = characters.length;
-        for (let i = 0; i < length; i++) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        }
-        return result;
-    }
+
 
     private async findElementsInContour(contourNode: ScAddr) {
         const unloadingTemplate1 = new ScTemplate().triple(
