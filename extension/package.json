@@ -14,11 +14,12 @@
 	},
 	"scripts": {},
 	"dependencies": {
+		"ts-sc-client-ws": "0.3.1",
 		"vscode-languageclient": "^5.1.0-next.9",
-		"ts-sc-client-ws": "0.3.1"
-
+		"xmldom": "^0.6.0"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.67.0"
+		"@types/vscode": "^1.67.0",
+		"@types/xmldom": "^0.1.31"
 	}
 }

@@ -1,0 +1,103 @@
+sc_node_not_relation -> concept_wine;;
+concept_wine=>nrel_idtf:[wine] (* <- lang_en;; *);;
+concept_wine=>nrel_main_idtf:[вино] (* <- lang_ru;; *);;
+
+concept_wine<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(вино)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Вино  — слабоалкогольный напиток, получаемый брожением виноградного сока](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_low_alcoholic_drink;;
+                ->concept_juice;;
+
+	*);;
+
+*);;
+
+
+concept_wine<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//wine.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_wine<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_wine;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, вино)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 9-22 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_wine<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(вино)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[У каждого сорта вина своя традиция распития](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+
+	*);;
+
+*);;
+
+
+concept_wine<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(вино)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Вино получают из различных сортах винограда,отжимая сок и потом подвиргают брожению](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->nrel_spin;;
+                ->concept_juice;;
+                ->concept_grade;;
+                ->nrel_fermentation;;
+
+	*);;
+
+*);;
+
+concept_wine<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(вино)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок вина- Chateau Lafite Rothschild](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_wine<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//Chateau Lafite Rothschild.jpg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_wine<=nrel_inclusion:concept_low_alcoholic_drink;;

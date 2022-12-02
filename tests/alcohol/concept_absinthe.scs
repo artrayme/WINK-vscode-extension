@@ -1,0 +1,115 @@
+sc_node_not_relation -> concept_absinthe;;
+concept_absinthe=>nrel_idtf:[absinthe] (* <- lang_en;; *);;
+concept_absinthe=>nrel_main_idtf:[абсент] (* <- lang_ru;; *);;
+
+concept_absinthe<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(абсент)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Виски  — очень крепкий алкогольный напиток, главным компонентом которого является экстракт горькой полыни](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_strong_alcoholic_drink;;
+	*);;
+*);;
+
+
+concept_absinthe<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//absinthe.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_whiskey<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_whiskey;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, абсент)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 70-89,9 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_absinthe<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(абсент)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Традиционный бокал для абсента - хайбол](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_highball;;
+
+                
+
+	
+	*);;
+*);;
+
+concept_absinthe<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(абсент)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Традиционный французский способ употребления абсента:Порцию абсента поместите в большой бокал, а наверх бокала поместите специальный стакан в форме миски с маленькой дырочкой посередине, заполненный льдом с водой. Затем приподнимите стакан со льдом, чтобы струйка ледяной воды стекала в бокал с абсентом. Цвет абсента подскажет, когда надо остановиться. Затем перелейте в большой бокал и подавайте. Использовать надо только настоящий абсент, который легко опознать по цвету при смешивании — он станет белым и облачным, в отличие от подделки. ](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+                ->concept_water;;
+                ->concept_ice;;
+
+	*);;
+
+*);;
+
+
+concept_absinthe<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(абсент)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Опьянение абсентом (передозировка при чрезмерном злоупотреблении) напоминает действие некоторых наркотических веществ, которые вызывают общее возбуждение, изменение сознания и галлюцинации, немотивированную агрессию. ](* <- lang_ru;; *);;
+	*);;
+	
+*);;
+
+concept_absinthe<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(абсент)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок абсента- Xenta Superior](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_absinthe<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//xenta.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_absinthe<=nrel_inclusion:concept_strong_alcoholic_drink;;
+concept_absinthe<= nrel_national_dish: concept_switzerland;;
+

@@ -1,0 +1,54 @@
+nrel_glass_volume=>nrel_idtf:[nrel_glass_volume*] (* <- lang_en;; *);;
+nrel_glass_volume=>nrel_main_idtf:[объём бокала*] (* <- lang_ru;; *);;
+
+nrel_glass_volume<-rrel_key_sc_element:...
+(*
+<-definition;;=>nrel_main_idtf:[Опр.(объём бокала*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+(*
+->[Объём бокала - это велечина, которая показывает максимальную вместительность бокала](* <- lang_ru;; *);;
+*);;
+<=nrel_using_constants:...
+(*
+->concept_value;;->concept_traditional_glass;;
+*);;
+*);;
+
+nrel_glass_volume=>nrel_first_domain:concept_value;;
+nrel_glass_volume=>nrel_second_domain:concept_traditional_glass;;
+concept_value<-...
+(*
+	->concept_concept_traditional_glass;;
+	=>nrel_combination:...
+	(*
+		<=nrel_definitional_domain:nrel_glass_volume;;
+	*);;
+*);;
+
+nrel_glass_volume<-binary_relation;;
+parameter->arity;;
+arity->binary_relation;;
+binary_relation=>nrel_measurement:2;;
+2<-number;;
+
+nrel_glass_volume<-oriented_relation;;
+antisymmetric_relation->nrel_glass_volume;;
+antitransitive_relation->nrel_glass_volume;;
+antireflexive_relation->nrel_glass_volume;;
+binary_relation=>nrel_inclusion:antisymmetric_relation;;
+binary_relation=>nrel_inclusion:antitransitive_relation;;
+binary_relation=>nrel_inclusion:antireflexive_relation;;
+relation=>nrel_inclusion:binary_relation;;
+relation=>nrel_inclusion:oriented_relation;;
+
+
+nrel_glass_volume<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element: nrel_glass_volume;concept_drink;;
+	<-statement;;
+	=>nrel_idtf:[Утв.(Объём бокала*, напиток)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала вычисляется по объёму напитка, которого он в себя вмещает](* <- lang_ru;; *);;
+	*);;
+*);;
+

@@ -1,0 +1,30 @@
+sc_node_not_relation -> concept_cocktail;;
+
+concept_cocktail => nrel_main_idtf:
+[коктейль] (* <- lang_ru;; *);
+[cocktail] (* <- lang_en;; *);;
+
+concept_cocktail<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(коктейль)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Коктейль - напиток, получаемый смешиванием несколькоких компонентов.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_drink;;
+                ->concept_ingredients;;
+	*);;
+
+*);;
+
+concept_cocktail<=nrel_inclusion:concept_alcohol;;
+
+concept_aperitif<-...
+	(*
+		->concept_long_drink;;
+		->concept_digestiv;;
+		=>nrel_main_idtf:[Разбиение по предназначению](* <- lang_ru;; *);;
+		=>nrel_subdividing:concept_cocktail;;
+	*);;

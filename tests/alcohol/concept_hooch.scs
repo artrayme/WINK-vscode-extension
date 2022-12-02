@@ -1,0 +1,112 @@
+sc_node_not_relation -> concept_hooch;;
+concept_hooch=>nrel_idtf:[hooch] (* <- lang_en;; *);;
+concept_hooch=>nrel_main_idtf:[самагон] (* <- lang_ru;; *);;
+
+concept_hooch<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(самагон)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Самагон  — крепкий алкогольный напиток,изготовляемый в домашних условиях.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_strong_alcoholic_drink;;
+
+	*);;
+
+*);;
+
+
+concept_hooch<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//hooch.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_hooch<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_hooch;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, самагон)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : каждый раз разное содержание](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_hooch<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(самагон)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Традиционный бокал для самагона - Гранённый](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_faceted_glass;;
+                
+
+	
+	*);;
+*);;
+
+concept_hooch<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(самагон)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Традиционно самагон пьют когда уже ничего не осталось, и в "тихоря",потому что незаконно](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+
+	*);;
+
+*);;
+
+
+concept_hooch<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(самагон)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Самагон получают путём дистилляции браги или осахаренных зерновых, картофеля, свёклы или фруктов](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_corn;;
+                ->concept_braga;;
+                ->concept_potato;;
+                ->concept_beet;;
+                ->concept_fruit;;
+                ->nrel_distillation;;
+
+	*);;
+
+*);;
+
+concept_hooch<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(самагон)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок самагона- ИП"Дед"](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_hooch<=nrel_inclusion:concept_strong_alcoholic_drink;;

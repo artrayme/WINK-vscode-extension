@@ -1,0 +1,34 @@
+Adam
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Adam] (*<-de;;*);
+    [Адам] (*<-ru;;*);
+    [Адам] (*<-uk;;*);
+    [Adam] (*<-en;;*);
+    [Adam] (*<-fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Biblische Figur] (*<-de;;*);
+       [согласно Библии, первый человек на Земле] (*<-ru;;*);
+       [в Старому Заповіті перша людина, батько роду людського] (*<-uk;;*);
+       [first man according to the Abrahamic creation and religions such as Judaism, Christianity and Islam] (*<-en;;*);
+       [premier humain, selon la Bible et le Coran] (*<-fr;;*);;
+*);;
+
+//утверждение
+//<- rrel_key_sc_element: ... (*
+//    <- explanation;;
+//    => nrel_main_idtf:
+//      [Утв.(подлинник)] (* <- lang_ru;; *);;
+//	=> nrel_using_constants: {
+//		concept_thing
+//};;
+//<= nrel_sc_text_translation: ... (*
+//      -> rrel_example:
+//		[Подлинным считается все вещи, что сделаны не по образцу, не подражательно. Не снимок, не список, не подделка, а вещь налицо, как она сделана.](*<-lang_ru;; => nrel_format: format_html;;*);;
+//      *);;
+//*);;

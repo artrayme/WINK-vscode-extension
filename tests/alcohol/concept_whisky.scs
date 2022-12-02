@@ -1,0 +1,125 @@
+sc_node_not_relation -> concept_whiskey;;
+concept_whiskey=>nrel_idtf:[whiskey] (* <- lang_en;; *);;
+concept_whiskey=>nrel_main_idtf:[виски] (* <- lang_ru;; *);;
+
+concept_whiskey<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(виски)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Виски  — крепкий алкогольный напиток,производимый из различных видов зерна традиционно в регионах Ирландии.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_strong_alcoholic_drink;;
+                ->concept_corn;;
+
+	*);;
+
+*);;
+
+
+concept_whiskey<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//whiskey.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_whiskey<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_whiskey;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, виски)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 32-50 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_whiskey<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(виски)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Традиционный бокал для виски - Ноусинг](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_nosing;;
+                
+
+	
+	*);;
+*);;
+
+concept_whiskey<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(виски)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Традиционно виски пьют как аперетив или как дижестив.Пьют холодным](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+                ->concept_aperitif;;
+                ->concept_digestif;;
+
+	*);;
+
+*);;
+
+
+concept_whiskey<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(виски)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Виски получают из зерна при соложении,брожении ,дистилляции и хранения в дубовых бочках минимум в течении 3-50 лет ](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->nrel_malposition;;
+                ->concept_corn;;
+                ->nrel_fermentation;;
+                ->nrel_distillation;;
+
+	*);;
+
+*);;
+
+concept_whiskey<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(виски)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок виски- Pure Pot Still](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_whiskey<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//Pure Pot Still.jpeg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_whiskey<=nrel_inclusion:concept_strong_alcoholic_drink;;
+concept_whiskey <= nrel_national_dish: concept_ireland;;

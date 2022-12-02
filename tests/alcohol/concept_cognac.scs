@@ -1,0 +1,136 @@
+sc_node_not_relation -> concept_cognac;;
+concept_cognac=>nrel_idtf:[cognac] (* <- lang_en;; *);;
+concept_cognac=>nrel_main_idtf:[коньяк] (* <- lang_ru;; *);;
+
+concept_cognac<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(коньяк)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Коньяк  — крепкий алкогольный напиток ,производимый из определённых сортов винограда в регионе Франции.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_strong_alcoholic_drink;;
+                ->concept_grape;;
+
+	*);;
+
+*);;
+
+
+concept_cognac<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//cognac.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_cognac<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_cognac;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, коньяк)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 40-42  %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_cognac<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(коньяк)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Традиционный бокал для коньяка - снифтер](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_snifter;;
+                
+
+	
+	*);;
+*);;
+
+concept_cognac<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(коньяк)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Традиционно во Франции каньяк распивают с 3с - шоколад, кофе и сигара, в России с долькой лимона](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+                ->concept_chocolate;;
+                ->concept_lemon;;
+                ->concept_coffe;;
+
+	*);;
+
+*);;
+
+
+concept_cognac<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(коньяк)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Коньяк производят отжимая виноград,сок из него проходит стадию брожения,полученное вино дистиллируется и хранится в дубовых бочках минимум в течении 2 лет ](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->nrel_spin;;
+                ->concept_grape;;
+                ->nrel_fermentation;;
+                ->concept_juice;;
+                ->nrel_distillation;;
+                ->concept_wine;;
+
+	*);;
+
+*);;
+
+concept_cognac<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(коньяк)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок коньяка - Hennessy](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+                ->concept_chocolate;;
+                ->concept_lemon;;
+                ->concept_coffe;;
+
+	*);;
+
+*);;
+
+concept_cognac<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//hennessy.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_cognac<=nrel_inclusion:concept_grape_brandy;;
+concept_congnac <= nrel_national_dish: concept_france;;

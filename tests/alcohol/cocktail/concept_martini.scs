@@ -1,0 +1,57 @@
+sc_node_not_relation -> concept_martini;;
+
+concept_martini => nrel_main_idtf:
+[мартини] (* <- lang_ru;; *);
+[martini] (* <- lang_en;; *);;
+
+concept_martini<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(коктейль)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Мартини - аперетив на основе джина и вермута.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_aperitif;;
+		->concept_gin;;
+		->concept_wermut;;
+	*);;
+
+*);;
+
+
+
+concept_martini<-rrel_key_sc_element:...
+	(*
+	<-statement;;=>nrel_main_idtf:[Утв.(коктейл,рецепт*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:"file://html//martini recipe.html"(* <- lang_ru;; *);;
+	*);;
+
+
+*);;
+
+concept_martini<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//martini.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_martini<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_martini;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, мартини)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 11-13 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_martini<=nrel_inclusion:concept_aperitif;;

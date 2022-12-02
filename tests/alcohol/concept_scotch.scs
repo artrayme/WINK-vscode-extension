@@ -1,0 +1,102 @@
+sc_node_not_relation -> concept_scotch;;
+concept_scotch=>nrel_idtf:[scotch] (* <- lang_en;; *);;
+concept_scotch=>nrel_main_idtf:[скотч] (* <- lang_ru;; *);;
+
+concept_scotch<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(скотч)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Скотч — крепкий алкогольный напиток,производимый в регионах Шотландии.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_strong_alcoholic_drink;;
+
+	*);;
+
+*);;
+
+
+concept_scotch<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//scotch.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_scotch<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_scotch;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, скотч)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 31-62 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_scotch<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(скотч)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Традиционный бокал для скотча - Квейк](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_quake;;
+                
+
+	
+	*);;
+*);;
+
+concept_scotch<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(скотч)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Традиционно скотч пьют как аперетив или как дижестив.Пьют холодным](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+                ->concept_aperitif;;
+                ->concept_digestif;;
+
+	*);;
+
+*);;
+
+
+concept_scotch<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(скотч)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Скотч получают из зерна при соложении,брожении ,дистилляции и хранения в дубовых бочках минимум в течении 3-50 лет ](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->nrel_malposition;;
+                ->concept_corn;;
+                ->nrel_fermentation;;
+                ->nrel_distillation;;
+
+	*);;
+
+*);;
+
+concept_scotch<=nrel_inclusion:concept_strong_alcoholic_drink;;
+concept_scotch<= nrel_national_dish: concept_scotland;;

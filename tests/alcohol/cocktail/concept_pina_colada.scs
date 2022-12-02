@@ -1,0 +1,58 @@
+sc_node_not_relation -> concept_pina_colada;;
+
+concept_pina_colada => nrel_main_idtf:
+[пина колада] (* <- lang_ru;; *);
+[pina colada] (* <- lang_en;; *);;
+
+concept_pina_colada<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(пина колада)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Пина колада - лонг дринк на основе рома, кокосового молока и ананасового сока.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_long_drink;;
+		->concept_rum;;
+		->concept_coconut_milk;;
+		->concept_pineapple_juice;;
+	*);;
+
+*);;
+
+
+
+concept_pina_colada<-rrel_key_sc_element:...
+	(*
+	<-statement;;=>nrel_main_idtf:[Утв.(пина колада,рецепт*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:"file://html//pina colada recipe.html"(* <- lang_ru;; *);;
+	*);;
+
+
+*);;
+
+concept_pina_colada<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//pina colada.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_pina_colada<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_pina_colada;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, пина колада)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 20 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_pina_colada<=nrel_inclusion:concept_long_drink;;

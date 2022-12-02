@@ -1,0 +1,42 @@
+concept_faceted_glass=>nrel_idtf:[faceted glass] (* <- lang_en;; *);;
+concept_faceted_glass=>nrel_main_idtf:[гранёный стакан] (* <- lang_ru;; *);;
+
+concept_faceted_glass<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(гранёный стакан)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Гранёный стакан- классический стакан цилиндрической формы с 16-гранями](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+
+	*);;
+
+*);;
+
+
+concept_faceted_glass<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//faceted glass.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_faceted_glass<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_faceted_glass;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, гранёный стакан)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём бокала : 250  мл](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_faceted_glass<=nrel_inclusion:concept_traditional_glass;;

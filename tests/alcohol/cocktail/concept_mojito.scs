@@ -1,0 +1,57 @@
+sc_node_not_relation -> concept_mojito;;
+
+concept_martini => nrel_main_idtf:
+[мохито] (* <- lang_ru;; *);
+[mojito] (* <- lang_en;; *);;
+
+concept_mojito<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(мохито)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Мохито - лонг дринк на основе рома и мяты.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_long_drink;;
+		->concept_rum;;
+		->concept_mint;;
+	*);;
+
+*);;
+
+
+
+concept_mojito<-rrel_key_sc_element:...
+	(*
+	<-statement;;=>nrel_main_idtf:[Утв.(мохито,рецепт*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:"file://html//mojito recipe.html"(* <- lang_ru;; *);;
+	*);;
+
+
+*);;
+
+concept_mojito<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//mojito.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_mojito<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_mojito;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, мохито)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 10,5 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+concept_mojito<=nrel_inclusion:concept_long_drink;;

@@ -1,0 +1,124 @@
+sc_node_not_relation -> concept_rum;;
+concept_rum=>nrel_idtf:[rum] (* <- lang_en;; *);;
+concept_rum=>nrel_main_idtf:[ром] (* <- lang_ru;; *);;
+
+concept_rom<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(ром)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Виски  — крепкий алкогольный напиток,производимый путём брожения и дистиллирования побочных продуктов сахарного тростника.](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_sugar_cane;;
+		->concept_strong_alcoholic_drink;;
+                ->nrel_distillation;;
+                ->nrel_fermentation;;
+
+	*);;
+
+*);;
+
+
+concept_rum<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//rom.jpeg"
+			(*
+		=>nrel_format:format_jpeg;;
+		*);;
+	*);;
+*);;
+
+concept_rum<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_beverage_strength;concept_rom;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Крепкость напитка*, ром)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Процент содержания алкоголя : 40-50 %](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+concept_rum<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(ром)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Традиционный бокал для коньяка - Тюльпан](* <- lang_ru;; *);;
+                 *);;
+                 
+         <=nrel_using_constants:...
+	(*
+              
+                ->concept_traditional_glass;;
+                ->concept_tulip;;
+                
+
+	
+	*);;
+*);;
+
+concept_rum<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(ром)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Ром пьют,закусывая апельсином, посыпанным молотой корицей. Так же его часто добавляют в коктейли](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_drinking_tradition;;
+                ->concept_orange;;
+                ->concept_cinnamon;;
+                ->concept_cocktail;;
+	*);;
+
+*);;
+
+
+concept_rum<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(ром)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Ром пираты использовали для обеззараживания воды, но так же для приятного времяпрепровождения](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+                ->concept_water;;
+
+	*);;
+
+*);;
+
+concept_whiskey<-rrel_key_sc_element:...
+(*
+	=>nrel_main_idtf:[Утв.(ром)](* <- lang_ru;; *);;
+        <=nrel_sc_text_translation:...
+	(*
+        ->rrel_example:[Одна из самых известных марок виски- Дж. Рей и племянник](* <- lang_ru;; *);;
+	*);;
+	
+
+*);;
+
+concept_rum<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//famous//Dj Rei.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+concept_rum<=nrel_inclusion:concept_strong_alcoholic_drink;;
+concept_rum <= nrel_national_dish: concept_barbados;;

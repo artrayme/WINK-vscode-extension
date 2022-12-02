@@ -1,0 +1,23 @@
+sc_node_not_relation -> concept_strong_alcoholic_drink;;
+
+concept_strong_alcoholic_drink => nrel_main_idtf:
+[крепкий алкогольный напиток] (* <- lang_ru;; *);
+[strong alcoholic drink] (* <- lang_en;; *);;
+
+concept_strong_alcoholic_drink<-rrel_key_sc_element:...
+	(*
+	<-definition;;=>nrel_main_idtf:[Опр.(крепкий алкогольный напиток)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+	(*
+        ->[Крепкие алкогольные напитки - это алкогольные напитки с содержанием спирта более 40 градусов](* <- lang_ru;; *);;
+	*);;
+	
+	<=nrel_using_constants:...
+	(*
+		->concept_alcohol;;
+                ->concept_value;;
+                ->nrel_beverage_strength;;
+	*);;
+
+*);;
+
+concept_strong_alcoholic_drink<=nrel_inclusion:concept_alcohol;;

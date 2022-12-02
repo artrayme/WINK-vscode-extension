@@ -1,0 +1,42 @@
+concept_syuks=>nrel_idtf:[syuk] (* <- lang_en;; *);;
+concept_syuk=>nrel_main_idtf:[сюки] (* <- lang_ru;; *);;
+
+concept_syuk<-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:[Опр.(сюки)] (* <- lang_ru;; *);;
+		<=nrel_sc_text_translation:...
+	(*
+        ->[Сюки - традиционный набор для саке](* <- lang_ru;; *);;
+	*);;
+
+	<=nrel_using_constants:...
+	(*
+		->concept_traditional_glass;;
+                ->concept_sake;;
+	*);;
+
+*);;
+
+concept_syuk<-rrel_key_sc_element:...
+	(*
+		<-illustration;;<=nrel_sc_text_translation:...
+			(*
+			    ->rrel_example: "file://photo//syuk.jpg"
+			(*
+		=>nrel_format:format_jpg;;
+		*);;
+	*);;
+*);;
+
+
+concept_syuk<-rrel_key_sc_element:...
+(*
+	->rrel_key_sc_element:nrel_glass_volume;concept_syuk;;
+	<-statement;;
+	=>nrel_main_idtf:[Утв.(Объём бокала*, сюки)](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Объём чашки : 40  мл](* <- lang_ru;; *);;
+	*);;
+*);;
