@@ -7,6 +7,7 @@ import * as path from 'path';
 import * as vscode from 'vscode';
 import {ExtensionContext, workspace} from 'vscode';
 import {ScsLoader} from './ScsLoader';
+import { ConnectionManager } from './ConnectionManager';
 
 import {LanguageClient, LanguageClientOptions, ServerOptions, TransportKind} from 'vscode-languageclient';
 import {SearcherByTemplate} from "./SearcherByTemplate";
@@ -15,6 +16,7 @@ import {genScs} from './ScsGenerator';
 let client: LanguageClient;
 const scsLoader = new ScsLoader();
 const scsSearcher = new SearcherByTemplate();
+let scMachineUrl = "ws://localhost:8090";
 
 export async function activate(context: ExtensionContext) {
     // The server is implemented in node
@@ -46,6 +48,22 @@ export async function activate(context: ExtensionContext) {
     );
 
     client.start();
+    let conn = new ConnectionManager();
+    conn.connect(scMachineUrl);
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.connect', async () => {
+            scMachineUrl = await vscode.window.showInputBox({placeHolder: "Enter sc-web url."});
+            conn.connect(scMachineUrl);
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.disconnect', async () => {
+            conn.disconnect();
+            vscode.window.showInformationMessage("You're now disconnected from sc-machine.")
+        })
+    );
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.upload', async () => {
@@ -155,7 +173,6 @@ export async function activate(context: ExtensionContext) {
             }
         })
     );
-
     //new Map([[`human`, `en`], [`Sport`, `en`]]),
 
     context.subscriptions.push(

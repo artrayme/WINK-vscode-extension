@@ -67,6 +67,16 @@
     },
     "commands": [
       {
+        "command": "scs.connect",
+        "title": "Connect to the running sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.disconnect",
+        "title": "Disconnect from the connected sc-machine",
+        "category": "SCs"
+      },
+      {
         "command": "scs.upload",
         "title": "Save current SCs to the connected sc-machine",
         "category": "SCs"
