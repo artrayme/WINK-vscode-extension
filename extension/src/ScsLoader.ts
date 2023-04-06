@@ -6,10 +6,11 @@ import {convertOldGwfToNew} from "./Old2NewScgConverter";
 import {convertGwfToScs} from "./Scg2ScsConverterOld";
 // import {convertGwfToScs} from "./Scg2ScsConverter";
 
-const scClient = new ScClient('ws://localhost:8090');
-
 export class ScsLoader {
     loadedScs: Map<vscode.Uri, { id: string; text: string }> = new Map;
+    scClient: ScClient;
+
+    constructor(client: ScClient) { this.scClient = client; }
 
     async loadScs(filenames: vscode.Uri[]): Promise<string[]> {
         const result: string[] = [];
@@ -26,7 +27,7 @@ export class ScsLoader {
             } else {
                 preparedScs = this.wrapScs(doc.getText());
             }
-            const isCreated = await scClient.createElementsBySCs([preparedScs.text]);
+            const isCreated = await this.scClient.createElementsBySCs([preparedScs.text]);
 
             if (isCreated) {
                 vscode.window.showInformationMessage(doc.fileName);
@@ -51,12 +52,12 @@ export class ScsLoader {
         for (const filename of filenames) {
             if (this.loadedScs.has(filename)) {
                 const contourNodeIdtf = this.loadedScs.get(filename).id;
-                const contourAddr = (await scClient.resolveKeynodes([{
+                const contourAddr = (await this.scClient.resolveKeynodes([{
                     id: contourNodeIdtf,
                     type: ScType.Node
                 }]))[contourNodeIdtf];
                 const foundAddrs = await this.findElementsInContour(contourAddr);
-                await scClient.deleteElements(Array.from(foundAddrs).map(e => new ScAddr(e)));
+                await this.scClient.deleteElements(Array.from(foundAddrs).map(e => new ScAddr(e)));
                 if (foundAddrs.size > 0) result.push({idtf: contourNodeIdtf, errorMsg: ""});
                 else result.push({
                     idtf: "",
@@ -76,13 +77,13 @@ export class ScsLoader {
         const allIdtfs = this.loadedScs.values();
         const foundAddrs = new Set<number>();
         for (const scsIdtf of allIdtfs) {
-            const contourAddr = (await scClient.resolveKeynodes([{id: scsIdtf.id, type: ScType.Node}]))[scsIdtf.id];
+            const contourAddr = (await this.scClient.resolveKeynodes([{id: scsIdtf.id, type: ScType.Node}]))[scsIdtf.id];
             const temp = await this.findElementsInContour(contourAddr);
             temp.forEach(element => {
                 foundAddrs.add(element);
             });
         }
-        await scClient.deleteElements(Array.from(foundAddrs).map(e => new ScAddr(e)));
+        await this.scClient.deleteElements(Array.from(foundAddrs).map(e => new ScAddr(e)));
         return foundAddrs;
     }
 
@@ -109,7 +110,7 @@ export class ScsLoader {
         const foundAddrs = new Set<number>();
         const found = [];
         for (const template of templates) {
-            found.push(await scClient.templateSearch(template));
+            found.push(await this.scClient.templateSearch(template));
         }
         found.reduce((prev, current) => prev.concat(current))
             .forEach(triplet => triplet.forEachTriple((addr1, addr2, addr3) => {

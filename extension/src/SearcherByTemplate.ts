@@ -4,16 +4,20 @@ import {createTechnicalWinkId} from "./Utils";
 // import {convertGwfToScs} from "./Scg2ScsConverterOld";
 // import {convertGwfToScs} from "./Scg2ScsConverter";
 
-const scClient = new ScClient('ws://localhost:8090');
+// const scClient = new ScClient('ws://localhost:8090');
 
 export class SearcherByTemplate {
+    scClient: ScClient;
+
+    constructor(client: ScClient) { this.scClient = client; }
+
     async findByScsTemplate(scsTemplate: string): Promise<string> {
         const structWinkIdtf = createTechnicalWinkId();
-        const searchingResults = await scClient.templateSearch(scsTemplate);
+        const searchingResults = await this.scClient.templateSearch(scsTemplate);
         const uniqNodes = new Set<number>();
         searchingResults.forEach(e => e.forEachTriple(n => uniqNodes.add(n.value)));
 
-        const structNode = (await scClient.resolveKeynodes([{id: structWinkIdtf, type: ScType.NodeStruct}]))[0];
+        const structNode = (await this.scClient.resolveKeynodes([{id: structWinkIdtf, type: ScType.NodeStruct}]))[0];
         const construction = new ScConstruction();
 
         uniqNodes.forEach(node => {
@@ -24,7 +28,7 @@ export class SearcherByTemplate {
             );
         });
 
-        await scClient.createElements(construction);
+        await this.scClient.createElements(construction);
         return structWinkIdtf;
     }
 }

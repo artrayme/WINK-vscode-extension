@@ -14,9 +14,9 @@ import {SearcherByTemplate} from "./SearcherByTemplate";
 import {genScs} from './ScsGenerator';
 
 let client: LanguageClient;
-const scsLoader = new ScsLoader();
-const scsSearcher = new SearcherByTemplate();
 let scMachineUrl = "ws://localhost:8090";
+let scsLoader: ScsLoader;
+let scsSearcher: SearcherByTemplate;
 
 export async function activate(context: ExtensionContext) {
     // The server is implemented in node
@@ -49,24 +49,35 @@ export async function activate(context: ExtensionContext) {
 
     client.start();
     let conn = new ConnectionManager();
-    conn.connect(scMachineUrl);
+    await conn.connect(scMachineUrl);
+    scsLoader = new ScsLoader(conn.client);
+    scsSearcher = new SearcherByTemplate(conn.client);
+
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.connect', async () => {
             scMachineUrl = await vscode.window.showInputBox({placeHolder: "Enter sc-web url."});
-            conn.connect(scMachineUrl);
+            await conn.connect(scMachineUrl);
+            scsLoader.scClient = conn.client;
+            scsSearcher.scClient = conn.client;
         })
     );
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.disconnect', async () => {
             conn.disconnect();
+            scsLoader.scClient = undefined;
+            scsSearcher.scClient = undefined;
             vscode.window.showInformationMessage("You're now disconnected from sc-machine.")
         })
     );
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.upload', async () => {
+            if (conn.client == undefined) {
+                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+                return;
+            }
             // Create and show a new webview
             const panel = vscode.window.createWebviewPanel(
                 'scsLoad', // Identifies the type of the webview. Used internally
@@ -92,6 +103,10 @@ export async function activate(context: ExtensionContext) {
     );
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.uploadAll', async () => {
+            if (conn.client == undefined) {
+                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+                return;
+            }
             // Create and show a new webview
             const panel = vscode.window.createWebviewPanel(
                 'scsLoad', // Identifies the type of the webview. Used internally
@@ -117,6 +132,10 @@ export async function activate(context: ExtensionContext) {
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.unload', async () => {
+            if (conn.client == undefined) {
+                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+                return;
+            }
             const editor = vscode.window.activeTextEditor;
             if (editor) {
                 const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
@@ -138,6 +157,10 @@ export async function activate(context: ExtensionContext) {
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.unloadAll', async () => {
+            if (conn.client == undefined) {
+                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+                return;
+            }
             const allProjectDocuments = vscode.workspace.textDocuments.map(document => document.uri);
             if (allProjectDocuments) {
                 const unloadedScs = (await scsLoader.unloadAll());
@@ -152,6 +175,10 @@ export async function activate(context: ExtensionContext) {
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.findByTemplate', async () => {
+            if (conn.client == undefined) {
+                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+                return;
+            }
             // Create and show a new webview
             const panel = vscode.window.createWebviewPanel(
                 'scsFind', // Identifies the type of the webview. Used internally
