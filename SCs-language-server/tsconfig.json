@@ -2,13 +2,15 @@
 	"compilerOptions": {
 		"target": "es6",
 		"lib": ["es6"],
-		"module": "commonjs",
 		"moduleResolution": "node",
 		"sourceMap": true,
 		"strict": true,
 		"outDir": "out",
 		"rootDir": "src",
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"allowJs": true,
+		"declaration": true,
+		"declarationMap": true,
 	},
 	"include": ["src"],
 	"exclude": ["node_modules"]

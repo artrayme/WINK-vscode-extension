@@ -1,13 +1,11 @@
 'use strict';
 
 import * as vs from 'vscode-languageserver';
-
-import { ANTLRInputStream, CommonTokenStream, ParserErrorListener } from 'antlr4ts';
-
-import { makeUri } from './scsUtils';
+import { CharStreams, CommonTokenStream, ErrorListener } from 'antlr4';
+import { makeUri } from './scsUtils.js';
 import { RemoteConsole } from 'vscode-languageserver';
-import { scsLexer } from './parser/scsLexer';
-import { scsParser } from './parser/scsParser';
+import scsLexer from './syntax/scsLexer.js';
+import scsParser from './syntax/scsParser.js';
 
 interface ParseError {
     line: number,
@@ -165,11 +163,11 @@ export class SCsParsedData
 
         try {
 
-            const chars = new ANTLRInputStream(docText);
+            const chars = CharStreams.fromString(docText);
             const lexer = new scsLexer(chars);
             const tokens  = new CommonTokenStream(lexer);
             const parser = new scsParser(tokens);
-            parser.buildParseTree = false;
+            parser.buildParseTrees = false;
 
             // parser.docUri = docUri;
             // parser.parsedData = this;
@@ -179,7 +177,7 @@ export class SCsParsedData
             // }));
 
             const tree = parser.syntax();
-
+            this.console.log(tree.getText())
         } catch (e: any) {
             this.console.log(e.stack);
         }

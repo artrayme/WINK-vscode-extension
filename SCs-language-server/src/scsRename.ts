@@ -1,7 +1,7 @@
 import * as vs from 'vscode-languageserver';
 
-import { SCsParsedData } from './scsParsedData';
-import { getCurrentWord } from './scsUtils';
+import { SCsParsedData } from './scsParsedData.js';
+import { getCurrentWord } from './scsUtils.js';
 
 export class SCsRename {
     private parsedData: SCsParsedData;

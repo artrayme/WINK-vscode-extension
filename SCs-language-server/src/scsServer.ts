@@ -1,8 +1,8 @@
 'use strict';
 
 import * as vs from 'vscode-languageserver';
-import { SCsSession } from './scsSession';
-import { getFilesInDirectory, getFileContent, normalizeFilePath } from './scsUtils';
+import { SCsSession } from './scsSession.js';
+import { getFilesInDirectory, getFileContent, normalizeFilePath } from './scsUtils.js';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport
 const connection: vs.IConnection = vs.createConnection(new vs.IPCMessageReader(process), new vs.IPCMessageWriter(process));
