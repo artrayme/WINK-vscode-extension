@@ -1,12 +1,11 @@
 import * as vs from 'vscode-languageserver';
 
-import { SCsHoverProvider } from './scsHovers';
-import { SCsCompletionItemProvider } from './scsCompletion';
-import { SCsReferenceProvider } from './scsReferences';
-import { SCsDocumentHighlight } from './scsHighlight';
-import { SCsRename } from './scsRename';
-
-import { SCsParsedData } from './scsParsedData';
+import { SCsHoverProvider } from './scsHovers.js';
+import { SCsCompletionItemProvider } from './scsCompletion.js';
+import { SCsReferenceProvider } from './scsReferences.js';
+import { SCsDocumentHighlight } from './scsHighlight.js';
+import { SCsRename } from './scsRename.js';
+import { SCsParsedData } from './scsParsedData.js';
 
 // After the server has started the client sends an initialize request. The server receives
 // in the passed params the rootPath of the workspace plus the client capabilities. 

@@ -2,8 +2,8 @@
 
 import * as vs from 'vscode-languageserver';
 
-import { scsDetails } from './scsData';
-import { getCurrentWord } from './scsUtils';
+import { scsDetails } from './scsData.js';
+import { getCurrentWord } from './scsUtils.js';
 
 export class SCsHoverProvider {
     public provide(document: vs.TextDocument | undefined,
