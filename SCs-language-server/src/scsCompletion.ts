@@ -1,9 +1,9 @@
 'use strict';
 
 import * as vs from 'vscode-languageserver';
-import { getCurrentPrefix } from './scsUtils';
-import { scsKeywords, scsDetails } from './scsData';
-import { SCsParsedData } from './scsParsedData';
+import { getCurrentPrefix } from './scsUtils.js';
+import { scsKeywords, scsDetails } from './scsData.js';
+import { SCsParsedData } from './scsParsedData.js';
 
 enum CompletionItemType {
     Keyword,
