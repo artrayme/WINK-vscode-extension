@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es2016",
-		"lib": ["es2016", "dom"],
+		"module": "CommonJS",
+		"target": "ES2021",
+		"lib": ["ES2021", "dom"],
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
 		"noUnusedLocals": true,
@@ -11,11 +11,17 @@
 		"rootDir": "src",
 		"sourceMap": true,
 		"esModuleInterop": true,
-		"allowJs": true
+		"allowJs": true,
+		"moduleResolution":"node",
+		"skipLibCheck": true
 	},
 	"include": ["src",
 		"src/Scg2ScsConverter.ts",
 		"./src/Old2NewScgConverter.js"
 	],
-	"exclude": ["node_modules"]
+	"exclude": [
+		"node_modules",
+		"./node_modules/*",
+		"**/*.spec.*"
+	  ]
 }

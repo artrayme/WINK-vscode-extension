@@ -8,7 +8,7 @@
 		"type": "git",
 		"url": "https://github.com/artrayme/WINK-vscode-extension"
 	},
-	"publisher": "vscode-samples",
+	"publisher": "artrayme",
 	"categories": [],
 	"keywords": [
 		"multi-root ready"
@@ -95,11 +95,16 @@
 				"command": "scs.gwf2scs",
 				"title": "Convert GWF file to SCs",
 				"category": "SCs"
+			},
+			{
+				"command": "scs.genScs",
+				"title": "Generate Scs by entity name",
+				"category": "SCs"
 			}
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "cd extension && npm run update-vscode && cd .. && npm run compile",
+		"vscode:prepublish": "npm run compile",
 		"compile:client": "tsc -p ./extension/tsconfig.json",
 		"compile:server": "cd ./SCs-language-server && npm run compile",
 		"watch:client": "tsc -w -p ./extension/tsconfig.json",
@@ -110,13 +115,13 @@
 		"test": "sh ./scripts/e2e.sh"
 	},
 	"devDependencies": {
-		"@types/mocha": "^5.2.0",
-		"@types/node": "^16.11.7",
-		"@types/ws": "^8.5.3",
-		"@typescript-eslint/eslint-plugin": "^5.30.0",
-		"@typescript-eslint/parser": "^5.30.0",
-		"eslint": "^8.13.0",
-		"typescript": "^4.7.7"
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^18.15.11",
+		"@types/ws": "^8.5.4",
+		"@typescript-eslint/eslint-plugin": "^5.58.0",
+		"@typescript-eslint/parser": "^5.58.0",
+		"eslint": "^8.38.0",
+		"typescript": "^4.9.4"
 	},
 	"dependencies": {
 		"@types/websocket": "^1.0.5",
