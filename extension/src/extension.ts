@@ -10,7 +10,7 @@ import {ScsLoader} from './ScsLoader';
 
 import {LanguageClient, LanguageClientOptions, ServerOptions, TransportKind} from 'vscode-languageclient';
 import {SearcherByTemplate} from "./SearcherByTemplate";
-import { genScs } from './ScsGenerator';
+import {genScs} from './ScsGenerator';
 
 let client: LanguageClient;
 const scsLoader = new ScsLoader();
@@ -163,8 +163,7 @@ export async function activate(context: ExtensionContext) {
             const entityName = await vscode.window.showInputBox({
                 title: "Gen SCs by entity name",
                 prompt: "qwe"
-              });
-            entityName
+            });
             const generationResults = await genScs(new Map([[entityName, `en`]]))
             const wsEdit = new vscode.WorkspaceEdit();
             const wsPath = vscode.workspace.workspaceFolders[0].uri.fsPath; // gets the path of the first workspace folder
@@ -173,23 +172,23 @@ export async function activate(context: ExtensionContext) {
             const relationsFolder = (wsPath + '/relations/');
             const instancesFolder = (wsPath + '/instances/');
 
-            for(const [scs, filename] of  generationResults.concepts){
+            for (const [filename, scs] of generationResults.concepts) {
                 const fullFileUri = vscode.Uri.file(conceptsFolder + filename + '.scs')
-                wsEdit.createFile(fullFileUri, { ignoreIfExists: true });
+                wsEdit.createFile(fullFileUri, {ignoreIfExists: true});
                 const writeData = Buffer.from(scs, 'utf8');
                 await vscode.workspace.fs.writeFile(fullFileUri, writeData);
             }
 
-            for(const [scs, filename] of  generationResults.relations){
+            for (const [filename, scs] of generationResults.relations) {
                 const fullFileUri = vscode.Uri.file(relationsFolder + filename + '.scs')
-                wsEdit.createFile(fullFileUri, { ignoreIfExists: true });
+                wsEdit.createFile(fullFileUri, {ignoreIfExists: true});
                 const writeData = Buffer.from(scs, 'utf8');
                 await vscode.workspace.fs.writeFile(fullFileUri, writeData);
             }
 
-            for(const [scs, filename] of  generationResults.instances){
+            for (const [filename, scs] of generationResults.instances) {
                 const fullFileUri = vscode.Uri.file(instancesFolder + filename + '.scs')
-                wsEdit.createFile(fullFileUri, { ignoreIfExists: true });
+                wsEdit.createFile(fullFileUri, {ignoreIfExists: true});
                 const writeData = Buffer.from(scs, 'utf8');
                 await vscode.workspace.fs.writeFile(fullFileUri, writeData);
             }
