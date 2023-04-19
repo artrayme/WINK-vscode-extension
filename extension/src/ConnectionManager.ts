@@ -10,11 +10,16 @@ export enum HealthcheckStatus {
 export class ConnectionManager {
     client: ScClient;
     status: HealthcheckStatus;
+    protected _statusBarItem: vscode.StatusBarItem;
 
     constructor() {
         this.client = undefined;
         this.status = undefined;
+        this._statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+        this._statusBarItem.command = "scs.connect";
     }
+
+    get statusBarItem() { return this._statusBarItem; }
 
     async connect(url: string) {
         await this.disconnect();
@@ -23,12 +28,17 @@ export class ConnectionManager {
         if (this.status == HealthcheckStatus.OK) {
             this.client = new ScClient(url);
             vscode.window.showInformationMessage('Connection with sc-server established successfully.');
+            this.statusBarItem.text = url;
+        } else {
+            this._statusBarItem.text = "Disconnected";
         }
+        this.statusBarItem.show();
     }
 
     async disconnect() {
         this.client = undefined;
         this.status = undefined;
+        this._statusBarItem.text = "Disconnected";
     }
 
     async test(url: string) {

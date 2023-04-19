@@ -7,7 +7,7 @@ import * as path from 'path';
 import * as vscode from 'vscode';
 import {ExtensionContext, workspace} from 'vscode';
 import {ScsLoader} from './ScsLoader';
-import {ConnectionManager, HealthcheckStatus} from './ConnectionManager';
+import {ConnectionManager} from './ConnectionManager';
 
 import {LanguageClient, LanguageClientOptions, ServerOptions, TransportKind} from 'vscode-languageclient';
 import {SearcherByTemplate} from "./SearcherByTemplate";
@@ -52,13 +52,7 @@ export async function activate(context: ExtensionContext) {
     await conn.connect(scMachineUrl);
     scsLoader = new ScsLoader(conn.client);
     scsSearcher = new SearcherByTemplate(conn.client);
-
-    let StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-    StatusBarItem.command = "scs.connect";
-    if (conn.status == HealthcheckStatus.OK) StatusBarItem.text = scMachineUrl;
-    else StatusBarItem.text = "Disconnected";
-    context.subscriptions.push(StatusBarItem);
-    StatusBarItem.show();
+    context.subscriptions.push(conn.statusBarItem);
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.connect', async () => {
@@ -66,8 +60,6 @@ export async function activate(context: ExtensionContext) {
                 placeHolder: "Enter sc-machine url. For example, ws://localhost:8090"
             });
             await conn.connect(scMachineUrl);
-            if (conn.status == HealthcheckStatus.OK) StatusBarItem.text = scMachineUrl;
-            else StatusBarItem.text = "Disconnected";
             scsLoader.scClient = conn.client;
             scsSearcher.scClient = conn.client;
         })
@@ -75,7 +67,6 @@ export async function activate(context: ExtensionContext) {
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.disconnect', async () => {
-            StatusBarItem.text = "Disconnected";
             conn.disconnect();
             scsLoader.scClient = undefined;
             scsSearcher.scClient = undefined;
