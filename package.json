@@ -1,130 +1,142 @@
 {
-	"name": "wink-vscode-extension",
-	"description": "Extension for SCs language support",
-	"author": "Microsoft Corporation",
-	"license": "MIT",
-	"version": "1.0.0",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/artrayme/WINK-vscode-extension"
-	},
-	"publisher": "artrayme",
-	"categories": [],
-	"keywords": [
-		"multi-root ready"
-	],
-	"engines": {
-		"vscode": "^1.67.0"
-	},
-	"activationEvents": [
-		"onLanguage:scs",
-		"onLanguage:gwf"
-	],
-	"main": "./extension/out/extension",
-	"contributes": {
-		"languages": [
-			{
-				"id": "scs",
-				"aliases": [
-					"scs",
-					"gwf",
-					"scsi"
-				],
-				"extensions": [
-					".scs",
-					".gwf",
-					".scsi"
-				],
-				"configuration": "./language-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "scs",
-				"scopeName": "source.scs",
-				"path": "./syntaxes/scs.tmLanguage.json"
-			}
-		],
-		"snippets": [
-			{
-				"language": "scs",
-				"path": "./snippets/scs.json"
-			}
-		],
-		"configurationDefaults": {
-			"[scs]": {
-				"editor.quickSuggestions": {
-					"other": true,
-					"comments": false,
-					"strings": false
-				},
-				"editor.tabSize": 4,
-				"editor.insertSpaces": true,
-				"editor.detectIndentation": true,
-				"editor.trimAutoWhitespace": true,
-				"editor.autoClosingBrackets": "beforeWhitespace"
-			}
-		},
-		"commands": [
-			{
-				"command": "scs.upload",
-				"title": "Save current SCs to the connected sc-machine",
-				"category": "SCs"
-			},
-			{
-				"command": "scs.unload",
-				"title": "Delete current SCs from the connected sc-machine",
-				"category": "SCs"
-			},
-			{
-				"command": "scs.uploadAll",
-				"title": "Save all SCs files from the open project in sc-machine",
-				"category": "SCs"
-			},
-			{
-				"command": "scs.unloadAll",
-				"title": "Delete all SCs from the connected sc-machine",
-				"category": "SCs"
-			},
-			{
-				"command": "scs.findByTemplate",
-				"title": "Find all constructions by scs-template",
-				"category": "SCs"
-			},
-			{
-				"command": "scs.gwf2scs",
-				"title": "Convert GWF file to SCs",
-				"category": "SCs"
-			},
-			{
-				"command": "scs.genScs",
-				"title": "Generate Scs by entity name",
-				"category": "SCs"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile:client": "tsc -p ./extension/tsconfig.json",
-		"compile:server": "cd ./SCs-language-server && npm run compile",
-		"watch:client": "tsc -w -p ./extension/tsconfig.json",
-		"watch:server": "tsc -w -p ./SCs-language-server/tsconfig.json",
-		"compile": "npm run compile:client && npm run compile:server",
-		"lint": "eslint ./extension/src ./SCs-language-server/src --ext .ts,.tsx",
-		"postinstall": "cd extension && npm install && cd ../SCs-language-server && npm install && cd ..",
-		"test": "sh ./scripts/e2e.sh"
-	},
-	"devDependencies": {
-		"@types/mocha": "^10.0.1",
-		"@types/node": "^18.15.11",
-		"@types/ws": "^8.5.4",
-		"@typescript-eslint/eslint-plugin": "^5.58.0",
-		"@typescript-eslint/parser": "^5.58.0",
-		"eslint": "^8.38.0",
-		"typescript": "^4.9.4"
-	},
-	"dependencies": {
-		"@types/websocket": "^1.0.5",
-		"dom-parser": "^0.1.6"
-	}
+  "name": "wink-vscode-extension",
+  "description": "Extension for SCs language support",
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artrayme/WINK-vscode-extension"
+  },
+  "publisher": "artrayme",
+  "categories": [],
+  "keywords": [
+    "multi-root ready"
+  ],
+  "engines": {
+	  "vscode": "^1.67.0"
+  },
+  "activationEvents": [
+	  "onLanguage:scs",
+	  "onLanguage:gwf"
+  ],
+  "main": "./extension/out/extension",
+  "contributes": {
+	  "languages": [
+      {
+        "id": "scs",
+        "aliases": [
+          "scs",
+          "gwf",
+          "scsi"
+        ],
+        "extensions": [
+          ".scs",
+          ".gwf",
+          ".scsi"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+	  ],
+    "grammars": [
+      {
+        "language": "scs",
+        "scopeName": "source.scs",
+        "path": "./syntaxes/scs.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "scs",
+        "path": "./snippets/scs.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[scs]": {
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": false,
+          "strings": false
+        },
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": true,
+        "editor.trimAutoWhitespace": true,
+        "editor.autoClosingBrackets": "beforeWhitespace"
+      }
+    },
+    "commands": [
+      {
+        "command": "scs.connect",
+        "title": "Connect to the running sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.disconnect",
+        "title": "Disconnect from the connected sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.upload",
+        "title": "Save current SCs to the connected sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.unload",
+        "title": "Delete current SCs from the connected sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.uploadAll",
+        "title": "Save all SCs files from the open project in sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.unloadAll",
+        "title": "Delete all SCs from the connected sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.findByTemplate",
+        "title": "Find all constructions by scs-template",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.gwf2scs",
+        "title": "Convert GWF file to SCs",
+        "category": "SCs"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "scs.upload",
+        "key": "f5",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "cd extension && npm run update-vscode && cd .. && npm run compile",
+    "compile:client": "tsc -p ./extension/tsconfig.json",
+    "compile:server": "cd ./SCs-language-server && npm run compile",
+    "watch:client": "tsc -w -p ./extension/tsconfig.json",
+    "watch:server": "tsc -w -p ./SCs-language-server/tsconfig.json",
+    "compile": "npm run compile:client && npm run compile:server",
+    "lint": "eslint ./extension/src ./SCs-language-server/src --ext .ts,.tsx",
+    "postinstall": "cd extension && npm install && cd ../SCs-language-server && npm install && cd ..",
+    "test": "sh ./scripts/e2e.sh"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^16.11.7",
+    "@types/ws": "^8.5.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.13.0",
+    "typescript": "^4.7.7"
+  },
+  "dependencies": {
+    "@types/websocket": "^1.0.5",
+    "dom-parser": "^0.1.6"
+  }
 }
