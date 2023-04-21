@@ -105,7 +105,12 @@
         "command": "scs.gwf2scs",
         "title": "Convert GWF file to SCs",
         "category": "SCs"
-      }
+      },
+			{
+				"command": "scs.genScs",
+				"title": "Generate Scs by entity name",
+				"category": "SCs"
+			}
     ],
     "keybindings": [
       {
