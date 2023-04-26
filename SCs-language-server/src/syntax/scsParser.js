@@ -2,67 +2,62 @@
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import scsListener from './scsListener.js';
-const serializedATN = [4,1,31,197,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
+const serializedATN = [4,1,30,182,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
 4,2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,
 2,13,7,13,2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,1,0,3,0,40,8,
-0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,3,0,49,8,0,5,0,51,8,0,10,0,12,0,54,9,0,1,0,
-1,0,1,1,3,1,59,8,1,1,1,1,1,5,1,63,8,1,10,1,12,1,66,9,1,1,1,1,1,1,1,1,2,5,
-2,72,8,2,10,2,12,2,75,9,2,1,3,1,3,1,3,1,4,1,4,1,4,3,4,83,8,4,1,5,1,5,1,5,
-1,5,1,6,1,6,1,7,1,7,1,7,3,7,94,8,7,1,7,1,7,1,8,1,8,3,8,100,8,8,1,9,1,9,1,
-10,1,10,1,10,1,10,3,10,108,8,10,1,10,1,10,1,10,1,11,1,11,3,11,115,8,11,1,
-11,1,11,1,11,3,11,120,8,11,1,11,5,11,123,8,11,10,11,12,11,126,9,11,1,11,
-1,11,1,12,1,12,1,12,1,12,1,12,1,12,3,12,136,8,12,1,13,1,13,3,13,140,8,13,
-1,13,1,13,1,13,3,13,145,8,13,5,13,147,8,13,10,13,12,13,150,9,13,1,14,1,14,
-3,14,154,8,14,1,14,1,14,1,15,1,15,1,15,1,15,4,15,162,8,15,11,15,12,15,163,
-1,15,1,15,1,16,1,16,1,16,1,16,1,16,1,16,1,17,1,17,1,17,3,17,177,8,17,1,17,
-1,17,1,17,1,17,3,17,183,8,17,1,17,5,17,186,8,17,10,17,12,17,189,9,17,1,18,
-1,18,4,18,193,8,18,11,18,12,18,194,1,18,0,0,19,0,2,4,6,8,10,12,14,16,18,
-20,22,24,26,28,30,32,34,36,0,3,1,0,2,3,1,0,8,13,2,0,15,15,24,24,206,0,39,
-1,0,0,0,2,58,1,0,0,0,4,73,1,0,0,0,6,76,1,0,0,0,8,82,1,0,0,0,10,84,1,0,0,
-0,12,88,1,0,0,0,14,93,1,0,0,0,16,99,1,0,0,0,18,101,1,0,0,0,20,103,1,0,0,
-0,22,112,1,0,0,0,24,135,1,0,0,0,26,137,1,0,0,0,28,151,1,0,0,0,30,157,1,0,
-0,0,32,167,1,0,0,0,34,173,1,0,0,0,36,192,1,0,0,0,38,40,5,1,0,0,39,38,1,0,
-0,0,39,40,1,0,0,0,40,41,1,0,0,0,41,52,5,2,0,0,42,48,4,0,0,0,43,49,8,0,0,
-0,44,45,5,2,0,0,45,49,6,0,-1,0,46,47,5,3,0,0,47,49,6,0,-1,0,48,43,1,0,0,
-0,48,44,1,0,0,0,48,46,1,0,0,0,49,51,1,0,0,0,50,42,1,0,0,0,51,54,1,0,0,0,
-52,50,1,0,0,0,52,53,1,0,0,0,53,55,1,0,0,0,54,52,1,0,0,0,55,56,6,0,-1,0,56,
-1,1,0,0,0,57,59,5,1,0,0,58,57,1,0,0,0,58,59,1,0,0,0,59,60,1,0,0,0,60,64,
-5,4,0,0,61,63,3,6,3,0,62,61,1,0,0,0,63,66,1,0,0,0,64,62,1,0,0,0,64,65,1,
-0,0,0,65,67,1,0,0,0,66,64,1,0,0,0,67,68,5,5,0,0,68,69,6,1,-1,0,69,3,1,0,
-0,0,70,72,3,6,3,0,71,70,1,0,0,0,72,75,1,0,0,0,73,71,1,0,0,0,73,74,1,0,0,
-0,74,5,1,0,0,0,75,73,1,0,0,0,76,77,3,8,4,0,77,78,5,6,0,0,78,7,1,0,0,0,79,
-83,3,32,16,0,80,83,3,34,17,0,81,83,3,10,5,0,82,79,1,0,0,0,82,80,1,0,0,0,
-82,81,1,0,0,0,83,9,1,0,0,0,84,85,5,24,0,0,85,86,5,7,0,0,86,87,3,24,12,0,
-87,11,1,0,0,0,88,89,7,1,0,0,89,13,1,0,0,0,90,91,3,12,6,0,91,92,5,14,0,0,
-92,94,1,0,0,0,93,90,1,0,0,0,93,94,1,0,0,0,94,95,1,0,0,0,95,96,3,18,9,0,96,
-15,1,0,0,0,97,100,3,14,7,0,98,100,5,25,0,0,99,97,1,0,0,0,99,98,1,0,0,0,100,
-17,1,0,0,0,101,102,7,2,0,0,102,19,1,0,0,0,103,104,5,16,0,0,104,105,3,18,
-9,0,105,107,5,26,0,0,106,108,3,36,18,0,107,106,1,0,0,0,107,108,1,0,0,0,108,
-109,1,0,0,0,109,110,3,18,9,0,110,111,5,17,0,0,111,21,1,0,0,0,112,114,5,18,
-0,0,113,115,3,36,18,0,114,113,1,0,0,0,114,115,1,0,0,0,115,116,1,0,0,0,116,
-124,3,24,12,0,117,119,5,19,0,0,118,120,3,36,18,0,119,118,1,0,0,0,119,120,
-1,0,0,0,120,121,1,0,0,0,121,123,3,24,12,0,122,117,1,0,0,0,123,126,1,0,0,
-0,124,122,1,0,0,0,124,125,1,0,0,0,125,127,1,0,0,0,126,124,1,0,0,0,127,128,
-5,20,0,0,128,23,1,0,0,0,129,136,3,18,9,0,130,136,3,20,10,0,131,136,3,22,
-11,0,132,136,3,2,1,0,133,136,3,0,0,0,134,136,5,25,0,0,135,129,1,0,0,0,135,
-130,1,0,0,0,135,131,1,0,0,0,135,132,1,0,0,0,135,133,1,0,0,0,135,134,1,0,
-0,0,136,25,1,0,0,0,137,139,3,24,12,0,138,140,3,30,15,0,139,138,1,0,0,0,139,
-140,1,0,0,0,140,148,1,0,0,0,141,142,5,19,0,0,142,144,3,24,12,0,143,145,3,
-30,15,0,144,143,1,0,0,0,144,145,1,0,0,0,145,147,1,0,0,0,146,141,1,0,0,0,
-147,150,1,0,0,0,148,146,1,0,0,0,148,149,1,0,0,0,149,27,1,0,0,0,150,148,1,
-0,0,0,151,153,5,26,0,0,152,154,3,36,18,0,153,152,1,0,0,0,153,154,1,0,0,0,
-154,155,1,0,0,0,155,156,3,26,13,0,156,29,1,0,0,0,157,161,5,21,0,0,158,159,
-3,28,14,0,159,160,5,6,0,0,160,162,1,0,0,0,161,158,1,0,0,0,162,163,1,0,0,
-0,163,161,1,0,0,0,163,164,1,0,0,0,164,165,1,0,0,0,165,166,5,22,0,0,166,31,
-1,0,0,0,167,168,3,16,8,0,168,169,5,23,0,0,169,170,3,16,8,0,170,171,5,23,
-0,0,171,172,3,16,8,0,172,33,1,0,0,0,173,174,3,24,12,0,174,176,5,26,0,0,175,
-177,3,36,18,0,176,175,1,0,0,0,176,177,1,0,0,0,177,178,1,0,0,0,178,187,3,
-26,13,0,179,180,5,19,0,0,180,182,5,26,0,0,181,183,3,36,18,0,182,181,1,0,
-0,0,182,183,1,0,0,0,183,184,1,0,0,0,184,186,3,26,13,0,185,179,1,0,0,0,186,
-189,1,0,0,0,187,185,1,0,0,0,187,188,1,0,0,0,188,35,1,0,0,0,189,187,1,0,0,
-0,190,191,5,24,0,0,191,193,5,27,0,0,192,190,1,0,0,0,193,194,1,0,0,0,194,
-192,1,0,0,0,194,195,1,0,0,0,195,37,1,0,0,0,23,39,48,52,58,64,73,82,93,99,
-107,114,119,124,135,139,144,148,153,163,176,182,187,194];
+0,1,0,1,0,1,1,3,1,45,8,1,1,1,1,1,5,1,49,8,1,10,1,12,1,52,9,1,1,1,1,1,1,2,
+5,2,57,8,2,10,2,12,2,60,9,2,1,3,1,3,1,3,1,4,1,4,1,4,3,4,68,8,4,1,5,1,5,1,
+5,1,5,1,6,1,6,1,7,1,7,1,7,3,7,79,8,7,1,7,1,7,1,8,1,8,3,8,85,8,8,1,9,1,9,
+1,10,1,10,1,10,1,10,3,10,93,8,10,1,10,1,10,1,10,1,11,1,11,3,11,100,8,11,
+1,11,1,11,1,11,3,11,105,8,11,1,11,5,11,108,8,11,10,11,12,11,111,9,11,1,11,
+1,11,1,12,1,12,1,12,1,12,1,12,1,12,3,12,121,8,12,1,13,1,13,3,13,125,8,13,
+1,13,1,13,1,13,3,13,130,8,13,5,13,132,8,13,10,13,12,13,135,9,13,1,14,1,14,
+3,14,139,8,14,1,14,1,14,1,15,1,15,1,15,1,15,4,15,147,8,15,11,15,12,15,148,
+1,15,1,15,1,16,1,16,1,16,1,16,1,16,1,16,1,17,1,17,1,17,3,17,162,8,17,1,17,
+1,17,1,17,1,17,3,17,168,8,17,1,17,5,17,171,8,17,10,17,12,17,174,9,17,1,18,
+1,18,4,18,178,8,18,11,18,12,18,179,1,18,0,0,19,0,2,4,6,8,10,12,14,16,18,
+20,22,24,26,28,30,32,34,36,0,2,1,0,4,9,2,0,11,11,20,20,188,0,39,1,0,0,0,
+2,44,1,0,0,0,4,58,1,0,0,0,6,61,1,0,0,0,8,67,1,0,0,0,10,69,1,0,0,0,12,73,
+1,0,0,0,14,78,1,0,0,0,16,84,1,0,0,0,18,86,1,0,0,0,20,88,1,0,0,0,22,97,1,
+0,0,0,24,120,1,0,0,0,26,122,1,0,0,0,28,136,1,0,0,0,30,142,1,0,0,0,32,152,
+1,0,0,0,34,158,1,0,0,0,36,177,1,0,0,0,38,40,5,1,0,0,39,38,1,0,0,0,39,40,
+1,0,0,0,40,41,1,0,0,0,41,42,5,30,0,0,42,1,1,0,0,0,43,45,5,1,0,0,44,43,1,
+0,0,0,44,45,1,0,0,0,45,46,1,0,0,0,46,50,5,28,0,0,47,49,3,6,3,0,48,47,1,0,
+0,0,49,52,1,0,0,0,50,48,1,0,0,0,50,51,1,0,0,0,51,53,1,0,0,0,52,50,1,0,0,
+0,53,54,5,29,0,0,54,3,1,0,0,0,55,57,3,6,3,0,56,55,1,0,0,0,57,60,1,0,0,0,
+58,56,1,0,0,0,58,59,1,0,0,0,59,5,1,0,0,0,60,58,1,0,0,0,61,62,3,8,4,0,62,
+63,5,2,0,0,63,7,1,0,0,0,64,68,3,32,16,0,65,68,3,34,17,0,66,68,3,10,5,0,67,
+64,1,0,0,0,67,65,1,0,0,0,67,66,1,0,0,0,68,9,1,0,0,0,69,70,5,20,0,0,70,71,
+5,3,0,0,71,72,3,24,12,0,72,11,1,0,0,0,73,74,7,0,0,0,74,13,1,0,0,0,75,76,
+3,12,6,0,76,77,5,10,0,0,77,79,1,0,0,0,78,75,1,0,0,0,78,79,1,0,0,0,79,80,
+1,0,0,0,80,81,3,18,9,0,81,15,1,0,0,0,82,85,3,14,7,0,83,85,5,21,0,0,84,82,
+1,0,0,0,84,83,1,0,0,0,85,17,1,0,0,0,86,87,7,1,0,0,87,19,1,0,0,0,88,89,5,
+12,0,0,89,90,3,18,9,0,90,92,5,22,0,0,91,93,3,36,18,0,92,91,1,0,0,0,92,93,
+1,0,0,0,93,94,1,0,0,0,94,95,3,18,9,0,95,96,5,13,0,0,96,21,1,0,0,0,97,99,
+5,14,0,0,98,100,3,36,18,0,99,98,1,0,0,0,99,100,1,0,0,0,100,101,1,0,0,0,101,
+109,3,24,12,0,102,104,5,15,0,0,103,105,3,36,18,0,104,103,1,0,0,0,104,105,
+1,0,0,0,105,106,1,0,0,0,106,108,3,24,12,0,107,102,1,0,0,0,108,111,1,0,0,
+0,109,107,1,0,0,0,109,110,1,0,0,0,110,112,1,0,0,0,111,109,1,0,0,0,112,113,
+5,16,0,0,113,23,1,0,0,0,114,121,3,18,9,0,115,121,3,20,10,0,116,121,3,22,
+11,0,117,121,3,2,1,0,118,121,3,0,0,0,119,121,5,21,0,0,120,114,1,0,0,0,120,
+115,1,0,0,0,120,116,1,0,0,0,120,117,1,0,0,0,120,118,1,0,0,0,120,119,1,0,
+0,0,121,25,1,0,0,0,122,124,3,24,12,0,123,125,3,30,15,0,124,123,1,0,0,0,124,
+125,1,0,0,0,125,133,1,0,0,0,126,127,5,15,0,0,127,129,3,24,12,0,128,130,3,
+30,15,0,129,128,1,0,0,0,129,130,1,0,0,0,130,132,1,0,0,0,131,126,1,0,0,0,
+132,135,1,0,0,0,133,131,1,0,0,0,133,134,1,0,0,0,134,27,1,0,0,0,135,133,1,
+0,0,0,136,138,5,22,0,0,137,139,3,36,18,0,138,137,1,0,0,0,138,139,1,0,0,0,
+139,140,1,0,0,0,140,141,3,26,13,0,141,29,1,0,0,0,142,146,5,17,0,0,143,144,
+3,28,14,0,144,145,5,2,0,0,145,147,1,0,0,0,146,143,1,0,0,0,147,148,1,0,0,
+0,148,146,1,0,0,0,148,149,1,0,0,0,149,150,1,0,0,0,150,151,5,18,0,0,151,31,
+1,0,0,0,152,153,3,16,8,0,153,154,5,19,0,0,154,155,3,16,8,0,155,156,5,19,
+0,0,156,157,3,16,8,0,157,33,1,0,0,0,158,159,3,24,12,0,159,161,5,22,0,0,160,
+162,3,36,18,0,161,160,1,0,0,0,161,162,1,0,0,0,162,163,1,0,0,0,163,172,3,
+26,13,0,164,165,5,15,0,0,165,167,5,22,0,0,166,168,3,36,18,0,167,166,1,0,
+0,0,167,168,1,0,0,0,168,169,1,0,0,0,169,171,3,26,13,0,170,164,1,0,0,0,171,
+174,1,0,0,0,172,170,1,0,0,0,172,173,1,0,0,0,173,35,1,0,0,0,174,172,1,0,0,
+0,175,176,5,20,0,0,176,178,5,23,0,0,177,175,1,0,0,0,178,179,1,0,0,0,179,
+177,1,0,0,0,179,180,1,0,0,0,180,37,1,0,0,0,21,39,44,50,58,67,78,84,92,99,
+104,109,120,124,129,133,138,148,161,167,172,179];
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -74,17 +69,18 @@ const sharedContextCache = new antlr4.atn.PredictionContextCache();
 export default class scsParser extends antlr4.Parser {
 
     static grammarFileName = "scs.g4";
-    static literalNames = [ null, "'_'", "'['", "']'", "'[*'", "'*]'", "';;'", 
-                            "'='", "'sc_node'", "'sc_link'", "'sc_edge_dcommon'", 
-                            "'sc_edge_ucommon'", "'sc_edge_main'", "'sc_edge_access'", 
-                            "'#'", "'...'", "'('", "')'", "'{'", "';'", 
-                            "'}'", "'(*'", "'*)'", "'|'" ];
+    static literalNames = [ null, "'_'", "';;'", "'='", "'sc_node'", "'sc_link'", 
+                            "'sc_edge_dcommon'", "'sc_edge_ucommon'", "'sc_edge_main'", 
+                            "'sc_edge_access'", "'#'", "'...'", "'('", "')'", 
+                            "'{'", "';'", "'}'", "'(*'", "'*)'", "'|'", 
+                            null, null, null, null, null, null, null, null, 
+                            "'[*'", "'*]'" ];
     static symbolicNames = [ null, null, null, null, null, null, null, null, 
                              null, null, null, null, null, null, null, null, 
-                             null, null, null, null, null, null, null, null, 
-                             "ID_SYSTEM", "LINK", "CONNECTOR", "EDGE_ATTR", 
-                             "LINE_TERMINATOR", "LINE_COMMENT", "MULTINE_COMMENT", 
-                             "WS" ];
+                             null, null, null, null, "ID_SYSTEM", "LINK", 
+                             "CONNECTOR", "EDGE_ATTR", "LINE_TERMINATOR", 
+                             "LINE_COMMENT", "MULTINE_COMMENT", "WS", "CONTOUR_BEGIN", 
+                             "CONTOUR_END", "CONTENT_BODY" ];
     static ruleNames = [ "content", "contour", "syntax", "sentence_wrap", 
                          "sentence", "sentence_assign", "idtf_lvl1_preffix", 
                          "idtf_lvl1_value", "idtf_lvl1", "idtf_system", 
@@ -100,31 +96,11 @@ export default class scsParser extends antlr4.Parser {
         this.symbolicNames = scsParser.symbolicNames;
     }
 
-    sempred(localctx, ruleIndex, predIndex) {
-    	switch(ruleIndex) {
-    	case 0:
-    	    		return this.content_sempred(localctx, predIndex);
-        default:
-            throw "No predicate with index:" + ruleIndex;
-       }
-    }
-
-    content_sempred(localctx, predIndex) {
-    	switch(predIndex) {
-    		case 0:
-    			return  count > 0 ;
-    		default:
-    			throw "No predicate with index:" + predIndex;
-    	}
-    };
-
-
 
 
 	content() {
 	    let localctx = new ContentContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 0, scsParser.RULE_content);
-	     let count = 1; 
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -137,81 +113,7 @@ export default class scsParser extends antlr4.Parser {
 	        }
 
 	        this.state = 41;
-	        localctx.r = this.match(scsParser.T__1);
-	        this.state = 52;
-	        this._errHandler.sync(this);
-	        var _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
-	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
-	            if(_alt===1) {
-	                this.state = 42;
-	                if (!(  count > 0 )) {
-	                    throw new antlr4.error.FailedPredicateException(this, " count > 0 ");
-	                }
-	                this.state = 48;
-	                this._errHandler.sync(this);
-	                switch(this._input.LA(1)) {
-	                case 1:
-	                case 4:
-	                case 5:
-	                case 6:
-	                case 7:
-	                case 8:
-	                case 9:
-	                case 10:
-	                case 11:
-	                case 12:
-	                case 13:
-	                case 14:
-	                case 15:
-	                case 16:
-	                case 17:
-	                case 18:
-	                case 19:
-	                case 20:
-	                case 21:
-	                case 22:
-	                case 23:
-	                case 24:
-	                case 25:
-	                case 26:
-	                case 27:
-	                case 28:
-	                case 29:
-	                case 30:
-	                case 31:
-	                    this.state = 43;
-	                    _la = this._input.LA(1);
-	                    if(_la<=0 || _la===2 || _la===3) {
-	                    this._errHandler.recoverInline(this);
-	                    }
-	                    else {
-	                    	this._errHandler.reportMatch(this);
-	                        this.consume();
-	                    }
-	                    break;
-	                case 2:
-	                    this.state = 44;
-	                    this.match(scsParser.T__1);
-	                     count++; 
-	                    break;
-	                case 3:
-	                    this.state = 46;
-	                    this.match(scsParser.T__2);
-	                     count--; 
-	                    break;
-	                default:
-	                    throw new antlr4.error.NoViableAltException(this);
-	                } 
-	            }
-	            this.state = 54;
-	            this._errHandler.sync(this);
-	            _alt = this._interp.adaptivePredict(this._input,2,this._ctx);
-	        }
-
-	         
-	               var tok = { line: (localctx.r == null ? 0 : localctx.r.line), pos: (localctx.r == null ? 0 : localctx.r.column), text: (localctx.r == null ? null : localctx.r.text)};
-	               if (count > 0) { this.makeError(tok, "Expected ']' symbol"); }
-	             
+	        this.match(scsParser.CONTENT_BODY);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -231,36 +133,31 @@ export default class scsParser extends antlr4.Parser {
 	contour() {
 	    let localctx = new ContourContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 2, scsParser.RULE_contour);
-	    let count = 1;
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 58;
+	        this.state = 44;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
 	        if(_la===1) {
-	            this.state = 57;
+	            this.state = 43;
 	            this.match(scsParser.T__0);
 	        }
 
-	        this.state = 60;
-	        localctx.b = this.match(scsParser.T__3);
-	        this.state = 64;
+	        this.state = 46;
+	        this.match(scsParser.CONTOUR_BEGIN);
+	        this.state = 50;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while((((_la) & ~0x1f) === 0 && ((1 << _la) & 50708246) !== 0)) {
-	            this.state = 61;
+	        while((((_la) & ~0x1f) === 0 && ((1 << _la) & 1345346546) !== 0)) {
+	            this.state = 47;
 	            this.sentence_wrap();
-	            this.state = 66;
+	            this.state = 52;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
-	        this.state = 67;
-	        localctx.e = this.match(scsParser.T__4);
-
-	               var tok = { line: (localctx.b == null ? 0 : localctx.b.line), pos: (localctx.b == null ? 0 : localctx.b.column), text: (localctx.b == null ? null : localctx.b.text) };
-	               if (!localctx.e) { this.makeError(tok, "Expected '*]' symbol"); }
-	             
+	        this.state = 53;
+	        this.match(scsParser.CONTOUR_END);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -283,13 +180,13 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 73;
+	        this.state = 58;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while((((_la) & ~0x1f) === 0 && ((1 << _la) & 50708246) !== 0)) {
-	            this.state = 70;
+	        while((((_la) & ~0x1f) === 0 && ((1 << _la) & 1345346546) !== 0)) {
+	            this.state = 55;
 	            this.sentence_wrap();
-	            this.state = 75;
+	            this.state = 60;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
@@ -314,10 +211,10 @@ export default class scsParser extends antlr4.Parser {
 	    this.enterRule(localctx, 6, scsParser.RULE_sentence_wrap);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 76;
+	        this.state = 61;
 	        this.sentence();
-	        this.state = 77;
-	        this.match(scsParser.T__5);
+	        this.state = 62;
+	        this.match(scsParser.T__1);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -338,25 +235,25 @@ export default class scsParser extends antlr4.Parser {
 	    let localctx = new SentenceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 8, scsParser.RULE_sentence);
 	    try {
-	        this.state = 82;
+	        this.state = 67;
 	        this._errHandler.sync(this);
-	        var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
+	        var la_ = this._interp.adaptivePredict(this._input,4,this._ctx);
 	        switch(la_) {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 79;
+	            this.state = 64;
 	            this.sentence_lvl1();
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 80;
+	            this.state = 65;
 	            this.sentence_lvl_common();
 	            break;
 
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
-	            this.state = 81;
+	            this.state = 66;
 	            this.sentence_assign();
 	            break;
 
@@ -382,11 +279,11 @@ export default class scsParser extends antlr4.Parser {
 	    this.enterRule(localctx, 10, scsParser.RULE_sentence_assign);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 84;
+	        this.state = 69;
 	        this.match(scsParser.ID_SYSTEM);
-	        this.state = 85;
-	        this.match(scsParser.T__6);
-	        this.state = 86;
+	        this.state = 70;
+	        this.match(scsParser.T__2);
+	        this.state = 71;
 	        this.idtf_common();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -410,9 +307,9 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 88;
+	        this.state = 73;
 	        _la = this._input.LA(1);
-	        if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 16128) !== 0))) {
+	        if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 1008) !== 0))) {
 	        this._errHandler.recoverInline(this);
 	        }
 	        else {
@@ -441,17 +338,17 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 93;
+	        this.state = 78;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if((((_la) & ~0x1f) === 0 && ((1 << _la) & 16128) !== 0)) {
-	            this.state = 90;
+	        if((((_la) & ~0x1f) === 0 && ((1 << _la) & 1008) !== 0)) {
+	            this.state = 75;
 	            this.idtf_lvl1_preffix();
-	            this.state = 91;
-	            this.match(scsParser.T__13);
+	            this.state = 76;
+	            this.match(scsParser.T__9);
 	        }
 
-	        this.state = 95;
+	        this.state = 80;
 	        this.idtf_system();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -473,24 +370,24 @@ export default class scsParser extends antlr4.Parser {
 	    let localctx = new Idtf_lvl1Context(this, this._ctx, this.state);
 	    this.enterRule(localctx, 16, scsParser.RULE_idtf_lvl1);
 	    try {
-	        this.state = 99;
+	        this.state = 84;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
+	        case 4:
+	        case 5:
+	        case 6:
+	        case 7:
 	        case 8:
 	        case 9:
-	        case 10:
 	        case 11:
-	        case 12:
-	        case 13:
-	        case 15:
-	        case 24:
+	        case 20:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 97;
+	            this.state = 82;
 	            this.idtf_lvl1_value();
 	            break;
-	        case 25:
+	        case 21:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 98;
+	            this.state = 83;
 	            this.match(scsParser.LINK);
 	            break;
 	        default:
@@ -518,9 +415,9 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 101;
+	        this.state = 86;
 	        _la = this._input.LA(1);
-	        if(!(_la===15 || _la===24)) {
+	        if(!(_la===11 || _la===20)) {
 	        this._errHandler.recoverInline(this);
 	        }
 	        else {
@@ -548,24 +445,24 @@ export default class scsParser extends antlr4.Parser {
 	    this.enterRule(localctx, 20, scsParser.RULE_idtf_edge);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 103;
-	        this.match(scsParser.T__15);
-	        this.state = 104;
+	        this.state = 88;
+	        this.match(scsParser.T__11);
+	        this.state = 89;
 	        this.idtf_system();
-	        this.state = 105;
+	        this.state = 90;
 	        this.match(scsParser.CONNECTOR);
-	        this.state = 107;
+	        this.state = 92;
 	        this._errHandler.sync(this);
-	        var la_ = this._interp.adaptivePredict(this._input,9,this._ctx);
+	        var la_ = this._interp.adaptivePredict(this._input,7,this._ctx);
 	        if(la_===1) {
-	            this.state = 106;
+	            this.state = 91;
 	            this.attr_list();
 
 	        }
-	        this.state = 109;
+	        this.state = 94;
 	        this.idtf_system();
-	        this.state = 110;
-	        this.match(scsParser.T__16);
+	        this.state = 95;
+	        this.match(scsParser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -588,40 +485,40 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 112;
-	        this.match(scsParser.T__17);
-	        this.state = 114;
+	        this.state = 97;
+	        this.match(scsParser.T__13);
+	        this.state = 99;
 	        this._errHandler.sync(this);
-	        var la_ = this._interp.adaptivePredict(this._input,10,this._ctx);
+	        var la_ = this._interp.adaptivePredict(this._input,8,this._ctx);
 	        if(la_===1) {
-	            this.state = 113;
+	            this.state = 98;
 	            this.attr_list();
 
 	        }
-	        this.state = 116;
+	        this.state = 101;
 	        this.idtf_common();
-	        this.state = 124;
+	        this.state = 109;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===19) {
-	            this.state = 117;
-	            this.match(scsParser.T__18);
-	            this.state = 119;
+	        while(_la===15) {
+	            this.state = 102;
+	            this.match(scsParser.T__14);
+	            this.state = 104;
 	            this._errHandler.sync(this);
-	            var la_ = this._interp.adaptivePredict(this._input,11,this._ctx);
+	            var la_ = this._interp.adaptivePredict(this._input,9,this._ctx);
 	            if(la_===1) {
-	                this.state = 118;
+	                this.state = 103;
 	                this.attr_list();
 
 	            }
-	            this.state = 121;
+	            this.state = 106;
 	            this.idtf_common();
-	            this.state = 126;
+	            this.state = 111;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
-	        this.state = 127;
-	        this.match(scsParser.T__19);
+	        this.state = 112;
+	        this.match(scsParser.T__15);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -642,43 +539,43 @@ export default class scsParser extends antlr4.Parser {
 	    let localctx = new Idtf_commonContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 24, scsParser.RULE_idtf_common);
 	    try {
-	        this.state = 135;
+	        this.state = 120;
 	        this._errHandler.sync(this);
-	        var la_ = this._interp.adaptivePredict(this._input,13,this._ctx);
+	        var la_ = this._interp.adaptivePredict(this._input,11,this._ctx);
 	        switch(la_) {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 129;
+	            this.state = 114;
 	            this.idtf_system();
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 130;
+	            this.state = 115;
 	            this.idtf_edge();
 	            break;
 
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
-	            this.state = 131;
+	            this.state = 116;
 	            this.idtf_set();
 	            break;
 
 	        case 4:
 	            this.enterOuterAlt(localctx, 4);
-	            this.state = 132;
+	            this.state = 117;
 	            this.contour();
 	            break;
 
 	        case 5:
 	            this.enterOuterAlt(localctx, 5);
-	            this.state = 133;
+	            this.state = 118;
 	            this.content();
 	            break;
 
 	        case 6:
 	            this.enterOuterAlt(localctx, 6);
-	            this.state = 134;
+	            this.state = 119;
 	            this.match(scsParser.LINK);
 	            break;
 
@@ -705,37 +602,37 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 137;
+	        this.state = 122;
 	        this.idtf_common();
-	        this.state = 139;
+	        this.state = 124;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===21) {
-	            this.state = 138;
+	        if(_la===17) {
+	            this.state = 123;
 	            this.internal_sentence_list();
 	        }
 
-	        this.state = 148;
+	        this.state = 133;
 	        this._errHandler.sync(this);
-	        var _alt = this._interp.adaptivePredict(this._input,16,this._ctx)
+	        var _alt = this._interp.adaptivePredict(this._input,14,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
 	            if(_alt===1) {
-	                this.state = 141;
-	                this.match(scsParser.T__18);
-	                this.state = 142;
+	                this.state = 126;
+	                this.match(scsParser.T__14);
+	                this.state = 127;
 	                this.idtf_common();
-	                this.state = 144;
+	                this.state = 129;
 	                this._errHandler.sync(this);
 	                _la = this._input.LA(1);
-	                if(_la===21) {
-	                    this.state = 143;
+	                if(_la===17) {
+	                    this.state = 128;
 	                    this.internal_sentence_list();
 	                }
 	         
 	            }
-	            this.state = 150;
+	            this.state = 135;
 	            this._errHandler.sync(this);
-	            _alt = this._interp.adaptivePredict(this._input,16,this._ctx);
+	            _alt = this._interp.adaptivePredict(this._input,14,this._ctx);
 	        }
 
 	    } catch (re) {
@@ -759,17 +656,17 @@ export default class scsParser extends antlr4.Parser {
 	    this.enterRule(localctx, 28, scsParser.RULE_internal_sentence);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 151;
+	        this.state = 136;
 	        this.match(scsParser.CONNECTOR);
-	        this.state = 153;
+	        this.state = 138;
 	        this._errHandler.sync(this);
-	        var la_ = this._interp.adaptivePredict(this._input,17,this._ctx);
+	        var la_ = this._interp.adaptivePredict(this._input,15,this._ctx);
 	        if(la_===1) {
-	            this.state = 152;
+	            this.state = 137;
 	            this.attr_list();
 
 	        }
-	        this.state = 155;
+	        this.state = 140;
 	        this.idtf_list();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -793,22 +690,22 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 157;
-	        this.match(scsParser.T__20);
-	        this.state = 161; 
+	        this.state = 142;
+	        this.match(scsParser.T__16);
+	        this.state = 146; 
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
 	        do {
-	            this.state = 158;
+	            this.state = 143;
 	            this.internal_sentence();
-	            this.state = 159;
-	            this.match(scsParser.T__5);
-	            this.state = 163; 
+	            this.state = 144;
+	            this.match(scsParser.T__1);
+	            this.state = 148; 
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
-	        } while(_la===26);
-	        this.state = 165;
-	        this.match(scsParser.T__21);
+	        } while(_la===22);
+	        this.state = 150;
+	        this.match(scsParser.T__17);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -830,15 +727,15 @@ export default class scsParser extends antlr4.Parser {
 	    this.enterRule(localctx, 32, scsParser.RULE_sentence_lvl1);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 167;
+	        this.state = 152;
 	        this.idtf_lvl1();
-	        this.state = 168;
-	        this.match(scsParser.T__22);
-	        this.state = 169;
+	        this.state = 153;
+	        this.match(scsParser.T__18);
+	        this.state = 154;
 	        this.idtf_lvl1();
-	        this.state = 170;
-	        this.match(scsParser.T__22);
-	        this.state = 171;
+	        this.state = 155;
+	        this.match(scsParser.T__18);
+	        this.state = 156;
 	        this.idtf_lvl1();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -862,39 +759,39 @@ export default class scsParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 173;
+	        this.state = 158;
 	        this.idtf_common();
-	        this.state = 174;
+	        this.state = 159;
 	        this.match(scsParser.CONNECTOR);
-	        this.state = 176;
+	        this.state = 161;
 	        this._errHandler.sync(this);
-	        var la_ = this._interp.adaptivePredict(this._input,19,this._ctx);
+	        var la_ = this._interp.adaptivePredict(this._input,17,this._ctx);
 	        if(la_===1) {
-	            this.state = 175;
+	            this.state = 160;
 	            this.attr_list();
 
 	        }
-	        this.state = 178;
+	        this.state = 163;
 	        this.idtf_list();
-	        this.state = 187;
+	        this.state = 172;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===19) {
-	            this.state = 179;
-	            this.match(scsParser.T__18);
-	            this.state = 180;
+	        while(_la===15) {
+	            this.state = 164;
+	            this.match(scsParser.T__14);
+	            this.state = 165;
 	            this.match(scsParser.CONNECTOR);
-	            this.state = 182;
+	            this.state = 167;
 	            this._errHandler.sync(this);
-	            var la_ = this._interp.adaptivePredict(this._input,20,this._ctx);
+	            var la_ = this._interp.adaptivePredict(this._input,18,this._ctx);
 	            if(la_===1) {
-	                this.state = 181;
+	                this.state = 166;
 	                this.attr_list();
 
 	            }
-	            this.state = 184;
+	            this.state = 169;
 	            this.idtf_list();
-	            this.state = 189;
+	            this.state = 174;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
@@ -919,23 +816,23 @@ export default class scsParser extends antlr4.Parser {
 	    this.enterRule(localctx, 36, scsParser.RULE_attr_list);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 192; 
+	        this.state = 177; 
 	        this._errHandler.sync(this);
 	        var _alt = 1;
 	        do {
 	        	switch (_alt) {
 	        	case 1:
-	        		this.state = 190;
+	        		this.state = 175;
 	        		this.match(scsParser.ID_SYSTEM);
-	        		this.state = 191;
+	        		this.state = 176;
 	        		this.match(scsParser.EDGE_ATTR);
 	        		break;
 	        	default:
 	        		throw new antlr4.error.NoViableAltException(this);
 	        	}
-	        	this.state = 194; 
+	        	this.state = 179; 
 	        	this._errHandler.sync(this);
-	        	_alt = this._interp.adaptivePredict(this._input,22, this._ctx);
+	        	_alt = this._interp.adaptivePredict(this._input,20, this._ctx);
 	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -974,18 +871,17 @@ scsParser.T__15 = 16;
 scsParser.T__16 = 17;
 scsParser.T__17 = 18;
 scsParser.T__18 = 19;
-scsParser.T__19 = 20;
-scsParser.T__20 = 21;
-scsParser.T__21 = 22;
-scsParser.T__22 = 23;
-scsParser.ID_SYSTEM = 24;
-scsParser.LINK = 25;
-scsParser.CONNECTOR = 26;
-scsParser.EDGE_ATTR = 27;
-scsParser.LINE_TERMINATOR = 28;
-scsParser.LINE_COMMENT = 29;
-scsParser.MULTINE_COMMENT = 30;
-scsParser.WS = 31;
+scsParser.ID_SYSTEM = 20;
+scsParser.LINK = 21;
+scsParser.CONNECTOR = 22;
+scsParser.EDGE_ATTR = 23;
+scsParser.LINE_TERMINATOR = 24;
+scsParser.LINE_COMMENT = 25;
+scsParser.MULTINE_COMMENT = 26;
+scsParser.WS = 27;
+scsParser.CONTOUR_BEGIN = 28;
+scsParser.CONTOUR_END = 29;
+scsParser.CONTENT_BODY = 30;
 
 scsParser.RULE_content = 0;
 scsParser.RULE_contour = 1;
@@ -1019,9 +915,11 @@ class ContentContext extends antlr4.ParserRuleContext {
         super(parent, invokingState);
         this.parser = parser;
         this.ruleIndex = scsParser.RULE_content;
-        this.r = null;
     }
 
+	CONTENT_BODY() {
+	    return this.getToken(scsParser.CONTENT_BODY, 0);
+	};
 
 	enterRule(listener) {
 	    if(listener instanceof scsListener ) {
@@ -1052,9 +950,15 @@ class ContourContext extends antlr4.ParserRuleContext {
         super(parent, invokingState);
         this.parser = parser;
         this.ruleIndex = scsParser.RULE_contour;
-        this.b = null;
-        this.e = null;
     }
+
+	CONTOUR_BEGIN() {
+	    return this.getToken(scsParser.CONTOUR_BEGIN, 0);
+	};
+
+	CONTOUR_END() {
+	    return this.getToken(scsParser.CONTOUR_END, 0);
+	};
 
 	sentence_wrap = function(i) {
 	    if(i===undefined) {
