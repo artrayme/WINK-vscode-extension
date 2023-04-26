@@ -1,13 +1,13 @@
 grammar scs;
 
-// options
-// {
-//   language = JavaScript;
-// }
+options
+{
+  language = JavaScript;
+}
 
-// tokens
-// {
-// }
+tokens
+{
+}
 
 // @parser::members {
 
@@ -82,34 +82,37 @@ WS :
   ) -> channel(HIDDEN)
   ;
 
+fragment CONTENT_ESCAPED
+  : '\\' ('[' | ']' | '\\')
+  ;fragment CONTENT_SYBMOL
+  : (CONTENT_ESCAPED | ~('[' | ']' | '\\'))
+  ;fragment CONTENT_SYBMOL_FIRST_END
+  : (CONTENT_ESCAPED | ~('[' | ']' | '\\' | '*'))
+  ;CONTOUR_BEGIN
+  : '[*'
+  ;CONTOUR_END
+  : '*]'
+  ;CONTENT_BODY
+  : '[]'
+  | '![]!'
+  | '[' CONTENT_SYBMOL_FIRST_END CONTENT_SYBMOL* ']'
+  | '![' CONTENT_SYBMOL_FIRST_END CONTENT_SYBMOL* ']!'
+  ;
+
 content
-  // @init{count = 1; }
-  : ('_')? r='[' 
-    (
-        // { count > 0 }?
-        (
-          ~ ('[' | ']')
-          | '[' 
-          // { count++; }
-          | ']' 
-          // { count--; }
-        )
-    )*
-    // { 
-    //   var tok = { line: $r.line, pos: $r.pos, text: $r.text};
-    //   if (count > 0) { this.makeError(tok, "Expected ']' symbol"); }
-    // }
+//  @init{ let count = 1; }
+  : ('_')? CONTENT_BODY
   ;
 
 contour
-  // @init{count = 1;}
-  : '_'? b='[*' 
+  //  @init{let count = 1;}
+  : '_'? '[*' 
     sentence_wrap*
-    e='*]'
-    // {
-    //   var tok = { line: $b.line, pos: $b.pos, text: $b.text };
-    //   if (!$e) { this.makeError(tok, "Expected '*]' symbol"); }
-    // }
+    '*]'
+    //  {
+    //    var tok = { line: $b.line, pos: $b.pos, text: $b.text };
+    //    if (!$e) { this.makeError(tok, "Expected '*]' symbol"); }
+    //  }
   ;
 
 // ------------- Rules --------------------
@@ -206,3 +209,4 @@ sentence_lvl_common
 attr_list
   : (ID_SYSTEM EDGE_ATTR)+
   ;
+  
