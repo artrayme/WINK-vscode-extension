@@ -15,45 +15,43 @@ interface ParseError {
     msg: string
 }
 
-// class ErrorListener implements ParserErrorListener {
+class SCsErrorListener implements ErrorListener<any> {
 
-//     private callback:(err: ParseError) => void = null;
+    private callback: (err: ParseError) => void = () => { };
 
-//     constructor(callback) {
-//         this.callback = callback;
-//     }
+    constructor(callback: (err: ParseError) => void) {
+        this.callback = callback;
+    }
 
-//     syntaxError(recognizer: any, offendingSymbol: { text: string | any[]; }, line: any, charPositionInLine: any, msg: string, e: any) : void {
-//         this.callback({
-//             line: line,
-//             offset: charPositionInLine,
-//             len: offendingSymbol ? offendingSymbol.text.length : 0,
-//             msg: msg
-//         });
-//     }
-// }
+    syntaxError(recognizer: any, offendingSymbol: { text: string | any[]; }, line: any, charPositionInLine: any, msg: string, e: any): void {
+        this.callback({
+            line: line,
+            offset: charPositionInLine,
+            len: offendingSymbol ? offendingSymbol.text.length : 0,
+            msg: msg
+        });
+    }
+}
 
-interface SymbolPosition
-{
+interface SymbolPosition {
     line: number;   // index of file line (starts with 1)
     column: number; // index of symbol offset in a line (starts with 1)
 }
 
-interface SymbolRange
-{
+interface SymbolRange {
     start: SymbolPosition;
     end: SymbolPosition;
 }
 
-function isSymbolPositionEqual(a: SymbolPosition, b: SymbolPosition) : boolean {
+function isSymbolPositionEqual(a: SymbolPosition, b: SymbolPosition): boolean {
     return (a.line === b.line && a.column == b.column);
 }
 
-function isSymbolRangeEqual(a: SymbolRange, b:SymbolRange) : boolean {
+function isSymbolRangeEqual(a: SymbolRange, b: SymbolRange): boolean {
     return isSymbolPositionEqual(a.start, b.start) && isSymbolPositionEqual(a.end, b.end);
 }
 
-function getSymbolRange(location: { line: any; offset: any; len: any; }) : SymbolRange {
+function getSymbolRange(location: { line: any; offset: any; len: any; }): SymbolRange {
     return {
         start: {
             line: location.line,
@@ -72,11 +70,11 @@ function toRange(range: SymbolRange): vs.Range {
     return vs.Range.create(begPos, endPos);
 }
 
-class FileInfo
-{
+class FileInfo {
     private uri: string;             // uri of a file
     public errors: vs.Diagnostic[];    // list of all errors is a file
     private symbols: Map<string, SymbolRange[]>;       // map of all symbol occurenses
+    // private ast: SyntaxContext | null = null;
 
     constructor(docUri: string) {
         this.uri = docUri;
@@ -84,14 +82,14 @@ class FileInfo
         this.symbols = new Map<string, SymbolRange[]>();
     }
 
-    public appendError(err: ParseError) : void {
+    public appendError(err: ParseError): void {
         const range = vs.Range.create(err.line, err.offset, err.line, err.offset + err.len);
         const diagnostic = vs.Diagnostic.create(range, err.msg);
 
         this.errors.push(diagnostic);
     }
 
-    public clear() : void {
+    public clear(): void {
         this.errors = [];
         this.symbols.clear();
         this.uri = "";
@@ -100,7 +98,7 @@ class FileInfo
     public appendSymbol(name: string, location: SymbolRange) {
         const list = this.symbols.get(name);
         if (list) {
-            const found = list.find((value: SymbolRange) : boolean => {
+            const found = list.find((value: SymbolRange): boolean => {
                 return (isSymbolRangeEqual(location, value));
             });
 
@@ -108,15 +106,15 @@ class FileInfo
                 list.push(location);
         } else {
             this.symbols.set(name, [location]);
-        } 
+        }
     }
 
-    public provideComplete(prefix: string, docUri: string) : string[] {
+    public provideComplete(prefix: string, docUri: string): string[] {
         const result: string[] = [];
         this.symbols.forEach((value: SymbolRange[], key: string) => {
             if (key.startsWith('..') && docUri !== this.uri)
                 return;
-            
+
             if (key.startsWith(prefix)) {
                 result.push(key);
             }
@@ -129,11 +127,11 @@ class FileInfo
         return this.symbols.size;
     }
 
-    public getErrors() : vs.Diagnostic[] {
+    public getErrors(): vs.Diagnostic[] {
         return this.errors;
     }
 
-    public getSymbolRanges(name: string) : SymbolRange[] | undefined {
+    public getSymbolRanges(name: string): SymbolRange[] | undefined {
         return this.symbols.get(name);
     }
 }
@@ -149,16 +147,15 @@ export class SCsParsedData {
         this.conn = scClient;
     }
 
-    // send diagnostic callback
-    // public sendDiagnostic: (params: vs.PublishDiagnosticsParams) => void;
+    private doSendDiagnostic(params: vs.PublishDiagnosticsParams): void {
+        if (this.sendDiagnostic)
+            this.sendDiagnostic(params);
+    }
+    // send diagnostic callback (shall be set by scsSession later)
+    public sendDiagnostic: undefined | ((params: vs.PublishDiagnosticsParams) => void);
 
-    // private doSendDiagnostic(params: vs.PublishDiagnosticsParams): void {
-    //     if (this.sendDiagnostic)
-    //         this.sendDiagnostic(params);
-    // }
+    public parseDocumentANTLR(docText: string, docUri: string) {
 
-    public parseDocument(docText: string, docUri: string) {
-        
         docUri = makeUri(docUri);
         const finfo = new FileInfo(docUri);
         this.files.set(docUri, finfo);
@@ -167,39 +164,35 @@ export class SCsParsedData {
 
             const chars = CharStreams.fromString(docText);
             const lexer = new scsLexer(chars);
-            const tokens  = new CommonTokenStream(lexer);
+            const tokens = new CommonTokenStream(lexer);
             const parser = new scsParser(tokens);
-            parser.buildParseTrees = false;
+            parser.buildParseTrees = true;
 
-            // parser.docUri = docUri;
-            // parser.parsedData = this;
-
-            // parser.addErrorListener(new ErrorListener(function(err: ParseError) {
-            //     finfo.appendError(err);
-            // }));
+            parser.addErrorListener(new SCsErrorListener(function (err: ParseError) {
+                finfo.appendError(err);
+            }));
 
             const tree = parser.syntax();
-            this.console.log(tree.getText())
         } catch (e: any) {
             this.console.log(e.stack);
         }
 
         // send diagnostic
-        // if (this.sendDiagnostic) {
-            // let resultErrors: vs.Diagnostic[] = [];
+        if (this.sendDiagnostic) {
+            let resultErrors: vs.Diagnostic[] = [];
 
-            // if (finfo) {
-            //     resultErrors = finfo.getErrors();
-            // }
+            if (finfo) {
+                resultErrors = finfo.getErrors();
+            }
 
-            // this.doSendDiagnostic({
-            //     uri: docUri,
-            //     diagnostics: resultErrors
-            // });
-        // }
+            this.doSendDiagnostic({
+                uri: docUri,
+                diagnostics: resultErrors
+            });
+        }
     }
 
-    public provideAutoComplete(docUri: string, prefix: string) : string[] {
+    public provideAutoComplete(docUri: string, prefix: string): string[] {
         /// TODO: make unique and faster
         let result: string[] = [];
 
@@ -207,14 +200,14 @@ export class SCsParsedData {
             result = result.concat(value.provideComplete(prefix, docUri));
         });
 
-        const uniqueResult = result.filter(function(item, pos) {
+        const uniqueResult = result.filter(function (item, pos) {
             return result.indexOf(item) == pos;
         });
 
         return uniqueResult;
     }
 
-    public provideWorkspaceSymbolUsage(query: string) : vs.SymbolInformation[] {
+    public provideWorkspaceSymbolUsage(query: string): vs.SymbolInformation[] {
         const result: vs.SymbolInformation[] = [];
 
         this.files.forEach((value: FileInfo, key) => {
@@ -222,7 +215,7 @@ export class SCsParsedData {
 
             if (ranges) {
                 ranges.forEach((r: SymbolRange) => {
-                    const sym:vs.SymbolInformation  = vs.SymbolInformation.create(key,
+                    const sym: vs.SymbolInformation = vs.SymbolInformation.create(key,
                         vs.SymbolKind.Variable, toRange(r));
                 });
             }
@@ -231,10 +224,10 @@ export class SCsParsedData {
         return result;
     }
 
-    public provideReferencesInFile(query: string, uri: string) : vs.Location[] {
+    public provideReferencesInFile(query: string, uri: string): vs.Location[] {
         const result: vs.Location[] = [];
 
-        const fileInfo: FileInfo | undefined= this.files.get(uri);
+        const fileInfo: FileInfo | undefined = this.files.get(uri);
         if (fileInfo) {
             const ranges: SymbolRange[] | undefined = fileInfo.getSymbolRanges(query);
 
@@ -248,7 +241,7 @@ export class SCsParsedData {
         return result;
     }
 
-    public provideReferences(query: string) : vs.Location[] {
+    public provideReferences(query: string): vs.Location[] {
         const result: vs.Location[] = [];
         this.files.forEach((value: FileInfo, key: string) => {
             const ranges: SymbolRange[] | undefined = value.getSymbolRanges(query);
@@ -263,7 +256,7 @@ export class SCsParsedData {
         return result;
     }
 
-    public _onAppendSymbol(docUri: string, name: string, location: { line: any; offset: any; len: any; }) : void {
+    public _onAppendSymbol(docUri: string, name: string, location: { line: any; offset: any; len: any; }): void {
         const finfo = this.files.get(docUri);
 
         if (!finfo)
@@ -274,7 +267,7 @@ export class SCsParsedData {
         finfo.appendSymbol(name, getSymbolRange(location));
     }
 
-    public _onAppendError(docUri: string, err: ParseError) : void {
+    public _onAppendError(docUri: string, err: ParseError): void {
         const finfo = this.files.get(docUri);
 
         this.console.log(docUri);

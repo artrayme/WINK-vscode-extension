@@ -16,7 +16,6 @@ connection.console.info(`Sample server running in node ${process.version}`);
 const documents: vs.TextDocuments = new vs.TextDocuments();
 documents.listen(connection);
 
-const  session: SCsSession = new SCsSession(connection, documents);
 let workspaceRoot: string | null | undefined;
 let scMachineUrl: string | undefined;
 let onlineMode: boolean = false;
@@ -43,7 +42,7 @@ const session: SCsSession = new SCsSession(connection, client, documents);
 
 function parseAllOpenedDocuments() {
     documents.all().forEach((doc: vs.TextDocument, index: number, array: vs.TextDocument[]) => {
-        session.parsedData.parseDocument(doc.getText(), doc.uri);
+        session.parsedData.parseDocumentANTLR(doc.getText(), doc.uri);
     });
 }
 
@@ -54,7 +53,7 @@ function parseDocumentsInFolder(path: string) {
     const files: string[] = getFilesInDirectory(path, ['.scs', '.scsi']);
     files.forEach((filePath: string) => {
         const content: string = getFileContent(filePath).toString();
-        session.parsedData.parseDocument(content, filePath);
+        session.parsedData.parseDocumentANTLR(content, filePath);
     });
     
 }
@@ -62,7 +61,6 @@ function parseDocumentsInFolder(path: string) {
 connection.onInitialize((params): vs.InitializeResult => {
 	
     workspaceRoot = params.rootPath;
-
     if (workspaceRoot)
         parseDocumentsInFolder(workspaceRoot);
 
@@ -103,7 +101,7 @@ connection.onDocumentHighlight(session.onDocumentHighlight());
 connection.onRenameRequest(session.onRename());
 
 documents.onDidChangeContent((event) => {
-    session.parsedData.parseDocument(event.document.getText(), normalizeFilePath(event.document.uri));
+    session.parsedData.parseDocumentANTLR(event.document.getText(), normalizeFilePath(event.document.uri));
 });
 
 // Listen on the connection
