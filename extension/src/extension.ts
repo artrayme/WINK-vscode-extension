@@ -48,7 +48,7 @@ export async function activate(context: ExtensionContext) {
     );
 
     client.start();
-    let conn = new ConnectionManager();
+    let conn = new ConnectionManager(client);
     await conn.connect(scMachineUrl);
     scsLoader = new ScsLoader(conn.client);
     scsSearcher = new SearcherByTemplate(conn.client);

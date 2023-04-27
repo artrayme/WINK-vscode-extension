@@ -6,6 +6,7 @@ import { makeUri } from './scsUtils.js';
 import { RemoteConsole } from 'vscode-languageserver';
 import scsLexer from './syntax/scsLexer.js';
 import scsParser from './syntax/scsParser.js';
+import { ScClientWrapper } from './scsServer.js';
 
 interface ParseError {
     line: number,
@@ -137,14 +138,15 @@ class FileInfo
     }
 }
 
-export class SCsParsedData
-{
+export class SCsParsedData {
     private console;
     private files: Map<string, FileInfo>;
+    private conn: ScClientWrapper
 
-    constructor(inConsole: RemoteConsole) {
+    constructor(inConsole: RemoteConsole, scClient: ScClientWrapper) {
         this.console = inConsole;
         this.files = new Map<string, FileInfo>();
+        this.conn = scClient;
     }
 
     // send diagnostic callback
