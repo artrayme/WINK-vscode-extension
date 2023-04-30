@@ -35,7 +35,7 @@ export async function activate(context: ExtensionContext) {
     const clientOptions: LanguageClientOptions = {
         documentSelector: ['scs', 'scsi'],
         synchronize: {
-            fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
+        fileEvents: [workspace.createFileSystemWatcher('**/.clientrc'), workspace.createFileSystemWatcher('**/*.scs')]
         },
     };
 
