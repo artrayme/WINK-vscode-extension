@@ -1,12 +1,14 @@
 'use strict';
 
 import * as vs from 'vscode-languageserver';
-import { CharStreams, CommonTokenStream, ErrorListener } from 'antlr4';
+import { CharStreams, CommonTokenStream, ErrorListener, TerminalNode, ParseTreeWalker } from 'antlr4';
 import { makeUri } from './scsUtils.js';
 import { RemoteConsole } from 'vscode-languageserver';
 import scsLexer from './syntax/scsLexer.js';
 import scsParser from './syntax/scsParser.js';
+import { Idtf_systemContext, Attr_listContext } from './syntax/scsParser.js';
 import { ScClientWrapper } from './scsServer.js';
+import scsListener from './syntax/scsListener.js';
 
 interface ParseError {
     line: number,
@@ -32,7 +34,43 @@ class SCsErrorListener implements ErrorListener<any> {
         });
     }
 }
+class scsTreeWalker extends scsListener {
+    private finfo: FileInfo;
+    constructor(finfo: FileInfo) {
+        super();
+        this.finfo = finfo;
+    }
 
+    addSymbol(id: TerminalNode): void {
+        this.finfo.appendSymbol(
+            id.symbol.text,
+            getSymbolRange(
+                {
+                    line: id.symbol.line,
+                    len: id.symbol.text.length,
+                    offset: id.symbol.column+1
+                }
+            )
+        );
+    }
+
+    exitIdtf_system(ctx: Idtf_systemContext): void {
+        const id = ctx.ID_SYSTEM()
+        if (id) {
+            this.addSymbol(id);
+        }
+    }
+
+    exitAttr_list(ctx: Attr_listContext): void {
+        const id = ctx.ID_SYSTEM()
+        if (id) {
+            id.forEach((element: TerminalNode) => {
+                this.addSymbol(element);
+
+            })        
+        }
+    }
+}
 interface SymbolPosition {
     line: number;   // index of file line (starts with 1)
     column: number; // index of symbol offset in a line (starts with 1)
@@ -83,7 +121,7 @@ class FileInfo {
     }
 
     public appendError(err: ParseError): void {
-        const range = vs.Range.create(err.line, err.offset, err.line, err.offset + err.len);
+        const range = vs.Range.create(err.line - 1, err.offset, err.line - 1, err.offset + err.len);
         const diagnostic = vs.Diagnostic.create(range, err.msg);
 
         this.errors.push(diagnostic);
@@ -167,12 +205,15 @@ export class SCsParsedData {
             const tokens = new CommonTokenStream(lexer);
             const parser = new scsParser(tokens);
             parser.buildParseTrees = true;
-
             parser.addErrorListener(new SCsErrorListener(function (err: ParseError) {
                 finfo.appendError(err);
             }));
 
             const tree = parser.syntax();
+            const walker = new scsTreeWalker(finfo);
+            //@ts-ignore
+            ParseTreeWalker.DEFAULT.walk(walker, tree)
+
         } catch (e: any) {
             this.console.log(e.stack);
         }
@@ -189,6 +230,20 @@ export class SCsParsedData {
                 uri: docUri,
                 diagnostics: resultErrors
             });
+        }
+    }
+
+    public parseDocumentOnline(docText: string, docUri: string) {
+        // TODO: placeholder for now
+        this.parseDocumentANTLR(docText, docUri);
+    }
+
+    public parseDocument(docText: string, docUri: string) {
+        if (this.conn && this.conn.isOnline) {
+            this.parseDocumentOnline(docText, docUri);
+        }
+        else {
+            this.parseDocumentANTLR(docText, docUri);
         }
     }
 

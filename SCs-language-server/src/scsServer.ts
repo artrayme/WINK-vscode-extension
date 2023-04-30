@@ -34,6 +34,10 @@ export class ScClientWrapper {
         this.connection = (this.url && this.online) ? new ScClient(scMachineUrl) : null;
     }
 
+    get isOnline(): boolean {
+        return this.online;
+    }
+
 }
 
 client = new ScClientWrapper(); 
