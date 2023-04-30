@@ -23,6 +23,15 @@ export default class scsListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by scsParser#connector.
+	enterConnector(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#connector.
+	exitConnector(ctx) {
+	}
+
+
 	// Enter a parse tree produced by scsParser#syntax.
 	enterSyntax(ctx) {
 	}
@@ -50,12 +59,39 @@ export default class scsListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by scsParser#idtf_alias.
+	enterIdtf_alias(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#idtf_alias.
+	exitIdtf_alias(ctx) {
+	}
+
+
+	// Enter a parse tree produced by scsParser#idtf_system.
+	enterIdtf_system(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#idtf_system.
+	exitIdtf_system(ctx) {
+	}
+
+
 	// Enter a parse tree produced by scsParser#sentence_assign.
 	enterSentence_assign(ctx) {
 	}
 
 	// Exit a parse tree produced by scsParser#sentence_assign.
 	exitSentence_assign(ctx) {
+	}
+
+
+	// Enter a parse tree produced by scsParser#sentence_assign_contour.
+	enterSentence_assign_contour(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#sentence_assign_contour.
+	exitSentence_assign_contour(ctx) {
 	}
 
 
@@ -86,15 +122,6 @@ export default class scsListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by scsParser#idtf_system.
-	enterIdtf_system(ctx) {
-	}
-
-	// Exit a parse tree produced by scsParser#idtf_system.
-	exitIdtf_system(ctx) {
-	}
-
-
 	// Enter a parse tree produced by scsParser#idtf_edge.
 	enterIdtf_edge(ctx) {
 	}
@@ -110,6 +137,33 @@ export default class scsListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by scsParser#idtf_set.
 	exitIdtf_set(ctx) {
+	}
+
+
+	// Enter a parse tree produced by scsParser#idtf_set_elements.
+	enterIdtf_set_elements(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#idtf_set_elements.
+	exitIdtf_set_elements(ctx) {
+	}
+
+
+	// Enter a parse tree produced by scsParser#idtf_atomic.
+	enterIdtf_atomic(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#idtf_atomic.
+	exitIdtf_atomic(ctx) {
+	}
+
+
+	// Enter a parse tree produced by scsParser#idtf_url.
+	enterIdtf_url(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#idtf_url.
+	exitIdtf_url(ctx) {
 	}
 
 
@@ -155,6 +209,15 @@ export default class scsListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by scsParser#sentence_lvl1.
 	exitSentence_lvl1(ctx) {
+	}
+
+
+	// Enter a parse tree produced by scsParser#sentence_lvl_4_list_item.
+	enterSentence_lvl_4_list_item(ctx) {
+	}
+
+	// Exit a parse tree produced by scsParser#sentence_lvl_4_list_item.
+	exitSentence_lvl_4_list_item(ctx) {
 	}
 
 

@@ -22,7 +22,8 @@
 	},
 	"scripts": {
 		"compile": "tsc -p ./tsconfig.json",
-		"generate-grammar": "antlr -Dlanguage=JavaScript -package scs -listener ./src/syntax/scs.g4 -o ."
+		"generate-grammar": "antlr -Dlanguage=JavaScript -package scs -listener ./src/syntax/scs.g4 -o . && npm run generate-grammar:fix",
+		"generate-grammar:fix": "echo \"ANTLR still didn't fix their ESM-style exports and/or their TS target!\" && sed -i '' -e \"s/^class/export class/g\" ./src/syntax/scsParser.js && echo \"Patching it up with regexp magic for now...\""
 	},
 	"devDependencies": {
 		"@types/antlr4": "^4.11.2"
