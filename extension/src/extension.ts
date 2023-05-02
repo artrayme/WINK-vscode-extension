@@ -35,7 +35,7 @@ export async function activate(context: ExtensionContext) {
     const clientOptions: LanguageClientOptions = {
         documentSelector: ['scs', 'scsi'],
         synchronize: {
-            fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
+        fileEvents: [workspace.createFileSystemWatcher('**/.clientrc'), workspace.createFileSystemWatcher('**/*.scs')]
         },
     };
 
@@ -48,7 +48,7 @@ export async function activate(context: ExtensionContext) {
     );
 
     client.start();
-    let conn = new ConnectionManager();
+    let conn = new ConnectionManager(client);
     await conn.connect(scMachineUrl);
     scsLoader = new ScsLoader(conn.client);
     scsSearcher = new SearcherByTemplate(conn.client);

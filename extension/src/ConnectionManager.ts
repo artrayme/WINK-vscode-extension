@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { WebSocket } from "ws";
-import {ScClient} from 'ts-sc-client-ws';
+import { ScClient } from 'ts-sc-client-ws';
+import { DidChangeConfigurationNotification, LanguageClient } from 'vscode-languageclient';
 
 export enum HealthcheckStatus {
     OK = 0,
@@ -11,8 +12,10 @@ export class ConnectionManager {
     client: ScClient;
     status: HealthcheckStatus;
     protected _statusBarItem: vscode.StatusBarItem;
+    lsp_client: LanguageClient;
 
-    constructor() {
+    constructor(lsp_client: LanguageClient) {
+        this.lsp_client = lsp_client
         this.client = undefined;
         this.status = undefined;
         this._statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
@@ -24,9 +27,13 @@ export class ConnectionManager {
     async connect(url: string) {
         await this.disconnect();
         await this.test(url);
-        while(this.status == undefined);
+        while (this.status == undefined);
         if (this.status == HealthcheckStatus.OK) {
             this.client = new ScClient(url);
+            this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
+                settings:
+                    { scMachineUrl: url, onlineMode: true }
+            });
             vscode.window.showInformationMessage('Connection with sc-server established successfully.');
             this.statusBarItem.text = url;
         } else {
@@ -56,19 +63,24 @@ export class ConnectionManager {
                 }
             });
             ws.addEventListener("error", (event) => {
-                vscode.window.showErrorMessage(event.message+". Unable to locate sc-server.");
+                vscode.window.showErrorMessage(event.message + ". Unable to locate sc-server.");
                 this.status = HealthcheckStatus.FAIL;
             });
             await delay(1000);
             // await waitForOpenConnection(ws).catch(value => { vscode.window.showErrorMessage(value.message) });
-        } catch(e) {
+        } catch (e) {
             vscode.window.showErrorMessage(e.message);
+            //send LSP server to offline mode if connection is known to be broken
+            this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
+                settings:
+                    { scMachineUrl: '', onlineMode: false }
+            });
             this.status = HealthcheckStatus.FAIL;
         }
     }
 }
 
-function delay(time: number):Promise<void> {
+function delay(time: number): Promise<void> {
     return new Promise(resolve => {
         setTimeout(resolve, time);
     });

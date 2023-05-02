@@ -6,6 +6,7 @@ import { SCsReferenceProvider } from './scsReferences.js';
 import { SCsDocumentHighlight } from './scsHighlight.js';
 import { SCsRename } from './scsRename.js';
 import { SCsParsedData } from './scsParsedData.js';
+import { ScClientWrapper } from './scsServer.js';
 
 // After the server has started the client sends an initialize request. The server receives
 // in the passed params the rootPath of the workspace plus the client capabilities. 
@@ -13,6 +14,7 @@ export class SCsSession {
 
     private connection: vs.IConnection;
     private documents: vs.TextDocuments;
+    private scClient: ScClientWrapper;
 
     private hoverProvider: SCsHoverProvider;
     private completionProvider: SCsCompletionItemProvider;
@@ -22,12 +24,12 @@ export class SCsSession {
 
     parsedData: SCsParsedData;
 
-    constructor(conn: vs.IConnection, docs: vs.TextDocuments) {
+    constructor(conn: vs.IConnection, client: ScClientWrapper, docs: vs.TextDocuments) {
         this.connection = conn;
         this.documents = docs;
-
-        this.parsedData = new SCsParsedData(this.connection.console);
-        // this.parsedData.sendDiagnostic = this.connection.sendDiagnostics;
+        this.scClient = client;
+        this.parsedData = new SCsParsedData(this.connection.console, this.scClient);
+        this.parsedData.sendDiagnostic = this.connection.sendDiagnostics;
 
         this.hoverProvider = new SCsHoverProvider();
         this.completionProvider = new SCsCompletionItemProvider(this.parsedData);
