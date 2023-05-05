@@ -2,78 +2,7 @@ import {DOMParser} from 'xmldom';
 import {XMLSerializer} from 'xmldom';
 
 let dictionary: Map<string, string>;
-
-export function convertOldGwfToNew(content: string) {
-    dictionary = getDictionary();
-    // var DOMParser = require('xmldom').DOMParser;
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(content, "text/xml");
-    updateTags(xmlDoc);
-    return (new XMLSerializer()).serializeToString(xmlDoc);
-}
-
-function updateExistingTypesByTag(elem: Document, tag: string) {
-    const elements = elem.getElementsByTagName(tag);
-    for (let i = 0; i < elements.length; i++) {
-        if (dictionary.has(elements[i].getAttribute("type")))
-            elements[i].setAttribute("type", dictionary.get(elements[i].getAttribute("type")));
-    }
-}
-
-function updateTags(elem: Document) {
-
-    updateExistingTypesByTag(elem, "node");
-    updateExistingTypesByTag(elem, "pair");
-    updateExistingTypesByTag(elem, "arc");
-
-    const contours = elem.getElementsByTagName("contour");
-    for (let i = 0; i < contours.length; i++) {
-        if (contours[i].getAttribute("type") === "")
-            contours[i].setAttribute("type", dictionary.get(contours[i].getAttribute("type")));
-    }
-
-    const buses = elem.getElementsByTagName("bus");
-    for (let i = 0; i < buses.length; i++) {
-        if (contours[i].getAttribute("type") === "")
-            buses[i].setAttribute("type", dictionary.get(buses[i].getAttribute("type")));
-    }
-
-    dictionary;
-    // for (const i in elem.childNodes) {
-
-    //     if (elem.childNodes[i].nodeType === 1) {
-
-    //         if (elem.childNodes[i].hasAttribute("type")) {
-
-    //             if (elem.childNodes[i].tagName === "node" || elem.childNodes[i].tagName === "pair") {
-    //                 if (dictionary.has(elem.childNodes[i].getAttribute("type"))) {
-    //                     elem.childNodes[i].setAttribute("type", dictionary.get(elem.childNodes[i].getAttribute("type")));
-    //                 }
-    //             } else if (elem.childNodes[i].tagName === "arc") {
-    //                 if (dictionary.has(elem.childNodes[i].getAttribute("type"))) {
-    //                     // elem.childNodes[i].tagName = "pair";
-    //                     elem.childNodes[i].setAttribute("type", dictionary.get(elem.childNodes[i].getAttribute("type")));
-
-    //                 }
-    //             } else if (elem.childNodes[i].tagName === "contour") {
-    //                 if (elem.childNodes[i].getAttribute("type") === "") {
-    //                     elem.childNodes[i].setAttribute("type", "contour/const/perm");
-    //                 }
-    //             } else if (elem.childNodes[i].tagName === "bus") {
-    //                 if (elem.childNodes[i].getAttribute("type") === "") {
-    //                     elem.childNodes[i].setAttribute("type", "bus");
-    //                 }
-    //             }
-
-    //         }
-
-    //         updateTags(elem.childNodes[i]);
-    //     }
-    // }
-}
-
-
-function getDictionary() {
+const getDictionary = () => {
     const replacementPairs = new Map();
     replacementPairs.set("node/-/not_define", "node/-/-/not_define")
         .set("node/var/symmetry", "node/var/perm/tuple")
@@ -114,4 +43,68 @@ function getDictionary() {
         .set("arc/-/-", "node/var/perm/general"); //тут не нашла дуги, поэтому получилась дефолтная одиночная
 
     return replacementPairs;
+};
+
+const updateTags = (elem: Document) => {
+
+    updateExistingTypesByTag(elem, "node");
+    updateExistingTypesByTag(elem, "pair");
+    updateExistingTypesByTag(elem, "arc");
+
+    const contours = elem.getElementsByTagName("contour");
+    for (let i = 0; i < contours.length; i++) {
+        if (contours[i].getAttribute("type") === "")
+            contours[i].setAttribute("type", dictionary.get(contours[i].getAttribute("type")));
+    }
+
+    const buses = elem.getElementsByTagName("bus");
+    for (let i = 0; i < buses.length; i++) {
+        if (contours[i].getAttribute("type") === "")
+            buses[i].setAttribute("type", dictionary.get(buses[i].getAttribute("type")));
+    }
+
+};
+const convertOldGwfToNew = (content: string): string => {
+    dictionary = getDictionary();
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(content, "text/xml");
+    updateTags(xmlDoc);
+    return (new XMLSerializer()).serializeToString(xmlDoc);
+};
+
+const isOldGwf = (content: string): boolean => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(content, "text/xml");
+    const nodes = xmlDoc.getElementsByTagName("node");
+    for (let i = 0; i < nodes.length; i++) {
+        if (dictionary.has(nodes[i].getAttribute("type")))
+            return true;
+    }
+
+    const pairs = xmlDoc.getElementsByTagName("pair");
+    for (let i = 0; i < pairs.length; i++) {
+        if (dictionary.has(pairs[i].getAttribute("type")))
+            return true;
+    }
+
+    const arcs = xmlDoc.getElementsByTagName("arc");
+    for (let i = 0; i < arcs.length; i++) {
+        if (dictionary.has(arcs[i].getAttribute("type")))
+            return true;
+    }
+    return false;
+};
+
+const updateExistingTypesByTag = (elem: Document, tag: string) => {
+    const elements = elem.getElementsByTagName(tag);
+    for (let i = 0; i < elements.length; i++) {
+        if (dictionary.has(elements[i].getAttribute("type")))
+            elements[i].setAttribute("type", dictionary.get(elements[i].getAttribute("type")));
+    }
+};
+
+export {
+    convertOldGwfToNew,
+    isOldGwf
 }
+
