@@ -243,6 +243,32 @@ export async function activate(context: ExtensionContext) {
             vscode.window.showInformationMessage("Generation completed successfully")
         })
     );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('gwf.toScs', async () => {
+
+            const editor = vscode.window.activeTextEditor;
+            const gwfXml = await (await vscode.workspace.openTextDocument(editor.document.uri)).getText();
+
+            if (editor) {
+                gwfToScs(gwfXml,
+                    (scs) => {
+                        vscode.workspace.openTextDocument({
+                            content: scs,
+                            language: "scs"
+                        }).then((document) => {
+                            vscode.window.showTextDocument(document, vscode.ViewColumn.Beside)
+                        })
+                    },
+                    (error) => {
+                        vscode.window.showErrorMessage(`Problem with GWF: ${error}`);
+                    }
+                );
+
+            }
+        })
+    );
+
 }
 
 export function deactivate(): Thenable<void> {

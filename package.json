@@ -14,30 +14,30 @@
     "multi-root ready"
   ],
   "engines": {
-	  "vscode": "^1.67.0"
+    "vscode": "^1.67.0"
   },
-  "activationEvents": [
-	  "onLanguage:scs",
-	  "onLanguage:gwf"
-  ],
   "main": "./extension/out/extension",
   "contributes": {
-	  "languages": [
+    "languages": [
       {
         "id": "scs",
         "aliases": [
           "scs",
-          "gwf",
           "scsi"
         ],
         "extensions": [
           ".scs",
-          ".gwf",
           ".scsi"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "gwf",
+        "extensions": [
+          ".gwf"
+        ]
       }
-	  ],
+    ],
     "grammars": [
       {
         "language": "scs",
@@ -106,11 +106,16 @@
         "title": "Convert GWF file to SCs",
         "category": "SCs"
       },
-			{
-				"command": "scs.genScs",
-				"title": "Generate Scs by entity name",
-				"category": "SCs"
-			}
+      {
+        "command": "scs.genScs",
+        "title": "Generate Scs by entity name",
+        "category": "SCs"
+      },
+      {
+        "command": "gwf.toScs",
+        "title": "Convert GWF to SCs",
+        "category": "SCs"
+      }
     ],
     "keybindings": [
       {
@@ -118,7 +123,16 @@
         "key": "f5",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == gwf",
+          "command": "gwf.toScs",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "cd extension && npm run update-vscode && cd .. && npm run compile",
