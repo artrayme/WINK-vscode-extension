@@ -7,31 +7,7 @@
 contributing.md
 .travis.yml
 
-extension/node_modules/**
-!extension/node_modules/vscode-jsonrpc/**
-!extension/node_modules/vscode-languageclient/**
-!extension/node_modules/vscode-languageserver-protocol/**
-!extension/node_modules/asynckit/**
-!extension/node_modules/axios/**
-!extension/node_modules/child_process/**
-!extension/node_modules/combined-stream/**
-!extension/node_modules/delayed-stream/**
-!extension/node_modules/eta/**
-!extension/node_modules/follow-redirects/**
-!extension/node_modules/form-data/**
-!extension/node_modules/kb-generator-ts/**
-!extension/node_modules/mime-db/**
-!extension/node_modules/proxy-from-env/**
-!extension/node_modules/ts-sc-client-ws/**
-!extension/node_modules/wikibase-sdk/**
-!extension/node_modules/ws/**
-!extension/node_modules/xmldom/**
+tests/**
 
-SCs-language-server/node_modules/**
-!SCs-language-server/node_modules/vscode-jsonrpc/**
-!SCs-language-server/node_modules/vscode-languageclient/**
-!SCs-language-server/node_modules/vscode-languageserver-protocol/**
-!SCs-language-server/node_modules/vscode-uri/**
-!SCs-language-server/node_modules/antlr4/**
-!SCs-language-server/node_modules/ts-sc-client-ws/**
-!SCs-language-server/node_modules/ws/**
+SCs-language-server/node_modules/typescript/
+SCs-language-server/src/
