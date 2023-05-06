@@ -1,0 +1,32 @@
+sc_node_not_relation -> concept_dyad;;
+concept_dyad => nrel_main_idtf:	[диада](*<-lang_ru;;*);	[dyad](*<-lang_en;;*);;
+
+concept_dyad => nrel_idtf:	[тензор второго ранга](*<-lang_ru;;*);;
+
+concept_tensor => nrel_inclusion: concept_dyad;;
+
+concept_dyad <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(диада)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Диада — это специальный тензор второго ранга, тензорное произведение двух векторов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_dyad <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(двухвалентный тензор; сумма'; диада; линейное пространство)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любой двухвалентный тензор можно разложить в сумму не более чем n диад, где n — размерность исходного линейного пространства.]	(* <- lang_ru;; *);;
+		*);;
+	*);;

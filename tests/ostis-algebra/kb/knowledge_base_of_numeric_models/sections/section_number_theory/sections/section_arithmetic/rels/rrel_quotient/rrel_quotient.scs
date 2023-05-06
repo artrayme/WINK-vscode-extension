@@ -1,0 +1,63 @@
+sc_node_role_relation -> rrel_quotient;;
+rrel_quotient => nrel_main_idtf:	[частное'](* <- lang_ru;; *);  [quotient'](* <- lang_en;; *);	[жеке'](*<-lang_kz;;*);;
+
+rrel_quotient <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(частное')](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Частное - это число, полученное от деления одного числа на другое.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_quotient <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Пояснение(частное')](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Разделить одно число (делимое) на другое (делитель) – значит найти такое третье число (частное) , которое при умножении на делитель даёт делимое.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_quotient <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(целое число; число; целочисленное деление*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Если частное – целое число, то говорят, что эти числа делятся нацело.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(целое число; число; дробь*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Частное от деления одного целого числа на другое целое может не быть целым числом. Тогда это частное можно представить дробью.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(целое число; число; делимое'; неполное частное')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Деление с остатком есть отыскание наибольшего целого числа, которое в произведении с делителем дает число, не превышающее делимое. Искомое число называется неполным частным.](*<-lang_ru;;*);;
+		*);;
+	*);;

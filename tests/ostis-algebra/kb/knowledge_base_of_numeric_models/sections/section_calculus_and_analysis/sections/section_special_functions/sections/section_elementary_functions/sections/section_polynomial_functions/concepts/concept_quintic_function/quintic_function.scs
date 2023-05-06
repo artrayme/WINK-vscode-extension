@@ -1,0 +1,5 @@
+sc_node_not_relation -> concept_quintic_function;; 
+
+concept_quintic_function => nrel_main_idtf:
+[функция полинома 5-ой степени](*<-lang_ru;;*);
+[quintic function](*<-lang_en;;*);;

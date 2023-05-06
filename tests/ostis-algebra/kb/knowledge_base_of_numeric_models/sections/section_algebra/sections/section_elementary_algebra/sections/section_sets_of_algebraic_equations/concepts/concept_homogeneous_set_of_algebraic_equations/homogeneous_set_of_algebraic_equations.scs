@@ -1,0 +1,31 @@
+sc_node_not_relation -> concept_homogeneous_set_of_algebraic_equations;;
+
+concept_homogeneous_set_of_algebraic_equations => nrel_main_idtf:
+[однородная система алгебраических уравнений](*<-lang_ru;;*);
+[homogeneous set of algebraic equations](*<-lang_en;;*);;
+
+//определение и пояснения
+concept_homogeneous_set_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(однородная система алгебраических уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Однородная система алгебраических уравнений - система уравнений, в которой все её свободные члены равны нулю.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//пример
+concept_homogeneous_set_of_algebraic_equations -> rrel_example:
+	...
+	(*
+<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	"file://homogeneous_set_of_algebraic_equations.gif"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

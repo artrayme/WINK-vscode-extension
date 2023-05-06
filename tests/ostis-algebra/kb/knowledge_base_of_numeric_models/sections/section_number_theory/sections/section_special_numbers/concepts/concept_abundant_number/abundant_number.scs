@@ -1,0 +1,84 @@
+sc_node_not_relation -> concept_abundant_number;; 
+
+concept_abundant_number => nrel_main_idtf:
+[избыточное число](*<-lang_ru;;*);
+[abundant number](*<-lang_en;;*);;
+
+//синонимы
+concept_abundant_number => nrel_idtf:[excessive number](*<-lang_en;;*);;
+	
+//надмножество
+concept_natural_number => nrel_inclusion: concept_abundant_number;;
+
+//определения и пояснения
+concept_abundant_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (избыточное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Избыточное число — натуральное число n, сумма положительных собственных делителей (отличных от n) которого превышает n.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_abundant_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(избыточное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Наименьшим избыточным числом является 12.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нечетное число; избыточное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Наименьшим нечётным избыточным числом является 945.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; избыточное число; вероятность*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произвольно взятое натуральное число является избыточным с вероятностью, лежащей между 0,2474 и 0,2480.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; больше*; сумма'; избыточное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое натуральное число, большее 28 123, может быть представлено в виде суммы двух избыточных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(бесконечность; четное число; нечетное число; избыточное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Существет бесконечное количество чётных и нечётных избыточных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;

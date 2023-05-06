@@ -1,0 +1,35 @@
+sc_node_not_relation->concept_binomial_differential;;
+
+concept_binomial_differential => nrel_main_idtf :
+[биноминальный дифференциал](*<-lang_ru;;*);
+[биномдық дифференциалдық](*<-lang_kz;;*);
+[binomial differential](*<-lang_en;;*);;
+
+concept_binomial_differential => nrel_idtf :
+[дифференциальный бином](*<-lang_ru;;*);;
+
+concept_binomial_differential <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(биноминальный дифференциал)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://binomial_differential2.html"(* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_binomial_differential <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(элементарная функция; целое число; общий знаменатель'; дробь; знаменатель')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://binomial_differential3.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

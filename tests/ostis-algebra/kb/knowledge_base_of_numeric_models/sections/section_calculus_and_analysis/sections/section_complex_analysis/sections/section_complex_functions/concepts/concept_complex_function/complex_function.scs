@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_complex_function;;
+
+concept_complex_function => nrel_main_idtf:
+[комплексная функция](*<-lang_ru;;*);
+[hyperbolic function](*<-lang_en;;*);;
+
+//надмножество
+concept_function => nrel_inclusion: concept_complex_function;;
+
+//разбиение
+concept_complex_function <= nrel_subdividing:
+	...
+  (* 
+    -> concept_complexvalued_function;;
+    -> concept_function_of_complex_variable;;
+	*);;
+
+//определение и пояснения
+concept_complex_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (комплексная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Комплексная функция — это функция которую можно представить в виде : f(x)=u(x)+i*v(x).](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+concept_complex_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; функция; модуль функции*)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Произведение функции на её комплексно сопряжённую называется квадратом модуля функции.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(модуль функции*; функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Квадрат модуля функции всегда положителен и обозначается символом : |f(x)|^2.](*<-lang_ru;;*);;
+		*);;
+	*);;

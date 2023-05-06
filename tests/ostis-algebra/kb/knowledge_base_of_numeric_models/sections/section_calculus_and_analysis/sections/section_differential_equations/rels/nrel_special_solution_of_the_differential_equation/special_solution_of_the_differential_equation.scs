@@ -1,0 +1,95 @@
+sc_node_norole_relation->nrel_special_solution_of_the_differential_equation;; 
+
+nrel_special_solution_of_the_differential_equation => nrel_main_idtf:
+[особое решение дифференциального уравнения* ] (*<-lang_ru;;*);
+[special solution of the differential equation* ] (*<-lang_en;;*);;
+
+nrel_special_solution_of_the_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(особое решение дифференциального уравнения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Особым решением дифференциального уравнения называется такое решение, во всех точках которого условие единственности Коши не выполняется, т.е. в окрестности некоторой точки (х, у) существует не менее двух интегральных кривых.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+    
+
+nrel_special_solution_of_the_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(постоянная)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Особые решения не зависят от постоянной С.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Не каждое дифференциальное уравнение имеет особые решения.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(общее решение дифференциального уравнения*; постоянная; семейство интегральных кривых; дифференциальное уравнение; линия; интегральная кривая)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Особые решения нельзя получить из общего решения ни при каких значениях постоянной С.  Если построить семейство интегральных кривых дифференциального уравнения, то особое решение будет изображаться линией, которая в каждой своей точке касается по крайней мере одной интегральной кривой.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//конкретные задачи
+nrel_special_solution_of_the_differential_equation <- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://special_solution_of_the_differential_equation2.html"   (* <- lang_ru;; 	*);;
+*);;
+*);;
+
+//классы задач и способы решения
+nrel_special_solution_of_the_differential_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождении особого решения дифференциального уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_special_solution_of_the_differential_equation  <- binary_relation;;
+
+nrel_special_solution_of_the_differential_equation  <= nrel_first_domain:
+concept_differential_equation;;
+
+nrel_special_solution_of_the_differential_equation <= nrel_second_domain: 
+concept_function;;
+

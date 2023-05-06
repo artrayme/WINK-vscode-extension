@@ -1,0 +1,87 @@
+sc_node_norole_relation->nrel_limit;;
+
+nrel_limit=>nrel_main_idtf:
+[предел* ](*<-lang_ru;;*);
+[limit* ](*<-lang_en;;*);;
+
+//синонимы
+nrel_limit=> nrel_idtf:[lim* ](*<-lang_en;;*);;
+
+//определение
+nrel_limit<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Опр.(предел*)](*<-lang_ru;;*);;
+<-sc_explanation;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+[Предел функции  в заданной точке, предельной для области определения функции, — такая величина, к которой стремится значение рассматриваемой функции при стремлении её аргумента к данной точке.](*<-lang_ru;;*);;
+*);;
+*);;
+
+//утверждения
+	
+nrel_limit <- rrel_key_sc_element:
+... 
+(*
+=> nrel_main_idtf: [Утв.(предел*)] (* <- lang_ru;; *);;
+<- sc_statement;;
+<= nrel_sc_text_translation: 
+...
+(*
+-> rrel_example: 
+	[Одна и та же функция в одной и той же точке может иметь только один предел.  ](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(предел*,сумма')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Предел суммы равен сумме пределов.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(предел*,произведение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Предел произведения равен произведению пределов.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(предел*,частное')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[ Предел частного равен частному пределов.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(предел*,разность')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[ Предел разности равен разности пределов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+///домены
+nrel_arccotangent <- binary_relation;;
+nrel_arccotangent <= nrel_first_domain:  concept_function;;
+nrel_arccotangent <= nrel_second_domain: concept_number;;

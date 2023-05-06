@@ -1,0 +1,105 @@
+sc_node_norole_relation->nrel_subtract_of_decimal_fraction;; 
+
+nrel_subtract_of_decimal_fraction=>nrel_main_idtf:
+[разность десятичных дробей* ](*<-lang_ru;;*);
+[онды арасындағы айырмашылық* ](*<-lang_kz;;*);
+[subtract of decimal fraction* ](*<-lang_en;;*);;
+
+//синонимы
+
+nrel_subtract_of_decimal_fraction=> nrel_idtf:[вычитание десятичных дробей* ](*<-lang_ru;;*);;
+
+
+//определение и пояснения
+
+nrel_subtract_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(вычитание десятичных дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вычитание десятичных дробей - операция, при которой от одной десятичной дроби вычитается другая так , чтобы после запятой было одинакове количество цифр. ](* <- lang_ru;; 	*);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(метод вычитания десятичных дробей)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://subtract_of_decimal_fraction.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+   
+
+//утверждения
+nrel_subtract_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(разность десятичных дробей*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Разностью двух десятичных дробей z1 и z2 называется такая десятичная дробь z, которая, будучи сложенным с z2, дает число z1 т. е. z=z1-z2, если z+z2=z1.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//конкретные задачи
+ nrel_subtract_of_decimal_fraction<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Вычислите: z1-z2, если z1=23,02, z2=12,13.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_subtract_of_decimal_fraction<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение разности двух десятичных дробей.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+
+
+nrel_subtract_of_decimal_fraction => nrel_first_domain:concept_decimal;;
+nrel_subtract_of_decimal_fraction => nrel_second_domain: concept_decimal;;
+nrel_subtract_of_decimal_fraction => nrel_third_domain: concept_decimal;;
+
+
+//пример
+ nrel_subtract_of_decimal_fraction -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[z1=13,26 , z2=10,23. z1-z2=13,26+10,23=3,03.](* <- lang_ru;;*);;
+		*);;
+	*);;

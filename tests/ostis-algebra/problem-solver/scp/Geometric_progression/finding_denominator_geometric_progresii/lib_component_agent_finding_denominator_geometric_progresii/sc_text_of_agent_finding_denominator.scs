@@ -1,0 +1,7 @@
+sc_text_of_agent_finding_denominator_geometric_progresi 
+-> rrel_key_sc_element:
+	agent_finding_denominator_geometric_progresi;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_finding_denominator_geometric_progresi = [*^"file://agent_finding_denominator.scsi"*];;
+

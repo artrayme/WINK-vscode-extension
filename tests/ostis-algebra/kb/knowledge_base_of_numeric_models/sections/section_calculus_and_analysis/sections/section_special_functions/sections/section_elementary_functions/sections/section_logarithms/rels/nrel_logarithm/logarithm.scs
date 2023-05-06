@@ -1,0 +1,55 @@
+sc_node_norole_relation -> nrel_logarithm;;
+nrel_logarithm => nrel_main_idtf:	[логарифм* ](*<-lang_ru;;*);	[логарифмін* ](*<-lang_kz;;*);	[logarithm* ](*<-lang_en;;*);;
+nrel_logarithm => nrel_idtf: [логарифмирование* ] (*<-lang_ru;;*);;
+
+nrel_logarithm<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(логарифм*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Логарифм числа b по основанию a определяется как показатель степени, в которую надо возвести основание a, чтобы получить число b.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+   
+nrel_logarithm<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение*; деление*; возведение в степень*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://logarithm.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(логарифм*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://logarithm3.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_logarithm => nrel_first_domain: concept_number;;
+nrel_logarithm => nrel_second_domain: concept_number;;
+
+nrel_logarithm-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://logarithm2.html"(* <- lang_ru;;*);;
+		*);;
+	*);;

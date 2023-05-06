@@ -1,0 +1,32 @@
+sc_node_struct -> section_subject_domain_of_transcendental_equations;;
+
+section_subject_domain_of_transcendental_equations => nrel_main_idtf:
+    [Раздел. Предметная область трансцендентных уравнений] (* <- lang_ru;; *);
+    [Section. Subject domain of transcendental equations] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_transcendental_equations <- nrel_system_identifier;;
+
+section_subject_domain_of_transcendental_equations -> rrel_key_sc_element:
+    subject_domain_of_transcendental_equations;
+    concept_exponential_equation;
+    concept_trigonometrical_equation;
+    concept_parametric_equation;
+    concept_logarithmic_equation;
+    concept_transcendental_equation;;
+
+section_subject_domain_of_transcendental_equations = [*
+    subject_domain_of_transcendental_equations => nrel_main_idtf:
+        [Предметная область трансцендентных уравнений] (* <- lang_ru;; *);
+        [Subject domain of transcendental equations] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_transcendental_equations -> rrel_maximum_studied_object_class:
+        concept_transcendental_equation;;
+
+    subject_domain_of_transcendental_equations -> rrel_not_maximum_studied_object_class:
+        concept_exponential_equation;
+        concept_trigonometrical_equation;
+        concept_parametric_equation;
+        concept_logarithmic_equation;;
+*];;

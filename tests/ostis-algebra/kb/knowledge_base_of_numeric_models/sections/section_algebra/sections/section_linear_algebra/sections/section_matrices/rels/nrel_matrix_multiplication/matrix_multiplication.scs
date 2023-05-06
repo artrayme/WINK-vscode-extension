@@ -1,0 +1,77 @@
+sc_node_norole_relation->nrel_matrix_multiplication;;
+
+nrel_matrix_multiplication=>nrel_main_idtf:
+[умножение матриц* ](*<-lang_ru;;*);
+[matrix multiplication* ](*<-lang_en;;*);
+[матрицалық көбейту* ](*<-lang_kz;;*);;
+
+
+//надмножество 
+concept_arithmetic_operation => nrel_inclusion: nrel_matrix_multiplication;;
+
+//определение
+nrel_matrix_multiplication <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение матриц*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведением матрицы на матрицу называется матрица такая, что элемент матрицы  , стоящий в  i-ой строке и  j-ом столбце, равен сумме произведений элементов i-ой строки первой матрицы на соответствующие элементы j-ого столбца второй матрицы.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_matrix_multiplication <= nrel_using_constants:
+	{
+	concept_matrix;
+	rrel_sum
+	};;
+	
+//утверждения
+	
+nrel_matrix_multiplication <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица; строка матрицы'; столбец матрицы'; умножение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Умножать матрицы можно тогда и только тогда, когда количество столбцов первой матрицы равно количеству строк второй матрицы.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; матрица; нулевая матрица; размерность матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение матрицы на нулевую матрицу подходящей размерности равно нулевой матрице.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица; произведение'; порядок матрицы*; единичная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение матрицы на единичную матрицу подходящего порядка равно самой матрице.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_matrix_multiplication <- ternary_relation;;
+nrel_matrix_multiplication <= nrel_first_domain:  concept_matrix;;
+nrel_matrix_multiplication <= nrel_second_domain: concept_matrix;;
+nrel_matrix_multiplication <= nrel_third_domain: concept_matrix;;
+
+nrel_matrix_multiplication -> rrel_example :
+		"file://matrix_multiplication_example.png";;

@@ -1,0 +1,27 @@
+ui_menu_file_for_module <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_module => nrel_main_idtf: 
+	[Найти модуль числа] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_module => nrel_main_idtf: 
+	[Request of determine module of number] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_module => ui_nrel_command_template:
+	[*
+		question_module _-> ._question_module_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._question_module_instance _<- question;;
+	*];;
+
+ui_menu_file_for_module => ui_nrel_command_lang_template: 
+	[Найти модуль числа $ui_arg_1] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_module => ui_nrel_command_lang_template: 
+	[Request of determine module of number: $ui_arg_1 ] 
+	(* <- lang_en;; *);;
+

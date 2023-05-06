@@ -1,0 +1,47 @@
+description_of_the_final_product_of_the_project => nrel_main_idtf: [Раздел. Описание конечного продукта данного проекта] (* <- lang_ru;; *);;
+
+description_of_the_final_product_of_the_project <= nrel_section_decomposition:
+{
+type_developed_intelligent_system;
+composition_and_volume_of_systems_knowledge_base;
+different_areas_of_structuring_and_systematization_of_knowledge;
+structure_and_composition_of_machine_knowledge_processing_system;
+characteristic_of_technical_implementation_of_the_developed_intelligent_system
+};;
+
+
+
+type_developed_intelligent_system => nrel_main_idtf: [Тип разрабатываемой интеллектуальной системы] (* <- lang_ru;; *);; 
+type_developed_intelligent_system <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://type_developed_intelligent_system.pdf" (* <- lang_ru;; *);;
+	*);;
+
+composition_and_volume_of_systems_knowledge_base => nrel_main_idtf: [Состав и объем базы знаний системы] (* <- lang_ru;; *);; 
+composition_and_volume_of_systems_knowledge_base <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://composition_and_volume_of_systems_knowledge_base.pdf" (* <- lang_ru;; *);;
+	*);;
+
+different_areas_of_structuring_and_systematization_of_knowledge => nrel_main_idtf: [Различные направления структуризации и систематизации знаний] (*	<- lang_ru;; *);;
+different_areas_of_structuring_and_systematization_of_knowledge <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://different_areas_of_structuring_and_systematization_of_knowledge.pdf" (* <- lang_ru;; *);;
+	*);;
+
+structure_and_composition_of_machine_knowledge_processing_system => nrel_main_idtf: [Структура и состав машины обработки знаний системы]	(* <- lang_ru;;	*);;
+structure_and_composition_of_machine_knowledge_processing_system <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://structure_and_composition_of_machine_knowledge_processing_system.pdf" (* <- lang_ru;; *);;
+	*);;
+
+characteristic_of_technical_implementation_of_the_developed_intelligent_system => nrel_main_idtf: [Характеристика технической реализации разрабатываемой интеллектуальной системы] (* <- lang_ru;; *);;
+characteristic_of_technical_implementation_of_the_developed_intelligent_system <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://characteristic_of_technical_implementation_of_the_developed_intelligent_system.pdf" (* <- lang_ru;; *);;
+	*);;

@@ -1,0 +1,62 @@
+sc_node_norole_relation->nrel_subtraction_of_vectors;;
+
+nrel_subtraction_of_vectors=>nrel_main_idtf:
+[вычитание векторов* ](*<-lang_ru;;*);
+[subtraction of vectors* ](*<-lang_en;;*);
+[алу векторлары* ](*<-lang_kz;;*);;
+
+//определение
+nrel_subtraction_of_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(вычитание векторов*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вычитание векторов a - b есть операция вычисления вектора c, все элементы которого равны попарной разности соответствующих элементов векторов a и b.](* <- lang_ru;; *);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (вычитание векторов*)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			"file://subtraction_of_vectors1.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_subtraction_of_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; разность')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Разность двух векторов существует и определяется однозначно.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(ортогональность*; вектор; нулевой вектор; сумма')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://subtraction_of_vectors2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+	
+//домены	
+nrel_subtraction_of_vectors <- ternary_relation;;
+nrel_subtraction_of_vectors <= nrel_first_domain:  concept_vector;;
+nrel_subtraction_of_vectors <= nrel_second_domain: concept_vector;;
+nrel_subtraction_of_vectors <= nrel_third_domain: concept_vector;;

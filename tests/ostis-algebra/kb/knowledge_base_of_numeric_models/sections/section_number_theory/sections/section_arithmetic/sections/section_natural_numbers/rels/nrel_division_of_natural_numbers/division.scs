@@ -1,0 +1,138 @@
+sc_node_norole_relation -> nrel_division_of_natural_numbers;;
+
+nrel_division_of_natural_numbers=> nrel_main_idtf:
+[деление натуральных чисел* ](*<-lang_ru;;*);
+[табиғи сандар бөлімшесі* ](*<-lang_kz;;*);
+[division of natural numbers* ](*<-lang_en;;*);;
+
+nrel_division_of_natural_numbers<- ternary_relation;;
+
+//домены
+nrel_division_of_natural_numbers => nrel_first_domain:	concept_natural_number;;
+			
+nrel_division_of_natural_numbers => nrel_second_domain: concept_natural_number;;
+ 
+nrel_division_of_natural_numbers => nrel_third_domain: concept_natural_number;;
+ 
+nrel_division_of_natural_numbers <= nrel_using_constants:  nrel_multiplication;;
+
+nrel_division_of_natural_numbers<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Пояснение(деление натуральных чисел*)](*<-lang_ru;;*);;  
+	<- sc_definition;;   
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Деление – арифметическое действие, обратное умножению](* 	<- lang_ru;; 	*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Пояснение(деление натуральных чисел*)](*<-lang_ru;;*);;  
+	<- sc_definition;;   
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Разделить число а на число b – значит, найти такое число х, что bx=a или xb=a. Число, которое делят (число а) называется делимым, число, на которое делят (число b) – делителем, результат деления (число х) – частным. Деление обозначают знаком «:», горизонтальной или наклонной чертой.](* 	<- lang_ru;; 	*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Пояснение(деление натуральных чисел*)](*<-lang_ru;;*);;  
+	<- sc_definition;;   
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Делителем натурального числа а называется такое натуральное число b, на которое числа а делится без остатка. Каждое натуральное число n имеет по крайней мере два делителя: 1 и n.](* 	<- lang_ru;; 	*);;
+		*);;
+	*);;
+nrel_division_of_natural_numbers<= rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(деление*)](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://division1.html" (*<-lang_ru;;*);;
+		*);;
+
+	*);
+...
+(*
+=> nrel_main_idtf:[Утв.(натуральное число,делитель*, делимое*, частное*, остаток*)](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+                [Любое натуральное число а можно представить в виде a=bq+r, где b, q, r – натуральные числа и 0<=r<b. Тогда число а называется делимым, b – делителем, q – частным, r – остатком.]
+               (* <- lang_ru;; *);;
+		*);;
+
+	*);
+...
+(*
+=> nrel_main_idtf:[Утв.(натуральное число, делимость*)](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+              "file://division2.html"   (* <- lang_ru;; *);;
+		*);;
+*);;
+
+//конкретные задачи
+nrel_division_of_natural_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<=nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+ "file://division3.html" (* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решение
+nrel_division_of_natural_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решение] (* <- lang_ru;; *);;
+<- sc_task;;
+<=nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение частного от деления натуральных чисел](* <- lang_ru;; *);;
+*);
+...
+(*
+-> rrel_example:
+[Задачи на нахождение частного и остатка от деления натуральных чисел](* <- lang_ru;; *);;
+*);;
+*);;
+//пример
+nrel_division_of_natural_numbers-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[15:3=5 (или , или 15/3=5), так как 5*3=15. Здесь 15 – делимое, 3 – делитель, 5 – частное.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+ "file://division4.html" (* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,162 @@
+sc_node_norole_relation->nrel_multiplication_of_integers;;
+
+nrel_multiplication_of_integers=>nrel_main_idtf:
+[умножение целых чисел* ](*<-lang_ru;;*);
+[бүтін көбейту* ](*<-lang_kz;;*);
+[multiplication of integers* ](*<-lang_en;;*);;
+
+// синонимы
+nrel_multiplication_of_integers=> nrel_idtf:[умножение отрицательных чисел* ](*<-lang_ru;;*);;
+nrel_multiplication_of_integers=> nrel_idtf:[умножение чисел с разными знаками* ](*<-lang_ru;;*);;
+nrel_multiplication_of_integers=> nrel_idtf:[умножение противоположных чисел* ](*<-lang_ru;;*);;
+nrel_multiplication_of_integers=> nrel_idtf:[умножение числа на 1 (единицу)* ](*<-lang_ru;;*);;
+nrel_multiplication_of_integers=> nrel_idtf:[умножение числа на 0 (нуль)* ](*<-lang_ru;;*);;
+nrel_multiplication_of_integers=> nrel_idtf:[multiplication of whole number* ](*<-lang_en;;*);;
+
+//определение
+nrel_multiplication_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(умножение целых чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для умножения двух целых чисел, необходимо перемножить модули этих чисел и перед произведением поставить знак плюс (+), если исходные числа были одного знака, и минус (–) – если разного.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Когда умножаются несколько чисел, знак произведения будет положительным, если число неположительных сомножителей чётное, и отрицателен, если нечётное.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Произведение двух целых чисел, в котором одним из множителей является единица, равно другому множителю.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[+*+=+](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[+*-=-](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[-*+=-](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[-*-=+](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_multiplication_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(умножение целых чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Свойство ассоциативности a×(b×c)=(a×b)×c.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство дистрибутивности умножения относительно сложения a×(b+c)=(a×b)+(a×c).](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство существования нейтрального элемента a×1=a.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство существования противоположного элемента a≠±1⇒ 1/a не является целым.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство коммутативности a×b=b×a.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_multiplication_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[127*5=?](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[(-34)*(-2)=?](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[7*(-14)=?](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_multiplication_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление произведения числа на 0 (нуль).]	(* <- lang_ru;; *);;
+		*); 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи вычисление произведения числа на 1 (единицу).]	(* <- lang_ru;; *);;
+		*); 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление произведения целых чисел с разными знаками.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление произведения целых отрицательных чисел.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление произведения целых положительных чисел.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+nrel_multiplication_of_integers -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[(–2)∙(+3)∙(–5)∙(–3)∙(+4)=–360](* <- lang_ru;; 	*);;
+		*);;
+	*);;

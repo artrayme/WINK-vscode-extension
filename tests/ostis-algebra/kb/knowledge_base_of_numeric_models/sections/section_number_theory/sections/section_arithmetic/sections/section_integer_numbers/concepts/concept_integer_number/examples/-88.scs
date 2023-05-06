@@ -1,0 +1,6 @@
+minus_eighty_eight=>nrel_main_idtf:
+[-88](*<-lang_ru;;*);
+[-88](*<-lang_en;;*);;
+
+concept_number -> minus_eighty_eight;;
+set_of_number -> minus_eighty_eight;;

@@ -1,0 +1,6 @@
+fifty_seven=>nrel_main_idtf:
+[57](*<-lang_ru;;*);
+[57](*<-lang_en;;*);;
+
+concept_number -> fifty_seven;;
+set_of_number -> fifty_seven;;

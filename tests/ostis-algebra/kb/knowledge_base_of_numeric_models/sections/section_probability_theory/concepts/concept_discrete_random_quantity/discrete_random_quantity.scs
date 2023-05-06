@@ -1,0 +1,49 @@
+sc_node_not_relation -> concept_discrete_random_quantity;;
+
+concept_discrete_random_quantity => nrel_main_idtf:
+[дискретная случайная величина](*<-lang_ru;;*);
+[discrete random quantity](*<-lang_en;;*);
+[дискретті кездейсоқ саны](*<-lang_kz;;*);;
+
+//надмножество
+concept_random_quantity => nrel_inclusion: concept_discrete_random_quantity;;
+
+//определения и пояснения
+concept_discrete_random_quantity <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (дискретная случайная величина)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Случайная величина называется дискретной, если ее множество значений не более чем счетно, т.е. конечно или счётно.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+concept_discrete_random_quantity <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дискретная случайная величина; распределение случайной дискретной величины*; геометрический закон; закон Пуассона )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Часто встречающимися законами распределения дискретной случайной величины являются: геометрический закон, закон Пуассона.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дискретная случайеая величина; распределение вероятности*; закон распределения дискретной случайной величины*; функция распределения дискретной случайной величины*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Закон распределения и функция распределения дискретной случайной величины взаимно однозначно определяют друг друга.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	

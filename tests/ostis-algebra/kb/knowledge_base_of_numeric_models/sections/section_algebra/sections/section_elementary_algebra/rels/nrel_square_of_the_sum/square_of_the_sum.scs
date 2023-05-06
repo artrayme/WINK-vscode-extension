@@ -1,0 +1,68 @@
+sc_node_norole_relation->nrel_square_of_the_sum;;
+
+nrel_square_of_the_sum=>nrel_main_idtf:
+[квадрат суммы* ](*<-lang_ru;;*);
+[square of the sum* ](*<-lang_en;;*);;
+
+nrel_square_of_the_sum<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(квадрат суммы*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадрат суммы-это произведение суммы на саму себя.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+ nrel_square_of_the_sum<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://square_of_the_sum.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+ nrel_square_of_the_sum<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на разложение квадрата суммы.](* <- lang_ru;; *);;
+*);;
+*);;
+
+
+nrel_square_of_the_sum<= nrel_first_domain:
+concept_algebraic_expession;;
+
+nrel_square_of_the_sum <= nrel_second_domain: 
+concept_number;;
+nrel_square_of_the_sum <= nrel_third_domain: 
+concept_algebraic_expession;;
+
+
+ nrel_square_of_the_sum-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://square_of_the_sum1.html"(* <- lang_ru;;*);;
+		*);;
+	*);;

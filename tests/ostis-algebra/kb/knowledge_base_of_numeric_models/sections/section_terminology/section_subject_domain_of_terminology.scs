@@ -1,0 +1,58 @@
+sc_node_struct -> section_subject_domain_of_terminology;;
+
+section_subject_domain_of_terminology => nrel_main_idtf:
+    [Раздел. Предметная область терминологии] (* <- lang_ru;; *);
+    [Section. Subject domain of terminology] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_terminology <- nrel_system_identifier;;
+  
+section_subject_domain_of_terminology -> rrel_key_sc_element:
+    subject_domain_of_terminology;
+    concept_variable;
+    concept_mathematical_object;
+    concept_equality;
+    concept_parameter;
+    concept_noequality;
+    concept_equation;
+    concept_sequence;
+    concept_set_of_equations;    
+    concept_equivalent_to_the_inequality;
+    concept_equivalent_to_the_equation;
+    nrel_not_equal;
+    nrel_root_of_the_equation;
+    nrel_less;
+    nrel_more;
+    nrel_indentity;
+    nrel_the_domain_of_the_equation;
+    nrel_equality;;
+
+section_subject_domain_of_terminology = [*
+    subject_domain_of_terminology => nrel_main_idtf:
+        [Предметная область терминологии] (* <- lang_ru;; *);
+        [Subject domain of terminology] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_terminology -> rrel_maximum_studied_object_class:
+        concept_mathematical_object;
+        concept_equality;
+        concept_noequality;;
+
+    subject_domain_of_terminology -> rrel_not_maximum_studied_object_class:
+        concept_variable;
+        concept_parameter;
+        concept_sequence;
+        concept_equation;
+        concept_set_of_equations;    
+        concept_equivalent_to_the_inequality;
+        concept_equivalent_to_the_equation;;
+
+    subject_domain_of_terminology -> rrel_explored_relation:
+        nrel_not_equal;
+        nrel_root_of_the_equation;
+        nrel_less;
+        nrel_more;
+        nrel_indentity;
+        nrel_the_domain_of_the_equation;
+        nrel_equality;;
+*];;

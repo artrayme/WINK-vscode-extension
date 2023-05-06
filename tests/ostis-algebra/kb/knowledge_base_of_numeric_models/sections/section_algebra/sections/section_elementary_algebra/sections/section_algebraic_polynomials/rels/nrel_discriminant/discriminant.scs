@@ -1,0 +1,95 @@
+sc_node_norole_relation->nrel_discriminant;;
+
+nrel_discriminant=>nrel_main_idtf:
+[дискриминант* ](*<-lang_ru;;*);
+[discriminant](*<-lang_en;;*);;
+
+nrel_discriminant<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дискриминант*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://discriminant.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_discriminant<- binary_relation;;
+nrel_discriminant=> nrel_first_domain:concept_quadratic_equation;;
+nrel_discriminant=> nrel_second_domain: concept_number;;
+
+nrel_discriminant<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(многочлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дискриминант равен нулю тогда и только тогда, когда многочлен имеет кратные корни.](* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(квадратный трёхчлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://discriminant1.html"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(симметрический многочлен; многочлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дискриминант является симметрическим многочленом относительно корней многочлена и поэтому является многочленом от его коэффициентов; более того, коэффициенты этого многочлена целые независимо от расширения, в котором берутся корни. ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_discriminant <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://discriminant2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_discriminant <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение дискриминанта.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_discriminant -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://discriminant3.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

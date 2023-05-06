@@ -1,0 +1,66 @@
+sc_node_not_relation -> concept_homological_algebra;; 
+
+concept_homological_algebra => nrel_main_idtf:
+[гомологическая алгебра](*<-lang_ru;;*);
+[homological algebra](*<-lang_en;;*);
+[Гомологической алгебра](*<-lang_kz;;*);;
+
+//разбиение
+concept_homological_algebra <= nrel_subdividing:
+	...
+	(* 
+	-> concept_chain_complex;;
+	-> concept_resolvent;;
+	-> concept_derived_functors;;
+	*);;
+	
+//надмножество
+concept_algebra => nrel_inclusion: concept_homological_algebra;;
+
+//определения и пояснения
+concept_homological_algebra <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (гомологическая алгебра)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Гомологическая алгебра — ветвь алгебры, изучающая алгебраические объекты, заимствованные из алгебраической топологии.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_homological_algebra <= nrel_using_constants:
+	{
+	concept_algebra;
+	concept_algebraic_object;
+	concept_algebraic_topology
+	};;
+	
+//утверждения
+concept_homological_algebra <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гомологический метод*; алгебра; )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Первыми гомологические методы в алгебре применили в 40-х годах XX века С. Эйленберг и С. Маклейн при изучении расширений групп.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гомологическая алгебра; алгбераическая топология; алгебра; теория групп; теория алгебр; алгбераическая геометрия; теория Галуа)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Гомологическая алгебра играет важную роль в алгебраической топологии, применяется во многих разделах алгебры, таких, как теория групп, теория алгебр, алгебраическая геометрия, теория Галуа.](* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,81 @@
+sc_node_norole_relation -> nrel_arccos;;
+
+nrel_arccos => nrel_main_idtf:
+[арккосинус* ](*<-lang_ru;;*);
+[arccos* ](*<-lang_en;;*);
+[арккосинус* ](*<-lang_kz;;*);;
+
+//определение
+nrel_arccos <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(арккосинус*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арккосинусом числа X называется такое значение угла, косинус которого равен X.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_arccos <= nrel_using_constants:
+	{
+	concept_angle;
+	concept_number;
+	nrel_cosine
+	};;
+
+concept_trigonometric_function => nrel_inclusion: nrel_arccos;;
+
+nrel_arccos <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арккосинус*; промежуток; область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью определения арккосинуса является промежуток от-1 до 1, включая -1 и 1.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арккосинус*; область значений*; промежуток)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью значений арккосинуса яляется промежуток от 0 до Pi/2, включая 0 и Pi/2. ](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арккосинус*; область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арккосинус убывает на всей области определения.](* <- lang_ru;; *);;
+		*);;
+	*);
+	
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арккосинус*; чётная функция; нечётная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арккосинус не является ни чётной, ни нечётной функцией.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_arccos <- binary_relation;;
+nrel_arccos <= nrel_first_domain:  concept_number;;
+nrel_arccos <= nrel_second_domain: nrel_angle_measure;;

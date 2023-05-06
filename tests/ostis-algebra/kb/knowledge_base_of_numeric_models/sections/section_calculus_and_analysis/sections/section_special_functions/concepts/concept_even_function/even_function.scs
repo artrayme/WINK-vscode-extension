@@ -1,0 +1,69 @@
+sc_node_not_relation -> concept_even_function;;
+
+concept_even_function=>nrel_main_idtf:
+[even function](*<-lang_en;;*);
+[четная функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_even_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(четная функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Чётная функция — функция, не изменяющая своего значения при изменении знака независимой переменной (график ее симметричен относительно оси ординат).](*<-lang_ru;;*);;
+*);;
+*);;
+
+//надмножество
+concept_function=>nrel_inclusion : concept_even_function;;
+
+//утверждения
+concept_even_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(четная функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://example.html"(*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(сумма',разность')](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Сумма, разность и вообще любая линейная комбинация чётных функций чётна.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(произведение*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Произведение двух функций одной чётности чётно.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(функция; четная функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [График чётной функции симметричен относительно оси ординат Oy.](*<-lang_ru;;*);;
+*);;
+*);;

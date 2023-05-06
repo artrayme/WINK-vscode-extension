@@ -1,0 +1,48 @@
+sc_agent_check_for_a_prime_number
+=> nrel_main_idtf:
+	[sc-агент проверки простого/составного числа] (* <- lang_ru;; *);
+	[sc-agent check for a prime number] (* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_check_for_a_prime_number_condition => ..sc_agent_check_for_a_prime_number_result);
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_check_for_a_prime_number
+	};
+
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_check_for_a_prime_number
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_check_for_a_prime_number
+		};;
+	-> sc_agent_check_for_a_prime_number_scp    
+		(* <- active_sc_agent;; *);; 
+	*);;
+
+..sc_agent_check_for_a_prime_number
+= [*
+	question_check_for_a_prime_number _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter;;
+*];;
+
+..sc_agent_check_for_a_prime_number_result
+= [*
+	question_check_for_a_prime_number _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter;;
+*];;

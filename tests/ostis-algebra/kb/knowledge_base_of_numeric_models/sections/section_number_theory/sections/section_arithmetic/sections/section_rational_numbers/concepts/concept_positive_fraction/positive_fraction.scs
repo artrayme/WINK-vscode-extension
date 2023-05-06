@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_positive_fraction;; 
+
+concept_positive_fraction => nrel_main_idtf:
+[положительное дробное число](*<-lang_ru;;*);
+[positive fraction](*<-lang_en;;*);;
+	
+//надмножество
+concept_fraction => nrel_inclusion: concept_positive_fraction;;
+
+//определения и пояснения
+concept_positive_fraction <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (положительное дробное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Положительным дробным числом называется дробное число больше нуля.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (положительное дробное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Дробное число является положительным, если его числитель и знаменатель имеют одинаковый знак.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_positive_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество; положительное дробное число; ограничено снизу*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество положительных дробных чисел ограничено снизу.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(положительное дробное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Не существует самого малого положительного дробного числа.](* <- lang_ru;; *);;
+		*);;
+	*);;

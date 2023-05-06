@@ -1,0 +1,191 @@
+scp_program -> proc_mixed_multiplication_of_vectors (*	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _x1;;
+		-> rrel_2: rrel_in: _y1;;
+		-> rrel_3: rrel_in: _z1;;
+		-> rrel_4: rrel_in: _x2;;
+		-> rrel_5: rrel_in: _y2;;
+		-> rrel_6: rrel_in: _z2;;
+		-> rrel_7: rrel_in: _x3;;
+		-> rrel_8: rrel_in: _y3;;
+		-> rrel_9: rrel_in: _z3;;
+                -> rrel_10: rrel_out: _mixed;;
+	*);;
+
+	-> rrel_operators: ... (*	
+		-> rrel_init: ..proc_mixed_multiplication_of_vectors_for_2_operator1 (*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x1y2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y2;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part2;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part2
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x1y2z3;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x1y2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part3;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part3
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x2y3;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part4;;
+			*);;
+		
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part4
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x2y3z1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x2y3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z1;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part5;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part5
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _mixed12;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x2y3z1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x1y2z3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part6;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part6
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _y1z2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _y1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z2;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part7;;
+			*);;
+		
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part7
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _y1z2x3;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _y1z2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part8;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part8
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _mixed123;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _mixed12;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y1z2x3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part9;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part9
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _z1y2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _z1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y2;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part10;;
+			*);;
+		
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part10
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _z1y2x3;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _z1y2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part11;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part11
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _mixed1234;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _mixed123;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z1y2x3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part12;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part12
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x1y3;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part13;;
+			*);;
+		
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part13
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x1y3z2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x1y3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z2;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part14;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part14
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _mixed12345;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _mixed1234;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x1y3z2;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part15;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part15
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x2y1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y1;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part16;;
+			*);;
+		
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part16
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x1y3z3;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x2y1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part17;;
+			*);;
+
+		-> ..proc_mixed_multiplication_of_vectors_for_2_operator_calculation_part17
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _mixed;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _mixed12345;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x1y3z3;;
+
+			=> nrel_goto: ..proc_mixed_multiplication_of_vectors_for_2_operator_return;;
+			*);;
+
+ -> ..proc_mixed_multiplication_of_vectors_for_2_operator_return (*
+			<- return;;
+		*);;
+		
+	*);;
+*);;
+		

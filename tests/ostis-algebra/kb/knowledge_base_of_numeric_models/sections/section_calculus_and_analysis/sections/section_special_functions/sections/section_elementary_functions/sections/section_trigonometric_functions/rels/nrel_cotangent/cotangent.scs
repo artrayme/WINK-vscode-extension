@@ -1,0 +1,77 @@
+sc_node_norole_relation->nrel_cotangent;;
+
+nrel_cotangent=>nrel_main_idtf:
+[котангенс* ](*<-lang_ru;;*);
+[cotangent* ](*<-lang_en;;*);
+[кокасательного* ](*<-lang_kz;;*);;
+
+nrel_cotangent=> nrel_idtf:[cotangent* ](*<-lang_en;;*);;
+nrel_cotangent=> nrel_idtf:[ctg* ](*<-lang_en;;*);;
+
+//определение
+nrel_cotangent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(котангенс*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Котангенс - это тригонометрическая функция от угла, равная отношению косинуса этого угла к синусу этого угла.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_cotangent <= nrel_using_constants:
+	{
+	concept_trigonometric_function;
+	concept_angle;
+	nrel_sine;
+	nrel_cosine
+	};;
+
+
+//надмножество
+concept_trigonometric_function => nrel_inclusion: nrel_cotangent;;
+
+//утверждения
+	
+nrel_cotangent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(котангенс*; область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Котангенс убывает на каждом участке своей области определения](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тангенс*; область значений*; множество действительных чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Область значений котангенса - множество всех действительных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тангенс*; нечётная функция; угол)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тангенс является нечетной функцией угла.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_cotangent <- binary_relation;;
+nrel_cotangent <= nrel_first_domain: nrel_angle_measure;;
+nrel_cotangent <= nrel_second_domain: concept_number;;

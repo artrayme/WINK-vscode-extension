@@ -1,0 +1,88 @@
+sc_node_norole_relation->nrel_multiplying_fractions;; 
+nrel_multiplying_fractions=>nrel_main_idtf:
+[умножение дробей* ] (*<-lang_ru;;*);
+[көбейту фракциялары* ] (*<-lang_ru;;*);
+[multiplying fractions* ] (*<-lang_en;;*);;
+
+//разбиение
+nrel_multiplying_fractions<= nrel_subdividing:
+	...
+	(* 
+	-> nrel_common_fraction_multiplication_by_a_natural_number;;
+	-> nrel_mixed_fraction_multiplication_by_a_natural_number;;
+	-> nrel_multiplication_of_common_fractions;;
+	-> nrel_multiplcation_of_mixed_fractions;;
+	-> nrel_multiplication_of_decimal_fraction;;
+	*);;
+
+nrel_multiplying_fractions <- ternary_relation;;
+
+nrel_multiplying_fractions => nrel_first_domain: concept_fraction;;
+nrel_multiplying_fractions => nrel_second_domain: concept_fraction;;
+nrel_multiplying_fractions => nrel_third_domain: concept_fraction;;
+
+nrel_multiplying_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(умножение дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При умножении дроби на натуральное число, мы должны ее числитель умножить на это число, а знаменатель оставить без изменения.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Для умножения смешанных чисел, надо записать их в виде неправильных дробей, а затем воспользоваться правилом умножения простых дробей.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Чтобы умножить смешанную дробь на натуральное число, мы должны умножить и целую часть и числитель дроби на это число.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//классы задач и способы решения
+nrel_multiplying_fractions <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на умножение дробей.](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_multiplying_fractions-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+...
+		(*
+		-> rrel_example: 
+	[((-2)/7)*(5/7)=-((2*5)/(7*9))=-(10/63)](* <- lang_en;; 	*);;
+		*);;
+	*);;
+
+
+
+// конкретные задачи
+nrel_multiplying_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+
+		...
+		(*
+		-> rrel_example: 
+			[(7/11)*(27/14)=?](* <- lang_ru;; *);;
+		*);;
+	*);;

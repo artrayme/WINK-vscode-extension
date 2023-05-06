@@ -1,0 +1,74 @@
+sc_node_norole_relation->nrel_tangent;;
+
+nrel_tangent=>nrel_main_idtf:
+[тангенс* ](*<-lang_ru;;*);
+[tangent* ](*<-lang_en;;*);
+[тангенс* ](*<-lang_kz;;*);;
+
+nrel_tangent=> nrel_idtf:[tan* ](*<-lang_en;;*);;
+nrel_tangent=> nrel_idtf:[tg* ](*<-lang_en;;*);;
+
+//определение
+nrel_tangent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(тангенс*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тангенс - это тригонометрическая функция от угла, равная отношению синуса этого угла к косинусу этого угла.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_tangent <= nrel_using_constants:
+	{
+	concept_trigonometric_function;
+	concept_angle;
+	nrel_sine;
+	nrel_cosine
+	};;
+	
+//иерархия
+concept_trigonometric_function => nrel_inclusion: nrel_tangent;;
+	
+nrel_tangent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тангенс*; возрастающая функция; область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тангенс возрастает на всей своей области определения.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тангенс*; область значений*; множество действительных чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Область значений тангенса - множество всех действительных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тангенс*; нечетная функция; угол)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тангенс является нечетной функцией угла.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_tangent <- binary_relation;;
+nrel_tangent <= nrel_first_domain: nrel_angle_measure;;
+nrel_tangent <= nrel_second_domain: concept_number;;

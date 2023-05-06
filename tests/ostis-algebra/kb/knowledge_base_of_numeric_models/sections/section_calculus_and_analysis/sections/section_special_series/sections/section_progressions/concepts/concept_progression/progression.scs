@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_progression;;
+concept_progression => nrel_main_idtf :
+[прогрессия] (* <- lang_ru;; *);
+[прогрессияның] (* <- lang_kz;; *);
+[progression] (* <- lang_en;; *);;
+
+concept_progression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(прогрессия)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Прогрессия - последовательность чисел, получаемых по некоторому правилу. Числа составляющие последовательность, называются ее членами.]  (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_progression <= nrel_subdividing:
+	...
+(* 
+    -> concept_arithmetical_progression ;;
+    -> concept_geometric_progression;;
+*);;
+
+
+// классы задач и способы решения
+concept_progression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение вида(арифметическая или геометрическая) прогрессии.](* <- lang_ru;; *);;
+		*);;
+	*);;

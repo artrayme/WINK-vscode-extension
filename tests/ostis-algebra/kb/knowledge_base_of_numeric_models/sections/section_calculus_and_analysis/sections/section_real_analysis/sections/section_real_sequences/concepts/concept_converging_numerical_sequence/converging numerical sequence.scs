@@ -1,0 +1,98 @@
+sc_node_not_relation -> concept_converging_numerical_sequence;;
+concept_converging_numerical_sequence => nrel_main_idtf :
+[сходящаяся числовая последовательность] (* <- lang_ru;; *);
+[converging numerical sequence] (* <- lang_en;; *);;
+
+concept_converging_numerical_sequence <= nrel_using_constants: nrel_limit_of_the_sequence; concept_number;;
+
+//определение
+concept_converging_numerical_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сходящаяся числовая последовательность)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+[Последовательность, которая имеет предел, называется сходящейся.]  (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_converging_numerical_sequence <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(предел последовательности*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Теорема. Сходящаяся последовательность имеет только один предел.]  (* <- lang_ru;; *);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(ограниченная последовательность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Теорема. (Необходимый признак сходимости последовательности).Сходящаяся последовательность ограничена.]  (* <- lang_ru;; *);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf: [Утв.(сумма*; предел последовательности*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://converging_sequence1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_converging_numerical_sequence -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[1; 4/3; 6/4; 8/5; ...; 2n/(n+1); ... - сходящаяся последовательность]  (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_converging_numerical_sequence<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Опеределить, является ли данная последовательность сходящейся.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_converging_numerical_sequence<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://converging_sequence2.html"   (* <- lang_ru;; 	*);;
+*);;
+*);;

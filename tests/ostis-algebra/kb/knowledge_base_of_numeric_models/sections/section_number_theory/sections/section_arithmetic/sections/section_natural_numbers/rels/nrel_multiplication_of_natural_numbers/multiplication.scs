@@ -1,0 +1,114 @@
+sc_node_norole_relation -> nrel_multiplication_of_natural_numbers;;
+
+nrel_multiplication_of_natural_numbers=> nrel_main_idtf:
+[умножение натуральных чисел* ](*<-lang_ru;;*);
+[табиғи сандар көбейту* ](*<-lang_kz;;*);
+[multiplication of natural numbers* ](*<-lang_en;;*);;
+
+nrel_multiplication_of_natural_numbers<- ternary_relation;;
+
+//домены
+nrel_multiplication_of_natural_numbers => nrel_first_domain:
+	concept_natural_number;;
+			
+nrel_multiplication_of_natural_numbers => nrel_second_domain: 
+	concept_natural_number;;
+ 
+nrel_multiplication_of_natural_numbers => nrel_third_domain: 
+concept_natural_number;;
+ 
+nrel_multiplication_of_natural_numbers<= nrel_inclusion: nrel_multiplication;;
+
+nrel_multiplication_of_natural_numbers<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(умножение натуральных чисел*)](*<-lang_ru;;*);;  
+	<- sc_definition;;   
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Умножение – арифметическое действие, в котором любой паре чисел a и b, называемых множителями, ставится в соответствие третье число c, называемое произведением. Умножение 
+обозначается знаками «×» или «⋅». В буквенных обозначениях эти знаки опускаются и вместо c=a×b или c=a⋅b пишут с=ab.](* 	<- lang_ru;; 	*);;
+		*);;
+	*);;
+nrel_multiplication_of_natural_numbers<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Пояснение(умножение*)](*<-lang_ru;;*);;  
+	<- sc_definition;;   
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Умножение двух натуральных чисел a, b∈N дает натуральное число c, равное сумме b слагаемых, каждое из которых равно а: c=ab=a+a+...+a ( b слагаемых).](* 	<- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_multiplication_of_natural_numbers<= rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(свойства умножения*)](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://multiplication1.html" (*<-lang_ru;;*);;
+		*);;
+
+	*);
+...
+(*
+=> nrel_main_idtf:[Утв.(свойства умножения на едниницу*)](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+                [Свойство числа 1 при умножении: а⋅1=а]
+               (* <- lang_ru;; *);;
+		*);;
+
+	*);;
+
+
+//конкретные задачи
+nrel_multiplication_of_natural_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<=nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение произведения 2 натуральных чисел 12 и 25](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решение
+nrel_multiplication_of_natural_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решение] (* <- lang_ru;; *);;
+<- sc_task;;
+<=nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задача на нахождение произведения двух натуральных чисел](* <- lang_ru;; *);;
+*);;
+*);;
+
+//пример
+nrel_multiplication_of_natural_numbers-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[7⋅3=7+7+7=21; 7 и 3 – множители, 21 - произведение](* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,78 @@
+sc_node_not_relation->concept_interval;; 
+
+concept_interval=>nrel_main_idtf:
+[интервал](*<-lang_ru;;*);
+[interval](*<-lang_en;;*);;
+
+concept_interval<= nrel_inclusion: concept_gap;;
+
+concept_interval<= nrel_using_constants:   concept_number;;
+//определение
+concept_interval  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(интервал)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[ Множество точек числовой прямой, заключённы между двумя данными числами a и b, то есть множество чисел  х  удовлетворяющих условию: a<x<b. Промежуток не включает концов и обозначается (a,b). ](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+concept_interval <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(результат*; вычисление*; величина*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Результату вычислений над величинами можно сопоставить соответсвующие вчисления над их интервалами, задающие в итоге итервал возможных значений для результата.] (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//конкретные задачи
+concept_interval<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Данна функция f=|x|. Найти интервал, где данная функция возрастает.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_addition_of_complex_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение интервала возрастания функции.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//пример
+concept_interval-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[f=arcsin(x). (-1;1)- интервал, где функция растёт.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

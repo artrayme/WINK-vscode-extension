@@ -1,0 +1,84 @@
+sc_node_norole_relation->nrel_subtraction_of_fractions;; 
+nrel_subtraction_of_fractions=>nrel_main_idtf:
+[разность дробей* ] (*<-lang_ru;;*);
+[фракциялар арасындағы айырмашылық* ] (*<-lang_kz;;*);
+[subtraction of fractions* ] (*<-lang_en;;*);;
+
+nrel_subtraction_of_fractions=>nrel_idtf:[вычитание дробей* ] (*<-lang_ru;;*);;
+
+//разбиение
+nrel_subtraction_of_fractions<= nrel_subdividing:
+	...
+	(* 
+	-> nrel_subtraction_of_fractions_with_the_same_denominator;;
+	-> nrel_subtraction_of_common_fractions;;
+	-> nrel_subtraction_of_mixed_fractions;;
+	-> nrel_subtract_of_decimal_fraction;;
+	*);;
+
+//используемые константы
+nrel_subtraction_of_fractions<= nrel_using_constants: rrel_numerator; rrel_denominator;;
+
+nrel_subtraction_of_fractions <- ternary_relation;;
+
+nrel_subtraction_of_fractions => nrel_first_domain: concept_fraction;;
+nrel_subtraction_of_fractions => nrel_second_domain: concept_fraction;;
+nrel_subtraction_of_fractions => nrel_third_domain: concept_fraction;;
+
+nrel_subtraction_of_fractions <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на разность дробей.](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_subtraction_of_fractions-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+...
+		(*
+		-> rrel_example: 
+	[(13/20)-(7/20)=6/20=3/10](* <- lang_en;; 	*);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_subtraction_of_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+
+		...
+		(*
+		-> rrel_example: 
+			[(7/11)-(27/14)=?](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_subtraction_of_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(разность дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если знаменатели дробей разные, необходимо сначала привести дроби к общему знаменателю. При вычитании смешенных чисел рекомендуем сначала преобразовать их к виду неправильных дробей, затем вычесть из одной другую, а после этого вновь привести результат, если требуется к виду смешанного числа.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Если знаменатели дробей одинаковы, то для того, чтобы вычесть дроби, надо вычесть их числителе. Полученная разность будет числителем результата; знаменатель останется тем же.](* <- lang_ru;; 	*);;
+		*);;
+*);;

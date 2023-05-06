@@ -1,0 +1,72 @@
+sc_node_not_relation->concept_graph_of_the_function;; 
+
+concept_graph_of_the_function=>nrel_main_idtf:
+[график функции](*<-lang_ru;;*);
+[graph of the function](*<-lang_en;;*);;
+
+concept_graph_of_the_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(график функции)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[График данной функции - множество всех точек плоскости, координаты которых удовлетворяют формуле (определению) данной функции.](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_graph_of_the_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(обратная функция*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если функция обратима, то график обратной функции (как подмножество плоскости) будет совпадать с графиком самой функции.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_graph_of_the_function<= nrel_using_constants:concept_function;;
+
+concept_graph_of_the_function<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Построить график функции f=|x+2|.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_graph_of_the_function<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на построение графика заданной функции.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_graph_of_the_function-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://graph_of_the_function.png"(* <- lang_ru;;*);;
+		*);;
+	*);;

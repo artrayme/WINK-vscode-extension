@@ -1,0 +1,72 @@
+sc_node_norole_relation->nrel_supremum;;
+nrel_supremum => nrel_main_idtf :
+[супремум* ] (* <- lang_ru;; *);
+[supremum](*<-lang_en;;*);;
+
+nrel_supremum=> nrel_idtf:[точная верхняя грань* ](*<-lang_ru;;*);;
+nrel_supremum=> nrel_idtf:[мажоранта* ](*<-lang_ru;;*);;
+
+nrel_supremum <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(супремум*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Супремумом числового ряда, называется наименьший элемент М, который равен или больше всех элементов ряда. Другими словами, супремум - это наименьшая из всех верхних граней. Обозначается sup X.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_supremum <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вещественное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вещественное число S, является sup X тогда, когда S есть верхняя грань X.](* <- lang_ru;; *);;
+		*);;
+	*);
+	
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(теорема о гранях; ограниченная сверху функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[По теореме о гранях для любой ограниченой сверху функции существует супремум.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_supremum <= nrel_using_constants: concept_real_number;;
+
+//классы задач и способы решения
+nrel_supremum <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение супремума функции](* <- lang_ru;; *);;
+*);;
+*);;
+
+
+nrel_supremum  -> rrel_example :
+"file://supremum1.html" (*<-lang_ru;;*);;
+
+
+
+nrel_supremum => nrel_first_domain: concept_numerical_series;;
+nrel_supremum => nrel_second_domain: concept_number;;

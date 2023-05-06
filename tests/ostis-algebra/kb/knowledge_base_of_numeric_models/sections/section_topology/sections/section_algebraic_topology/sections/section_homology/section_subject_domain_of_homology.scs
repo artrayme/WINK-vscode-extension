@@ -1,0 +1,22 @@
+sc_node_struct -> section_subject_domain_of_homology;;
+
+section_subject_domain_of_homology => nrel_main_idtf:
+    [Раздел. Предметная область гомологий] (* <- lang_ru;; *);
+    [Section. Subject domain of homology] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_homology <- nrel_system_identifier;;
+
+section_subject_domain_of_homology -> rrel_key_sc_element:
+    subject_domain_of_homology;
+    concept_homology;;
+
+section_subject_domain_of_homology = [*
+    subject_domain_of_homology => nrel_main_idtf:
+        [Предметная область гомологий] (* <- lang_ru;; *);
+        [Subject domain of homology] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_homology -> rrel_maximum_studied_object_class:
+        concept_homology;;
+*];;

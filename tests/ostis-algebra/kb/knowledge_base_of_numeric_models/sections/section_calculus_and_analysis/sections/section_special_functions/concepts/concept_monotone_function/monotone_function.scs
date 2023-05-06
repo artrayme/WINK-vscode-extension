@@ -1,0 +1,51 @@
+sc_node_not_relation -> concept_monotone_function;;
+concept_monotone_function=> nrel_main_idtf :
+[монотонная функция] (* <- lang_ru;; *);
+[monotone function] (* <- lang_en;; *);; 
+
+//определение
+concept_monotone_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(монотонная функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Монотонная функция — это функция, приращение которой не меняет знака, то есть либо всегда неотрицательное, либо всегда неположительное. Если в дополнение приращение не равно нулю, то функция называется строго монотонной.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Монотонная функция — это функция, меняющаяся в одном и том же направлении.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+concept_monotone_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция; интервал)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://monotone_function1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*; функция; интервал)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://monotone_function2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_monotone_function <= nrel_using_constants: concept_variable ;;

@@ -1,0 +1,67 @@
+scp_program -> proc_scalar_multiplication_of_vectors (*	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _x1;;
+		-> rrel_2: rrel_in: _y1;;
+		-> rrel_3: rrel_in: _z1;;
+		-> rrel_4: rrel_in: _x2;;
+		-> rrel_5: rrel_in: _y2;;
+		-> rrel_6: rrel_in: _z2;;
+                -> rrel_7: rrel_out: _scalar;;
+	*);;
+
+	-> rrel_operators: ... (*	
+		-> rrel_init: ..proc_scalar_multiplication_of_vectors_for_2_operator1 (*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x2;;
+
+			=> nrel_goto: ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part2;;
+			*);;
+
+		-> ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part2
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _y;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _y1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y2;;
+
+			=> nrel_goto: ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part3;;
+			*);;
+
+		-> ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part3
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _z;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _z1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z2;;
+
+			=> nrel_goto: ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part4;;
+			*);;
+		
+		-> ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part4
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _xy;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y;;
+
+			=> nrel_goto: ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part5;;
+			*);;
+
+		-> ..proc_scalar_multiplication_of_vectors_for_2_operator_calculation_part5
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _scalar;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _xy;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z;;
+
+			=> nrel_goto: ..proc_scalar_multiplication_of_vectors_for_2_operator_return;;
+			*);;
+ -> ..proc_scalar_multiplication_of_vectors_for_2_operator_return (*
+			<- return;;
+		*);;
+		
+	*);;
+*);;
+		

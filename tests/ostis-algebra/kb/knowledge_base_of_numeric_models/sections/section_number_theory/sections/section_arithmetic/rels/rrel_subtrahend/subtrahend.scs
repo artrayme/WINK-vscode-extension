@@ -1,0 +1,45 @@
+sc_node_role_relation->rrel_subtrahend;; 
+rrel_subtrahend=>nrel_main_idtf:	[вычитаемое'](*<-lang_ru;;*);	[subtrahend'](*<-lang_en;;*);	[шегерілетін'](*<-lang_kz;;*);;
+
+rrel_subtrahend<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(вычитаемое')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Вычитаемое - число, которое вычитается из другого числа.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+rrel_subtrahend <= nrel_using_constants:
+	{
+	concept_number;
+	nrel_subtraction
+	};;
+	
+rrel_subtrahend <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вычитаемое')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вычитаемое всегда стоит после знака "-".](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вычитание'; натуральное число; уменьшаемое'; вычитаемое')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В результате вычитания получится натуральное число, если уменьшаемое больше вычитаемого.](* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,153 @@
+sc_node_norole_relation -> nrel_division;;
+
+nrel_division => nrel_main_idtf:
+[деление* ](* <- lang_ru;; *);  
+[division* ](* <- lang_en;; *);;
+
+nrel_division=>nrel_mathem_idtf: [/] (*<-lang_en;;*);;
+nrel_division=>nrel_mathem_idtf: [:] (*<-lang_en;;*);;
+
+//определение
+nrel_division <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(деление*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Деление - это одна из четырех простейших арифметических операций, обратная умножению. В результате данной операции получается число (частное), 
+которое при умножении на делитель дает делимое.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+
+nrel_division <= nrel_using_constants:
+	{
+	rrel_private;
+	rrel_dividend;
+	rrel_divider
+	};;
+
+
+//утверждения
+
+nrel_division <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(умножение*; сложение*; вычитание*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Подобно тому, как умножение заменяет неоднократно повторенное сложение, деление заменяет неоднократно повторенное вычитание.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; остаток'; общий делитель)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Целое число, на которое делятся без остатка два или несколько чисел, называется их общим делителем.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; четное число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 2 тогда и только тогда, когда последняя цифра делится на 2 (т.е. чётная).](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; сумма')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 3 тогда и только тогда, когда сумма цифр делится на 3.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 4 тогда и только тогда, когда число из двух последних цифр делится на 4.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 5 тогда и только тогда, когда последняя цифра делится на 5.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; четное число; сумма')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 6 тогда и только тогда, когда оно делится на 2 и на 3 (т.е. оно чётное и сумма его цифр делится на три).](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; вычитание*; )](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 7 тогда и только тогда, когда результат вычитания удвоенной последней цифры из этого числа без последней цифры делится на 7.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 8 тогда и только тогда, когда число из трех последних цифр делится на 8.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; сумма')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Число делится на 9 тогда и только тогда, когда сумма цифр делится на 9.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+nrel_division <- ternary_relation;;
+nrel_division <= nrel_first_domain: concept_number;;
+nrel_division <= nrel_second_domain: concept_number;;
+nrel_division <= nrel_third_domain: concept_number;;

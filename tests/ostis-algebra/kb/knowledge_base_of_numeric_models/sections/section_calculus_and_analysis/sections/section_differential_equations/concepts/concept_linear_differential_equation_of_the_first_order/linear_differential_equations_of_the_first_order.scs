@@ -1,0 +1,45 @@
+sc_node_not_relation->concept_linear_differential_equation_of_the_first_order;;
+concept_linear_differential_equation_of_the_first_order => nrel_main_idtf :
+[линейное дифференциальное уравнение первого порядка](*<-lang_ru;;*);
+[linear differential equation of the first order](*<-lang_en;;*);;
+
+concept_linear_differential_equation_of_the_first_order <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейное дифференциальное уравнение первого порядка)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Линейным дифференциальным уравнением первого порядка называется уравнение вида y'+f(x)y=a(x) линейное относительно неизвестной функции y(x) и ее производной.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_linear_differential_equation_of_the_first_order <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение общего решения линейного дифференциального уравнения первого порядка.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_linear_differential_equation_of_the_first_order <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Решить уравнение: y'+y/x=0.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+

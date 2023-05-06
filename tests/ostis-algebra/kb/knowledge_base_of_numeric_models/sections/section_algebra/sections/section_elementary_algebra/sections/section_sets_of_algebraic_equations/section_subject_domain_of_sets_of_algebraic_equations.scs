@@ -1,0 +1,40 @@
+sc_node_struct -> section_subject_domain_of_sets_of_algebraic_equations;;
+
+section_subject_domain_of_sets_of_algebraic_equations => nrel_main_idtf:
+    [Раздел. Предметная область систем алгебраических уравнений] (* <- lang_ru;; *);
+    [Section. Subject domain of sets of algebraic equations] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_sets_of_algebraic_equations <- nrel_system_identifier;;
+  
+section_subject_domain_of_sets_of_algebraic_equations -> rrel_key_sc_element:
+    subject_domain_of_sets_of_algebraic_equations;
+    concept_set_of_algebraic_equations;
+    concept_overdetermined_set_of_algebraic_equations;
+    concept_joint_set_of_algebraic_equations;
+    concept_inconsistent_set_of_algebraic_equations;
+    concept_inhomogeneous_set_of_algebraic_equations;
+    concept_determined_set_of_algebraic_equations;
+    concept_square_set_of_algebraic_equations;
+    concept_homogeneous_set_of_algebraic_equations;
+    concept_underdetermined_set_of_algebraic_equations;;
+
+section_subject_domain_of_sets_of_algebraic_equations = [*
+    subject_domain_of_sets_of_algebraic_equations => nrel_main_idtf:
+        [Предметная область систем алгебраических уравнений] (* <- lang_ru;; *);
+        [Subject domain of sets of algebraic equations] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_sets_of_algebraic_equations -> rrel_maximum_studied_object_class:
+        concept_set_of_algebraic_equations;;
+
+    subject_domain_of_sets_of_algebraic_equations -> rrel_not_maximum_studied_object_class:
+        concept_overdetermined_set_of_algebraic_equations;
+        concept_joint_set_of_algebraic_equations;
+        concept_inconsistent_set_of_algebraic_equations;
+        concept_inhomogeneous_set_of_algebraic_equations;
+        concept_determined_set_of_algebraic_equations;
+        concept_square_set_of_algebraic_equations;
+        concept_homogeneous_set_of_algebraic_equations;
+        concept_underdetermined_set_of_algebraic_equations;;
+*];;

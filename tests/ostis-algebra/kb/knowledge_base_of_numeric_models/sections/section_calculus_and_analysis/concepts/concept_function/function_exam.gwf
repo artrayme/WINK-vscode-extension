@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="concept_function" shapeColor="193" id="167320648" parent="0" left="0" top="0" right="104.375" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="271" y="98" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="rrel_example" shapeColor="0" id="171958096" parent="0" left="0" top="0" right="81.4219" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="271" y="160" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="f(x)=x^(-1)-12" shapeColor="0" id="167961672" parent="0" left="0" top="0" right="88.5312" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="440" y="201" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="g(x)=x^2" shapeColor="0" id="167961920" parent="0" left="0" top="0" right="59.6875" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="345" y="210" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="f(x)=x+1" shapeColor="0" id="165673064" parent="0" left="0" top="0" right="56.4688" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="198" y="212" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="164091472" parent="0" id_b="171958096" id_e="168929648" b_x="271" b_y="160" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.677381">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="168126944" parent="0" id_b="171958096" id_e="171311160" b_x="271" b_y="160" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.459145">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="168672120" parent="0" id_b="171958096" id_e="168894504" b_x="271" b_y="160" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.458897">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="168929648" parent="0" id_b="167320648" id_e="167961672" b_x="271" b_y="98" e_x="440" e_y="201" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="171311160" parent="0" id_b="167320648" id_e="167961920" b_x="271" b_y="98" e_x="345" e_y="210" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="168894504" parent="0" id_b="167320648" id_e="165673064" b_x="271" b_y="98" e_x="198" e_y="212" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+    </staticSector>
+</GWF>

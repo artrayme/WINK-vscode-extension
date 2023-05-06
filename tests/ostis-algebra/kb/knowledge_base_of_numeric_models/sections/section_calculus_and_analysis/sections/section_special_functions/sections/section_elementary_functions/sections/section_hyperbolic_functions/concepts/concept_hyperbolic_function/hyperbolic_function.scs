@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_hyperbolic_function;;
+
+concept_hyperbolic_function => nrel_main_idtf:
+[гиперболическая функция](*<-lang_ru;;*);
+[hyperbolic function](*<-lang_en;;*);;
+
+//надмножество
+concept_function => nrel_inclusion: concept_hyperbolic_function;;
+
+//определение и пояснения
+concept_hyperbolic_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (гиперболическая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Гиперболические функции — семейство элементарных функций, выражающихся через экспоненту и тесно связанных с тригонометрическими функциями.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_hyperbolic_function <= nrel_using_constants:
+	{
+	concept_elementary_function;
+	concept_exponent;
+	concept_trigonometric_function
+	};;	
+	
+//утверждения
+concept_hyperbolic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гиперболические функции; интеграл*; рациональная функция; переменная')] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Гиперболические функции часто встречаются при вычислении различных интегралов. Некоторые интегралы от рациональных функций и от функций, содержащих радикалы, довольно просто вычисляются с помощью замен переменных с использованием гиперболических функций.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(функция Гудермана; тригонометрическая функция; гиперболическая функция; комплексное число)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Функция Гудермана связывает тригонометрические функции и гиперболические функции без привлечения комплексных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);;

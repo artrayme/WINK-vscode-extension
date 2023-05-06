@@ -1,0 +1,67 @@
+sc_node_norole_relation->nrel_rank_of_the_matrix;;
+
+nrel_rank_of_the_matrix=>nrel_main_idtf:
+[ранг матрицы* ](*<-lang_ru;;*);
+[rank of the matrix* ](*<-lang_en;;*);
+[матрицаның рангі* ](*<-lang_kz;;*);;
+
+
+//определение
+nrel_rank_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(ранг матрицы*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Ранг матрицы наибольший из порядков миноров данной матрицы, отличных от нуля.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_rank_of_the_matrix <= nrel_using_constants:
+	{
+	concept_matrix;
+	nrel_minor_of_the_matrix;
+	nrel_order_of_the_minor
+	};;
+	
+//утверждения
+	
+nrel_rank_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нулевая матрица; ранг матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Ранг нулевой матрицы равен нулю.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(ненулевая матрица; ранг матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Ранг ненулевой матрицы не меньше единицы.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_rank_of_the_matrix <- binary_relation;;
+nrel_rank_of_the_matrix <= nrel_first_domain:  concept_matrix;;
+nrel_rank_of_the_matrix <= nrel_second_domain: concept_number;;
+
+nrel_rank_of_the_matrix -> rrel_example :
+
+		"file://rank_of_the_matrix_example1.jpg";
+		"file://rank_of_the_matrix_example2.jpg";
+		"file://rank_of_the_matrix_example3.jpg";
+		"file://rank_of_the_matrix_example4.jpg";;

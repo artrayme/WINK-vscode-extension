@@ -1,0 +1,55 @@
+sc_node_not_relation->concept_composite_number;; 
+
+concept_composite_number=>nrel_main_idtf:
+[составное число](*<-lang_ru;;*);
+[құрама сан](*<-lang_kz;;*);
+[composite number](*<-lang_en;;*);;
+
+concept_composite_number=> nrel_idtf:[Составные числа](*<-lang_ru;;*);;
+concept_composite_number=> nrel_idtf:[Множество составных чисел](*<-lang_ru;;*);;
+concept_composite_number=> nrel_idtf:[Понятие составного числа](*<-lang_ru;;*);;
+concept_composite_number=> nrel_idtf:[Класс составных чисел](*<-lang_ru;;*);;
+
+concept_composite_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(составное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Составное число – это такое натуральное число а>1, которое имеет по крайней мере один делитель, отличный от 1 и а.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_composite_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(составное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://composite_number1.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_composite_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(основаня теорема арифметики; натуральное число; разложить*; простые множители)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Основная теорема арифметики: Каждое натуральное число, отличное от 1, можно единственным способом разложить на простые множители, причем разложения n⋅p и p⋅n считаются тождественными ( n и p - простые числа).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_composite_number <= nrel_using_constants: concept_natural_number;concept_divider;concept_natural_series;concept_prime_number;concept_prime_factor;1;;
+
+concept_composite_number -> rrel_example : four; ten; twenty_five; one_hundred;;

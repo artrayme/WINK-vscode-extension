@@ -1,0 +1,61 @@
+sc_node_norole_relation->concept_orthogonal_matrix;;
+
+concept_orthogonal_matrix=>nrel_main_idtf:
+[ортогональная матрица](*<-lang_ru;;*);
+[orthogonal matrix](*<-lang_en;;*);
+[ортогональды матрица](*<-lang_kz;;*);;
+
+
+//надмножество
+concept_matrix => nrel_inclusion: concept_orthogonal_matrix;;
+
+//определение
+concept_orthogonal_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(ортогональная матрица;)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Матрица называется ортогональной, если обратная ей матрица совпадает с транспонированной матрицей.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+concept_orthogonal_matrix <= nrel_using_constants:
+	{
+	concept_inverse_matrix;
+	concept_transposed_matrix
+	};;
+	
+//утверждения
+	
+concept_orthogonal_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(ортогональная матрица; сумма')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма квадратов всех элементов каждой строки(столбца) ортогональной матрицы равна единице.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(ортогональная матрица; сумма'; произведение')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма произведений соответственных элементов любых двух различных строк(столбцов) ортогональной матрицы равна нулю.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+concept_orthogonal_matrix -> rrel_example :
+		"file://orthogonal_matrix_example.png";;

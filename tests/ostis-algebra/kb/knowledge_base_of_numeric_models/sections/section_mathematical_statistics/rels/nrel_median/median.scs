@@ -1,0 +1,43 @@
+sc_node_norole_relation ->  nrel_median;;
+
+nrel_median => nrel_main_idtf:
+[медиaна*](*<-lang_ru;;*);
+[median*](*<-lang_en;;*);;
+
+
+
+nrel_median <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(медиана* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Медиана - это значение признака, которое делит выборку на две равные части.](* <- lang_ru;; *);;
+		*);;
+	*);
+    ... 
+	(*
+	=> nrel_main_idtf: [Опр.(медиана*;среднее арифметическое* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Если имеется чётное количество элементов и два средних значения различаются, то медианой, по определению, может служить любое число между ними. На практике в этом случае чаще всего используют среднее арифметическое двух средних значений](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_median -> rrel_example :
+		"file://m.jpg";;
+
+
+
+nrel_median <- binary_relation;;
+nrel_median => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_median => nrel_first_domain: concept_sample;;
+nrel_median => nrel_second_domain: concept_number;;
+

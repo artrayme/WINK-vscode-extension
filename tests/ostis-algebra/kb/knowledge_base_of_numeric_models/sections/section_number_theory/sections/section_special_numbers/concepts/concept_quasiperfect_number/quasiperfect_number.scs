@@ -1,0 +1,51 @@
+sc_node_not_relation -> concept_quasiperfect_number;; 
+
+concept_quasiperfect_number => nrel_main_idtf:
+[слегка избыточное число](*<-lang_ru;;*);
+[quasiperfect number](*<-lang_en;;*);;
+
+//синонимы
+concept_quasiperfect_number => nrel_idtf:[квазисовершенное число](*<-lang_ru;;*);;
+	
+//надмножество
+concept_abundant_number => nrel_inclusion: concept_quasiperfect_number;;
+
+//определения и пояснения
+concept_quasiperfect_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (слегка избыточное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Слегка избыточное число — избыточное число, сумма собственных делителей которого на единицу больше самого числа.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_quasiperfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(слегка избыточное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Неизвестно, существуют ли слегка избыточные числа и каково их количество, но отсутствие этих чисел также не доказано.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(слегка избыточное число; больше*; простой делитель*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://quasiperfect_number_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

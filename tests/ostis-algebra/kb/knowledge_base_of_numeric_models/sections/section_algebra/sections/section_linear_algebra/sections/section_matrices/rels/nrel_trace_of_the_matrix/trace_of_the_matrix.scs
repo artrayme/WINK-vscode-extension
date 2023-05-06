@@ -1,0 +1,50 @@
+sc_node_norole_relation -> nrel_trace_of_the_matrix;;
+
+nrel_trace_of_the_matrix=>nrel_main_idtf:
+[след матрицы* ] (*<-lang_ru;;*);
+[trace of the matrix* ] (*<-lang_en;;*);;
+
+nrel_trace_of_the_matrix <- binary_relation;;
+
+nrel_trace_of_the_matrix => nrel_first_domain: nrel_main_diagonal_of_the_matrix;;
+
+nrel_trace_of_the_matrix => nrel_second_domain: concept_number;;
+
+nrel_trace_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(след матрицы*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[След матрицы — это сумма элементов главной диагонали матрицы.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_trace_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(след матрицы*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[След матрицы — операция, отображающая пространство квадратных матриц в поле, над которым определена матрица (для действительных матриц — в поле действительных чисел, для комплексных матриц — в поле комплексных чисел).](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_trace_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(подобные матрицы; ранг*; определитель*; спектр*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Подобные матрицы имеют один и тот же ранг, след, определитель и спектр.](* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,40 @@
+sc_node_norole_relation -> nrel_cosec;;
+
+nrel_cosec => nrel_main_idtf:
+[косеканс* ](* <- lang_ru;; *);  
+[cosecant* ](* <- lang_en;; *);;
+
+nrel_cosec <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(косеканс*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Косеканс — тригонометрическая функция. Она определяется как cosec(a)=1/sin(a).](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+nrel_cosec <= nrel_inclusion:
+	concept_trigonometric_function;;
+
+	
+//утверждения
+nrel_cosec <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(косеканс*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В прямоугольном треугольнике косеканс соответствует отношению длины гипотенузы к неприлегающему углу катету.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_cosec <- binary_relation;;
+nrel_cosec <= nrel_first_domain: nrel_angle_measure;;
+nrel_cosec <= nrel_second_domain: concept_number;;

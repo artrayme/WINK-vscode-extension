@@ -1,0 +1,22 @@
+sc_node_struct -> section_subject_domain_of_parametric_equations;;
+
+section_subject_domain_of_parametric_equations => nrel_main_idtf:
+    [Раздел. Предметная область параметрических уравнений] (* <- lang_ru;; *);
+    [Section. Subject domain of parametric equations] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_parametric_equations <- nrel_system_identifier;;
+  
+section_subject_domain_of_parametric_equations -> rrel_key_sc_element:
+    subject_domain_of_parametric_equations;
+    concept_parametric_equation;;
+
+section_subject_domain_of_parametric_equations = [*
+    subject_domain_of_parametric_equations => nrel_main_idtf:
+        [Предметная область параметрических уравнений] (* <- lang_ru;; *);
+        [Subject domain of parametric equations] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_parametric_equations -> rrel_maximum_studied_object_class:
+        concept_parametric_equation;;
+*];;

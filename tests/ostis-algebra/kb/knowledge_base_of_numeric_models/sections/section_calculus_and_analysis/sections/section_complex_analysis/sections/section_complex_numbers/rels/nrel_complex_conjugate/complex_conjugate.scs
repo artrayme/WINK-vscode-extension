@@ -1,0 +1,62 @@
+sc_node_norole_relation->nrel_complex_conjugate;;
+
+nrel_complex_conjugate => nrel_main_idtf:
+[комплексное сопряжение* ](*<-lang_ru;;*);
+[complex conjugate* ](*<-lang_en;;*);
+[кешенді ұштасатын* ](*<-lang_kz;;*);;
+
+//определение
+nrel_complex_conjugate <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(комплексное сопряжение*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Комплексное сопряжение — алгебраическая операция над комплексным числом, при которой вещественная часть остаётся постоянной, а мнимая — меняет знак.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//иерархия
+concept_algebraic_operation => nrel_inclusion: nrel_complex_conjugate;;
+	
+nrel_complex_conjugate <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число, комплексное сопряжение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://conjugate_statement.png"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; сумма'; комплексное сопряжение*; число; действительное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://conjugate_statement1.png"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное сопряжение*; произведение';)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://conjugate_statement2.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_complex_conjugate <- binary_relation;;
+nrel_complex_conjugate => nrel_first_domain: concept_complex_number;;
+nrel_complex_conjugate => nrel_second_domain: concept_complex_number;;

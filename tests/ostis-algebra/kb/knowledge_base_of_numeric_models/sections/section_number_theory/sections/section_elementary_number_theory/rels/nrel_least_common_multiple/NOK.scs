@@ -1,0 +1,47 @@
+sc_node_norole_relation->nrel_least_common_multiple;; 
+nrel_least_common_multiple=>nrel_main_idtf:	[наименьшее общее кратное* ] (*<-lang_ru;;*);	[ең кіші ортақ еселік* ] (*<-lang_kz;;*);	[least common multiple* ] (*<-lang_en;;*);;
+nrel_least_common_multiple=> nrel_idtf:	[НОК* ](*<-lang_ru;;*);	[ЕКОЕ* ](*<-lang_kz;;*); 	[каноническое разложение чисел* ](*<-lang_ru;;*);;
+
+nrel_least_common_multiple<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(наименьшее общее кратное*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Наименьшим общим кратным (НОК) двух чисел называется наименьшее натуральное число( обозначается (a,b) или \[a,b \])](* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+	=> nrel_main_idtf: [Пояснение(наименьшее общее кртаное*)] (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+	(*
+	-> rrel_example:
+	"file://NOK1.html" (*<-lang_ru;;*);;
+	*);;
+*);;
+
+//утверждения
+nrel_least_common_multiple<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; НОД*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если ab>0, то \[ a, b \] ⋅(a, b)=a⋅b, где (a, b) – наибольший общий делитель для a и b]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_least_common_multiple  <- ternary_relation;;
+nrel_least_common_multiple => nrel_first_domain:concept_natural_number;;
+nrel_least_common_multiple => nrel_second_domain: concept_natural_number;;
+nrel_least_common_multiple => nrel_third_domain: concept_natural_number;;

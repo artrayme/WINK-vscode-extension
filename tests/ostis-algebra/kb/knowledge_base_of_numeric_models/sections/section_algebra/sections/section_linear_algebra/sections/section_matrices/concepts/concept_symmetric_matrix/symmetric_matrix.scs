@@ -1,0 +1,47 @@
+sc_node_not_relation->concept_symmetric_matrix;;
+
+concept_symmetric_matrix=>nrel_main_idtf:
+[симметричная матрица](*<-lang_ru;;*);
+[symmetric matrix](*<-lang_en;;*);;
+
+concept_symmetric_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(симметричная матрица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Симметричной называют квадратную матрицу, элементы которой симметричны относительно главной диагонали.]  (* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_symmetric_matrix -> rrel_example :
+	"file://symmetric_matrix.png";;
+
+concept_symmetric_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вещественное значение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Cимметрическая матрица имеет вещественные собственные значения.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_symmetric_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(ортонормальный базис*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Собственные векторы симметрической матрицы всегда можно составить ортонормальный базис.](* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,52 @@
+sc_node_not_relation->concept_linear_functional;; 
+
+concept_linear_functional=>nrel_main_idtf:
+[линейный функционал](*<-lang_ru;;*);
+[linear functional](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_linear_functional <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейный функционал)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Линейный функционал — функционал, обладающий свойством линейности по своему аргументу.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+//используемые константы
+ concept_linear_functional<= nrel_using_constants: concept_functional;;
+
+//пример
+ concept_linear_functional-> rrel_example :
+	"file://func.png";;
+
+//утверждения
+concept_linear_functional <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(линейный функционал)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Линейный функционал является аналогом оператора проецирования для бесконечномерных пространств (в частности, для пространств функций), а также применяется как обобщающий термин, покрывающий равно случаи конечномерных и бесконечномерных пространств.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(линейный функционал; векторное пространство; функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Термин 'линейный функционал' употребляется и вообще для аргументов из векторных пространств — в смысле линейного отображения из какого-то векторного пространства в его пространство скаляров, то есть — в этом употреблении — его аргументом может быть не обязательно функция.](* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,95 @@
+sc_node_norole_relation->nrel_division_of_monomials;;
+
+nrel_division_of_monomials=>nrel_main_idtf:
+[деление одночленов* ] (*<-lang_ru;;*);
+[бөлімі мономиален* ] (*<-lang_kz;;*);
+[division of monomials* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_division_of_monomials=> nrel_idtf:[деление* ](*<-lang_ru;;*);;
+
+//определение и пояснения
+nrel_division_of_monomials<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(деление одночленов*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://division_of_monomialsl_1.html"	(* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(деление одночленов*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	"file://division_of_monomialsl_2.html" (* <- lang_ru;; *);;
+*);;
+*);
+  ...
+    (*
+=> nrel_main_idtf: [Пояснение(деление одночленов*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	[Правильность деления одночленов можно проверить путем умножения делителя на частное.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//утверждение
+nrel_division_of_monomials<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(одночлен, деление*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[При делении двух одинаковых одночленов друг на друга получается 1.]	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//конкретные задачи
+ nrel_division_of_monomials<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Выполните деление (-6*x*y):(-3*x*y)](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_division_of_monomials <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на деление одночлена на одночлен.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_division_of_monomials => nrel_first_domain:concept_monomial;;
+nrel_division_of_monomials => nrel_second_domain: concept_monomial;;
+nrel_division_of_monomials => nrel_third_domain: concept_polynomial;;

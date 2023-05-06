@@ -1,0 +1,52 @@
+sc_node_role_relation -> rrel_dividend;;
+rrel_dividend => nrel_main_idtf:	[делимое'](* <- lang_ru;; *);	[dividend'](* <- lang_en;; *);	[дивиденд'](*<-lang_kz;;*);;
+
+rrel_dividend <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(делимое')](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Делимое - это число, которое делится на другое число.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+ rrel_dividend <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(делимое')](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Деление — есть нахождение одного из сомножителей по произведению и другому сомножителю. Данное произведение получает название делимого, данный сомножитель — делителя, искомый сомножитель — частного.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_dividend <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(частное'; делитель')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Чтобы найти неизвестное делимое, нужно частное умножить на делитель .](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; остаток'; произведение*; делитель')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Деление с остатком есть отыскание наибольшего целого числа, которое в произведении с делителем дает число, не превышающее делимое.](*<-lang_ru;;*);;
+		*);;
+	*);;

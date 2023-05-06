@@ -1,0 +1,7 @@
+sc_text_of_agent_percentage_X_on_Y
+-> rrel_key_sc_element:
+	agent_percentage_X_on_Y;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_percentage_X_on_Y = [*^"file://agent_percentage_X_on_Y.scsi"*];;
+

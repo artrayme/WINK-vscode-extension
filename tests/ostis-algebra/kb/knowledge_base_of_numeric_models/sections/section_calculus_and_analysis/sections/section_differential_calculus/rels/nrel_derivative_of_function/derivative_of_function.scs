@@ -1,0 +1,65 @@
+sc_node_norole_relation->nrel_derivative_of_function;;
+
+nrel_derivative_of_function=>nrel_main_idtf:
+[производная функции* ] (*<-lang_ru;;*);
+[derivative of function* ] (*<-lang_en;;*);;
+
+
+nrel_derivative_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(производная функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Производная функции в точке — основное понятие дифференциального исчисления, характеризующее скорость изменения функции (в данной точке). Определяется как предел отношения приращения функции к приращению её аргумента при стремлении приращения аргумента к нулю, если такой предел существует.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+nrel_derivative_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(производная функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Производная — это скорость изменения функции.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+nrel_derivative_of_function => nrel_first_domain: concept_function;;
+nrel_derivative_of_function => nrel_second_domain: concept_function;;
+
+nrel_derivative_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция; дифференциальная функция; производная*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функцию, имеющую конечную производную, называют дифференцируемой.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_derivative_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференцирование*; производная*; интегрирование*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Процесс вычисления производной называется дифференци́рованием.Обратный процесс — нахождение первообразной — интегрирование.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

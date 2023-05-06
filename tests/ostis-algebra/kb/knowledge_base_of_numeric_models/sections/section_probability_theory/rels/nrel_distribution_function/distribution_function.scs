@@ -1,0 +1,105 @@
+sc_node_norole_relation->nrel_distribution_function;;
+
+nrel_distribution_function => nrel_main_idtf:
+[функция распределения* ](*<-lang_ru;;*);
+[distribution function* ](*<-lang_en;;*);
+[үлестіру атқарымы* ](*<-lang_kz;;*);;
+
+nrel_distribution_function => nrel_idtf:
+[кумулятивная функция распределения* ](*<-lang_ru;;*);
+[cumulative distribution function* ](*<-lang_en;;*);
+[CDF* ](*<-lang_en;;*);;
+
+//определение и пояснение
+nrel_distribution_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(функция распределения*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://distribution_function.png"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(функция распределения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Функция распределения  — функция, характеризующая распределение случайной величины; вероятность того, что случайная величина X примет значение, меньшее или равное х, где х — произвольное действительное число.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//надмножество
+concept_function => nrel_inclusion: nrel_distribution_function;;
+	
+nrel_distribution_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция распределения*; область определения*; множество действительных чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция распределения определена на множестве всех действительных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция распределения*; непрерывная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция распределения непрерывна справа.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция распределения*; монотонная функция; область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция распределения монотонна на всей своей области определения.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция распределения*; предел функции*; бесконечность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Предел функции распределения на минус бесконечности равен 0.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция распределения*; предел функции*; бесконечность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Предел функции распределения на бесконечности равен 1.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//примеры
+nrel_distribution_function -> rrel_example :
+			"file://distribution_function_example1.png";
+			"file://distribution_function_example2.png";;
+
+nrel_distribution_function <- binary_relation;;
+nrel_distribution_function => nrel_first_domain: concept_random_quantity;;
+nrel_distribution_function => nrel_second_domain: concept_piecewise_function;;

@@ -1,0 +1,33 @@
+sc_node_not_relation->concept_equality;;
+
+concept_equality=>nrel_main_idtf:
+[равенство](*<-lang_ru;;*);
+[теңдік](*<-lang_kz;;*);
+[equality](*<-lang_en;;*);;
+
+//определение
+concept_equality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(равенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Равенство есть утверждение об относительной величине или порядке двух объектов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_equality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (равенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Левая часть выражения является правой.] (* <- lang_ru;; *);;
+	*);;
+*);;

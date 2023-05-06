@@ -1,0 +1,55 @@
+sc_node_not_relation->concept_infinite_decimal;;
+
+concept_infinite_decimal=>nrel_main_idtf:
+[бесконечная десятичная дробь](*<-lang_ru;;*);
+[шексіз ондық](*<-lang_kz;;*);
+[infinite decimal](*<-lang_en;;*);;
+
+//разбиение
+concept_infinite_decimal <= nrel_subdividing:
+    ... 
+	(*
+	=>nrel_main_idtf:[По признаку периодичности ](*<-lang_ru;;*);;
+	-> concept_periodic_decimal;;
+	-> concept_non_periodic_decimal;;
+	*);;
+//определение
+concept_infinite_decimal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(бесконечная десятичная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://infinite_decimal_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_infinite_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinite_decimal_2.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+//используемые константы
+concept_infinite_decimal<= nrel_using_constants: concept_number;concept_decimal;;
+
+concept_infinite_decimal-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[0,56356... -  бесконечная десятичная  дробь ](* <- lang_ru;; 	*);;
+		*);;
+	*);;

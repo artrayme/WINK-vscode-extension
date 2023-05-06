@@ -1,0 +1,51 @@
+sc_node_not_relation->concept_rational_number;;
+
+concept_rational_number=>nrel_main_idtf:
+[рациональное число](*<-lang_ru;;*);
+[рационал сандар](*<-lang_kz;;*);
+[rational number](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_rational_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(рациональное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Рациональное число - число, которое можно представить обыкновенной дробью m/n, где числитель m - целое число, а знаменатель n - натуральное число.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_rational_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(рациональное число, отношение*, больше*, меньше*, равно*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для любых рациональных чисел a и b существует правило, позволяющее однозначно идентифицировать между ними одно и только одно из трёх отношений: «<», «>» или «=».](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(рациональное число, сложение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для любых рациональных чисел a и b существует так называемое правило суммирования, которое ставит им в соответствие некоторое рациональное число c. При этом само число c называется суммой чисел a и b и обозначается (a+b), а процесс отыскания такого числа называется суммированием.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+concept_rational_number<= nrel_using_constants: concept_number;;
+
+//пример
+concept_rational_number-> rrel_example : null; one; fifty_three; 832;;

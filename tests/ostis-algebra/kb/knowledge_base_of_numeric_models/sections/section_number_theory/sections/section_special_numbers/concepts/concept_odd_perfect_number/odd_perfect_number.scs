@@ -1,0 +1,56 @@
+sc_node_not_relation -> concept_odd_perfect_number;; 
+
+concept_odd_perfect_number => nrel_main_idtf:
+[нечетное совершенное число](*<-lang_ru;;*);
+[odd perfect number](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_odd_perfect_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (нечетное совершенное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Нечетное совершенное число — совершенное число, которое при делении на 2 даёт остаток 1.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_odd_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нечетное совершенное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Неизвестно, существуют ли нечетные совершенные числа, однако не доказано и их отсутствие.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нечетное совершенное число; бесконечность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если нечётные совершенные числа существуют, то неизвестно, равно ли их количество бесконечности.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нечетное совершенное число; простое число; делитель')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Доказано, что нечётное совершенное число, если оно существует, имеет не менее 9 различных простых делителей и не менее 75 простых делителей с учётом кратности.](* <- lang_ru;; *);;
+		*);;
+	*);;

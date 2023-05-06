@@ -1,0 +1,94 @@
+sc_node_norole_relation -> nrel_scalar_composition;;
+
+nrel_scalar_composition=>nrel_main_idtf:
+[скалярное произведение* ] (*<-lang_ru;;*);
+[scalar composition* ] (*<-lang_en;;*);;
+
+nrel_scalar_composition=>nrel_idtf:
+[внутреннее произведение* ] (*<-lang_ru;;*);;
+
+nrel_scalar_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(скалярное произведение*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Скалярное произведение — операция над двумя векторами, результатом которой является число, не зависящее от системы координат и характеризующее длины векторов-сомножителей и угол между ними.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_scalar_composition <- ternary_relation;;
+
+nrel_scalar_composition => nrel_first_domain: concept_vector;;
+
+nrel_scalar_composition => nrel_second_domain: concept_vector;;
+
+nrel_scalar_composition => nrel_third_domain: concept_number;;
+
+nrel_scalar_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(умножение*; длина вектора*; проекция*; вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Данной операции соответствует умножение длины вектора x на проекцию вектора y на вектор x.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_scalar_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; больше*; вектор; нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Скалярное произведение вектора самого на себя всегда больше или равно нуля.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_scalar_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; вектор; нуль; нулевой вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Скалярное произведение вектора самого на себя равно нулю тогда и только тогда, когда вектор равен нулевому вектору.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_scalar_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; вектор; два; модуль вектора*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Скалярное произведение вектора самого на себя равно квадрату его модуля.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_scalar_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; вектор; два; нуль; ортогональные векторы)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если скалярное произведение двух не нулевых векторов равно нулю, то эти вектора ортогональны.](* <- lang_ru;; *);;
+		*);;
+	*);;

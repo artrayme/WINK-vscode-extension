@@ -1,0 +1,79 @@
+sc_node_norole_relation->nrel_matrix_multiplication_on_number;;
+
+nrel_matrix_multiplication_on_number=>nrel_main_idtf:
+[умножение матрицы на число* ](*<-lang_ru;;*);
+[matrix multiplication on number* ](*<-lang_en;;*);
+[матрицалық көбейту бойынша нөмір* ](*<-lang_kz;;*);;
+
+
+//надмножество 
+concept_arithmetic_operation => nrel_matrix_multiplication_on_number;;
+
+//определение
+nrel_matrix_multiplication_on_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение матрицы на число*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведением матрицы на ненулевое число называется матрица того же порядка, полученная из исходной умножением на заданное число всех ее элементов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_matrix_multiplication_on_number <= nrel_using_constants:
+	{
+	concept_matrix;
+	concept_number;
+	nrel_order_of_the_matrix;
+	nrel_multiplication
+	};;
+	
+//утверждения
+	
+nrel_matrix_multiplication_on_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множитель'; матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Общий множитель всех элементов матрицы можно выносить за знак матрицы.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(умножение*; матрица; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Получается одинаковый результат при умножении числа на матрицу и матрицы на число.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица; число; умножение*; линейная операция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Умножение матрицы на число - линейная операция.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_matrix_multiplication_on_number <- ternary_relation;;
+nrel_matrix_multiplication_on_number <= nrel_first_domain:  concept_matrix;;
+nrel_matrix_multiplication_on_number <= nrel_second_domain: concept_number;;
+nrel_matrix_multiplication_on_number <= nrel_third_domain: concept_matrix;;
+
+nrel_matrix_multiplication_on_number -> rrel_example :
+		"file://matrix_multiplication_on_number_example.png";;

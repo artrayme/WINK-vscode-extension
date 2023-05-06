@@ -1,0 +1,60 @@
+sc_node_not_relation->concept_irrational_number;; //концепция
+
+concept_irrational_number=>nrel_main_idtf:
+[иррациональное число](*<-lang_ru;;*);
+[иррационалдық сан](*<-lang_kz;;*);
+[irrational number](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_irrational_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(иррациональное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Иррациональное число - число, которое не может быть представлено обыкновенной дробью m/n, где числитель m - целое число, а знаменатель n - натуральное число.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_irrational_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(рациональное число, иррациональное число, сумма*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма двух положительных иррациональных чисел может быть рациональным числом.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(иррациональное число, алгебраическое число, трансцендентное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Каждое иррациональное число является либо алгебраическим, либо трансцендентным.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+concept_irrational_number<= nrel_using_constants: concept_number;;
+
+//пример
+concept_irrational_number-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+...
+		(*
+		-> rrel_example: 
+	[e, ln2, число пи](* <- lang_en;; 	*);;
+		*);;
+	*);;

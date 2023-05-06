@@ -1,0 +1,48 @@
+sc_node_not_relation -> concept_numerical_function;;
+
+concept_numerical_function => nrel_main_idtf:
+[числовая функция](*<-lang_ru;;*);
+[numerical function](*<-lang_en;;*);
+[сандық функциясы](*<-lang_kz;;*);;
+
+//надмножество
+concept_function => nrel_inclusion: concept_numerical_function;;
+
+//определение и пояснения
+concept_numerical_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (числовая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Числовая функция — это функция, которая действует из одного числового пространства (множества) в другое числовое пространство (множество).](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+concept_numerical_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(числовая функция; множество вещественных чисел; множество комплексных чисел; вещественная функция; комплексная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Числовые функции, заданные на множестве вещественных или комплексных чисел называются функциями вещественного или комплексного переменного.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(числовая функция; метрическое пространство; числовое пространство)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Числовые функции обладают как общими свойствами, которыми могут обладать отображения произвольных метрических пространств (например, непрерывность), так и рядом свойств, непосредственно связанных с природой числовых пространств.](*<-lang_ru;;*);;
+		*);;
+	*);;

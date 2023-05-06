@@ -1,0 +1,45 @@
+sc_node_not_relation->concept_rational_integer_equation;; 
+
+concept_rational_integer_equation=>nrel_main_idtf:
+[рациональное целое уравнение](*<-lang_ru;;*);
+[rational integer equation](*<-lang_en;;*);;
+
+concept_rational_integer_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(рациональное целое уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Рациональное уравнение называется целым, или алгебраическим, если в нем нет деления на выражение, содержащее переменную.](* <- lang_ru;; *);;
+		*);;
+	*);;
+   
+concept_rational_integer_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://rational_integral_equation.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_rational_integer_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение корней рационального целого уравнения](* <- lang_ru;; *);;
+*);;
+*);;

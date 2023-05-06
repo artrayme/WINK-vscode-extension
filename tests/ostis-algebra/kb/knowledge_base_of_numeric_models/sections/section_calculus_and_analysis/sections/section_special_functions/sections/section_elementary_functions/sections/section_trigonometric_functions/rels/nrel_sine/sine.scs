@@ -1,0 +1,77 @@
+sc_node_norole_relation -> nrel_sine;;
+
+nrel_sine => nrel_main_idtf:
+[синус* ](* <- lang_ru;; *);  
+[sine* ](* <- lang_en;; *);
+[синус* ](*<-lang_kz;;*);;
+
+//синонимы
+nrel_sine => nrel_idtf: [sin* ](*<-lang_en;; *);;
+
+//определение
+nrel_sine <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(синус*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Синусом числа а называется ордината точки, изображающей это число на числовой окружности.
+ Синусом угла в а радиан называется синус числа а.](*<-lang_ru;;*);;
+		*);;
+	*);;
+//утверждения
+
+nrel_sine <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(периодическая функция;  период*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Функция y=sin x является периодической функцией с периодом 2pi.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(область значений*; отрезок)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Область значений функции y = sin x  отрезок  от -1 до 1.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(область определения*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Областью определения функции y = sin x является  множество всех чисел.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(нечетная функция)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Функция y = sin x является нечетной функцией.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//домены
+
+nrel_sine <- binary_relation;;
+nrel_sine <= nrel_first_domain : concept_number;;
+nrel_sine <= nrel_second_domain : concept_number;;

@@ -1,0 +1,7 @@
+sc_text_of_agent_multiplication_of_vector_by_number
+-> rrel_key_sc_element:
+	agent_multiplication_of_vector_by_number;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_multiplication_of_vector_by_number = [*^"file://agent_multiplication_of_vector_by_number.scsi"*];;
+

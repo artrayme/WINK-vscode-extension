@@ -1,0 +1,6 @@
+two_hundred_and_ten=>nrel_main_idtf:
+[210](*<-lang_ru;;*);
+[210](*<-lang_en;;*);;
+
+concept_number -> two_hundred_and_ten;;
+concept_natural_number -> two_hundred_and_ten;;

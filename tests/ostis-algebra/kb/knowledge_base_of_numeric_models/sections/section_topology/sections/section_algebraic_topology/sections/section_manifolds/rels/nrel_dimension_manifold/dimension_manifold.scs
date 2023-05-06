@@ -1,0 +1,41 @@
+sc_node_norole_relation -> nrel_dimension_manifold;;
+
+nrel_dimension_manifold => nrel_main_idtf:
+	[размерность многообразия*](* <- lang_ru;; *);  
+	[dimension manifold*](* <- lang_en;; *);;
+
+//определение
+nrel_dimension_manifold <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(размерность многообразия*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Размерностью многообразия называют размерность его однородной части.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//пояснение
+nrel_dimension_manifold <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Пояснение(размерность многообразия*)](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[B n-мерном линейном пространстве n-мерное линейное многообразие.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+
+nrel_dimension_manifold <- binary_relation;;
+nrel_dimension_manifold <= nrel_first_domain: concept_manifold;;
+nrel_dimension_manifold <= nrel_second_domain: concept_natural_number;;
+
+nrel_dimension_manifold -> rrel_example:	"file://dimension_levels.png";;

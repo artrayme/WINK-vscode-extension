@@ -1,0 +1,6 @@
+forty_five=>nrel_main_idtf:
+[45](*<-lang_ru;;*);
+[45](*<-lang_en;;*);;
+
+concept_number -> forty_five;;
+set_of_number -> forty_five;;

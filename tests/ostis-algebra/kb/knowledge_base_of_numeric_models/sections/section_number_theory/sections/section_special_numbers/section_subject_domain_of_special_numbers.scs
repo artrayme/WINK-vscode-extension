@@ -1,0 +1,62 @@
+sc_node_struct -> section_subject_domain_of_special_numbers;;
+
+section_subject_domain_of_special_numbers => nrel_main_idtf:
+    [Раздел. Предметная область особых чисел] (* <- lang_ru;; *);
+    [Section. Subject domain of special numbers] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_special_numbers <- nrel_system_identifier;;
+
+section_subject_domain_of_special_numbers -> rrel_key_sc_element:
+    subject_domain_of_special_numbers;
+    concept_factorial_prime_number;
+    concept_odd_perfect_number;
+    concept_composite_number;
+    concept_even_number;
+    concept_quasiperfect_number;
+    concept_faktorion;
+    concept_deficient_number;
+    concept_perfect_number;
+    concept_even_perfect_number;
+    concept_mersenne_prime;
+    concept_odd_number;
+    concept_prime_number;
+    concept_number_Prota;
+    concept_primorial_prime_number;
+    concept_almost_perfect_number;
+    concept_square_number;
+    concept_palindromic_number;
+    concept_semiprime_number;
+    concept_abundant_number;
+    nrel_amicable_number;;
+
+section_subject_domain_of_special_numbers = [*
+    subject_domain_of_special_numbers => nrel_main_idtf:
+        [Предметная область особых чисел] (* <- lang_ru;; *);
+        [Subject domain of special numbers] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_special_numbers -> rrel_not_maximum_studied_object_class:
+        concept_factorial_prime_number;
+        concept_odd_perfect_number;
+        concept_composite_number;
+        concept_even_number;
+        concept_quasiperfect_number;
+        concept_faktorion;
+        concept_deficient_number;
+        concept_perfect_number;
+        concept_even_perfect_number;
+        concept_mersenne_prime;
+        concept_odd_number;
+        concept_prime_number;
+        concept_number_Prota;
+        concept_primorial_prime_number;
+        concept_almost_perfect_number;
+        concept_square_number;
+        concept_palindromic_number;
+        concept_semiprime_number;
+        concept_abundant_number;;
+
+    subject_domain_of_special_numbers -> rrel_explored_relation:
+        nrel_amicable_number;;
+*];;

@@ -1,0 +1,70 @@
+sc_node_not_relation -> concept_infinitely_large_function;;
+concept_infinitely_large_function=> nrel_main_idtf :
+[бесконечно большая функция] (* <- lang_ru;; *);
+[infinitely large function] (* <- lang_en;; *);; 
+
+//определение
+concept_infinitely_large_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(бесконечно большая функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция называется бесконечно большой в окрестности точки x0, если limf(x) = ∞ при x→x0](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+concept_infinitely_large_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(свойства бесконечно больших функций*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinitely_large_function.html"  (*<-lang_ru;;*);;
+		*);;
+	*);;
+concept_infinitely_large_function <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на определение: является ли функции бесконечном большой в окрестности заданной точки.](* <- lang_ru;; *);;
+*);;
+*);;
+concept_infinitely_large_function<= nrel_using_constants:concept_function;;
+
+// конкретные задачи
+concept_infinitely_large_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли функция f(x)=(3+x)/3*x бесконечно большой функцией в окрестности точки x=-3. ]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_infinitely_large_function-> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[f(x)=1/x бесконечно большая функция при x→0](* <- lang_ru;; 	*);;
+		*);;
+	*);;

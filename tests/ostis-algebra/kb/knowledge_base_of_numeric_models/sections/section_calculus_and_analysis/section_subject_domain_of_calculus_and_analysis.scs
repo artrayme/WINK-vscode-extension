@@ -1,0 +1,73 @@
+sc_node_struct -> section_subject_domain_of_calculus_and_analysis;;
+
+section_subject_domain_of_calculus_and_analysis => nrel_main_idtf:
+    [Раздел. Предметная область математического анализа] (* <- lang_ru;; *);
+    [Section. Subject domain of calculus and analysis] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_calculus_and_analysis <- nrel_system_identifier;;
+
+section_subject_domain_of_calculus_and_analysis => nrel_section_decomposition: {
+    section_subject_domain_of_special_functions;
+    section_subject_domain_of_differential_equations;
+    section_subject_domain_of_special_series;
+    section_subject_domain_of_integral_calculus;
+    section_subject_domain_of_tensor_calculus;
+    section_subject_domain_of_real_analysis;
+    section_subject_domain_of_vector_calculus;
+    section_subject_domain_of_complex_analysis;
+    section_subject_domain_of_differential_calculus;
+    section_subject_domain_of_functional_analysis
+};;
+  
+section_subject_domain_of_calculus_and_analysis -> rrel_key_sc_element:
+    subject_domain_of_calculus_and_analysis;
+        concept_function;
+        concept_graph_of_the_function;
+        concept_numerical_series;
+        concept_mathematical_analysis;
+        concept_series;
+        nrel_the_scope_of_a_series_of_numbers;
+        nrel_fashion_series_of_numbers;
+        nrel_order_of_homogeneity;
+        nrel_period;
+        nrel_range_of_the_function;
+        rrel_argument;
+        nrel_domain_of_the_function;;
+
+section_subject_domain_of_calculus_and_analysis = [*
+    subject_domain_of_calculus_and_analysis => nrel_main_idtf:
+        [Предметная область математического анализа] (* <- lang_ru;; *);
+        [Subject domain of calculus and analysis] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_calculus_and_analysis => nrel_private_subject_domain:
+        subject_domain_of_special_functions;
+        subject_domain_of_differential_equations;
+        subject_domain_of_special_series;
+        subject_domain_of_integral_calculus;
+        subject_domain_of_tensor_calculus;
+        subject_domain_of_real_analysis;
+        subject_domain_of_vector_calculus;
+        subject_domain_of_complex_analysis;
+        subject_domain_of_differential_calculus;
+        subject_domain_of_functional_analysis;;
+
+    subject_domain_of_calculus_and_analysis -> rrel_maximum_studied_object_class:
+        concept_function;
+        concept_graph_of_the_function;
+        concept_mathematical_analysis;
+        concept_series;;
+
+    subject_domain_of_calculus_and_analysis -> rrel_not_maximum_studied_object_class:
+        concept_numerical_series;;
+
+    subject_domain_of_calculus_and_analysis -> rrel_explored_relation:
+        nrel_the_scope_of_a_series_of_numbers;
+        nrel_fashion_series_of_numbers;
+        nrel_order_of_homogeneity;
+        nrel_period;
+        nrel_range_of_the_function;
+        rrel_argument;
+        nrel_domain_of_the_function;;
+*];;

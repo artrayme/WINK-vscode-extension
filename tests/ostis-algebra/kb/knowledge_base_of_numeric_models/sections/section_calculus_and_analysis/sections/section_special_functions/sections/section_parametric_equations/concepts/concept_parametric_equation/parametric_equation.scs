@@ -1,0 +1,75 @@
+sc_node_not_relation->concept_parametric_equation;;
+concept_parametric_equation => nrel_main_idtf :
+[уравнение с параметром](*<-lang_ru;;*);
+[equation with a parameter](*<-lang_en;;*);;
+
+concept_parametric_equation <= nrel_using_constants: concept_parameter; concept_variable;;
+
+//определение
+concept_parametric_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(уравнение с параметром)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Пусть дано равенство с переменными х, а: f(x;a)=0. Если ставится задача для каждого действительного значения а решить это уравнение относительно х, то уравнение f(x;a)=0 называют уравнением с переменной х и параметром а.]  (* <- lang_ru;; *);;
+		*);;
+*);;
+
+//пример
+concept_parametric_equation -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[2а(а-2)х=а-2.](* <- lang_en;; 	*);;
+		*);;
+	*);;
+
+//утверждения
+concept_parametric_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(параметр)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Решить уравнение с параметром а - значит для каждого значения а найти значения х, удовлетворяющее этому уравнению.] (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_parametric_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://equation_with_a_parameter1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_parametric_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Решить уравнение относительно х для нахождения значения параметра а.](* <- lang_ru;; *);;
+*);;
+*);;

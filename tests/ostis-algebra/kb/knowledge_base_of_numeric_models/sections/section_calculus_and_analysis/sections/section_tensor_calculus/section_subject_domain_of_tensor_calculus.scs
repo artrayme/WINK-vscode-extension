@@ -1,0 +1,29 @@
+sc_node_struct -> section_subject_domain_of_tensor_calculus;;
+
+section_subject_domain_of_tensor_calculus => nrel_main_idtf:
+    [Раздел. Предметная область тензорного анализа] (* <- lang_ru;; *);
+    [Section. Subject domain of tensor calculus] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_tensor_calculus <- nrel_system_identifier;;
+
+  
+section_subject_domain_of_tensor_calculus -> rrel_key_sc_element:
+    subject_domain_of_tensor_calculus;
+    concept_tensor_calculus;
+    concept_dyad;
+    concept_tensor;;
+
+section_subject_domain_of_tensor_calculus = [*
+    subject_domain_of_tensor_calculus => nrel_main_idtf:
+        [Предметная область тензорного анализа] (* <- lang_ru;; *);
+        [Subject domain of tensor calculus] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_tensor_calculus -> rrel_maximum_studied_object_class:
+        concept_tensor_calculus;
+        concept_tensor;;
+
+    subject_domain_of_tensor_calculus -> rrel_not_maximum_studied_object_class:
+        concept_dyad;;
+*];;

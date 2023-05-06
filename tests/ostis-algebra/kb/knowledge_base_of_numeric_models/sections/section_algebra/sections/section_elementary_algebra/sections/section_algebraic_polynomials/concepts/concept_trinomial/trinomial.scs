@@ -1,0 +1,36 @@
+sc_node_not_relation -> concept_trinomial;;
+concept_trinomial => nrel_main_idtf :
+[трехчлен] (* <- lang_ru;; *);
+[trinomial](*<-lang_en;;*);;
+
+concept_trinomial => nrel_main_idtf :
+[трином] (* <- lang_ru;; *);;
+
+concept_polynomial -> concept_trinomial;;
+
+concept_trinomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(трехчлен)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Трехчлен - алгебраическое выражение, состоящее из трех одночленов, соединенных знаками сложения или вычитания.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+concept_trinomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(Теорема Виета; квадратный трехчлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://trinomial_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

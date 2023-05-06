@@ -1,0 +1,6 @@
+seventy_four=>nrel_main_idtf:
+[74](*<-lang_ru;;*);
+[74](*<-lang_en;;*);;
+
+concept_number -> seventy_four;;
+set_of_number -> seventy_four;;

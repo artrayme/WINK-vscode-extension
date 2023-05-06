@@ -1,0 +1,48 @@
+sc_agent_vector_length
+=> nrel_main_idtf:
+	[sc-агент нахождения длины (модуля) вектора по координатам вектора] (* <- lang_ru;; *);
+	[sc-agent of finding length of vector using coordinates of vector] (* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_vector_length_condition => ..sc_agent_vector_length_result);
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_vector_length
+	};
+
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_vector_length
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_vector_length
+		};;
+	-> sc_agent_vector_length_scp    
+		(* <- active_sc_agent;; *);; 
+	*);;
+
+..sc_agent_vector_length
+= [*
+	question_vector_length _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter;;
+*];;
+
+..sc_agent_vector_length_result
+= [*
+	question_vector_length _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter;;
+*];;

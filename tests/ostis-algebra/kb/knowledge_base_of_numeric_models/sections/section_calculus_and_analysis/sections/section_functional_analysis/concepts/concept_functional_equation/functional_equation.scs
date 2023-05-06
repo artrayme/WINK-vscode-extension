@@ -1,0 +1,68 @@
+sc_node_not_relation->concept_functional_equation;; 
+
+concept_functional_equation=>nrel_main_idtf:
+[функциональное уравнение](*<-lang_ru;;*);
+[functional equation ](*<-lang_en;;*);;
+
+concept_functional_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(функциональное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функциональное уравнение —  это уравнение, в котором неизвестными являются функции (одна или несколько). ](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Пояснение(решение функционального уравнения)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Решения функционального уравнения - функция (или набор функций), при подстановке которой в исходное функциональное уравнение оно обращается в тождество.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_functional_equation<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Решить функциональное уравнение 2*f(2*x)=f(x)+x. ](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_functional_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождения решения функционального уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_functional_equation -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[f(x)+2*f(1/x)=3*x. Ответ: f(x)=2/x-x.](* <- lang_ru;;*);;
+		*);;
+	*);;

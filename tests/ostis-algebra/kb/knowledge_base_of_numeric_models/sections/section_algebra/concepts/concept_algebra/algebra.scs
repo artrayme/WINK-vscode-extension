@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_algebra;; 
+
+concept_algebra => nrel_main_idtf:
+[алгебра](*<-lang_ru;;*);
+[algebra](*<-lang_en;;*);;
+
+//разбиение
+concept_algebra <= nrel_subdividing:
+	...
+	(* 
+	-> concept_higher_algebra;;
+	-> concept_elementary_algebra;;
+	-> concept_linear_algebra;;
+	-> concept_general_algebra;;
+	-> concept_universal_algebra;;
+	*);;
+
+//определения и пояснения
+concept_algebra <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (алгебра)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Алгебра — это наука, изучающая алгебраические системы с точностью до изоморфизма.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (алгебра)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Алгебра - раздел математики, посвящённый изучению операций над элементами множества произвольной природы, обобщающих обычные операции сложения и умножения чисел.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+concept_algebra <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(алгебра; число; величина)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Алгебра есть наука о числах и через посредство чисел – о величинах вообще.](* <- lang_ru;; *);;
+		*);;
+	*);;

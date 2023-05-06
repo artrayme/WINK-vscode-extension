@@ -1,0 +1,28 @@
+ui_menu_file_for_vector_multiplication_of_vectors_for_2 <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_vector_multiplication_of_vectors_for_2 => nrel_main_idtf: 
+	[Найти векторное произведение 2-х векторов] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_vector_multiplication_of_vectors_for_2 => nrel_main_idtf: 
+	[Request of finding vector_multiplication of 2 vectors] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_vector_multiplication_of_vectors_for_2 => ui_nrel_command_template:
+	[*
+		question_vector_multiplication_of_vectors_for_2 _-> ._question_vector_multiplication_of_vectors_for_2_instance
+			(*
+			_-> rrel_vector_1:: ui_arg_1;;
+			_-> rrel_vector_2:: ui_arg_2;;
+
+			*);;
+		._question_vector_multiplication_of_vectors_for_2_instance _<- question;;
+	*];;
+
+ui_menu_file_for_vector_multiplication_of_vectors_for_2 => ui_nrel_command_lang_template:
+	[Найти векторное произведение 2-х векторов: $ui_arg_1 и $ui_arg_2]
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_vector_multiplication_of_vectors_for_2 => ui_nrel_command_lang_template:
+	[Request of finding vector multiplication of 2 vectors]
+	(* <- lang_en;; *);;

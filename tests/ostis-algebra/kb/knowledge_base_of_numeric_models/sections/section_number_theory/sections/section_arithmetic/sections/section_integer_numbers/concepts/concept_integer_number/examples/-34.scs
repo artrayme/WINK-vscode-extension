@@ -1,0 +1,6 @@
+minus_thirty_four=>nrel_main_idtf:
+[-34](*<-lang_ru;;*);
+[-34](*<-lang_en;;*);;
+
+concept_number -> minus_thirty_four;;
+set_of_number -> minus_thirty_four;;

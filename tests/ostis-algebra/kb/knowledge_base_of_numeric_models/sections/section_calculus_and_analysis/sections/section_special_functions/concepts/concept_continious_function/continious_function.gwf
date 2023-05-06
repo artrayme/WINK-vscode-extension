@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/attribute" idtf="rrel_example" shapeColor="193" id="154091248" parent="0" left="0" top="0" right="81.4219" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="375" y="192" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_continious_function" shapeColor="0" id="154071704" parent="0" left="0" top="0" right="168.703" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="268" y="116" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="y=x" shapeColor="0" id="152856416" parent="0" left="0" top="0" right="29.1562" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="268" y="271" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="154106352" parent="0" id_b="154071704" id_e="152856416" b_x="268" b_y="116" e_x="268" e_y="271" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="154104288" parent="0" id_b="154091248" id_e="154106352" b_x="375" b_y="192" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.482598">
+            <points/>
+        </arc>
+    </staticSector>
+</GWF>

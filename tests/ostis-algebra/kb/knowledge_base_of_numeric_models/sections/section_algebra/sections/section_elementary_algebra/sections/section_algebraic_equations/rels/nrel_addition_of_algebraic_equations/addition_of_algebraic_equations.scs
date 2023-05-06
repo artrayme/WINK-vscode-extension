@@ -1,0 +1,59 @@
+sc_node_norole_relation -> nrel_addition_of_algebraic_equations;;
+
+nrel_addition_of_algebraic_equations => nrel_main_idtf:
+[сложение алгебраических уравнений* ](* <- lang_ru;; *);  
+[addition of algebraic equations* ](* <- lang_en;; *);  
+[алгебралык, тен,деулер толын,тыру* ](* <- lang_kz;; *);;
+
+
+//определение
+nrel_addition_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(сложение алгебраических уравнений*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Сложение алгебраических уравнений - метод решения систем уравнений, который заключается в следующем: складываются левые части обоих уравнений
+, результат данного сложения приравнивается к сумме правых частей, в итоге полученное значение подставляется в одно из уравнений.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//пояснение
+nrel_addition_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Пояснение(сложение алгебраических уравнений*)](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Метод алгебраического сложения заключается в том, что изначально из двух уравнений с 2 переменными нужно получить одно уравнение с одной переменной.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+nrel_addition_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(система уравнений; переменная; уравнение)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Встречаются такие системы, где сложение уравнений на первом этапе не позволяет исключить ни одной переменной. Тогда существует такой коэфициент, домножив 
+на который одно из уравнений, можно непосредственно перейти к сложению двух уравнений.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+nrel_addition_of_algebraic_equations <- binary_relation;;
+nrel_addition_of_algebraic_equations <= nrel_first_domain: concept_system_of_algebraic_equations;;
+nrel_addition_of_algebraic_equations <= nrel_second_domain: concept_algebraic_equation;;
+
+nrel_addition_of_algebraic_equations -> rrel_example:	"file://example.png";;

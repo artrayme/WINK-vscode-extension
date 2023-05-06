@@ -1,0 +1,90 @@
+sc_node_not_relation->concept_monomial;; 
+
+concept_monomial=>nrel_main_idtf:
+[одночлен](*<-lang_ru;;*);
+[monomial](*<-lang_en;;*);;
+
+concept_monomial=> nrel_idtf:[моном](*<-lang_ru;;*);;
+
+concept_monomial <= nrel_strict_inclusion: concept_arithmetic_expression;;
+
+//определение и пояснения
+concept_monomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(одночлен)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Одночленом называется выражение, которое содержит числа, натуральные степени переменных и их произведения, и при этом не содержит никаких других действий с этими числами и переменными.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (одночлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Одночлен называется представленным в стандартном виде, если он представлен в виде произведения числового множителя на первом месте и степеней различных переменных. Числовой множитель у одночлена стандартного вида называется коэффициентом одночлена, сумму показателей степени переменных называют степенью одночлена. Ясно, что произведение одночленов также будет одночленом; ясно также, что одночлен в некоторой натуральной степени также является одночленом. Результаты таких действий (умножение одночленов и возведение одночлена в степень) обычно приводят к стандартному виду.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (одночлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если два одночлена одинаковы или различаются только коэффициентами, то такие одночлены называют подобными.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+concept_monomial <= nrel_using_constants: concept_algebraic_expression;;
+
+// конкретные задачи
+concept_monomial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://monomial_1.html" 	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_monomial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			"file://monomial_2.html" 	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_monomial -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://monomial_3.html"	(* <- lang_ru;; 	*);;
+		*);;
+	*);;

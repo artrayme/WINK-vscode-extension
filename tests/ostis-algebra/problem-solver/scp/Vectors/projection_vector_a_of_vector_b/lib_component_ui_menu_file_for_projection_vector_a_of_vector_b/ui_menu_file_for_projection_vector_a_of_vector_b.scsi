@@ -1,0 +1,28 @@
+ui_menu_file_for_projection_vector_a_of_vector_b <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_projection_vector_a_of_vector_b => nrel_main_idtf: 
+	[Найти проекцию вектора на вектор] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_projection_vector_a_of_vector_b => nrel_main_idtf: 
+	[Request of finding projection vector of vector] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_projection_vector_a_of_vector_b => ui_nrel_command_template:
+	[*
+		question_projection_vector_a_of_vector_b _-> ._question_projection_vector_a_of_vector_b_instance
+			(*
+			_-> rrel_vector_1:: ui_arg_1;;
+			_-> rrel_vector_2:: ui_arg_2;;
+
+			*);;
+		._question_projection_vector_a_of_vector_b_instance _<- question;;
+	*];;
+
+ui_menu_file_for_projection_vector_a_of_vector_b => ui_nrel_command_lang_template:
+	[Найти проекцию вектора $ui_arg_1 на вектор $ui_arg_2]
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_projection_vector_a_of_vector_b => ui_nrel_command_lang_template:
+	[Request of finding projection vector $ui_arg_1 of vector $ui_arg_2]
+	(* <- lang_en;; *);;

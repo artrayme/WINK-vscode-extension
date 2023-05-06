@@ -1,0 +1,69 @@
+sc_node_not_relation -> concept_entire_function;;
+
+concept_entire_function => nrel_main_idtf:
+[целая функция](*<-lang_ru;;*);
+[entire function](*<-lang_en;;*);
+[бүкіл функциясы](*<-lang_kz;;*);;
+
+concept_entire_function => nrel_idtf:
+[самое большое число](*<-lang_ru;;*);;
+
+//надмножество
+concept_function => nrel_inclusion: concept_entire_function;;
+
+//определение и пояснения
+concept_entire_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (целая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Целая функция — функция, голоморфная во всей комплексной плоскости](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_entire_function <= nrel_using_constants:
+	{
+	concept_complex_plane;
+	concept_function
+	};;	
+	
+//утверждения
+concept_entire_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(целая функция; особенность'; существенная особенность')] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Целая функция может иметь особенность (в т.ч. даже существенную особенность) в бесконечности.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(полюс; целая функция; многочлен; особая точка')] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Целая функция, имеющая на бесконечности полюс, должна быть многочленом. Таким образом, все целые функции, не являющиеся многочленами (в частности, тождественно постоянными) имеют на бесконечности существенно особую точку.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(целая функция; линейное пространство)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Все целые функции образуют линейное пространство. Пространство целых функций обозначают как E.](*<-lang_ru;;*);;
+		*);;
+	*);;

@@ -1,0 +1,7 @@
+sc_text_of_agent_nok
+-> rrel_key_sc_element:
+	agent_nok;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_nok = [*^"file://agent_nok.scsi"*];;
+

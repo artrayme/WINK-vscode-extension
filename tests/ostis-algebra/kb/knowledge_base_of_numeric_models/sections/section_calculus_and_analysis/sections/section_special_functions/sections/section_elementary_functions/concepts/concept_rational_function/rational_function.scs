@@ -1,0 +1,75 @@
+sc_node_not_relation -> concept_rational_function;;
+
+concept_rational_function => nrel_main_idtf:
+[рациональная функция](*<-lang_ru;;*);
+[rational function](*<-lang_en;;*);
+[ұтымды функциясы](*<-lang_kz;;*);;
+
+//разбиение
+concept_rational_function <= nrel_subdividing:
+	...
+  (* 
+    -> concept_entire_rational_function;;
+    -> concept_fractional_rational_function;;
+	*);;
+	
+//надмножество
+concept_function => nrel_inclusion: concept_rational_function;;
+
+//определение и пояснения
+concept_rational_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (рациональная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Рациональная функция — это дробь, числителем и знаменателем которой являются многочлены.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_rational_function <= nrel_using_constants:
+	{
+	rrel_numerator;
+	rrel_denominator;
+	concept_polynomial
+	};;	
+	
+//утверждения
+concept_rational_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(переменная'; арифметическое действие; рациональная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Любое выражение, которое можно получить из переменных x1,...,xn с помощью четырёх арифметических действий, является рациональной функцией.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(множество; рациональная функция; арифметическое действие; композиция*)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Множество рациональных функций замкнуто относительно арифметических действий и операции композиции.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(рациональная функция; сумма'; дробь)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Любая рациональная функция может быть представлена в виде суммы простейших дробей.](*<-lang_ru;;*);;
+		*);;
+	*);;

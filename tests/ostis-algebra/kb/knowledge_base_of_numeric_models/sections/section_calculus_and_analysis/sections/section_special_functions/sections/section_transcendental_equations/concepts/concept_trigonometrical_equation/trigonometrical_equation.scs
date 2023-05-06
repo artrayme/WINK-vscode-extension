@@ -1,0 +1,58 @@
+sc_node_not_relation -> concept_trigonometrical_equation;;
+
+concept_trigonometrical_equation => nrel_main_idtf:
+[тригонометрическое уравнение](*<-lang_ru;;*);
+[trigonometrical equation](*<-lang_en;;*);
+[тригонометриялы?к те?ндеу](*<-lang_kz;;*);;
+
+//определение
+
+concept_trigonometrical_equation <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(тригонометрическое уравнение)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Тригонометрическое уравнение - это уравнение, в котором неизвестное входит только под знак тригонометрических функций непосредственно
+или в виде линейной функции неизвестного, причем над тригонометрическими функциями выполняются только алгебраические действия.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+concept_trigonometrical_equation <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(простейшее тригонометрическое уравнение; уравнение; синус*;  косинус*; тангенс* ; котангенс*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Простейшими тригонометрическими уравнениями являются уравнения вида sin x = a, cos x = a, tg x = a, ctg x = a.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(уравнение; теорема о равносильности уравнений)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Основыные понятия об уравнениях и теоремы о равносильности уравнений имеют место и для тригонометрических уравнений.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_trigonometrical_equation <= nrel_subdividing:
+	...
+	(* 
+	-> concept_irrational_equation;;
+	-> concept_rational_equation;;
+	*);;
+
+concept_trigonometrical_equation <= nrel_inclusion: concept_equation;;
+

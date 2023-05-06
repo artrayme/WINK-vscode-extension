@@ -1,0 +1,7 @@
+sc_text_of_agent_difference_complex_number
+-> rrel_key_sc_element:
+	agent_difference_complex_number;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_difference_complex_number = [*^"file://agent_difference_complex_number.scsi"*];;
+

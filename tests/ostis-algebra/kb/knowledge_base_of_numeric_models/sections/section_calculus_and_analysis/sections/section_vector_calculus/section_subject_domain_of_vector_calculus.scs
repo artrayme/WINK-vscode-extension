@@ -1,0 +1,32 @@
+sc_node_struct -> section_subject_domain_of_vector_calculus;;
+
+section_subject_domain_of_vector_calculus => nrel_main_idtf:
+    [Раздел. Предметная область векторного анализа] (* <- lang_ru;; *);
+    [Section. Subject domain of vector calculus] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_vector_calculus <- nrel_system_identifier;;
+  
+section_subject_domain_of_vector_calculus -> rrel_key_sc_element:
+    subject_domain_of_vector_calculus;
+    concept_differential_operator;
+    concept_linear_differential_operator;
+    concept_simplest_differential_operator;
+    concept_differential_operator_nabla;
+    concept_vector_calculus;;
+
+section_subject_domain_of_vector_calculus = [*
+    subject_domain_of_vector_calculus => nrel_main_idtf:
+        [Предметная область векторного анализа] (* <- lang_ru;; *);
+        [Subject domain of vector calculus] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_vector_calculus -> rrel_maximum_studied_object_class:
+        concept_differential_operator;
+        concept_vector_calculus;;
+
+    subject_domain_of_vector_calculus -> rrel_not_maximum_studied_object_class:
+        concept_linear_differential_operator;
+        concept_simplest_differential_operator;
+        concept_differential_operator_nabla;;
+*];;

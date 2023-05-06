@@ -1,0 +1,30 @@
+sc_node_not_relation -> concept_number_Prota;; 
+concept_number_Prota => nrel_main_idtf:	[число Прота](*<-lang_ru;;*);	[number Prota](*<-lang_en;;*);;
+
+concept_number_Prota <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (число Прота)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Число Прота представляет собой число вида k*(2^n)+1, где k является нечётным положительным целым числом и n — положительное целое число, причём k<2^n.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_number_Prota <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число Прота; нечетное число; целое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если бы не было условия k<2^n, то все нечётные целые числа больше 1 были бы числами Прота](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_number_Prota -> rrel_example: three; five;;

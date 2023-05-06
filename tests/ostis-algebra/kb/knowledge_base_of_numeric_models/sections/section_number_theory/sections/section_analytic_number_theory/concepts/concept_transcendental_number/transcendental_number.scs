@@ -1,0 +1,84 @@
+sc_node_not_relation -> concept_transcendental_number;; 
+
+concept_transcendental_number => nrel_main_idtf:
+[трансцендентное число](*<-lang_ru;;*);
+[transcendental number](*<-lang_en;;*);
+[трансцендент сан](*<-lang_kz;;*);;
+
+//синонимы
+concept_transcendental_number => nrel_idtf:
+[множество трансцендентных чисел](*<-lang_ru;;*);;
+
+//разбиение
+concept_transcendental_number <= nrel_subdividing:
+	...
+	(* 
+	-> concept_real_transcendental_number;;
+	-> concept_complex_transcendental_number;;
+	*);;
+	
+//надмножество
+concept_number => nrel_inclusion: concept_transcendental_number;;
+
+//определения и пояснения
+concept_transcendental_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (трансцендентное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Трансцендентное число -  это вещественное или комплексное число, не являющееся алгебраическим.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (трансцендентное число)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Трансцендентное число – число, которое не является корнем никакого многочлена с целыми коэффициентами.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_transcendental_number <= nrel_using_constants:
+	{
+	concept_real_number;
+	concept_complex_number;
+	concept_algebraic_number;
+	concept_number;
+	nrel_root_of_the_equation;
+	concept_polynomial;
+	concept_integer
+	};;
+	
+//утверждения
+concept_transcendental_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество трансцендентных чисел, континуальное множество)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество трансцендентных чисел континуально.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(трансцендентное число, мера иррациональности*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Мера иррациональности почти всякого трансцендентного числа равна 2.](* <- lang_ru;; *);;
+		*);;
+	*);;

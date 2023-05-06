@@ -1,0 +1,61 @@
+sc_node_not_relation->concept_odd_number;; 
+
+concept_odd_number=>nrel_main_idtf:
+[нечетное число](*<-lang_ru;;*);
+[тақ сан](*<-lang_kz;;*);
+[odd number](*<-lang_en;;*);;
+
+// синонимы
+concept_odd_number=> nrel_idtf:[Класс нечетных чисел](*<-lang_ru;;*);;
+concept_odd_number=> nrel_idtf:[Множество нечетных чисел](*<-lang_ru;;*);;
+concept_odd_number=> nrel_idtf:[Понятие нечетного числа](*<-lang_ru;;*);;
+concept_odd_number=> nrel_idtf:[Нечетные числа](*<-lang_ru;;*);;
+
+//определение
+concept_odd_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(нечетное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Нечетные числа - натуральные числа, не делящиеся на 2.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+//используемые константы
+concept_odd_number <= nrel_using_constants: concept_natural_number;;
+
+// конкретные задачи
+concept_odd_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли число 15 нечетным числом?]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_odd_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение четности (нечетности) числа.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_odd_number -> rrel_example : one; three; five; seven; nine; eleven; thirteen; fifteen;;

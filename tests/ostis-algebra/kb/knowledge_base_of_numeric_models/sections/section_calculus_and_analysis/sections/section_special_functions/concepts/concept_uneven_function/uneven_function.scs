@@ -1,0 +1,70 @@
+sc_node_not_relation -> concept_uneven_function;;
+
+concept_uneven_function=>nrel_main_idtf:
+[uneven function](*<-lang_en;;*);
+[нечетная функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_uneven_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(нечетная функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Нечётная функция — функция, меняющая значение на противоположное при изменении знака независимой переменной (график ее симметричен относительно центра координат).](*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//надмножество
+concept_function=>nrel_inclusion : concept_uneven_function;;
+
+//утверждения
+concept_uneven_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(функция,равенство*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://uneven_function_example.html"(*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(сумма',разность',нечётная функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Сумма, разность и вообще любая линейная комбинация нечётных функций нечётна.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(произведение')](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Произведение двух функций разной чётности нечётно.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(нечётная функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [График нечётной функции симметричен относительно начала координат O.](*<-lang_ru;;*);;
+*);;
+*);;

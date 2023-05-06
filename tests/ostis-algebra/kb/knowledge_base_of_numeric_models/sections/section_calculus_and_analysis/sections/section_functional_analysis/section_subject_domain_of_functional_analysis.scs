@@ -1,0 +1,37 @@
+sc_node_struct -> section_subject_domain_of_functional_analysis;;
+
+section_subject_domain_of_functional_analysis => nrel_main_idtf:
+    [Раздел. Предметная область функционального анализа] (* <- lang_ru;; *);
+    [Section. Subject domain of functional analysis] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_functional_analysis <- nrel_system_identifier;;
+
+section_subject_domain_of_functional_analysis -> rrel_key_sc_element:
+    subject_domain_of_functional_analysis;
+        concept_generalized_function;
+        concept_functional_series;
+        concept_linear_functional;
+        concept_functional_equation;
+        concept_quasipolynomial;
+        concept_functional_analysis;;
+
+section_subject_domain_of_functional_analysis = [*
+    subject_domain_of_functional_analysis => nrel_main_idtf:
+        [Предметная область функционального анализа] (* <- lang_ru;; *);
+        [Subject domain of functional analysis] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_functional_analysis => nrel_private_subject_domain:
+        subject_domain_of_calculus_of_variations;;
+
+    subject_domain_of_functional_analysis -> rrel_maximum_studied_object_class:
+        concept_generalized_function;
+        concept_functional_series;
+        concept_functional_equation;
+        concept_functional_analysis;;
+        
+    subject_domain_of_functional_analysis -> rrel_not_maximum_studied_object_class:
+        concept_quasipolynomial;
+        concept_linear_functional;;
+*];;

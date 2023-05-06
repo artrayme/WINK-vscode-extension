@@ -1,0 +1,6 @@
+ninety_three=>nrel_main_idtf:
+[93](*<-lang_ru;;*);
+[93](*<-lang_en;;*);;
+
+concept_number -> ninety_three;;
+set_of_number -> ninety_three;;

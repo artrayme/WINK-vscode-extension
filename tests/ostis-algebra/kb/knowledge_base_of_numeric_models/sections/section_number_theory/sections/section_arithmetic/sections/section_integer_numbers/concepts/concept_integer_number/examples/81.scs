@@ -1,0 +1,6 @@
+eighty_one=>nrel_main_idtf:
+[81](*<-lang_ru;;*);
+[81](*<-lang_en;;*);;
+
+concept_number -> eighty_one;;
+set_of_number -> eighty_one;;

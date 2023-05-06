@@ -1,0 +1,64 @@
+concept_set_of_equations => nrel_main_idtf:
+[система уравнений](*<-lang_ru;;*);
+[set of equations](*<-lang_en;;*);;
+
+concept_set_of_equations <= nrel_subdividing:
+	...
+  (*
+    -> concept_set_of_algebraic_equations;;
+    -> concept_set_of_differential_equations;;
+	*);;
+
+//определение и пояснения
+concept_set_of_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(система уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Система уравнений — это условие, состоящее в одновременном выполнении нескольких уравнений относительно нескольких (или одной) переменных.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_set_of_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(число, переменная, равенство)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Решением системы уравнений называется упорядоченный набор чисел (значений переменных), при подстановке которых вместо переменных каждое из уравнений обращается в верное равенство.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf: [Утв.(действительное число, возведение в натуральную степень*, сложение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://set_of_equations.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение, система дифференциальных уравнений)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Обыкновенное дифференциальное уравнение любого порядка можно записать как систему диф. уравнений первого порядка.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_set_of_equations -> rrel_example:
+	"file://set_of_equations2.jpg"(* <- lang_ru;; 	*);;

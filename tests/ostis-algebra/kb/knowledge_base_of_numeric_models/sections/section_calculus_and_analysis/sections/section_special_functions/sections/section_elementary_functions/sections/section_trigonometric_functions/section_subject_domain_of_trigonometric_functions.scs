@@ -1,0 +1,50 @@
+sc_node_struct -> section_subject_domain_of_trigonometric_functions;;
+
+section_subject_domain_of_trigonometric_functions => nrel_main_idtf:
+    [Раздел. Предметная область тригонометрических функций] (* <- lang_ru;; *);
+    [Section. Subject domain of trigonometric functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_trigonometric_functions <- nrel_system_identifier;;
+
+section_subject_domain_of_trigonometric_functions -> rrel_key_sc_element:
+    subject_domain_of_trigonometric_functions;
+    concept_trigonometric_function;
+    nrel_arctangent;
+    nrel_cosine_verzus;
+    nrel_sine_verzus;
+    nrel_arccotangent;
+    nrel_arccos;
+    nrel_arcsin;
+    nrel_tangent;
+    nrel_cosec;
+    nrel_cosine;
+    nrel_excosec;
+    nrel_secant;
+    nrel_cotangent;
+    nrel_sine;;
+
+section_subject_domain_of_trigonometric_functions = [*
+    subject_domain_of_trigonometric_functions => nrel_main_idtf:
+        [Предметная область тригонометрических функций] (* <- lang_ru;; *);
+        [Subject domain of trigonometric functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_trigonometric_functions -> rrel_maximum_studied_object_class:
+        concept_trigonometric_function;;
+
+    subject_domain_of_trigonometric_functions -> rrel_explored_relation:
+        nrel_arctangent;
+        nrel_cosine_verzus;
+        nrel_sine_verzus;
+        nrel_arccotangent;
+        nrel_arccos;
+        nrel_arcsin;
+        nrel_tangent;
+        nrel_cosec;
+        nrel_cosine;
+        nrel_excosec;
+        nrel_secant;
+        nrel_cotangent;
+        nrel_sine;;
+*];;

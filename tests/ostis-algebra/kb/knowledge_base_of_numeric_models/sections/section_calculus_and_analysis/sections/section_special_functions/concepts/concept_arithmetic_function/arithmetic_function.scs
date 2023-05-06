@@ -1,0 +1,49 @@
+sc_node_norole_relation->concept_arithmetic_function;;
+
+concept_arithmetic_function=>nrel_main_idtf:
+[арифметическая функция](*<-lang_ru;;*);
+[elliptic function](*<-lang_en;;*);;
+
+
+//надмножество
+concept_function => nrel_inclusion: concept_arithmetic_function;;
+
+//определение
+concept_arithmetic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(арифметическая функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арифметическая функция — функция, определенная на множестве натуральных чисел N, и принимающая значения во множестве комплексных чисел C.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	
+	//разбиение
+concept_arithmetic_function <= nrel_subdividing:
+	...
+  (* 
+    -> concept_number_of_dividers;;
+    -> concept_Euler_function;;
+	-> concept_sum_of_divisors;;
+	-> concept_Mobius_function;;
+	*);;
+	
+//утверждения
+	
+concept_arithmetic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арифметическая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арифметической функции можно сопоставить её «производящую функцию».](* <- lang_ru;; *);;
+		*);;
+	*);;

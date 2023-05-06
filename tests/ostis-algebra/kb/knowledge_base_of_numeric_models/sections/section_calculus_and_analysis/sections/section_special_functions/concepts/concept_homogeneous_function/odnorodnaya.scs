@@ -1,0 +1,76 @@
+sc_node_not_relation -> concept_homogeneous_function;;
+
+concept_homogeneous_function => nrel_main_idtf:
+[однородная функция](*<-lang_ru;;*);
+[homogeneous function](*<-lang_en;;*);
+[біртекті функция](*<-lang_kz;;*);;
+
+//определение
+
+concept_homogeneous_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(однородная функция)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Однородная функция - функция одного или нескольких переменных, удовлетворяющая следующему условию: при одновременном умножении всех аргументов
+ функции на один и тот же (произвольный) множитель значение функции умножается на некоторую степень этого множителя.](*<-lang_ru;;*);;
+		*);;	
+	*);;
+
+
+//утверждения
+
+concept_homogeneous_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(функция; степень'; множитель'; порядок однородности*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Степень множителя, на который умножается значение функции называют порядком однородности.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(функция; многочлен; переменная*; степень'; целое число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Если функция f (1) является многочленом от n переменных то она будет однородной функцией степени k в том и только в том случае, когда f однородный многочлен степени k, в частности в этом случае k должно быть целым числом.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(нуль)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Однородная функция в нуле равна нулю: f(0) = 0 .](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+
+concept_homogeneous_function <= nrel_subdividing:
+	...
+	(* 
+	-> concept_limited_homogeneous_function;;
+	-> concept_complex_homogeneous_function;;
+	-> concept_absolutely_homogeneous_function;;
+	-> concept_positively_homogeneous_function;;
+	*);;
+
+concept_homogeneous_function <= nrel_inclusion: concept_function;;
+
+concept_homogeneous_function -> rrel_example :
+		"file://example_1.png";;

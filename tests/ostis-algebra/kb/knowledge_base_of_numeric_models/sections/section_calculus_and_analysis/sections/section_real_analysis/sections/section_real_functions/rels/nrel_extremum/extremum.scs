@@ -1,0 +1,70 @@
+sc_node_norole_relation -> nrel_extremum;;
+
+nrel_extremum => nrel_main_idtf:
+[экстремум* ](* <- lang_ru;; *);  
+[extremum* ](* <- lang_en;; *);;
+
+
+//определение
+nrel_extremum <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(экстремум*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Экстремум — максимальное или минимальное значение функции на заданном множестве.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+nrel_extremum <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(точка экстремума*; точка)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Точка, в которой достигается экстремум, называется точкой экстремума.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(минимум функции*; максимум функции*; точка максимума*; точка минимума*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Если достигается минимум — точка экстремума называется точкой минимума, а если максимум — точкой максимума.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(функция; точка; производная*; нуль)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Необходимый признак экстремума: если функция f(x) дифференцируема в точке b и имеет в этой точке экстремум, то её производная при x = b обращается в нуль.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+nrel_extremum <= nrel_subdividing:
+	...
+	(* 
+	-> nrel_local_extremum;;
+	-> nrel_global_extremum;;
+	*);;
+
+
+nrel_extremum <- binary_relation;;
+nrel_extremum <= nrel_first_domain: concept_function;;
+nrel_extremum <= nrel_second_domain: concept_number;;

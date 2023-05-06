@@ -1,0 +1,284 @@
+agent_check_for_a_prime_number
+=> nrel_main_idtf:
+	[агентная scp-программа проверки простого/составного числа] (* <- lang_ru;; *);
+	
+	[agent scp-program check for a prime number] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_check_for_a_prime_number
+	(*
+	-> rrel_params: .agent_check_for_a_prime_number_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_check_for_a_prime_number_operator_set 
+		(*
+		-> rrel_init: .agent_check_for_a_prime_number_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_check_for_a_prime_number_operator2;;
+			*);;
+
+		-> .agent_check_for_a_prime_number_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_check_for_a_prime_number;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_check_for_a_prime_number_operator3;;
+		  	=> nrel_else: .agent_check_for_a_prime_number_operator_return;;
+			*);;
+                 
+		-> .agent_check_for_a_prime_number_operator3 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+                      
+			=> nrel_then: .agent_check_for_a_prime_number_operator3A1;;
+			=> nrel_else: .agent_check_for_a_prime_number_operator_return;;
+			*);;
+             
+                     
+                  ->.agent_check_for_a_prime_number_operator3A1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc2;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_check_for_a_prime_number_operator4a;;
+			*);;  
+
+                      -> .agent_check_for_a_prime_number_operator4a 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_check_for_a_prime_number_operator4A;;
+		 	*);;
+
+                        -> .agent_check_for_a_prime_number_operator4A
+			(*
+		        <-contAdd;;
+                        ->rrel_1: rrel_assign: rrel_scp_var: _delitel;;
+                        ->rrel_2: rrel_fixed: rrel_scp_const: [1];;
+                        ->rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+                 	=> nrel_goto: .agent_check_for_a_prime_number_operator4AB1;;
+			*);;
+                          
+                   -> .agent_check_for_a_prime_number_operator4AB1
+                         (*
+                         <-contPow;;
+                         -> rrel_1: rrel_assign: rrel_scp_var: _answer2;;
+                         -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                         -> rrel_3: rrel_fixed: rrel_scp_const: [0.5];;
+                      
+                         
+                       => nrel_goto: .agent_check_for_a_prime_number_operator4AB12;;
+                       
+                         *);;
+                    
+                    -> .agent_check_for_a_prime_number_operator4AB12
+                       (*
+                        <- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer2;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                        
+                 	=> nrel_then: .agent_check_for_a_prime_number_operator4A1;;
+                        => nrel_else: .agent_check_for_a_prime_number_operator4AB2;;
+                        *);;
+ 
+
+                   -> .agent_check_for_a_prime_number_operator4AB2
+                        (*
+                         <-ifGr;;
+                         ->rrel_1: rrel_fixed: rrel_scp_var: _answer2;;
+                         ->rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                         => nrel_then: .agent_check_for_a_prime_number_operator4A1;;
+                         => nrel_else: .agent_check_for_a_prime_number_operator4D;;
+                        
+                       *);;
+
+                -> .agent_check_for_a_prime_number_operator4A1
+			(*
+		 	<- contDivRem;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _delitel;;
+
+                 	=> nrel_goto: .agent_check_for_a_prime_number_operator4B;;
+			
+                 	*);;
+
+                    
+                  -> .agent_check_for_a_prime_number_operator4B
+			(*
+		 	<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+                        
+                 	=> nrel_then: .agent_check_for_a_prime_number_operator4C;;
+                        => nrel_else: .agent_check_for_a_prime_number_operator4B1;;
+			
+                 	*);;
+                   -> .agent_check_for_a_prime_number_operator4B1
+                       (*
+                       <-contAdd;;
+                       ->rrel_1: rrel_fixed: rrel_scp_var: _delitel;;
+                       ->rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                       ->rrel_3: rrel_fixed: rrel_scp_const: [1];;
+ 
+                      => nrel_goto:.agent_check_for_a_prime_number_operator4AB12;;
+                         *);;
+                    
+		-> .agent_check_for_a_prime_number_operator4C
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: concept_composite_number;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4C1;;
+                        *);;
+
+                        -> .agent_check_for_a_prime_number_operator4C1
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+
+                        
+
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4C2;;
+                        *);; 
+                         -> .agent_check_for_a_prime_number_operator4C2
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc12;;
+                        -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+
+                        
+
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4C3;;
+                        *);; 
+                        
+                         -> .agent_check_for_a_prime_number_operator4C3
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc13;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: concept_composite_number;;
+                        
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4E;;
+                        *);;
+
+ 
+                 -> .agent_check_for_a_prime_number_operator4D
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: concept_prime_number;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc14;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4D1;;
+                        *);;
+
+                        -> .agent_check_for_a_prime_number_operator4D1
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+
+                        
+
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4D2;;
+                        *);; 
+                         -> .agent_check_for_a_prime_number_operator4D2
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc16;;
+                        -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc14;;
+
+                        
+
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4D3;;
+                        *);; 
+                        
+                         -> .agent_check_for_a_prime_number_operator4D3
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: concept_prime_number;;
+                        
+                        =>nrel_goto:  .agent_check_for_a_prime_number_operator4E;;
+                        *);;
+
+                 -> .agent_check_for_a_prime_number_operator4E
+                      (*
+                        <- contSub;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _delitel;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _delitel;;
+
+                 	=> nrel_goto: .agent_check_for_a_prime_number_operator_gen_answer;;    
+                      *);;
+                       
+
+		-> .agent_check_for_a_prime_number_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc6;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_check_for_a_prime_number_operator_return;;
+			*);;     
+					
+		-> .agent_check_for_a_prime_number_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

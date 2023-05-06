@@ -1,0 +1,49 @@
+sc_node_not_relation -> concept_involution;; 
+
+concept_involution => nrel_main_idtf:
+[инволюция](*<-lang_ru;;*);
+[involution](*<-lang_en;;*);
+[инволюция](*<-lang_kz;;*);;
+	
+//надмножество
+concept_function => nrel_inclusion: concept_involution;;
+
+//определения и пояснения
+concept_involution <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (инволюция)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Инволюцией называется функция, обратная самой себе, то есть f(f(x))=x.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_involution <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(обратная функция; инволюция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://involution_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(инволюция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://involution_statement1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

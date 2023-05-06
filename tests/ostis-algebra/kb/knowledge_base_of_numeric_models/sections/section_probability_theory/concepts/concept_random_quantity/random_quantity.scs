@@ -1,0 +1,58 @@
+sc_node_not_relation -> concept_random_quantity;; 
+
+concept_random_quantity => nrel_main_idtf:
+[случайная величина](*<-lang_ru;;*);
+[random quantity](*<-lang_en;;*);
+[кездейсоқ саны](*<-lang_kz;;*);;
+
+//надмножество
+concept_quantity => nrel_inclusion: concept_random_quantity;;
+
+//определения и пояснения
+concept_random_quantity <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (случайная величина)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Случайная величина — это величина, которая принимает в результате опыта одно значение из множества исходов.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+concept_random_quantity <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(случайная величина; значение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Появление того или иного значения случайной величины до её измерения нельзя точно предсказать.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(случайеая величина; распределение вероятности*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вероятностное поведение отдельной (независимой от других) случайной величины полностью описывается её распределением вероятностей.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	//разбиение
+concept_random_quantity <= nrel_subdividing:
+	...
+  	(* 
+    	-> concept_discrete_random_quantity;;
+    	-> concept_continuous_random_quantity;;
+	-> concept_mixed_quantity;;
+	*);;
+	

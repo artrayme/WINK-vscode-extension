@@ -1,0 +1,29 @@
+ui_menu_file_for_exponentiation <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_exponentiation => nrel_main_idtf: 
+	[Возвести число в степень] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_exponentiation => nrel_main_idtf: 
+	[Request of exponent] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_exponentiation => ui_nrel_command_template:
+	[*
+		question_exponentiation _-> ._question_exponentiation_instance
+			(*
+			_-> rrel_basis:: ui_arg_1;;
+                        _-> rrel_exponent:: ui_arg_2;;
+
+			*);;
+		._question_exponentiation_instance _<- question;;
+	*];;
+
+ui_menu_file_for_exponentiation => ui_nrel_command_lang_template: 
+	[Возвести число $ui_arg_1 в степень $ui_arg_2] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_exponentiation => ui_nrel_command_lang_template: 
+	[Request exponentiation: number $ui_arg_1 for exponent $ui_arg_2] 
+	(* <- lang_en;; *);;
+

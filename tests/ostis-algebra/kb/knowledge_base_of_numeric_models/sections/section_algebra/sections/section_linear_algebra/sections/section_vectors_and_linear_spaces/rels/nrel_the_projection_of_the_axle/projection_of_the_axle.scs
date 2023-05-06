@@ -1,0 +1,56 @@
+sc_node_norole_relation -> nrel_the_projection_of_the_axle;;
+
+nrel_the_projection_of_the_axle => nrel_main_idtf:
+[проекция вектора на ось* ](* <- lang_ru;; *);  
+[the projection of the axle* ](* <- lang_en;; *);;
+
+
+//определение
+nrel_the_projection_of_the_axle <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(проекция вектора на ось*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Проекция вектора на ось – это вектор, началом и концом которого являются соответственно проекции начала и конца заданного вектора.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//пояснение
+nrel_the_projection_of_the_axle <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(проекция вектора на ось*)](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://projection_of_the_axle_explanation.png"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+nrel_the_projection_of_the_axle <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(числовая проекция*; длина*; вектор; косинус*; число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Числовая проекция вектора на ось – это число, которое равно произведению длины данного вектора на косинус угла между этим вектором и вектором, определяющим направление оси.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_the_projection_of_the_axle -> rrel_example :
+		"file://projection_of_the_axle_example.png";;
+
+nrel_the_projection_of_the_axle <- binary_relation;;
+nrel_the_projection_of_the_axle <= nrel_first_domain: concept_vector ;;
+nrel_the_projection_of_the_axle <= nrel_second_domain: concept_vector ;;

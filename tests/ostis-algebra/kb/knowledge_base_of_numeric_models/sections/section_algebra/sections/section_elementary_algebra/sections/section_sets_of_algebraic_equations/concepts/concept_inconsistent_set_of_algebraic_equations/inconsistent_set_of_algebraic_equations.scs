@@ -1,0 +1,24 @@
+sc_node_not_relation -> concept_inconsistent_set_of_algebraic_equations;;
+
+concept_inconsistent_set_of_algebraic_equations => nrel_main_idtf:
+[несовместная система алгебраических уравнений](*<-lang_ru;;*);
+[inconsistent set of algebraic equations](*<-lang_en;;*);;
+
+//определение и пояснения
+concept_inconsistent_set_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(несовместная система алгебраических уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Несовместная система алгебраических уравнений - система уравнений, которая не имеет ни одного решения.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+//пример
+concept_inconsistent_set_of_algebraic_equations -> rrel_example:
+	"file://inconsistent_set_of_algebraic_equations.png"(* <- lang_ru;; 	*);;

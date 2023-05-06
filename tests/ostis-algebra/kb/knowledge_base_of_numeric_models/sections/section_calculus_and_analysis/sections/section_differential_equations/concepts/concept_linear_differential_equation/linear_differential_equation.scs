@@ -1,0 +1,69 @@
+sc_node_not_relation->concept_linear_differential_equation;;
+concept_linear_differential_equation => nrel_main_idtf :
+[линейное дифференциальное уравнение](*<-lang_ru;;*);
+[linear differential equation](*<-lang_en;;*);;
+
+
+concept_linear_differential_equation <= nrel_subdividing:
+	...
+	(* 
+	-> concept_homogeneous_linear_differential_equation;;
+	-> concept_inhomogeneous_linear_differential_equation;;
+	*);;
+
+concept_linear_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейное дифференциальное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Дифференциальное уравниене называется линейным относительно неизвестной функции и ее производной, если оно может быть записано в виде: y'+P(x)*y=Q(x).P(x) и Q(x) - функции непрерывные на некотором промежутке a<x<b.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+
+concept_linear_differential_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение общего решения линейного дифференциального уравнения.](* <- lang_ru;; *);;
+*);
+...
+(*
+-> rrel_example:
+[Задачи на опреденеление порядка линейного дифференциального уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_linear_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Найдите общее решение линейного ДУ: dy/dx=y+x.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_linear_differential_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://linear_differential_equation2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

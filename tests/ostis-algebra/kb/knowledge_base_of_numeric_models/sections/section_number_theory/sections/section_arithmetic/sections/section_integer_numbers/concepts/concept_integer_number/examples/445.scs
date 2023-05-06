@@ -1,0 +1,6 @@
+four_hundred_and_forty_five => nrel_main_idtf:
+	[445](*<-lang_ru;;*);
+	[445](*<-lang_en;;*);;
+
+concept_number -> four_hundred_and_forty_five;;
+set_of_number -> four_hundred_and_forty_five;;

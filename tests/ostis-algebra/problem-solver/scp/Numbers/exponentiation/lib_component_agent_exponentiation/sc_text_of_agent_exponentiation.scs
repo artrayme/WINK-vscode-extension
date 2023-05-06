@@ -1,0 +1,7 @@
+sc_text_of_agent_exponentiation
+-> rrel_key_sc_element:
+	agent_exponentiation;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_exponentiation = [*^"file://agent_exponentiation.scsi"*];;
+

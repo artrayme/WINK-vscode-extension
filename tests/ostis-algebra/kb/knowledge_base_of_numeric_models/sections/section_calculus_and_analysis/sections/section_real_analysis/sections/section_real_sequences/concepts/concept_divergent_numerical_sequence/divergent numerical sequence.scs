@@ -1,0 +1,61 @@
+sc_node_not_relation -> concept_divergent_numerical_sequence;;
+concept_divergent_numerical_sequence => nrel_main_idtf :
+[расходящаяся числовая последовательность] (* <- lang_ru;; *);
+[divergent numerical sequence] (* <- lang_en;; *);;
+
+//определение
+concept_divergent_numerical_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(расходящаяся числовая последовательность)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+[Числовая последовательность, не имеющая предел, называется расходящейся.]  (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_divergent_numerical_sequence<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Опеределить, является ли данная последовательность расходящейся.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//пример
+concept_divergent_numerical_sequence -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[1; 2; 3; 4; ... - расходящаяся последовательность]  (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//конкретные задачи
+concept_divergent_numerical_sequence<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://divergent_sequence1.html"   (* <- lang_ru;; 	*);;
+*);;
+*);;

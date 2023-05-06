@@ -1,0 +1,61 @@
+sc_node_norole_relation -> nrel_sine_verzus;;
+nrel_sine_verzus => nrel_main_idtf:	[синус-верзус* ](*<-lang_ru;;*);	[sine-verzus* ](*<-lang_en;;*);;
+nrel_sine_verzus => nrel_idtf:	[версинус* ](*<-lang_ru;;*); [обращённый синус* ](*<-lang_ru;;*); [синус версус* ](*<-lang_ru;;*); [стрелка дуги* ](*<-lang_ru;;*);;
+
+nrel_sine_verzus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(синус-верзус*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Синус-верзус — одна из редко используемых тригонометрических функций. Синус-верзус угла v обозначается символом versin v; иногда используют обозначения vers v, sin vers v. Синус-верзус определяктся с помощью синуса и косинуса как versin v = 1 - cos v =2 * sin^2 (v/2).](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_trigonometric_function => nrel_inclusion: nrel_sine_verzus;;
+
+nrel_sine_verzus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(периодическая функция; число Пи; непрерывная функция; дифференцируемая функция; действительное число; синус-верзус*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Версинус — периодическая функция с периодом 2π. Определена, непрерывна и бесконечно дифференцируема для всех действительных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_sine_verzus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число; синус-верзус*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Версинус можно использовать в плоскости комплексных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_sine_verzus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*; синус*; синус-верзус*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Производная версинуса — синус.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_sine_verzus <- binary_relation;;
+nrel_sine_verzus <= nrel_first_domain:  concept_number;;
+nrel_sine_verzus <= nrel_second_domain: nrel_angle_measure;;

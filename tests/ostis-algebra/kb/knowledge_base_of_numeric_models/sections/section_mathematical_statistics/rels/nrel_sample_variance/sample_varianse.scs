@@ -1,0 +1,56 @@
+sc_node_norole_relation ->  nrel_sample_variance;;
+
+nrel_sample_variance => nrel_main_idtf:
+[выборочная дисперсия*](*<-lang_ru;;*);
+[sample variance*](*<-lang_en;;*);;
+
+//определение
+nrel_sample_variance <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дисперсия выборки*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Выборочная дисперсия — это оценка теоретической дисперсии распределения, рассчитанная на основе данных выборки.](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Утв. (дисперсия выборки*;случайная величина; распределение вероятности )] (*<-lang_ru;;*);;
+	<-sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://дисперсия.png";;
+		*);;
+	*);;
+
+
+
+//разбиение
+nrel_sample_variance <= nrel_subdividing:
+...
+(* 
+    ->nrel_biased_sample_variance;;
+    ->nrel_not_biased_sample_variance;;
+*);;
+
+			
+
+nrel_sample_variance <- binary_relation;;
+nrel_sample_variance => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_sample_variance => nrel_first_domain: concept_sample;;
+nrel_sample_variance => nrel_second_domain: concept_number;;
+
+
+nrel_biased_sample_variance => nrel_main_idtf:
+[смещенная выборочная дисперсия* ](*<-lang_ru;;*);
+[biased sample variance* ](*<-lang_en;;*);;
+
+nrel_not_biased_sample_variance => nrel_main_idtf:
+[несмещенная выборочная дисперсия* ](*<-lang_ru;;*);
+[not biased sample variance* ](*<-lang_en;;*);;

@@ -1,0 +1,116 @@
+sc_node_not_relation->concept_series;; 
+
+concept_series=>nrel_main_idtf:
+[ряд](*<-lang_ru;;*);
+[series](*<-lang_en;;*);;
+
+//синонимы
+concept_series=> nrel_idtf:[последовательность](*<-lang_ru;;*);;
+
+//разбиение
+concept_series<= nrel_subdividing:
+	...
+  (*
+    -> concept_numerical_series;;
+    -> concept_power_series;;
+    -> concept_trigonometric_series;;
+    -> concept_functional_series;;
+    -> concept_fourier_series;;
+    -> concept_taylor_series;;
+	*);;
+
+//определения и пояснения
+concept_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(ряд)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Ряд - бесконечная сумма слагаемых.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сходимость*, сумма*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если оба ряда сходятся, то их сумма сходится.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(абсолютная сходимость*, сумма*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если оба ряда сходятся абсолютно, то их сумма сходится абсолютно.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(абсолютная сходимость*, произведение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если хотя бы один из рядов сходится абсолютно, то произведение рядов сходится.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+ concept_series<= nrel_using_constants: concept_infinity; rrel_summand;;
+
+//пример
+ concept_series-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://series.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_series<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Исследование ряда на сходимость.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_series<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://series2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

@@ -1,0 +1,25 @@
+sc_node_not_relation -> concept_computational_topology;;
+concept_computational_topology => nrel_main_idtf:
+	[вычислительная топология](*<-lang_ru;;*);
+	[computational topology](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_computational_topology<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(вычислительная топология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+     [Вычислительная топология — раздел, занимающийся созданием эффективных алгоритмов для решения топологических проблем и применением топологических методов для решения алгоритмических проблем, возникающих в других областях науки.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_topology => nrel_inclusion: concept_computational_topology;;
+
+concept_computational_topology <= nrel_using_constants:
+	{
+	concept_topology
+	};;

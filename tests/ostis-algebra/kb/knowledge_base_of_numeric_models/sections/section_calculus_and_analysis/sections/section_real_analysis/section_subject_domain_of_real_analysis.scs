@@ -1,0 +1,33 @@
+sc_node_struct -> section_subject_domain_of_real_analysis;;
+
+section_subject_domain_of_real_analysis => nrel_main_idtf:
+    [Раздел. Предметная область действительного анализа] (* <- lang_ru;; *);
+    [Section. Subject domain of real analysis] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_real_analysis <- nrel_system_identifier;;
+
+section_subject_domain_of_real_analysis => nrel_section_decomposition: {
+    section_subject_domain_of_real_functions;
+    section_subject_domain_of_real_series;
+    section_subject_domain_of_sequences
+};;
+  
+section_subject_domain_of_real_analysis -> rrel_key_sc_element:
+    subject_domain_of_real_analysis;
+    nrel_limit;;
+
+section_subject_domain_of_real_analysis = [*
+    subject_domain_of_real_analysis => nrel_main_idtf:
+        [Предметная область действительного анализа] (* <- lang_ru;; *);
+        [Subject domain of real analysis] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_real_analysis => nrel_private_subject_domain:
+        subject_domain_of_real_functions;
+        subject_domain_of_real_series;
+        subject_domain_of_real_sequences;;
+
+    subject_domain_of_real_analysis -> rrel_explored_relation:
+        nrel_limit;;
+*];;

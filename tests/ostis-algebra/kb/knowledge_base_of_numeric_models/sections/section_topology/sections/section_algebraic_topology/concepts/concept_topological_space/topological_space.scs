@@ -1,0 +1,28 @@
+sc_node_not_relation -> concept_topological_space;;
+concept_topological_space => nrel_main_idtf:
+	[топологическое пространство](*<-lang_ru;;*);
+	[topological_space](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_topological_space<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(алгебраическая топология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Топологическое пространство - это набор точек вместе с набором окрестностей для каждой точки, удовлетворяющий набору аксиом, связывающих точки и окрестности.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_space => nrel_inclusion: concept_topological_space;;
+
+concept_topological_space <= nrel_using_constants:
+	{
+	concept_topology;
+      concept_point
+	};;
+
+concept_topological_space -> rrel_example:	"file://topology_space_example.png";;

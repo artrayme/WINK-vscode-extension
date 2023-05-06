@@ -1,0 +1,127 @@
+sc_node_not_relation -> concept_logarithmic_function;;
+
+concept_logarithmic_function => nrel_main_idtf:
+[логарифмическая функция](*<-lang_ru;;*);
+[logarithmic function](*<-lang_en;;*);
+[логарифмдік функция](*<-lang_kz;;*);;
+
+//определение
+
+concept_logarithmic_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(логарифмическая функция)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://defenition.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//пояснение
+
+concept_logarithmic_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Пояснение(логарифмическая функция)](*<-lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://explanation.png"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+concept_logarithmic_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(область определения*; множество положительных вещественных чисел)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Областью определения логарифмической функции будет являться множество положительных вещественных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(область значений*; множество вещественных чисел)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Областью значений логарифмической функции будет являться множество всех  вещественных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(график*; точка)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[График логарифмической функции всегда проходит через точку (1;0).](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(основание'; область определения*; неравенство)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Если основание логарифмической функции a>1, то на всей области определения функция возрастает. Если для основания логарифмической функции 
+выполняется  неравенство 0<a<1,  то функция убывает.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(точка; минимум функции*; максимум функции*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Логарифмическая функция не имеет точек максимума и минимума.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(четная функция; нечетная функция; функция общего вида)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Логарифмическая функция не является четной или нечетной. Логарифмическая функция – функция общего вид..](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(ось координат*; показательная функция; основание'; график*; симметричность*; прямая)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			"file://utv.png"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_logarithmic_function <= nrel_subdividing:
+	...
+	(* 
+	-> concept_increasing_exponential_function;;
+	-> concept_decreasing_exponential_function;;
+	*);;
+
+concept_logarithmic_function  <= nrel_inclusion: concept_function;;	

@@ -1,0 +1,83 @@
+sc_node_not_relation -> concept_geometric_progression;;
+concept_geometric_progression => nrel_main_idtf :
+[геометрическая прогрессия] (* <- lang_ru;; *);
+[geometric progression] (* <- lang_en;; *);;
+
+concept_geometric_progression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(геметрическая прогрессия)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Геометрическая прогрессия - это последовательность чисел, каждое из которых равно предыдущему, умноженному на некоторое постоянное для данной прогрессии число q, называемое знаменателем этой геометрической прогрессии.]  (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_geometric_progression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение вида(арифметическая или геометрическая) прогрессии.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение суммы первых n членов геометрической прогрессии.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_geometric_progression  <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(формула n-го члена геометрической прогрессии)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://geometric_progression1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(формула суммы первых n членов геометрической прогрессии)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://geometric_progression2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(характеристическое свойство геометрической прогрессии)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://geometric_progression3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_geometric_progression -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[100; 30; 9; 27/10; 81/100; 243/1000; … – геметрическая прогрессия.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

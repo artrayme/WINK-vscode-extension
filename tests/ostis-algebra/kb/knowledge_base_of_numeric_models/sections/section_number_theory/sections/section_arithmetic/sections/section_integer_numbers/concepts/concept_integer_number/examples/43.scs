@@ -1,0 +1,6 @@
+forty_three=>nrel_main_idtf:
+[43](*<-lang_ru;;*);
+[43](*<-lang_en;;*);;
+
+concept_number -> forty_three;;
+set_of_number -> forty_three;;

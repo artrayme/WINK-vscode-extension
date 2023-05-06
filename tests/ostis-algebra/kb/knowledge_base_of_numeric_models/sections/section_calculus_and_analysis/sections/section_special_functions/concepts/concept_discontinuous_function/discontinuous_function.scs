@@ -1,0 +1,35 @@
+sc_node_not_relation -> concept_discontinuous_function;;
+concept_discontinuous_function=> nrel_main_idtf :
+[разрывная функция] (* <- lang_ru;; *);
+[discontinuous function] (* <- lang_en;; *);; 
+
+concept_discontinuous_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(разрывная функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://discontinuous_function1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_discontinuous_function -> rrel_example :
+			"file://discontinuous_function2.png";;
+
+
+concept_discontinuous_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(всюду разрывная функция; функция Дирихле; точка разрыва второго рода)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Функция Дирихле является всюду разрывной функцией; все точки разрыва — точки разрыва второго рода.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+

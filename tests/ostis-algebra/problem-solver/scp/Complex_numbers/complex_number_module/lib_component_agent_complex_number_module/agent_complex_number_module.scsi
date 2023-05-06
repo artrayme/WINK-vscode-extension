@@ -1,0 +1,319 @@
+agent_complex_number_module
+=> nrel_main_idtf:
+	[агентная scp-программа нахождение модуля комплексного числа] (* <- lang_ru;; *);
+	
+	[agent scp-program finding of complex number module] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_complex_number_module
+	(*
+	-> rrel_params: .agent_complex_number_module_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_complex_number_module_operator_set 
+		(*
+		-> rrel_init: .agent_complex_number_module_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_complex_number_module_operator2;;
+			*);;
+
+		-> .agent_complex_number_module_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_complex_number_module;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_complex_number_module_operator3;;
+		  	=> nrel_else: .agent_complex_number_module_operator_return;;
+			*);;
+
+
+                 
+		-> .agent_complex_number_module_operator3 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+                      
+			=> nrel_then: .agent_complex_number_module_operator_input_of_1_part1;;
+			=> nrel_else: .agent_complex_number_module_operator_return;;
+			*);;
+
+ 
+		-> .agent_complex_number_module_operator_input_of_1_part1
+                        (*
+                       <- call;;
+                       -> rrel_1: rrel_fixed: rrel_scp_const: proc_get_parts_complex_number;;
+		       -> rrel_2: rrel_fixed: rrel_scp_const: .agent_complex_number_module_operator_input_of_1_part2
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _real;;
+				-> rrel_3: rrel_assign: rrel_scp_var: _imaginary;;
+				-> rrel_4: rrel_assign: rrel_scp_var: _err1;;
+                              	*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_complex_number_module_operator_input_of_1_part3;;  
+			*);;		
+		
+		-> .agent_complex_number_module_operator_input_of_1_part3
+			(*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+		
+			=> nrel_goto: .agent_complex_number_module_operator_input_of_1_part4;;			
+			*);;
+
+		-> .agent_complex_number_module_operator_input_of_1_part4
+                        (*
+			<-ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _err1;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_then: .agent_complex_number_module_operator_return;;
+			=> nrel_else: .agent_complex_number_module_operator5;;
+			*);;
+
+
+		-> .agent_complex_number_module_operator5
+			(*
+		 	<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _realInQadric;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _real;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [2];;
+
+                 	=> nrel_goto: .agent_complex_number_module_operator6 ;;
+			
+                 	*);;                    
+
+
+		-> .agent_complex_number_module_operator6
+			(*
+		 	<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _imaginaryInQadric;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _imaginary;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [2];;
+                       
+                 	=> nrel_goto: .agent_complex_number_module_operator7;;
+			
+                 	*);;
+
+		-> .agent_complex_number_module_operator7
+			(*
+		 	<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _moduleInQadric;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _imaginaryInQadric;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _realInQadric;;
+                       
+                 	=> nrel_goto: .agent_complex_number_module_operator8;;
+			
+                 	*);;
+
+		
+		-> .agent_complex_number_module_operator8
+			(*
+		 	<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _module;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _moduleInQadric;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [0.5];;
+                       
+                 	=> nrel_goto: .agent_complex_number_module_operator9;;
+			
+                 	*);;
+
+		-> .agent_complex_number_module_operator9
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_complex_number_module_operator001;;
+		 	*);;
+
+                   
+
+                    ->.agent_complex_number_module_operator001
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+                          -> rrel_2: rrel_assign: rrel_common:rrel_const: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _module;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_complex_number_module;;
+ 
+                        =>nrel_goto: .agent_complex_number_module_operator002;;
+                        *);;
+                   
+                      ->.agent_complex_number_module_operator002
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: concept_complex_number;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+ 
+                        =>nrel_goto: .agent_complex_number_module_operator003;;
+                        *);;
+                      
+                       ->.agent_complex_number_module_operator003
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+             		
+                        =>nrel_goto: .agent_complex_number_module_operator004;;
+                        *);;
+                             
+
+                       ->.agent_complex_number_module_operator004
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_real_part;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_complex_number_module_operator005;;
+                        *);;
+
+			-> .agent_complex_number_module_operator005
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_real_part;;
+
+				=> nrel_goto: .agent_complex_number_module_operator010;;
+				*);;
+			 
+                    
+                        ->.agent_complex_number_module_operator010
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_imaginary_part;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_complex_number_module_operator011;;
+                        *);;
+
+			-> .agent_complex_number_module_operator011
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_imaginary_part;;
+
+				=> nrel_goto: .agent_complex_number_module_operator012;;
+				*);;
+                    
+                      
+                       ->.agent_complex_number_module_operator012
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_complex_number_module;;
+ 
+                          ->rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+                        =>nrel_goto: .agent_complex_number_module_operator013;;
+                        *);;
+
+                         ->.agent_complex_number_module_operator013
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc25;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_complex_number_module;;
+
+                        =>nrel_goto: .agent_complex_number_module_operator014;;
+                        *);;
+
+                       ->.agent_complex_number_module_operator014
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc26;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          
+                        =>nrel_goto: .agent_complex_number_module_operator015;;
+                        *);; 
+                    
+                      ->.agent_complex_number_module_operator015
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc27;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: concept_complex_number;;
+
+                        =>nrel_goto: .agent_complex_number_module_operator_gen_answer;;
+                        *);;
+
+		-> .agent_complex_number_module_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc10;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_complex_number_module_operator_return;;
+			*);;     
+					
+		-> .agent_complex_number_module_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

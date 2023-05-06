@@ -1,0 +1,45 @@
+sc_node_norole_relation -> nrel_increment_function;;
+
+nrel_increment_function => nrel_main_idtf:
+[приращение функции* ](* <- lang_ru;; *);  
+[increment function* ](* <- lang_en;; *);
+[өсімі функциясы* ](* <- lang_kz;;*);;
+
+//определение
+nrel_increment_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(приращение функции*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Приращение функции - это разность между двумя значениями функции в некоторых выбранных заранее точках.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+nrel_increment_function <= nrel_using_constants:
+	{
+	rrel_difference;
+	concept_function
+	};;
+	
+//утверждения
+nrel_increment_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(функция; приращение функции*; переменная')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[При фиксированном x0 приращение Δf есть функция от Δx. Δf называют также приращение зависимой переменной и обозначают через Δy для функции y = f(x).](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_increment_function <- binary_relation;;
+nrel_increment_function <= nrel_first_domain: concept_function;;
+nrel_increment_function <= nrel_second_domain: concept_function;;

@@ -1,0 +1,105 @@
+scp_program -> proc_set_primer_number (*	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _number;;
+                -> rrel_2: rrel_in: _factor;;
+	*);;
+
+	-> rrel_operators: ... (*	
+		-> rrel_init: ..proc_set_primer_number_operator1 (*
+		        <-contAdd;;
+                        ->rrel_1: rrel_assign: rrel_scp_var: _delitel;;
+                        ->rrel_2: rrel_fixed: rrel_scp_const: [1];;
+                        ->rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+                 	=> nrel_goto: ..proc_set_primer_number_operator4AB1;;
+			*);;
+                          
+                   -> ..proc_set_primer_number_operator4AB1
+                         (*
+                         <-contPow;;
+                         -> rrel_1: rrel_assign: rrel_scp_var: _answer2;;
+                         -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                         -> rrel_3: rrel_fixed: rrel_scp_const: [0.5];;
+                      
+                         
+                       => nrel_goto: ..proc_set_primer_number_operator4AB12;;
+                       
+                         *);;
+                    
+                    -> ..proc_set_primer_number_operator4AB12
+                       (*
+                        <- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer2;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                        
+                 	=> nrel_then: ..proc_set_primer_number_operator4A1;;
+                        => nrel_else: ..proc_set_primer_number_operator4AB2;;
+                        *);;
+ 
+
+                   -> ..proc_set_primer_number_operator4AB2
+                        (*
+                         <-ifGr;;
+                         ->rrel_1: rrel_fixed: rrel_scp_var: _answer2;;
+                         ->rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                         => nrel_then: ..proc_set_primer_number_operator4A1;;
+                         => nrel_else: ..proc_set_primer_number_operator4D;;
+                        
+                       *);;
+
+                -> ..proc_set_primer_number_operator4A1
+			(*
+		 	<- contDivRem;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _delitel;;
+
+                 	=> nrel_goto: ..proc_set_primer_number_operator4B;;
+			
+                 	*);;
+
+                    
+                  -> ..proc_set_primer_number_operator4B
+			(*
+		 	<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+                        
+                 	=> nrel_then: ..proc_set_primer_number_operator4C;;
+                        => nrel_else: ..proc_set_primer_number_operator4B1;;
+			
+                 	*);;
+                   -> ..proc_set_primer_number_operator4B1
+                       (*
+                       <-contAdd;;
+                       ->rrel_1: rrel_fixed: rrel_scp_var: _delitel;;
+                       ->rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                       ->rrel_3: rrel_fixed: rrel_scp_const: [1];;
+ 
+                      => nrel_goto: ..proc_set_primer_number_operator4AB2;;
+                         *);;
+               
+		-> ..proc_set_primer_number_operator4D
+                       (*
+                        <- contAssign;;
+                         ->rrel_1: rrel_fixed: rrel_scp_var: _factor;;
+                         ->rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        =>nrel_goto:  ..proc_set_primer_number_operator_return;;
+                        *);;
+
+		-> ..proc_set_primer_number_operator4C
+                       (*
+                        <- contAdd;;
+                         ->rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                         ->rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                         ->rrel_3: rrel_fixed: rrel_scp_const: [1];;
+                        =>nrel_goto: ..proc_set_primer_number_operator1  ;;
+                        *);;
+
+                -> ..proc_set_primer_number_operator_return (*
+			<- return;;
+		*);;
+		
+	*);;
+*);;
+

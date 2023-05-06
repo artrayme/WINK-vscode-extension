@@ -1,0 +1,88 @@
+sc_node_norole_relation->nrel_addition_of_polynomial;; 
+
+//понятие на русском и английском
+nrel_addition_of_polynomial=>nrel_main_idtf:
+[сложение многочленов* ] (*<-lang_ru;;*);
+[полином толықтыру* ] (*<-lang_kz;;*);
+[addition of polynomial* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_addition_of_polynomial=> nrel_idtf:[сумма многочленов* ](*<-lang_ru;;*);;
+nrel_addition_of_polynomial=> nrel_idtf:[алгебраическая сумма многочленов* ](*<-lang_ru;;*);;
+
+//определение и пояснения
+nrel_addition_of_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сложение многочленов*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Чтобы записать алгебраическую сумму нескольких многочленовв виде многочлена стандартного вида, нужно раскрыть скобки и привести подобные члены.
+При этом если перед скобкой стоит знак "+", то при раскрытии скобок надо знаки, стоящие перед слагаемыми в скобках, оставить без изменения.
+Если же перед скобкой стоит знак "-", то при раскрытии скобок нужно знаки, стоящие перед слагаемыми в скобках, заменить на противоположные ("+" на "-", "-" на "+").](* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(сложение многочленов*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://addition_of_polynomial_1.html" (* <- lang_ru;; *);;
+*);;
+*);;
+
+//используемые константы
+ nrel_addition_of_polynomial => nrel_using_constants: concept_polynomial;;
+
+//конкретные задачи
+ nrel_addition_of_polynomial <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://addition_of_polynomial_2.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_addition_of_polynomial <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на сложение и вычитание многочленов.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_addition_of_polynomial => nrel_first_domain: concept_polynomial;;
+nrel_addition_of_polynomial => nrel_second_domain: concept_polynomial;;
+nrel_addition_of_polynomial => nrel_third_domain: concept_polynomial;;
+
+//пример
+ nrel_addition_of_polynomial -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://addition_of_polynomial_3.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

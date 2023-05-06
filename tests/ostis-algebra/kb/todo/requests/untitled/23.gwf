@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="concept_prime_number" shapeColor="0" id="173609136" parent="173324000" left="0" top="0" right="140.125" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="645.181" y="94.5676" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/general_node" idtf="" shapeColor="0" id="171286528" parent="173324000" x="638.181" y="194.568" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="rrel_smallest_prime_number" shapeColor="0" id="171276168" parent="173324000" left="0" top="0" right="168.922" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="462.614" y="137.027" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/var/pos" idtf="" shapeColor="0" id="173320832" parent="173324000" id_b="173609136" id_e="171286528" b_x="645.181" b_y="94.5676" e_x="638.181" e_y="194.568" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/var/pos" idtf="" shapeColor="0" id="173319976" parent="173324000" id_b="171276168" id_e="173320832" b_x="462.614" b_y="137.027" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.432196">
+            <points/>
+        </arc>
+        <contour type="" idtf="Какое число является минимальным в рамках множества простых чисел?" shapeColor="193" id="173324000" parent="0" left="0" top="0" right="457.359" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10">
+            <points>
+                <point x="427.905" y="72.9054"/>
+                <point x="434.662" y="328.311"/>
+                <point x="863.04" y="331.014"/>
+                <point x="845.47" y="67.5"/>
+            </points>
+        </contour>
+        <node type="node/const/general_node" idtf="requests_to_the_system" shapeColor="0" id="173576496" parent="0" left="0" top="0" right="137.594" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="523.027" y="396.135" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="two" shapeColor="0" id="173563328" parent="0" left="0" top="0" right="28.2188" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="146.5" y="158.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_prime_number" shapeColor="0" id="170680176" parent="0" left="0" top="0" right="140.125" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="153.5" y="58.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="rrel_smallest_prime_number" shapeColor="0" id="170668496" parent="0" left="0" top="0" right="168.922" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-33.5" y="100.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="173323128" parent="0" id_b="170668496" id_e="173321616" b_x="-33.5" b_y="100.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.377456">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="173322392" parent="0" id_b="173576496" id_e="173324000" b_x="523.027" b_y="396.135" e_x="645.472" e_y="199.257" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="173321616" parent="0" id_b="170680176" id_e="173563328" b_x="153.5" b_y="58.5" e_x="146.5" e_y="158.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+    </staticSector>
+</GWF>

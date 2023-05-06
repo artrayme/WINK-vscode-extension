@@ -1,0 +1,59 @@
+sc_node_not_relation->concept_linear_differential_equations_of_higher_order_with_constant_coefficients;; 
+
+concept_linear_differential_equations_of_higher_order_with_constant_coefficients=>nrel_main_idtf:
+[линейное дифференциальное уравнение высшего порядка с постоянными коэффициентами](*<-lang_ru;;*);
+[linear differential equations of higher order with constant coefficients](*<-lang_en;;*);;
+
+concept_linear_differential_equations_of_higher_order_with_constant_coefficients  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейное дифференциальное уравнение высшего порядка с постоянными коэффициентами)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://linear_differential_equations_of_higher_order_with_constant_coefficients2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_linear_differential_equations_of_higher_order_with_constant_coefficients <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://linear_differential_equations_of_higher_order_with_constant_coefficients1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_linear_differential_equations_of_higher_order_with_constant_coefficients <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение решения линейных дифференциальных уравнений высших порядков с постоянными коэффициентами.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//пример
+concept_linear_differential_equations_of_higher_order_with_constant_coefficients-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[y'''-3*y''-y'+3*y=0.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

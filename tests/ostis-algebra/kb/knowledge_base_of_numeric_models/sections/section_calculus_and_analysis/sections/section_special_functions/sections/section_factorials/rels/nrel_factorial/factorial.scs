@@ -1,0 +1,47 @@
+sc_node_norole_relation-> nrel_factorial;; 
+nrel_factorial=>nrel_main_idtf:	[факториал* ] (*<-lang_ru;;*);	[факторлық* ] (*<-lang_kz;;*);	[factorial* ] (*<-lang_en;;*);;
+nrel_factorial=>nrel_idtf:[антилогарифм* ](*<-lang_ru;;*);;
+nrel_factorial=>nrel_mathem_idtf: [!] (*<-lang_en;;*);;
+
+nrel_factorial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(факториал*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение натруальных чисел от единицы до какого-либо данного натурального числа n, то есть 1*2*...*n,  обозначается n!.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_factorial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*, степенная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Факториал связан с производной от степенной фнкции следующей формулой: x в степени n и n-ая производная от этого выражения равна факториалу числа n.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(формула Стирлинга; натуральное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Формула Стрилинга позволяет полчить приближённые значения факториалов больших чисел без непосредственного перемножения последовательности натуральных чисел.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_factorial => nrel_first_domain:concept_set_numbers;;
+nrel_factorial => nrel_second_domain: concept_number;; 

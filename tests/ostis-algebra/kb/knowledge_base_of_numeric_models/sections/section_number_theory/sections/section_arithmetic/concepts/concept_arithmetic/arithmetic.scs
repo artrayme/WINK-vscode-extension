@@ -1,0 +1,69 @@
+sc_node_not_relation -> concept_arithmetic;; 
+concept_arithmetic => nrel_main_idtf:	[арифметика](*<-lang_ru;;*);	[arithmetic](*<-lang_en;;*);	[арифметика](*<-lang_kz;;*);;
+concept_arithmetic => nrel_idtf:[цифирное дело](*<-lang_ru;;*);;
+
+concept_arithmetic <= nrel_subdividing:
+	...
+	(* 	
+	-> concept_practical_arithmetic;;
+	-> concept_theoretical_arithmetic;;
+	*);;
+	
+concept_arithmetic <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (арифметика)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Арифметика - это учение о числах, обозначаемых цифрами, и о действиях над ними.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (арифметика)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Предметом арифметики является понятие числа в развитии представлений о нём (натуральные, целые и рациональные, действительные, комплексные числа) и его свойствах.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+concept_arithmetic <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арифметика; вычислительная операция; сложение*; вычитание*; умножение*; деление*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В арифметике рассматриваются измерения, вычислительные операции (сложение, вычитание, умножение, деление) и приёмы вычислений.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арифметика; порядковый счет)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Простейшим арифметическим понятием является порядковый счёт.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арифметика; коммутативность'; ассоциативность'; дистрибутивность')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Основные законы арифметики : коммутативность, ассоциативность, дистрибутивность.](* <- lang_ru;; *);;
+		*);;
+	*);;

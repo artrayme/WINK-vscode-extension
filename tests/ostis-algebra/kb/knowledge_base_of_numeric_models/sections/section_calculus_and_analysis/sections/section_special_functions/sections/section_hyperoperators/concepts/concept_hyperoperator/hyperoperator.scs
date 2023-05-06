@@ -1,0 +1,31 @@
+sc_node_not_relation -> concept_hyperoperator;;
+
+concept_hyperoperator => nrel_main_idtf:
+[гиперопетратор](*<-lang_ru;;*);
+[hyperoperator](*<-lang_en;;*);;
+
+concept_hyperoperator <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (гиперопетратор)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Гипероператор — это обобщение арифметических операций сложения, умножения и возведения в степень, рассматриваемых как гипероператоры 1-го, 2-го и 3-го порядка соответственно, на высшие порядки.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_hyperoperator <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гиперопетратор; аргумент'; результат*; последовательнсть)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Гипероператор порядка n с аргументами a и b рекурсивно определяется как результат многократного применения гипероператора порядка n-1 к последовательности из b одинаковых аргументов, каждый из которых равен a.](* <- lang_ru;; *);;
+		*);;
+	*);;

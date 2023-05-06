@@ -1,0 +1,75 @@
+sc_node_not_relation->concept_linear_equation;;
+concept_linear_equation => nrel_main_idtf :
+[линейное уравнение](*<-lang_ru;;*);
+[linear equation](*<-lang_en;;*);;
+
+//определение
+concept_linear_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Линейным уравнением с одной переменной х называют уравнение вида ах=b, где a и b - действительные числа; а называют коэффициентом при переменной, b - свободным членом.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+// утверждения
+concept_linear_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(корень уравнения; уравнение; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://linear equation1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_linear_equation <= nrel_using_constants: concept_variable; concept_number;;
+
+//пример
+concept_linear_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[x/5 +2/15=0](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_linear_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Является ли уравнение линейным?](* <- lang_ru;; *);;
+*);;
+*);;
+
+// конкретные задачи
+concept_linear_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Найти корни линйного уравнения 2/3+x/4+(1-x)/6=5x/12-1](* <- lang_ru;; *);;
+		*);;
+	*);;

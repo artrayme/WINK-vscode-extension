@@ -1,0 +1,74 @@
+sc_node_norole_relation->nrel_general_solution_of_the_differential_equation;; 
+
+nrel_general_solution_of_the_differential_equation => nrel_main_idtf:
+[общее решение дифференциального уравнения* ] (*<-lang_ru;;*);
+[general solution of the differential equation* ] (*<-lang_en;;*);;
+
+nrel_general_solution_of_the_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(общие решение дифференциального уравнения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Общим решением дифференциального уравнения называется такая дифференцируемая функция y=f(x, C), которая при подстановке в исходное уравнение вместо неизвестной функции обращает уравнение в тождество. ](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+    
+
+//утверждения
+nrel_general_solution_of_the_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение; функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://general_solution_of_the_differential_equation3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//конкретные задачи
+ nrel_general_solution_of_the_differential_equation <- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://general_solution_of_the_differential_equation2.html"   (* <- lang_ru;; 	*);;
+*);;
+*);;
+
+//классы задач и способы решения
+nrel_general_solution_of_the_differential_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождении общего решения дифференциального уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_general_solution_of_the_differential_equation  <- binary_relation;;
+
+nrel_general_solution_of_the_differential_equation => nrel_first_domain:
+concept_differential_equation;;
+
+nrel_general_solution_of_the_differential_equation => nrel_second_domain: 
+concept_function;;
+

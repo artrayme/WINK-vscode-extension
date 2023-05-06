@@ -1,0 +1,39 @@
+sc_node_norole_relation->concept_factorial_prime_number;;
+
+concept_factorial_prime_number=>nrel_main_idtf:
+[факториальное простое число](*<-lang_ru;;*);
+[factorial prime number](*<-lang_en;;*);;
+
+
+//надмножество
+concept_number => nrel_inclusion: concept_factorial_prime_number;;
+
+//определение
+concept_factorial_prime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(факториальное простое число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В теории чисел факториальным простым числом называется простое число, на единицу ме́ньшее или на единицу бо́льшее факториала.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+
+//утверждения
+	
+concept_factorial_prime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(факториальное простое число; число; факториал*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если ни предыдущее, ни последующее число для факториала n! не является простым, возникает относительно большой промежуток между двумя последовательными простыми.](* <- lang_ru;; *);;
+		*);;
+	*);;

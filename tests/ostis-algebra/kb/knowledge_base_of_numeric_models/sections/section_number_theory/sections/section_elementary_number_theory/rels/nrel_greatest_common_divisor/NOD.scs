@@ -1,0 +1,58 @@
+sc_node_norole_relation->nrel_greatest_common_divisor;; 
+nrel_greatest_common_divisor=>nrel_main_idtf:	[наибольший общий делитель* ] (*<-lang_ru;;*);	[ең үлкен ортақ бөлгіш* ] (*<-lang_kz;;*);	[greatest common divisor* ] (*<-lang_en;;*);;
+nrel_greatest_common_divisor=> nrel_idtf:	[НОД* ](*<-lang_ru;;*);	[ЕҮОБ* ](*<-lang_kz;;*);		[сандарды қарапайым жіктеу* ](*<-lang_kz;;*);	[каноническое разложение чисел* ](*<-lang_ru;;*);;
+
+nrel_greatest_common_divisor<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(наибольший общий делитель*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Наибольшим общим делителем (НОД) двух чисел называется наибольшее натуральное число, на которое делятся оба данных числа (обозначается НОД (a, b) или (a, b))](* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(наибольший общий делитель*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://NOD1.html" (*<-lang_ru;;*);;
+*);;
+*);
+
+...
+(*
+=> nrel_main_idtf: [Пояснение (наибольший общий делитель*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Если НОД (a, b)=1, то числа a и b называют взаимно простыми.](*<- lang_ru;; *);;
+*);;
+*);;
+
+nrel_greatest_common_divisor<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; НОК*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для любых натуральных чисел a и b выполняется равенство НОД (a, b)⋅ НОК (a, b) = a⋅b]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_greatest_common_divisor  <- ternary_relation;;
+nrel_greatest_common_divisor => nrel_first_domain:concept_natural_number;;
+nrel_greatest_common_divisor => nrel_second_domain: concept_natural_number;;
+nrel_greatest_common_divisor => nrel_third_domain: concept_natural_number;;

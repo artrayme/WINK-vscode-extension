@@ -1,0 +1,74 @@
+sc_node_not_relation->concept_natural_number;; 
+concept_natural_number=>nrel_main_idtf:	[натуральное число](*<-lang_ru;;*);	[natural number](*<-lang_en;;*);	[натурал сан](*<-lang_kz;;*);;
+
+concept_natural_number=> nrel_idtf:[Класс натуральных чисел](*<-lang_ru;;*);	[Множество натуральных чисел](*<-lang_ru;;*);	[Понятие натурального числа](*<-lang_ru;;*);	[Множество N](*<-lang_ru;;*);;
+
+concept_natural_number <= nrel_inclusion: concept_positive_integer;;
+concept_positive_integer <= nrel_inclusion: concept_integer;;
+
+concept_natural_number <= nrel_subdividing:
+	...
+	(* 
+	-> concept_prime_number;;
+	-> concept_composite_number;;
+	*);;
+
+concept_natural_number <= nrel_subdividing:
+    ... 
+	(*
+	=>nrel_main_idtf:[По признаку четности и нечетности](*<-lang_ru;;*);;
+	-> concept_even_number;;
+	-> concept_odd_number;;
+	*);;
+
+concept_natural_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(натуральное число)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Натуральные числа - это числа, используемые для счета предметов: один, два, три, четыре, ... . Множество натуральных чисел обозначается N.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_natural_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; положительное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Натуральные числа считаются положительными.](* <- lang_ru;; *);;
+		*);;
+	*);
+	
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; наибольшее число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Наибольшего натурального числа не существует, т.е. множество натуральных чисел бесконечно.]	(* <- lang_ru;; *);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; произведение*; простое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема. Каждое натуральное число, отличное от 1, можно представить в виде произведения простых чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_natural_number -> rrel_example : one; two; three; four;;

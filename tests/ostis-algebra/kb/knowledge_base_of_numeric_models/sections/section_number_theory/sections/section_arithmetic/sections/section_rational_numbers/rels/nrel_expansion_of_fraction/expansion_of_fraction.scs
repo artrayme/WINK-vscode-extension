@@ -1,0 +1,54 @@
+sc_node_norole_relation->nrel_expansion_of_fraction;;
+nrel_expansion_of_fraction=>nrel_main_idtf:
+[расширение дроби* ] (*<-lang_ru;;*);
+[фракциясы кеңейту* ] (*<-lang_kz;;*);
+[expansion of fraction* ] (*<-lang_en;;*);;
+
+nrel_expansion_of_fraction <- binary_relation;;
+nrel_expansion_of_fraction => nrel_first_domain: concept_fraction;;
+nrel_expansion_of_fraction => nrel_second_domain: concept_fraction;;
+
+nrel_expansion_of_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(расширение дроби*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Преобразование дроби, при котором числитель и знаменатель умножается на число с одинаковым значением, называется расширением дроби.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_expansion_of_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(расширение дроби*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Значение дроби не меняется, если умножить её числитель и знаменатель на одно и то же число, отличное от нуля. Это преобразование называется расширением дроби.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//используемые константы
+nrel_expansion_of_fraction <= nrel_using_constants: rrel_numerator; rrel_denominator;;
+
+nrel_expansion_of_fraction-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+...
+		(*
+		-> rrel_example: 
+	[2/3=(2*2)/(3*2)=4/6](* <- lang_en;; 	*);;
+		*);
+...
+		(*
+		-> rrel_example: 
+	[5/9=(5*7)/(9*7)=35/63](* <- lang_en;; 	*);;
+		*);;
+	*);;

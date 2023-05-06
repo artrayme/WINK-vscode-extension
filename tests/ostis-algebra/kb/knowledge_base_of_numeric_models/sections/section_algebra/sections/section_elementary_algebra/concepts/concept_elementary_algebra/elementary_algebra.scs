@@ -1,0 +1,67 @@
+sc_node_not_relation -> concept_elementary_algebra;; 
+
+concept_elementary_algebra => nrel_main_idtf:
+[элементарная алгебра](*<-lang_ru;;*);
+[elementary algebra](*<-lang_en;;*);
+[бастауыш алгебра](*<-lang_kz;;*);;
+
+//разбиение
+concept_elementary_algebra <= nrel_subdividing:
+	...
+	(* 
+	-> concept_algebraic_expression;;
+	-> concept_equation;;
+	*);;
+	
+//надмножество
+concept_algebra => nrel_inclusion: concept_elementary_algebra;;
+
+//определения и пояснения
+concept_elementary_algebra <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (элементарная алгебра)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Элементарная алгебра — это раздел алгебры, в котором изучаются алгебраические выражения и уравнения над вещественными и комплексными числами.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (элементарная алгебра)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Элементарная алгебра изучает свойства операций с вещественными числами, где символами обозначаются постоянные и переменные, а также правила преобразования математических выражений и уравнений с использованием этих символов.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_algebra;
+	concept_algebraic_expression;
+	concept_equation;
+	concept_complex_number;
+	concept_real_number
+	};;
+	
+//утверждения
+concept_elementary_algebra <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(элементарная алгебра; алгебра; арифметика)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Элементарная алгебра — раздел алгебры, который изучает самые базовые понятия. Обычно изучается после изучения основных понятий арифметики.](* <- lang_ru;; *);;
+		*);;
+	*);;

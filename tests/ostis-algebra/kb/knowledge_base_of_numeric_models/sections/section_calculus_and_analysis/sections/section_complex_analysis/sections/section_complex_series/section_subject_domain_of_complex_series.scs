@@ -1,0 +1,22 @@
+sc_node_struct -> section_subject_domain_of_complex_series;;
+
+section_subject_domain_of_complex_series => nrel_main_idtf:
+    [Раздел. Предметная область комлексных рядов] (* <- lang_ru;; *);
+    [Section. Subject domain of complex series] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_complex_series <- nrel_system_identifier;;
+  
+section_subject_domain_of_complex_series -> rrel_key_sc_element:
+    subject_domain_of_complex_series;
+    concept_complex_numerical_series;;
+
+section_subject_domain_of_complex_series = [*
+    subject_domain_of_complex_series => nrel_main_idtf:
+        [Предметная область комлексных рядов] (* <- lang_ru;; *);
+        [Subject domain of complex series] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_complex_series -> rrel_not_maximum_studied_object_class:
+        concept_complex_numerical_series;;
+*];;

@@ -1,0 +1,93 @@
+sc_node_struct -> section_subject_domain_of_special_functions;;
+
+section_subject_domain_of_special_functions => nrel_main_idtf:
+    [Раздел. Предметная область особых функций] (* <- lang_ru;; *);
+    [Section. Subject domain of special functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_special_functions <- nrel_system_identifier;;
+
+section_subject_domain_of_special_functions => nrel_section_decomposition: {
+    section_subject_domain_of_parametric_equations;
+    section_subject_domain_of_integral_functions;
+    section_subject_domain_of_transcendental_inequalities;
+    section_subject_domain_of_transcendental_expressions;
+    section_subject_domain_of_transcendental_equations;
+    section_subject_domain_of_elementary_functions;
+    section_subject_domain_of_factorials;
+    section_subject_domain_of_hyperoperators
+};;
+  
+section_subject_domain_of_special_functions -> rrel_key_sc_element:
+    subject_domain_of_special_functions;
+    concept_trigonometric_polynomial;
+    concept_involution;
+    concept_valued_function;
+    concept_increasing_function;
+    concept_invertible_function;
+    concept_positively_homogeneous_function;
+    concept_monotone_function;
+    concept_absolutely_homogeneous_function;
+    concept_uneven_function;
+    concept_decreasing_function;
+    concept_function_module;
+    concept_even_function;
+    concept_continious_function;
+    concept_transcendental_function;
+    concept_entire_function;
+    concept_piecewise_function;
+    concept_numerical_function;
+    concept_arithmetic_function;
+    concept_elliptic_function;
+    concept_discontinuous_function;
+    concept_homogeneous_function;
+    nrel_linearly_dependent_function;
+    nrel_inverse_function;
+    nrel_module;
+    nrel_primorial;;
+
+section_subject_domain_of_special_functions = [*
+    subject_domain_of_special_functions => nrel_main_idtf:
+        [Предметная область особых функций] (* <- lang_ru;; *);
+        [Subject domain of special functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_special_functions => nrel_private_subject_domain:
+        subject_domain_of_parametric_equations;
+        subject_domain_of_integral_functions;
+        subject_domain_of_transcendental_inequalities;
+        subject_domain_of_transcendental_expressions;
+        subject_domain_of_transcendental_equations;
+        subject_domain_of_elementary_functions;
+        subject_domain_of_factorials;
+        subject_domain_of_hyperoperators;;
+
+    subject_domain_of_special_functions -> rrel_not_maximum_studied_object_class:
+        concept_trigonometric_polynomial;
+        concept_involution;
+        concept_valued_function;
+        concept_increasing_function;
+        concept_invertible_function;
+        concept_positively_homogeneous_function;
+        concept_monotone_function;
+        concept_absolutely_homogeneous_function;
+        concept_uneven_function;
+        concept_decreasing_function;
+        concept_function_module;
+        concept_even_function;
+        concept_continious_function;
+        concept_transcendental_function;
+        concept_entire_function;
+        concept_piecewise_function;
+        concept_numerical_function;
+        concept_arithmetic_function;
+        concept_elliptic_function;
+        concept_discontinuous_function;
+        concept_homogeneous_function;;
+
+    subject_domain_of_special_functions -> rrel_explored_relation:
+        nrel_linearly_dependent_function;
+        nrel_inverse_function;
+        nrel_module;
+        nrel_primorial;;
+*];;

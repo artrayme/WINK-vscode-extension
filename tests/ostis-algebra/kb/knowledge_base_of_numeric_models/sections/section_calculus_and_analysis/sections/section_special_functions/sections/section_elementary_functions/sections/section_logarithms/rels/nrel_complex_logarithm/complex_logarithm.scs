@@ -1,0 +1,50 @@
+sc_node_norole_relation->nrel_complex_logarithm;;
+
+nrel_complex_logarithm=>nrel_main_idtf:
+[комплексный логарифм* ](*<-lang_ru;;*);
+[complex logarithm* ](*<-lang_en;;*);;
+
+//определение
+nrel_complex_logarithm <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(комплексный логарифм*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Комплексный логарифм — аналитическая функция, получаемая распространением вещественного логарифма на всю комплексную плоскость (кроме нуля).](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//утверждения
+	
+nrel_complex_logarithm <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексный логарифм*; функция; многозначная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция комплексного логарифма многозначна.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексный логарифм*; логарифм*; комплексное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Комплексный нуль не имеет логарифма](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_complex_logarithm <- binary_relation;;
+nrel_complex_logarithm <= nrel_first_domain:  concept_complex_number;;
+nrel_complex_logarithm <= nrel_second_domain: concept_complex_number;;

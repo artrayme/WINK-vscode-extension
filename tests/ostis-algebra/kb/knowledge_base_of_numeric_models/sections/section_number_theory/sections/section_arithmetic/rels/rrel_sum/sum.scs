@@ -1,0 +1,53 @@
+sc_node_role_relation -> rrel_sum;;
+rrel_sum => nrel_main_idtf:	[сумма'](* <- lang_ru;; *);  [sum'](* <- lang_en;; *);	[к,осынды'](*<-lang_kz;;*);;
+
+rrel_sum => nrel_idtf: [amount'](*<-lang_en;; *);;
+
+rrel_sum <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(сумма')](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Сумма - это число, представляющее  результат сложения.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_sum <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(слагаемое'; число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[От перемены мест слагаемых  сумма двух чисел не меняется : а+b=b+a. .](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; четное число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Сумма двух четных чисел  всегда есть четное число.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; четное число; нечетное число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Сумма четного и нечетного чисел всегда дает в результате нечетное число.](*<-lang_ru;;*);;
+		*);;
+	*);;
+

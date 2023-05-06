@@ -1,0 +1,43 @@
+sc_node_struct -> section_subject_domain_of_algebraic_topology;;
+
+section_subject_domain_of_algebraic_topology => nrel_main_idtf:
+    [Раздел. Предметная область алгебраической топологии] (* <- lang_ru;; *);
+    [Section. Subject domain of algebraic topology] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_algebraic_topology <- nrel_system_identifier;;
+
+section_subject_domain_of_algebraic_topology => nrel_section_decomposition: {
+    section_subject_domain_of_homotopy_groups;
+    section_subject_domain_of_homology;
+    section_subject_domain_of_cohomology;
+    section_subject_domain_of_manifolds;
+    section_subject_domain_of_knot_theory;
+    section_subject_domain_of_complexes
+};;
+
+section_subject_domain_of_algebraic_topology -> rrel_key_sc_element:
+    subject_domain_of_algebraic_topology;
+    concept_algebraic_topology;;
+
+section_subject_domain_of_algebraic_topology = [*
+    subject_domain_of_algebraic_topology => nrel_main_idtf:
+        [Предметная область алгебраической топологии] (* <- lang_ru;; *);
+        [Subject domain of algebraic topology] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_algebraic_topology -> rrel_maximum_studied_object_class:
+        concept_algebraic_topology;;
+
+    subject_domain_of_algebraic_topology => nrel_private_subject_domain:
+        subject_domain_of_homotopy_groups;
+        subject_domain_of_homology;
+        subject_domain_of_cohomology;
+        subject_domain_of_manifolds;
+        subject_domain_of_knot_theory;
+        subject_domain_of_complexes;;
+
+    subject_domain_of_algebraic_topology -> rrel_not_maximum_studied_object_class:
+        concept_topological_space;;
+
+*];;

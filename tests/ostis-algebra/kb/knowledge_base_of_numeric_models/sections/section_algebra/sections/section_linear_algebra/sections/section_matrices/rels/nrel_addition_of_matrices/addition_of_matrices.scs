@@ -1,0 +1,84 @@
+sc_node_norole_relation->nrel_addition_of_matrices;;
+
+nrel_addition_of_matrices=>nrel_main_idtf:
+[сложение матриц* ](*<-lang_ru;;*);
+[addition of matrices* ](*<-lang_en;;*);
+[матрица қосу* ](*<-lang_kz;;*);;
+
+//определение
+nrel_addition_of_matrices <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сложение матриц*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сложение матриц  A + B есть операция вычисления матрицы C, все элементы которой равны попарной сумме всех соответствующих элементов матриц A и B](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_addition_of_matrices <= nrel_using_constants:
+	{
+	concept_matrix;
+	rrel_sum
+	};;
+	
+//утверждения
+	
+nrel_addition_of_matrices <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение матриц*; матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сложение матриц, допускаются только для матриц одинакового размера.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение матриц*; матрица; порядок матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Результатом операции сложения двух матриц является матрица того же порядка.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица*; число; сумма')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Нельзя говорить о сумме матрицы и числа.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//надмножество
+concept_arithmetic_operation => nrel_inclusion: nrel_addition_of_matrices;;
+	
+//домены	
+nrel_addition_of_matrices <- ternary_relation;;
+nrel_addition_of_matrices <= nrel_first_domain:  concept_matrix;;
+nrel_addition_of_matrices <= nrel_second_domain: concept_matrix;;
+nrel_addition_of_matrices <= nrel_third_domain: concept_matrix;;
+
+nrel_addition_of_matrices -> rrel_example :
+	...
+	(* 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://addition_of_matrices_example.png"(* <- lang_en;; *);;
+		*);;
+	*);;

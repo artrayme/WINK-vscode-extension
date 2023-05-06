@@ -1,0 +1,44 @@
+sc_node_not_relation -> concept_infinitesimal_function_of_order_k;;
+concept_infinitesimal_function_of_order_k=> nrel_main_idtf :
+[бесконечно малая функция порядка k] (* <- lang_ru;; *);
+[infinitesimal function of order k] (* <- lang_en;; *);; 
+
+concept_infinitesimal_function_of_order_k <= nrel_using_constants: concept_function;;
+
+concept_infinitesimal_function_of_order_k <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(бесконечно малая функция порядка k)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinitesimal_function_of_order_k1.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+//пример
+concept_infinitesimal_function_of_order_k -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinitesimal_function_of_order_k2.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_infinitesimal_function_of_order_k <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinitesimal_function_of_order_k3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

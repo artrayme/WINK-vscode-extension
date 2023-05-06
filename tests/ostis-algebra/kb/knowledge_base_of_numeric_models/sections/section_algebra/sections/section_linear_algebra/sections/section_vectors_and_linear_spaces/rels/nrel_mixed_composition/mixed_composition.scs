@@ -1,0 +1,78 @@
+sc_node_norole_relation -> nrel_mixed_composition;;
+
+nrel_mixed_composition=>nrel_main_idtf:
+[смешанное произведение* ] (*<-lang_ru;;*);
+[mixed composition* ] (*<-lang_en;;*);;
+
+nrel_mixed_composition => nrel_first_domain: concept_vector;;
+
+nrel_mixed_composition => nrel_second_domain: concept_vector;;
+
+nrel_mixed_composition => nrel_third_domain: concept_vector;;
+
+nrel_mixed_composition => nrel_fourth_domain: concept_vector;;
+
+nrel_mixed_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(смешанное произведение*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Смешанное произведение (a, b, c) векторов a, b, c — скалярное произведение вектора a на векторное произведение векторов b и c.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_mixed_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица; определитель*; вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Смешанное произведение векторов равно определителю матрицы, составленной из этих векторов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_mixed_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; модуль*; вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Модуль смешанного произведения трех векторов a, b и с равен объёму параллелепипеда, образованного этими векторами.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_mixed_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нулевой вектор; вектор; нуль; комплонарные векторы)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если смешанного произведения трех не нулевых векторов равно нулю, то эти вектора компланарные.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_mixed_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; линейно зависимые векторы; комплонарные векторы; равенство*; нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если три вектора линейно зависимы (т. е. компланарны, лежат в одной плоскости), то их смешанное произведение равно нулю.](* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,68 @@
+sc_node_norole_relation->nrel_division_of_integers;;
+
+nrel_division_of_integers=>nrel_main_idtf:
+[деление целых чисел* ](*<-lang_ru;;*);
+[бүтін сандардың бөлімшесі* ](*<-lang_kz;;*);
+[division of integers* ](*<-lang_en;;*);;
+
+nrel_division_of_integers=> nrel_idtf:[деление отрицательных чисел* ](*<-lang_ru;;*);;
+nrel_division_of_integers=> nrel_idtf:[деление чисел с разными знаками* ](*<-lang_ru;;*);;
+nrel_division_of_integers=> nrel_idtf:[деление числа на 1 (единицу)* ](*<-lang_ru;;*);;
+nrel_division_of_integers=> nrel_idtf:[division of whole number* ](*<-lang_en;;*);;
+
+nrel_division_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(деление целых чисел*; нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Делить на 0 (нуль) нельзя.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_division_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[125/5=?](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[(-34)/(-2)=?](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[7/1=?](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_division_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(деление целых чисел*; делимость целых чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://division_of_integers2.html"(* <- lang_ru;;*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://division_of_integers1.html"(* <- lang_ru;;*);;
+		*);;
+	*);;
+
+

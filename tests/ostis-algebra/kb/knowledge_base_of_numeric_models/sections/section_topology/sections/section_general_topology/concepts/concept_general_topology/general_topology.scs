@@ -1,0 +1,30 @@
+sc_node_not_relation -> concept_general_topology;;
+concept_general_topology => nrel_main_idtf:
+	[общая топология](*<-lang_ru;;*);
+	[general topology](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_general_topology<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(общая топология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Общая топология - это ветвь топологии , которая имеет дело с теоретическими определеними и конструкциями, используемые в топологии.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_topology => nrel_inclusion: concept_general_topology;;
+
+concept_general_topology <= nrel_using_constants:
+	{
+	concept_topology;
+	concept_theoretical_definitions ;
+	concept_theoretical_constructions
+	};;
+
+
+concept_general_topology -> rrel_example:	"file://generel_topology_example.png";;

@@ -1,0 +1,48 @@
+sc_node_not_relation->concept_inequality_module;;
+
+concept_inequality_module=>nrel_main_idtf:
+[неравенство с модулем](*<-lang_ru;;*);
+[inequality module](*<-lang_en;;*);;
+
+//определение
+concept_inequality_module <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(неравенство с модулем)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Неравенством с модулем называется неравенство содержащее модуль](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_inequality_module<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.( неравенство, модуль)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://inequality_module_1.html"		(* <- lang_ru;; 	*);;
+*);;
+	*);;
+
+	
+	
+//используемые константы
+concept_inequality_module<= nrel_using_constants:concept_number;concept_variable;;
+
+concept_inequality_module-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://inequality_module_2.jpg"	(* <- lang_ru;; 	*);;
+		*);;
+	*);;

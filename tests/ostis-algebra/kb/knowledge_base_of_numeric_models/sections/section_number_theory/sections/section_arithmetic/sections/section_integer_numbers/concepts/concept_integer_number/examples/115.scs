@@ -1,0 +1,6 @@
+one_hundred_and_fifteen=>nrel_main_idtf:
+[115](*<-lang_ru;;*);
+[115](*<-lang_en;;*);;
+
+concept_number -> one_hundred_and_fifteen;;
+set_of_number -> one_hundred_and_fifteen;;

@@ -1,0 +1,27 @@
+sc_node_not_relation -> concept_compact_space;;
+concept_compact_space => nrel_main_idtf:
+	[компактное пространство](*<-lang_ru;;*);
+	[compact space](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_compact_space<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(общая топология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Компактное пространство - определённый тип топологических пространств, обобщающий свойства ограниченности и замкнутости в евклидовых пространствах на произвольные топологические пространства.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_general_topology => nrel_inclusion: concept_compact_space;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_topological_space
+	};;
+
+

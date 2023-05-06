@@ -1,0 +1,29 @@
+ui_menu_file_for_logarithm <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_logarithm => nrel_main_idtf: 
+	[Найти логарифма от числа] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_logarithm => nrel_main_idtf: 
+	[Request of taking of logarithm of number] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_logarithm => ui_nrel_command_template:
+	[*
+		question_logarithm _-> ._question_logarithm_instance
+			(*
+			_-> rrel_base:: ui_arg_1;;
+                        _-> rrel_number_of_logarithm:: ui_arg_2;;
+
+			*);;
+		._question_logarithm_instance _<- question;;
+	*];;
+
+ui_menu_file_for_logarithm => ui_nrel_command_lang_template: 
+	[Найти логарифм по основанию $ui_arg_1 от числа $ui_arg_2] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_logarithm => ui_nrel_command_lang_template: 
+	[Request taking of logarithm of number: in base $ui_arg_1 for number $ui_arg_2] 
+	(* <- lang_en;; *);;
+

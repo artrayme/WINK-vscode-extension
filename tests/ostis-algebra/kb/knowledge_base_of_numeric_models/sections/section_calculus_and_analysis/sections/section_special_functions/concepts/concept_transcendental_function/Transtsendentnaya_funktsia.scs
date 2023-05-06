@@ -1,0 +1,70 @@
+sc_node_not_relation -> concept_transcendental_function;;
+
+concept_transcendental_function => nrel_main_idtf:
+[трансцендентная функция](*<-lang_ru;;*);
+[transcendental function](*<-lang_en;;*);
+[трансцендентальной функциясы](*<-lang_kz;;*);;
+
+//синонимы
+concept_transcendental_function => nrel_idtf:
+[неалгебраическая функция](*<-lang_ru;;*);
+[transcendental function](*<-lang_en;;*);;
+
+
+//определение и пояснения
+concept_transcendental_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (трансцендентная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Трансцендентными называют элементарные функции, которые не являются алгебраическими. (То есть, они образованы при помощи возведения в иррациональную степень, логарифмирования, с использованием тригонометрических и обратных тригонометрических операций).Простейшими примерами трансцендентных функций служат показательная функция, тригонометрические функции, логарифмическая функция.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+
+//используемые константы
+concept_transcendental_function <= nrel_using_constants: concept_algebraic_function;concept_function;concept_elementary_function;;
+	
+	
+	
+//разбиение
+concept_transcendental_function <= nrel_subdividing:
+	...
+  (* 
+    -> concept_logarithmic_function;;
+    -> concept_exponential_function;;
+	-> concept_trigonometric_function;;
+	-> concept_inverse_trigonometric_function;;
+	*);;
+	
+//надмножество
+concept_function => nrel_inclusion: concept_transcendental_function;;
+	
+//утверждения
+concept_transcendental_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(показательная функция; тригонометрическая функция; функция; элементарная алгебра; комплексное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Трансцендентными называют элементарные функции, которые не являются алгебраическими. (То есть, они образованы при помощи возведения в иррациональную степень, логарифмирования, с использованием тригонометрических и обратных тригонометрических операций).Простейшими примерами трансцендентных функций служат показательная функция, тригонометрические функции, логарифмическая функция.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (трансцендентная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Говорят, что у есть трансцендентная функция от x, если зависимость между у и x не может быть выражена уравнением вида Axayb + A1xa1yb1 +... + Аnхanybn = 0, где А, А1, А2,... An данные числа, а показатели a, b, а1, a1, a2, b2... bn, bn целые положительные числа или некоторые из них равны нулю. К Т. функциям принадлежат функции логарифмические, тригонометрические, круговые, эллиптические и др.](*<-lang_ru;;*);;
+		*);;
+	*);;

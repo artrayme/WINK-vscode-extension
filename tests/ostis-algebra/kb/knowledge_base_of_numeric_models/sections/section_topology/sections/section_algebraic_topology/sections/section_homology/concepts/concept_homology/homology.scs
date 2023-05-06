@@ -1,0 +1,26 @@
+sc_node_not_relation -> concept_homology;;
+concept_homology => nrel_main_idtf:
+	[гомология](*<-lang_ru;;*);
+	[homology](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_homology<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(гомология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+     [Гомология — это общий способ связывания от алгебраических объектов до других алгебраических объектов, таких как топологические пространства.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_algebraic_topology => nrel_inclusion: concept_homology;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_topological_space;
+	concept_algebraic_object
+	};;

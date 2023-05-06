@@ -1,0 +1,47 @@
+sc_node_not_relation -> concept_digit;; 
+concept_digit=> nrel_main_idtf :	[цифра] (* <- lang_ru;; *);	[көрсеткіш] (* <- lang_kz;; *);		[digit](*<-lang_en;;*);;
+
+concept_digit <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(цифра)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифры  — система знаков  для записи чисел.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(цифра)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Существует всего 10 цифр: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(цифра)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество чисел – бесконечно, так как из сочетания цифр получаются многозначные числа](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_digit => nrel_using_constants: concept_number;;
+
+concept_digit <= nrel_subdividing:
+	...
+	(* 
+	-> concept_arabic_numerals; concept_roman_numerals; concept_mayan_numerals;;
+	*);;
+
+concept_digit -> one; two; three; four; five; six; seven; eight; nine; null;;

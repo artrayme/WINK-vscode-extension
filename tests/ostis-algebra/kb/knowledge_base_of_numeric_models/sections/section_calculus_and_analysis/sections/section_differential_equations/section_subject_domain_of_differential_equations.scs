@@ -1,0 +1,65 @@
+sc_node_struct -> section_subject_domain_of_differential_equations;;
+
+section_subject_domain_of_differential_equations => nrel_main_idtf:
+    [Раздел. Предметная область дифференциальных уравнений] (* <- lang_ru;; *);
+    [Section. Subject domain of differential equations] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_differential_equations <- nrel_system_identifier;;
+
+section_subject_domain_of_differential_equations => nrel_section_decomposition: {
+    section_subject_domain_of_operational_calculus
+};;
+  
+section_subject_domain_of_differential_equations -> rrel_key_sc_element:
+    subject_domain_of_differential_equations;
+    concept_higher_order_differential_equation;
+    concept_differential_equation_in_private_derivatives;
+    concept_linear_differential_equation_of_the_first_order;
+    concept_differential_equation;
+    concept_first_order_differential_equations;
+    concept_inhomogeneous_linear_differential_equation;
+    concept_linear_differential_equation;
+    concept_ordinary_differential_equation;
+    concept_homogeneous_linear_differential_equation;
+    concept_linear_differential_equations_of_higher_order_with_constant_coefficients;
+    concept_exact_differential_equation;
+    nrel_order_differential_equation;
+    nrel_general_solution_of_the_differential_equation;
+    nrel_general_integral_the_differential_equation;
+    nrel_special_solution_of_the_differential_equation;
+    nrel_partial_integral_differential_equation;
+    nrel_particular_solution_of_the_differential_equation;;
+
+section_subject_domain_of_differential_equations = [*
+    subject_domain_of_differential_equations => nrel_main_idtf:
+        [Предметная область дифференциальных уравнений] (* <- lang_ru;; *);
+        [Subject domain of differential equations] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_differential_equations => nrel_private_subject_domain:
+        subject_domain_of_operational_calculus;;
+
+    subject_domain_of_differential_equations -> rrel_maximum_studied_object_class:
+        concept_differential_equation;;
+
+    subject_domain_of_differential_equations -> rrel_not_maximum_studied_object_class:
+        concept_higher_order_differential_equation;
+        concept_differential_equation_in_private_derivatives;
+        concept_linear_differential_equation_of_the_first_order;
+        concept_first_order_differential_equations;
+        concept_inhomogeneous_linear_differential_equation;
+        concept_linear_differential_equation;
+        concept_ordinary_differential_equation;
+        concept_homogeneous_linear_differential_equation;
+        concept_linear_differential_equations_of_higher_order_with_constant_coefficients;
+        concept_exact_differential_equation;;
+
+    subject_domain_of_differential_equations -> rrel_explored_relation:
+        nrel_order_differential_equation;
+        nrel_general_solution_of_the_differential_equation;
+        nrel_general_integral_the_differential_equation;
+        nrel_special_solution_of_the_differential_equation;
+        nrel_partial_integral_differential_equation;
+        nrel_particular_solution_of_the_differential_equation;;
+*];;

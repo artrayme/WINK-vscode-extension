@@ -1,0 +1,28 @@
+ui_menu_file_for_complex_number_module <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_complex_number_module => nrel_main_idtf: 
+	[Найти модуль комплексного числа] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_complex_number_module => nrel_main_idtf: 
+	[Request finding of complex number module] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_complex_number_module => ui_nrel_command_template:
+	[*
+		question_complex_number_module _-> ._question_complex_number_module_instance
+			(*
+			_-> ui_arg_1;;
+
+			*);;
+		._question_complex_number_module_instance _<- question;;
+	*];;
+
+ui_menu_file_for_complex_number_module => ui_nrel_command_lang_template: 
+	[Найти модуль комплексного числа: $ui_arg_1] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_complex_number_module => ui_nrel_command_lang_template: 
+	[Request complex number module: $ui_arg_1] 
+	(* <- lang_en;; *);;
+

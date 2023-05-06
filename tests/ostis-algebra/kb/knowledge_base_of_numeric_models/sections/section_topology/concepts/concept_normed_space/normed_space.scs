@@ -1,0 +1,63 @@
+sc_node_not_relation -> concept_normed_space;; 
+
+concept_normed_space => nrel_main_idtf:
+[нормированное пространство](*<-lang_ru;;*);
+[normed space](*<-lang_en;;*);
+[нормаланған ғарыш](*<-lang_kz;;*);;
+
+//надмножество
+concept_space => nrel_inclusion: concept_normed_space;;
+
+//определения и пояснения
+concept_normed_space <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (нормированное пространство)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Нормированным пространством называется пространство с заданной на нем нормой.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+concept_normed_space <= nrel_using_constants:
+	{
+	concept_space;
+	nrel_norm_of_the_space
+	};;	
+	
+//утверждения
+concept_normed_space <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нормированное пространство; метрическое пространство; метрика)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое нормированное пространство можно рассматривать как метрическое, если ввести в нём метрику определённым образом.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нормированное пространство; метрическое пространство)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[На нормированные пространства можно перенести все понятия и факты, относящиеся к метрическим пространствам.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//разбиение
+concept_normed_space <= nrel_subdividing:
+	...
+	(* 
+    -> concept_vector_space;;
+    -> concept_metric_space;;
+	*);;

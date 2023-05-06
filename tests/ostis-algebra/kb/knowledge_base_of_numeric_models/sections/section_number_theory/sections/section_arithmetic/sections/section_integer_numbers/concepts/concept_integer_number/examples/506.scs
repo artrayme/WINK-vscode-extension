@@ -1,0 +1,6 @@
+five_hundred_and_six=>nrel_main_idtf:
+[506](*<-lang_ru;;*);
+[506](*<-lang_en;;*);;
+
+concept_number -> five_hundred_and_six;;
+set_of_number -> five_hundred_and_six;;

@@ -1,0 +1,7 @@
+sc_text_of_agent_module
+-> rrel_key_sc_element:
+	agent_module;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_module = [*^"file://agent_module.scsi"*];;
+

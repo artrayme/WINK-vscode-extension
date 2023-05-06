@@ -1,0 +1,38 @@
+sc_node_struct -> section_subject_domain_of_natural_numbers;;
+
+section_subject_domain_of_natural_numbers => nrel_main_idtf:
+    [Раздел. Предметная область натуральных чисел] (* <- lang_ru;; *);
+    [Section. Subject domain of natural numbers] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_natural_numbers <- nrel_system_identifier;;
+  
+section_subject_domain_of_natural_numbers -> rrel_key_sc_element:
+    subject_domain_of_natural_numbers;
+    concept_natural_number;
+    nrel_comparison_of_the_natural_numbers;
+    nrel_root_of_a_natural_number;
+    nrel_multiplication_of_natural_numbers;
+    nrel_division_of_natural_numbers;
+    nrel_composition_of_natural_number;
+    nrel_exponentiation_of_natural_numbers;
+    nrel_addition_of_natural_numbers;;
+
+section_subject_domain_of_natural_numbers = [*
+    subject_domain_of_natural_numbers => nrel_main_idtf:
+        [Предметная область натуральных чисел] (* <- lang_ru;; *);
+        [Subject domain of natural numbers] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_natural_numbers -> rrel_maximum_studied_object_class:
+        concept_natural_number;;
+
+    subject_domain_of_natural_numbers -> rrel_explored_relation:
+        nrel_comparison_of_the_natural_numbers;
+        nrel_root_of_a_natural_number;
+        nrel_multiplication_of_natural_numbers;
+        nrel_division_of_natural_numbers;
+        nrel_composition_of_natural_number;
+        nrel_exponentiation_of_natural_numbers;
+        nrel_addition_of_natural_numbers;;
+*];;

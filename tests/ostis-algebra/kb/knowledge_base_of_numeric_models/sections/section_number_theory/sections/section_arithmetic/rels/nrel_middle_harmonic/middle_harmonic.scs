@@ -1,0 +1,53 @@
+sc_node_norole_relation->nrel_middle_harmonic;;
+
+nrel_middle_harmonic=>nrel_main_idtf:
+[среднее гармоническое* ](*<-lang_ru;;*);
+[middle harmonic* ](*<-lang_en;;*);;
+
+
+//определение
+nrel_middle_harmonic <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(среднее гармоническое*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Средним гармоническим нескольких положительных чисел называется число, обратное среднему арифметическому их обратных.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+	
+nrel_middle_harmonic <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(среднее арифметическое*; среднее геометрическое*; среднее гармоническое*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Среднее гармоническое чисел не превосходит среднее геометрическое и среднее арифметическое.](* <- lang_ru;; *);;
+		*);;
+	*);
+		... 
+	(*
+	=> nrel_main_idtf: [Утв.(среднее гармоническое*; среднее степенное*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Среднее гармоническое является средним степени −1.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	
+//домены	
+nrel_middle_harmonic <- ternary_relation;;
+nrel_middle_harmonic <= nrel_first_domain:  concept_number;;
+nrel_middle_harmonic <= nrel_second_domain: concept_number;;
+nrel_middle_harmonic <= nrel_third_domain: concept_number;;

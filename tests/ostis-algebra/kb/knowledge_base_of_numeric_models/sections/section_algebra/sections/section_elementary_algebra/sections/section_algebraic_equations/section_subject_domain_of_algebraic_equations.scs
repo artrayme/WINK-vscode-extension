@@ -1,0 +1,44 @@
+sc_node_struct -> section_subject_domain_of_algebraic_equations;;
+
+section_subject_domain_of_algebraic_equations => nrel_main_idtf:
+    [Раздел. Предметная область алгебраических уравнений] (* <- lang_ru;; *);
+    [Section. Subject domain of algebraic equations] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_algebraic_equations <- nrel_system_identifier;;
+  
+section_subject_domain_of_algebraic_equations -> rrel_key_sc_element:
+    subject_domain_of_algebraic_equations;
+    concept_linear_equation;
+    concept_rational_fractional_equation;
+    concept_algebraic_equation;
+    concept_rational_integer_equation;
+    concept_cubic_equation;
+    concept_quadratic_equation;
+    concept_rational_equation;
+    concept_irrational_algebraic_expression;
+    nrel_addition_of_algebraic_equations;
+    nrel_proportion;;
+
+section_subject_domain_of_algebraic_equations = [*
+    subject_domain_of_algebraic_equations => nrel_main_idtf:
+        [Предметная область алгебраических уравнений] (* <- lang_ru;; *);
+        [Subject domain of algebraic equations] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_algebraic_equations -> rrel_maximum_studied_object_class:
+        concept_algebraic_equation;;
+
+    subject_domain_of_algebraic_equations -> rrel_not_maximum_studied_object_class:
+        concept_linear_equation;
+        concept_rational_fractional_equation;
+        concept_rational_integer_equation;
+        concept_cubic_equation;
+        concept_quadratic_equation;
+        concept_rational_equation;
+        concept_irrational_algebraic_expression;;
+
+    subject_domain_of_algebraic_equations -> rrel_explored_relation:
+        nrel_addition_of_algebraic_equations;
+        nrel_proportion;;
+*];;

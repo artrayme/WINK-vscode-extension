@@ -1,0 +1,85 @@
+sc_node_norole_relation->  nrel_indefinite_integral;;
+ nrel_indefinite_integral=>nrel_main_idtf:
+[неопределённый интеграл* ](*<-lang_ru;;*);
+[indefinite integral* ](*<-lang_en;;*);;
+ 
+nrel_indefinite_integral=> nrel_first_domain:concept_function;;
+nrel_indefinite_integral=> nrel_second_domain: concept_function;;
+
+nrel_indefinite_integral<= nrel_using_constants: concept_interval; nrel_integral; nrel_integration;;
+
+nrel_indefinite_integral<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(неопределённый интеграл*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество всех первообразных некоторой функции f(x) называется неопределенным интегралом функции f(x)](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_indefinite_integral <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(определённый интеграл*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://indefinite_integral.png"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*; первообразная*;дифференциал*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Производная неопределенного интеграла равна подынтегральной функции; дифференциал от неопределенного интеграла равен подынтегральному выражению.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_indefinite_integral <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://indefinite_integral1.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_indefinite_integral<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление определённого интеграла.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+nrel_indefinite_integral -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://indefinite_integral2.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);; 

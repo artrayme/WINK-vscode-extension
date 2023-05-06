@@ -1,0 +1,38 @@
+sc_node_role_relation->rrel_argument;; 
+rrel_argument=>nrel_main_idtf:
+[аргумент'](*<-lang_ru;;*);
+[argument'](*<-lang_en;;*);;
+
+//определение и пояснения
+rrel_argument<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(аргумент')]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Аргумент — независимая переменная, от значений которой зависят значения функции.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//используемые константы
+rrel_argument <= nrel_using_constants:
+	{
+	concept_function;
+	rrel_variable
+	};;
+	
+rrel_argument <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(аргумент'; функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Аргумент - это то, что описывает функция.](* <- lang_ru;; *);;
+		*);;
+	*);;

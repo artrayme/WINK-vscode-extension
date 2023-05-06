@@ -1,0 +1,27 @@
+sc_node_struct -> section_subject_domain_of_manifolds;;
+
+section_subject_domain_of_manifolds => nrel_main_idtf:
+    [Раздел. Предметная область многообразий] (* <- lang_ru;; *);
+    [Section. Subject domain of manifolds] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_manifolds <- nrel_system_identifier;;
+
+section_subject_domain_of_manifolds -> rrel_key_sc_element:
+    subject_domain_of_manifolds;
+    concept_manifold;;
+
+section_subject_domain_of_manifolds = [*
+    subject_domain_of_manifolds => nrel_main_idtf:
+        [Предметная область многообразий] (* <- lang_ru;; *);
+        [Subject domain of manifolds] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_manifolds -> rrel_maximum_studied_object_class:
+        concept_manifold;;
+    
+    subject_domain_of_manifolds -> rrel_explored_relation:
+        nrel_dimension_manifold;
+        rrel_closed_manifold;
+        rrel_opened_manifold;;
+*];;

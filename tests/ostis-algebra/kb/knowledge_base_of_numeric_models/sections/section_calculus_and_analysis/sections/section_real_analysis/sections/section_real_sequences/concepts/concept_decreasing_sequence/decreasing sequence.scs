@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_decreasing_sequence;;
+concept_decreasing_sequence => nrel_main_idtf :
+[убывающая последовательность] (* <- lang_ru;; *);
+[decreasing sequence] (* <- lang_en;; *);;
+
+//определение
+concept_decreasing_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(убывающая последовательность)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			"file://decreasing_sequence1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_decreasing_sequence -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://decreasing_sequence2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+// конкретные задачи
+concept_decreasing_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://decreasing_sequence3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_decreasing_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение возрастающей(убывающей) последовательности.](* <- lang_ru;; *);;
+		*);;
+	*);;

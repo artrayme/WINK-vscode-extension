@@ -1,0 +1,77 @@
+sc_node_norole_relation->nrel_cosine;;
+
+nrel_cosine=>nrel_main_idtf:
+[косинус* ](*<-lang_ru;;*);
+[cosine* ](*<-lang_en;;*);
+[косинус* ](*<-lang_kz;;*);;
+
+//синонимы
+nrel_cosine=> nrel_idtf:[cos* ](*<-lang_en;;*);;
+
+//определение
+nrel_cosine<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Опр.(косинус*)](*<-lang_ru;;*);;
+<-sc_explanation;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+[Кослинусом угла a называется такое число,арккосинус которого равен a](*<-lang_ru;;*);;
+*);;
+*);;
+
+//используемые константы
+nrel_cosine<=nrel_using_constants:
+{
+concept_angle;
+concept_number
+};;
+
+
+//надмножество
+concept_trigonometric_function => nrel_inclusion: nrel_cosine;;
+
+//утверждения
+nrel_cosine <- rrel_key_sc_element:
+... 
+(*
+=> nrel_main_idtf: [Утв.(косинус*; область определения*; действительное число)] (* <- lang_ru;; *);;
+<- sc_statement;;
+<= nrel_sc_text_translation: 
+...
+(*
+-> rrel_example: 
+     [Областью определения косинуса являются все действительные числа.](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+=> nrel_main_idtf: [Утв.(косинус*; область значений*; промежуток)] (* <- lang_ru;; *);;
+<- sc_statement;;
+<= nrel_sc_text_translation: 
+...
+(*
+-> rrel_example: 
+	[Областью значений косинуса яляется промежуток от -1 до 1, включая -1 и 1. ](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(косинус*; чётная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Косинус  является  чётной функцией.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//домены
+
+nrel_cosine <- binary_relation;;
+nrel_cosine <= nrel_first_domain:  concept_angle_measure;;
+nrel_cosine <= nrel_second_domain: concept_number;;
+

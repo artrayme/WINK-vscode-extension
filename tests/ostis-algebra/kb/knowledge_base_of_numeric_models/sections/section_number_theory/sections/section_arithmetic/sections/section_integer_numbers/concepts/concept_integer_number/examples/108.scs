@@ -1,0 +1,6 @@
+one_hundred_and_eight=>nrel_main_idtf:
+[108](*<-lang_ru;;*);
+[108](*<-lang_en;;*);;
+
+concept_number -> one_hundred_and_eight;;
+set_of_number -> one_hundred_and_eight;;

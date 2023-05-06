@@ -1,0 +1,50 @@
+sc_node_role_relation->rrel_difference;; 
+rrel_difference=>nrel_main_idtf:
+[разность'](*<-lang_ru;;*);
+[difference'](*<-lang_en;;*);
+[айырма'](*<-lang_kz;;*);;
+
+//определение и пояснения
+rrel_difference<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(разность')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Разность - число,которое получается в результате выполнения операции вычитание.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//используемые константы
+rrel_difference <= nrel_using_constants:
+	{
+	concept_number;
+	nrel_subtraction
+	};;
+	
+rrel_difference <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(разность'; число; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Разность одинаковых чисел равно нулю.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(разность'; натуральное число; уменьшаемое'; вычитаемое')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Разность будет натуральным числом , если уменьшаемое больше вычитаемого.](* <- lang_ru;; *);;
+		*);;
+	*);;

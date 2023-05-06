@@ -1,0 +1,129 @@
+sc_node_not_relation->concept_algebraic_expession;; 
+
+concept_algebraic_expession=>nrel_main_idtf:
+[алгебраическое выражение](*<-lang_ru;;*);
+[алгебралық өрнек](*<-lang_kz;;*);
+[algebraic expession](*<-lang_en;;*);;
+
+//синонимы
+concept_algebraic_expession=> nrel_idtf:[буквенное выражение](*<-lang_ru;;*);;
+
+//иерархия
+concept_algebraic_expession <= nrel_inclusion: concept_expression;;
+
+concept_algebraic_expession <= nrel_subdividing:
+	...
+  (* 
+    -> concept_rational_algebraic_expression;;
+    -> concept_irrational_algebraic_expression ;;
+	*);;
+
+//определения и пояснения
+concept_algebraic_expession <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(алгебраическое выражение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Алгебраическим выражением называется буквенное выражение, которое содержит только операции сложения, вычитания, умноженияи, деления, возведения в степень с рациональным показателем и извлечения корня натуральной степени.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+ ...
+    (*
+=> nrel_main_idtf: [Пояснение (алгебраическое выражение)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Формула, описывающая некоторые математические отношения.](* <- lang_ru;; 	*);;
+*);
+...
+(*
+-> rrel_example:
+[Если вместо каждой буквы, которая входит в алгебраическое выражение подставить некоторое числовое значение, а потом выполнить все действия, то в результате получится некоторое число. Это число называют значением алгебраического выражения. Например, значением алгебраического выражения 5*а+2*х-7 при а=2 и х=3 будет являться число 9, т.к. 5*2+2*3-7=9](* <- lang_ru;; 	*);;
+*);
+...
+(*
+-> rrel_example:
+[Алгебраическое выражение или выражение с переменной называется, любая имеющая смысл запись, состоящая из букв, обозначающих любое число, чисел и знаков действий.](* <- lang_ru;; 	*);;
+*);;
+*);;
+
+//утверждения
+concept_algebraic_expession <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(переменная)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Переменная - это буква, входящая в алгебраическое выражение, которая может принимать различные значения.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(вычислить*; переменная; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если вычислить значение алгебраического выражения, заменив переменные какими-либо числами, мы получим значение выражения при данном значении переменных.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_algebraic_expession -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://alg2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_algebraic_expession <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://alg3.html"(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://alg4.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_algebraic_expession <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение значения алгебраического выражения.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на упрощение выражения.](* <- lang_ru;; *);;
+		*);;
+	*);;

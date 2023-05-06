@@ -1,0 +1,37 @@
+sc_node_norole_relation -> nrel_secondary_diagonal_matrix;;
+
+nrel_secondary_diagonal_matrix => nrel_main_idtf :
+[побочная диагональ матрицы* ] (* <- lang_ru;; *); 
+[secondary diagonal of the matrix* ] (* <- lang_en;; *);; 
+
+nrel_secondary_diagonal_matrix <- binary_relation;;
+
+nrel_secondary_diagonal_matrix => nrel_first_domain: concept_matrix;;
+
+nrel_secondary_diagonal_matrix => nrel_second_domain: concept_set_numbers;;
+
+nrel_secondary_diagonal_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(побочная диагональ матрицы*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Главной диагональю матрицы называется диагональ, проведённая из левого нижнего угла в правый верхний угол.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_secondary_diagonal_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(определитель*; произведени'; число; элемент матрицы'; главная диагональ матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Определитель второго порядка есть число, полученное в результате произведения элементов, стоящих соответственно на главной и на побочной диагоналях..](* <- lang_ru;; *);;
+		*);;
+	*);;

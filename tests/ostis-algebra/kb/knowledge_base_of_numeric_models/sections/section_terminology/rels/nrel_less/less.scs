@@ -1,0 +1,40 @@
+sc_node_norole_relation->nrel_less;;
+
+nrel_less=>nrel_main_idtf:
+[меньше* ](*<-lang_ru;;*);
+[less* ](*<-lang_en;;*);;
+nrel_less => nrel_mathem_idtf: [<] (*<-lang_en;;*);;
+
+//определение
+nrel_less <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(меньше*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Меньше - операция, которая показывает, что одно выражение/число меньше другого по значению.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+nrel_less <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(меньше*; число; вычитание*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Чтобы показать что число а меньше числа b, необходимо вычесть из числа a число b. Если результат вычитания будет отрицательным, то число a меньше числа b.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//домены	
+nrel_less <- binary_relation;;
+nrel_less <= nrel_first_domain:  concept_number;;
+nrel_less <= nrel_second_domain: concept_number;;

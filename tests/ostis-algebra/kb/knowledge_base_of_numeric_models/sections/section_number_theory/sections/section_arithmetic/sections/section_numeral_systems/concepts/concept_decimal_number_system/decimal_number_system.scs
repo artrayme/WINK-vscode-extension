@@ -1,0 +1,87 @@
+sc_node_not_relation->concept_decimal_number_system;;
+
+concept_decimal_number_system=>nrel_main_idtf:
+[десятичная система счисления](*<-lang_ru;;*);
+[ондық санау жүйесі](*<-lang_kz;;*);
+[decimal number system](*<-lang_en;;*);;
+
+// синонимы
+concept_decimal_number_system=> nrel_idtf:[десятичное представление числа](*<-lang_ru;;*);;
+concept_decimal_number_system=> nrel_idtf:[десятичная запись числа](*<-lang_ru;;*);;
+concept_decimal_number_system=> nrel_idtf:[ондық санды жазу](*<-lang_kz;;*);;
+concept_decimal_number_system=> nrel_idtf:[ондық санды атау](*<-lang_kz;;*);;
+
+//определение
+concept_decimal_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(десятичная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Десятичной системой счисления называется система счисления с основанием 10, в которой числа записываются называются арабскими.](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_decimal_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (десятичная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для записи чисел люди придумали десять знаков, которые называются цифрами. Это: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью десяти цифр можно записать любое натуральное число. От количества знаков (цифр) в числе зависит его название. Число, состоящее из одного знака (цифры), называется однозначным. Наименьшее однозначное натуральное число - 1, наибольшее - 9. Число, состоящее из двух знаков (цифр), называется двузначным. Наименьшее двузначное число - 10, наибольшее - 99. Числа, записанные с помощью двух, трёх, четырёх и более цифр, называются двузначными, трёхзначными, четырёхзначными или многозначными. Наименьшее трёхзначное число - 100, наибольшее - 999. Каждая цифра в записи многозначного числа занимает определённое место - позицию. Разряд - это место (позиция), на котором в записи числа стоит цифра.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_decimal_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (десятичная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://decimal_number_system_4.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_decimal_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (десятичная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В записи числа разряды, начиная справа, группируются в классы по три разряда в каждом. Класс единиц или первый класс - это класс, который образуют первые три разряда (справа от конца числа): разряд единиц, разряд десятков и разряд сотен. Класс тысяч или второй класс - это класс, который образуют следующие три разряда: единицы тысяч, десятки тысяч и сотни тысяч. Класс миллионов или третий класс - это класс, который образуют следующие три разряда: единицы миллионов, десятки миллионов и сотни миллионов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+//утверждения
+concept_decimal_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма*, натуральное число, цифра )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://decimal_number_system_3.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+
+//используемые константы
+concept_decimal_number_system <= nrel_using_constants: concept_digit;rrel_basis;;
+
+//пример
+concept_decimal_number_system -> rrel_example :
+			"file://decimal_number_system_1.html";;
+

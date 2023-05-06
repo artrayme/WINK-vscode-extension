@@ -1,0 +1,47 @@
+sc_node_norole_relation -> nrel_geometric_average;;
+nrel_geometric_average => nrel_main_idtf:	[среднее геометрическое* ](*<-lang_ru;;*);	[geometric average* ](*<-lang_en;;*);;
+nrel_geometric_average => nrel_idtf:	[средняя геометрическая величина* ](*<-lang_ru;;*);;
+
+nrel_geometric_average <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(среднее геометрическое*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Средняя геометрическая величина получается от перемножения данных величин и извлечения из этого произведения корня, показатель которого равен числу этих величин.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_geometric_average <- ternary_relation;;
+nrel_geometric_average => nrel_first_domain: concept_number;;
+nrel_geometric_average => nrel_second_domain: concept_number;;
+nrel_geometric_average => nrel_third_domain: concept_number;;
+
+nrel_geometric_average <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(среднее геометрическое*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://geo_av.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_geometric_average <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(среднее геометрическое*; среднее арифметическое*; меньше*; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Среднее геометрическое всегда будет меньше среднего арифметического тех же чисел. За исключением случая, когда все взятые числа равны друг другу.](* <- lang_ru;; *);;
+		*);;
+	*);;

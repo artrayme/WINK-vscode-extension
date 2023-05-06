@@ -1,0 +1,55 @@
+sc_node_norole_relation->nrel_inverse_number;;
+nrel_inverse_number=>nrel_main_idtf:	[обратное число* ] (*<-lang_ru;;*);	[кері нөмірі* ] (*<-lang_kz;;*);		[inverse number* ] (*<-lang_en;;*);;
+nrel_inverse_number=>nrel_idtf:	[обратная величина* ] (*<-lang_ru;;*);	[обратное значение* ] (*<-lang_ru;;*);;
+
+nrel_inverse_number <- binary_relation;;
+nrel_inverse_number => nrel_first_domain: concept_number;;
+nrel_inverse_number => nrel_second_domain: concept_number;;
+
+nrel_inverse_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(обратное число*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Обратное число - это число, на которое надо умножить данное число, чтобы получить единицу. Два таких числа называются взаимно обратными.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_inverse_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(обратная функция*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Обратное число не следует путать с обратной функцией.] (*<-lang_ru;;*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(действительное число; дробь; степень'; показатель')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Обратное к действительному числу можно подать в виде дроби или степени с показателем -1. Но, как правило, используется запись через дробь.] (*<-lang_ru;;*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(действительное число; комплексное число; нуль; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Для любого действительного (или комплексного) числа, отличного от нуля, существует число, обратное ему.] (*<-lang_ru;;*);;
+		*);;
+	*);;

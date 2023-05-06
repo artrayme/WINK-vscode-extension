@@ -1,0 +1,98 @@
+sc_node_norole_relation->nrel_addition_of_monomials;; 
+
+nrel_addition_of_monomials=>nrel_main_idtf:
+[сложение одночленов* ] (*<-lang_ru;;*);
+[қосу мономиален* ] (*<-lang_kz;;*);
+[addition of monomials* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_addition_of_monomials=> nrel_idtf:[сумма одночленов* ](*<-lang_ru;;*);;
+nrel_addition_of_monomials=> nrel_idtf:[сложение подобных одночленов* ](*<-lang_ru;;*);;
+nrel_addition_of_monomials=> nrel_idtf:[subtraction of monomial* ](*<-lang_en;;*);;
+nrel_addition_of_monomials=> nrel_idtf:[sum of monomial* ](*<-lang_en;;*);;
+
+//определение и пояснения
+nrel_addition_of_monomials<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сложение одночленов*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Выражение, состоящее из нескольких одночленов, объединенных действиями сложения или вычитания, называют алгебраической суммой. Суммой подобных одночленов является одночлен, подобный каждому из складываемых одночленов, а его коэффициент равен сумме коэффициентов подобных одночленов]	(* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(сложение одночленов*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	[Вычитание одночленов рассматривают как сложение, взятое с противоположным знаком. Например, выражение 3*a+b-4*c является суммой, так как 3*a+b-4*c=3*a+b+(-4*c )] (* <- lang_ru;; *);;
+*);;
+*);
+  ...
+    (*
+=> nrel_main_idtf: [Пояснение(сложение одночленов*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	"file://addition_of_monomialsl_1.html" (* <- lang_ru;; *);;
+*);;
+*);;
+
+
+//конкретные задачи
+ nrel_addition_of_monomials<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://addition_of_monomialsl_2.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_addition_of_monomials <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на сложение и вычитание одночленов](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_addition_of_monomials => nrel_first_domain:concept_monomial;;
+nrel_addition_of_monomials => nrel_second_domain: concept_monomial;;
+nrel_addition_of_monomials => nrel_third_domain: concept_monomial;;
+
+
+//пример
+ nrel_addition_of_monomials -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://addition_of_monomialsl_3.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

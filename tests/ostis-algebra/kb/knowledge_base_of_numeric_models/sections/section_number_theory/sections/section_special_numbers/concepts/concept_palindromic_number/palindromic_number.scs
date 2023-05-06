@@ -1,0 +1,52 @@
+sc_node_not_relation -> concept_palindromic_number;; 
+
+concept_palindromic_number => nrel_main_idtf:
+[число-палиндром](*<-lang_ru;;*);
+[palindromic number](*<-lang_en;;*);;
+
+//синонимы
+concept_palindromic_number => nrel_idtf:[числовой палиндром](*<-lang_ru;;*);;
+concept_palindromic_number => nrel_idtf:[numeral palindrome](*<-lang_en;;*);;
+	
+//надмножество
+concept_natural_number => nrel_inclusion: concept_palindromic_number;;
+
+//определения и пояснения
+concept_palindromic_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (число-палиндром)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Число-палиндром — натуральное число, величина которого не зависит от направления, в котором читаются его цифры.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_palindromic_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число-палиндром; бесконечность; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://palindromic_number_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; цифра; число-палиндром)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Очевидно, что все числа, состоящие из одной цифры, являются числами-палиндромами.](* <- lang_ru;; *);;
+		*);;
+	*);;

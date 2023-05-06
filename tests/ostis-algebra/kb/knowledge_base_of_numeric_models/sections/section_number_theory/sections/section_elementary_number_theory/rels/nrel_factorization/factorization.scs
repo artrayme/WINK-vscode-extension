@@ -1,0 +1,63 @@
+sc_node_norole_relation->nrel_factorization;;
+
+nrel_factorization => nrel_main_idtf:
+[факторизация* ](*<-lang_ru;;*);
+[factorization* ](*<-lang_en;;*);
+[көбейткіштерге* ](*<-lang_kz;;*);;
+
+nrel_factorization=> nrel_idtf:[разложение числа на простые множители* ](*<-lang_ru;;*);;
+
+//определение
+nrel_factorization <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(факторизация*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://factorization_definition.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_factorization <= nrel_using_constants:
+	{
+	concept_number;
+	nrel_decomposition;
+	concept_prime_number;
+	rrel_multiplier;
+	rrel_product_of_multiplication
+	};;
+	
+//иерархия
+nrel_decomposition => nrel_inclusion: nrel_factorization;;
+	
+nrel_factorization <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; разложение на простые множители*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Основная теорема арифметики: любое натуральное число, кроме 1, имеет единственное разложение на простые множители.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(факторизация*; число; пустое произведение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При факторизации числа 1 получается пустое произведение.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_factorization <- binary_relation;;
+nrel_factorization => nrel_first_domain: concept_number;;
+nrel_factorization => nrel_second_domain: concept_set_numbers;;

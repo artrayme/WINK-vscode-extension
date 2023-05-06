@@ -1,0 +1,141 @@
+sc_node_norole_relation -> nrel_determinant;;
+
+nrel_determinant => nrel_main_idtf:
+[определитель* ](*<-lang_ru;;*);
+[determinant* ](*<-lang_en;;*);
+[айқындаушы* ](*<-lang_kz;;*);;
+
+nrel_determinant => nrel_main_idtf:[детерминант* ](*<-lang_ru;;*);;
+nrel_determinant => nrel_main_idtf:[определитель матрицы* ](*<-lang_ru;;*);;
+
+nrel_determinant <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(определитель*)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Определитель - это многочлен, комбинирующий элементы квадратной матрицы таким образом, что его значение сохраняется при транспонировании и 
+линейных комбинациях строк или столбцов.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_determinant <= nrel_using_constants:
+	{
+	concept_polynomial;
+	concept_matrix;
+	nrel_transposing
+	};;
+
+//утверждения
+
+nrel_determinant <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(единичная матрица; один)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Определитель единичной матрицы равен единице : det(E) = 1.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(матрица; нуль)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Определитель матрицы с двумя равными строками (столбцами) равен нулю.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(матрица; нуль; линейная зависимость*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Если две (или несколько) строк (столбцев) матрицы линейно зависимы, то определитель матрицы равен нулю.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.( нуль)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Определитель матрицы, содержащий нулевую строку (столбец), равен нулю..](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(матрица; транспонирование*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[При транспонировании значение определителя матрицы не меняется.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(матрица; умножение*; число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Определитель матрицы не изменится, если к какой-то его строке (столбцу) прибавить другую строку (столбец), умноженную на некоторое число.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(матрица)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Если поменять местами две строки (столбца) матрицы, то определитель матрицы поменяет знак.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(матрица; множитель*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			"file://determinant.png"(*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(матрица; умножение матриц*; произведение*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Определитель произведения матриц равен произведению определителей этих матриц: det(A·B) = det(A)·det(B).](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_determinant <- binary_relation;;
+nrel_determinant <= nrel_first_domain:  concept_matrix;;
+nrel_determinant <= nrel_second_domain: concept_polynomial;;
+
+nrel_determinant -> rrel_example :
+		"file://determinant_example.png";;
+

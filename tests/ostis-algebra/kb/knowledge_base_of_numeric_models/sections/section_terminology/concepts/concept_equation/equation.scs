@@ -1,0 +1,65 @@
+sc_node_not_relation->concept_equation;;
+concept_equation => nrel_main_idtf :
+[уравнение](*<-lang_ru;;*);
+[equation](*<-lang_en;;*);;
+
+concept_equation <= nrel_inclusion: concept_mathematical_object;;
+
+//определение
+concept_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://equation1.html"   (* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//разбиение
+concept_equation<= nrel_subdividing:
+    ... 
+(*
+	-> concept_transcendental_equation;;
+	-> concept_equivalent_to_the_equation;;
+	-> concept_linear_equation;;
+	-> concept_logarithmic_equation;;
+	-> concept_exponential_equation;;
+	-> concept_parametric_equation;;
+	-> concept_quadratic_equation;;
+	-> concept_differential_equation;;
+	-> concept_algebraic_equation;; 
+	-> concept_functional_equation;;
+	-> concept_cubic_equation;; 
+*);;
+
+// утверждения
+concept_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(корень уравнения)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Решить уравнение означает найти множество всех его решений (корней) или доказать, что корней нет.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(корень уравнения)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://equation2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_equation -> rrel_example :
+[Уравнение (х-1)(х-2)=0; корни данного уравнения: 1 и 2.](* <- lang_ru;; *);;

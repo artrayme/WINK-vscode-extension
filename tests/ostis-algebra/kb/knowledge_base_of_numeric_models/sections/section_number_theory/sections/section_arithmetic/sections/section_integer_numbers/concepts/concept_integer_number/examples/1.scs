@@ -1,0 +1,39 @@
+one=>nrel_main_idtf:
+[1](*<-lang_ru;;*);
+[1](*<-lang_en;;*);;
+
+one=> nrel_idtf:[единица](*<-lang_ru;;*);;
+one=> nrel_idtf:[one](*<-lang_en;;*);;
+one=> nrel_idtf:[бірлік](*<-lang_kz;;*);;
+
+concept_number -> one;;
+set_of_number -> one;;
+
+//определение
+one <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(единица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[1 (один, единица) — число, мысленное представление отдельного абстрактного объекта. Наименьшее натуральное число.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+one <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество натуральных чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Единица 1 – наименьший элемент во множестве натуральных чисел (N).](* <- lang_ru;; *);;
+		*);;
+	*);;
+

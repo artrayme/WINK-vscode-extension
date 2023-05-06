@@ -1,0 +1,38 @@
+sc_node_not_relation->concept_fractional_linear_inequalities;;
+
+concept_fractional_linear_inequalities=>nrel_main_idtf:
+[дробно-линейное неравенство](*<-lang_ru;;*);
+[fractional linear inequalities](*<-lang_en;;*);;
+
+//синонимы
+concept_fractional_linear_inequalities=>nrel_main_idtf:[дробно-линейные неравенства](*<-lang_ru;;*);;
+
+//определение
+concept_fractional_linear_inequalities <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дробно-линейное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://fractional_linear_inequalities_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+
+//используемые константы
+concept_fractional_linear_inequalities<= nrel_using_constants:concept_number;concept_variable;concept_fraction;;
+
+concept_fractional_linear_inequalities-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://fractional_linear_inequalities1.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

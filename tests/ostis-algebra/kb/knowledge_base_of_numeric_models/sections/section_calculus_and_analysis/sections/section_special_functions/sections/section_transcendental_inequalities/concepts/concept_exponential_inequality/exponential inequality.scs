@@ -1,0 +1,144 @@
+sc_node_not_relation->concept_exponential_inequality;;
+
+concept_exponential_inequality=>nrel_main_idtf:
+[показательное неравенство](*<-lang_ru;;*);
+[exponential inequality](*<-lang_en;;*);;
+
+//определение
+concept_exponential_inequality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(показательное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://exponential_inequality_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Пояснение(показательное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://exponential_inequality_2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+
+concept_exponential_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://exponential_inequality_3.html"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponential_inequality_4.html"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponential_inequality4.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponential_inequality_5.html"(* <- lang_ru;; 	*);;
+*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponential_inequality_6.html"(* <- lang_ru;; 	*);;
+*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponential_inequality_7.html"(* <- lang_ru;; 	*);;
+*);;
+	*);;
+
+//используемые константы
+concept_exponential_inequality<= nrel_using_constants:concept_number;concept_variable;;
+
+
+// конкретные задачи
+concept_exponential_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://exponential_inequality_8.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_exponential_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Решение показательных неравенств]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_exponential_inequality-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponential_inequality_9.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,95 @@
+sc_node_not_relation->concept_equivalent_to_the_equation;;
+concept_equivalent_to_the_equation=>nrel_main_idtf:
+[равносильные уравнения](*<-lang_ru;;*);
+[equivalent to the equation](*<-lang_en;;*);;
+
+//определение
+concept_equivalent_to_the_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(равносильные уравнения)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Уравнения, имеющее одни и те же корни, называются равносильными.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+// утверждения
+concept_equivalent_to_the_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение; корнь уравнения)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Равносильными считаются уравнения, каждое из которых не имеет корней.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение; слагаемое; знак)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема1. Если в уравнении какое-нибудь слагаемое перенести из одной части в другую, изменив его знак, то получится уравнение, равносильное данному.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение; умножить*; разделить*; 0-нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема2. Если обе части уравнения умножить или разделить на одно и то же отличное от 0 число, то получится уравнение, равносильное данному.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_equivalent_to_the_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Уравнения x+2=5 и x+5=8 - равносильные, т.к. они оба имеют единственный корень - число 3.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_equivalent_to_the_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи для проверки являются ли данные уравнения равносильными.](* <- lang_ru;; *);;
+*);;
+*);;
+
+// конкретные задачи
+concept_equivalent_to_the_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://equivalent to the equation1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,90 @@
+sc_node_not_relation -> concept_number_system;; 
+concept_number_system => nrel_main_idtf :
+[система счисления] (* <- lang_ru;; *);
+[санау жүйесі] (* <- lang_kz;; *);
+[number system](*<-lang_en;;*);;
+
+// синонимы
+concept_number_system=> nrel_idtf:[представление числа](*<-lang_ru;;*);;
+concept_number_system=> nrel_idtf:[notation](*<-lang_en;;*);;
+concept_number_system=> nrel_idtf:[позиционная система счисления](*<-lang_ru;;*);;
+concept_number_system=> nrel_idtf:[позициялық санау жүйесі](*<-lang_kz;;*);;
+concept_number_system=> nrel_idtf:[сандарды ондық санау жүйесінде көрсету](*<-lang_kz;;*);;
+
+//определение
+concept_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Система счисления — символический метод записи чисел, представление чисел с помощью письменных знаков.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Системой счисления называется совокупность приемов представления и обозначения чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_number_system<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://number_system_1.html"(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://number_system_2.html"(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://sis.png"(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Позиционной называется такая система счисления, в которой количественное значение цифры зависит от ее места (позиции, или разряда) в ряду цифр, изображающих число.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[В непозиционной системе счисления количественное значение символа определяется только его изображением и не зависит от его места(позиции) в числе. Количественное значение числа определяется суммой или разностью значений символов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//используемые константы
+concept_number_system <= nrel_using_constants: concept_number;rrel_basis;;
+
+//разбиение
+concept_number_system <= nrel_subdividing:
+	...
+	(* 
+	-> concept_decimal_number_system;;
+	-> concept_binary_number_system;;
+	-> concept_octal_notation;;
+	-> concept_hexadecimal_notation;;
+	*);;
+
+//пример
+concept_number_system -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Римская система счисления: 1=I; 2=II; 5=V; 7=VII; 9=IX; 10=X; 11=XI; 19=XIX; 50=L; 100=C; 141=CXLI; 500=D.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

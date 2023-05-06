@@ -1,0 +1,48 @@
+sc_agent_sumAP
+=> nrel_main_idtf:
+	[sc-агент нахождения суммы арифметической прогрессии] (* <- lang_ru;; *);
+	[sc-agent of finding sum of arithmetic progression] (* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_sumAP_condition => ..sc_agent_sumAP_result);
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_sumAP
+	};
+
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_sumAP
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_sumAP
+		};;
+	-> sc_agent_sumAP_scp    
+		(* <- active_sc_agent;; *);; 
+	*);;
+
+..sc_agent_sumAP
+= [*
+	question_sumAP _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter;;
+*];;
+
+..sc_agent_sumAP_result
+= [*
+	question_sumAP _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter;;
+*];;

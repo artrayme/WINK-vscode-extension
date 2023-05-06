@@ -1,0 +1,88 @@
+sc_node_not_relation->concept_argument_of_a_complex_number;;
+
+concept_argument_of_a_complex_number=>nrel_main_idtf:
+[аргумент комплексного числа](*<-lang_ru;;*);
+[the argument of a complex number](*<-lang_en;;*);;
+
+//определение
+concept_argument_of_a_complex_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(аргумент комплексного числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Угол  φ (в радианах) радиус-вектора точки, соответствующей комплексному числу z, называется аргументом комплексного числа z и обозначается Arg(z).](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//используемые константы
+concept_argument_of_a_complex_number <= nrel_using_constants: concept_real_number;;
+
+// утверждения
+concept_argument_of_a_complex_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Аргумент не определён для единственного числа: z=0.](* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(координатная четверть; комплексное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		      "file://argument_of_a_complex_number1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_argument_of_a_complex_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Найти аргумент комплексного числа z=3+5*i.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_argument_of_a_complex_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождения аргумента комплексного числа.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_rargument_of_a_complex_number -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[z=3+4*i. Аргумент комплексного числа z равен arg(z)=arctg(4/3).](* <- lang_ru;; 	*);;
+		*);;
+	*);;

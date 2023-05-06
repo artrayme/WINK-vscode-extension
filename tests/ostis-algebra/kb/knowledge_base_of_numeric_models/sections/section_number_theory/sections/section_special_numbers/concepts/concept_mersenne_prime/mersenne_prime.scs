@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_mersenne_prime;; 
+
+concept_mersenne_prime => nrel_main_idtf:
+[простое число Мерсенна](*<-lang_ru;;*);
+[Mersenne prime](*<-lang_en;;*);;
+	
+//надмножество
+concept_prime_number => nrel_inclusion: concept_mersenne_prime;;
+
+//определения и пояснения
+concept_mersenne_prime <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (простое число Мерсенна)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://mersenne_prime.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_mersenne_prime <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(простое число Мерсенна; простое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://mersenne_prime_statement1.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(четное совершенное число; простое число Мерсенна)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://mersenne_prime_statement2.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(бесконечность; простое число Мерсенна)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Неизвестно, бесконечно ли количество простых чисел Мерсенна.](* <- lang_ru;; *);;
+		*);;
+	*);;

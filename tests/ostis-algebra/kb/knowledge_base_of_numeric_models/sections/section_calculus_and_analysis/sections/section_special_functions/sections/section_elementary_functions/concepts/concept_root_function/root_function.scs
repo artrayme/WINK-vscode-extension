@@ -1,0 +1,69 @@
+sc_node_not_relation->concept_root_function;; 
+
+concept_root_function=>nrel_main_idtf:
+[функция корня](*<-lang_ru;;*);
+[root function](*<-lang_en;;*);;
+
+concept_root_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(функция корня)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://root_function.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_root_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://root_function1.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_root_function<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://root_function2.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_root_function<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на построение графика функции корня.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_root_function-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://root_function.png"(* <- lang_ru;;*);;
+		*);;
+	*);;

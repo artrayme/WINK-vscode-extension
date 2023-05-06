@@ -1,0 +1,25 @@
+sc_node_not_relation -> concept_homotopy_group;;
+concept_homotopy_group => nrel_main_idtf:
+	[гомотопическая группа](*<-lang_ru;;*);
+	[homotopy group](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_homotopy_group<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(гомотопическая группа](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+     [Гомотопическая группа используются в алгебраической топологии для классификации топологических пространств.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_algebraic_topology => nrel_inclusion: concept_homotopy_group;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_topological_space
+	};;

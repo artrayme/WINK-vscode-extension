@@ -1,0 +1,56 @@
+sc_node_norole_relation->nrel_equivalent_matrix;;
+
+nrel_equivalent_matrix=>nrel_main_idtf:
+[эквивалентная матрица* ](*<-lang_ru;;*);
+[equivalent matrix* ](*<-lang_en;;*);
+[баламалы матрица* ](*<-lang_kz;;*);;
+
+
+//надмножество
+concept_matrix => nrel_inclusion: nrel_equivalent_matrix;;
+
+//определение
+nrel_equivalent_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(эквивалентная матрица*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Матрица, полученная в результате элементарного преобразования, называется эквивалентной.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_equivalent_matrix <= nrel_using_constants:
+	{
+	concept_matrix;
+	nrel_elementary_transformation
+	};;
+	
+//утверждения
+	
+nrel_equivalent_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эквивалентные матрицы; ранг матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Эквивалентные матрицы имеют один и тот же ранг.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+	
+//домены	
+nrel_equivalent_matrix <- binary_relation;;
+nrel_equivalent_matrix <= nrel_first_domain:  concept_matrix;;
+nrel_equivalent_matrix <= nrel_second_domain: concept_matrix;;
+nrel_equivalent_matrix -> rrel_example :
+		"file://equivalent_matrix_example.png";;
+

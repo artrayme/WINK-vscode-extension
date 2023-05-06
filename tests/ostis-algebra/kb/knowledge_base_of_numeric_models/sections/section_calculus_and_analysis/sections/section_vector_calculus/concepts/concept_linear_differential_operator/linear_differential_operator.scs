@@ -1,0 +1,31 @@
+sc_node_not_relation -> concept_linear_differential_operator;;
+
+concept_linear_differential_operator=> nrel_main_idtf :
+[линейный дифференциальный оператор] (* <- lang_ru;; *);
+[linear differential operator](*<-lang_en;;*);;
+
+concept_linear_differential_operator <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейный дифференциальный оператор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://linear_differential_operator2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_linear_differential_operator <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(свойства линейного дифференциального оператора)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://linear_differential_operator3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

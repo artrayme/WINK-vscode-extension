@@ -1,0 +1,28 @@
+sc_node_struct -> section_subject_domain_of_integral_functions;;
+
+section_subject_domain_of_integral_functions => nrel_main_idtf:
+    [Раздел. Предметная область интегральных функций] (* <- lang_ru;; *);
+    [Section. Subject domain of integral functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_integral_functions <- nrel_system_identifier;;
+  
+section_subject_domain_of_integral_functions -> rrel_key_sc_element:
+    subject_domain_of_integral_functions;
+    nrel_integrated_sine;
+    nrel_integrated_logarithm;
+    nrel_integrated_cosine;
+    nrel_integral_exponential_function;;
+
+section_subject_domain_of_integral_functions = [*
+    subject_domain_of_integral_functions => nrel_main_idtf:
+        [Предметная область интегральных функций] (* <- lang_ru;; *);
+        [Subject domain of integral functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_integral_functions -> rrel_explored_relation:
+        nrel_integrated_sine;
+        nrel_integrated_logarithm;
+        nrel_integrated_cosine;
+        nrel_integral_exponential_function;;
+*];;

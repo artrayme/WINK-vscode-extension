@@ -1,0 +1,28 @@
+sc_node_struct -> section_subject_domain_of_exponential_functions;;
+
+section_subject_domain_of_exponential_functions => nrel_main_idtf:
+    [Раздел. Предметная область показательных функций] (* <- lang_ru;; *);
+    [Section. Subject domain of exponential functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_exponential_functions <- nrel_system_identifier;;
+
+section_subject_domain_of_exponential_functions -> rrel_key_sc_element:
+    subject_domain_of_exponential_functions;
+    concept_decreasing_exponential_function;
+    concept_increasing_exponential_function;
+    concept_exponential_function;;
+
+section_subject_domain_of_exponential_functions = [*
+    subject_domain_of_exponential_functions => nrel_main_idtf:
+        [Предметная область показательных функций] (* <- lang_ru;; *);
+        [Subject domain of exponential functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_exponential_functions -> rrel_maximum_studied_object_class:
+        concept_exponential_function;;
+
+    subject_domain_of_exponential_functions -> rrel_not_maximum_studied_object_class:
+        concept_decreasing_exponential_function;
+        concept_increasing_exponential_function;;
+*];;

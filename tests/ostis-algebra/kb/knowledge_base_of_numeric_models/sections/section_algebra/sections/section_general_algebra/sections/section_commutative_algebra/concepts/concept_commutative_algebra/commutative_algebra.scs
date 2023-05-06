@@ -1,0 +1,64 @@
+sc_node_not_relation -> concept_commutative_algebra;; 
+
+concept_commutative_algebra => nrel_main_idtf:
+[коммутативная алгебра](*<-lang_ru;;*);
+[commutative algebra](*<-lang_en;;*);;
+
+//разбиение
+concept_commutative_algebra <= nrel_subdividing:
+	...
+	(* 
+	-> concept_algebraic_geometry;;
+	-> concept_algebraic_number_theory;;
+	*);;
+	
+//надмножество
+concept_general_algebra => nrel_inclusion: concept_commutative_algebra;;
+
+//определения и пояснения
+concept_commutative_algebra <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (коммутативная алгебра)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Коммутативная алгебра — раздел общей алгебры, изучающий свойства коммутативных колец и связанных с ними объектов (модулей, идеалов, дивизоров и т. д.), в частности теорию полей. ](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_commutative_algebra <= nrel_using_constants:
+	{
+	concept_general_algebra;
+	concept_commutative_ring;
+	concept_field_theory
+	};;
+	
+//утверждения
+concept_commutative_algebra <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(коммутативное кольцо; коммутативная алгебра; кольцо многочлена; кольцо целых алгебраических чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Наиболее яркие примеры коммутативных колец, изучаемых коммутативной алгеброй — кольца многочленов и кольца целых алгебраических чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(кольцо; коммутативное кольцо; некоммутативная алгебра; теория колец; теория представлений; банаховая алгебра)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Изучение колец, не обязательно являющихся коммутативными, известно как некоммутативная алгебра; она включает в себя теорию колец, теорию представлений и изучение банаховых алгебр.](* <- lang_ru;; *);;
+		*);;
+	*);;

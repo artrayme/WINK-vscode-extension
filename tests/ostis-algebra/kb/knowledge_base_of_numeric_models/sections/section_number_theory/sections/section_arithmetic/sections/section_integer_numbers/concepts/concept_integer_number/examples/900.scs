@@ -1,0 +1,6 @@
+nine_hundred=>nrel_main_idtf:
+[900](*<-lang_ru;;*);
+[900](*<-lang_en;;*);;
+
+concept_number -> nine_hundred;;
+set_of_number -> nine_hundred;;

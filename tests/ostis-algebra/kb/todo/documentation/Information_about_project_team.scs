@@ -1,0 +1,7 @@
+information_about_project_team => nrel_main_idtf: [Раздел. Сведенья о команде проекта] (* <- lang_ru;; *);;
+
+information_about_project_team <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://information_about_project_team.pdf" (* <- lang_ru;; *);;
+	*);;

@@ -1,0 +1,57 @@
+sc_node_not_relation -> nrel_fixed_point;; 
+
+nrel_fixed_point => nrel_main_idtf:
+[неподвижная точка* ](*<-lang_ru;;*);
+[fixed point* ](*<-lang_en;;*);
+[қозғалмайтын нүктесі* ](*<-lang_kz;;*);;
+
+nrel_fixed_point => nrel_idtf:
+[fixpoint* ](*<-lang_en;;*);
+[invariant point* ](*<-lang_en;;*);;
+	
+//надмножество
+concept_point => nrel_inclusion: nrel_fixed_point;;
+
+//определения и пояснения
+nrel_fixed_point <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (неподвижная точка*)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Неподвижной точкой называется точка, которую заданная функция переводит в неё же, иными словами, решение уравнения f(x) = x.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+nrel_fixed_point <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неподвижная точка*, функция, аналитическая функция вещественной переменной)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Неподвижные точки есть не у всякой функции — например, функция вещественной переменной f(x) = x+1 неподвижных точек не имеет.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неподвижная точка*; график функции)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция имеет неподвижную точку, если её график пересекает график функциии y = x.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_fixed_point <- binary_relation;;
+nrel_fixed_point => nrel_first_domain: concept_function;;
+nrel_fixed_point => nrel_second_domain: concept_point;;

@@ -1,0 +1,26 @@
+ui_menu_file_for_vector_length <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_vector_length => nrel_main_idtf: 
+	[Найти длину (модуль) вектора по его координатам] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_vector_length => nrel_main_idtf: 
+	[Request of finding length of vector using coordinates of vector] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_vector_length => ui_nrel_command_template:
+	[*
+		question_vector_length _-> ._question_vector_length_instance
+			(*
+			_-> rrel_input_vector:: ui_arg_1;;
+			*);;
+		._question_vector_length_instance _<- question;;
+	*];;
+
+ui_menu_file_for_vector_length => ui_nrel_command_lang_template:
+	[Найти длину (модуль) вектора $ui_arg_1 по его координатам]
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_vector_length => ui_nrel_command_lang_template:
+	[Request of finding length of vector using coordinates of vector]
+	(* <- lang_en;; *);;

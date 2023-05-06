@@ -1,0 +1,135 @@
+sc_node_not_relation->concept_equivalent_to_the_inequality;;
+
+concept_equivalent_to_the_inequality=>nrel_main_idtf:
+[равносильные неравенства](*<-lang_ru;;*);
+[equivalent to the inequality](*<-lang_en;;*);;
+
+//синонимы
+concept_equivalent_to_the_inequality=>nrel_main_idtf:[равносильное неравенство](*<-lang_ru;;*);;
+
+//определение
+concept_equivalent_to_the_inequality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(равносильное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://equivalent_to_the_inequality_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (равносильное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://equivalent_to_the_inequality_2.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (равносильное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Два неравенства равносильны тогда и только тогда, когда каждое из них является следствием другого.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+
+concept_equivalent_to_the_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(область определения, знак, неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[ Если любое выражение, входящее в неравенство, заменить тождественно равным ему на области определения неравенства выражением, то получим неравенство, равносильное данному.](* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*, сложение,область определения)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[ Если к обеим частям неравенства прибавить выражение, имеющее смысл на области определения неравенства, то получим неравенство, равносильное данному.](* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*, умножить, разделить, положительное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если обе части неравенства умножить (разделить) на выражение, имеющее смысл и положительное на области определения неравенства, то получим неравенство, равносильное данному.](* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*, умножить, разделить, отрицательное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если обе части неравенства умножить (разделить) на выражение, имеющее смысл и отрицательное на области определения неравенства, и при этом поменять знак неравенства на противоположный, то получим неравенство, равносильное данному.](* <- lang_ru;; 	*);;
+*);;
+	*);;
+//используемые константы
+concept_equivalent_to_the_inequality<= nrel_using_constants:concept_number;concept_variable;;
+
+
+// конкретные задачи
+concept_equivalent_to_the_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Заменить на равносильное неравенство: 2х+3>6; 4x-7<5] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_equivalent_to_the_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Замена на равносильное неравенство]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_equivalent_to_the_inequality-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://equivalent_to_the_inequality_3.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

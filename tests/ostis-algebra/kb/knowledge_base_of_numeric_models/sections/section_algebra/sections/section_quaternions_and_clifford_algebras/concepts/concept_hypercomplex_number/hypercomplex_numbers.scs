@@ -1,0 +1,46 @@
+sc_node_not_relation -> concept_hypercomplex_number;;
+
+concept_hypercomplex_number =>nrel_main_idtf:
+[гиперкомплексное число](*<-lang_ru;;*);
+[hypercomple number](*<-lang_en;;*);;
+
+concept_real_number => nrel_inclusion: concept_hypercomplex_number;;
+
+concept_hypercomplex_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (гиперкомплексное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Гиперкомплексные числа — различные расширения вещественных чисел, подобные комплексным числам.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_hypercomplex_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (гиперкомплексное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Гиперкомплексные числа — это конечно-мерные алгебры над полем вещественных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_hypercomplex_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гиперкомплексное число; деление*; комплексное число; кватернион; число Кэли)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[По теореме Фробениуса единственные гиперкомплексные числа, для которых можно ввести деление, без делителей нуля, это: комплексные числа, кватернионы и числа Кэли (октавы).](* <- lang_ru;; *);;
+		*);;
+	*);;

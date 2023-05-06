@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_irrational_algebraic_expression;; 
+
+concept_irrational_algebraic_expression => nrel_main_idtf:
+[иррациональное алгебраическое выражение](*<-lang_ru;;*);
+[irrational algebraic expression](*<-lang_en;;*);;
+	
+//надмножество
+concept_algebraic_expession => nrel_inclusion: concept_irrational_algebraic_expression;;
+
+//определения и пояснения
+concept_irrational_algebraic_expression <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (иррациональное алгебраическое выражение)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Иррациональное алгебраическое выражение — алгебраическое выражение, которое содержит логарифм и/или возведение в нецелую степень чисел, не являющихся квадратными, и операндами которого могут быть ириррациональные числа.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_irrational_algebraic_expression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(результат'; иррациональное алгебраическое выражение; иррациональное число, рациональное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Результат иррационального алгебраического выражения может быть как иррациональным, так и рациональным числом.](* <- lang_ru;; *);;
+		*);;
+	*);;

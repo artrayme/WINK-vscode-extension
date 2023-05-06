@@ -1,0 +1,48 @@
+sc_node_norole_relation->nrel_partition_of_natural_number;;
+
+nrel_partition_of_natural_number => nrel_main_idtf:
+[разбиение натурального числа* ](*<-lang_ru;;*);
+[partition of positive integer* ](*<-lang_en;;*);
+[бүтін бөліну* ](*<-lang_kz;;*);;
+
+//определение
+nrel_partition_of_natural_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(разбиение натурального числа*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Разбиением натурального числа называется его представление в виде множества натуральных чисел, сумма которых равна исходному числу. Слагаемые, входящие в разбиение, называют частями](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_partition_of_natural_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(последовательность; число; разбиение натурального числа*; производящая функция*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://partition_statement.png"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; разбиение натурального числа*; композиция натурального числа*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Количество разбиений некоторого числа никогда не превосходит количества композиций этого числа.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_partition_of_natural_number <- binary_relation;;
+nrel_partition_of_natural_number => nrel_first_domain: concept_natural_number;;
+nrel_partition_of_natural_number => nrel_second_domain: set;;

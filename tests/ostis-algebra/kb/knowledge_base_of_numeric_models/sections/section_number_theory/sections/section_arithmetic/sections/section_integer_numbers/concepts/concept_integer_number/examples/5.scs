@@ -1,0 +1,6 @@
+five=>nrel_main_idtf:
+[5](*<-lang_ru;;*);
+[5](*<-lang_en;;*);;
+
+concept_number -> five;;
+set_of_number -> five;;

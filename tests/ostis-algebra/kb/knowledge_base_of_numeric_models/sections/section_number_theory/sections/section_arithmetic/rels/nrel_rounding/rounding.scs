@@ -1,0 +1,57 @@
+sc_node_norole_relation->nrel_rounding;;
+nrel_rounding=>nrel_main_idtf:	[округление* ](*<-lang_ru;;*);	[дөңгелектеу* ](*<-lang_kz;;*);		[rounding* ](*<-lang_en;;*);;
+
+nrel_rounding <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(округление*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Округление — математическая операция, позволяющая уменьшить количество знаков в числе за счёт замены числа его приближённым значением с определённой точностью.](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_rounding<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (округление*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Натуральные числа округляют до десятков, сотен, тысяч и т.д. 
+В зависимости от того, до какого разряда надо округлить число, мы заменяем нулями цифру в разрядах единиц, десятков и т.д.
+Если число округляется до десятков, то нулями заменяем цифру в разряде единицы.
+Если число округляется до сотен, то цифра ноль должна стоять и в разряде единиц, и в разряде десятков.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (округление*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Число, полученное при округлении, называют приближённым значением данного числа.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_rounding<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; цифра)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://rounding_1.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_rounding => nrel_first_domain:concept_number;;
+nrel_rounding => nrel_second_domain: concept_number;;

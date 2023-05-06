@@ -1,0 +1,636 @@
+agent_stationing
+=> nrel_main_idtf:
+	[агентная scp-программа нахождения количества размещений k по n] (* <- lang_ru;; *);
+	
+	[agent scp-program finding the number of stationing of k to n] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_stationing 
+	(*
+	-> rrel_params: .agent_stationing_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_stationing_operator_set 
+		(*
+		-> rrel_init: .agent_stationing_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_stationing_operator2;;
+			*);;
+
+		-> .agent_stationing_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_stationing;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_stationing_operator_for_param1;;
+		  	=> nrel_else: .agent_stationing_operator_return;;
+			*);;
+                 
+                
+                -> .agent_stationing_operator_for_param1
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_1;;
+
+			=> nrel_goto: .agent_stationing_operator_for_param1_1;;
+			
+			*);;
+                     
+                  ->.agent_stationing_operator_for_param1_1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _k;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_stationing_operator_for_param2;;
+			*);;  
+                
+                    -> .agent_stationing_operator_for_param2
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc21;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_2;;
+
+			=> nrel_goto: .agent_stationing_operator_for_param2_1;;
+			
+			*);;
+                     
+                  ->.agent_stationing_operator_for_param2_1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _n;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_stationing_operator_gen_answer;;
+			*);;  
+                    
+		-> .agent_stationing_operator_gen_answer 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_stationing_operator_check_1;;
+		 	*);;
+		-> .agent_stationing_operator_check_1
+			(*
+			<-ifGr;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _n;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+                        =>nrel_then:  .agent_stationing_operator_check_2;;
+			=>nrel_else: .agent_stationing_operator_gen_answer_for_no_check_1;;
+                        *);;
+
+		-> .agent_stationing_operator_check_2
+			(*
+			<-ifGr;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _k;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+                        =>nrel_then:  .agent_stationing_operator_check_3;;
+			=>nrel_else: .agent_stationing_operator_gen_answer_for_no_check_1;;
+                        *);;
+
+		-> .agent_stationing_operator_check_3
+			(*
+			<-ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _n;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _k;;
+                        =>nrel_then:  .agent_stationing_operator_algoritm_1;;
+			=>nrel_else: .agent_stationing_operator_check_4;;
+                        *);;
+
+		-> .agent_stationing_operator_check_4
+			(*
+			<-ifGr;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _n;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _k;;
+                        =>nrel_then:  .agent_stationing_operator_algoritm_1;;
+			=>nrel_else: .agent_stationing_operator_gen_answer_for_no_check_2;;
+                        *);;
+                 
+                 -> .agent_stationing_operator_algoritm_1
+			(*
+                       <- call;;
+                       -> rrel_1: rrel_fixed: rrel_scp_const: proc_factorial;;
+		       -> rrel_2: rrel_fixed: rrel_scp_const: .agent_stationing_operator_algoritm1_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _n;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _factorialN;;
+                              	*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_stationing_operator_algoritm_2;;  
+			*);;		
+		
+		-> .agent_stationing_operator_algoritm_2
+			(*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+		
+			=> nrel_goto: .agent_stationing_operator_algoritm_3;;			
+			*);;
+
+
+		
+
+		-> .agent_stationing_operator_algoritm_3
+                       (*
+                        <-contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _razn;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _n;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _k;;
+                        =>nrel_goto:  .agent_stationing_operator_algoritm_4;;
+                        *);;
+
+		-> .agent_stationing_operator_algoritm_4
+			(*
+                       <- call;;
+                       -> rrel_1: rrel_fixed: rrel_scp_const: proc_factorial;;
+		       -> rrel_2: rrel_fixed: rrel_scp_const: .agent_stationing_operator_algoritm3_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _razn;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _factorialRazn;;
+                              	*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_stationing_operator_algoritm_5;;  
+			*);;		
+		
+		-> .agent_stationing_operator_algoritm_5
+			(*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+		
+			=> nrel_goto: .agent_stationing_operator_algoritm_6;;			
+			*);;
+
+		
+
+		-> .agent_stationing_operator_algoritm_6
+                       (*
+                        <-contDiv;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _result;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _factorialN;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _factorialRazn;;
+                        =>nrel_goto:  .agent_stationing_operator_gen_answer_1;;
+                        *);;
+
+		->.agent_stationing_operator_gen_answer_1
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: ..stationing;;
+
+				=>nrel_goto: .agent_stationing_operator_gen_answer_2;;
+                        *);;
+
+		->.agent_stationing_operator_gen_answer_2
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..stationing;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: C;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_resulting_set;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_3;;
+                        *);;
+
+		 	->.agent_stationing_operator_gen_answer_3
+                        (*
+                          <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_4;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_4
+                        (*
+                          <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_5;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_5
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: C;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_6;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_check_last_result_1
+                        (*
+                         <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: C;;
+                          -> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_power;;
+ 
+                        =>nrel_then: .agent_stationing_operator_gen_answer_check_last_result_2;;
+			=>nrel_else: .agent_stationing_operator_gen_answer_6;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_check_last_result_2
+                        (*
+			 <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last;;
+
+			 =>nrel_goto: .agent_stationing_operator_gen_answer_6;;
+			*);;
+
+			->.agent_stationing_operator_gen_answer_6
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: C;;
+                          -> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _result;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_power;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_7;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_7
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: C;;
+                          -> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _result;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_power;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_8;;
+                        *);;
+                   
+                      ->.agent_stationing_operator_gen_answer_8
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_power;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_9;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_9
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_resulting_set;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_10;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_10
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_resulting_set;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_11;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_11
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: consept_set;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc123;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: C;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_12;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_12
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc12;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: consept_set;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_13;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_13
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc123;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_14;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_14
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: nrel_stationing;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc124;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..stationing;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_15;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_15
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_stationing;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_16;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_16
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3:rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc124;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_17;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_check_last_result_3
+			(*
+                         <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..stationing;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last_param1;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_number_of_elements_in_the_group;;
+ 
+                        =>nrel_then: .agent_stationing_operator_gen_answer_check_last_result_4;;
+			=>nrel_else: .agent_stationing_operator_gen_answer_17;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_check_last_result_4
+                        (*
+			 <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last_param1;;
+
+			 =>nrel_goto: .agent_stationing_operator_gen_answer_17;;
+			*);;
+
+			->.agent_stationing_operator_gen_answer_17
+			(*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..stationing;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _param1;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_number_of_elements_in_the_group;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_18;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_18
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..stationing;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_number_of_elements_in_the_group;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_19;;
+                        *);;
+
+
+			->.agent_stationing_operator_gen_answer_19
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_number_of_elements_in_the_group;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_20;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_20
+			(*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..stationing;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc125;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: n;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc126;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_original_set;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_21;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_21
+                        (*
+                          <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc125;;
+ 
+
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_22;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_22
+                        (*
+                          <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc126;;
+ 
+
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_23;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_23
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: n;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_24;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_24
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_original_set;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_25;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_25
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: consept_set;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc127;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node:  n;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_26;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_26
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node:  _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc127;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_27;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_check_last_result_5
+			(*
+                         <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: n;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last_param2;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_power;;
+ 
+                        =>nrel_then: .agent_stationing_operator_gen_answer_check_last_result_6;;
+			=>nrel_else: .agent_stationing_operator_gen_answer_27;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_check_last_result_6
+                        (*
+			 <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last_param2;;
+
+			 =>nrel_goto: .agent_stationing_operator_gen_answer_27;;
+			*);;
+
+			->.agent_stationing_operator_gen_answer_27
+			(*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: n;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var:  _param2;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_power;;
+ 
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_28;;
+                        *);;
+
+			->.agent_stationing_operator_gen_answer_28
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: n;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc1;;
+                          -> rrel_3: rrel_assign: rrel_scp_var:  _param2;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_power;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+                        =>nrel_goto: .agent_stationing_operator_gen_answer_29;;
+                        *);;
+                             
+             	 -> .agent_stationing_operator_gen_answer_for_no_check_1
+			 (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: [Введённые n и k должны быть положительными числами.];;
+              		 =>nrel_goto: .agent_stationing_operator_gen_answer_29;;
+                        *);;
+			
+		-> .agent_stationing_operator_gen_answer_for_no_check_2
+			 (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: [Должно соблюдаться условие n>k или n=k];;
+              		 =>nrel_goto: .agent_stationing_operator_gen_answer_29;;
+                        *);;
+
+
+
+		-> .agent_stationing_operator_gen_answer_29 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc6;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_stationing_operator_return;;
+			*);;     
+					
+		-> .agent_stationing_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

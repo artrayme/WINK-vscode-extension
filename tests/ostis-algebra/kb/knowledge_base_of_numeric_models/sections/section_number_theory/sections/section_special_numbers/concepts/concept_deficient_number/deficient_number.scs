@@ -1,0 +1,51 @@
+sc_node_not_relation -> concept_deficient_number;; 
+
+concept_deficient_number => nrel_main_idtf:
+[недостаточное число](*<-lang_ru;;*);
+[deficient number](*<-lang_en;;*);;
+
+//синонимы
+concept_deficient_number => nrel_idtf:[deficient](*<-lang_en;;*);;
+	
+//надмножество
+concept_natural_number => nrel_inclusion: concept_deficient_number;;
+
+//определения и пояснения
+concept_deficient_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (недостаточное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Недостаточное число — натуральное число n, сумма положительных собственных делителей (отличных от n) которого меньше n.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_deficient_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(бесконечность; четное число; нечетное число; недостаточное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Существет бесконечное количество чётных и нечётных недостаточных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(недостаточное число; простое число; полупростое число; собственный делитель*; соверщенное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[К недостаточным числам относятся все простые числа, полупростые числа (кроме 6), собственные делители недостаточных или совершенных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;

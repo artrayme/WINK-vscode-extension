@@ -1,0 +1,65 @@
+sc_node_norole_relation -> nrel_vector_composition;;
+
+nrel_vector_composition=>nrel_main_idtf:
+[векторное произведение* ] (*<-lang_ru;;*);
+[vector composition* ] (*<-lang_en;;*);;
+
+nrel_vector_composition <- ternary_relation;;
+
+nrel_vector_composition => nrel_first_domain: concept_vector;;
+
+nrel_vector_composition => nrel_second_domain: concept_vector;;
+
+nrel_vector_composition => nrel_third_domain: concept_vector;;
+
+nrel_vector_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(векторное произведение*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Векторное произведение — это псевдовектор, перпендикулярный плоскости, построенной по двум сомножителям, являющийся результатом бинарной операции «векторное умножение» над векторами в трёхмерном евклидовом пространстве.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_vector_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; нуль; коленеарные векторы; вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Векторное произведение axb равно нулю, если векторы a и b коллинеарны или какой-либо из перемножаемых векторов является нулевым.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_vector_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; нуль; коленеарные векторы; вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При перестановке местами векторов сомножителей векторное произведение меняет знак на противоположный (ахb=-bxa).](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_vector_composition <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(модуль*; равенство*; множитель')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Модуль векторного произведения численно равен площади параллелограмма, построенного на множителях.](* <- lang_ru;; *);;
+		*);;
+	*);;

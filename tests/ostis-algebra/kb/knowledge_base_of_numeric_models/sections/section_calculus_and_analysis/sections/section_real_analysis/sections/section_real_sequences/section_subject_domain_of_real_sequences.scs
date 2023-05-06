@@ -1,0 +1,36 @@
+sc_node_struct -> section_subject_domain_of_real_sequences;;
+
+section_subject_domain_of_real_sequences => nrel_main_idtf:
+    [Раздел. Предметная область действительных последовательностей] (* <- lang_ru;; *);
+    [Section. Subject domain of real sequences] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_real_sequences <- nrel_system_identifier;;
+  
+section_subject_domain_of_real_sequences -> rrel_key_sc_element:
+    subject_domain_of_real_sequences;
+    concept_converging_numerical_sequence;
+    concept_increasing_sequence;
+    concept_decreasing_sequence;
+    concept_infinitely_large_sequence;
+    concept_infinitesimal_sequence;
+    concept_divergent_numerical_sequence;
+    nrel_limit_of_the_sequence;;
+
+section_subject_domain_of_real_sequences = [*
+    subject_domain_of_real_sequences => nrel_main_idtf:
+        [Предметная область действительных последовательностей] (* <- lang_ru;; *);
+        [Subject domain of real sequences] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_real_sequences -> rrel_not_maximum_studied_object_class:
+        concept_converging_numerical_sequence;
+        concept_increasing_sequence;
+        concept_decreasing_sequence;
+        concept_infinitely_large_sequence;
+        concept_infinitesimal_sequence;
+        concept_divergent_numerical_sequence;;
+
+    subject_domain_of_real_sequences -> rrel_explored_relation:
+        nrel_limit_of_the_sequence;;
+*];;

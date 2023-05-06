@@ -1,0 +1,78 @@
+sc_node_norole_relation->nrel_proportion;; 
+
+nrel_proportion =>nrel_main_idtf:
+[пропорция* ](*<-lang_ru;;*);
+[proportion* ](*<-lang_en;;*);;
+
+nrel_proportion=> nrel_idtf:[два равных отношения* ](*<-lang_ru;;*);;
+
+//используемые константы
+nrel_proportion<= nrel_using_constants: nrel_division;;
+
+//Домены
+nrel_proportion <= nrel_first_domain:concept_pair_of_numbers;;
+nrel_proportion <= nrel_second_domain:concept_pair_of_numbers;;
+
+//определение
+nrel_proportion <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(пропорция*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Пропорция - отношение, которое образуют два равных отношения.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пояснение
+nrel_proportion <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(пропорция*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Пусть a, b, c, d - действительные числа, отличные от 0, и пусть имеет место равенство a:b=c:d. Это равенство называют пропорцией, числа a и d - крайними членами, b и c - средними членами пропорции.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// утверждения
+nrel_proportion <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(пропорция*; произведение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема. Произведение крайних членов пропорции равно произведению ее средних членов.]	(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(проворция*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Крайние члены пропорции можно поменять местами, т.е. если a:b=c:d, то d:b=c:a.]	(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(проворция*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Средние члены пропорции можно поменять местами, т.е. если a:b=c:d, то a:c=b:d.]	(* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,66 @@
+sc_node_not_relation->concept_integer_number;; 
+
+concept_integer_number=>nrel_main_idtf:
+[целое число](*<-lang_ru;;*);
+[бүтін сан](*<-lang_kz;;*);
+[integer number](*<-lang_en;;*);;
+
+// синонимы
+concept_integer_number=> nrel_idtf:[Целые числа](*<-lang_ru;;*);;
+concept_integer_number=> nrel_idtf:[Множество целых чисел](*<-lang_ru;;*);;
+concept_integer_number=> nrel_idtf:[Кольцо целых чисел](*<-lang_ru;;*);;
+
+//иерархия
+concept_integer_number <= nrel_inclusion:  concept_rational_number;;
+
+//разбиение
+concept_integer_number <= nrel_subdividing:
+	...
+	(* 
+	-> concept_positive_integer;;
+	-> concept_negative_integer;;
+	-> 0;;
+	*);;
+//определение
+concept_integer_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(целое число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество целых чисел – множество, состоящее из всех натуральных чисел, противоположных им отрицательных чисел и числа нуль. Обозначается символом Z:  Z={…, -3, -2, -1, 0, 1, 2, 3, …}.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(целое число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Целое число называется положительным, если оно больше нуля, отрицательным, если меньше нуля. Нуль не является положительным или отрицательным.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(целое число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Отрицательное число – число –n, противоположное положительному числу n. Отрицательное число отличается от противоположного ему положительного числа знаком «+».](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_integer_number <= nrel_using_constants: concept_natural_number;null;;
+
+//пример
+concept_integer_number -> rrel_example : minus_two; one; eight; minus_five;;

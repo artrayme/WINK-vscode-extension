@@ -1,0 +1,50 @@
+sc_node_norole_relation->nrel_equality;;
+
+nrel_equality=>nrel_main_idtf:
+[равенство* ](*<-lang_ru;;*);
+[equality* ](*<-lang_en;;*);
+[теңдік* ](*<-lang_kz;;*);;
+
+nrel_equality => nrel_idtf:[равно* ](*<-lang_ru;;*);;
+
+nrel_equality => nrel_mathem_idtf: [=](*<-lang_en;;*);;
+
+//определение
+nrel_equality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(равенство*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Равенство - отношение взаимной заменяемости объектов, которые именно в силу этой заменяемости и считаются равными (а = b).](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_equality <= nrel_using_constants:
+	{
+	concept_equivalence_relation;
+	concept_binary_relation
+	};;
+	
+//утверждения
+nrel_equality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; отношение рефлексивности)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Равенство обладает свойством рефлексивности.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	
+nrel_equality <- binary_relation;;
+nrel_equality <= nrel_first_domain: concept_number;;
+nrel_equality <= nrel_second_domain: concept_number;;

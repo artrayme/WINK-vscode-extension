@@ -1,0 +1,74 @@
+sc_node_norole_relation -> nrel_addition;;
+nrel_addition => nrel_main_idtf:	[сложение* ](* <- lang_ru;; *);  [addition* ](* <- lang_en;; *);	[к,осу* ](* <- lang_kz;;*);;
+nrel_addition => nrel_mathem_idtf: [+] (*<-lang_en;;*);;
+nrel_addition => nrel_idtf:	[суммирование* ](* <- lang_ru;; *);	[прибавление* ](* <- lang_ru;; *);;
+
+nrel_addition <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(сложение*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Cложение - одна из основных операций в разных разделах математики, позволяющая 
+объединить два объекта (в простейшем случае — два числа). ](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+nrel_addition <- rrel_key_sc_element:
+ 	...
+	(*
+	=> nrel_main_idtf:[Пояснение.(сложение*)](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Более строго сложение —  операция, определённая на некотором множестве, элементы которого мы будем называть числами, при которой 
+двум числовым аргументам (слагаемым) a и b сопоставляется итог (сумма), обычно обозначаемая a+b.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_addition <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(слагаемое'; сумма'; число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[От перемены мест слагаемых сумма двух чисел не меняется : а+b=b+a.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; сумма'; слагаемое')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Чтобы прибавить к данному числу данную сумму двух чисел, можно к этому числу прибавить первое слагаемое данной суммы и к полученному 
+результату прибавить второе слагаемое данной суммы: a+(b+c) = (a+b)+c.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; сумма')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[сумма двух чисел, одно из которых равно нулю, равна второму числу : а+0 = а.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_addition <- ternary_relation;;
+nrel_addition <= nrel_first_domain: concept_number;;
+nrel_addition <= nrel_second_domain: concept_number;;
+nrel_addition <= nrel_third_domain: concept_number;;

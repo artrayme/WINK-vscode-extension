@@ -1,0 +1,82 @@
+sc_node_not_relation -> concept_square_number;; 
+
+concept_square_number => nrel_main_idtf:
+[квадратное число](*<-lang_ru;;*);
+[square number](*<-lang_en;;*);
+[шаршы сан](*<-lang_kz;;*);;
+	
+//надмножество
+concept_integer => nrel_inclusion: concept_square_number;;
+
+//определения и пояснения
+concept_square_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (квадратное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Квадратное число — число, являющееся квадратом некоторого целого числа.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (квадратное число)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Квадратным является целое число, квадратный корень которого тоже целый.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_square_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(квадратное число; квадратный корень*; сумма'; нечетное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадратное число, корень которого равен n, можно представиь в виде суммы n первых нечётных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(квадратное число; арифметическая прогрессия)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Четыре различных квадратных числа не могут образовывать арифметическую прогрессию.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; сумма'; квадратное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Каждое натуральное число может быть представлено как сумма четырёх квадратных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма'; квадратное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://square_number_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

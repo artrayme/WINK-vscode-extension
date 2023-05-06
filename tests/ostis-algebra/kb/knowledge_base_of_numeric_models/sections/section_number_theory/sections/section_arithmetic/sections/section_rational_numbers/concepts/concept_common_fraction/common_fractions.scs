@@ -1,0 +1,73 @@
+sc_node_not_relation->concept_common_fraction;;
+
+concept_common_fraction=>nrel_main_idtf:
+[обыкновенная дробь](*<-lang_ru;;*);
+[ортақ фракциясын](*<-lang_kz;;*);
+[common fraction](*<-lang_en;;*);;
+
+//определение
+concept_common_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(обыкновенная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Обыкновенной дробью называется запись вида m/n, где m — целое число, а n — натуральное. m называется числителем дроби, а n — знаменателем дроби.](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_common_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(обыкновенная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дроби используют для записи чисел, которые могут быть записаны только как отношения целых чисел. Поэтому дробную черту следует отождествлять со знаком деления.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Пояснение(обыкновенная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Отрицательную дробь, принято записывать со знаком "минус" перед дробной чертой. Например, пишут - (3/4) вместо (-3)/4. При этом следует помнить, что "минус" всё равно относится к числителю, а не к знаменателю.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//утверждения
+concept_common_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(обыкновенная дробь, число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Значением обыкновенной дроби m/n называется число a, такое что an = m.] (*<-lang_ru;;*);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(неправильная дробь; 1-единица; модуль )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Обыкновенная дробь m/n называется положительной, если m — натуральное число. В этом случае значение дроби — также положительно.
+Если m — целое отрицательное число, то дробь называется отрицательной.
+Если m = 0, то говорят, что дробь равна 0 и значение её также равно 0.] (*<-lang_ru;;*);;
+		*);;
+	*);;
+//используемые константы
+concept_common_fraction <= nrel_using_constants: concept_number;rrel_denominator;rrel_numerator;;

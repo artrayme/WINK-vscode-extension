@@ -1,0 +1,57 @@
+sc_node_norole_relation->nrel_division_of_the_matrix_by_the_number;;
+
+nrel_division_of_the_matrix_by_the_number=>nrel_main_idtf:
+[деление матрицы на число* ](*<-lang_ru;;*);
+[division of the matrix by the number* ](*<-lang_en;;*);
+[нөмірі бойынша матрицаның бөлу* ](*<-lang_kz;;*);;
+
+
+//надмножество 
+concept_arithmetic_operation => nrel_division_of_the_matrix_by_the_number;;
+
+//определение
+nrel_division_of_the_matrix_by_the_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(деление матрицы на число*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Частным матрицы и числа называется матрица того же порядка, полученная из исходной делением на заданное число всех ее элементов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_division_of_the_matrix_by_the_number <= nrel_using_constants:
+	{
+	concept_matrix;
+	concept_number;
+	nrel_multiplication
+	};;
+	
+//утверждения
+	
+nrel_division_of_the_matrix_by_the_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица; число; деление*;линейная операция; нелинейная операция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Деление матрицы на число не является ни линейной, ни нелинейной операцией.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_division_of_the_matrix_by_the_number <- ternary_relation;;
+nrel_division_of_the_matrix_by_the_number <= nrel_first_domain:  concept_matrix;;
+nrel_division_of_the_matrix_by_the_number <= nrel_second_domain: concept_number;;
+nrel_division_of_the_matrix_by_the_number <= nrel_third_domain: concept_matrix;;
+
+nrel_division_of_the_matrix_by_the_number -> rrel_example :
+		"file://division_of_the_matrix_by_the_number_example.png";;
+

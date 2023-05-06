@@ -1,0 +1,53 @@
+sc_node_not_relation -> concept_4_vector;; 
+concept_4_vector => nrel_main_idtf:	[4-вектор](*<-lang_ru;;*);	[4-vector](*<-lang_en;;*);;
+concept_4_vector => nrel_idtf:[четырёхвектор](*<-lang_ru;;*);;
+
+concept_vector => nrel_inclusion: concept_4_vector;;
+
+concept_4_vector <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (4-вектор)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[4-вектор — вектор в четырёхмерном пространстве Минковского.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (4-вектор)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Координаты 4-вектора при переносе или повороте системы отсчёта преобразуются как соответствующие им координаты в пространстве Минковского.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+concept_4_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(4-вектор; компонента вектора*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[ В 4-векторе одна временная компонента и три пространственных.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(4-вектор; скалярное произведение*; метрика Лоренца)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Скалярные произведения 4-векторов вычисляются с использованием метрики Лоренца.](* <- lang_ru;; *);;
+		*);;
+	*);;

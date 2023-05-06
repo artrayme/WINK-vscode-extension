@@ -1,0 +1,99 @@
+sc_node_not_relation->concept_coordinates_of_the_vector;;
+
+concept_coordinates_of_the_vector=>nrel_main_idtf:
+[компонента вектора](*<-lang_ru;;*);
+[coordinate of the vector](*<-lang_en;;*);;
+
+concept_coordinates_of_the_vector=>nrel_idtf:
+[координата вектора](*<-lang_ru;;*);;
+
+concept_coordinates_of_the_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(компонента вектора)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Координаты вектора ― коэффициенты единственно возможной линейной комбинации базисных векторов в выбранной системе координат, равной данному вектору.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_coordinates_of_the_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор, система координат; координаты; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Равные векторы в единой системе координат имеют равные координаты.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_coordinates_of_the_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(колленеарные векторы; координаты; пропорция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Координаты коллинеарных векторов пропорциональны.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_coordinates_of_the_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(длина вектора*; сумма'; координаты)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадрат длины вектора равен сумме квадратов его координат.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_coordinates_of_the_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(умножение*; вектор; действительное число; число; координаты)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При умножении вектора на действительное число каждая его координата умножается на это число.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_coordinates_of_the_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение*; вектор; координаты)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При сложении векторов соответствующие координаты векторов складываются.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_coordinates_of_the_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(скалярное произведение*; вектор; сумма'; координаты)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Скалярное произведение двух векторов равно сумме произведений их соответствующих координат.](* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,33 @@
+sc_node_not_relation -> concept_faktorion;; 
+
+concept_faktorion => nrel_main_idtf: [факторион](*<-lang_ru;;*); [faktorion](*<-lang_en;;*);;
+
+concept_faktorion <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(факторион)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Факторион — натуральное число, которое равно сумме факториалов своих цифр.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_faktorion <= nrel_inclusion: concept_natural_number;;
+
+concept_faktorion -> rrel_example: one; two; one_hundred_and_forty_five; forty_thousand_five_hundred_eighty_five;;
+
+concept_faktorion <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(факторион)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Существует ровно 4 числа факториона.](* <- lang_ru;; *);;
+		*);;
+	*);;

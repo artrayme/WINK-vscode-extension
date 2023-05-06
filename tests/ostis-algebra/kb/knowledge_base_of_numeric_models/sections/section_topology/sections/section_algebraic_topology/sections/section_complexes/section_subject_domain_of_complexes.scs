@@ -1,0 +1,22 @@
+sc_node_struct -> section_subject_domain_of_complexes;;
+
+section_subject_domain_of_complexes => nrel_main_idtf:
+    [Раздел. Предметная область комплексов] (* <- lang_ru;; *);
+    [Section. Subject domain of complexes] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_complexes <- nrel_system_identifier;;
+
+section_subject_domain_of_complexes -> rrel_key_sc_element:
+    subject_domain_of_complexes;
+    concept_complexes;;
+
+section_subject_domain_of_complexes = [*
+    subject_domain_of_complexes => nrel_main_idtf:
+        [Предметная область комплексов] (* <- lang_ru;; *);
+        [Subject domain of complexes] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_complexes -> rrel_maximum_studied_object_class:
+        concept_complex;;
+*];;

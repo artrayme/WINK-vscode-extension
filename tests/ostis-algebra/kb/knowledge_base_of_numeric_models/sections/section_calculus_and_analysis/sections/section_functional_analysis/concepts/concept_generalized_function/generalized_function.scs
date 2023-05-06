@@ -1,0 +1,80 @@
+sc_node_not_relation -> concept_generalized_function;;
+
+concept_generalized_function => nrel_main_idtf:
+[обобщенная функция](*<-lang_ru;;*);
+[generalized function](*<-lang_en;;*);
+[жалпылама функциясы](*<-lang_kz;;*);;
+
+//синонимы
+concept_generalized_function => nrel_idtf:
+[распределение](*<-lang_ru;;*);;
+
+//надмножество
+concept_function => nrel_inclusion: concept_generalized_function;;
+
+//определение и пояснения
+concept_generalized_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (обобщенная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Обобщённая фу́нкция — математическое понятие, обобщающее классическое понятие функции.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_generalized_function <= nrel_using_constants:
+	{
+	concept_function
+	};;	
+	
+//утверждения
+concept_generalized_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(обобщенная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Понятие обобщённой функции даёт возможность выразить в математически корректной форме такие идеализированные понятия, как плотность материальной точки, точечного заряда, точечного диполя, (пространственную) плотность простого или двойного слоя, интенсивность мгновенного источника и т.д.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(локально суммируемая функция; обобщенная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Обобщённые функции, определяемые локально суммируемыми функциями f(x), называются регулярными; остальные обобщённые функции называются сингулярными.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(монжество точек; обобщенная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Множество точек, ни в какой окрестности которых обобщённая функция не обращается в ноль, называется носителем обобщённой функции f и обозначается supp f.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(обобщенная функция; сумма'; дробь)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Любая обобщенная функция может быть представлена в виде суммы простейших дробей.](*<-lang_ru;;*);;
+		*);;
+	*);;

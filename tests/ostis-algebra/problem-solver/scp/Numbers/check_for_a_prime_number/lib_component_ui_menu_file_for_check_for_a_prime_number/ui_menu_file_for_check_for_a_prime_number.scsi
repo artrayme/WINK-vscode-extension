@@ -1,0 +1,28 @@
+ui_menu_file_for_check_for_a_prime_number <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_check_for_a_prime_number => nrel_main_idtf: 
+	[Проверить принадлежность числа к множеству простых/составных чисел] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_check_for_a_prime_number => nrel_main_idtf: 
+	[Request of check for a prime number] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_check_for_a_prime_number => ui_nrel_command_template:
+	[*
+		question_check_for_a_prime_number _-> ._question_check_for_a_prime_number_instance
+			(*
+			_-> ui_arg_1;;
+
+			*);;
+		._question_check_for_a_prime_number_instance _<- question;;
+	*];;
+
+ui_menu_file_for_check_for_a_prime_number => ui_nrel_command_lang_template: 
+	[Проверить принадлежность числа $ui_arg_1 к множеству простых/составных чисел] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_check_for_a_prime_number => ui_nrel_command_lang_template: 
+	[Request check for a prime number: $ui_arg_1  ] 
+	(* <- lang_en;; *);;
+

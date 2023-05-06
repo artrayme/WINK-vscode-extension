@@ -1,0 +1,31 @@
+sc_node_not_relation -> concept_left_handed_vectors;;
+
+concept_left_handed_vectors=>nrel_main_idtf:
+[левая тройка векторов] (*<-lang_ru;;*);
+[left-handed vectors] (*<-lang_en;;*);;
+
+concept_left_handed_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(левая тройка векторов)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тройка векторов a, b и c называется левой, если поворот от вектора a к вектору b , видимый с конца третьего вектора c, осуществляется по ходу часовой стрелки.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_left_handed_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; ориентированный вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Все левые тройки векторов называются одинаково ориентированными.](* <- lang_ru;; *);;
+		*);;
+	*);;

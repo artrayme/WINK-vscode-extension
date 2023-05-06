@@ -1,0 +1,5 @@
+sc_node_not_relation -> concept_sextic_function;; 
+
+concept_sextic_function => nrel_main_idtf:
+[функция полинома 6-ой степени](*<-lang_ru;;*);
+[sextic function](*<-lang_en;;*);;

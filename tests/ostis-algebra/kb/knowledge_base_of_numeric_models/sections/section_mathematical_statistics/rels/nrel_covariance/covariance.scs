@@ -1,0 +1,82 @@
+sc_node_norole_relation ->  nrel_covariance;;
+
+nrel_covariance => nrel_main_idtf:
+[ковариация*](*<-lang_ru;;*);
+[covariance*](*<-lang_en;;*);;
+
+
+nrel_covariance <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(ковариация* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Ковариа́ция — это  мера линейной зависимости двух случайных величин. ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ... 
+	(*
+	=> nrel_main_idtf: [Опр.(ковариация* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://C.png";;
+		*);;
+	*);
+    ...
+    (*
+	=> nrel_main_idtf: [Утв.(ковариация*;выборка  )]  (* <- lang_ru;; *);;
+	<-sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+            [Если элементы двух выборок X,Y не зависимы, то их ковариация равна нулю, cov(X,Y)=0 ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+    (*
+	=> nrel_main_idtf: [Утв.(ковариация*;величина  )]  (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+            [Из ковариации равной нулю не слудует зависимость двух величин ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+    (*
+    => nrel_main_idtf: [Утв.(ковариация* )]  (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+            [Ковариация симметрична: cov(X,Y)=cov(Y,X) ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+    (*
+     => nrel_main_idtf: [Утв.(ковариация*;дисперсия* )]  (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+            [Ковариация выборки самой с собой равна дисперсии cov(X,X)=D(X) ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+
+
+nrel_covariance <- quasybinary_relation;;
+nrel_covariance => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_covariance => nrel_first_domain: concept_sample;;
+nrel_covariance => nrel_second_domain: concept_number;;

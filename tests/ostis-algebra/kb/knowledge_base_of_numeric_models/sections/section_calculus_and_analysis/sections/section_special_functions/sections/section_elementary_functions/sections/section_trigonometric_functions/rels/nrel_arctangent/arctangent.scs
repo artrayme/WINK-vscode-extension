@@ -1,0 +1,73 @@
+sc_node_norole_relation->nrel_arctangent;;
+
+nrel_arctangent=>nrel_main_idtf:
+[арктангенс* ](*<-lang_ru;;*);
+[arctangent* ](*<-lang_en;;*);
+[арктангенс* ](*<-lang_kz;;*);;
+
+nrel_arctangent=> nrel_idtf:[atan* ](*<-lang_en;;*);;
+nrel_arctangent=> nrel_idtf:[arctg* ](*<-lang_en;;*);;
+
+//определение
+nrel_arctangent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(арктангенс*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арктангенсом называется функция обратная тригонометрической функции тангенса.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_arctangent <= nrel_using_constants:
+	{
+	concept_trigonometric_function;
+	concept_function;
+	nrel_tangent
+	};;
+	
+//иерархия
+concept_trigonometric_function => nrel_inclusion: nrel_arctangent;;
+	
+nrel_arctangent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арктангенс*;возрастающая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арктангенс является строго возрастающей функцией.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арктангенс*;нечетная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арктангенс является нечетной функцией.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арктангенс*;область значения*; числовой промежуток; число ПИ)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью значения арктангенса является числовой промежуток от -П/2 до П/2.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_arctangent <- binary_relation;;
+nrel_arctangent <= nrel_first_domain: concept_number;;
+nrel_arctangent <= nrel_second_domain: nrel_angle_measure;;

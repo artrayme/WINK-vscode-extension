@@ -1,0 +1,51 @@
+sc_node_not_relation -> concept_periodic_function;;
+concept_periodic_function => nrel_main_idtf :
+[периодическая функция] (* <- lang_ru;; *);
+[periodic function] (* <- lang_en;; *);; 
+
+//используемые константы
+concept_periodic_function <= nrel_using_constants: nrel_period;;
+
+//определение
+concept_periodic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(периодическая функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Периодическая функция ― функция, повторяющая свои значения через какой-то период, т.е. при добавлении к аргументу фиксированного числа (периода).](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://periodic_function1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+concept_periodic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(период; функция; рациональное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если отношение периодов двух функций f(x) и g(x) является рациональным числом, то сумма и произведение этих функций также будут периодическими функциями.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(период; функция; непрерывная функция; иррациональное число; непериодическая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если же отношение периодов всюду определенных и непрерывных функций f и g будет иррациональным числом, то функции f+g и f*g уже будут непериодическими функциями](* <- lang_ru;; 	*);;
+		*);;
+	*);;

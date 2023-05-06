@@ -1,0 +1,7 @@
+sc_text_of_agent_factorization
+-> rrel_key_sc_element:
+	agent_factorization;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_factorization = [*^"file://agent_factorization.scsi"*];;
+

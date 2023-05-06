@@ -1,0 +1,54 @@
+sc_node_not_relation -> concept_elementary_function;;
+
+concept_elementary_function=>nrel_main_idtf:
+[elementary function](*<-lang_en;;*);
+[элементарная функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_elementary_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(элементарная функция)](*<-lang_ru;;*);;
+   <-sc_explanation;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Элементарную функция - функция,которую можно задать формулой, то есть набором конечного числа символов, соответствующих используемым операциям. ](*<-lang_ru;;*);;
+*);;
+*);;
+
+//разбиение
+concept_elementary_function<=nrel_subdividing:
+...
+(*
+->concept_alhebraic_function;;
+->concept_transcendental_function;;
+*);;
+//надмножество
+concept_function=>nrel_inclusion : concept_elementary_function;;
+
+//утверждения
+concept_elementary_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(интеграл*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Интеграл элементарной функции не всегда сам является элементарной функцией. ](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(производная*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Производная элементарной функции всегда является элементарной функцией и может быть найдена за конечное число действий.](*<-lang_ru;;*);;
+*);;
+*);;

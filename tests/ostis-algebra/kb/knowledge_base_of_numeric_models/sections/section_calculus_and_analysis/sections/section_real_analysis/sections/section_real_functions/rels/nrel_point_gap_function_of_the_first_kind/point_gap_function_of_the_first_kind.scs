@@ -1,0 +1,70 @@
+sc_node_norole_relation->nrel_point_gap_function_of_the_first_kind;;
+nrel_point_gap_function_of_the_first_kind=> nrel_main_idtf :
+[точка разрыва функции первого рода* ] (* <- lang_ru;; *);
+[point gap function of the first kind* ] (* <- lang_en;; *);; 
+
+nrel_point_gap_function_of_the_first_kind<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(точка разрыва функции первого рода*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Говорят, что функция f (x) имеет точку разрыва первого рода при x = a, если в это точке существуют левосторонний предел  и правосторонний предел и если они конечны.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+nrel_point_gap_function_of_the_first_kind<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(предел функции*; односторонний предел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://point_gap_function_of_the_first_kind.html"  (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_point_gap_function_of_the_first_kind<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение точек разрыва функции первого рода.](* <- lang_ru;; *);;
+*);;
+*);;
+nrel_point_gap_function_of_the_first_kind<= nrel_using_constants:concept_function;nrel_point_gap_function ;;
+
+// конкретные задачи
+nrel_point_gap_function_of_the_first_kind<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Найти точки разрыва первого рода функции f(x)=sin(x)/x. ]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+nrel_point_gap_function_of_the_first_kind-> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дана функция f(x)=arctg(1/x). Данная функция имеет одну точку разрыва первого рода x=0.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

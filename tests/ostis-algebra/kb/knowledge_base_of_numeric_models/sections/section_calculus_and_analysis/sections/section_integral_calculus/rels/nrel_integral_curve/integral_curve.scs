@@ -1,0 +1,49 @@
+sc_node_norole_relation->nrel_integral_curve;;
+
+nrel_integral_curve=>nrel_main_idtf:
+[интегральная кривая* ](*<-lang_ru;;*);
+[ажырамас қисық* ](*<-lang_kz;;*);
+[integral curve* ](*<-lang_en;;*);;
+
+nrel_integral_curve => nrel_first_domain:nrel_indefinite_integral;;
+nrel_integral_curve => nrel_second_domain: concept_graph_of_the_function;;
+
+nrel_integral_curve<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(интегральная кривая*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральной кривой называется график решения геометрически неопределённого интеграла (первообразной), представляющего собой семейство «параллельных» кривых y=F(x)+C, где каждому числу С соответствует определенная кривая семейства. График каждой кривой и называется интегральной кривой.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integral_curve<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(интегральная кривая*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральная кривая - это один из графиков семейства первообразных.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integral_curve <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(общее решение*; уравнение первого порядка; постоянная'; дифференциальное уравнение; частное решение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[С геометрической точки зрения общее решение уравнения первого порядка представляет собой семейство кривых на плоскости xOy, зависящее от одной произвольной постоянной C. Эти кривые называются интегральными кривыми данного дифференциального уравнения.Частному решению соответствует одна интегральная кривая, проходящая через некоторую заданную точку.](* <- lang_ru;; *);;
+		*);;
+	*);;
+

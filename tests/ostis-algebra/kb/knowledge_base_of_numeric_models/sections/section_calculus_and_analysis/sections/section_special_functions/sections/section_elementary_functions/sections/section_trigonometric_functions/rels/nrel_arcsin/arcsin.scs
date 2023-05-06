@@ -1,0 +1,85 @@
+sc_node_norole_relation->nrel_arcsin;;
+
+nrel_arcsin=>nrel_main_idtf:
+[арксинус* ](*<-lang_ru;;*);
+[arcsine* ](*<-lang_en;;*);
+[арксинус* ](*<-lang_kz;;*);;
+
+nrel_arcsin=> nrel_idtf:[arcsin* ](*<-lang_en;;*);;
+nrel_arcsin=> nrel_idtf:[asin* ](*<-lang_en;;*);;
+
+//определение
+nrel_arcsin <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(арксинус*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арксинусом числа m называется такой угол x, выраженный в радианах, для которого sin(x) = m.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_arcsin <= nrel_using_constants:
+	{
+	concept_number;
+	concept_angle;
+	rrel_radian;
+	nrel_sine
+	};;
+	
+//иерархия
+concept_trigonometric_function => nrel_inclusion: nrel_arcsin;;
+	
+nrel_arcsin <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арксинус*; область определения*; числовой промежуток)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью определения арксинуса является числовой промежуток от -1 до 1.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арксинус*; область значения*; числовой промежуток; число Пи)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью значения арксинуса является числовой промежуток от -П/2 до П/2.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арксинус*; возрастающая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арксинус является возрастающей функцией.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арксинус*; нечетная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арксинус является нечетной функцией.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_arcsin <- binary_relation;;
+nrel_arcsin <= nrel_first_domain: concept_number;;
+nrel_arcsin <= nrel_second_domain: nrel_angle_measure;;

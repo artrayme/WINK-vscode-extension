@@ -1,0 +1,54 @@
+sc_node_not_relation -> concept_functional_analysis;;
+
+concept_functional_analysis => nrel_main_idtf:
+[функциональный анализ](*<-lang_ru;;*);
+[functional analysis](*<-lang_en;;*);;
+
+//надмножество
+concept_mathematical_analysis => nrel_inclusion: concept_functional_analysis;;
+
+//определение и пояснения
+concept_functional_analysis <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (функциональный анализ)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Функциональный анализ — раздел математического анализа, в котором изучаются бесконечномерные топологические векторные пространства и их отображения.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_functional_analysis <= nrel_using_constants:
+	{
+	concept_mathematical_analysis;
+	concept_vector_space
+	};;	
+	
+//утверждения
+concept_functional_analysis <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функциональный анализ; дифференциальное управление; теория вероятности)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Функциональный анализ находит применение во многих точных науках; многие важнейшие теоретические конструкции описаны языком функционального анализа, также  широко применяется в теории дифференциальных уравнений, математической физике, теоретической физике, теории управления и оптимизации, теории вероятностей, математической статистике, теории случайных процессов и других областях. ](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(функциональный анализ; теорема Риссал — Фреше; теорема Гельфанда — Наймарка; теорема Хана — Банаха)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Основные теоремы функционального анализа : теорема Хана — Банаха, теорема Гельфанда — Наймарка, теорема Рисса — Фреше.](*<-lang_ru;;*);;
+		*);;
+	*);;

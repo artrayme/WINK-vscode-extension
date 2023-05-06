@@ -1,0 +1,32 @@
+sc_node_norole_relation -> nrel_inaccuracy;;
+
+nrel_inaccuracy => nrel_main_idtf:
+[погрешность выборки*](*<-lang_ru;;*);
+[inaccuracy*](*<-lang_en;;*);;
+
+nrel_inaccuracy <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(погрешность выборки* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Погрешности выборки это величина которая характеризуют, насколько значительная ошибка допущена при замещении генеральной совокупности выборкой. ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Утв. (погрешность выборки*;выборка;генеральная совокупность; )] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Чем больше погрешность, тем дальше среднее арифметическое выборки может находиться от среднего генеральной совокупности.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_inaccuracy -> rrel_example :
+		"file://y.png";;

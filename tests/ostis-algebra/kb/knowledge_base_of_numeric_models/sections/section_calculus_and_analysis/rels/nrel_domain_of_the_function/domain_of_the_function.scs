@@ -1,0 +1,70 @@
+sc_node_norole_relation -> nrel_domain_of_the_function;;
+nrel_domain_of_the_function=> nrel_main_idtf :
+[область определения функции* ] (* <- lang_ru;; *);
+[the domain of the function* ] (* <- lang_en;; *);;
+
+nrel_domain_of_the_function => nrel_first_domain:
+concept_function;;
+
+nrel_domain_of_the_function => nrel_second_domain: 
+concept_set_numbers;;
+
+nrel_domain_of_the_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(область определения функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			[Область определения функции f – это множество X всех значений аргумента x, на котором задается функция.] (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(область определения функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			[Для обозначения области определения функции f используется краткая запись вида D(f). Например, если функция f – есть функция тангенс (то есть, f=tg), то область определения функции тангенс обозначается как D(tg).] (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(область определения функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			[Если областью определения функции f является множество X, то принята запись D(f)=X.] (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_domain_of_the_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(аргумент функции; функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если x – аргумент функции f, а X - область определения функции f, то очевидна справедливость формулы x∈X. При этом множество всех значений x таких, что x∈X, есть область определения функции f.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+nrel_domain_of_the_function -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://domain_of_the_function1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

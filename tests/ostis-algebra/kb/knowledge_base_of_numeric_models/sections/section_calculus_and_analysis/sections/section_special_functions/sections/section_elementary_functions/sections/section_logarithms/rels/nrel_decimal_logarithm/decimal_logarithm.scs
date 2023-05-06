@@ -1,0 +1,72 @@
+sc_node_norole_relation->nrel_decimal_logarithm;; 
+
+nrel_decimal_logarithm=>nrel_main_idtf:
+[десятичный логарифм* ](*<-lang_ru;;*);
+[үтірден кейін логарифмін* ](*<-lang_kz;;*);
+[decimal logarithm* ](*<-lang_en;;*);;
+
+nrel_decimal_logarithm<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(десятичный логарифм*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Десятичный логарифм — логарифм по основанию 10.Принято его обозначать  lg(b).](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+   
+nrel_decimal_logarithm<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение*; деление*; возведение в степень*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://decimal_logarithm.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Знак десятичного логарифма зависит от логарифмируемого числа: если оно больше 1, логарифм положителен, если оно между 0 и 1, то отрицателен. ]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(число;разряд)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При переносе десятичной запятой в числе на n разрядов значение десятичного логарифма этого числа изменяется на n.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_decimal_logarithm<- binary_relation;;
+nrel_decimal_logarithm<= nrel_first_domain:concept_number;;
+nrel_decimal_logarithm<= nrel_second_domain: concept_number;;
+
+nrel_decimal_logarithm-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[lg(100)=2.](* <- lang_ru;;*);;
+		*);;
+	*);;

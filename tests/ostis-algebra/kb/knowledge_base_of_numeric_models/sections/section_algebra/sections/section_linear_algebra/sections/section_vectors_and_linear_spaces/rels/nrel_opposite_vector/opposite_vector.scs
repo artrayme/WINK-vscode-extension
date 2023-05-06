@@ -1,0 +1,50 @@
+sc_node_norole_relation->nrel_opposite_vector;;
+
+nrel_opposite_vector=>nrel_main_idtf:
+[противоположный вектор* ](*<-lang_ru;;*);
+[opposite_vector* ](*<-lang_en;;*);
+[қарама-қарсы векторы* ](*<-lang_kz;;*);;
+
+//определение
+nrel_opposite_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(противоположный вектор*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вектор называется противоположным данному, если они оба имеют равные модули и противоположно направленные.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//используемые константы
+nrel_opposite_vector <= nrel_using_constants:
+	{
+	concept_vector;
+	concept_vector_length
+	};;
+
+
+//утверждения
+	
+nrel_opposite_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(противоположный вектор*; угол)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Угол между противоположно направленными векторами равен 180 градусам.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+	
+//домены	
+nrel_opposite_vector <- binary_relation;;
+nrel_opposite_vector <= nrel_first_domain:  concept_vector;;
+nrel_opposite_vector <= nrel_second_domain: concept_vector;;

@@ -1,0 +1,56 @@
+sc_node_not_relation->concept_differential_equation_in_private_derivatives;;
+concept_differential_equation_in_private_derivatives => nrel_main_idtf :
+[дифференциальное уравнение в частных производных](*<-lang_ru;;*);
+[differential equation in private derivatives](*<-lang_en;;*);;
+
+concept_differential_equation_in_private_derivatives <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дифференциальное уравнение в частных производных)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Если дифференциальное уравнение имеет две или более независимых переменных, то такое дифференциальное уравнение называется дифференциальным уравнением в частных производных.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+
+concept_differential_equation_in_private_derivatives <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение общего решения дифференциального уравнения в частных производных.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_differential_equation_in_private_derivatives <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://differential_equation_in_private_derivatives2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_differential_equation_in_private_derivatives -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[(x+2*y)*(dz/dx)-y*(dz/dy)=0](* <- lang_ru;; *);;
+		*);;
+	*);;

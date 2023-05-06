@@ -1,0 +1,78 @@
+sc_node_norole_relation -> nrel_main_diagonal_of_the_matrix;;
+nrel_main_diagonal_of_the_matrix => nrel_main_idtf :
+[главная диагональ матрицы* ] (* <- lang_ru;; *); 
+[main diagonal of the matrix* ] (* <- lang_en;; *);; 
+
+nrel_main_diagonal_of_the_matrix => nrel_idtf :
+[основная диагональ* ] (* <- lang_ru;; *);;
+
+nrel_main_diagonal_of_the_matrix <- binary_relation;;
+
+nrel_main_diagonal_of_the_matrix => nrel_first_domain: concept_matrix;;
+
+nrel_main_diagonal_of_the_matrix => nrel_second_domain: concept_set_numbers;;
+
+nrel_main_diagonal_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(главная диагональ матрицы*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Главной диагональю матрицы называется диагональ, проведённая из левого верхнего угла матрицы в правый нижний.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_main_diagonal_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(квадратная матрица; элемент матрицы'; нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадратная матрица, элементы вне главной диагонали которой равны нулю, называется диагональной.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_main_diagonal_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(диагональная матрица; элемент матрицы'; равенство*; единичная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Диагональная матрица, элементы на главной диагонали которой равны единице, называется единичной.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_main_diagonal_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма'; элемент матрицы'; матрица; след матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма элементов главной диагонали матрицы называется следом матрицы.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_main_diagonal_of_the_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(прямоугольная матрица; матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Главной диагональю прямоугольной матрицы является диагональ, которая начинается в верхнем левом углу матрицы и изменяется вниз и вправо, пока не будет достигнут правый или нижний край матрицы. ](* <- lang_ru;; *);;
+		*);;
+	*);;

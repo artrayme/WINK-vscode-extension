@@ -1,0 +1,57 @@
+sc_node_not_relation->concept_linearly_dependent_vectors;;
+
+concept_linearly_dependent_vectors=>nrel_main_idtf:
+[линейно зависимые векторы](*<-lang_ru;;*);
+[linearly dependent vectors](*<-lang_en;;*);;
+
+concept_linearly_dependent_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейно зависимые векторы)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вектора a1, ..., an называются линейно независимыми, если не существует нетривиальной комбинации этих векторов равной нулевому вектору.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_linearly_dependent_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; линейное пространство)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любая подсистема векторов линейно независимой системы векторов линейного пространства линейно независима.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_linearly_dependent_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; линейное пространство; система векторов)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Система векторов линейного пространства линейно независма любая её подсистемы векторов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_linearly_dependent_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; линейное пространство; система векторов; нулевой вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Система векторов, состоящая из одного ненулевого вектора линейного прострранства, линейно независима.](* <- lang_ru;; *);;
+		*);;
+	*);;

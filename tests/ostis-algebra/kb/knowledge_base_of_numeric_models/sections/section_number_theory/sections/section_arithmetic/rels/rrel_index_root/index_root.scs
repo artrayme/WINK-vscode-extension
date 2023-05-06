@@ -1,0 +1,29 @@
+sc_node_role_relation-> rrel_index_root;; 
+rrel_index_root => nrel_main_idtf:	[показатель корня'](*<-lang_ru;;*);	[index root'](*<-lang_en;;*);;
+rrel_index_root => nrel_idtf:	[степень корня'](*<-lang_ru;;*);;
+
+rrel_index_root <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(показатель корня')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Показатель корня - это число, которое указывает степень корня.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+rrel_index_root <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(извлечение корня*; натуральное число*; нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Корень любой натуральной степени из нуля — нуль.](* <- lang_ru;; *);;
+		*);;
+	*);;

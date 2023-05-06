@@ -1,0 +1,70 @@
+sc_node_not_relation->concept_exact_differential_equation;;
+concept_exact_differential_equation => nrel_main_idtf :
+[уравнение в полных дифференциалах](*<-lang_ru;;*);
+[exact differential equation](*<-lang_en;;*);;
+
+
+concept_exact_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(уравнение в полных дифференциалах)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Дифференциальное уравнение первого порядка вида: M(x,y)dx+N(x,y)dy=0 называется уравнением в полных дифференциалах, если левая часть этого уравнения представляет собой полный дифференциал некоторой функции u=F(x,y).](* <- lang_ru;; *);;
+		*);;
+*);;
+
+// утверждения
+concept_exact_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение; функция; интегрирование*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегрирование такого уравнения сводится к нахождению функции u, после чего решение легко находится в виде: du=0; u=C.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_exact_differential_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение общего решения уравнение в полных дифференциалах.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_exact_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exact_differential_equation2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_exact_differential_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://exact_differential_equation3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

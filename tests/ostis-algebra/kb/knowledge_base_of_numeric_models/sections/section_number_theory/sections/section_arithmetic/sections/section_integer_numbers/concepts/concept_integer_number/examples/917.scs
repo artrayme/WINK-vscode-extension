@@ -1,0 +1,6 @@
+nine_hundred_and_seventeen=>nrel_main_idtf:
+[917](*<-lang_ru;;*);
+[917](*<-lang_en;;*);;
+
+concept_number -> nine_hundred_and_seventeen;;
+set_of_number -> nine_hundred_and_seventeen;;

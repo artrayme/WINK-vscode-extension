@@ -1,0 +1,50 @@
+sc_node_not_relation -> concept_function;;
+concept_function => nrel_main_idtf :
+[функция] (* <- lang_ru;; *);
+[function] (* <- lang_en;; *);; 
+
+concept_function => nrel_idtf:[понятие функции](*<-lang_ru;;*);;
+concept_function => nrel_idtf:[класс функций](*<-lang_ru;;*);;
+concept_function => nrel_idtf:[множество функций](*<-lang_ru;;*);;
+
+concept_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция – это зависимость одной переменной величины от другой. Другими словами, взаимосвязь между величинами.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Функция – это соответствие между двумя множествами, причем каждому элементу первого множества соответствует один и только один элемент второго множества.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Функция – это действие над переменной.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+concept_function <= nrel_subdividing:
+    ... 
+	(*
+	-> concept_constant_function;;
+	-> concept_linear_function;;
+	-> concept_monotone_function;;
+	-> concept_inverse_function;;
+	-> concept_power_function;;
+	-> concept_periodic_function;;
+	-> concept_invertible_function;;
+	-> concept_trigonometric_function;;
+	-> concept_function_module;; 
+	-> concept_discontinuous_function;;
+	-> concept_root_function;; 
+	-> concept_directly_proportional_function;; 
+	-> concept_inversely_proportional_function;; 
+	*);;

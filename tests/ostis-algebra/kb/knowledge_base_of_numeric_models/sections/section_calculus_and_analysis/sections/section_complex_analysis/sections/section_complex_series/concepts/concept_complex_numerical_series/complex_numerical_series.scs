@@ -1,0 +1,79 @@
+sc_node_not_relation->concept_complex_numerical_series;; 
+
+concept_complex_numerical_series=>nrel_main_idtf:
+[комплексный числовой ряд](*<-lang_ru;;*);
+[complex numerical series](*<-lang_en;;*);;
+
+//синонимы
+concept_complex_numerical_series=> nrel_idtf:[комплексная числовая последовательность](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_complex_numerical_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(комплексный числовой ряд)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Комплексный числовой ряд — это числовая последовательность, рассматриваемая вместе с другой последовательностью, которая называется последовательностью частичных сумм (ряда).](* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(комплексный числовой ряд)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	[Элементами комплексного числового ряда являются комплексные числа.] (* <- lang_ru;; *);;
+*);;
+*);;
+
+//используемые константы
+ concept_complex_numerical_series<= nrel_using_constants: concept_sequence; concept_complex_number;;
+
+//пример
+ concept_complex_numerical_series -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://complex_numerical_series.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_complex_numerical_series<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Исследование комплексного числового ряда на сходимость.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_complex_numerical_series<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://complex_numerical_series2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

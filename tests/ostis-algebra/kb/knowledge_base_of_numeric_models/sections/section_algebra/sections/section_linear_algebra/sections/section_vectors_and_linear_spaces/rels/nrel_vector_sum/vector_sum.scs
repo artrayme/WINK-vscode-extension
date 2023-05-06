@@ -1,0 +1,43 @@
+sc_node_norole_relation -> nrel_vector_sum;;
+
+nrel_vector_sum=>nrel_main_idtf:
+[сумма векторов* ] (*<-lang_ru;;*);
+[vector sum* ] (*<-lang_en;;*);;
+
+nrel_vector_sum=>nrel_main_idtf:
+[сложение векторов* ] (*<-lang_ru;;*);;
+
+nrel_vector_sum  <- ternary_relation;;
+
+nrel_vector_sum => nrel_first_domain: concept_vector;;
+
+nrel_vector_sum => nrel_second_domain: concept_vector;;
+
+nrel_vector_sum => nrel_third_domain: concept_vector;;
+
+nrel_vector_sum <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сумма векторов*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сложение векторов (сумма векторов) a + b есть операция вычисления вектора c, все элементы которого равны попарной сумме соответствующих элементов векторов a и b](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_vector_sum<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма'; равенство*; нулевой вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма противоположных векторов равна нуль-вектору.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

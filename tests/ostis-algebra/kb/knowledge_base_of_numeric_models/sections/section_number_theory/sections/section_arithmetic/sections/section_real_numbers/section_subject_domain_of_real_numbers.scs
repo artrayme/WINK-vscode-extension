@@ -1,0 +1,48 @@
+sc_node_struct -> section_subject_domain_of_real_numbers;;
+
+section_subject_domain_of_real_numbers => nrel_main_idtf:
+    [Раздел. Предметная область действительных чисел] (* <- lang_ru;; *);
+    [Section. Subject domain of real numbers] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_real_numbers <- nrel_system_identifier;;
+  
+section_subject_domain_of_real_numbers -> rrel_key_sc_element:
+    subject_domain_of_real_numbers;
+    concept_real_number;
+    concept_periodic_decimal;
+    concept_finite_decimal;
+    concept_decimal;
+    concept_infinite_decimal;
+    concept_irrational_number;
+    concept_non_periodic_decimal;
+    nrel_subtract_of_decimal_fraction;
+    nrel_addition_of_decimal_fraction;
+    nrel_division_of_decimal_fraction;
+    nrel_multiplication_of_decimal_fraction;
+    nrel_comparing_of_decimal_fraction;;
+
+section_subject_domain_of_real_numbers = [*
+    subject_domain_of_real_numbers => nrel_main_idtf:
+        [Предметная область действительных чисел] (* <- lang_ru;; *);
+        [Subject domain of real numbers] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_real_numbers -> rrel_maximum_studied_object_class:
+        concept_real_number;
+        concept_decimal;;
+
+    subject_domain_of_real_numbers -> rrel_not_maximum_studied_object_class:
+        concept_periodic_decimal;
+        concept_finite_decimal;
+        concept_infinite_decimal;
+        concept_irrational_number;
+        concept_non_periodic_decimal;;
+
+    subject_domain_of_real_numbers -> rrel_explored_relation:
+        nrel_subtract_of_decimal_fraction;
+        nrel_addition_of_decimal_fraction;
+        nrel_division_of_decimal_fraction;
+        nrel_multiplication_of_decimal_fraction;
+        nrel_comparing_of_decimal_fraction;;
+*];;

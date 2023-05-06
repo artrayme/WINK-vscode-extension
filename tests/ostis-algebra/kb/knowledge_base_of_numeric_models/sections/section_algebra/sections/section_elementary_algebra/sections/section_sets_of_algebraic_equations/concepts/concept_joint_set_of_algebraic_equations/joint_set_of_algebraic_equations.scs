@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_joint_set_of_algebraic_equations;;
+
+concept_joint_set_of_algebraic_equations => nrel_main_idtf:
+[совместная система алгебраических уравнений](*<-lang_ru;;*);
+[joint set of algebraic equations](*<-lang_en;;*);;
+
+
+//определение и пояснения
+concept_joint_set_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(совместная система алгебраических уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Совместная система алгебраических уравнений - система уравнений, которая имеет хотя бы одно решение.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_joint_set_of_algebraic_equations -> rrel_example:
+	"file://joint_set_of_algebraic_equations.png"(* <- lang_ru;; 	*);;
+
+concept_joint_set_of_algebraic_equations <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(совместная система алгебраических уравнений; свободный член'; однородная система уравнений; неоднородная система уравнений)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Cовместная система алгебраических уравнений называется однородной, если все её свободные члены равны нулю, иначе — неоднородной.](* <- lang_ru;; *);;
+		*);;
+	*);;
+

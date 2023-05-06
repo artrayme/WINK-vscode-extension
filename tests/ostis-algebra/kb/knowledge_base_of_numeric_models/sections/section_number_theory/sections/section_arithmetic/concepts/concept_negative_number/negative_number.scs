@@ -1,0 +1,123 @@
+sc_node_not_relation -> concept_negative_number;;
+
+concept_negative_number=> nrel_main_idtf :
+[отрицательное число] (* <- lang_ru;; *);
+[жағымсыз сан] (* <- lang_kz;; *);
+[negative number](* <-lang_en;; *);;
+
+// синонимы
+concept_negative_number => nrel_idtf:[Класс отрицательных чисел](*<-lang_ru;;*);;
+concept_negative_number => nrel_idtf:[Множество отрицательных чисел](*<-lang_ru;;*);;
+concept_negative_number => nrel_idtf:[Понятие отрицательного числа](*<-lang_ru;;*);;
+concept_negative_number => nrel_idtf:[Отрицательные числа](*<-lang_ru;;*);;
+
+//определение и пояснения
+concept_negative_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(отрицательное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Числа, которые соответствуют точкам координатной прямой, лежащим левее начала отсчета (левее 0) называю отрицательными.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Числа со знаком минус называют отрицательными.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+    ...
+    (*
+	=> nrel_main_idtf: [Пояснение(отрицательное число)](* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+	(*
+	-> rrel_example:
+	[Любое отрицательное число меньше любого положительного.](* <- lang_ru;; 	*);;
+	*);;
+	*);;
+
+// утверждения
+concept_negative_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество положительных чисел; множество отрицательных чисел; ограничено сверх*; ограничено снизу*; умножение*; целое число; произведение*; неравенсто*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://negative_numbe1.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_negative_number <= nrel_using_constants: concept_set_numbers;nrel_multiplication;nrel_division; nrel_comparison;nrel_addition;;
+
+//разбиение
+concept_negative_number <= nrel_subdividing:
+	...
+	(* 
+	-> concept_negative_fraction;;
+	-> concept_negative_integer;;
+	*);;
+
+
+// конкретные задачи
+concept_negative_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Чему равно произведение -3 и -1.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Сравнить два отрицательных числа -1 и -5]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Чему равен модуль числа l-2l.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Сложить два отрицательных числа: -6 и -9.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_negative_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение отрицательного числа.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_negative_number -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[-1; -18; -3,5](* <- lang_ru;; 	*);;
+		*);;
+	*);;

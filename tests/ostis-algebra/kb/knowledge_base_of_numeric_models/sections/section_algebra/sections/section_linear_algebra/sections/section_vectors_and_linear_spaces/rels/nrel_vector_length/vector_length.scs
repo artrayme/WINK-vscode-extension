@@ -1,0 +1,38 @@
+sc_node_norole_relation -> nrel_vector_length;;
+nrel_vector_length=>nrel_main_idtf:
+[длина вектора* ] (*<-lang_ru;;*);
+[vector length* ] (*<-lang_en;;*);;
+
+nrel_vector_length=>nrel_main_idtf:[модуль вектора* ] (*<-lang_ru;;*);;
+
+nrel_vector_length <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(длина вектора*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Длина направленного отрезка определяет числовое значение вектора и называется длиной вектора или модулем вектора AB.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_vector_length  <- binary_relation;;
+
+nrel_vector_length => nrel_first_domain: concept_vector;;
+
+nrel_vector_length => nrel_second_domain: concept_natural_number;;
+
+nrel_vector_length <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма'; возведение в степень*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Длина вектора |a| в прямоугольных декартовых координатах равна квадратному корню из суммы квадратов его координат.]   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

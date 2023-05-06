@@ -1,0 +1,37 @@
+sc_node_norole_relation ->  nrel_mode;;
+
+nrel_mode => nrel_main_idtf:
+[мода*](*<-lang_ru;;*);
+[mode*](*<-lang_en;;*);;
+
+nrel_mode <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(мода* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Мо́да — значение во множестве наблюдений, которое встречается наиболее часто. ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Утв. (мода* )] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Иногда в совокупности встречается более чем одна мода в этом случае можно сказать, что совокупность мультимодальна.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_mode -> rrel_example :
+		"file://e.png";;
+
+nrel_mode <- binary_relation;;
+nrel_mode  => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_mode => nrel_first_domain: concept_sample;;
+nrel_mode => nrel_second_domain: concept_number;;

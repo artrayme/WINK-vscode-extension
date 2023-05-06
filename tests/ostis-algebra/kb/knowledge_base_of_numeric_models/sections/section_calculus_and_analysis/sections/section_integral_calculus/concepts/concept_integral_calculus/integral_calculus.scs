@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_integral_calculus;; 
+
+concept_integral_calculus => nrel_main_idtf:
+[интегральное исчисление](*<-lang_ru;;*);
+[integral calculus](*<-lang_en;;*);;
+
+//надмножество
+concept_mathematical_analysis => nrel_inclusion: concept_integral_calculus;;
+
+//определения и пояснения
+concept_integral_calculus <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (интегральное исчисление)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Интегральное исчисление — раздел математического анализа,  в котором изучаются понятия интеграла, его свойства и методы вычислений.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_integral_calculus <= nrel_using_constants:
+	{
+	concept_mathematical_analysis;
+	nrel_integral
+	};;
+	
+//утверждения
+concept_integral_calculus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(интегральное исчисление; математика)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В  1696 году,  появилось название новой ветви математики - интегральное исчисление.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(интегральное исчисление; длина*; площадь*; объём*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[С помощью интегрального исчисления вычисляются длины, площади и объёмы криволинейных фигур.](* <- lang_ru;; *);;
+		*);;
+	*);;

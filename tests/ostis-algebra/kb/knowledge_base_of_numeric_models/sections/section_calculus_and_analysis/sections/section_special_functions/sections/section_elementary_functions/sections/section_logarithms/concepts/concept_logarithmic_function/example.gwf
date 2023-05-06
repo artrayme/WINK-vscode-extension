@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/attribute" idtf="rrel_example" shapeColor="0" id="26554216" parent="0" left="0" top="0" right="82" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="271.5" y="10.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_logarithmic_function" shapeColor="0" id="4082920" parent="0" left="0" top="0" right="176" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="275.5" y="-125.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="y = lg(x-7)" shapeColor="0" id="26546456" parent="0" left="0" top="0" right="64" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="170" y="-34" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="y = lg(x^2+4x)" shapeColor="0" id="26531384" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="378" y="-18" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12607264" parent="0" id_b="26554216" id_e="26335272" b_x="271.5" b_y="10.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.450943">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="26335272" parent="0" id_b="4082920" id_e="26546456" b_x="275.5" b_y="-125.5" e_x="170" e_y="-34" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12501000" parent="0" id_b="26554216" id_e="12599544" b_x="271.5" b_y="10.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.443265">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12599544" parent="0" id_b="4082920" id_e="26531384" b_x="275.5" b_y="-125.5" e_x="378" e_y="-18" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+    </staticSector>
+</GWF>

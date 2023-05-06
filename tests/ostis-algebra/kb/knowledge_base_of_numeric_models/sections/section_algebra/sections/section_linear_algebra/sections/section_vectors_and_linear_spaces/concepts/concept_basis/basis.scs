@@ -1,0 +1,19 @@
+sc_node_not_relation -> concept_basis;;
+concept_basis => nrel_main_idtf:		[базис](*<-lang_ru;;*);		[basis](*<-lang_en;;*);;
+
+concept_basis <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(базис)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Базис - множество таких векторов в векторном пространстве, что любой вектор этого пространства может быть единственным образом представлен в виде линейной комбинации векторов из этого множества - базисных векторов.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_basis <= nrel_using_constants: vector;;
+
+concept_basis-> rrel_example :	"file://basis1.png";;

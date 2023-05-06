@@ -1,0 +1,45 @@
+sc_node_not_relation -> concept_eigenvector;;
+
+concept_eigenvector=>nrel_main_idtf:
+[собственный вектор](*<-lang_ru;;*);
+[eigenvector](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_eigenvector <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(собственный вектор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Собственный вектор - вектор, умножение матрицы на который или применение к которому преобразования даёт коллинеарный вектор.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_eigenvector <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(собственный вектор, собственное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example:
+			[Понятия собственного вектора и собственного числа являются одними из ключевых в линейной алгебре, на их основе строится множество конструкций.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_eigenvector<= nrel_using_constants: concept_vector; concept_matrix;;
+
+concept_eigenvector-> rrel_example :
+	...
+	(*
+<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	[m=(2)](* <- lang_ru;; 	*);;
+		*);;
+	*);;

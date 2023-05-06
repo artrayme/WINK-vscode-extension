@@ -1,0 +1,63 @@
+sc_node_not_relation -> concept_decreasing_function;;
+
+concept_decreasing_function=>nrel_main_idtf:
+[decreasing function](*<-lang_en;;*);
+[убыващая функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_decreasing_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(убывающая функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Функция если называется убывающей если большему значению аргумента соответствует меньшее значение функции .](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=> nrel_main_idtf: [Пояснение (убывающая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+	"file://example.html"(*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//используемые константы
+concept_decreasing_function<=nrel_using_constants:concept_function; nrel_derivative;;
+
+
+//надмножество
+concept_function=>nrel_inclusion : concept_decreasing_function;;
+
+//утверждения
+concept_decreasing_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(область определения*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Функция 1/x убывает на всей области определения.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(производная*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+      "file://example_2.html"(*<-lang_ru;;*);;
+*);;
+*);;

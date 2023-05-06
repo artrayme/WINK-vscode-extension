@@ -1,0 +1,59 @@
+sc_node_not_relation->concept_real_number;; 
+
+concept_real_number=>nrel_main_idtf:
+[вещественное число](*<-lang_ru;;*);
+[нақты сан](*<-lang_kz;;*);
+[real number](*<-lang_en;;*);;
+
+//синонимы
+concept_real_number=> nrel_idtf:[действительное число](*<-lang_ru;;*);;
+
+//разбиение
+concept_real_number<= nrel_subdividing:
+	...
+  (* 
+    -> concept_rational_number;;
+    -> concept_irrational_number;;
+	*);;
+
+//определения и пояснения
+concept_real_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(вещественное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вещественные числа - объединение множества рациональных чисел и множества иррациональных чисел.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_real_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вещественное число, рациональное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Между любыми двумя различными вещественными числами содержится рациональное число.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(вещественное число, рациональное число, отрезок)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для любого вещественного числа и любого наперёд взятого положительного рационального расстояния найдётся пара рациональных чисел, отстоящих друг от друга менее, чем на это расстояние, таких что вещественное число лежит на отрезке между этими рациональными числами.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+ concept_real_number-> rrel_example: concept_math_const_e; twenty_eight; three;;

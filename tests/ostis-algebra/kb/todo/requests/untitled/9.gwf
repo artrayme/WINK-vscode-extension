@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/var/group" idtf="" shapeColor="0" id="175845248" parent="175888184" x="284.5" y="614.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_algebraic_function" shapeColor="0" id="175849840" parent="175888184" left="0" top="0" right="162.016" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="130.5" y="534.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/var/pos" idtf="" shapeColor="0" id="174899496" parent="175888184" id_b="175849840" id_e="175845248" b_x="130.5" b_y="534.5" e_x="284.5" e_y="614.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <contour type="" idtf="Какие существуют виды алгебраических функций?" shapeColor="0" id="175888184" parent="0" left="0" top="0" right="314" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10">
+            <points>
+                <point x="-92" y="464"/>
+                <point x="-92" y="701"/>
+                <point x="437" y="701"/>
+                <point x="437" y="466"/>
+            </points>
+        </contour>
+        <node type="node/const/group" idtf="concept_quadratic_function" shapeColor="193" id="175875048" parent="0" left="0" top="0" right="163.516" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="116" y="335" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_algebraic_function" shapeColor="0" id="174872880" parent="0" left="0" top="0" right="162.016" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="382" y="207" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_power_function" shapeColor="0" id="174859864" parent="0" left="0" top="0" right="144.297" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="679" y="210" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_exponential_function" shapeColor="0" id="174846128" parent="0" left="0" top="0" right="175.344" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="605" y="340" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_inversely_proportional_function" shapeColor="0" id="175901592" parent="0" left="0" top="0" right="235.188" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="532" y="429" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_cubic_function" shapeColor="0" id="175888320" parent="0" left="0" top="0" right="140.594" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="315" y="391" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_linear_function" shapeColor="0" id="175861752" parent="0" left="0" top="0" right="143.547" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-10" y="260" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="174909672" parent="0" id_b="174872880" id_e="174859864" b_x="382" b_y="207" e_x="679" e_y="210" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="174908936" parent="0" id_b="174872880" id_e="174846128" b_x="382" b_y="207" e_x="605" e_y="340" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="174908200" parent="0" id_b="174872880" id_e="175901592" b_x="382" b_y="207" e_x="532" e_y="429" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="174907464" parent="0" id_b="174872880" id_e="175888320" b_x="382" b_y="207" e_x="315" e_y="391" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="174906728" parent="0" id_b="174872880" id_e="175875048" b_x="382" b_y="207" e_x="116" e_y="335" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="174905952" parent="0" id_b="174872880" id_e="175861752" b_x="382" b_y="207" e_x="-10" e_y="260" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+    </staticSector>
+</GWF>

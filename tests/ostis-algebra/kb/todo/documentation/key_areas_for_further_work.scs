@@ -1,0 +1,7 @@
+key_areas_for_further_work => nrel_main_idtf: [Раздел. Основные направления дальнейшей работы над прототипом разрабатываемой системы в рамках данного проекта] (* <- lang_ru;; *);;
+
+key_areas_for_further_work <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://key_areas_for_further_work.pdf" (* <- lang_ru;; *);;
+	*);;

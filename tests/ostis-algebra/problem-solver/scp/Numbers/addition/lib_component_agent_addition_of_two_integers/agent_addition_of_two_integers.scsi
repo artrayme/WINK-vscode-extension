@@ -1,0 +1,364 @@
+agent_addition_of_two_integers
+=> nrel_main_idtf:
+	[агентная scp-программа сложения двух натуральных чисел] (* <- lang_ru;; *);
+	
+	[agent scp-program addition of two integers] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_addition_of_two_integers 
+	(*
+	-> rrel_params: .agent_addition_of_two_integers_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_addition_of_two_integers_operator_set 
+		(*
+		-> rrel_init: .agent_addition_of_two_integers_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_addition_of_two_integers_operator2;;
+			*);;
+
+		-> .agent_addition_of_two_integers_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_addition_of_two_integers;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_addition_of_two_integers_operator3;;
+		  	=> nrel_else: .agent_addition_of_two_integers_operator_return;;
+			*);;
+                 -> .agent_addition_of_two_integers_operator3 
+                       (*
+                        <- printEl;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+                        =>nrel_goto: .agent_addition_of_two_integers_operator3A;;
+                        *);;
+		-> .agent_addition_of_two_integers_operator3A 
+			(*
+			<- searchSetStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _params;;
+                        
+                        -> rrel_set_3: rrel_assign: rrel_scp_var: _param;;
+
+			=> nrel_then: .agent_addition_of_two_integers_operator3A1;;
+			=> nrel_else: .agent_addition_of_two_integers_operator_return;;
+			*);;
+             
+                
+                -> .agent_addition_of_two_integers_operator3A1
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+
+			=> nrel_goto: .agent_addition_of_two_integers_operator3A3;;
+			
+			*);;
+                     
+                  ->.agent_addition_of_two_integers_operator3A3
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_addition_of_two_integers_operator3A2;;
+			*);;  
+                ->.agent_addition_of_two_integers_operator3A2
+                        (*
+                        <- eraseEl;;
+                        -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _arc2;;
+                        =>nrel_goto: .agent_addition_of_two_integers_operator_for_param2;;
+                        *);;
+                    -> .agent_addition_of_two_integers_operator_for_param2
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc9;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param3;;
+
+			=> nrel_goto: .agent_addition_of_two_integers_operator_for_param2_1;;
+			
+			*);;
+                     
+                  ->.agent_addition_of_two_integers_operator_for_param2_1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param3;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_addition_of_two_integers_operator_for_param2_2;;
+			*);;  
+                ->.agent_addition_of_two_integers_operator_for_param2_2
+                        (*
+                        <- eraseEl;;
+                        -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _arc9;;
+                        =>nrel_goto: .agent_addition_of_two_integers_operator3B;;
+                        *);;      
+		-> .agent_addition_of_two_integers_operator3B 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_addition_of_two_integers_operator4A;;
+		 	*);;
+
+                 -> .agent_addition_of_two_integers_operator4A
+			(*
+		 	<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+
+                 	=> nrel_goto: .agent_addition_of_two_integers_operator4C ;;
+			
+                 	*);;
+
+		-> .agent_addition_of_two_integers_operator4C
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc8;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _answer1;;
+                        =>nrel_goto:  .agent_addition_of_two_integers_operator01;;
+                        *);;
+
+
+
+
+
+
+			->.agent_addition_of_two_integers_operator01
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..addition_of_two_integers;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+ 
+                        =>nrel_goto: .agent_addition_of_two_integers_operator02;;
+                        *);;
+                           
+                   ->.agent_addition_of_two_integers_operator02
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..addition_of_two_integers;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc16;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+ 
+                        =>nrel_goto: .agent_addition_of_two_integers_operator03;;
+                        *);;
+
+                     ->.agent_addition_of_two_integers_operator03
+                        (*
+                         <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..addition_of_two_integers;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc31;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_then: .agent_addition_of_two_integers_operator04;;
+                        =>nrel_else: .agent_addition_of_two_integers_operator05;;
+                        *);;
+
+                    ->  .agent_addition_of_two_integers_operator04
+                        (*
+                         <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last;;
+
+                        => nrel_goto: .agent_addition_of_two_integers_operator05;;
+                         *);;
+
+                    ->.agent_addition_of_two_integers_operator05
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..addition_of_two_integers;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _answer1;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_goto: .agent_addition_of_two_integers_operator06;;
+                        *);;
+                   
+                      ->.agent_addition_of_two_integers_operator06
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: nrel_addition;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: ..addition_of_two_integers;;
+ 
+                        =>nrel_goto: .agent_addition_of_two_integers_operator07;;
+                        *);;
+                      
+                       ->.agent_addition_of_two_integers_operator07
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..addition_of_two_integers;;
+                          
+              
+ 
+                        =>nrel_goto: .agent_addition_of_two_integers_operator08;;
+                        *);;
+                             
+                        ->.agent_addition_of_two_integers_operator08
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc21;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+                          
+                        =>nrel_goto: .agent_addition_of_two_integers_operator09;;
+                        *);;  
+
+                       ->.agent_addition_of_two_integers_operator09
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+                          
+                        =>nrel_goto: .agent_addition_of_two_integers_operator010;;
+                        *);; 
+                    
+                        ->.agent_addition_of_two_integers_operator010
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc23;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc16;;
+                          
+                        =>nrel_goto: .agent_addition_of_two_integers_operator011;;
+                        *);; 
+                    
+                      ->.agent_addition_of_two_integers_operator011
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc24;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+
+                        =>nrel_goto: .agent_addition_of_two_integers_operator012;;
+                        *);; 
+                      
+                       ->.agent_addition_of_two_integers_operator012
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..addition_of_two_integers;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                          ->rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                        =>nrel_goto: .agent_addition_of_two_integers_operator013;;
+                        *);;
+
+                         ->.agent_addition_of_two_integers_operator013
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc25;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_result;;
+
+                        =>nrel_goto: .agent_addition_of_two_integers_operator014;;
+                        *);;
+
+                       ->.agent_addition_of_two_integers_operator014
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc26;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          
+                        =>nrel_goto: .agent_addition_of_two_integers_operator015;;
+                        *);; 
+                    
+                      ->.agent_addition_of_two_integers_operator015
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc27;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_addition;;
+
+                        =>nrel_goto: .agent_addition_of_two_integers_operator14;;
+                        *);;
+
+
+
+
+
+
+
+
+                -> .agent_addition_of_two_integers_operator14 
+                       (*
+                        <- printEl;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _answer1;;
+                        =>nrel_goto: .agent_addition_of_two_integers_operator_gen_answer;;
+                        *);;
+	
+
+		-> .agent_addition_of_two_integers_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc4;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_addition_of_two_integers_operator_return;;
+			*);;     
+					
+		-> .agent_addition_of_two_integers_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

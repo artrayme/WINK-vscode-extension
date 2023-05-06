@@ -1,0 +1,99 @@
+sc_node_not_relation->concept_mixed_fraction;;
+
+concept_mixed_fraction=>nrel_main_idtf:
+[смешанная дробь](*<-lang_ru;;*);
+[аралас фракциясын](*<-lang_kz;;*);
+[mixed fraction](*<-lang_en;;*);;
+
+//определение
+concept_mixed_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(смешанная дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма натурального числа и правильной дроби записывают сокращённо, без знака "плюс" и называют смешанной дробью. При этом натуральное число называют целой частью, а правильную дробь — дробной частью смешанной дроби.](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_mixed_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(смешанная дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[ Любое рациональное число можно записать в виде смешанной дроби. В противоположность смешанной дроби, дробь, содержащая лишь числитель и знаменатель, называется простой.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_mixed_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неправильная дробь, остаток, частное)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://mixed_fraction_1.html" (*<-lang_ru;;*);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(неправильная дробь, числитель)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://mixed_fraction_2.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+//используемые константы
+concept_mixed_fraction <= nrel_using_constants: concept_number;rrel_denominator;rrel_numerator;;
+
+// конкретные задачи
+concept_mixed_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли дробь смешанной : 3/4; 4/(-3); 8/7; 4(9/11).] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_mixed_fraction  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение является ли дробь смешанной.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_mixed_fraction-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[5(3/5) - смешанная  дробь.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

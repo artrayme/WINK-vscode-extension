@@ -1,0 +1,57 @@
+sc_node_not_relation -> concept_differential_calculus;; 
+
+concept_differential_calculus => nrel_main_idtf:
+[дифференциальное исчисление](*<-lang_ru;;*);
+[differential calculus](*<-lang_en;;*);;
+
+//надмножество
+concept_mathematical_analysis => nrel_inclusion: concept_differential_calculus;;
+
+//определения и пояснения
+concept_differential_calculus <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (дифференциальное исчисление)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Дифференциальное исчисление — раздел математического анализа, в котором изучаются понятия производной и дифференциала и способы их применения к исследованию функций.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_differential_calculus <= nrel_using_constants:
+	{
+	concept_mathematical_analysis;
+	nrel_derivative;
+	concept_differential;
+	concept_function
+	};;
+	
+//утверждения
+concept_differential_calculus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное исчисление; теорема Ролля; теорема Лагранжа; теорема Коши)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Основные теоремы дифференциального исчисления : теорема Ролля, теорема Лагранжа, теорема Коши.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное исчисление; функция; интеграл*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[С помощью дифференциального исчисления исследуются функции, вычисляются интегралы и доказываются неравенства.](* <- lang_ru;; *);;
+		*);;
+	*);;

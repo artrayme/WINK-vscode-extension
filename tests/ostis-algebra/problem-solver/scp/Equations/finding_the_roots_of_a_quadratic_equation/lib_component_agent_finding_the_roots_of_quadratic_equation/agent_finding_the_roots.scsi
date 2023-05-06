@@ -1,0 +1,698 @@
+agent_finding_the_roots_of_a_quadratic_equation
+=> nrel_main_idtf:
+	[агентная scp-программа нахождения корней квадратного уравнения] (* <- lang_ru;; *);
+	
+	[agent scp-program finding the roots of a quadratic equation] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_finding_the_roots_of_a_quadratic_equation
+	(*
+	-> rrel_params: .agent_finding_the_roots_of_a_quadratic_equation_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_finding_the_roots_of_a_quadratic_equation_operator_set 
+		(*
+		-> rrel_init: .agent_finding_the_roots_of_a_quadratic_equation_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator2;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_finding_the_roots_of_a_quadratic_equation;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_finding_the_roots_of_a_quadratic_equation_operator3;;
+		  	=> nrel_else: .agent_finding_the_roots_of_a_quadratic_equation_operator_return;;
+			*);;
+                 
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator3 
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _paramA;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_a;;
+                      
+			=> nrel_then: .agent_finding_the_roots_of_a_quadratic_equation_operator3A1;;
+			=> nrel_else: .agent_finding_the_roots_of_a_quadratic_equation_operator_return;;
+			*);;
+
+                     
+             
+                  ->.agent_finding_the_roots_of_a_quadratic_equation_operator3A1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _paramA;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _multiplierA;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator3A2;;
+			*);;  
+                   ->.agent_finding_the_roots_of_a_quadratic_equation_operator3A2
+                       (*
+                         <- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _paramB;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc6;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_b;;
+                      
+			=> nrel_then: .agent_finding_the_roots_of_a_quadratic_equation_operator3A3;;
+			=> nrel_else: .agent_finding_the_roots_of_a_quadratic_equation_operator_return;;
+			*);;
+
+                     ->.agent_finding_the_roots_of_a_quadratic_equation_operator3A3
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _paramB;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc7;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _multiplierB;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc8;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator3A4;;
+			*);;
+
+		->.agent_finding_the_roots_of_a_quadratic_equation_operator3A4
+                       (*
+                         <- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc9;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _paramC;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_c;;
+                      
+			=> nrel_then: .agent_finding_the_roots_of_a_quadratic_equation_operator3A5;;
+			=> nrel_else: .agent_finding_the_roots_of_a_quadratic_equation_operator_return;;
+			*);;
+
+                     ->.agent_finding_the_roots_of_a_quadratic_equation_operator3A5
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _paramC;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc11;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _multiplierC;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc12;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator3B;;
+			*);;
+
+		
+                    
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator3B 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator4A;;
+		 	*);;
+
+ 		-> .agent_finding_the_roots_of_a_quadratic_equation_operator4A
+			(*
+		 	<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _quadraticB;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _multiplierB;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [2];;
+                       
+                 	=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator4B;;
+			
+                 	*);;
+
+                    -> .agent_finding_the_roots_of_a_quadratic_equation_operator4B
+			(*
+		 	<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _multAC;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _multiplierA;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _multiplierC;;
+                       
+                 	=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator4C;;
+			
+                 	*);;
+
+                  -> .agent_finding_the_roots_of_a_quadratic_equation_operator4C
+                        (*
+                         <-contMult;;
+                         -> rrel_1: rrel_assign: rrel_scp_var: _mult4AC;;
+                         -> rrel_2: rrel_fixed: rrel_scp_var: _multAC;;
+                         -> rrel_3: rrel_fixed: rrel_scp_const: [4];;
+                          
+                         => nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator5A;;
+                        *);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator5A
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _discriminant;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _quadraticB;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _mult4AC;;	
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator5B;;
+                        *);;
+
+		
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator5B
+			(*
+			<- ifGr;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _discriminant;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+
+			=> nrel_then: .agent_finding_the_roots_of_a_quadratic_equation_operator6A;;
+			=> nrel_else: .agent_finding_the_roots_of_a_quadratic_equation_operator10A;;
+			*);;
+
+		
+	
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator6A
+			(*
+			<- contMult;;
+			-> rrel_1:  rrel_assign: rrel_scp_var: _otricmultiplierB;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _multiplierB;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [-1];;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator6C;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator6C
+			(*
+			<- contMult;;
+			-> rrel_1:  rrel_assign: rrel_scp_var: _denominator;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _multiplierA;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [2];;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator6D;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator6D
+			(*
+			<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _discriminant;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+
+			=> nrel_then: .agent_finding_the_roots_of_a_quadratic_equation_operator10;;
+			=> nrel_else: .agent_finding_the_roots_of_a_quadratic_equation_operator7;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator7
+			(*
+			<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _rootdiscriminant;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _discriminant;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [0.5];;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator200;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator200
+			(*
+			<- printNl;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _rootdiscriminant;;
+			
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator7A;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator7A
+			(*
+			<- contAdd;;
+			-> rrel_1:  rrel_assign: rrel_scp_var: _numerator1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _otricmultiplierB;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _rootdiscriminant;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator7B;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator7B
+			(*
+			<- contSub;;
+			-> rrel_1:  rrel_assign: rrel_scp_var: _numerator2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _otricmultiplierB;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _rootdiscriminant;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator8A;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator8A
+			(*
+			<- contDiv;;
+			-> rrel_1:  rrel_assign: rrel_scp_var: _rootX1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _numerator1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _denominator;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator8B;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator8B
+			(*
+			<- contDiv;;
+			-> rrel_1:  rrel_assign: rrel_scp_var: _rootX2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _numerator2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _denominator;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9;;
+			*);;
+
+		
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out1
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc40;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const:  x1;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc41;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_roots_of_a_quadratic_equation;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out2;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out2
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc42;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const:  x2;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc43;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_roots_of_a_quadratic_equation;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out3;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out3
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc44;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const:  x1;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc45;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_roots_of_a_quadratic_equation;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out4_1;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out4_1
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc44;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const:  x2;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc45;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_roots_of_a_quadratic_equation;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out4;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out4
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: ..roots;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out5;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out5
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: nrel_roots_of_a_quadratic_equation;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out6;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out6
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: concept_quadratic_equation;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: ..roots;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out7;;
+			*);;
+		
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out7
+			(*
+			<-searchSetStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: concept_quadratic_equation;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: ..roots;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out8;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out8
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: concept_quadratic_equation;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out9;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out9
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_cost: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var:  _paramA;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_a;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out10;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out10
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_assign: rrel_scp_var:  _A;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_a;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out11;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out11
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: rrel_multiplier_a;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out12;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out12
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_cost: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var:  _paramB;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_b;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out13;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out13
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_assign: rrel_scp_var:  _B;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_b;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out14;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out14
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: rrel_multiplier_b;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out15;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out15
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_cost: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var:  _paramC;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_c;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out16;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out16
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_assign: rrel_scp_var:  _C;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_multiplier_c;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out17;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out17
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: rrel_multiplier_c;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out18;;
+			*);;
+			
+			
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator9
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_cost: x1;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var:  _rootX1;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_equality;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9A;;
+			*);;
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator9A
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: x1;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9A1;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator9A1
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: x1;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_assign: rrel_scp_var:  _X1;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_equality;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9B;;
+			*);;
+
+		
+		
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator9B
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: x2;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var:  _rootX2;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_equality;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9B1;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator9B1
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: x2;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9B2;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator9B2
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const:  x2;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_assign: rrel_scp_var:  _X2;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_equality;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out1;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_out18
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: nrel_equality;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_gen_answer;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator10
+			(*
+			<-contDiv;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _rootX;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _otricmltiplierB;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _denominator;;
+		
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator10A;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator10A
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const:  x;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc40;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var:  _rootX;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc41;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_equality;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator10B;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator10B
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const:  x;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator10C;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator10C
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const:  x;;
+                        -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc23;;
+                        -> rrel_3: rrel_assign: rrel_scp_var:  _X;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_equality;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9C;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_9C
+			(*
+			<-genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc42;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const:  x;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc43;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_roots_of_a_quadratic_equation;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator9D;;
+			*);;
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator9D
+			(*
+			<-searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..roots;;
+                        -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc44;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const:  x;;
+			-> rrel_4: rrel_assign:  rrel_pos_const_perm: rrel_scp_var: _arc45;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_roots_of_a_quadratic_equation;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_out4;;
+			*);;
+
+		
+
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc10;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_finding_the_roots_of_a_quadratic_equation_operator_return;;
+			*);;     
+					
+		-> .agent_finding_the_roots_of_a_quadratic_equation_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

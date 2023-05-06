@@ -1,0 +1,6 @@
+minus_fifty=>nrel_main_idtf:
+[-50](*<-lang_ru;;*);
+[-50](*<-lang_en;;*);;
+
+consept_number -> minus_fifty;;
+set_of_number -> minus_fifty;;

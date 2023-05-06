@@ -1,0 +1,50 @@
+sc_node_norole_relation->nrel_inverse_matrix;;
+
+nrel_inverse_matrix=>nrel_main_idtf:
+[обратная матрица* ](*<-lang_ru;;*);
+[inverse matrix* ](*<-lang_en;;*);;
+
+nrel_inverse_matrix => nrel_first_domain:concept_matrix;;
+nrel_inverse_matrix => nrel_second_domain:concept_matrix;;
+
+nrel_inverse_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(обратная матрица*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Обратная матрица — такая матрица, при умножении на которую исходная матрица даёт в результате единичную матрицу.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+nrel_inverse_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(квадратная матрица; невырожденная матрица; определитель матрицы*; равенство*; нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадратная матрица обратима тогда и только тогда, когда она невырожденная, то есть её определитель не равен нулю.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_inverse_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неквадратная матрица; невырожденная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для неквадратных матриц и вырожденных матриц обратных матриц не существует.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_inverse_matrix-> rrel_example :
+	"file://code__14.gif";;

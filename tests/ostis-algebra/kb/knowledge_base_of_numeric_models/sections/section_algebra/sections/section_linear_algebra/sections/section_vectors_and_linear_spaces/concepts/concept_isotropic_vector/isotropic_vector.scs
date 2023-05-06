@@ -1,0 +1,21 @@
+sc_node_not_relation->concept_isotropic_vector;;
+
+concept_isotropic_vector=>nrel_main_idtf:
+[изотропный вектор](*<-lang_ru;;*);
+[isotropic vector](*<-lang_en;;*);;
+
+concept_isotropic_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(изотропный вектор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Изотропный вектор - комплексный или вещественный вектор, имеющий нулевую длину.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_isotropic_vector-> rrel_example :
+	[|F|=0](* <- lang_ru;; 	*);;

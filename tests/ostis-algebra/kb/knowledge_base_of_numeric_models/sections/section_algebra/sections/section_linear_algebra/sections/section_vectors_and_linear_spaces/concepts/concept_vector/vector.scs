@@ -1,0 +1,87 @@
+sc_node_not_relation -> concept_vector;;
+
+concept_vector=>nrel_main_idtf:
+[вектор](*<-lang_ru;;*);
+[vector](*<-lang_en;;*);;
+
+concept_vector<= nrel_subdividing:
+	...
+  (*
+    -> concept_unit_vector;;
+    -> concept_zero_vector;;
+    -> concept_isotropic_vector;;
+    -> concept_eigenvector;;
+    -> concept_axial_vector;;
+	*);;
+
+//определения и пояснения
+concept_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(вектор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вектор - математический объект, характеризующийся величиной и направлением.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; элемент)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://vector1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//пример
+concept_vector-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[a={1,2,3}](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_vector<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение вектора.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_vector<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://vector2.png"(* <- lang_ru;; *);;
+*);;
+*);;

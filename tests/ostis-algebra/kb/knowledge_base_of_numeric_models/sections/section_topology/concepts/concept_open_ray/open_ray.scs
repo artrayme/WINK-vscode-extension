@@ -1,0 +1,30 @@
+sc_node_not_relation->concept_open_ray;; 
+
+concept_open_ray=>nrel_main_idtf:
+[открытый луч](*<-lang_ru;;*);
+[open ray](*<-lang_en;;*);;
+concept_open_ray<= nrel_using_constants: concept_number;concept_numerical_sequence;;
+
+concept_open_ray<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(открытый луч)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://open_ray.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_open_ray-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://open_ray.png"(* <- lang_ru;;*);;
+		*);;
+	*);;

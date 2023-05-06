@@ -1,0 +1,58 @@
+sc_node_norole_relation ->  nrel_correlation;;
+
+nrel_correlation => nrel_main_idtf:
+[корреляция*](*<-lang_ru;;*);
+[correlation*](*<-lang_en;;*);;
+
+
+nrel_correlation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(ковариация* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Корреля́ция — это статистическая взаимосвязь двух или более случайных величин](* <- lang_ru;; *);;
+		*);;
+	*);
+        ... 
+	(*
+	=> nrel_main_idtf: [Опр.(ковариация* )]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://Cr.png";;
+		*);;
+	*);
+            ... 
+	(*
+	=> nrel_main_idtf: [Утв.(ковариация* )]  (* <- lang_ru;; *);;
+	<- statement;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Коэффициент корреляции изменяется в пределах от минус единицы до плюс единицы](* <- lang_ru;; *);;
+		*);;
+	*);
+    ... 
+	(*
+	=> nrel_main_idtf: [Утв.(ковариация*;выборка )]  (* <- lang_ru;; *);;
+	<- statement;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Корреляция выборки самой с собой равна единице.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_correlation <- quasybinary_relation;;
+nrel_correlation => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_correlation => nrel_first_domain: concept_sample;;
+nrel_correlation => nrel_second_domain: concept_number;;

@@ -1,0 +1,54 @@
+sc_node_norole_relation -> nrel_vector_multiplication_of_the_number;;
+
+nrel_vector_multiplication_of_the_number=>nrel_main_idtf:
+[умножение вектора на число* ] (*<-lang_ru;;*);
+[vector multiplication of the number* ] (*<-lang_en;;*);;
+
+nrel_vector_multiplication_of_the_number  <- ternary_relation;;
+
+nrel_vector_multiplication_of_the_number => nrel_first_domain: concept_vector;;
+
+nrel_vector_multiplication_of_the_number => nrel_second_domain: concept_number;;
+
+nrel_vector_multiplication_of_the_number => nrel_third_domain: concept_vector;;
+
+nrel_vector_multiplication_of_the_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение вектора на число*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Умножение вектора на число k соответствует растяжению вектора в 1/k раз при k > 1 или сжатию в формула раз при 0 < k < 1, при k = 1 вектор остается прежним (для отрицательных k еще изменяется направление на противоположное).](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_vector_multiplication_of_the_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; умножение*; нуль; нулевой вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если произвольный вектор умножить на ноль, то получим нулевой вектор.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_vector_multiplication_of_the_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; нулевой вектор; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение нулевого вектора и произвольного числа есть нулевой вектор.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,72 @@
+sc_node_norole_relation->nrel_fashion_series_of_numbers;; 
+
+nrel_fashion_series_of_numbers=>nrel_main_idtf:
+[мода ряда чисел* ](*<-lang_ru;;*);
+[fashion series of numbers * ](*<-lang_en;;*);;
+
+nrel_fashion_series_of_numbers<= nrel_using_constants: concept_number;concept_numerical_series;;
+
+nrel_fashion_series_of_numbers => nrel_first_domain:concept_numerical_series;;
+nrel_fashion_series_of_numbers => nrel_second_domain: concept_number;;
+
+nrel_fashion_series_of_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(мода ряда чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Модой ряда чисел называется число, которое встречается в данном ряду чаще других.](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_fashion_series_of_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(числовой ряд)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Ряд чисел может иметь более одной моды, а может не иметь моды совсем.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_fashion_series_of_numbers<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Найти моды в данном числовом ряду.  69, 68, 66, 70, 67, 62, 71, 74, 63, 73, 72.](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_fashion_series_of_numbers<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение мод в числовом ряду.](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_fashion_series_of_numbers-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Ряд: 47, 46, 50, 52, 47, 52, 49, 45, 43, 53, 53, 47, 52.  Две моды – это числа 47 и 52,т.к. каждое из них встречается в ряду по три раза.](* <- lang_ru;;*);;
+		*);;
+	*);;

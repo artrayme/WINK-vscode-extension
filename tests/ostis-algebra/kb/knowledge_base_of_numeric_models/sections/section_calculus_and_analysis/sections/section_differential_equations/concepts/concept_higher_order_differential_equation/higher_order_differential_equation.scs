@@ -1,0 +1,68 @@
+sc_node_not_relation->concept_higher_order_differential_equation;;
+concept_higher_order_differential_equation => nrel_main_idtf :
+[дифференциальное уравнение высшего порядков](*<-lang_ru;;*);
+[higher order differential equation](*<-lang_en;;*);;
+
+concept_higher_order_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дифференциальное уравнение высшего порядков)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://higher_order_differential_equation2.html"   (* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_higher_order_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение; функция; интегрирование*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://higher_order_differential_equation3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_higher_order_differential_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение общего решения дифференциального уравнения высшего порядка.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_higher_order_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://higher_order_differential_equation4.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_higher_order_differential_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://higher_order_differential_equation5.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,32 @@
+sc_node_struct -> section_subject_domain_of_logarithms;;
+
+section_subject_domain_of_logarithms => nrel_main_idtf:
+    [Раздел. Предметная область логарифмических функций] (* <- lang_ru;; *);
+    [Section. Subject domain of logarithms] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_logarithms <- nrel_system_identifier;;
+  
+section_subject_domain_of_logarithms -> rrel_key_sc_element:
+    subject_domain_of_logarithms;
+    concept_logarithmic_function;
+    nrel_logarithm;
+    nrel_decimal_logarithm;
+    nrel_natural_logarithm;
+    nrel_complex_logarithm;;
+
+section_subject_domain_of_logarithms = [*
+    subject_domain_of_logarithms => nrel_main_idtf:
+        [Предметная область логарифмических функций] (* <- lang_ru;; *);
+        [Subject domain of logarithms] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_logarithms -> rrel_maximum_studied_object_class:
+        concept_logarithmic_function;;
+
+    subject_domain_of_logarithms -> rrel_explored_relation:
+        nrel_logarithm;
+        nrel_decimal_logarithm;
+        nrel_natural_logarithm;
+        nrel_complex_logarithm;;
+*];;

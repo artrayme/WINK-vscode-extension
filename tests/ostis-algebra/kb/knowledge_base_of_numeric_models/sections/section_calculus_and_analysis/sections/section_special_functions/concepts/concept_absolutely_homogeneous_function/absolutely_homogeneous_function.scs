@@ -1,0 +1,41 @@
+sc_node_not_relation ->  concept_absolutely_homogeneous_function;;
+concept_absolutely_homogeneous_function => nrel_main_idtf:	[абсолютно однородная функция](*<-lang_ru;;*);	[absolutely homogeneous function](*<-lang_en;;*);	[мүлдем біртекті функция](*<-lang_kz;;*);;
+
+concept_absolutely_homogeneous_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(абсолютно однородная функция)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://defenition.html"(*<-lang_ru;;*);;
+		*);;	
+	*);;
+
+concept_absolutely_homogeneous_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(однородная функция)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для абсолютно однородной функции справедливы те же свойства, что и для однородной функции.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(модуль*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Модуль абсолютно-однородной функции является абсолютно-однородной функцией.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_absolutely_homogeneous_function <= nrel_inclusion: concept_homogeneous_function;;

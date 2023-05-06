@@ -1,0 +1,78 @@
+sc_node_struct -> section_subject_domain_of_vectors_and_linear_spaces;;
+
+section_subject_domain_of_vectors_and_linear_spaces => nrel_main_idtf:
+    [Раздел. Предметная область векторов и линейных пространств] (* <- lang_ru;; *);
+    [Section. Subject domain of vectors and linear spaces] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_vectors_and_linear_spaces <- nrel_system_identifier;;
+
+section_subject_domain_of_vectors_and_linear_spaces -> rrel_key_sc_element:
+    subject_domain_of_vectors_and_linear_spaces;
+    concept_coordinates_of_the_vector;
+    concept_isotropic_vector;
+    concept_axial_vector;
+    concept_unit_vector;
+    concept_right_handed_vectors;
+    concept_eigenvector;
+    concept_vector_space;
+    concept_left_handed_vectors;
+    concept_4_vector;
+    concept_orthonormal_basis;
+    concept_basis;
+    concept_zero_vector;
+    concept_linearly_dependent_vectors;
+    concept_vector;
+    nrel_orthogonality;
+    nrel_scalar_composition;
+    nrel_subtraction_of_vectors;
+    nrel_vector_multiplication_of_the_number;
+    nrel_opposite_vector;
+    nrel_mixed_composition;
+    nrel_vector_length;
+    nrel_complanarity;
+    nrel_the_projection_of_the_axle;
+    nrel_collinearity;
+    nrel_vector_sum;
+    nrel_vector_composition;
+    nrel_equality_vectors;;
+
+section_subject_domain_of_vectors_and_linear_spaces = [*
+    subject_domain_of_vectors_and_linear_spaces => nrel_main_idtf:
+        [Предметная область векторов и линейных пространств] (* <- lang_ru;; *);
+        [Subject domain of vectors and linear spaces] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_vectors_and_linear_spaces -> rrel_maximum_studied_object_class:
+        concept_coordinates_of_the_vector;
+        concept_vector_space;
+        concept_basis;
+        concept_vector;;
+
+    subject_domain_of_vectors_and_linear_spaces -> rrel_not_maximum_studied_object_class:
+        concept_isotropic_vector;
+        concept_axial_vector;
+        concept_unit_vector;
+        concept_right_handed_vectors;
+        concept_eigenvector;
+        concept_left_handed_vectors;
+        concept_4_vector;
+        concept_orthonormal_basis;
+        concept_zero_vector;
+        concept_linearly_dependent_vectors;;
+
+    subject_domain_of_vectors_and_linear_spaces -> rrel_explored_relation:
+        nrel_orthogonality;
+        nrel_scalar_composition;
+        nrel_subtraction_of_vectors;
+        nrel_vector_multiplication_of_the_number;
+        nrel_opposite_vector;
+        nrel_mixed_composition;
+        nrel_vector_length;
+        nrel_complanarity;
+        nrel_the_projection_of_the_axle;
+        nrel_collinearity;
+        nrel_vector_sum;
+        nrel_vector_composition;
+        nrel_equality_vectors;;
+*];;

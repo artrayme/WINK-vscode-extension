@@ -1,0 +1,6 @@
+four_hundred=>nrel_main_idtf:
+[400](*<-lang_ru;;*);
+[400](*<-lang_en;;*);;
+
+concept_number -> four_hundred;;
+set_of_number -> four_hundred;;

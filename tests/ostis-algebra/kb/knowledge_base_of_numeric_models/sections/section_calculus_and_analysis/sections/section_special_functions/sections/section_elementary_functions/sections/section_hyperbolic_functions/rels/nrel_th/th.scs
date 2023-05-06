@@ -1,0 +1,63 @@
+sc_node_norole_relation -> nrel_th;;
+
+nrel_th => nrel_main_idtf:[гиперболический тангенс* ](* <- lang_ru;; *);  [th* ](* <- lang_en;; *);;
+
+nrel_th => nrel_idtf:[tanh](*<-lang_en;;*);;
+
+nrel_th <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(гиперболический тангенс*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Гиперболический тангенс — это элементарная функция,которая находится по формуле th(x)=sh(x)/ch(x).](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+nrel_th <= nrel_using_constants: concept_elementary_function;;
+	
+nrel_th <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(гиперболический тангенс*; четность')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для гиперболического тангенса выполняется соотношение четности : th(-x)=-th(x).](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_th <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(гиперболический тангенс*; производная*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Производная гиперболического тангенса : (th(x))'=1/ch(x)^2).](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_th <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(гиперболический тангенс*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Формула двойного угла для гиперболического тангенса : th(2*x)=2*th(x)/(1+th(x)^2).](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_th <- binary_relation;;
+nrel_th <= nrel_first_domain: nrel_angle_measure;;
+nrel_th <= nrel_second_domain: concept_number;;

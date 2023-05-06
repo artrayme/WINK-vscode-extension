@@ -1,0 +1,90 @@
+sc_node_not_relation->concept_logarithmic_inequality;;
+
+concept_logarithmic_inequality=>nrel_main_idtf:
+[логарифмическое неравенство](*<-lang_ru;;*);
+[logarithmic inequality](*<-lang_en;;*);;
+
+//определение
+concept_logarithmic_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(логарифмическое неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://logarithmic_inequality_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+
+
+
+concept_logarithmic_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://logarithmic_inequality_2.html"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(система неравенств)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://logarithmic_inequality2.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);;
+	
+//используемые константы
+concept_logarithmic_inequality<= nrel_using_constants:concept_number;concept_variable;;
+
+
+// конкретные задачи
+concept_logarithmic_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://logarithmic_inequality_3.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_logarithmic_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Решение логарифмических неравенств]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_logarithmic_inequality-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://logarithmic_inequality3.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

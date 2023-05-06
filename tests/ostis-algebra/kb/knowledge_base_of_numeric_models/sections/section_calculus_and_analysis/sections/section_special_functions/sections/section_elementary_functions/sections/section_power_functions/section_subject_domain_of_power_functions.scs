@@ -1,0 +1,30 @@
+sc_node_struct -> section_subject_domain_of_power_functions;;
+
+section_subject_domain_of_power_functions => nrel_main_idtf:
+    [Раздел. Предметная область степенных функций] (* <- lang_ru;; *);
+    [Section. Subject domain of power functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_power_functions <- nrel_system_identifier;;
+  
+section_subject_domain_of_power_functions -> rrel_key_sc_element:
+    subject_domain_of_power_functions;
+    concept_power_function_with_negative_fractional_exponent;
+    concept_power_function_with_positive_fractional_exponent;
+    concept_power_function;
+    concept_exponent_function;;
+
+section_subject_domain_of_power_functions = [*
+    subject_domain_of_power_functions => nrel_main_idtf:
+        [Предметная область степенных функций] (* <- lang_ru;; *);
+        [Subject domain of power functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_power_functions -> rrel_maximum_studied_object_class:
+        concept_power_function;;
+        
+    subject_domain_of_power_functions -> rrel_not_maximum_studied_object_class:
+        concept_power_function_with_negative_fractional_exponent;
+        concept_power_function_with_positive_fractional_exponent;
+        concept_exponent_function;;
+*];;

@@ -1,0 +1,54 @@
+sc_node_role_relation -> rrel_base_of_the_power;; 
+rrel_base_of_the_power => nrel_main_idtf: [основание степени'](*<-lang_ru;;*); [base of the power'](*<-lang_en;;*);;
+
+rrel_base_of_the_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(основание степени')](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Основание степени - число, которое возводят в степень и то, которое перемножают на само себя определенное количество раз.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_base_of_the_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; степень'; равенство*; показатель'; сумма')](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение двух степеней с одинаковыми основаниями равно степени с тем же основанием и показателем, равным сумме показателей этих степеней.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_base_of_the_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(частное'; два; показатель'; степень')](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Частное двух степеней с одинаковыми показателями всегда можно представить в виде степени с тем же основанием.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_base_of_the_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(возведение в степень*; степень'; показатель'; умножение*)](*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При возведении степени в степень основание оставляют тем же, а показатели перемножают.](*<-lang_ru;;*);;
+		*);;
+	*);;

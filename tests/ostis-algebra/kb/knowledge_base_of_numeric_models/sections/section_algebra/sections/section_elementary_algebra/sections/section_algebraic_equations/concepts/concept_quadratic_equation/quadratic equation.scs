@@ -1,0 +1,86 @@
+sc_node_not_relation -> concept_quadratic_equation;;
+concept_quadratic_equation => nrel_main_idtf :
+[квадратное уравнение](*<-lang_ru;;*);
+[quadratic equation](*<-lang_en;;*);;
+
+concept_quadratic_equation <= nrel_using_constants:  rrel_power; nrel_square_of_the_number; nrel_discriminant;;
+
+//определение
+concept_quadratic_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(квадратное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://quadratic_equation1.html"   (* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+// утверждения
+concept_quadratic_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(корень уравнения)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://quadratic_equation2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(теорема Виета; равенство)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://quadratic_equation3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_quadratic_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение корней квадратного уравнения](* <- lang_ru;; *);;
+*);;
+*);;
+
+// конкретные задачи
+concept_quadratic_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://quadratic_equation4.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_quadratic_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://quadratic_equation5.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

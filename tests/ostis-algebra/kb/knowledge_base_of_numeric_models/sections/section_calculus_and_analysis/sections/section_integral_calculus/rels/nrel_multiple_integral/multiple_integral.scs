@@ -1,0 +1,84 @@
+sc_node_norole_relation-> nrel_multiple_integral;;
+ nrel_multiple_integral=>nrel_main_idtf:
+[кратный интеграл* ](*<-lang_ru;;*);
+[multiple integral* ](*<-lang_en;;*);;
+nrel_multiple_integral<= nrel_first_domain:
+concept_function;;
+
+nrel_multiple_integral <= nrel_second_domain: 
+concept_number;;
+  
+
+nrel_multiple_integral <= nrel_using_constants: concept_interval; nrel_the_definite_integral;;
+nrel_multiple_integral<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(кратный интеграл*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Кратный интеграл — определенный  интеграл от функции нескольких переменных.](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_multiple_integral <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(кратный интеграл*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://multiple_integral.html"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(переменная; функция; интеграл*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+          -> rrel_example: 
+		[Если область интегрирования симметрична относительно начала координат по крайней мере для одной из переменных интегрирования и подынтегральная функция нечётна по этой переменной, интеграл равен нулю, поскольку интегралы по двум половинкам области интегрирования имеют одно и то же абсолютное значение, но противоположные знаки. Если подынтегральная функция чётна по этой переменной, интеграл равен удвоенному интегралу по одной из половинок области интегрирования, поскольку интегралы по каждой из половинок равны.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_multiple_integral<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://multiple_integral1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_multiple_integral<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление кратного интеграла.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_multiple_integral -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://multiple_integral2.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);; 

@@ -1,0 +1,22 @@
+sc_node_role_relation -> rrel_opened_manifold ;;
+
+rrel_opened_manifold => nrel_main_idtf:	
+	[открытое многообразие'](* <- lang_ru;; *);  
+	[opened manifold'](* <- lang_en;; *);;
+
+rrel_opened_manifold => nrel_idtf: [opened'](*<-lang_en;; *);;
+
+rrel_opened_manifold <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(сумма')](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Открытое многообразие — некомпактное связное многообразие без края.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_opened_manifold -> rrel_example:	"file://euclidean_space.png";;

@@ -1,0 +1,54 @@
+sc_node_not_relation -> concept_operational_calculus;; 
+
+concept_operational_calculus => nrel_main_idtf:
+[операционное исчисление](*<-lang_ru;;*);
+[operational calculus](*<-lang_en;;*);;
+
+//надмножество
+concept_mathematical_analysis => nrel_inclusion: concept_operational_calculus;;
+
+//определения и пояснения
+concept_operational_calculus <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (операционное исчисление)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Операционное исчисление — один из методов математического анализа, позволяющий в ряде случаев с помощью весьма простых средств решать сложные математические задачи.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_operational_calculus <= nrel_using_constants:
+	{
+	concept_mathematical_analysis
+	};;
+	
+//утверждения
+concept_operational_calculus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(операционное исчисление; теорема подобия; теорема смещения; теорема запаздывания; теорема умножения)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Основные теоремы операционного исчисления :  теорема подобия, теорема смещения, теорема запаздывания, теорема умножения(свертки).](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(операционное исчисление; тензор; высшая алгебра)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Впервые термин 'операционное исчисление' появился в 1892 году в работе английского ученого О.Хевисайда.](* <- lang_ru;; *);;
+		*);;
+	*);;

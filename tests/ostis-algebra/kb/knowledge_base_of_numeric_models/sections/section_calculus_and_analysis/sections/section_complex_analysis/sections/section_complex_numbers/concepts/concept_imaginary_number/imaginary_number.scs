@@ -1,0 +1,30 @@
+sc_node_not_relation -> concept_imaginary_number;; 
+concept_imaginary_number => nrel_main_idtf:	[мнимое число](*<-lang_ru;;*);	[imaginary number](*<-lang_en;;*);;
+
+concept_imaginary_number => nrel_idtf:	[частично мнимое число](*<-lang_ru;;*);;
+
+concept_imaginary_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (мнимое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Мнимое число — комплексное число с нулевой действительной частью.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_imaginary_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение(мнимое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Мнимым называется число, вторая степень которого является числом отрицательным.](*<-lang_ru;;*);;
+		*);;
+	*);;

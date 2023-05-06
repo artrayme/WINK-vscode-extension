@@ -1,0 +1,79 @@
+sc_node_norole_relation->nrel_addition_of_fractions;; 
+nrel_addition_of_fractions=>nrel_main_idtf:
+[сложение дробей* ] (*<-lang_ru;;*);
+[фракциялардың қосу* ] (*<-lang_kz;;*);
+[addition of fractions* ] (*<-lang_en;;*);;
+
+//разбиение
+nrel_addition_of_fractions<= nrel_subdividing:
+	...
+	(* 
+	-> nrel_addition_of_fractions_with_the_same_denominator;;
+	-> nrel_addition_of_common_fractions;;
+	-> nrel_addition_of_mixed_fractions;;
+	-> nrel_addition_of_decimal_fraction;;
+	*);;
+
+nrel_addition_of_fractions <- ternary_relation;;
+
+nrel_addition_of_fractions => nrel_first_domain: concept_fraction;;
+nrel_addition_of_fractions => nrel_second_domain: concept_fraction;;
+nrel_addition_of_fractions => nrel_third_domain: concept_fraction;;
+
+nrel_addition_of_fractions <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на сложение дробей.](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_addition_of_fractions-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+...
+		(*
+		-> rrel_example: 
+	[(7/15)+(11/15)=18/15=6/5=1(1/5)](* <- lang_en;; 	*);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_addition_of_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+
+		...
+		(*
+		-> rrel_example: 
+			[(3/7)+(2/8)=?](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_addition_of_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(сложение дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если знаменатели дробей одинаковы, то для того, чтобы сложить дроби, надо сложить их числители. Полученная сумма будет числителем результата; знаменатель останется тем же. ](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Если знаменатели дробей различны, необходимо сначала привести дроби к общему знаменателю. При сложении смешанных чисел их целые и дробные части складываются отдельно.](* <- lang_ru;; 	*);;
+		*);;
+*);;

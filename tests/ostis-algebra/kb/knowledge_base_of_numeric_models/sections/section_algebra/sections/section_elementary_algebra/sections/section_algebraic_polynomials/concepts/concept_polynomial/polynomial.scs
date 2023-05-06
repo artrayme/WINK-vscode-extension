@@ -1,0 +1,135 @@
+sc_node_not_relation->concept_polynomial;;
+
+concept_polynomial=>nrel_main_idtf:
+[многочлен](*<-lang_ru;;*);
+[polynomial](*<-lang_en;;*);;
+
+// синонимы
+concept_polynomial=> nrel_idtf:[полином](*<-lang_ru;;*);;
+concept_polynomial=> nrel_idtf:[polynomial](*<-lang_ru;;*);;
+
+
+//определение
+concept_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(многочлен)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Многочленом называется алгебраическая сумма нескольких одночленов. Одночлены, из которых составлен многочлен, называют членами многочлена.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Опр.(многочлен от одной переменной)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://polynomial3.html" (* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(многочлен стандартного вида)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Многочленом стандартного вида называют многочлен, каждый член которого записан в стандартном виде и среди них нет подобных.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(степень многочлена)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Степенью многочлена называется наибольшая из степеней входящих в многочлен одночленов.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(однородный многочлен)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Однородным многочленом называется многочлен стандартного вида, если все его члены имеют одну и ту же степень.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(одночлен,двучлен,трёхчлен)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Одночлены (мономы) - это многочлены, которые содержат только одно слагаемое. Двучлены (биномы) - это многочлены, которые содержат два слагаемых. Трёхчлены (триномы) - это многочлены, которые содержат три слагаемых.](* <- lang_ru;; *);;
+		*);;
+	*);;
+//иерархия
+concept_polynomial <= nrel_strict_inclusion: concept_arithmetic_expression;;
+//используемые константы
+concept_polynomial <= nrel_using_constants: concept_monomial;;
+//утверждения
+concept_polynomial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(однородный многочлен, умножение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://polynomial5.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://polynomial1.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			"file://polynomial2.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_polynomial-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://polynomial4.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

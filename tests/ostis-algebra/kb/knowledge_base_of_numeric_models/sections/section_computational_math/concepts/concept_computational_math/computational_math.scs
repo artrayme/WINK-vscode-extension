@@ -1,0 +1,79 @@
+sc_node_not_relation -> concept_computational_math;; 
+
+concept_computational_math => nrel_main_idtf:
+[вычислительная математика](*<-lang_ru;;*);
+[computational math](*<-lang_en;;*);
+[Есептеу математикасы](*<-lang_kz;;*);;
+
+//разбиение
+concept_computational_math <= nrel_subdividing:
+	...
+	(* 
+	-> concept_algebra;;
+	-> concept_differential_equation;;
+	-> concept_game_theory;;
+	-> concept_coordinate_system;;
+	-> concept_math_programming;;
+	*);;
+	
+//надмножество
+concept_math => nrel_inclusion: concept_computational_math;;
+
+//определения и пояснения
+concept_computational_math <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (вычислительная математика)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Вычислительная математика — раздел математики, включающий круг вопросов, связанных с производством разнообразных вычислений.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (вычислительная математика)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[В более узком понимании вычислительная математика — теория численных методов решения типовых математических задач.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_computational_math <= nrel_using_constants:
+	{
+	concept_math;
+	concept_theory_of_numerical_methods;
+	concept_mathematical_task
+	};;
+	
+//утверждения
+concept_computational_math <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вычислительная математика)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Современная вычислительная математика включает в круг своих проблем изучение особенностей вычисления с применением компьютеров.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вычислительная математика)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вычислительная математика обладает широким кругом прикладных применений для проведения научных и инженерных расчётов. На её основе в последнее десятилетие образовались такие новые области естественных наук, как вычислительная химия, вычислительная биология и так далее.](* <- lang_ru;; *);;
+		*);;
+	*);;

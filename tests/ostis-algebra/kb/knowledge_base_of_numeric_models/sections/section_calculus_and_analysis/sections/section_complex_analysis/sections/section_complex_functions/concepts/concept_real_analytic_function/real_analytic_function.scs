@@ -1,0 +1,56 @@
+sc_node_not_relation -> concept_real_analytic_function;;
+
+concept_real_analytic_function=>nrel_main_idtf:
+[real analytic function](*<-lang_en;;*);
+[вещественная аналитическая функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_real_analytic_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(вещественная аналитическая функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Аналитическая функция вещественной переменной — функция, которая совпадает со своим рядом Тейлора в окрестности любой точки области определения. ](*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//утверждения
+concept_real_analytic_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(аналитическая функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://real_analytic_function.html"(*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(аналитическая функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://real_analytic_function_2.html"(*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(аналитическая функция,производная*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://real_analytic_function_3.html"(*<-lang_ru;;*);;
+*);;
+*);;

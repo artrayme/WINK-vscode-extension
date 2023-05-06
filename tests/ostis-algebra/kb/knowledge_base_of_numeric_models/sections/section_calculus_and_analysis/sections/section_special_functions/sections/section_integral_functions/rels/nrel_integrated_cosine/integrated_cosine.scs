@@ -1,0 +1,48 @@
+sc_node_norole_relation -> nrel_integrated_cosine;;
+nrel_integrated_cosine => nrel_main_idtf:	[интегральный косинус* ](*<-lang_ru;;*);	[integrated cosine* ](*<-lang_en;;*);;
+
+concept_function => nrel_inclusion: nrel_integrated_cosine;;
+
+nrel_integrated_cosine <- binary_relation;;
+nrel_integrated_cosine <= nrel_first_domain:  concept_number;;
+nrel_integrated_cosine <= nrel_second_domain: nrel_angle_measure;;
+
+nrel_integrated_cosine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(интегральный косинус*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральный косинус — специальная функция, определяемая интегралом. Обозначается как ci x.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integrated_cosine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(интегральный косинус*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://int_cos.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_integrated_cosine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(интегральный косинус*; ряд)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://int_cos_series.png"(* <- lang_ru;; *);;
+		*);;
+	*);;

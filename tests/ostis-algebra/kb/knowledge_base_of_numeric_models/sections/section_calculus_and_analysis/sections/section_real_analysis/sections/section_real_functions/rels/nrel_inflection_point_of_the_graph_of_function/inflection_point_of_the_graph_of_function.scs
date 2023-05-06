@@ -1,0 +1,62 @@
+sc_node_norole_relation->nrel_inflection_point_of_the_graph_of_function;;
+
+nrel_inflection_point_of_the_graph_of_function=>nrel_main_idtf:
+[точка перегиба графика функции* ] (*<-lang_ru;;*);
+[inflection point of the graph of function* ] (*<-lang_en;;*);;
+
+nrel_inflection_point_of_the_graph_of_function => nrel_first_domain:concept_function;;
+nrel_inflection_point_of_the_graph_of_function => nrel_second_domain: concept_point;;
+
+nrel_inflection_point_of_the_graph_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(точка перегиба графика функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Точка перегиба функции — это точка, в которой функция непрерывна и при переходе через которую функция меняет направление выпуклости.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_inflection_point_of_the_graph_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(точка перегиба графика функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://inflection_point_of_the_graph_of_function2.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_inflection_point_of_the_graph_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(необходимое условие существования точки перегиба; функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://inflection_point_of_the_graph_of_function3.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_inflection_point_of_the_graph_of_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(достаточное условие существоания точки перегиба; производная*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://inflection_point_of_the_graph_of_function4.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

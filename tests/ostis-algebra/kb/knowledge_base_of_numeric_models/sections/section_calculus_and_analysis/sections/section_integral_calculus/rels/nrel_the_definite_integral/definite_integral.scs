@@ -1,0 +1,95 @@
+sc_node_norole_relation-> nrel_the_definite_integral;;
+nrel_the_definite_integral=>nrel_main_idtf:
+[определённый интеграл* ](*<-lang_ru;;*);
+[definite integral* ](*<-lang_en;;*);;
+ 
+nrel_the_definite_integral => nrel_first_domain:concept_function;;
+nrel_the_definite_integral => nrel_second_domain: concept_number;;
+
+nrel_the_definite_integral => nrel_using_constants: concept_interval; nrel_integral;nrel_limit_of_integration; nrel_integration;;
+
+nrel_the_definite_integral<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(определённый интеграл*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Пусть функция f (x) непрерывна на замкнутом интервале \[a, b\]. Определенный интеграл от функции f (x) в пределах от a до b вводится как предел суммы бесконечно большого числа слагаемых, каждое из которых стремится к нулю ](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_the_definite_integral <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(определённый интеграл*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_definite_integral.png"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(интервал; первообразная*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_definite_integral1.png"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(график функции; интервал)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_definite_integral2.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+// конкретные задачи
+nrel_the_definite_integral <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_definite_integral3.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_the_definite_integral<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление определённого интеграла.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+nrel_the_definite_integral -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_definite_integral4.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);; 

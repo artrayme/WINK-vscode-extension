@@ -1,0 +1,62 @@
+sc_node_norole_relation -> nrel_cth;;
+
+nrel_cth => nrel_main_idtf:
+[гиперболический котангенс* ](* <- lang_ru;; *);  
+[th* ](* <- lang_en;; *);;
+
+//определение
+nrel_cth <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(гиперболический котангенс*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[гиперболический котангенс — это элементарная функция,которая находится по формуле cth(x)=1/th(x).](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+nrel_cth <= nrel_using_constants:concept_elementary_function;;
+	
+//утверждения
+nrel_cth <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гиперболический котангенс*; четность')] (* <- lang_ru;; *);;
+	<-sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для гиперболического котангенса не выполняется соотношение четности.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(гиперболический котангенс*; производная*)] (*<-lang_ru;;*);;
+	<-sc_statement;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		->rrel_example:
+			[Производная гиперболического котангенса : (cth(x))'=-1/sh(x)^2).](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(гиперболический котангенс*)] (*<-lang_ru;;*);;
+	<-sc_statement;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		->rrel_example:
+			[Формула двойного угла для гиперболического котангенса : cth(2*x)=1/2*(th(x)+cth(x)).](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_cth <- binary_relation;;
+nrel_cth <= nrel_first_domain: nrel_angle_measure;;
+nrel_cth <= nrel_second_domain: concept_number;;

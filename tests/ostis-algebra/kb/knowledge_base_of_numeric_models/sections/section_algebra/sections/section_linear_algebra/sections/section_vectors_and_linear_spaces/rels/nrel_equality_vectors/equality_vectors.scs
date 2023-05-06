@@ -1,0 +1,74 @@
+sc_node_norole_relation -> nrel_equality_vectors;;
+
+nrel_equality_vectors =>nrel_main_idtf:
+[равенство векторов* ](*<-lang_ru;;*);
+[equality vectors* ](*<-lang_en;;*);;
+
+nrel_equality_vectors <- binary_relation;;
+nrel_equality_vectors => nrel_first_domain: concept_vector;;
+nrel_equality_vectors => nrel_second_domain: concept_vector;;
+
+nrel_equality_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(равенство векторов*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Два вектора называются равными, если они сонаправленные и их длины равны.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_equality_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(равенство векторов*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вектора a и b называются равными, если они имеют одинаковую длину, лежат на параллельных прямых или на одной прямой, и направлены в одном направлении.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+nrel_equality_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство векторов*; вектор; абсолютная величина*; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если векторы одинаково направлены и равны по абсолютной величине, то они равны. ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_equality_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство векторов*; нулевой вектор; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Все нулевые векторы считаются равными друг другу.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_equality_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство векторов*; вектор; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вектора равны, если их координаты равны](* <- lang_ru;; *);;
+		*);;
+	*);;

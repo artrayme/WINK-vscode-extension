@@ -1,0 +1,6 @@
+million=>nrel_main_idtf:
+[1000000](*<-lang_ru;;*);
+[1000000](*<-lang_en;;*);;
+
+concept_number -> million;;
+set_of_number -> million;;

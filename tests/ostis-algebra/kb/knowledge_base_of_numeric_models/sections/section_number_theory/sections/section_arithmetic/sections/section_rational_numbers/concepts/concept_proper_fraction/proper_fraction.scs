@@ -1,0 +1,78 @@
+sc_node_not_relation->concept_proper_fraction;;
+
+concept_proper_fraction=>nrel_main_idtf:
+[правильная дробь](*<-lang_ru;;*);
+[тиісті фракциясын](*<-lang_kz;;*);
+[proper fraction](*<-lang_en;;*);;
+
+//определение
+concept_proper_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(правильная дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дробь, в которой числитель меньше знаменателя, называют правильной дробью](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//утверждения
+concept_proper_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(правильная дробь, 1-единица, модуль )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Модуль правильной дроби меньше единицы.] (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_proper_fraction <= nrel_using_constants: concept_number;rrel_denominator;rrel_numerator;;
+
+// конкретные задачи
+concept_proper_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли дробь правильной : 3/4; 2/3; 8/7.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_proper_fraction  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение является ли дробь пральной .]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_proper_fraction -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[3/4 - правильная дробь ](* <- lang_ru;; 	*);;
+		*);;
+	*);;

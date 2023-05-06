@@ -1,0 +1,65 @@
+sc_node_norole_relation -> nrel_ch;;
+
+nrel_ch => nrel_main_idtf:
+[гиперболический косинус* ](* <- lang_ru;; *);  
+[sh* ](* <- lang_en;; *);;
+
+//синонимы
+nrel_ch => nrel_idtf:
+[cosh](*<-lang_en;;*);;
+
+//определение
+nrel_ch <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(гиперболический косинус*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[гиперболический косинус — это элементарная функция,которая находится по формуле ch(x)=(e^x+e^(-x))/2.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+nrel_ch <= nrel_using_constants:concept_elementary_function;;	
+	
+nrel_ch <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гиперболический косинус*; четность')] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+	      -> rrel_example:
+			[Для гиперболического косинуса выполняется соотношение четности : ch(-x)=ch(x).](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(гиперболический косинус*; производная*)] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+	      -> rrel_example:
+			[Производная гиперболического косинуса : (ch(x))'=sh(x)).](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(гиперболический косинус*)] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+	      -> rrel_example:
+			[Формула двойного угла для гиперболического косинуса : ch(2*x)=2*ch(x)^2-1 .](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_ch <- binary_relation;;
+nrel_ch <= nrel_first_domain: nrel_angle_measure;;
+nrel_ch <= nrel_second_domain: concept_number;;

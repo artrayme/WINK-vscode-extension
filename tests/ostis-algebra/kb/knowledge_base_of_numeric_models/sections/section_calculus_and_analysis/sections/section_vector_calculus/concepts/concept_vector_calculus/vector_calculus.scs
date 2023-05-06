@@ -1,0 +1,64 @@
+sc_node_not_relation -> concept_vector_calculus;; 
+
+concept_vector_calculus => nrel_main_idtf:
+[векторное исчисление](*<-lang_ru;;*);
+[calculus of variations](*<-lang_en;;*);;
+
+//разбиение
+concept_vector_calculus <= nrel_subdividing:
+	...
+	(* 
+	-> concept_linear_algebra;;
+	-> concept_vector_analysis;;
+	-> concept_functional_analysis;;
+	*);;
+
+//надмножество
+concept_mathematical_analysis => nrel_inclusion: concept_vector_calculus;;
+
+//определения и пояснения
+concept_vector_calculus <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (векторное исчисление)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Векторное исчисление — раздел математического анализа, в котором изучаются свойства операций над векторами.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_vector_calculus <= nrel_using_constants:
+	{
+	concept_mathematical_analysis;
+	concept_vector
+	};;
+	
+//утверждения
+concept_vector_calculus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(векторное исчисление; тензорное исчисление)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Расширением векторного исчисления является тензорное исчисление.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(векторное исчисление; линейное интегральное уравнение; дифференциальное уравнение; алгебраическая геометрия)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Методы, основанные на векторном исчислении, нашли широкое применение в теории линейных интегральных уравнений, в теории обработки сигналов, в теории обыкновенных дифференциальных уравнений, алгебраической геометрии и т.д.](* <- lang_ru;; *);;
+		*);;
+	*);;

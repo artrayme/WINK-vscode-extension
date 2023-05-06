@@ -1,0 +1,104 @@
+sc_node_norole_relation->nrel_addition_of_decimal_fraction;; 
+
+nrel_addition_of_decimal_fraction=>nrel_main_idtf:
+[сложение десятичных дробей* ](*<-lang_ru;;*);
+[ондық қосу* ](*<-lang_kz;;*);
+[addition of decimal fraction* ](*<-lang_en;;*);;
+
+nrel_addition_of_decimal_fraction=> nrel_idtf:[суммирование десятичных дробей* ](*<-lang_ru;;*);;
+
+nrel_addition_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сложение десятичных дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сложение десятичных дробей - операция, при которой несколько десяитичных дробей суммируются так, чтобы после запятой было одинакове количество цифр. ](* <- lang_ru;; 	*);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(метод сложения десятичных дробей)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://addition_of_decimal_fraction.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+   
+
+//утверждения
+nrel_addition_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(переместительный закон*; сочетательный закон*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для сложение десятичных дробей, как и для сложения натуральных чисел выполняются переместительный и сочетательный законы.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//конкретные задачи
+ nrel_addition_of_decimal_fraction<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Вычислите: z1+z2, если z1=23,02, z2=12,13.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_addition_of_decimal_fraction<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение суммы двух десятичных дробей.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+
+nrel_addition_of_decimal_fraction => nrel_first_domain:
+concept_decimal;;
+
+nrel_addition_of_decimal_fraction => nrel_second_domain: 
+concept_decimal;;
+
+nrel_addition_of_decimal_fraction => nrel_third_domain: 
+concept_decimal;;
+
+
+//пример
+ nrel_addition_of_decimal_fraction -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[z1=13,06 , z2=14,23. z1+z2=13,06+14,23=27,29.](* <- lang_ru;;*);;
+		*);;
+	*);;

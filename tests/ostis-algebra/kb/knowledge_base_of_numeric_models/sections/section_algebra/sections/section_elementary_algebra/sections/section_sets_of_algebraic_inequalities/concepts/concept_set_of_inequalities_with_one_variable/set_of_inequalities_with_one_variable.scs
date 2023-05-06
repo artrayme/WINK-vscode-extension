@@ -1,0 +1,98 @@
+sc_node_not_relation->concept_set_of_inequalities_with_one_variable;;
+
+concept_set_of_inequalities_with_one_variable=>nrel_main_idtf:
+[система неравенств с одной переменной](*<-lang_ru;;*);
+[system of inequalities with one variable](*<-lang_en;;*);;
+
+//определение
+concept_set_of_inequalities_with_one_variable <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(система неравенств с одной переменной)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Несколько неравенств образуют систему, если нужно найти все общие решения данных неравенств. ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_set_of_inequalities_with_one_variable<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(система, неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[  Решением системы неравенств называют такие значения переменной, которые являются решениями сразу всех неравенств, входящих в эту систему.](* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство, система)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[ Решить систему неравенств – значит найти решения для всей системы, либо доказать, что у данной системы решений нет.](* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://system_of_inequalities_with_one_variable_1.html"	(* <- lang_ru;; 	*);;
+*);;
+	*);;
+	
+//используемые константы
+concept_set_of_inequalities_with_one_variable<= nrel_using_constants:concept_number;concept_variable;;
+
+
+// конкретные задачи
+concept_set_of_inequalities_with_one_variable<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://system_of_inequalities_with_one_variable_2.jpg"	 (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_set_of_inequalities_with_one_variable<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Решить систему с одной переменной.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_set_of_inequalities_with_one_variable-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://system_of_inequalities_with_one_variable_3.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

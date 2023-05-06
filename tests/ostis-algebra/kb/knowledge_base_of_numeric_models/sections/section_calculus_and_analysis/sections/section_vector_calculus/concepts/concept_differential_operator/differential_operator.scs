@@ -1,0 +1,32 @@
+sc_node_not_relation -> concept_differential_operator;; 
+
+concept_differential_operator=> nrel_main_idtf :
+[дифференциальный оператор] (* <- lang_ru;; *);
+[differential operator](*<-lang_en;;*);;
+
+//определение
+concept_differential_operator <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дифференциальный оператор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дифференциальный оператор — обобщение оператора дифференцирования.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(дифференциальный оператор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дифференциальный оператор — оператор, определенный некоторым дифференциальным выражением и действующий в пространствах функций на дифференцируемых многообразиях, или в пространствах, сопряженных к пространствам этого типа.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_differential_operator -> concept_linear_differential_operator; concept_simplest_differential_operator; concept_differential_operator_nabla;;

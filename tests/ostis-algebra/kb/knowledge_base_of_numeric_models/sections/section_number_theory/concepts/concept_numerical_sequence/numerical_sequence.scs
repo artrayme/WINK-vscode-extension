@@ -1,0 +1,61 @@
+sc_node_not_relation -> concept_numerical_sequence;;
+concept_numerical_sequence => nrel_main_idtf :
+[числовая последовательность] (* <- lang_ru;; *);
+[сандық дәйектілігі] (* <- lang_kz;; *);
+[numerical sequence] (* <- lang_en;; *);;
+
+//используемые константы
+concept_numerical_sequence <= nrel_using_constants: nrel_limit_of_the_sequence; concept_number;;
+
+//разбиение
+concept_numerical_sequence <= nrel_subdividing:
+	...
+	(* 
+	-> concept_converging_numerical_sequence;;
+	-> concept_divergent_numerical_sequence;;
+	*);;
+concept_numerical_sequence <= nrel_subdividing:
+	...
+	(* 
+	-> concept_increasing_sequence;;
+	-> concept_decreasing_sequence;;
+	*);;
+
+//определение
+concept_numerical_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(числовая последовательность)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			"file://numerical_sequence1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_numerical_sequence -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://numerical_sequence2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_numerical_sequence <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(способы задания последовательности)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://numerical_sequence3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

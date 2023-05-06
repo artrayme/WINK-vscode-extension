@@ -1,0 +1,65 @@
+sc_node_not_relation->concept_complex_mating_number;;
+
+concept_complex_mating_number=>nrel_main_idtf:
+[комплексно-сопряженные числа](*<-lang_ru;;*);
+[complex mating numbers](*<-lang_en;;*);
+[кешенді бастайтын](*<-lang_kz;;*);;
+
+concept_complex_mating_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(комплексно-сопряженные числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если z=a+b*i, то число !z=a-b*i называется комплексным сопряженным к числу z.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(комплексно-сопряженные числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[То есть у комплексно сопряженных чисел действительные части равны, а мнимые отличаются знаком.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_complex_mating_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число; сопряженные числа; сумма'; действительное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Два комплексных числа a+b·i и a-b·i называются сопряженными. Сопряженные комплексные числа в сумме дают действительное число 2a.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; действительное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение двух взаимно сопряженных комплексных чисел есть число действительное.](* <- lang_ru;; *);;
+		*);;
+	*);
+		... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число; сопряженные числа; действительное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Из всех комплексных чисел действительные числа (и только они) равны своим сопряженным числам.](* <- lang_ru;; *);;
+		*);;
+	*);;

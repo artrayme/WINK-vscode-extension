@@ -1,0 +1,39 @@
+sc_node_not_relation ->  concept_positively_homogeneous_function;;
+
+ concept_positively_homogeneous_function => nrel_main_idtf:
+[положительно однородная функция](*<-lang_ru;;*);
+[positively homogeneous function](*<-lang_en;;*);
+[онбіртекті функция](*<-lang_kz;;*);;
+
+//определение
+
+ concept_positively_homogeneous_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(положительно однородная функция)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://positively_homogeneous_function_defenition.html"(*<-lang_ru;;*);;
+		*);;	
+	*);;
+
+
+//утверждения
+
+ concept_positively_homogeneous_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(однородная функция)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для положительно однородной функции справедливы те же свойства, что и для однородной функции.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_positively_homogeneous_function <= nrel_inclusion: concept_homogeneous_function;;

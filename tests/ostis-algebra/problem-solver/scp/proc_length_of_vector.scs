@@ -1,0 +1,87 @@
+scp_program -> proc_length_vector (*	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _x;;
+		-> rrel_2: rrel_in: _y;;
+		-> rrel_3: rrel_in: _z;;
+                -> rrel_4: rrel_out: _length;;
+	*);;
+
+	-> rrel_operators: ... (*	
+		-> rrel_init: ..proc_length_vector_operator1 (*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _xx;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x;;
+
+			=> nrel_goto: ..proc_length_vector_operator_calculation_part2;;
+			*);;
+
+		-> ..proc_length_vector_operator_calculation_part2
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _yy;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _y;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y;;
+
+			=> nrel_goto: ..proc_length_vector_operator_calculation_part3;;
+			*);;
+
+		-> ..proc_length_vector_operator_calculation_part3
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _zz;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _z;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z;;
+
+			=> nrel_goto: ..proc_length_vector_operator_calculation_part4;;
+			*);;
+		
+		-> ..proc_length_vector_operator_calculation_part4
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _xy;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _xx;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _yy;;
+
+			=> nrel_goto: ..proc_length_vector_operator_calculation_part5;;
+			*);;
+
+		-> ..proc_length_vector_operator_calculation_part5
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _lengthInQadric;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _xy;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _zz;;
+
+			=> nrel_goto: ..proc_length_vector_operator_calculation_part6;;
+			*);;
+
+		-> ..proc_length_vector_operator_calculation_part6
+			(*
+			<- contDiv;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _pow;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [2];;
+
+			=> nrel_goto: ..proc_length_vector_operator_calculation_part7;;
+			*);;
+
+		
+		-> ..proc_length_vector_operator_calculation_part7
+			(*
+			<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _length;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _lengthInQadric;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _pow;;
+
+			=> nrel_goto: ..proc_length_vector_operator_return;;
+			*);;
+
+		
+ -> ..proc_length_vector_operator_return (*
+			<- return;;
+		*);;
+		
+	*);;
+*);;
+		

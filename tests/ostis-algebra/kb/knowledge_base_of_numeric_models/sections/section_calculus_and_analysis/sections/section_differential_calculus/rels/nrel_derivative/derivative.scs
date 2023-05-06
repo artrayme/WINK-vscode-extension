@@ -1,0 +1,75 @@
+sc_node_norole_relation->nrel_derivative;;
+
+nrel_derivative=>nrel_main_idtf:
+[производная* ](*<-lang_ru;;*);
+[derivative* ](*<-lang_en;;*);
+[туынды* ](*<-lang_kz;;*);;
+
+
+nrel_derivative=> nrel_idtf:[fluxion* ](*<-lang_en;;*);;
+
+nrel_derivative <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(производая*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Производной функции называется предел отношения приращения функции к приращению независимой переменной при стремлении последнего к нулю.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_derivative <= nrel_using_constants:
+	{
+	concept_function;
+	nrel_limit
+	};;
+	
+//утверждения
+	
+nrel_derivative <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*; множитель')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Постоянный множитель можно выносить за знак производной](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*; сумма'; функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Производная суммы функций не равна сумме производных этих функций.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*;произведение*; функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Производная произведения двух функций не равна произведению производных этих функций.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_derivative <- binary_relation;;
+nrel_derivative <= nrel_first_domain:  concept_function;;
+nrel_derivative <= nrel_second_domain: concept_function;;
+
+
+//надмножество
+concept_arithmetic_operation => nrel_inclusion: nrel_derivative;;

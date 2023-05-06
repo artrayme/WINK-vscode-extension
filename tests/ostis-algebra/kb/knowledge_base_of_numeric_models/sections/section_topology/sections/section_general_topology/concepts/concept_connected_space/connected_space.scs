@@ -1,0 +1,27 @@
+sc_node_not_relation -> concept_connected_space;;
+concept_connected_space => nrel_main_idtf:
+	[cвязное пространство](*<-lang_ru;;*);
+	[connected space](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_connected_space<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(cвязное пространство)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Cвязное пространство - это топологическое пространство , которое не может быть представлено как объединение двух или более открытых подмножеств ](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_general_topology => nrel_inclusion: concept_connected_space;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_topological_space
+	};;
+
+

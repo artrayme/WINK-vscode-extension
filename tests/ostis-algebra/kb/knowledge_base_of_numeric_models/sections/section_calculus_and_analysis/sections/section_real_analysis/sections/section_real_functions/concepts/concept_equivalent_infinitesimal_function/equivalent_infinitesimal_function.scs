@@ -1,0 +1,60 @@
+sc_node_not_relation -> concept_equivalent_infinitesimal_function;;
+concept_equivalent_infinitesimal_function=> nrel_main_idtf :
+[эквивалентные бесконечно малые функции] (* <- lang_ru;; *);
+[equivalent infinitesimal function] (* <- lang_en;; *);; 
+
+concept_equivalent_infinitesimal_function <= nrel_using_constants: concept_function; concept_infinitesimal_function;;
+
+concept_equivalent_infinitesimal_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(эквивалентные бесконечно малые функции)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://equivalent_infinitesimal_function1.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_equivalent_infinitesimal_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(эквивалентные бесконечно малые функции)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://equivalent_infinitesimal_function2.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_equivalent_infinitesimal_function<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на определение являются ли БМФ эквивалентными.](* <- lang_ru;; *);;
+*);;
+*);;
+
+// конкретные задачи
+concept_equivalent_infinitesimal_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://equivalent_infinitesimal_function3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

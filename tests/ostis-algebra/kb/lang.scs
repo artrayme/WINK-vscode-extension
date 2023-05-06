@@ -1,0 +1,13 @@
+languages -> lang_kz;;
+lang_kz <- sc_node_not_relation;
+	=> nrel_main_idtf:
+	[Казахский язык](* <- lang_ru;; *);
+	[Казахская мова](* <- lang_bel;; *);
+	[Kazakh language](* <- lang_en;; *);;
+
+languages -> lang_bel;;
+lang_bel <- sc_node_not_relation;
+	=> nrel_main_idtf:
+	[Белорусский язык](* <- lang_ru;; *);
+	[Беларуская мова](* <- lang_bel;; *);
+	[Belarusian language](* <- lang_en;; *);;

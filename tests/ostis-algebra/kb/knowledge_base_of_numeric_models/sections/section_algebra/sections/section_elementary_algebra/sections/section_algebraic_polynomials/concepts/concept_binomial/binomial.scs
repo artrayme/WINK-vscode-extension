@@ -1,0 +1,41 @@
+sc_node_not_relation -> concept_binomial;;
+concept_binomial => nrel_main_idtf :
+[двучлен] (* <- lang_ru;; *);
+[биномдық] (* <- lang_kz;; *);
+[binomial](*<-lang_en;;*);;
+
+concept_binomial => nrel_idtf :
+[бином] (* <- lang_ru;; *);;
+
+concept_polynomial -> concept_binomial;;
+
+concept_binomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(двучлен)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Бином или двучлен — частный случай полинома (многочлена), состоящего из двух слагаемых мономов (одночленов).](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Двучлен -алгебраическое выражение, представляющее собою сумму или разность двух одночленов.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_binomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(Теорема Безу; многочлен; деление*; остаток'; число; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://binomial_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

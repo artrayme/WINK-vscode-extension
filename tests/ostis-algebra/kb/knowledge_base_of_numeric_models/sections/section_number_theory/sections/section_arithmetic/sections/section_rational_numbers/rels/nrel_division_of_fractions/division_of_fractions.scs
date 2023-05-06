@@ -1,0 +1,81 @@
+sc_node_norole_relation->nrel_division_of_fractions;; 
+nrel_division_of_fractions=>nrel_main_idtf:[деление дробей* ] (*<-lang_ru;;*);;
+nrel_division_of_fractions=>nrel_main_idtf:[фракцияларын бөлімшесі* ] (*<-lang_kz;;*);;
+nrel_division_of_fractions=>nrel_main_idtf:[division of fractions* ] (*<-lang_en;;*);;
+
+//разбиение
+nrel_division_of_fractions<= nrel_subdividing:
+	...
+	(* 
+	-> nrel_division_of_common_fractions;;
+	-> nrel_division_of_decimal_fraction;;
+	-> nrel_division_of_common_fraction_by_a_number;;
+	-> nrel_division_of_mixed_fractions;;
+	*);;
+
+nrel_division_of_fractions  <- ternary_relation;;
+
+nrel_division_of_fractions => nrel_first_domain: concept_fraction;;
+nrel_division_of_fractions => nrel_second_domain: concept_number;;
+nrel_division_of_fractions => nrel_third_domain: concept_fraction;;
+
+// конкретные задачи
+nrel_division_of_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вычислите (5/17)/(8/17)*40=](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_division_of_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на деление дробей.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_division_of_fractions-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+...
+		(*
+		-> rrel_example: 
+	[(15/7):3=(15/7)*(1/3)=15/(7*3)=5/7](* <- lang_en;; 	*);;
+		*);
+...
+		(*
+		-> rrel_example: 
+	[(3/5):(3/10)=(3/5)*(10/3)=(3*10)/(5*3)=2](* <- lang_en;; 	*);;
+		*);;
+	*);;
+
+nrel_division_of_fractions <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(деление дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Чтобы разделить дробь на натуральне число, надо делимое умножить на число, обратное делителю.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Чтобы разделить одну дробь на другую, надо делимое умножить на число, обратное делителю.](* <- lang_ru;; 	*);;
+		*);;
+*);;

@@ -1,0 +1,98 @@
+sc_node_norole_relation->nrel_modulus_of_complex_number;;
+
+nrel_modulus_of_complex_number=>nrel_main_idtf:
+[модуль комплексного числа* ](*<-lang_ru;;*);
+[modulus of complex number* ](*<-lang_en;;*);;
+
+//определение
+nrel_modulus_of_complex_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(модуль комплексного числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Модулем (абсолютной величиной) комплексного числа называется длина радиус-вектора соответствующей точки комплексной плоскости (или, что то же, расстояние между точкой комплексной плоскости, соответствующей этому числу, и началом координат).](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(модуль комплексного числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://complex_number1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_modulus_of_complex_number <= nrel_using_constants: concept_real_number;concept_the_absolute_value;;
+
+// утверждения
+nrel_modulus_of_complex_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(действительное число; абсолютная величина)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если z=a+0*i, то модуль комплексного числа z будет совпадать с абсолютной величиной z.](* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(модуль комплексного числа; комплексное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		      "file://complex_number2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_modulus_of_complex_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Найти модуль комплексного числа z=3+5*i.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_modulus_of_complex_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождения модуля комплексного числа.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+nrel_modulus_of_complex_number -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[z=3+4*i. Модуль комплексного числа z равен |z|=5.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

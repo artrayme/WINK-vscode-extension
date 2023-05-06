@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_complex_analytic_function;;
+
+concept_complex_analytic_function=>nrel_main_idtf:
+[complex analytic function](*<-lang_en;;*);
+[комплексная аналитическая функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_complex_analytic_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр(комплексная аналитическая функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+     "file://complex_analytic_function_definition.html"(*<-lang_ru;;*);;
+*);;
+*);;
+
+//утверждения
+concept_complex_analytic_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(аналитическая функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://complex_analytic_function_example1.html"(*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(аналитическая функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://complex_analytic_function_example2.html"(*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(аналитическая функция,производная*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://complex_analytic_function_example3.html"(*<-lang_ru;;*);;
+*);;
+*);;

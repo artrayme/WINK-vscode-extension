@@ -1,0 +1,117 @@
+sc_node_norole_relation->nrel_exponentiation_of_natural_numbers;;
+
+nrel_exponentiation_of_natural_numbers=>nrel_main_idtf:
+[возведение в степень натуральных чисел* ] (*<-lang_ru;;*);
+[табиғи сандар экспонат* ] (*<-lang_kz;;*);
+[exponentiation of natural numbers* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_exponentiation_of_natural_numbers=> nrel_idtf:[exponentiation* ](*<-lang_en;;*);;
+
+//определение и пояснения
+nrel_exponentiation_of_natural_numbers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(возведение в степень натуральных чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Возведение в степень - действие, заключающееся нахождении степени данного числа.](* <- lang_ru;; *);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(возведение в степень натуральных чисел*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://exponentiation1.html" (*<-lang_ru;;*);;
+*);;
+*);
+
+...
+(*
+=> nrel_main_idtf: [Пояснение (возведение в степень натуральных чисел*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://exponentiation2.html" (*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//утверждения
+nrel_exponentiation_of_natural_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(степень числа; 1; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponentiation3.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//конкретные задачи
+ nrel_exponentiation_of_natural_numbers <- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://exponentiation4.html" (*<-lang_ru;;*);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_exponentiation_of_natural_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение степени числа.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_exponentiation_of_natural_numbers<- ternary_relation;;
+
+nrel_exponentiation_of_natural_numbers => nrel_first_domain:
+concept_natural_number;;
+
+nrel_exponentiation_of_natural_numbers => nrel_second_domain: 
+concept_natural_number;;
+
+nrel_exponentiation_of_natural_numbers => nrel_third_domain: 
+concept_natural_number;;
+
+
+//пример
+nrel_exponentiation_of_natural_numbers -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://exponentiation5.html" (*<-lang_ru;;*);;
+		*);;
+	*);;

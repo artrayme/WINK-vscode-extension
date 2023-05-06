@@ -1,0 +1,25 @@
+sc_node_not_relation -> concept_knot_theory;;
+concept_knot_theory => nrel_main_idtf:
+	[теория узлов](*<-lang_ru;;*);
+	[knot theory](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_knot_theory<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(теория узлов)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+     [Теория узлов — изучение математических узлов.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_algebraic_topology => nrel_inclusion: concept_knot_theory;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_mathematics_knot 
+	};;

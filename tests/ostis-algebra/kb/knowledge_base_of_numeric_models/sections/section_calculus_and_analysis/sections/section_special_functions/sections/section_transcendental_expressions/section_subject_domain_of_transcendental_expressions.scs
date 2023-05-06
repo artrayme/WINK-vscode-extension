@@ -1,0 +1,22 @@
+sc_node_struct -> section_subject_domain_of_transcendental_expressions;;
+
+section_subject_domain_of_transcendental_expressions => nrel_main_idtf:
+    [Раздел. Предметная область трансцендентных выражений] (* <- lang_ru;; *);
+    [Section. Subject domain of transcendental expressions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_transcendental_expressions <- nrel_system_identifier;;
+  
+section_subject_domain_of_transcendental_expressions -> rrel_key_sc_element:
+    subject_domain_of_transcendental_expressions;
+    concept_transcendental_expression;;
+
+section_subject_domain_of_transcendental_expressions = [*
+    subject_domain_of_transcendental_expressions => nrel_main_idtf:
+        [Предметная область трансцендентных выражений] (* <- lang_ru;; *);
+        [Subject domain of transcendental expressions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_transcendental_expressions -> rrel_maximum_studied_object_class:
+        concept_transcendental_expression;;
+*];;

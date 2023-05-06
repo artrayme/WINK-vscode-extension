@@ -1,0 +1,28 @@
+sc_node_struct -> section_subject_domain_of_transcendental_inequalities;;
+
+section_subject_domain_of_transcendental_inequalities => nrel_main_idtf:
+    [Раздел. Предметная область трансцендентных неравенств] (* <- lang_ru;; *);
+    [Section. Subject domain of transcendental inequalities] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_transcendental_inequalities <- nrel_system_identifier;;
+  
+section_subject_domain_of_transcendental_inequalities -> rrel_key_sc_element:
+    subject_domain_of_transcendental_inequalities;
+    concept_inequality_module;
+    concept_exponential_inequality;
+    concept_logarithmic_inequality;
+    concept_trigonometric_inequality;;
+
+section_subject_domain_of_transcendental_inequalities = [*
+    subject_domain_of_transcendental_inequalities => nrel_main_idtf:
+        [Предметная область трансцендентных неравенств] (* <- lang_ru;; *);
+        [Subject domain of transcendental inequalities] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_transcendental_inequalities -> rrel_not_maximum_studied_object_class:
+        concept_inequality_module;
+        concept_exponential_inequality;
+        concept_logarithmic_inequality;
+        concept_trigonometric_inequality;;
+*];;

@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_rational_algebraic_expression;; 
+
+concept_rational_algebraic_expression => nrel_main_idtf:
+[рациональное алгебраическое выражение](*<-lang_ru;;*);
+[rational algebraic expression](*<-lang_en;;*);;
+	
+//надмножество
+concept_algebraic_expession => nrel_inclusion: concept_rational_algebraic_expression;;
+
+//определения и пояснения
+concept_rational_algebraic_expression <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (рациональное алгебраическое выражение)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Рациональное алгебраическое выражение — алгебраическое выражение, не содержащее логарифмов, возведение в нецелую степень чисел, не являющихся квадратными, и операндами которого не являются иррациональные числа.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_rational_algebraic_expression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(результат'; рациональное алгебраическое выражение; рациональное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Результат рационального алгебраического выражения может быть только рациональным числом.](* <- lang_ru;; *);;
+		*);;
+	*);;

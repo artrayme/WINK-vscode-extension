@@ -1,0 +1,63 @@
+scp_program -> proc_of_finding_nod (*	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _number1;;
+		-> rrel_2: rrel_in: _number2;;
+                -> rrel_3: rrel_out: _nod;;
+	*);;
+
+	-> rrel_operators: ... (*	
+		-> rrel_init: ..proc_of_finding_nod_operator1 (*
+			
+                        <-ifEq;;
+                         -> rrel_1: rrel_fixed: rrel_scp_var: _number1;;
+                         -> rrel_2: rrel_fixed: rrel_scp_var: _number2;;
+
+                          => nrel_then: ..proc_nod_operator4C;;
+                          => nrel_else: ..proc_nod_operator3D;;
+                       *);;
+                     
+                   ->..proc_nod_operator3D
+                       (*
+                        <-ifGr;;
+                         -> rrel_1: rrel_fixed: rrel_scp_var: _number1;;
+                         -> rrel_2: rrel_fixed: rrel_scp_var: _number2;;
+             
+                          => nrel_then: ..proc_nod_operator3E1;;
+                          => nrel_else: ..proc_nod_operator3E2;;
+                        *);;
+
+                   ->..proc_nod_operator3E1
+                         (*
+                          <-contSub;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _number1;;
+                          -> rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number2;;
+               
+                           => nrel_goto: ..proc_of_finding_nod_operator1;;
+                          *);;
+ 
+                   ->..proc_nod_operator3E2
+                        (*
+                          <-contSub;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _number2;;
+                          -> rrel_2: rrel_fixed: rrel_scp_var: _number2;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+               
+                           => nrel_goto: ..proc_of_finding_nod_operator1;;
+                          *);;
+               
+		-> ..proc_nod_operator4C
+                       (*
+                        <- contAssign;;
+                         ->rrel_1: rrel_assign: rrel_scp_var: _nod;;
+                         ->rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+                        =>nrel_goto:  ..proc_nod_operator_return;;
+                        *);;
+
+                -> ..proc_nod_operator_return (*
+			<- return;;
+		*);;
+		
+	*);;
+*);;
+

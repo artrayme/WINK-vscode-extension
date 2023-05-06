@@ -1,0 +1,55 @@
+sc_node_not_relation->concept_natural_series;; 
+
+concept_natural_series=>nrel_main_idtf:
+[натуральный ряд](*<-lang_ru;;*);
+[natural series](*<-lang_en;;*);;
+
+// синонимы
+concept_natural_series=> nrel_idtf:[Натуральный числовой ряд](*<-lang_ru;;*);;
+concept_natural_series=> nrel_idtf:[Множество натуральных чисел](*<-lang_ru;;*);;
+concept_natural_series=> nrel_idtf:[Натуральный ряд чисел](*<-lang_ru;;*);;
+
+//определение
+concept_natural_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(натуральное ряд)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Натуральный ряд – множество всех натуральных чисел, расположенных строго в порядке возрастания: 1,2,3,4,5, …. Каждый член этого ряда на единицу больше предыдущего члена и на единицу меньше последующего. Номер позиции (местоположения) числа в натуральном ряду совпадает с этим числом.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+concept_natural_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество натуральных чисел; единица; натуральное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Во множестве натуральных чисел существует элемент 1, называемый единицей, который непосредственно не следует ни за каким натуральным числом.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//используемые константы
+concept_natural_series <= nrel_using_constants: concept_natural_number;one;;
+
+
+//пример
+concept_natural_series -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[1, 2, 3, 4, 5, ...](* <- lang_ru;; 	*);;
+		*);;
+	*);;

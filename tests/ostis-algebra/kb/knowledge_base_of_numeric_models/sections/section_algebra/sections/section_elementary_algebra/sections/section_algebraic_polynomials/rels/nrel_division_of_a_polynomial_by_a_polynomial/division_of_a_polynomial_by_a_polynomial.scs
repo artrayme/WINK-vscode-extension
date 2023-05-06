@@ -1,0 +1,100 @@
+sc_node_norole_relation->nrel_division_of_a_polynomial_by_a_polynomial;;
+
+//понятие на русском и английском
+nrel_division_of_a_polynomial_by_a_polynomial=>nrel_main_idtf:
+[деление многочлена на многочлен* ] (*<-lang_ru;;*);
+[арқылы многочлена бөлімшесі* ] (*<-lang_kz;;*);
+[division of a polynomial by a polynomial* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_division_of_a_polynomial_by_a_polynomial=> nrel_idtf:[деление многочлена* ](*<-lang_ru;;*);;
+
+//определение и пояснения
+nrel_division_of_a_polynomial_by_a_polynomial<- rrel_key_sc_element:
+	...
+    (*
+=> nrel_main_idtf: [Пояснение(деление многочлена на многочлен*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	"file://division_of_a_polynomial_by_a_polynomial_1.html" (* <- lang_ru;; *);;
+*);;
+*);;
+
+// утверждения и теоремы
+nrel_division_of_a_polynomial_by_a_polynomial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(деление многочлена на многочлен*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://division_of_a_polynomial_by_a_polynomial_4.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(деление многочлена на многочлен*; умножение многочлена на многочлен*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://division_of_a_polynomial_by_a_polynomial_5.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//конкретные задачи
+ nrel_division_of_a_polynomial_by_a_polynomial<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://division_of_a_polynomial_by_a_polynomial_2.html"(* <- lang_ru;; *);;
+
+-> rrel_example:
+"file://division_of_a_polynomial_by_a_polynomial_3.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_division_of_a_polynomial_by_a_polynomial<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на выполнение деления многочлена на многочлен.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//домены
+nrel_division_of_a_polynomial_by_a_polynomial => nrel_first_domain:concept_polynomial;;
+nrel_division_of_a_polynomial_by_a_polynomial => nrel_second_domain: concept_polynomial;;
+nrel_division_of_a_polynomial_by_a_polynomial => nrel_third_domain: concept_polynomial;;
+
+//пример
+ nrel_division_of_a_polynomial_by_a_polynomial-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://11.png";;
+		*);;
+	*);;

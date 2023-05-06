@@ -1,0 +1,90 @@
+sc_node_not_relation->concept_taylor_series;; 
+
+concept_taylor_series=>nrel_main_idtf:
+[ряд Тейлора](*<-lang_ru;;*);
+[taylor series](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_taylor_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(ряд Тейлора)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Ряд Тейлора — разложение функции в бесконечную сумму степенных функций.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_taylor_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(аналитическая функция, точка, область определения*, окрестность*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если f есть аналитическая функция в любой точке a, то её ряд Тейлора в любой точке a области определения f сходится к f в некоторой окрестности a.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(бесконечность, дифференцирование*, функция, сходимость*, окрестность*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Существуют бесконечно дифференцируемые функции, ряд Тейлора которых сходится, но при этом отличается от функции в любой окрестности a.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+ concept_taylor_series<= nrel_using_constants: concept_function; concept_power_function; concept_infinity;;
+
+//пример
+ concept_taylor_series-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://taylor_series.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_taylor_series<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Разложение функции в ряд Тейлора.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_taylor_series<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://taylor_series2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

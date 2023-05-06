@@ -1,0 +1,6 @@
+ten=>nrel_main_idtf:
+[10](*<-lang_ru;;*);
+[10](*<-lang_en;;*);;
+
+concept_number -> ten;;
+set_of_number -> ten;;

@@ -1,0 +1,60 @@
+sc_node_not_relation->concept_matrix;;
+
+concept_matrix=>nrel_main_idtf:
+[матрица](*<-lang_ru;;*);
+[matrix](*<-lang_en;;*);;
+
+concept_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(матрица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			"file://matrix2.html"(* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(матрица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Мaтрица — математический объект, записываемый в виде прямоугольной таблицы элементов кольца или поля (например, целых, действительных или комплексных чисел), которая представляет собой совокупность строк и столбцов, на пересечении которых находятся её элементы.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_matrix-> rrel_example :
+	"file://matrix.png";;
+
+concept_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(размер матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Количество строк и столбцов матрицы задают размер матрицы.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение; линейное алгебраическое уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Матрицы широко применяются в математике для компактной записи систем линейных алгебраических или дифференциальных уравнений. ](* <- lang_ru;; *);;
+		*);;
+	*);;

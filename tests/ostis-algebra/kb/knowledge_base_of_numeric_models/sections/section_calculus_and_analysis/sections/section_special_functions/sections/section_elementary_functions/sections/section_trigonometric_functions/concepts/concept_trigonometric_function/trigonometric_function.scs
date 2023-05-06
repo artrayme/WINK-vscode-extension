@@ -1,0 +1,81 @@
+sc_node_not_relation -> concept_trigonometric_function;;
+concept_trigonometric_function => nrel_main_idtf :
+[тригонометрическая функция] (* <- lang_ru;; *);
+[trigonometric function] (* <- lang_en;; *);; 
+
+//определение и пояснения
+concept_trigonometric_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(тригонометрическая функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тригонометрическая функция - функция, основанные на соотношениях длин отрезков и его проекций на координатные оси.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Функции u=sin(t); u=cos(t); u=tg(t); u=ctg(t) называют тригонометрическими фунциями.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_trigonometric_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция; косинус*; синус*; тангенс*; котангес*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://trigonometric function1.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+concept_trigonometric_function <= nrel_using_constants:nrel_sine; nrel_cosine;nrel_cotangent; nrel_cotangent;;
+
+//классы задач и способы решения
+concept_trigonometric_function <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение области определения функции](* <- lang_ru;; *);;
+*);;
+*);;
+
+//пример
+concept_trigonometric_function -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[y =3+ sin(x)*cos(x); 2,5⩽у⩽3,5.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_trigonometric_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Найти область определения функции y = sin3x + tg2x .](* <- lang_ru;; *);;
+		*);;
+	*);;

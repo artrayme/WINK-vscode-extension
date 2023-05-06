@@ -1,0 +1,71 @@
+sc_node_not_relation -> concept_cubic_function;; 
+
+concept_cubic_function => nrel_main_idtf:
+[кубическая функция](*<-lang_ru;;*);
+[cubic function](*<-lang_en;;*);
+[куб функциясы](*<-lang_kz;;*);;
+	
+//надмножество
+concept_function => nrel_inclusion: concept_cubic_function;;
+
+//определения и пояснения
+concept_cubic_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (кубическая функция)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://cubic_function_definition.html"(*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (кубическая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Кубическая функция - это функция, которая задаётся многочленом третьей степени.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_cubic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(область определения*; кубическая функция; множество действительных чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью определения кубической функции является множество всех действительных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(область значения*; кубическая функция; множество действительных чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью значения кубической функции является множество всех действительных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(график функции; кубическая функция; кубическая парабола)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Графиком кубической функции является кубическая парабола.](* <- lang_ru;; *);;
+		*);;
+	*);;

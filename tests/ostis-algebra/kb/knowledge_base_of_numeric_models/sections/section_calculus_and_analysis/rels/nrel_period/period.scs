@@ -1,0 +1,65 @@
+sc_node_norole_relation->nrel_period;;
+
+nrel_period=>nrel_main_idtf:
+[период* ](*<-lang_ru;;*);
+[period* ](*<-lang_en;;*);;
+
+
+//определения и пояснения
+nrel_period <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (период*)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Некоторый регулярный интервал аргумента, через который функция повторяет своё значение.](*<-lang_ru;;*);;
+		*);;
+	*);
+		...
+	(*
+	=> nrel_main_idtf: [Пояснение (период)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Некоторое фиксированное ненулевое число, при добавлении которого к аргументу, значение функции не меняется.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+	
+	
+//утверждения
+	
+nrel_period <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция; период*; периодическая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция, имеющая период, называется периодической.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(период*; функция; натуральное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(* 
+		-> rrel_example: 
+			[Если Т – период функции, то при любом натуральном значении k число kT также будет ее периодом. ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+	
+//домены	
+nrel_period <- binary_relation;;
+nrel_period <= nrel_first_domain:  concept_function;;
+nrel_period <= nrel_second_domain: concept_number;;

@@ -1,0 +1,35 @@
+sc_node_not_relation->concept_scalar;;
+
+concept_scalar=>nrel_main_idtf:
+[скаляр](*<-lang_ru;;*);
+[scalar](*<-lang_en;;*);;
+
+concept_scalar <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(скаляр)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Скаляр - величина, каждое значение которой может быть выражено одним числом.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_scalar<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(система координат, скаляр)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При смене системы координат скаляр остаётся неизменным (инвариантным).](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_scalar<= nrel_using_constants: concept_number;;
+
+concept_scalar-> rrel_example : five;;

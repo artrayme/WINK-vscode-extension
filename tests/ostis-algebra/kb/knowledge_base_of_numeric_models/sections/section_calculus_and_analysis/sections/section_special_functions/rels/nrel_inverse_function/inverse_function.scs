@@ -1,0 +1,47 @@
+sc_node_norole_relation -> nrel_inverse_function;;
+nrel_inverse_function => nrel_main_idtf :
+[обратная функция* ] (* <- lang_ru;; *);
+[inverse function* ] (* <- lang_en;; *);; 
+
+//определение
+nrel_inverse_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(обратная функция*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если функция g в каждой точке x области значений обратимой функции f принимает такое значение y, что f(y) = x, то говорят, что функция g — обратная функция к f.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+nrel_inverse_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция; обратимая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если функция f обратима, и функция g обратна к функции f, то функция g также обратима и обратной к ней является функция f.Говорят, что функции f и g взаимно обратны.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(взаимо обратные функции; координатная плоскость; график)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема. Графики взаимно обратных функций в одной и той же координатной плоскости симметричны относительно биссектрисы первой и третьей четверти.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_inverse_function <- binary_relation;;
+nrel_inverse_function <= nrel_first_domain: concept_function;;
+nrel_inverse_function <= nrel_second_domain: concept_function;;

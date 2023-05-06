@@ -1,0 +1,44 @@
+sc_node_struct -> section_subject_domain_of_integral_calculus;;
+
+section_subject_domain_of_integral_calculus => nrel_main_idtf:
+    [Раздел. Предметная область интегрального исчисления] (* <- lang_ru;; *);
+    [Section. Subject domain of integral calculus] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_integral_calculus <- nrel_system_identifier;;
+
+section_subject_domain_of_integral_calculus -> rrel_key_sc_element:
+    subject_domain_of_integral_calculus;
+        concept_integral_calculus;
+        nrel_integral_curve;
+        nrel_integral;
+        nrel_the_definite_integral;
+        nrel_indefinite_integral;
+        nrel_multiple_integral;
+        nrel_the_second_type_of_improper_integral;
+        nrel_the_line_integral_of_the_first_kind;
+        nrel_the_first_type_of_improper_integral;
+        nrel_the_line_integral;
+        nrel_limit_of_integration;;
+
+section_subject_domain_of_integral_calculus = [*
+    subject_domain_of_integral_calculus => nrel_main_idtf:
+        [Предметная область интегрального исчисления] (* <- lang_ru;; *);
+        [Subject domain of integral calculus] (* <- lang_en;; *);
+    <- subject_domain;;
+    
+    subject_domain_of_integral_calculus -> rrel_maximum_studied_object_class:
+        concept_integral_calculus;;
+
+    subject_domain_of_integral_calculus -> rrel_explored_relation:
+        nrel_integral_curve;
+        nrel_integral;
+        nrel_the_definite_integral;
+        nrel_indefinite_integral;
+        nrel_multiple_integral;
+        nrel_the_second_type_of_improper_integral;
+        nrel_the_line_integral_of_the_first_kind;
+        nrel_the_first_type_of_improper_integral;
+        nrel_the_line_integral;
+        nrel_limit_of_integration;;
+*];;

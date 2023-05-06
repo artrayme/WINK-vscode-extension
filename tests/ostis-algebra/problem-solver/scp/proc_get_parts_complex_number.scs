@@ -1,0 +1,90 @@
+scp_program -> proc_get_parts_complex_number (*	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _complex_number;;
+		-> rrel_2: rrel_out: _real;;
+		-> rrel_3: rrel_out: _imaginary;;
+		-> rrel_4: rrel_out: _err;;
+	
+	*);;
+
+	-> rrel_operators: ... (*	
+		-> rrel_init: ..proc_get_parts_complex_number_operator1 (*
+
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _complex_number;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx13;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _paramReal;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx14;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_real_part;;
+
+			=> nrel_then: ..proc_get_parts_complex_number_operator2;;
+			=> nrel_else: ..proc_get_parts_complex_number_operator_error;;
+			*);;
+
+
+		-> ..proc_get_parts_complex_number_operator2
+			(*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _paramReal;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arcx13;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _real;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx14;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+			=> nrel_then: ..proc_get_parts_complex_number_operator3;;
+			=> nrel_else: ..proc_get_parts_complex_number_operator_error;;
+			*);;
+
+		-> ..proc_get_parts_complex_number_operator3
+			(*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _complex_number;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx13;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _paramImaginary;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx14;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_imaginary_part;;
+
+			=> nrel_then: ..proc_get_parts_complex_number_operator4;;
+			=> nrel_else: ..proc_get_parts_complex_number_operator_error;;
+			*);;
+
+
+		-> ..proc_get_parts_complex_number_operator4
+			(*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _paramImaginary;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arcx13;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _imaginary;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx14;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+			=> nrel_then: ..proc_get_parts_complex_number_operator5;;
+			=> nrel_else: ..proc_get_parts_complex_number_operator_error;;
+			*);;
+
+
+		-> ..proc_get_parts_complex_number_operator5
+			(*
+			<-contAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _err;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+
+			=> nrel_goto:  ..proc_get_parts_complex_number_operator_return;;
+			*);;
+		
+		-> ..proc_get_parts_complex_number_operator_error
+			(*
+			<-contAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _err;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_goto:  ..proc_get_parts_complex_number_operator_return;;
+			*);;
+		
+ -> ..proc_get_parts_complex_number_operator_return (*
+			<- return;;
+		*);;
+		
+	*);;
+*);;
+		

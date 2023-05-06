@@ -1,0 +1,69 @@
+sc_node_not_relation -> concept_power_function_with_positive_fractional_exponent;;
+
+concept_power_function_with_positive_fractional_exponent=> nrel_main_idtf :
+[степенная функция с положительным дробным показателем] (* <- lang_ru;; *);
+[power function with positive fractional exponent] (* <- lang_en;; *);; 
+
+concept_power_function_with_positive_fractional_exponent <= nrel_using_constants: concept_function;;
+concept_power_function_with_positive_fractional_exponent<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(степенная функция с положительным дробным показателем)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function9.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_power_function_with_positive_fractional_exponent<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function10.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_power_function_with_positive_fractional_exponent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function11.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_power_function_with_positive_fractional_exponent<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение является функция степенной с положительным дробным показателям.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_power_function_with_positive_fractional_exponent-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function12.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

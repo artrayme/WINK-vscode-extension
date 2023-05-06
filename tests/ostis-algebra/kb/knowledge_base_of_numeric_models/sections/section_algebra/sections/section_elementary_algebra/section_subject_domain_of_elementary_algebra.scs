@@ -1,0 +1,49 @@
+sc_node_struct -> section_subject_domain_of_elementary_algebra;;
+
+section_subject_domain_of_elementary_algebra => nrel_main_idtf:
+    [Раздел. Предметная область элементарной алгебры] (* <- lang_ru;; *);
+    [Section. Subject domain of elementary algebra] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_elementary_algebra <- nrel_system_identifier;;
+
+section_subject_domain_of_elementary_algebra => nrel_section_decomposition: {
+    section_subject_domain_of_algebraic_inequalities;
+    section_subject_domain_of_algebraic_equations;
+    section_subject_domain_of_sets_of_algebraic_inequalities;
+    section_subject_domain_of_algebraic_polynomials;
+    section_subject_domain_of_sets_of_algebraic_equations;
+    section_subject_domain_of_algebraic_expressions
+};;
+  
+section_subject_domain_of_elementary_algebra -> rrel_key_sc_element:
+    subject_domain_of_elementary_algebra;
+    concept_algebraic_operation;
+    concept_elementary_algebra;
+    nrel_square_of_the_sum;
+    nrel_similar_terms;
+    nrel_squared_difference;;
+
+section_subject_domain_of_elementary_algebra = [*
+    subject_domain_of_elementary_algebra => nrel_main_idtf:
+        [Предметная область элементарной алгебры] (* <- lang_ru;; *);
+        [Subject domain of elementary algebra] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_elementary_algebra => nrel_private_subject_domain:
+        subject_domain_of_algebraic_inequalities;
+        subject_domain_of_algebraic_equations;
+        subject_domain_of_sets_of_algebraic_inequalities;
+        subject_domain_of_algebraic_polynomials;
+        subject_domain_of_sets_of_algebraic_equations;
+        subject_domain_of_algebraic_expressions;;
+
+    subject_domain_of_elementary_algebra -> rrel_maximum_studied_object_class:
+        concept_algebraic_operation;
+        concept_elementary_algebra;;
+
+    subject_domain_of_elementary_algebra -> rrel_explored_relation:
+        nrel_square_of_the_sum;
+        nrel_similar_terms;
+        nrel_squared_difference;;
+*];;

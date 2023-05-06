@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_quadratic_function;;
+
+concept_quadratic_function => nrel_main_idtf:
+[квадратичная функция](*<-lang_ru;;*);
+[quadratic function](*<-lang_en;;*);
+[квадраттық функция](*<-lang_kz;;*);;
+	
+//надмножество
+concept_function => nrel_inclusion: concept_quadratic_function;;
+
+//определение и пояснения
+concept_quadratic_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (квадратичная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Квадратичная функция — функция вида f(x)=ax^2+bx+c, где a не равно 0. И a, b, c некоторые числа.](*<-lang_ru;;*);;
+		*);;
+	*);;	
+	
+//утверждения
+concept_quadratic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(график; квадратичная функция; парабола)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[График квадратичной функции называют параболой.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(ветви параболы')] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[При a<0 ветви параболы направлены вниз, при a>0 — вверх.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(прямая; ось симметрии'; график; квадратичная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Прямая x=-b/2a является осью симметрии графика квадратичной функции.](*<-lang_ru;;*);;
+		*);;
+	*);;

@@ -1,0 +1,56 @@
+sc_node_not_relation -> concept_quasipolynomial;;
+concept_quasipolynomial => nrel_main_idtf:	[квазимногочлен](*<-lang_ru;;*);	[quasipolynomial](*<-lang_en;;*);;
+
+concept_function => nrel_inclusion: concept_quasipolynomial;;
+
+concept_quasipolynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(квазимногочлен)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квазимногочлен — функция, представимая в виде суммы конечного числа квазиодночленов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_quasipolynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; квазимногочлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение квазимногочленов — снова квазимногочлен.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_quasipolynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*; первообразная*; квазимногочлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Первообразная и производная от квазимногочлена — снова квазимногочлен.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_quasipolynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение с постоянными коэффициентами; квазимногочлен)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квазимногочлены широко применяются в теории линейных дифференциальных уравнений с постоянными коэффициентами, что соответствует возможности с их помощью моделировать различные колебательные процессы, в том числе периодические, затухающие и резонансные.]	(* <- lang_ru;; *);;
+		*);;
+	*);;

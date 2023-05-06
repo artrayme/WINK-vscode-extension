@@ -1,0 +1,87 @@
+sc_node_not_relation -> concept_set_of_algebraic_equations;;
+
+concept_set_of_algebraic_equations => nrel_main_idtf:
+[система алгебраических уравнений](*<-lang_ru;;*);
+[set of algebraic equations](*<-lang_en;;*);;
+
+
+//разбиение
+concept_set_of_algebraic_equations <= nrel_subdividing:
+	...
+  (*
+    -> concept_homogeneous_set_of_algebraic_equations;;
+    -> concept_inhomogeneous_set_of_algebraic_equations;;
+    -> concept_square_set_of_algebraic_equations;;
+    -> concept_joint_set_of_algebraic_equations;;
+    -> concept_inconsistent_set_of_algebraic_equations;;
+	*);;
+
+//определение и пояснения
+concept_set_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(система алгебраических уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://set_of_algebraic_equations2.jpg"(* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+concept_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+	(*
+	=> nrel_main_idtf: [Утв.(число, уравнение, тождество)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://set_of_algebraic_equations3.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//пример
+concept_set_of_algebraic_equations -> rrel_example:
+	...
+	(*
+<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	"file://set_of_algebraic_equations4.gif"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Решение системы алгебраических уравнений.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://set_of_algebraic_equations5.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

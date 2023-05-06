@@ -1,0 +1,62 @@
+sc_node_not_relation -> concept_square_set_of_algebraic_equations;;
+
+//рус.-англ.
+concept_square_set_of_algebraic_equations => nrel_main_idtf:
+[квадратная система алгебраических уравнений](*<-lang_ru;;*);
+[square set of algebraic equations](*<-lang_en;;*);;
+
+//определение и пояснения
+concept_square_set_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(квадратная система алгебраических уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Квадратная система алгебраических уравнений - система уравнений, в которой число уравнений равно числу неизвестных.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+//пример
+concept_square_set_of_algebraic_equations -> rrel_example:
+	...
+	(*
+<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	"file://square_set_of_algebraic_equations.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_square_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Решение квадратной системы алгебраических уравнений.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_square_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://square_set_of_algebraic_equations2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

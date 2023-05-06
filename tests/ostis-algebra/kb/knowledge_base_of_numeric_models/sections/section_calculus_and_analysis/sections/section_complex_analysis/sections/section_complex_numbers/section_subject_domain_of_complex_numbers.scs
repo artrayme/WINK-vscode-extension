@@ -1,0 +1,48 @@
+sc_node_struct -> section_subject_domain_of_complex_numbers;;
+
+section_subject_domain_of_complex_numbers => nrel_main_idtf:
+    [Раздел. Предметная область комплексных чисел] (* <- lang_ru;; *);
+    [Section. Subject domain of complex numbers] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_complex_numbers <- nrel_system_identifier;;
+
+section_subject_domain_of_complex_numbers -> rrel_key_sc_element:
+    subject_domain_of_complex_numbers;
+    concept_argument_of_a_complex_number;
+    concept_imaginary_unit;
+    concept_hypercomplex_number;
+    concept_complex_mating_number;
+    concept_complex_number;
+    concept_imaginary_number;
+    nrel_complex_conjugate;
+    nrel_multiplication_of_complex_numbers;
+    nrel_addition_of_complex_numbers;
+    nrel_modulus_of_complex_number;
+    nrel_subtraction_of_complex_numbers;
+    nrel_division_of_complex_numbers;;
+
+section_subject_domain_of_complex_numbers = [*
+    subject_domain_of_complex_numbers => nrel_main_idtf:
+        [Предметная область комплексных чисел] (* <- lang_ru;; *);
+        [Subject domain of complex numbers] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_complex_numbers -> rrel_maximum_studied_object_class:
+        concept_complex_number;;
+
+    subject_domain_of_complex_numbers -> rrel_not_maximum_studied_object_class:
+        concept_complex_mating_number;
+        concept_imaginary_unit;
+        concept_argument_of_a_complex_number;
+        concept_hypercomplex_number;
+        concept_imaginary_number;;
+
+    subject_domain_of_complex_numbers -> rrel_explored_relation:
+        nrel_complex_conjugate;
+        nrel_multiplication_of_complex_numbers;
+        nrel_addition_of_complex_numbers;
+        nrel_modulus_of_complex_number;
+        nrel_subtraction_of_complex_numbers;
+        nrel_division_of_complex_numbers;;
+*];;

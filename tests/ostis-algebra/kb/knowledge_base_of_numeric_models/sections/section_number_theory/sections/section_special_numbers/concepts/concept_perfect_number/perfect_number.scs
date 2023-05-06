@@ -1,0 +1,118 @@
+sc_node_not_relation->concept_perfect_number;; 
+
+concept_perfect_number=>nrel_main_idtf:
+[совершенное число](*<-lang_ru;;*);
+[тамаша сан](*<-lang_kz;;*);
+[perfect number](*<-lang_en;;*);;
+
+// синонимы
+concept_perfect_number=> nrel_idtf:[класс совершенных чисел](*<-lang_ru;;*);;
+concept_perfect_number=> nrel_idtf:[множество совершенных чисел](*<-lang_ru;;*);;
+concept_perfect_number=> nrel_idtf:[понятие совершенного числа](*<-lang_ru;;*);;
+concept_perfect_number=> nrel_idtf:[совершенные числа](*<-lang_ru;;*);;
+
+//иерархия
+concept_perfect_number <= nrel_inclusion: concept_natural_number;;
+
+//разбиение
+concept_perfect_number <= nrel_subdividing:
+    ... 
+	(*
+	=>nrel_main_idtf:[По признаку четности и нечетности](*<-lang_ru;;*);;
+	-> concept_even_perfect_number;;
+	-> concept_odd_perfect_number;;
+	*);;
+//определение
+concept_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(совершенное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Совершенное число — натуральное число, равное сумме всех своих собственных делителей (т. е. всех положительных делителей, отличных от самого числа)](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+concept_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(совершенное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[По мере того как натуральные числа возрастают, совершенные числа встречаются всё реже.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+concept_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(совершенное число  число; положительное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Совершенные  числа считаются положительными.](* <- lang_ru;; *);;
+		*);;
+	*);
+	
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(совершенное число; последовательность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Совершенные числа образуют последовательность:
+
+6, 28, 496, 8128, 33550336, 8589869056, 137438691328, 2305843008139952128, 2658455991569831744654692615953842176, 191561942608236107294793378084303638130997321548169216, … ]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+// конкретные задачи
+concept_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли число 28 совершенным числом?](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение того, является ли заданное число совершеннным.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_perfect_number -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://perfect_number_1.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

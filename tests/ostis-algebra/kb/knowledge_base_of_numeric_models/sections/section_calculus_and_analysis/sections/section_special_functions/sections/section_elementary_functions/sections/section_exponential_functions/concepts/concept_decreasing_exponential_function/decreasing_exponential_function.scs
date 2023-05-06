@@ -1,0 +1,109 @@
+sc_node_not_relation -> concept_decreasing_exponential_function;;
+
+concept_decreasing_exponential_function => nrel_main_idtf:
+[убывающая показательная функция](*<-lang_ru;;*);
+[decreasing exponential function](*<-lang_en;;*);
+[төмендету экспоненциалды функциясы](*<-lang_kz;;*);;
+
+//определение
+
+concept_decreasing_exponential_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(убывающая показательная функция)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://defenition.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//пояснение
+
+concept_decreasing_exponential_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Пояснение.(убывающая показательная функция)](*<-lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://exp_2.png"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+concept_decreasing_exponential_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(область определения*; множество вещественных чисел)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Областью определения убывающей показательной функции будет являться множество вещественных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(область значений*; множество положительных чисел)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Областью значений убывающей показательной функции будет являться множество всех положительных вещественных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.( степень')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Для убывающей показательной функции справедливы будут все основные свойства степеней.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(график*; точка; координата*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[График убывающей показательной функции всегда проходит через точку с координатами (0;1).](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(точка экстремума*; минимум функции*; максимум функции*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Убывающая показательная функция не имеет точек экстремума, то есть другими словами, она не имеет точек минимума и максимума функции.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(четная функция; нечетная функция)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(* 
+		->rrel_example:
+			[Убывающая показательная функция не является четной или нечетной.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+concept_decreasing_exponential_function  <= nrel_inclusion: concept_exponential_function;;

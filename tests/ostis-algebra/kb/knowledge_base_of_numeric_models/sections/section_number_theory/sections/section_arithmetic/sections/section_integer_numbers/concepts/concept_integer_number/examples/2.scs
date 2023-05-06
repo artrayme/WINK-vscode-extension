@@ -1,0 +1,53 @@
+two=>nrel_main_idtf:
+[2](*<-lang_ru;;*);
+[2](*<-lang_en;;*);;
+
+concept_number -> two;;
+set_of_number -> two;;
+
+// синонимы
+two=> nrel_idtf:[натуральное число 2](*<-lang_ru;;*);;
+two=> nrel_idtf:[два](*<-lang_ru;;*);;
+two=> nrel_idtf:[двойка](*<-lang_ru;;*);;
+two=> nrel_idtf:[екі](*<-lang_kz;;*);;
+
+
+//определение
+two <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(два)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[2 (два) — число, цифра и глиф. Натуральное число между 1 и 3.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+ ...
+    (*
+=> nrel_main_idtf: [Пояснение(два)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[2 — наименьшее и первое простое число, единственное чётное простое число. Следующее простое число — 3.](* <- lang_ru;; 	*);;
+*);;
+*);;
+
+
+// утверждения
+two <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(делить*; четное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если число делится на 2, то оно называется чётным.](* <- lang_ru;; *);;
+		*);;
+	*);;

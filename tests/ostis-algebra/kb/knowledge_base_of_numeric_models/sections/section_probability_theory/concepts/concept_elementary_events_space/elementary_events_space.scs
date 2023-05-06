@@ -1,0 +1,69 @@
+sc_node_not_relation -> concept_elementary_events_space;; 
+
+concept_elementary_events_space => nrel_main_idtf:
+[простанство элементарных событий](*<-lang_ru;;*);
+[elementary events space](*<-lang_en;;*);
+[ғарыш бастауыш оқиғалар](*<-lang_kz;;*);;
+
+//надмножество
+concept_space => nrel_inclusion: concept_elementary_events_space;;
+
+//определения и пояснения
+concept_elementary_events_space <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (пространство элементарных событий)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Пространство элементарных событий — множество всех различных исходов случайного эксперимента.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+concept_elementary_events_space <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(пространство элементарных событий)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Элемент простанства элементарных событий называется элементарным событием или исходом.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(пространство элементарных событий; дискретное пространство элементарных событий)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Пространство элементарных событий называется дискретным, если число его элементов конечно или счётно.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(пространство элементарных событий; недискретное пространство элементарных событий)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое пространство элементарных событий не являющееся дискретным, называется недискретным.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	//разбиение
+concept_elementary_events_space <= nrel_subdividing:
+	...
+	(* 
+    -> concept_discrete_elementary_events_space;;
+    -> concept_nondiscrete_elementary_events_space;;
+	-> concept_continuous_elementary_events_space;;
+	*);;
+	

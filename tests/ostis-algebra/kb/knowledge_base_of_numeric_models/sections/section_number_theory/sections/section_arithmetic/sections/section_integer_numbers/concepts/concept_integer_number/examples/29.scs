@@ -1,0 +1,6 @@
+twenty_nine=>nrel_main_idtf:
+[29](*<-lang_ru;;*);
+[29](*<-lang_en;;*);;
+
+set_of_number -> twenty_nine;;
+concept_number -> twenty_nine;;

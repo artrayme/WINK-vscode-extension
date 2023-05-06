@@ -1,0 +1,67 @@
+sc_node_norole_relation->nrel_squared_difference;;
+
+nrel_squared_difference=>nrel_main_idtf:
+[квадрат разности* ](*<-lang_ru;;*);
+[squared difference* ](*<-lang_en;;*);;
+
+nrel_squared_difference<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(квадрат разности*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадрат разности-это произведение разности на саму себя.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+ nrel_squared_difference<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://squared_difference.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+ nrel_squared_difference<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на разложение квадрата разности.](* <- lang_ru;; *);;
+*);;
+*);;
+
+
+nrel_squared_difference<= nrel_first_domain:
+concept_algebraic_expession;;
+
+nrel_squared_difference <= nrel_second_domain: 
+concept_number;;
+nrel_squared_difference <= nrel_third_domain: 
+concept_algebraic_expession;;
+
+ nrel_squared_difference-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://squared_difference1.html"(* <- lang_ru;;*);;
+		*);;
+	*);;

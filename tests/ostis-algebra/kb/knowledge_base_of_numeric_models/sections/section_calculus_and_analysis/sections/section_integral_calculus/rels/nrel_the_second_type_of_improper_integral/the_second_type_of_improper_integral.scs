@@ -1,0 +1,44 @@
+sc_node_norole_relation -> nrel_the_second_type_of_improper_integral;;
+
+nrel_the_second_type_of_improper_integral => nrel_main_idtf:
+[несобственный интеграл второго рода* ](* <- lang_ru;; *);  
+[the second type of improper ntegral* ](* <- lang_en;; *);;
+
+
+//определение
+nrel_the_second_type_of_improper_integral <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(несобственный интеграл первого рода*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://second_type_defenition.png"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+//утверждения
+
+nrel_the_second_type_of_improper_integral <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(интеграл*; сходящийся интеграл*; расходящийся интеграл*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			"file://second_type_statement.png"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_the_second_type_of_improper_integral -> rrel_example :
+		"file://second_type_ex.png";;
+
+
+nrel_the_second_type_of_improper_integral <- binary_relation;;
+nrel_the_second_type_of_improper_integral <= nrel_first_domain: concept_function;;
+nrel_the_second_type_of_improper_integral <= nrel_second_domain: concept_function;;

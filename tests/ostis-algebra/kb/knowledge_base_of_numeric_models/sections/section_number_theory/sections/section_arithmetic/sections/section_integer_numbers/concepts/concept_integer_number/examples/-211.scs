@@ -1,0 +1,7 @@
+minus_two_hundred_and_eleven=>nrel_main_idtf:
+[-211](*<-lang_ru;;*);
+[-211](*<-lang_en;;*);;
+
+concept_number -> minus_two_hundred_and_eleven;;
+set_of_number -> minus_two_hundred_and_eleven;;
+concept_natural_number -> minus_two_hundred_and_eleven;;

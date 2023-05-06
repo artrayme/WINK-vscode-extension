@@ -1,0 +1,171 @@
+sc_node_not_relation->concept_prime_number;; 
+
+concept_prime_number=>nrel_main_idtf:
+[простое число](*<-lang_ru;;*);
+[жай сан](*<-lang_kz;;*);
+[prime number](*<-lang_en;;*);;
+
+// синонимы
+concept_prime_number => nrel_idtf:[Класс простых чисел](*<-lang_ru;;*);;
+concept_prime_number => nrel_idtf:[Множество простых чисел](*<-lang_ru;;*);;
+concept_prime_number => nrel_idtf:[Понятие простого числа](*<-lang_ru;;*);;
+concept_prime_number => nrel_idtf:[Простые числа](*<-lang_ru;;*);;
+concept_prime_number => nrel_idtf:[Простый множитель](*<-lang_ru;;*);;
+concept_prime_number => nrel_idtf:[Простые множители](*<-lang_ru;;*);;
+
+//определение
+concept_prime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(простое число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Простое число - такое натуральное число а≠1, которое не имеет других натуральных делителей, короме 1 и самого себя.](* <- lang_ru;; 	*);;
+		*);
+
+		...
+		(*
+		-> rrel_example: 
+			[Решето Эратосфена -  способ составления таблицы простых чисел.](* <- lang_ru;; 	*);;
+		*);
+
+		...
+		(*
+		-> rrel_example: 
+			[Число 2 - наименьшее простое число. Это единственное чётное простое число, остальные простые числа - нечётные.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+// утверждения
+concept_prime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(теорема Евклида; простое число; множество простых чисел; наибольшее число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема Евклида: множество простых чисел бесконечно; наибольшего простого числа не существует.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; деление*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое натуральное число либо делится на простое, либо взаимно просто с ним.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; произведение*; простое число; деление*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение натуральных чисел делится на простое число тогда и только тогда, когда хотя бы одно из них делится на это просто число.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(простое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое простое число p (p≥3) можно представить в виде p=6n±1,где n∈N.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; произведение*; простое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема. Каждое натуральное число, отличное от 1, можно представить в виде произведения простых чисел.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; разложениение*; простые множители)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Теорема. Для каждого натурального числа n>1 существует единственное разложение на простые множители.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//используемые константы
+concept_prime_number <= nrel_using_constants: concept_natural_number;concept_divider;concept_natural_series;two;;
+
+// конкретные задачи
+concept_pime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли число 4 простым числом?]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Разложите на простые множители число 378]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_prime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение простого (составного) числа.]	(* <- lang_ru;; *);;
+		*);
+
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на разложение составного числа на простые множители.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_prime_number -> rrel_example :
+	...
+	(* 
+		-> 2; 3; 5; 7; 11; 13; 17;;
+	*);;

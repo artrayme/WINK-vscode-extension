@@ -1,0 +1,62 @@
+sc_node_norole_relation -> nrel_limit_of_the_sequence;;
+nrel_limit_of_the_sequence => nrel_main_idtf :
+[предел последовательности* ] (* <- lang_ru;; *);
+[limit of the sequence* ] (* <- lang_en;; *);;
+
+//используемые константы
+nrel_limit_of_the_sequence <= nrel_using_constants: concept_number;concept_interval;;
+
+//определение
+nrel_limit_of_the_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(предел последовательности*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			"file://limit_of_the_sequence1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_limit_of_the_sequence <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(окрестность точки*; последовательность; интервал)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://limit_of_the_sequence2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(свойства предела последовательности*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://limit_of_the_sequence3.png"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+nrel_limit_of_the_sequence -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Предел последовательности, все члены которой равны числу x , равен x.]  (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+"file://limit_of_the_sequence4.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

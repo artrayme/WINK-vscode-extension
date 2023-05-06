@@ -1,0 +1,30 @@
+ui_menu_file_for_finding_the_roots_of_a_quadratic_equation <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_finding_the_roots_of_a_quadratic_equation => nrel_main_idtf: 
+	[Найти корни квадратного уравнения] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_the_roots_of_a_quadratic_equation => nrel_main_idtf: 
+	[Request finding the roots of a quadratic equation] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_finding_the_roots_of_a_quadratic_equation => ui_nrel_command_template:
+	[*
+		question_finding_the_roots_of_a_quadratic_equation _-> ._question_finding_the_roots_of_a_quadratic_equation_instance
+			(*
+			_-> rrel_multiplier_a:: ui_arg_1;;
+                        _-> rrel_multiplier_b:: ui_arg_2;;
+                        _-> rrel_multiplier_c:: ui_arg_3;;
+
+			*);;
+		._question_finding_the_roots_of_a_quadratic_equation_instance _<- question;;
+	*];;
+
+ui_menu_file_for_finding_the_roots_of_a_quadratic_equation => ui_nrel_command_lang_template: 
+	[Найти корни квадратного уравнения: $ui_arg_1x^2+$ui_arg_2x+$ui_arg_3] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_the_roots_of_a_quadratic_equation => ui_nrel_command_lang_template: 
+	[Request finding the roots of a quadratic equation: $ui_arg_1x^2+$ui_arg_2x+$ui_arg_3] 
+	(* <- lang_en;; *);;
+

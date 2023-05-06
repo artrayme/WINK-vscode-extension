@@ -1,0 +1,173 @@
+sc_node_not_relation->concept_irrational_inequality;;
+
+concept_irrational_inequality=>nrel_main_idtf:
+[иррациональное неравенство](*<-lang_ru;;*);
+[irrational inequality](*<-lang_en;;*);;
+
+//определение
+concept_irrational_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(иррациональное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Иррациональное неравенство - это неравенство, содержащее неизвестные величины или некоторые функциии неизвестных величин под знаком радикала.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (иррациональное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[При решении иррациональных неравенств, как правило, приходится возводить обе части неравенства в натуральную степень. Такого рода преобразования могут привести к неравенствам, которые не равносильны исходному, и посколько множество решений в
+ большинстве случаев представляет бесконечное множество, невозможно провести проверку полученых решений подстановкой. Единственный способ, который гарантирует правильный ответ, состоит в применении исключительно равносильных преобразований
+ неравенств.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_irrational_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://irrational_inequality_1.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://irrational_inequality_2.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]   (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://irrational_inequality_3.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://irrational_inequality_4.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://irrational_inequality_5.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf:[Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://irrational_inequality_6.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]   (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://irrational_inequality_7.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://irrational_inequality_8.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://irrational_inequality_9.jpg"(* <- lang_ru;; 	*);;
+*);;
+	*);;
+
+// конкретные задачи
+concept_irrational_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://irrational_inequality_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_irrational_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Решение иррационального неравенства.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_irrational_inequality-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://irrational_inequality_10.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

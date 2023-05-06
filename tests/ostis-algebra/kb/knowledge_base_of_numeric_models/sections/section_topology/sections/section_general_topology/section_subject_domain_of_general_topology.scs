@@ -1,0 +1,30 @@
+sc_node_struct -> section_subject_domain_of_general_topology;;
+
+section_subject_domain_of_general_topology => nrel_main_idtf:
+    [Раздел. Предметная область общей топологии] (* <- lang_ru;; *);
+    [Section. Subject domain of general topology] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_general_topology <- nrel_system_identifier;;
+
+section_subject_domain_of_general_topology -> rrel_key_sc_element:
+    subject_domain_of_general_topology;
+    concept_general_topology;
+    concept_continious_function;
+    concept_compact_space;
+    concept_connected_space;;
+
+section_subject_domain_of_general_topology = [*
+    subject_domain_of_general_topology => nrel_main_idtf:
+        [Предметная область общей топологии] (* <- lang_ru;; *);
+        [Subject domain of general topology] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_general_topology -> rrel_maximum_studied_object_class:
+        concept_general_topology;;
+
+    subject_domain_of_general_topology -> rrel_not_maximum_studied_object_class:
+        concept_continious_function;
+        concept_compact_space;
+        concept_connected_space;;
+*];;

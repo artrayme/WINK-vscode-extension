@@ -1,0 +1,30 @@
+sc_node_not_relation->concept_elementary_fraction;; 
+
+concept_elementary_fraction=>nrel_main_idtf:
+[элементарная дробь](*<-lang_ru;;*);
+[бастауыш фракциясын](*<-lang_kz;;*);
+[elementary fraction](*<-lang_en;;*);;
+
+concept_elementary_fraction=> nrel_idtf:[простейшая дробь](*<-lang_ru;;*);;
+
+concept_fraction -> concept_elementary_fraction;;
+
+
+//пример
+concept_elementary_fraction -> rrel_example :
+"file://elementary_fraction_3.html";;
+
+//определение
+concept_elementary_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(элементарная дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://elementary_fraction_2.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+

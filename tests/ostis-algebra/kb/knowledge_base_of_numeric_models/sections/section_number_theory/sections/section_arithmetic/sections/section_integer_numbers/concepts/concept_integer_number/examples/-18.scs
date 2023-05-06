@@ -1,0 +1,6 @@
+minus_eighteen=>nrel_main_idtf:
+[-18](*<-lang_ru;;*);
+[-18](*<-lang_en;;*);;
+
+concept_number -> minus_eighteen;;
+set_of_number -> minus_eighteen;;

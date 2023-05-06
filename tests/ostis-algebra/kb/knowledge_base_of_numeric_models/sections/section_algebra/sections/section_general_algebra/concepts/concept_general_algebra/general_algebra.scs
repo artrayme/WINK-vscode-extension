@@ -1,0 +1,78 @@
+sc_node_not_relation -> concept_general_algebra;; 
+
+concept_general_algebra => nrel_main_idtf:
+[общая алгебра](*<-lang_ru;;*);
+[general algebra](*<-lang_en;;*);
+[жалпы алгебра](*<-lang_kz;;*);;
+
+//синонимы
+concept_general_algebra => nrel_idtf:
+[абстрактная алгебра](*<-lang_ru;;*);
+[высшая алгебра](*<-lang_ru;;*);;
+
+//разбиение
+concept_general_algebra <= nrel_subdividing:
+	...
+	(* 
+	-> concept_homological_algebra;;
+	-> concept_group_theory;;
+	-> concept_theory_of_rings;;
+	-> concept_field_theory;;
+	-> concept_category_theory;;
+	-> concept_theory_of_lattices;;
+	-> concept_universal_algebra;;
+	*);;
+	
+//надмножество
+concept_algebra => nrel_inclusion: concept_general_algebra;;
+
+//определения и пояснения
+concept_general_algebra <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (общая алгебра)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Общая алгебра — раздел алгебры, изучающий алгебраические системы, такие как группы, кольца, поля, модули, решётки, а также отображения между такими структурами.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_general_algebra <= nrel_using_constants:
+	{
+	concept_algebra;
+	concept_algebraic_system;
+	concept_group_theory;
+	concept_theory_of_rings;
+	concept_field_theory;
+	concept_theory_of_lattices
+	};;
+	
+//утверждения
+concept_general_algebra <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(общая алгебра; операция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В общей алгебре рассматриваются свойства операций над объектами независимо от собственно природы объектов.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(общая алгебра; математика; алгебраическая геометрия; алгебраическая теория чисел; алгбераическая топология)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Идеи общей алгебры используются во многих областях математики. Особенно активно используют её методы алгебраическая геометрия, алгебраическая теория чисел и алгебраическая топология.](* <- lang_ru;; *);;
+		*);;
+	*);;

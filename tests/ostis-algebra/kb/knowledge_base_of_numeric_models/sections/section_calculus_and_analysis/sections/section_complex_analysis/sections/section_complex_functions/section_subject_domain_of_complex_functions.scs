@@ -1,0 +1,31 @@
+sc_node_struct -> section_subject_domain_of_complex_functions;;
+
+section_subject_domain_of_complex_functions => nrel_main_idtf:
+    [Раздел. Предметная область комлексных функций] (* <- lang_ru;; *);
+    [Section. Subject domain of complex functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_complex_functions <- nrel_system_identifier;;
+
+section_subject_domain_of_complex_functions => nrel_section_decomposition: {
+    section_subject_domain_of_integral_functions;
+    section_subject_domain_of_hyperbolic_functions
+};;
+  
+section_subject_domain_of_complex_functions -> rrel_key_sc_element:
+    subject_domain_of_complex_functions;
+    concept_complex_analytic_function;
+    concept_complex_function;;
+
+section_subject_domain_of_complex_functions = [*
+    subject_domain_of_complex_functions => nrel_main_idtf:
+        [Предметная область комлексных функций] (* <- lang_ru;; *);
+        [Subject domain of complex functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_complex_functions -> rrel_maximum_studied_object_class:
+        concept_complex_function;;
+
+    subject_domain_of_complex_functions -> rrel_not_maximum_studied_object_class:
+        concept_complex_analytic_function;;
+*];;

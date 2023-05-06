@@ -1,0 +1,27 @@
+sc_node_role_relation->rrel_numerator;; 
+rrel_numerator=>nrel_main_idtf:	[числитель'](*<-lang_ru;;*);	[numerator'](*<-lang_en;;*);;
+
+rrel_numerator <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(числитель')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Числитель - математическое выражение, стоящее над знаком обыкновенной дроби.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+rrel_numerator <- rrel_key_sc_element:
+...
+(*
+	=> nrel_main_idtf: [Пояснение(числитель')] (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+	(*	-> rrel_example:	[Число, являющееся делимым в дроби.] (* <- lang_ru;; *);;	*);;
+*);;
+
+rrel_numerator<= nrel_using_constants: concept_expression;;

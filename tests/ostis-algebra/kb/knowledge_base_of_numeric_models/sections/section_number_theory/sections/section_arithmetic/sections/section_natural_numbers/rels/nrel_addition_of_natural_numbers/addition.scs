@@ -1,0 +1,117 @@
+sc_node_norole_relation->nrel_addition_of_natural_numbers;; 
+
+nrel_addition_of_natural_numbers=>nrel_main_idtf:
+[сложение натуральных чисел* ] (*<-lang_ru;;*);
+[табиғи сандар толықтыру* ] (*<-lang_kz;;*);
+[addition of natural numbers* ] (*<-lang_en;;*);;
+
+
+nrel_addition_of_natural_numbers=> nrel_idtf:[суммирование* ](*<-lang_ru;;*);;
+nrel_addition_of_natural_numbers=> nrel_idtf:[addition* ](*<-lang_en;;*);;
+
+//определение и пояснения
+nrel_addition_of_natural_numbers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сложение натуральных чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сложение – арифметическое действие, в котором любой паре чисел a, b называемых слагаемыми, ставится в соответствие третье число с, называемое их суммой и обозначаемое знаком «+» (плюс): с=a+b.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+	=> nrel_main_idtf: [Пояснение(сложение натуральных чисел*)] (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+	(*
+	-> rrel_example:
+		[Сумма двух натуральных чисел всегда является натуральным числом.](*<- lang_ru;; *);;
+	*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (сложение натуральных чисел*)] (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+	(*
+	-> rrel_example:
+	[Знак плюс для операции сложения (а также знак минуса) придумали в немецкой математической школе «коссистов» (то есть алгебраистов). Они используются в «Арифметике» Иоганна Видмана, изданной в 1489 году. До этого сложение обозначалось буквой p (plus) или латинским словом et (союз «и»), а вычитание — буквой m (minus).](*<- lang_ru;; *);;
+	*);;
+	*);;
+
+//утверждения
+nrel_addition_of_natural_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(переместительный закон; сочетательный закон)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://addition1.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//конкретные задачи
+ nrel_addition_of_natural_numbers <- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://addition2.html" (*<-lang_ru;;*);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_addition_of_natural_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение суммы двух чисел.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_addition_of_natural_numbers<- ternary_relation;;
+
+nrel_addition_of_natural_numbers => nrel_first_domain:
+concept_natural_number;;
+
+nrel_addition_of_natural_numbers => nrel_second_domain: 
+concept_natural_number;;
+
+nrel_addition_of_natural_numbers => nrel_third_domain: 
+concept_natural_number;;
+
+
+//пример
+ nrel_addition_of_natural_numbers -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[8+15=13; 8 и 5 – слагаемые, 13 - сумма](* <- lang_ru;; 	*);;
+		*);;
+	*);;

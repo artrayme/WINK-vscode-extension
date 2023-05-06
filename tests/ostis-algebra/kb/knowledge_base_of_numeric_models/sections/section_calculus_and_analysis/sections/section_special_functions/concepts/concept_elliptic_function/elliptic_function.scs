@@ -1,0 +1,60 @@
+sc_node_norole_relation->concept_elliptic_function;;
+
+concept_elliptic_function=>nrel_main_idtf:
+[эллиптическая функция](*<-lang_ru;;*);
+[elliptic function](*<-lang_en;;*);;
+
+
+//надмножество
+concept_function => nrel_inclusion: concept_elliptic_function;;
+
+//определение
+concept_elliptic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(эллиптическая функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Периодическая в двух направлениях функция, заданная на комплексной плоскости.](* <- lang_ru;; *);;
+		*);;
+	*);
+		...
+	(*
+	=> nrel_main_idtf: [Пояснение (эллиптическая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			"file://elliptic_function.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+	
+concept_elliptic_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эллиптическая функция; константа; целая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Не существует отличных от констант целых эллиптических функций](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эллиптическая функция; элементарная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Эллиптические функции неэлементарны.](* <- lang_ru;; *);;
+		*);;
+	*);;

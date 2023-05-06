@@ -1,0 +1,65 @@
+sc_node_norole_relation->nrel_the_domain_of_the_equation;; 
+
+nrel_the_domain_of_the_equation=>nrel_main_idtf:
+[область определения уравнения* ](*<-lang_ru;;*);
+[the domain of the equation* ](*<-lang_en;;*);;
+
+nrel_the_domain_of_the_equation => nrel_idtf:
+[ОДЗ* ](*<-lang_ru;;*);
+[области допустимых значений переменной в уравнении* ](*<-lang_ru;;*);;
+
+nrel_the_domain_of_the_equation => nrel_using_constants: concept_number;concept_equation;concept_variable;;
+
+nrel_the_domain_of_the_equation => nrel_first_domain:concept_equation;;
+nrel_the_domain_of_the_equation => nrel_second_domain: concept_number;;
+
+nrel_the_domain_of_the_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(область определения уравнения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью определения уравнения f(x)=g(x) называют множество всех тех значений переменной х, при которых выражения f(x) и (x) имеют смысл (одновременно).](* <- lang_ru;; *);;
+		*);;
+	*);;
+   
+nrel_the_domain_of_the_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://the_domain_of_the_equation.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_the_domain_of_the_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение области определения уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_the_domain_of_the_equation-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://the_domain_of_the_equation1.html"(* <- lang_ru;;*);;
+		*);;
+	*);;

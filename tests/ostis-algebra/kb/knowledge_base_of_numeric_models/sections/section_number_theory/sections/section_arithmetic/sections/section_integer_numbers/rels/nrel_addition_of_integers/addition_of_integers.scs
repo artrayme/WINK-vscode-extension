@@ -1,0 +1,108 @@
+sc_node_norole_relation->nrel_addition_of_integers;;
+
+nrel_addition_of_integers=>nrel_main_idtf:
+[сложение целых чисел* ](*<-lang_ru;;*);
+[addition of integers* ](*<-lang_en;;*);;
+
+nrel_addition_of_integers=> nrel_idtf:[addition of whole number* ](*<-lang_en;;*);;
+nrel_addition_of_integers=> nrel_idtf:[сложение противоположных чисел* ](*<-lang_ru;;*);;
+nrel_addition_of_integers=> nrel_idtf:[сложение чисел с разными знаками* ](*<-lang_ru;;*);;
+nrel_addition_of_integers=> nrel_idtf:[сложение отрицательных чисел* ](*<-lang_ru;;*);;
+
+//определение
+nrel_addition_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(сложение целых чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для сложения двух целых чисел с одинаковыми знаками, необходимо сложить модули этих чисел и перед суммой поставить итоговый знак.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Для сложения двух целых чисел с разными знаками, необходимо из модуля числа, которое больше вычесть модуль числа, которое меньше и перед ответом поставить знак большего числа по модулю.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Сумма, разность целых чисел дают снова целые числа.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+// классы задач и способы решения
+nrel_addition_of_integers  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на сложение целых чисел с разными знаками.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на сложение целого числа и нуля.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на сложение отрицательных целых чисел.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_addition_of_integers<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://addition_of_integers1.html"(* <- lang_ru;;*);;
+*);;
+*);;
+
+nrel_addition_of_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение целых чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Свойство ассоциативности a+(b+c)=(a+b)+c.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство дистрибутивности умножения относительно сложения a×(b+c)=(a×b)+(a×c).](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство коммутативности a+b=b+a.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство существования нейтрального элемента  a+0=a.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Свойство существования противоположного элемента a+(−a)=0.](* <- lang_ru;; *);;
+		*);;
+	*);;
+

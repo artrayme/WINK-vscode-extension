@@ -1,0 +1,6 @@
+minus_one_hundred_and_twenty_one=>nrel_main_idtf:
+[-121](*<-lang_ru;;*);
+[-121](*<-lang_en;;*);;
+
+concept_number -> minus_one_hundred_and_twenty_one;;
+set_of_number -> minus_one_hundred_and_twenty_one;;

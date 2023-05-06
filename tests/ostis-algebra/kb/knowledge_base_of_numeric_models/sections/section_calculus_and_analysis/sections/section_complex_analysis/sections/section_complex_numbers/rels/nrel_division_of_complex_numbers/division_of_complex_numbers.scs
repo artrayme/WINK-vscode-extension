@@ -1,0 +1,95 @@
+sc_node_norole_relation->nrel_division_of_complex_numbers;;
+
+nrel_division_of_complex_numbers=>nrel_main_idtf:
+[деление комплексных чисел* ](*<-lang_ru;;*);
+[кешенді сандар бөлімшесі* ](*<-lang_kz;;*);
+[division of complex numbers* ](*<-lang_en;;*);;
+
+// синонимы
+nrel_division_of_complex_numbers=> nrel_idtf:[деление комплексного числа на комплексное число* ](*<-lang_ru;;*);;
+
+nrel_division_of_complex_numbers<- ternary_relation;;
+nrel_division_of_complex_numbers => nrel_first_domain:concept_complex_number;;
+
+nrel_division_of_complex_numbers => nrel_second_domain: concept_complex_number;;
+
+nrel_division_of_complex_numbers => nrel_third_domain: concept_complex_number;;
+
+//определение
+nrel_division_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(деление комплексных чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Деление определяется как действие, обратное умножению. Частным двух комплексных чисел z1 и z2≠0 называется комплексное число z, которое, будучи умноженным на z2, дает число z1, т. е. z1/z2=z, если z2*z=z1.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_division_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(умножение комплексных чисел*; числитель;знаменатель)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Частное двух комплексных чисел находят путем умножения числителя и знаменателя на число, сопряженное знаменателю («избавляются от мнимости в знаменателе»).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(деление комплексных чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://division_of_complex_numbers.jpg"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_division_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://division_of_complex_numbers.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_division_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение деления комплексных чисел](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+ nrel_division_of_complex_numbers  -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		    "file://division_of_complex_numbers2.jpg"             (* <- lang_ru;;*);;
+		*);;
+	*);;

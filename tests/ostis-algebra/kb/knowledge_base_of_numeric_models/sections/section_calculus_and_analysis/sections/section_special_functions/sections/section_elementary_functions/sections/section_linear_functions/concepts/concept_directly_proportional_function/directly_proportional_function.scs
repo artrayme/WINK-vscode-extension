@@ -1,0 +1,81 @@
+sc_node_not_relation->concept_directly_proportional_function;; 
+
+concept_directly_proportional_function=>nrel_main_idtf:
+[прямо пропорциональная функция](*<-lang_ru;;*);
+[directly proportional function](*<-lang_en;;*);;
+
+concept_directly_proportional_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(прямо пропорциональная функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Прямо пропорциональная функция - функция вида y=k*x, где постоянная величина k есть положительное или отрицательное число, x и у - величины, находящиеся в прямо пропорциональной зависимости между собой.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Пояснение(коэффицент пропорциональности)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Коэффицент пропорциональности - число k в функции y=k*x, которое показывает во сколько раз надо увеличить x тобы получить значение y для данного x. ](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_directly_proportional_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(график функции)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Графиком прямо пропорциональной зависимости y=k*x является прямая, проходящая через начало координат и через точку с абсциссой 1 и ординатой k .]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_directly_proportional_function<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Построить график функции f=3*x.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_directly_proportional_function<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на построение графика прямо пропорциональной функции.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_directly_proportional_function-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://directly_proportional_function.png"(* <- lang_ru;;*);;
+		*);;
+	*);;

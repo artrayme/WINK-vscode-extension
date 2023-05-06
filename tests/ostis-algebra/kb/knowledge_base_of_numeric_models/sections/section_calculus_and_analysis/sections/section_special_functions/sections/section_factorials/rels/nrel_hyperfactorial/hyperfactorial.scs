@@ -1,0 +1,40 @@
+sc_node_norole_relation->nrel_hyperfactorial;;
+
+nrel_hyperfactorial=>nrel_main_idtf:
+[гиперфакториал* ](*<-lang_ru;;*);
+[hyperfactorial* ](*<-lang_en;;*);;
+
+
+//определение
+nrel_hyperfactorial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(гиперфакториал*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://hyperfactorial.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+	
+nrel_hyperfactorial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(гиперфакториал*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Гиперфакториал может быть обобщён для комплексных чисел. Результирующая функция называется k-функцией](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_hyperfactorial <- binary_relation;;
+nrel_hyperfactorial <= nrel_first_domain:  concept_number;;
+nrel_hyperfactorial <= nrel_second_domain: concept_number;;

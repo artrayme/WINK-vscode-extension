@@ -1,0 +1,52 @@
+sc_node_role_relation -> rrel_divider;;
+rrel_divider => nrel_main_idtf:	[делитель'](* <- lang_ru;; *);  [divider'](* <- lang_en;; *);;
+
+rrel_divider <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(делитель')](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Делитель целого числа а - это целое число b, делящеечисло а без остатка.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_divider <- rrel_key_sc_element:
+ 	...
+	(*
+	=> nrel_main_idtf:[Пояснение.(делитель')](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Делитель целого числа а - это такое целое число b, для которого справедливо равенство a=b*c при некотором целом с.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_divider <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(число; деление*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Если число b делитель числа a , то a называют кратным числу b.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(целое число; остаток'; деление*; общий делитель*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Целое число, на которое делятся без остатка два или несколько чисел, называется их общим делителем.](*<-lang_ru;;*);;
+		*);;
+	*);;

@@ -1,0 +1,48 @@
+sc_agent_exponentiation
+=> nrel_main_idtf:
+	[sc-агент нахождение модуля комплексного числа] (* <- lang_ru;; *);
+	[sc-agent finding complex number module] (* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_complex_number_module_condition => ..sc_agent_complex_number_module_result);
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_complex_number_module
+	};
+
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_complex_number_module
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_complex_number_module
+		};;
+	-> sc_agent_complex_number_module_scp    
+		(* <- active_sc_agent;; *);; 
+	*);;
+
+..sc_agent_complex_number_module
+= [*
+	question_complex_number_module _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter;;
+*];;
+
+..sc_agent_complex_number_module_result
+= [*
+	question_complex_number_module _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter;;
+*];;

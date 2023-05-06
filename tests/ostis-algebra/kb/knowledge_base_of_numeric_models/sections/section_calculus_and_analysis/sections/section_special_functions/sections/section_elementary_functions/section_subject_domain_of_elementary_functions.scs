@@ -1,0 +1,55 @@
+sc_node_struct -> section_subject_domain_of_elementary_functions;;
+
+section_subject_domain_of_elementary_functions => nrel_main_idtf:
+    [Раздел. Предметная область элементарных функций] (* <- lang_ru;; *);
+    [Section. Subject domain of elementary functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_elementary_functions <- nrel_system_identifier;;
+
+section_subject_domain_of_elementary_functions => nrel_section_decomposition: {
+    section_subject_domain_of_hyperbolic_functions;
+    section_subject_domain_of_polynomial_functions;
+    section_subject_domain_of_logarithms;
+    section_subject_domain_of_trigonometric_functions;
+    section_subject_domain_of_power_functions;
+    section_subject_domain_of_exponential_functions;
+    section_subject_domain_of_linear_functions
+};;
+  
+section_subject_domain_of_elementary_functions -> rrel_key_sc_element:
+    subject_domain_of_elementary_functions;
+    concept_root_function;
+    concept_entire_rational_function;
+    concept_rational_function;
+    concept_algebraic_function;
+    concept_elementary_function;
+    concept_binomial_differential;
+    concept_constant_function;;
+
+section_subject_domain_of_elementary_functions = [*
+    subject_domain_of_elementary_functions => nrel_main_idtf:
+        [Предметная область элементарных функций] (* <- lang_ru;; *);
+        [Subject domain of elementary functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_elementary_functions => nrel_private_subject_domain:
+        subject_domain_of_hyperbolic_functions;
+        subject_domain_of_polynomial_functions;
+        subject_domain_of_logarithms;
+        subject_domain_of_trigonometric_functions;
+        subject_domain_of_power_functions;
+        subject_domain_of_exponential_functions;
+        subject_domain_of_linear_functions;;
+
+    subject_domain_of_elementary_functions -> rrel_maximum_studied_object_class:
+        concept_elementary_function;;
+
+    subject_domain_of_elementary_functions -> rrel_not_maximum_studied_object_class:
+        concept_root_function;
+        concept_entire_rational_function;
+        concept_rational_function;
+        concept_algebraic_function;
+        concept_binomial_differential;
+        concept_constant_function;;
+*];;

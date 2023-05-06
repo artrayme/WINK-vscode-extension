@@ -1,0 +1,73 @@
+sc_node_norole_relation->nrel_addition_of_fractions_with_the_same_denominator;; 
+
+nrel_addition_of_fractions_with_the_same_denominator=>nrel_main_idtf:
+[сложение дробей с одинаковыми знаменателями* ] (*<-lang_ru;;*);
+[сол бөлгіш фракциялардың толықтыру* ] (*<-lang_kz;;*);
+[addition of fractions with the same denominator* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_addition_of_fractions_with_the_same_denominator=> nrel_idtf:[сумма дробей с одинаковыми знаменателями* ](*<-lang_ru;;*);;
+
+
+//определение и пояснения
+nrel_addition_of_fractions_with_the_same_denominator<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сложение дробей с одинаковыми знаменателями*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Чтобы сложить две дроби с одинаковыми знаменателями, нужно сложить их числители, а знаменатель оставить без изменений:
+a/c+b/c=(a+b)/c]	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+   
+
+//конкретные задачи
+ nrel_addition_of_fractions_with_the_same_denominator<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Сложить дроби с одинаковыми знаменателями: 7/5+4/5; 4/9+11/9](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_addition_of_fractions_with_the_same_denominator<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на сложение дробей с одинаковыми знаменателями](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_addition_of_fractions_with_the_same_denominator => nrel_first_domain:concept_common_fraction;;
+nrel_addition_of_fractions_with_the_same_denominator => nrel_second_domain: concept_common_fraction;;
+
+//пример
+ nrel_addition_of_fractions_with_the_same_denominator -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[3/4+6/4=(3+6)/4=9/4](* <- lang_ru;; 	*);;
+		*);;
+	*);;

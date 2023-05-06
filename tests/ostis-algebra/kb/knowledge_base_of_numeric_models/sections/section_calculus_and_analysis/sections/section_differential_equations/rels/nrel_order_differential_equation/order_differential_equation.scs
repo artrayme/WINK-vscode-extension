@@ -1,0 +1,49 @@
+sc_node_norole_relation->nrel_order_differential_equation;;
+
+nrel_order_differential_equation=>nrel_main_idtf:
+[порядок дифференциального уравнения* ] (*<-lang_ru;;*);
+[order differential equation* ] (*<-lang_en;;*);;
+
+nrel_order_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(порядок дифференциального уравнения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Порядком дифференциального уравнения называется порядок наивысшей производной, входящей в уравнение. ](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_order_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение; число; переменная'; разность'; уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Порядок дифференциальных уравнений определяется числом независимых переменных состояния. Формально порядок дифференциальных уравнений можно определить как разность между числом переменных состояния, входящих в уравнение схемы, и числом зависимых переменных состояния.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_order_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение; число; уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Порядок дифференциального уравнения с частными производными обычно не выше второго, количество уравнений - не больше числа звеньев.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_order_differential_equation => nrel_first_domain: concept_differential_equation;;
+nrel_order_differential_equation => nrel_second_domain: concept_number;;

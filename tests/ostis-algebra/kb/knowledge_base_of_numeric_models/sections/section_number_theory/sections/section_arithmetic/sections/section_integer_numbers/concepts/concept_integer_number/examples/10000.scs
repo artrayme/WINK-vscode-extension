@@ -1,0 +1,6 @@
+ten_thousand=>nrel_main_idtf:
+[10000](*<-lang_ru;;*);
+[10000](*<-lang_en;;*);;
+
+concept_number -> ten_thousand;;
+set_of_number -> ten_thousand;;

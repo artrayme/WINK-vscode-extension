@@ -1,0 +1,88 @@
+sc_node_norole_relation->nrel_subtraction_of_complex_numbers;; 
+
+nrel_subtraction_of_complex_numbers=>nrel_main_idtf:
+[разность комплексных чисел* ](*<-lang_ru;;*);
+[кешенді сандар арасындағы айырмашылық* ](*<-lang_kz;;*);
+[subtractionof complex numbers* ](*<-lang_en;;*);;
+
+//иерархия
+nrel_subtraction_of_complex_numbers<= nrel_inclusion: nrel_subtraction;;
+
+//определение и пояснения
+nrel_subtraction_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(вычитание комплексных чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Вычитание определяется как действие, обратное сложению. Разностью двух комплексных чисел z1=a+i*b и z2=c+i*d называется такое комплексное число z=z1-z2=(a-b)+i*(c-d).](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+   
+
+//утверждения
+nrel_subtraction_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение комплексных чисел*; разность*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Разностью двух комплексных чисел z1 и z2 называется такое комплексное число z, которое, будучи сложенным с z2, дает число z1 т. е. z=z1-z2, если z+z2=z1.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//конкретные задачи
+ nrel_subtraction_of_complex_numbers<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Вычислите: z1-z2, если z1=4+3*i, z2=5+6*i.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_subtraction_of_complex_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение разности двух комплексных чисел.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_subtraction_of_complex_numbers<- ternary_relation;;
+nrel_subtraction_of_complex_numbers => nrel_first_domain:concept_complex_number;;
+nrel_subtraction_of_complex_numbers => nrel_second_domain: concept_complex_number;;
+nrel_subtraction_of_complex_numbers => nrel_third_domain: concept_complex_number;;
+
+
+//пример
+ nrel_subtraction_of_complex_numbers -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[z1=3+5*i, z2=2+7*i. z1-z2=(3-2)+i*(5-7)=1-i*2.](* <- lang_ru;;*);;
+		*);;
+	*);;

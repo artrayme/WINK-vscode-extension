@@ -1,0 +1,76 @@
+sc_node_norole_relation -> nrel_tetracene;;
+
+nrel_tetracene => nrel_main_idtf :[тетрация* ] (* <- lang_ru;; *);; 
+nrel_tetracene => nrel_main_idtf :[tetracene* ] (* <- lang_en;; *);; 
+
+nrel_tetracene => nrel_idtf :[гипероператор-4* ] (* <- lang_ru;; *);; 
+
+concept_hyperoperator => nrel_inclusion: nrel_tetracene;;
+
+nrel_tetracene <- binary_relation;;
+
+nrel_tetracene <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(тетрация*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тетрация - итерационная функция экспоненты.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_tetracene <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(тетрация*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://tetracene.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+nrel_tetracene <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тетрация*; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тетрация используется для описания больших чисел.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_tetracene <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тетрация*; гипероператор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тетрация является четвёртой по счёту гипероперацией.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_tetracene <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тетрация*; элементарная функция; натуральный показатель')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тетрация не считается элементарной функцией (за исключением случаев с постоянным натуральным показателем, когда тетрация выражается в виде степенной башни постоянной высоты).]	(* <- lang_ru;; *);;
+		*);;
+	*);;

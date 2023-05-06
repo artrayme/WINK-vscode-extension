@@ -1,0 +1,43 @@
+sc_node_not_relation -> concept_simplest_differential_operator;;
+
+concept_simplest_differential_operator=> nrel_main_idtf :
+[простейший дифференциальный оператор] (* <- lang_ru;; *);
+[simplest differential operator](*<-lang_en;;*);;
+
+concept_simplest_differential_operator => nrel_idtf:[простейший дифференциальный оператор D](*<-lang_ru;;*);;
+concept_simplest_differential_operator => nrel_idtf:[simplest differential operator D](*<-lang_en;;*);;
+
+concept_simplest_differential_operator <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(простейший дифференциальный оператор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Простейший дифференциальный оператор D, действуя на функцию y, "возвращает" первую производную этой функции: Dy(x)=y'(x).]   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(простейший дифференциальный оператор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://simplest_differential_operator2.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(простейший дифференциальный оператор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://simplest_differential_operator3.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,50 @@
+sc_node_not_relation->concept_vector_space;;
+
+concept_vector_space=>nrel_main_idtf:
+[векторное пространство](*<-lang_ru;;*);
+[vector space](*<-lang_en;;*);;
+
+concept_vector_space=> nrel_idtf:[линейное пространство](*<-lang_ru;;*);;
+concept_vector_space=> nrel_idtf:[linear space](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_vector_space <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(векторное пространство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Векторное пространство — это математическая структура, которая представляет собой набор элементов, называемых векторами, для которых определены операции сложения друг с другом и умножения на число — скаляр.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+//утверждения
+concept_vector_space <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(векторное пространство, абелева группа, сложение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Векторное пространство является абелевой группой по сложению.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(умножение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[(-1)x = -x для любого x принадлежащего V.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+concept_vector_space<= nrel_using_constants: nrel_addition; concept_vector; concept_scalar;;

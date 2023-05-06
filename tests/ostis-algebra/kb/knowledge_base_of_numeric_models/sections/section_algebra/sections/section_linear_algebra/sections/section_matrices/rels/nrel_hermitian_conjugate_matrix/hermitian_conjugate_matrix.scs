@@ -1,0 +1,63 @@
+sc_node_norole_relation -> nrel_hermitian_conjugate_matrix;;
+
+nrel_hermitian_conjugate_matrix => nrel_main_idtf:
+[эрмитово-сопряжённая матрица* ](*<-lang_ru;;*);
+[hermitian conjugate matrix* ](*<-lang_en;;*);
+[эрмитовой конъюгат матрица* ](*<-lang_kz;;*);;
+
+nrel_hermitian_conjugate_matrix => nrel_idtf:[сопряжённо-транспонированная матрица* ](*<-lang_ru;;*);;
+nrel_hermitian_conjugate_matrix => nrel_idtf:[conjugately-transposed matrix* ](*<-lang_en;;*);;
+
+
+nrel_hermitian_conjugate_matrix <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (эрмитово-сопряжённая матрица*)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Эрмитово-сопряжённая матрица - это матрица с комплексными элементами, полученная из исходной матрицы  транспонированием и заменой каждого элемента комплексно-сопряжённым ему.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+nrel_hermitian_conjugate_matrix <= nrel_using_constants:
+	{
+	concept_matrix;
+	nrel_transpose;
+	nrel_conjugation;
+	concept_complex_number
+	};;
+	
+nrel_hermitian_conjugate_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эрмитово-сопряжённая матрица*; вещественное число; транспонированная матрица* )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если матрица  состоит из вещественных чисел, то эрмитово-сопряжённая к ней матрица — это просто транспонированная матрица.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эрмитова матрица*; нормальная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Эрмитово-сопряжённую матрицу обычно обозначают как и исходную матрицу, но с добавлением символа H.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+
+nrel_hermitian_conjugate_matrix -> rrel_example :
+		"file://hermitian_conjugate_matrix_example.png";;
+
+nrel_hermitian_conjugate_matrix <- binary_relation;;
+nrel_hermitian_conjugate_matrix => nrel_first_domain: concept_matrix;;
+nrel_hermitian_conjugate_matrix => nrel_second_domain: concept_matrix;;

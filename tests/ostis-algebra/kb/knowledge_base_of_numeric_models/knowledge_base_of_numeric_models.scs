@@ -1,0 +1,40 @@
+knowledge_base_of_numeric_models <- ui_start_sc_element;;
+
+knowledge_base_of_numeric_models => nrel_main_idtf:
+    [База знаний по числовым моделям](*<-lang_ru;;*);
+    [Knowledge base of numeric models](* <- lang_en;; *);
+<- non_atomic_section;;
+
+knowledge_base_of_numeric_models <- nrel_system_identifier;;
+
+knowledge_base_of_numeric_models => nrel_section_decomposition: {
+    section_subject_domain_of_algebra;
+    section_subject_domain_of_calculus_and_analysis;
+    section_subject_domain_of_computational_math;
+    section_subject_domain_of_mathematical_statistics;
+    section_subject_domain_of_number_theory;
+    section_subject_domain_of_probability_theory;
+    section_subject_domain_of_mathematical_statistics;
+    section_subject_domain_of_terminology;
+    section_subject_domain_of_topology
+};;
+  
+knowledge_base_of_numeric_models -> rrel_key_sc_element:
+    subject_domain_of_numeric_models;;
+
+knowledge_base_of_numeric_models = [*
+    subject_domain_of_numeric_models => nrel_main_idtf:
+        [Предметная область по числовым моделям](*<-lang_ru;;*);
+        [Subject domain of numeric models](* <- lang_en;;*);
+    <- subject_domain;;
+
+    subject_domain_of_numeric_models => nrel_private_subject_domain:
+        subject_domain_of_algebra;
+        subject_domain_of_calculus_and_analysis;
+        subject_domain_of_computational_math;
+        subject_domain_of_number_theory;
+        subject_domain_of_probability_theory;
+        subject_domain_of_mathematical_statistics;
+        subject_domain_of_terminology;
+        subject_domain_of_topology;;
+*];;

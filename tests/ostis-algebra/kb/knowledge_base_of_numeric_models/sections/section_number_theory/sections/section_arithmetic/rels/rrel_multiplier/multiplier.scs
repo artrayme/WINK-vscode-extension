@@ -1,0 +1,58 @@
+sc_node_role_relation -> rrel_multiplier;; 
+rrel_multiplier=>nrel_main_idtf:	[множитель'](*<-lang_ru;;*);	[miltiplier'](*<-lang_en;;*);	 [фактор'](*<-lang_kz;;*);;
+
+rrel_multiplier<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(множитель')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Под множителем в математике понимают любое число, на которое заданное делится без остатка.](* <- lang_ru;; *);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (множитель')] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Это то число, которое показывает сколько именно раз повторить в качестве слагаемого другое число.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+rrel_multiplier <= nrel_using_constants:
+	{
+	concept_number;
+	rrel_residue;
+	rrel_summand
+	};;
+	
+rrel_multiplier <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множитель')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если множителей в примере несколько, то они нумеруются и называются, соответственно, «первый множитель» , «второй множитель» и т. д.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множитель'; умножение*; произведение')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Результат умножения множителей называют произведением.](* <- lang_ru;; *);;
+		*);;
+	*);;
+   

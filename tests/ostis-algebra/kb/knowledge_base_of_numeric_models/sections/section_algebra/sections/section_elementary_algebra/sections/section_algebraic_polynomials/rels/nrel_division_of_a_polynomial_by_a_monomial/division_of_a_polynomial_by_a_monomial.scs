@@ -1,0 +1,100 @@
+sc_node_norole_relation->nrel_division_of_a_polynomial_by_a_monomial;; 
+
+nrel_division_of_a_polynomial_by_a_monomial=>nrel_main_idtf:
+[деление многочлена на одночлен* ] (*<-lang_ru;;*);
+[бөлімшесі бойынша мономиален* ] (*<-lang_kz;;*);
+[division of a polynomial by a monomial* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_division_of_a_polynomial_by_a_monomial=> nrel_idtf:[деление многочлена* ](*<-lang_ru;;*);;
+
+//определение и пояснения
+nrel_division_of_a_polynomial_by_a_monomial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(деление многочлена на одночлен*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Чтобы разделить многочлен на одночлен, нужно разделить каждый член многочлена на одночлен и полученные результаты сложить.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(деление многочлена на одночлен*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	"file://division_of_a_polynomial_by_a_monomial_1.html" (* <- lang_ru;; *);;
+*);;
+*);
+  ...
+    (*
+=> nrel_main_idtf: [Пояснение(деление многочлена на одночлен*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	[При деление многочлена на одночлен каждый его член должен нацело делиться на этот одночлен. Например, многочлен ab+ac не делится на одночлен ab, т.к. одночлен ac не делмтся на одночлен ab. При делении многочлена на одночлен значение выражения, являющегося делителем, не должно равняться нулю.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//используемые константы
+ nrel_division_of_a_polynomial_by_a_monomial<= nrel_using_constants: concept_monomial; concept_polynomial;;
+
+//конкретные задачи
+ nrel_division_of_a_polynomial_by_a_monomial<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Выполнить деление: (12a+6):3](* <- lang_ru;; *);;
+
+-> rrel_example:
+[Выполнить деление: (14m-8):(-2)](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_division_of_a_polynomial_by_a_monomial<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на выполнение деления многочлена на одночлен.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_division_of_a_polynomial_by_a_monomial => nrel_first_domain:concept_polynomial;;
+nrel_division_of_a_polynomial_by_a_monomial => nrel_second_domain: concept_monomial;;
+nrel_division_of_a_polynomial_by_a_monomial => nrel_third_domain: concept_polynomial;;
+
+
+//пример
+ nrel_division_of_a_polynomial_by_a_monomial-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://division_of_a_polynomial_by_a_monomial_2.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

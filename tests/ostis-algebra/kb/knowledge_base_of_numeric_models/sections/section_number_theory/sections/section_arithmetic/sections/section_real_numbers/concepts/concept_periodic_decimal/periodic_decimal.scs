@@ -1,0 +1,101 @@
+sc_node_not_relation->concept_periodic_decimal;;
+
+concept_periodic_decimal=>nrel_main_idtf:
+[периодическая десятичная дробь](*<-lang_ru;;*);
+[қайталанатын ондық](*<-lang_kz;;*);
+[periodic decimal](*<-lang_en;;*);;
+
+
+//определение
+concept_periodic_decimal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(периодическая десятичная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://periodic_decimal_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_periodic_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (периодическая десятичная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://periodic_decimal_2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+//утверждения
+concept_periodic_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число, знак, цифра )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если в периодической дроби период следует сразу после запятой, то дробь называется чистой периодической. 
+Если же между запятой и первым периодом имеются цифры, дробь называется смешанной периодической, а группа цифр после запятой до первого знака периода — предпериодом дроби. 
+Например, дробь 1,(23) = 1,2323... является чистой периодической, а дробь 0,1(23)=0,12323... — смешанной периодической.] (*<-lang_ru;;*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(рациональное число, бесконечна десятичная дробь )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Всякая бесконечная периодическая десятичная дробь представляет рациональное число. Обратно, если рациональное число раскладывается в бесконечную десятичную дробь, то эта дробь является периодической.] (*<-lang_ru;;*);;
+		*);;
+	*);;
+//используемые константы
+concept_periodic_decimal<= nrel_using_constants: concept_number;concept_decimal;concept_infinite_decimal;;
+
+// конкретные задачи
+concept_periodic_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли дробь периодической десятичной дробью : 1/2;0,09... ;0,13(2).] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_periodic_decimal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение является ли дробь периодической десятичной дробью .]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_periodic_decimal-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[0,5(6356)... -  периодическая десятичная  дробь ](* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,55 @@
+sc_node_role_relation->rrel_power;;
+rrel_power => nrel_main_idtf:	[степень'](*<-lang_ru;;*);	[power'](*<-lang_en;;*);;
+
+rrel_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(степень')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Степень - число, которое является результатом возведения в степень какого-либо числа.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+rrel_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; число в квадрате; два)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Число во второй степени называют число в квадрате.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+rrel_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; число в кубе; три)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Число в третьей степени называют число в кубе.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+rrel_power <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; числовое выражение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Степени чисел входящие в числовые выражения выполняются в первую очередь.](* <- lang_ru;; *);;
+		*);;
+	*);;

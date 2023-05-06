@@ -1,0 +1,7 @@
+sc_text_of_agent_logarithm
+-> rrel_key_sc_element:
+	agent_logarithm;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_logarithm = [*^"file://agent_logarithm.scsi"*];;
+

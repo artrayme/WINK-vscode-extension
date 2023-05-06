@@ -1,0 +1,9 @@
+documentation_of_numeric_models <= nrel_section_decomposition:
+{
+	brief_description_of_project;
+	description_of_the_final_product_of_the_project;
+	uniqueness_and_novelty_design;
+	current_stage_of_development_of_the_project;
+	key_areas_for_further_work;
+	information_about_project_team
+};; 

@@ -1,0 +1,42 @@
+sc_node_not_relation -> concept_almost_perfect_number;; 
+
+concept_almost_perfect_number => nrel_main_idtf:
+[слегка недостаточное число](*<-lang_ru;;*);
+[almost perfect number](*<-lang_en;;*);;
+
+//синонимы
+concept_almost_perfect_number => nrel_idtf:[почти совершенное число](*<-lang_ru;;*);;
+concept_almost_perfect_number => nrel_idtf:[slightly defective](*<-lang_en;;*);;
+concept_almost_perfect_number => nrel_idtf:[least deficient number](*<-lang_en;;*);;
+	
+//надмножество
+concept_deficient_number => nrel_inclusion: concept_almost_perfect_number;;
+
+//определения и пояснения
+concept_almost_perfect_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (слегка недостаточное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Слегка недостаточное число — недостаточное число, сумма собственных делителей которого на единицу меньше самого числа.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_almost_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(слегка недостаточное число; число; возведение в степень; натуральное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Слегка недостаточными числами являются все числа, получаемые при возведении числа 2 в натуральную степень. Существование других слегка недостаточных чисел не доказано и не опровергнуто.](* <- lang_ru;; *);;
+		*);;
+	*);;

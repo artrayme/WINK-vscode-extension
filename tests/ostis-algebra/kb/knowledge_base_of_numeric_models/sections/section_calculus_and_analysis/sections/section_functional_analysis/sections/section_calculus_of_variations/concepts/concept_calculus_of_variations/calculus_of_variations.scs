@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_calculus_of_variations;; 
+
+concept_calculus_of_variations => nrel_main_idtf:
+[вариационное исчисление](*<-lang_ru;;*);
+[calculus of variations](*<-lang_en;;*);;
+
+//надмножество
+concept_mathematical_analysis => nrel_inclusion: concept_calculus_of_variations;;
+
+//определения и пояснения
+concept_calculus_of_variations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (вариационное исчисление)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Вариационное исчисление — раздел анализа, в котором изучаются вариации функционалов.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_calculus_of_variations <= nrel_using_constants:
+	{
+	concept_mathematical_analysis;
+	concept_functional
+	};;
+	
+//утверждения
+concept_calculus_of_variations <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вариационное исчисление; функция; функционал; экстремальное значение')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Наиболее типичная задача вариационного исчисления — найти функцию, на которой заданный функционал достигает экстремального значения.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вариационное исчисление; длина*; площадь*; объём*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Методы вариационного исчисления широко применяются в различных областях. Например, в дифференциальной геометрии, физике и статистике.](* <- lang_ru;; *);;
+		*);;
+	*);;

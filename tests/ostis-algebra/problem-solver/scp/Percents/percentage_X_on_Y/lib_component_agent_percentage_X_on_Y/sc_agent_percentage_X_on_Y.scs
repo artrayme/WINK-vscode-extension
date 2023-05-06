@@ -1,0 +1,48 @@
+sc_agent_percentage_X_on_Y
+=> nrel_main_idtf:
+	[sc-агент сколько % составляет X от Y] (* <- lang_ru;; *);
+	[sc-agent percentage X on Y] (* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_percentage_X_on_Y_condition => ..sc_agent_percentage_X_on_Y_result);
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_percentage_X_on_Y
+	};
+
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_percentage_X_on_Y
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_percentage_X_on_Y
+		};;
+	-> sc_agent_percentage_X_on_Y_scp    
+		(* <- active_sc_agent;; *);; 
+	*);;
+
+..sc_agent_percentage_X_on_Y
+= [*
+	question_percentage_X_on_Y _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter;;
+*];;
+
+..sc_agent_percentage_X_on_Y_result
+= [*
+	question_percentage_X_on_Y _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter;;
+*];;

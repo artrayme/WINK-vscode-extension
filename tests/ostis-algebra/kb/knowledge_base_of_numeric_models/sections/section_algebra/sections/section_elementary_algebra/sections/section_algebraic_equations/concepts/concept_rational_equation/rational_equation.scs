@@ -1,0 +1,66 @@
+sc_node_not_relation->concept_rational_equation;; 
+
+concept_rational_equation=>nrel_main_idtf:
+[рациональное уравнение](*<-lang_ru;;*);
+[rational equation](*<-lang_en;;*);;
+
+concept_rational_equation<= nrel_subdividing:
+	...
+	(* 
+	-> concept_rational_integer_equation;;
+	-> concept_rational_fractional_equation;;
+	*);;
+
+
+concept_rational_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(рациональное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Уравнение f(x)=g(x) называется рациональным, если f(x) и g(x) – рациональные выражения. При этом если f(x) и g(x) – целые выражения, то уравнение называют целым; если же хотя бы одно из выражений f(x), g(x) является дробным, то рациональное уравнение f(x)=g(x) называется дробным.](* <- lang_ru;; *);;
+		*);;
+	*);;
+   
+concept_rational_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(знаменатель; дробь)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://rational_equation.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_rational_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Решить уравнение 2/(2-x)+1/2=4/(x*(2-x))](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_rational_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение корней рационального уравнения.](* <- lang_ru;; *);;
+*);;
+*);;

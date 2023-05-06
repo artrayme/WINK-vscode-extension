@@ -1,0 +1,7 @@
+current_stage_of_development_of_the_project => nrel_main_idtf: [Раздел. Текущая стадия развития проекта] (* <- lang_ru;; *);;
+
+current_stage_of_development_of_the_project <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://current_stage_of_development_of_the_project.pdf" (* <- lang_ru;; *);;
+	*);;

@@ -1,0 +1,39 @@
+sc_node_not_relation->concept_zero_vector;;
+
+concept_zero_vector=>nrel_main_idtf:
+[нулевой вектор](*<-lang_ru;;*);
+[zero vector](*<-lang_en;;*);;
+
+//синонимы
+concept_zero_vector => nrel_idtf:[нуль-вектор](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_zero_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(нулевой вектор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Нулевой вектор - вектор, начало которого совпадает с его концом.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_zero_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нулевой вектор; вектор; сложение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для всякого вектора a, найдётся такой вектор -a, что: a+(-a)=0.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_zero_vector <= nrel_using_constants: nrel_equality;;
+
+concept_zero_vector-> rrel_example: [|a|=0](* <- lang_ru;; 	*);;

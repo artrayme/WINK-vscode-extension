@@ -1,0 +1,355 @@
+agent_logarithm
+=> nrel_main_idtf:
+	[агентная scp-программа взятия логарифма от числа] (* <- lang_ru;; *);
+	
+	[agent scp-program taking of logarithm of number] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_logarithm
+	(*
+	-> rrel_params: .agent_logarithm_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_logarithm_operator_set 
+		(*
+		-> rrel_init: .agent_logarithm_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_logarithm_operator2;;
+			*);;
+
+		-> .agent_logarithm_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_logarithm;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_logarithm_operator3;;
+		  	=> nrel_else: .agent_logarithm_operator_return;;
+			*);;
+                 
+		-> .agent_logarithm_operator3 
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_base;;
+                      
+			=> nrel_then: .agent_logarithm_operator3A1;;
+			=> nrel_else: .agent_logarithm_operator_return;;
+			*);;
+
+                     
+             
+                  ->.agent_logarithm_operator3A1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_logarithm_operator3A2;;
+			*);;  
+                   ->.agent_logarithm_operator3A2
+                       (*
+                         <- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc6;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_number_of_logarithm;;
+                      
+			=> nrel_then: .agent_logarithm_operator3A3;;
+			=> nrel_else: .agent_logarithm_operator_return;;
+			*);;
+
+                     ->.agent_logarithm_operator3A3
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc7;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc8;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_logarithm_operator3B;;
+			*);;
+
+                    
+		-> .agent_logarithm_operator3B 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_logarithm_operator4A;;
+		 	*);;
+
+ 		-> .agent_logarithm_operator4A
+			(*
+		 	<- contLn;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+                       
+                 	=> nrel_goto: .agent_logarithm_operator4B;;
+			
+                 	*);;
+
+                    -> .agent_logarithm_operator4B
+			(*
+		 	<- contLn;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer2;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                       
+                 	=> nrel_goto: .agent_logarithm_operator4C;;
+			
+                 	*);;
+
+                  -> .agent_logarithm_operator4C
+                        (*
+                         <-contDiv;;
+                         -> rrel_1: rrel_assign: rrel_scp_var: _answerlogarithm;;
+                         -> rrel_2: rrel_fixed: rrel_scp_var: _answer1;;
+                         -> rrel_3: rrel_fixed: rrel_scp_var: _answer2;;
+                          
+                         => nrel_goto: .agent_logarithm_operator4D;;
+                        *);;
+
+
+
+
+		->.agent_logarithm_operator4D
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_base;;
+ 
+                        =>nrel_goto: .agent_logarithm_operator4C1;;
+                        *);;
+                           
+                   ->.agent_logarithm_operator4C1
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc16;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_number_of_logarithm;;
+ 
+                        =>nrel_goto: .agent_logarithm_operator4CA1;;
+                        *);;
+
+                     ->.agent_logarithm_operator4CA1
+                        (*
+                         <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc31;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_then: .agent_logarithm_operator4CA2;;
+                        =>nrel_else: .agent_logarithm_operator4C2;;
+                        *);;
+
+                    ->  .agent_logarithm_operator4CA2
+                        (*
+                         <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last;;
+
+                        => nrel_goto: .agent_logarithm_operator4C2;;
+                         *);;
+
+                    ->.agent_logarithm_operator4C2
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _answerlogarithm;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_goto: .agent_logarithm_operator4C3;;
+                        *);;
+                   
+                      ->.agent_logarithm_operator4C3
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: nrel_logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: ..logarithm;;
+ 
+                        =>nrel_goto: .agent_logarithm_operator4C4;;
+                        *);;
+                      
+                       ->.agent_logarithm_operator4C4
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          
+              
+ 
+                        =>nrel_goto: .agent_logarithm_operator4C6;;
+                        *);;
+                             
+                        
+
+                       ->.agent_logarithm_operator4C6
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_base;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_logarithm_operator4CA6;;
+                        *);;
+
+			-> .agent_logarithm_operator4CA6
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_base;;
+
+				=> nrel_goto: .agent_logarithm_operator4C7;;
+				*);;
+			 
+                    
+                        ->.agent_logarithm_operator4C7
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_number_of_logarithm;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_logarithm_operator4CA7;;
+                        *);;
+
+			-> .agent_logarithm_operator4CA7
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_number_of_logarithm;;
+
+				=> nrel_goto: .agent_logarithm_operator4C8;;
+				*);;
+                    
+                      
+                       ->.agent_logarithm_operator4C8
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..logarithm;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                          ->rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                        =>nrel_goto: .agent_logarithm_operator4C10;;
+                        *);;
+
+                         ->.agent_logarithm_operator4C10
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc25;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_result;;
+
+                        =>nrel_goto: .agent_logarithm_operator4C11;;
+                        *);;
+
+                       ->.agent_logarithm_operator4C11
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc26;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          
+                        =>nrel_goto: .agent_logarithm_operator4C12;;
+                        *);; 
+                    
+                      ->.agent_logarithm_operator4C12
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc27;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_logarithm;;
+
+                        =>nrel_goto: .agent_logarithm_operator_gen_answer;;
+                        *);; 
+                 
+                
+		-> .agent_logarithm_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc10;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_logarithm_operator_return;;
+			*);;     
+					
+		-> .agent_logarithm_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

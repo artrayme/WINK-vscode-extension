@@ -1,0 +1,70 @@
+sc_node_not_relation->concept_function_module;; 
+
+concept_function_module=>nrel_main_idtf:
+[функция модуля](*<-lang_ru;;*);
+[function module](*<-lang_en;;*);;
+
+concept_function_module<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(функция модуля)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция модуля - функция вида y=|x|.](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_function_module<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(производная*; чётная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://function_module.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_function_module<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Постоить график функции f=|x+3|.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_function_module <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на построение графика функции модуля.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_function_module-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://function_module.png"(* <- lang_ru;;*);;
+		*);;
+	*);;

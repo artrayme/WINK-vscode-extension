@@ -1,0 +1,92 @@
+sc_node_not_relation->concept_noequality;;
+
+concept_noequality=>nrel_main_idtf:
+[неравенство](*<-lang_ru;;*);
+[теңсіздік](*<-lang_kz;;*);
+[noequality](*<-lang_en;;*);;
+
+//разбиение
+concept_noequality <= nrel_subdividing:
+	...
+	(* 
+	-> concept_fractional_linear_inequalities;;
+	-> concept_linear_inequality_in_one_variable;;
+	-> concept_logarithmic_inequality;;
+	-> concept_exponential_inequality;;
+	-> concept_equivalent_to_the_inequality;;
+	-> concept_quadratic_inequality;;
+	-> concept_inequality_module;;
+	-> concept_irrational_inequality;;
+	*);;
+
+
+//определение
+concept_noequality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Неравенство есть утверждение об относительной величине или порядке двух объектов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_noequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://noequality_1.html"(* <- lang_ru;; 	*);;
+*);;
+	*);;
+
+
+//используемые константы
+concept_noequality<= nrel_using_constants:concept_variable;;
+
+// конкретные задачи
+concept_noequality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Являются ли выражения верными неравенствами 12+5=14; 7>5; 10+5> 13-1.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_noequality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Являются ли выражения верными неравенствами.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_noequality -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[10+1>5 - неравенство](* <- lang_ru;; 	*);;
+		*);;
+	*);;

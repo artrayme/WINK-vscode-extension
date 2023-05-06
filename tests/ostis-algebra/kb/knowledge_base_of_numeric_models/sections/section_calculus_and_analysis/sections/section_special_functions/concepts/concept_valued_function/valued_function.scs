@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_valued_function;;
+
+concept_valued_function => nrel_main_idtf:
+[многозначная функция](*<-lang_ru;;*);
+[valued function](*<-lang_en;;*);;
+	
+//надмножество
+concept_function => nrel_inclusion: concept_valued_function;;
+
+//определение и пояснения
+concept_valued_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (многозначная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Многозначная функция — обобщение понятия функции, допускающее наличие нескольких значений функции для одного аргумента.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_valued_function <= nrel_using_constants:
+	{
+	rrel_argument;
+	rrel_value_of_the_function;
+	concept_function
+	};;	
+	
+//утверждения
+concept_valued_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(многозначная функция; аналитическая функция; комплексный анализ; обратная функция*)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Характерный пример многозначных функций — некоторые аналитические функции в комплексном анализе. Неоднозначность возникает при аналитическом продолжении по разным путям. Также часто многозначные функции получаются в результате взятия обратных функций.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(многозначная функция; риманова поверхность; комплексный анализ)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[В комплексном анализе понятие многозначной функции тесно связано с понятием римановой поверхности — поверхности в многомерном комплексном пространстве, на которой данная функция становится однозначной.](*<-lang_ru;;*);;
+		*);;
+	*);;

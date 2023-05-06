@@ -1,0 +1,58 @@
+sc_node_not_relation->concept_rational_fractional_equation;; 
+
+concept_rational_fractional_equation=>nrel_main_idtf:
+[рациональное дробное уравнение](*<-lang_ru;;*);
+[rational fractional equation](*<-lang_en;;*);;
+
+concept_rational_fractional_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(рациональное дробное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если в рациональном уравнении есть деление на выражение, содержащее переменную (x), то уравнение называется дробно-рациональным.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_rational_fractional_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(знаменатель; дробь)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://rational_fractional_equation.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_rational_fractional_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[x+15/x=5*x-17](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_rational_fractional_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение корней рационального  дробного уравнения](* <- lang_ru;; *);;
+*);;
+*);;

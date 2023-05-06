@@ -1,0 +1,22 @@
+sc_node_struct -> section_subject_domain_of_cohomology;;
+
+section_subject_domain_of_cohomology => nrel_main_idtf:
+    [Раздел. Предметная область когомологий] (* <- lang_ru;; *);
+    [Section. Subject domain of cohomology] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_cohomology <- nrel_system_identifier;;
+
+section_subject_domain_of_cohomology -> rrel_key_sc_element:
+    subject_domain_of_cohomology;
+    concept_cohomology;;
+
+section_subject_domain_of_cohomology = [*
+    subject_domain_of_cohomology => nrel_main_idtf:
+        [Предметная область когомологий] (* <- lang_ru;; *);
+        [Subject domain of cohomology] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_cohomology -> rrel_maximum_studied_object_class:
+        concept_cohomology;;
+*];;

@@ -1,0 +1,627 @@
+agent_sumAP
+=> nrel_main_idtf:
+	[агентная scp-программа нахождения суммы арифметической прогрессии] (* <- lang_ru;; *);
+	[agent scp-program of finding sum of arithmetic progression] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_sumAP
+	(*
+	-> rrel_params: .agent_sumAP_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_sumAP_operator_set 
+		(*
+		-> rrel_init: .agent_sumAP_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_sumAP_operator2;;
+			*);;
+
+		-> .agent_sumAP_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_sumAP;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_sumAP_operator6;;
+		  	=> nrel_else: .agent_sumAP_operator_return;;
+			*);;
+
+		-> .agent_sumAP_operator6
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc41;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc42;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_sum_of_arithmetic_progression;;
+
+			=> nrel_then: .agent_sumAP_operator6A;;
+			=> nrel_else: .agent_sumAP_operator6B;;
+			*);;
+
+		-> .agent_sumAP_operator6A
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _smth;;
+
+			=> nrel_goto: .agent_sumAP_operator6B;;
+			*);;
+
+		-> .agent_sumAP_operator6B
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc52;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc53;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_first_member;;
+
+			=> nrel_then: .agent_sumAP_operator6C;;
+			=> nrel_else: .agent_sumAP_operator6D;;
+			*);;
+
+		-> .agent_sumAP_operator6C
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _smth2;;
+
+			=> nrel_goto: .agent_sumAP_operator6D;;
+			*);;
+
+		-> .agent_sumAP_operator6D
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc54;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth3;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc55;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_second_member;;
+
+			=> nrel_then: .agent_sumAP_operator6E;;
+			=> nrel_else: .agent_sumAP_operator6F;;
+			*);;
+
+		-> .agent_sumAP_operator6E
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _smth3;;
+
+			=> nrel_goto: .agent_sumAP_operator6F;;
+			*);;
+
+		-> .agent_sumAP_operator6F
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc56;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth4;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc57;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_third_member;;
+
+			=> nrel_then: .agent_sumAP_operator6G;;
+			=> nrel_else: .agent_sumAP_operator6H;;
+			*);;
+
+		-> .agent_sumAP_operator6G
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _smth4;;
+
+			=> nrel_goto: .agent_sumAP_operator6H;;
+			*);;
+
+		-> .agent_sumAP_operator6H
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc56;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth5;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc57;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_kolvo_members;;
+
+			=> nrel_then: .agent_sumAP_operator6I;;
+			=> nrel_else: .agent_sumAP_operator3A;;
+			*);;
+
+		-> .agent_sumAP_operator6I
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _smth5;;
+
+			=> nrel_goto: .agent_sumAP_operator3A;;
+			*);;
+             
+		-> .agent_sumAP_operator3A
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc12;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_sumAP_1;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3A2;;
+			*);;
+
+		-> .agent_sumAP_operator3A2
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc13;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc14;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3B1;;
+			*);;
+             
+		-> .agent_sumAP_operator3B1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc21;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_sumAP_2;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3B2;;
+			*);;
+
+		-> .agent_sumAP_operator3B2
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc23;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number2;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc24;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3C1;;
+			*);;
+             
+		-> .agent_sumAP_operator3C1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc31;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param3;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc32;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_sumAP_3;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3C2;;
+			*);;
+
+		-> .agent_sumAP_operator3C2
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param3;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc33;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number3;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc34;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3D1;;
+			*);;
+
+		-> .agent_sumAP_operator3D1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param4;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc36;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_kolvoAP;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3D2;;
+			*);;
+
+		-> .agent_sumAP_operator3D2
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param4;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc37;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _kolvo;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc38;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_sumAP_operator3E;;
+			*);;
+
+		-> .agent_sumAP_operator3E
+			(*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_const: rrel_node: _answer;;
+
+			=> nrel_goto: .agent_sumAP_operator4A;;
+			*);;
+
+		-> .agent_sumAP_operator4A
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _sub21;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _number2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+
+			=> nrel_goto: .agent_sumAP_operator4A1;;
+			*);;
+
+		-> .agent_sumAP_operator4A1
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _sub32;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _number3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _number2;;
+
+			=> nrel_goto: .agent_sumAP_operator4A2;;
+			*);;
+
+		-> .agent_sumAP_operator4A2
+			(*
+			<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _sub21;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _sub32;;
+
+			=> nrel_then: .agent_sumAP_operator5;;
+			=> nrel_else: .agent_sumAP_operator_answer2;;
+			*);;
+
+		-> .agent_sumAP_operator5
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _step1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _kolvo;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_goto: .agent_sumAP_operator5A;;
+			*);;
+
+		-> .agent_sumAP_operator5A
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _step2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _step1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _sub21;;
+
+			=> nrel_goto: .agent_sumAP_operator5B;;
+			*);;
+
+		-> .agent_sumAP_operator5B
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _step3;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [2];;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+
+			=> nrel_goto: .agent_sumAP_operator5C;;
+			*);;
+
+		-> .agent_sumAP_operator5C
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _step4;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _step2;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _step3;;
+
+			=> nrel_goto: .agent_sumAP_operator5D;;
+			*);;
+
+		-> .agent_sumAP_operator5D
+			(*
+			<- contDiv;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _step5;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _step4;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [2];;
+
+			=> nrel_goto: .agent_sumAP_operator5E;;
+			*);;
+
+		-> .agent_sumAP_operator5E
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _sum;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _step5;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _kolvo;;
+
+			=> nrel_goto: .agent_sumAP_operator_answer1;;
+			*);;
+
+		-> .agent_sumAP_operator_answer1
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc41;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _sum;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc42;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_sum_of_arithmetic_progression;;
+
+			=> nrel_goto: .agent_sumAP_operator_answer1_1;;
+			*);;
+
+		-> .agent_sumAP_operator_answer1_1
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: concept_arithmetical_progression;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc51;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+
+			=> nrel_goto: .agent_sumAP_operator_answer1_2;;
+			*);;
+
+		-> .agent_sumAP_operator_answer1_2
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc52;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc53;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_first_member;;
+
+			=> nrel_goto: .agent_sumAP_operator_answer1_3;;
+			*);;
+
+		-> .agent_sumAP_operator_answer1_3
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc54;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _number2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc55;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_second_member;;
+
+			=> nrel_goto: .agent_sumAP_operator_answer1_4;;
+			*);;
+
+		-> .agent_sumAP_operator_answer1_4
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc56;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _number3;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc57;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_third_member;;
+
+			=> nrel_goto: .agent_sumAP_operator_answer1_4_1;;
+			*);;
+
+		-> .agent_sumAP_operator_answer1_4_1
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc58;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _kolvo;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc59;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_kolvo_members;;
+
+			=> nrel_goto: .agent_sumAP_operator_answer1_5;;
+			*);;
+
+		->.agent_sumAP_operator_answer1_5
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+                        -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc41;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc42;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_sum_of_arithmetic_progression;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_6;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_6
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc43;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_sum_of_arithmetic_progression;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_7;;
+                        *);;
+                      
+		->.agent_sumAP_operator_answer1_7
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc44;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+
+			=>nrel_goto: .agent_sumAP_operator_answer1_8;;
+			*);;
+
+		->.agent_sumAP_operator_answer1_8
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc45;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc51;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_9;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_9
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc46;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: concept_arithmetical_progression;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_10;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_10
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc52;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc53;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_first_member;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_11;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_11
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc47;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_first_member;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_12;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_12
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc54;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth3;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc55;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_second_member;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_13;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_13
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc48;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_second_member;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_14;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_14
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc56;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth4;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc57;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_third_member;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_15;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_15
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc49;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_third_member;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_16;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_16
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..AP;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc58;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth5;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc59;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_kolvo_members;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_answer1_17;;
+                        *);;
+
+		->.agent_sumAP_operator_answer1_17
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc410;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_kolvo_members;;
+ 
+                        =>nrel_goto: .agent_sumAP_operator_gen_answer;;
+                        *);;
+
+		-> .agent_sumAP_operator_answer2
+			(*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: [Введённая последовательность не является арифметической прогрессией];;
+
+			=> nrel_goto: .agent_sumAP_operator_answer2_1;;
+			*);;
+
+		-> .agent_sumAP_operator_answer2_1
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc45;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: [Введённая последовательность не является арифметической прогрессией];;
+
+			=> nrel_goto: .agent_sumAP_operator_gen_answer;;
+			*);;
+
+		-> .agent_sumAP_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc444;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc333;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_sumAP_operator_return;;
+			*);;     
+					
+		-> .agent_sumAP_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

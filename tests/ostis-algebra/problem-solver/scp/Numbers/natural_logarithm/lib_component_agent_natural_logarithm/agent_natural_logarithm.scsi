@@ -1,0 +1,180 @@
+agent_natural_logarithm
+=> nrel_main_idtf:
+	[агентная scp-программа взятия натурального логарифма от числа] (* <- lang_ru;; *);
+	
+	[agent scp-program taking of natural logarithm of number] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_natural_logarithm
+	(*
+	-> rrel_params: .agent_natural_logarithm_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_natural_logarithm_operator_set 
+		(*
+		-> rrel_init: .agent_natural_logarithm_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_natural_logarithm_operator2;;
+			*);;
+
+		-> .agent_natural_logarithm_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_natural_logarithm;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_natural_logarithm_operator3;;
+		  	=> nrel_else: .agent_natural_logarithm_operator_return;;
+			*);;
+                 -> .agent_natural_logarithm_operator3 
+                       (*
+                        <- printEl;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+                        =>nrel_goto: .agent_natural_logarithm_operator3A;;
+                        *);;
+		-> .agent_natural_logarithm_operator3A 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+                      
+			=> nrel_then: .agent_natural_logarithm_operator3A1;;
+			=> nrel_else: .agent_natural_logarithm_operator_return;;
+			*);;
+             
+                  ->.agent_natural_logarithm_operator3A1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_natural_logarithm_operator3B;;
+			*);;  
+                    
+		-> .agent_natural_logarithm_operator3B 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_natural_logarithm_operator4A;;
+		 	*);;
+                 
+                 -> .agent_natural_logarithm_operator4A
+			(*
+		 	<- contLn;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                       
+                 	=> nrel_goto: .agent_natural_logarithm_operator4C;;
+			
+                 	*);;
+
+		->.agent_natural_logarithm_operator4C
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc24;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _answer1;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_natural_logarithm;;
+ 
+                        =>nrel_goto: .agent_natural_logarithm_operator4C1;;
+                        *);;
+                           
+                   ->.agent_natural_logarithm_operator4C1
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var:  _number;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc24;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_natural_logarithm;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_natural_logarithm_operator4CAB1;;
+                        *);;
+
+			
+                      ->.agent_natural_logarithm_operator4CAB1
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const:  nrel_natural_logarithm;;
+ 
+                        =>nrel_goto: .agent_natural_logarithm_operator4C4;;
+                        *);;
+                      
+                       ->.agent_natural_logarithm_operator4C4
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var:  _number;;
+                          
+              
+ 
+                        =>nrel_goto: .agent_natural_logarithm_operator_gen_answer;;
+                        *);;	
+
+                    
+
+		-> .agent_natural_logarithm_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc4;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_natural_logarithm_operator_return;;
+			*);;     
+					
+		-> .agent_natural_logarithm_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

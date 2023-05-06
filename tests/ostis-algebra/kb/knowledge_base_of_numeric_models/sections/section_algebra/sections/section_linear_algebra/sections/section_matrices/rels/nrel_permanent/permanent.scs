@@ -1,0 +1,78 @@
+sc_node_norole_relation->nrel_permanent;;
+
+nrel_permanent=>nrel_main_idtf:
+[перманент* ](*<-lang_ru;;*);
+[permanent* ](*<-lang_en;;*);;
+
+//надмножество
+concept_function => nrel_inclusion: nrel_permanent;;
+
+//определение
+nrel_permanent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(пермамент*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Пераманент - числовая функция, определённая для матриц, для квадратных матриц похожая на детерминант, и отличающаяся от него лишь в том, что в разложении на миноры берутся не чередующиеся знаки, а все плюсы.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_permanent <= nrel_using_constants:
+	{
+	concept_matrix;
+	concept_square_matrix;
+	concept_numerical_function
+	};;
+	
+//утверждения
+	
+nrel_permanent <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(пермамент*; диагональная матрица; треугольная матрица; произведение'; диагональ матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Перманент любой диагональной или треугольной матрицы равен произведению элементов на её диагонали.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(пермамент*; транспонирование)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Перманент не изменяется при транспонировании.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(пермамент*; матрица; строка матрицы*; столбец матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Перманент матрицы не изменяется от перестановки строк или столбцов матрицы.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+	
+//домены	
+nrel_permanent <- binary_relation;;
+nrel_permanent <= nrel_first_domain:  concept_matrix;;
+nrel_permanent <= nrel_second_domain: concept_number;;
+
+nrel_permanent -> rrel_example :
+		"file://permanent_example.png";;
+

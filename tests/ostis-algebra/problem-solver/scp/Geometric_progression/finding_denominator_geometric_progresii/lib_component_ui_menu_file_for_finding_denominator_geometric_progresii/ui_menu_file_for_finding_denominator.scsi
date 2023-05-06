@@ -1,0 +1,30 @@
+ui_menu_file_for_finding_denominator_geometric_progresi <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_finding_denominator_geometric_progresi => nrel_main_idtf: 
+	[Найти знаменатель геометрической прогрессии] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_denominator_geometric_progresi => nrel_main_idtf: 
+	[Request finding denominator geometric progresii] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_finding_denominator_geometric_progresi => ui_nrel_command_template:
+	[*
+		question_finding_denominator_geometric_progresi _-> ._question_finding_denominator_geometric_progresi_instance
+			(*
+			_-> rrel_first_term:: ui_arg_1;;
+                        _-> rrel_second_term:: ui_arg_2;;
+			_-> rrel_third_term:: ui_arg_3;;
+
+			*);;
+		._question_finding_denominator_geometric_progresi_instance _<- question;;
+	*];;
+
+ui_menu_file_for_finding_denominator_geometric_progresi => ui_nrel_command_lang_template: 
+	[Найти знаменатель геометрической прогрессии: $ui_arg_1, $ui_arg_2, $ui_arg_3 ] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_denominator_geometric_progresi => ui_nrel_command_lang_template: 
+	[Request finding denominator geometric progresii: $ui_arg_1, $ui_arg_2, $ui_arg_3 ] 
+	(* <- lang_en;; *);;
+

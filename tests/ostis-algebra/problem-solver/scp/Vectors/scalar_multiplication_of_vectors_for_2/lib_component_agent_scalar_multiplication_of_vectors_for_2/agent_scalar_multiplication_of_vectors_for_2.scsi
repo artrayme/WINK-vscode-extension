@@ -1,0 +1,491 @@
+agent_scalar_multiplication_of_vectors_for_2
+=> nrel_main_idtf:
+	[агентная scp-программа нахождения скалярного произведения 2-х векторов] (* <- lang_ru;; *);
+	[agent scp-program of finding scalar multiplication of 2 vectors] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_scalar_multiplication_of_vectors_for_2
+	(*
+	-> rrel_params: .agent_scalar_multiplication_of_vectors_for_2_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_scalar_multiplication_of_vectors_for_2_operator_set 
+		(*
+		-> rrel_init: .agent_scalar_multiplication_of_vectors_for_2_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator2;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator2 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: question_scalar_multiplication_of_vectors_for_2;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+			=> nrel_then: .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part1;;
+			=> nrel_else: .agent_scalar_multiplication_of_vectors_for_2_operator_return;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part1
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..scalarMultiplication;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr9;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _clean1;;
+
+			=> nrel_then: .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part2;;
+			=> nrel_else: .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part3;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part2
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _clean1;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part1;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part3
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..scalarMultiplication;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arcconstr9;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _clean2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr10;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_scalar_multiplication;;
+
+			=> nrel_then: .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part4;;
+			=> nrel_else: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part1;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_cleaning_the_answer_part4
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _clean2;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part1;;
+			*);;
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx11;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx12;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_vector_1;;
+
+		  	=> nrel_then: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part2;;
+			=> nrel_else: .agent_scalar_multiplication_of_vectors_for_2_operator_return;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part2
+                        (*
+                       <- call;;
+                       -> rrel_1: rrel_fixed: rrel_scp_const: proc_get_coordinate_of_vector;;
+		       -> rrel_2: rrel_fixed: rrel_scp_const: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part3
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _x1;;
+				-> rrel_3: rrel_assign: rrel_scp_var: _y1;;
+				-> rrel_4: rrel_assign: rrel_scp_var: _z1;;
+				-> rrel_5: rrel_assign: rrel_scp_var: _err1;;
+                              	*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part4;;  
+			*);;		
+		
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part4
+			(*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+		
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part5;;			
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_1_part5
+                        (*
+			<-ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _err1;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_then: .agent_scalar_multiplication_of_vectors_for_2_operator_return;;
+			=> nrel_else: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part1;;
+			*);;
+
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx11;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcx12;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_vector_2;;
+
+		  	=> nrel_then: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part2;;
+			=> nrel_else: .agent_scalar_multiplication_of_vectors_for_2_operator_return;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part2
+                        (*
+                       <- call;;
+                       -> rrel_1: rrel_fixed: rrel_scp_const: proc_get_coordinate_of_vector;;
+		       -> rrel_2: rrel_fixed: rrel_scp_const: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part3
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _x2;;
+				-> rrel_3: rrel_assign: rrel_scp_var: _y2;;
+				-> rrel_4: rrel_assign: rrel_scp_var: _z2;;
+				-> rrel_5: rrel_assign: rrel_scp_var: _err2;;
+                              	*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part4;;  
+			*);;		
+		
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part4
+			(*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+		
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part5;;			
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_input_of_2_part5
+                        (*
+			<-ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _err2;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_then: .agent_scalar_multiplication_of_vectors_for_2_operator_return;;
+			=> nrel_else: .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part1;;
+			*);;
+		
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part1
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _x;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _x2;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part2;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part2
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _y;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _y1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y2;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part3;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part3
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _z;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _z1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z2;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part4;;
+			*);;
+		
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part4
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _xy;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _x;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _y;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part5;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_calculation_part5
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _scalar;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _xy;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _z;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_creating_of_construction_part1;;
+			*);;
+
+		
+
+		
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_creating_of_construction_part1
+			(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..scalarMultiplication;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr15;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _param1;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_creating_of_construction_part2;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_creating_of_construction_part2
+			(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..scalarMultiplication;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr16;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _param2;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_creating_of_construction_part3;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_creating_of_construction_part3
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..scalarMultiplication;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arcconstr17;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _scalar;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr18;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_scalar_multiplication;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part1;;
+			*);;
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part1
+			(*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_const: rrel_node: _answer;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part2;;
+			*);;
+
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part2
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _param1;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part3;;
+			*);;
+
+	
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part3
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw5;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _param2;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part7;;
+			*);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part7
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr3;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr4;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_x_coordinate;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part8;;
+                        *);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part8
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw6;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: rrel_x_coordinate;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part9;;
+			*);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part9
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr5;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr6;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_y_coordinate;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part10;;
+                        *);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part10
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw7;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: rrel_y_coordinate;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part11;;
+			*);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part11
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr5;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth3;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr6;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_z_coordinate;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part12;;
+                        *);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part12
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw7;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: rrel_z_coordinate;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part13;;
+			*);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part13
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr7;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth4;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr8;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_x_coordinate;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part14;;
+                        *);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part14
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr9;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth5;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr10;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_y_coordinate;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part15;;
+                        *);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part15
+                        (*
+                        <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr9;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth6;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr10;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_z_coordinate;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part16;;
+                        *);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part16
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw8;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..scalarMultiplication;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part17;;
+			*);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part17
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw9;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arcconstr15;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part18;;
+			*);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part18
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw10;;
+			-> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arcconstr16;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part19;;
+			*);;
+
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part19
+                        (*
+                      <-searchSetStr5;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..scalarMultiplication;;
+                        -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arcconstr20;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _smth10;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcconstr21;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_scalar_multiplication;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+ 
+                        =>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part20;;
+                        *);;
+
+		->.agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part20
+			(*
+			<-genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw11;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: nrel_scalar_multiplication;;
+
+			=>nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part21;;
+			*);;
+
+	
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_generating_answer_part21
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arcansw17;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcansw18;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+			=> nrel_goto: .agent_scalar_multiplication_of_vectors_for_2_operator_return;;
+			*);;     
+
+		-> .agent_scalar_multiplication_of_vectors_for_2_operator_return 
+			(*
+			<- return;;
+			*);;
+		*);;
+	*);;

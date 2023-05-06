@@ -1,0 +1,90 @@
+sc_node_norole_relation -> nrel_module;;
+nrel_module => nrel_main_idtf:	[модуль* ](* <- lang_ru;; *);  [module* ](* <- lang_en;; *);	[модуль* ](* <- lang_kz;;*);;
+nrel_module=> nrel_idtf:	[абсолютная величина* ](* <- lang_ru;; *);	[модуль числа* ](* <- lang_ru;; *);	[absolute value* ](* <- lang_en;; *);;
+
+nrel_module <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(модуль*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Модуль числа a – это либо само число a, если a – положительное число, либо число -a, противоположное числу a, если a – отрицательное число, либо 0, если a=0.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_module <- rrel_key_sc_element:
+ 	...
+	(*
+	=> nrel_main_idtf:[Пояснение.(модуль*)](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Модуль числа  а есть неотрицательное число, обозначаемое |а|.В случае вещественного числа аопределяется следующим образом: если а >=  0, то |а|=а;  если а < 0, то |а| = -а.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_module <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(сумма*; число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Модуль суммы двух чисел a и b не превосходит сумму модулей этих чисел, т.е |a+b| <= |a|+|b|](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(произведение*; число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Модуль произведения двух чисел равен произведению модулей этих чисел, то есть, |a*b| = |a|*|b|.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; противоположное число*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Противоположные числа имеют равные модули, то есть |a| = |-a|, для любого числа a.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; деление*; частное'; равенство*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Модуль частного от деления a на b равен частному от деления модуля числа a на модуль числа b, то есть |a/b| = |a|/|b|.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(число; возведение в степень*; равенство*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Квадрат модуля числа равен квадрату этого числа, т.е |a|^2 = a^2](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_module <- binary_relation;;
+nrel_module <= nrel_first_domain: concept_number;;
+nrel_module<= nrel_second_domain: concept_positive_number;;

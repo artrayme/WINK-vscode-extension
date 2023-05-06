@@ -1,0 +1,43 @@
+sc_node_norole_relation->nrel_middle_square;;
+
+nrel_middle_square=>nrel_main_idtf:
+[среднее квадратичное* ](*<-lang_ru;;*);
+[middle square* ](*<-lang_en;;*);;
+
+//синонимы
+nrel_middle_square => nrel_idtf:[среднее квадратическое* ](*<-lang_ru;;*);;
+
+//определение
+nrel_middle_square <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(среднее квадратичное*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Средне квадратичное - число, равное квадратному корню из среднего арифметического квадратов данных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+	
+nrel_middle_square <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(среднее квадратическое*; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Среднее квадратическое набора неотрицательных чисел лежит между минимальным и максимальным числами из этого набора.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_middle_square <- ternary_relation;;
+nrel_middle_square <= nrel_first_domain:  concept_number;;
+nrel_middle_square <= nrel_second_domain: concept_number;;
+nrel_middle_square <= nrel_third_domain: concept_number;;

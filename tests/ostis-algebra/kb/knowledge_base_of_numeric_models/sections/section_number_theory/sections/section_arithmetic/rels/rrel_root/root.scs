@@ -1,0 +1,28 @@
+sc_node_role_relation-> rrel_root;; 
+rrel_root => nrel_main_idtf:	[корень'](*<-lang_ru;;*);	[root'](*<-lang_en;;*);;
+
+rrel_root <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(корень')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Корень - это число, получившее в результате операции извлечения корня.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+rrel_root <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(корень'; нуль; натуральная степень] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Корень любой натуральной степени из нуля — нуль](* <- lang_ru;; *);;
+		*);;
+	*);;

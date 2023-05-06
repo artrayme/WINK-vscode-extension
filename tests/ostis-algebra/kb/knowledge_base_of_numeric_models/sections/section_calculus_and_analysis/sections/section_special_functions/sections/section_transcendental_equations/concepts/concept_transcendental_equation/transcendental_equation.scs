@@ -1,0 +1,99 @@
+sc_node_not_relation->concept_transcendental_equation;; 
+concept_transcendental_equation => nrel_main_idtf: 
+[трансцендентное уравнение](*<-lang_ru;;*);
+[transcendental equation](*<-lang_en;;*);;
+
+concept_transcendental_equation => nrel_idtf:[неалгеброическое уравнение](*<-lang_ru;;*);;
+
+concept_transcendental_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(трансцендентное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Трансцендентное уравнение - это уравнение вида f(x)=g(x), гле функции f(x) и g(x) являются аналитическими функциями, и по крайней мере одна из них не является алгебраической.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_transcendental_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(показательная функция; логаримическая функция; тригонометрическая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Уравнение вида: f(x)=g(x) или v(x)=0, в которых функции f(x), g(x), v(x) паказательная, логарифмическая или тригонометрическая принято называть транцендентными уравнениями.](* <- lang_ru;; *);;
+		*);;
+	*);
+	
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(метод итерации; метод дихотамии; метод хорд; метод касательных; метод Ньютона)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Существует несколько методов решения транцендентынх уравнений: метод итерации, метод дихотамии, метод хорд, метод касательных, метод Ньютона.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+concept_transcendental_equation <= nrel_subdividing:
+	...
+	(* 
+	-> concept_exponential_equation; concept_trigonometric_equation; concept_logarithmic_equation;; 
+	*);;
+
+
+concept_transcendental_equation  <= nrel_using_constants: concept_variable; concept_parameter; concept_gap;;
+
+concept_transcendental_equation-> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[cos(x)=x](* <- lang_en;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[lg(x)=x-5](* <- lang_en;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_transcendental_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи, в которых необходимо найти значения параметра, при которых множество решений удовлетворяет заданным условиям.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи, где требуется найти количество решений в зависимости от значения параметра.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи, которые необходимо решить для всех значений параметра или для значений параметра из заданного промежутка.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи, где необходимо найти значения параметра, при которых задача имеет заданное количество решений.](* <- lang_ru;; *);;
+		*);;
+	*);;

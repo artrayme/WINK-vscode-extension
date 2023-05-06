@@ -1,0 +1,75 @@
+sc_node_not_relation -> concept_unitary_matrix;; 
+
+concept_unitary_matrix => nrel_main_idtf:
+[унитарная матрица](*<-lang_ru;;*);
+[unitary matrix](*<-lang_en;;*);
+[унитарлық матрица](*<-lang_kz;;*);;
+
+//надмножество
+concept_matrix => nrel_inclusion: concept_unitary_matrix;;
+
+//определения и пояснения
+concept_unitary_matrix <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (унитарная матрица)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Унитарная матрица — квадратная матрица с комплексными элементами, результат умножения которой на эрмитово сопряжённую равен единичной матрице.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+concept_unitary_matrix <= nrel_using_constants:
+	{
+	concept_matrix;
+	concept_square_matrix;
+	concept_complex_number;
+	concept_hermitian_conjugate_matrix;
+	concept_unit_matrix
+	};;
+	
+//утверждения
+concept_unitary_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(унитарная матрица; вещественное число; ортогональная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Унитарная матрица, элементы которой вещественны, является ортогональной.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(унитарная матрица; нормальная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Всякая унитарная матрица является нормальной.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(унитарная матрица; произведение')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение унитарных матриц также является унитарной матрицей](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	
+	
+//пример
+concept_unitary_matrix -> rrel_example :
+		"file://unitary_matrix_example.png";;

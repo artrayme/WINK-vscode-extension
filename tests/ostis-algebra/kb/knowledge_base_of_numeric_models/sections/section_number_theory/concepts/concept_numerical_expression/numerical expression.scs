@@ -1,0 +1,123 @@
+sc_node_not_relation->concept_numerical_expression;; 
+
+concept_numerical_expression=>nrel_main_idtf:
+[числовое выражение](*<-lang_ru;;*);
+[санды өрнек](*<-lang_kz;;*);
+[numerical expression](*<-lang_en;;*);;
+
+concept_numerical_expression <= nrel_inclusion: concept_expression;;
+
+// классы задач и способы решения
+concept_numerical_expression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение значения числового выражения.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_numerical_expression -> rrel_example :
+		"file://numerical_expression1.html"(* <- lang_ru;; *);;
+
+// конкретные задачи
+concept_numerical_expression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://numerical_expression2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_numerical_expression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(знак равно; числовое неравенство; равенство)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если два числовых выражения записаны через знак равно, то эти выражения образуют числовое равенство. Например,  выражение 2*4+7=15 является числовым равенством.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(скобки)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Правило 1. Если выражение не имеет скобок, то надо выполнять действия начиная с высших ступеней: третья ступень, вторая ступень и первая ступень. Если имеется несколько действий одной ступени, то их выполняют в порядке в котором они записаны, то есть слева на право.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(скобки)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Правило 2. Если в выражении присутствуют скобки, то сначала выполняются действия в скобках, а лишь затем все стальные действия в обычном порядке. При выполнении действий в скобках, если их там несколько, следует пользоваться порядком описанным в Правиле 1.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дробь; вычислить*; числитель; знаменатель; деление*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Правило 3. Если выражение представляет собой дробь, то сначала вычисляются значении в числителе и знаменателе, а потом числитель делится на знаменатель.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(скобки)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Правило 4. Если в выражении присутствуют вложенные скобки, то выполнять действия следует с внутренних скобок.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//определения и пояснения
+concept_numerical_expression  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(числовое выражение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Числовым выражением называют всякую запись из чисел, знаков арифметических действий и скобок, составленную со смыслом.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+ ...
+    (*
+=> nrel_main_idtf: [Пояснение (числовое выражение)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+			"file://numerical_expression3.html"(* <- lang_ru;; *);;
+*);;
+*);;

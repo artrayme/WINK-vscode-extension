@@ -1,0 +1,37 @@
+sc_node_not_relation->concept_finite_decimal;;
+
+concept_finite_decimal=>nrel_main_idtf:
+[конечная десятичная дробь](*<-lang_ru;;*);
+[соңғы ондық](*<-lang_kz;;*);
+[finite decimal](*<-lang_en;;*);;
+
+
+//определение
+concept_finite_decimal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(конечная десятичная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://finite_decimal_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_finite_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(обыкновенная дробь, степень. )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://finite_decimal_2.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+//используемые константы
+concept_finite_decimal<= nrel_using_constants: concept_number;concept_decimal;;

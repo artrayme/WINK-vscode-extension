@@ -1,0 +1,85 @@
+sc_node_not_relation -> concept_arithmetical_progression;;
+concept_arithmetical_progression => nrel_main_idtf :
+[арифметическая прогрессия] (* <- lang_ru;; *);
+[arithmetical progression] (* <- lang_en;; *);;
+
+concept_arithmetical_progression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(арифметическая прогрессия)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Арифметическая прогрессия - это последовательность чисел, в которой каждый член получается из предыдущего путем прибавления к нему одного и того же числа d, называемого разностью этой арифметической прогрессии.]  (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_arithmetical_progression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение вида(арифметическая или геометрическая) прогрессии.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение суммы первых n членов арифметической прогрессии.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_arithmetical_progression  <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(формула n-го члена арифметической прогрессии)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://arithmetical_progression1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(формула суммы первых n членов арифметической прогрессии)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://arithmetical_progression2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(характеристическое свойство арифметической прогрессии)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://arithmetical_progression3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_arithmetical_progression -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[1, 3, 5, 7, 9, 11… – арифметическая прогрессия.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_arithmetical_progression <= nrel_inclusion: concept_natural_series;;

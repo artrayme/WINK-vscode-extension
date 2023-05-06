@@ -1,0 +1,64 @@
+sc_node_not_relation -> concept_entire_rational_function;;
+concept_entire_rational_function=> nrel_main_idtf :
+[целая рациональная функция] (* <- lang_ru;; *);
+[entire rational function] (* <- lang_en;; *);; 
+
+concept_entire_rational_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(целая рациональная функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+
+		...
+		(*
+		-> rrel_example: 
+			"file://entire_rational_function1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_entire_rational_function -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://entire_rational_function2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_entire_rational_function <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение области определения целой рациональной функции](* <- lang_ru;; *);;
+*);
+...
+(*
+-> rrel_example:
+[Задачи на построение графика целой рациональной функции](* <- lang_ru;; *);;
+*);;
+*);;
+
+
+// конкретные задачи
+concept_entire_rational_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://entire_rational_function3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,64 @@
+sc_node_not_relation -> concept_tensor_calculus;; 
+
+concept_tensor_calculus => nrel_main_idtf:
+[тензорное исчисление](*<-lang_ru;;*);
+[tensor calculus](*<-lang_en;;*);;
+
+//разбиение
+concept_tensor_calculus <= nrel_subdividing:
+	...
+	(* 
+	-> concept_tensor_algebra;;
+	-> concept_tensor_analysis;;
+	*);;
+
+//надмножество
+concept_math => nrel_inclusion: concept_tensor_calculus;;
+
+//определения и пояснения
+concept_tensor_calculus <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (тензорное исчисление)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Тензорное исчисление — название раздела математики, изучающего тензоры и тензорные поля.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_tensor_calculus <= nrel_using_constants:
+	{
+	concept_math;
+	concept_tensor;
+	concept_tensor_field
+	};;
+	
+//утверждения
+concept_tensor_calculus <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тензорное исчисление)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тензорное исчисление является основным математическим «языком», с помощью которого формулируются фундаментальные законы таких наук, как механика сплошной среды, физика твердого тела, электродинамика, теория относительности и её современные продолжения.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тензорное исчисление; тензор; высшая алгебра)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Термин «тензор» ещё с середины XIX в. употребляется в механике при описании упругих деформаций тел. С начала XX в. аппарат тензорного исчисления систематически используется в релятивистской физике и высшей алгебре.](* <- lang_ru;; *);;
+		*);;
+	*);;

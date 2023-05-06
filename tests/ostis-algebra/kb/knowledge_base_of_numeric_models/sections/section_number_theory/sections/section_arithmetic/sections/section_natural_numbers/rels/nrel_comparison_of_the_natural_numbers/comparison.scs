@@ -1,0 +1,105 @@
+sc_node_norole_relation->nrel_comparison_of_the_natural_numbers;;
+
+nrel_comparison_of_the_natural_numbers=>nrel_main_idtf:
+[сравнение натуральных чисел* ] (*<-lang_ru;;*);
+[табиғи сандар салыстыру* ] (*<-lang_kz;;*);
+[comparison of the natural numbers* ] (*<-lang_en;;*);;
+
+nrel_comparison_of_the_natural_numbers=> nrel_idtf:[comparison* ](*<-lang_en;;*);;
+
+//определение и пояснения
+nrel_comparison_of_the_natural_numbers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(сравнение натуральных чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Натуральное число а меньше натурального числа b, пишется a<b, если существует натуральное число k такое, что b=a+k.](* <- lang_ru;; *);;
+		*);;
+	*);
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(сравнение натуральных чисел*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[То из натуральных чисел a и b, которое при последовательном счете появляется раньше, называется меньшим, второе число – бóльшим.](* <- lang_ru;; *);;
+*);;
+*);
+
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(сравнение натуральных чисел*)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Наименьшим натуральным числом является число один (единица). Число два, по определению на одну единицу больше числа один и на одну единицу меньше числа три, число три на единицу больше числа два и на одну единицу меньше числа четыре и т.д.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+nrel_comparison_of_the_natural_numbers <- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://comparison1.html" (*<-lang_ru;;*);;
+*);;
+*);;
+
+//классы задач и способы решения
+nrel_comparison_of_the_natural_numbers <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на сравнение чисел, количества предметов, мер, величин и т.д.](* <- lang_ru;; *);;
+*);;
+*);;
+
+// утверждения
+nrel_comparison_of_the_natural_numbers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для любых двух натуральных чисел a,b∈N. выполняется только одно из соотношений: либо а меньше b (обозначается a<b), либо a больше b (обозначается a>b), либо а равно b, т.е. совпадает с b (обозначается а=b).](* <- lang_ru;; *);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(единица; множество натуральных чисел)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Единица 1 – наименьший элемент множества натуральных чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_comparison_of_the_natural_numbers <= nrel_using_constants: concept_natural_number;;

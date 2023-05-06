@@ -1,0 +1,342 @@
+agent_finding_n_member_geometric_progresi
+=> nrel_main_idtf:
+	[агентная scp-программа нахождения n-го члена геометрической прогрессии] (* <- lang_ru;; *);
+	
+	[agent scp-program finding n member geometric progresii] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_finding_n_member_geometric_progresi 
+	(*
+	-> rrel_params: .agent_finding_n_member_geometric_progresi_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_finding_n_member_geometric_progresi_operator_set 
+		(*
+		-> rrel_init: .agent_finding_n_member_geometric_progresi_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator2;;
+			*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_finding_n_member_geometric_progresi;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_finding_n_member_geometric_progresi_operator3A;;
+		  	=> nrel_else: .agent_finding_n_member_geometric_progresi_operator_return;;
+			*);;
+                 
+		-> .agent_finding_n_member_geometric_progresi_operator3A 
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_first_term;;
+                      
+			
+
+			=> nrel_then: .agent_finding_n_member_geometric_progresi_operator3A1;;
+			=> nrel_else: .agent_finding_n_member_geometric_progresi_operator_return;;
+			*);;
+             
+                
+                -> .agent_finding_n_member_geometric_progresi_operator3A1
+			(*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _firstTerm;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator3A2;;
+			
+			*);;
+                     
+                  ->.agent_finding_n_member_geometric_progresi_operator3A2
+                        (*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_second_term;;
+
+		  	=> nrel_then: .agent_finding_n_member_geometric_progresi_operator3A3;;
+			=> nrel_else: .agent_finding_n_member_geometric_progresi_operator_return;;
+			*);; 
+
+		  -> .agent_finding_n_member_geometric_progresi_operator3A3
+			(*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _secondTerm;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator3A4;;
+			
+			*);;
+		->.agent_finding_n_member_geometric_progresi_operator3A4
+                        (*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_third_term;;
+
+		  	=> nrel_then: .agent_finding_n_member_geometric_progresi_operator3A5;;
+			=> nrel_else: .agent_finding_n_member_geometric_progresi_operator_return;;
+			*);; 
+
+		  -> .agent_finding_n_member_geometric_progresi_operator3A5
+			(*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _thirdTerm;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator3A6;;
+			
+			*);;
+
+		->.agent_finding_n_member_geometric_progresi_operator3A6
+                        (*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param3;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_number_of_member;;
+
+		  	=> nrel_then: .agent_finding_n_member_geometric_progresi_operator3A7;;
+			=> nrel_else: .agent_finding_n_member_geometric_progresi_operator_return;;
+			*);; 
+
+		  -> .agent_finding_n_member_geometric_progresi_operator3A7
+			(*
+			<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param3;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _numberMembers;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator3B;;
+			
+			*);;
+    
+		-> .agent_finding_n_member_geometric_progresi_operator3B 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator4A;;
+		 	*);;
+
+                 -> .agent_finding_n_member_geometric_progresi_operator4A
+			(*
+		 	<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _qadricSecond;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _secondTerm;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [2];;
+
+                 	=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator4B;;
+			
+                 	*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator4B
+                       (*
+                       <- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _firstAndThird;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _firstTerm;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _thirdTerm;;
+                        =>nrel_goto:  .agent_finding_n_member_geometric_progresi_operator4C;;
+                        *);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator4C
+                       (*
+                       <- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _firstAndThird;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _qadricSecond;;
+                        
+                        =>nrel_then:  .agent_finding_n_member_geometric_progresi_operator4D;;
+			=> nrel_else: .agent_finding_n_member_geometric_progresi_operator_proverka_false;;
+                        *);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator4D
+			(*
+			<- contDiv;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _denominator;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _secondTerm;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _firstTerm;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator_n_member_for_denominator;;
+			*);;
+
+
+		-> .agent_finding_n_member_geometric_progresi_operator_n_member_for_denominator
+			(*
+			<- contSub;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _numberMember1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _numberMembers;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator_n_member_for_denominatorA;;
+			*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator_n_member_for_denominatorA
+			(*
+			<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _denominatorInNumber;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _denominator;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _numberMember1;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator_n_member_for_denominatorB;;
+			*);;
+
+		
+		-> .agent_finding_n_member_geometric_progresi_operator_n_member_for_denominatorB
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _Nmember;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _denominatorInNumber;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _firstTerm;;
+
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator_delete_last;;
+			*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator_delete_last
+			(*
+			 <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: usersnumbers;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_n_member_geometric_progresi;;
+ 
+			=> nrel_then: .agent_finding_n_member_geometric_progresi_operator_delete_last1;;
+			=> nrel_else: .agent_finding_n_member_geometric_progresi_operator5;;
+			*);;
+
+		->  .agent_finding_n_member_geometric_progresi_operator_delete_last1
+                        (*
+                         <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last;;
+
+                        => nrel_goto: .agent_finding_n_member_geometric_progresi_operator5;;
+                         *);;
+	
+		-> .agent_finding_n_member_geometric_progresi_operator5
+			(*
+			 <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: usersnumbers;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _Nmember;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_n_member_geometric_progresi;;
+ 
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator5A;;
+			*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator5A
+			(*
+			 <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: usersnumbers;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _n_member;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_n_member_geometric_progresi;;
+ 
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator5B;;
+			*);;
+		-> .agent_finding_n_member_geometric_progresi_operator5B
+			(*
+		 	<-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: usersnumbers;;
+ 			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator5C;;
+			*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator5C
+			(*
+		 	<-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const:  nrel_n_member_geometric_progresi;;
+ 			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator_gen_answer;;
+			*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator_proverka_false
+			(*
+			<-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: [данная последовательность чисел не являеться геометрической прогрессией];;
+ 			=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator_gen_answer;;
+			*);;
+
+		-> .agent_finding_n_member_geometric_progresi_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc4;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_finding_n_member_geometric_progresi_operator_return;;
+			*);;     
+					
+		-> .agent_finding_n_member_geometric_progresi_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

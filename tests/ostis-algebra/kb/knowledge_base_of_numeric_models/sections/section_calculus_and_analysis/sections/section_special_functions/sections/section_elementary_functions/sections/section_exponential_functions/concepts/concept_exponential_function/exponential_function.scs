@@ -1,0 +1,64 @@
+sc_node_not_relation -> concept_exponential_function;;
+
+concept_exponential_function => nrel_main_idtf:
+[показательная функция](*<-lang_ru;;*);
+[exponential function](*<-lang_en;;*);
+[экспоненциалды функциясы](*<-lang_kz;;*);;
+
+//разбиение
+concept_exponential_function <= nrel_subdividing:
+	...
+  (* 
+    -> concept_complex_function;;
+    -> concept_exponent_function;;
+	*);;
+	
+//надмножество
+concept_function => nrel_inclusion: concept_exponential_function;;
+
+//определение и пояснения
+concept_exponential_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (показательная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Показательная функция — математическая функция f(x) = a^x, где a называется основанием степени, а x — показателем степени.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_exponential_function <= nrel_using_constants:
+	{
+	concept_mathematical_function;
+	rrel_base_of_the_power;
+	rrel_exponent
+	};;	
+	
+//утверждения
+concept_exponential_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(показательная функция; полиномиальная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Показательная функция растёт на бесконечности быстрее любой полиномиальной функции.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(показатель степени'; натуральное число; произведение'; множитель')] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Когда показатель степени x есть натуральное число x = n, выражение a^n есть произведение n множителей.](*<-lang_ru;;*);;
+		*);;
+	*);;

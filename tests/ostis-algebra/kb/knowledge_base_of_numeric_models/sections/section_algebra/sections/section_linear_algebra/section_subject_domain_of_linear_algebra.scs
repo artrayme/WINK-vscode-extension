@@ -1,0 +1,33 @@
+sc_node_struct -> section_subject_domain_of_linear_algebra;;
+
+section_subject_domain_of_linear_algebra => nrel_main_idtf:
+    [Раздел. Предметная область линейной алгебры] (* <- lang_ru;; *);
+    [Section. Subject domain of linear algebra] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_linear_algebra <- nrel_system_identifier;;
+
+section_subject_domain_of_linear_algebra => nrel_section_decomposition: {
+    section_subject_domain_of_matrices;
+    section_subject_domain_of_vectors_and_linear_spaces
+};;
+  
+section_subject_domain_of_linear_algebra -> rrel_key_sc_element:
+    subject_domain_of_linear_algebra;
+    concept_scalar;
+    concept_linear_algebra;;
+    
+section_subject_domain_of_linear_algebra = [*
+    subject_domain_of_linear_algebra => nrel_main_idtf:
+        [Предметная область линейной алгебры] (* <- lang_ru;; *);
+        [Subject domain of linear algebra] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_linear_algebra => nrel_private_subject_domain:
+        subject_domain_of_matrices;
+        subject_domain_of_vectors_and_linear_spaces;;
+
+    subject_domain_of_linear_algebra -> rrel_maximum_studied_object_class:
+        concept_scalar;
+        concept_linear_algebra;;
+*];;

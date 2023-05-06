@@ -1,0 +1,35 @@
+sc_node_struct -> section_subject_domain_of_numeral_systems;;
+
+section_subject_domain_of_numeral_systems => nrel_main_idtf:
+    [Раздел. Предметная область систем счисления] (* <- lang_ru;; *);
+    [Section. Subject domain of numeral systems] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_numeral_systems <- nrel_system_identifier;;
+
+  
+section_subject_domain_of_numeral_systems -> rrel_key_sc_element:
+    subject_domain_of_numeral_systems;
+    concept_decimal_number_system;
+    concept_hexadecimal_notation;
+    concept_binary_number_system;
+    concept_digit;
+    concept_octal_notation;
+    concept_number_system;;
+
+section_subject_domain_of_numeral_systems = [*
+    subject_domain_of_numeral_systems => nrel_main_idtf:
+        [Предметная область систем счисления] (* <- lang_ru;; *);
+        [Subject domain of numeral systems] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_numeral_systems -> rrel_maximum_studied_object_class:
+        concept_digit;
+        concept_number_system;;
+
+    subject_domain_of_numeral_systems -> rrel_not_maximum_studied_object_class:
+        concept_decimal_number_system;
+        concept_hexadecimal_notation;
+        concept_binary_number_system;
+        concept_octal_notation;;
+*];;

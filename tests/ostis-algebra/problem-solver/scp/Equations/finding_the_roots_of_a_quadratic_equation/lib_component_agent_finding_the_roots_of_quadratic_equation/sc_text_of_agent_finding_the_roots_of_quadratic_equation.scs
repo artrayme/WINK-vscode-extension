@@ -1,0 +1,7 @@
+sc_text_of_agent_finding_the_roots_of_a_quadratic_equation
+-> rrel_key_sc_element:
+	agent_finding_the_roots_of_a_quadratic_equation;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_finding_the_roots_of_a_quadratic_equation = [*^"file://agent_finding_the_roots.scsi"*];;
+

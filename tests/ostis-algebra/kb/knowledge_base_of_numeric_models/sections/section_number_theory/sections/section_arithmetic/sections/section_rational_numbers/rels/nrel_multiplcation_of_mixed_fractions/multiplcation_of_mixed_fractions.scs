@@ -1,0 +1,71 @@
+sc_node_norole_relation->nrel_multiplcation_of_mixed_fractions;; 
+
+nrel_multiplcation_of_mixed_fractions=>nrel_main_idtf:
+[умножение смешанных дробей* ] (*<-lang_ru;;*);
+[аралас фракциялардың көбейту* ] (*<-lang_kz;;*);
+[multiplcation of mixed fractions* ] (*<-lang_en;;*);;
+// синонимы
+nrel_multiplcation_of_mixed_fractions=>nrel_idtf:[произведение смешанных дробей* ] (*<-lang_ru;;*);;
+
+//определение и пояснения
+nrel_multiplcation_of_mixed_fractions<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение смешанных дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://multiplcation_of_mixed_fractions_1.html"	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+   
+
+//конкретные задачи
+ nrel_multiplcation_of_mixed_fractions<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Умножение смешанных дробей: 3(2/6)*6(8/13).](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_multiplcation_of_mixed_fractions<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение произведения смешанных дробей. ](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_multiplcation_of_mixed_fractions => nrel_first_domain:concept_mixed_fraction;;
+nrel_multiplcation_of_mixed_fractions => nrel_second_domain: concept_mixed_fraction;;
+nrel_multiplcation_of_mixed_fractions => nrel_third_domain: concept_mixed_fraction;;
+
+//пример
+ nrel_multiplcation_of_mixed_fractions -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[1(1/5)*1(1/4)=(6/5)*(5/4)=(3/1)*(1/2)=(3*1)/(1*2)=3/2](* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,17 @@
+sc_node_not_relation -> concept_sequence;;
+concept_sequence => nrel_main_idtf: [последовательность] (* <- lang_ru;; *); [sequence] (* <- lang_en;; *);;
+
+concept_sequence <= nrel_inclusion: concept_numerical_sequence;;
+
+concept_sequence <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(последовательность)]  (* <- lang_ru;; *);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://sequence1.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

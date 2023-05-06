@@ -1,0 +1,38 @@
+uniqueness_and_novelty_design => nrel_main_idtf: [Раздел. Уникальность и новизна разработки] (* <- lang_ru;;*);;
+
+uniqueness_and_novelty_design <= nrel_section_decomposition:
+{
+	same_or_similar_computer_systems;
+	competing_organizations_and_companies;
+	main_characteristics_of_this_class_of_computer_systems_used_for_comparative_analysis;
+	comparative_analysis_of_developed_intelligent_system
+};;
+
+
+same_or_similar_computer_systems => nrel_main_idtf: [Аналогичные или близкие компьютерные системы] (* <- lang_ru;; *);;
+same_or_similar_computer_systems <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://same_or_similar_computer_systems.pdf" (* <- lang_ru;; *);;
+	*);;
+
+competing_organizations_and_companies => nrel_main_idtf: [Конкурирующие организации и компании] (* <- lang_ru;; *);;
+competing_organizations_and_companies <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://competing_organizations_and_companies.pdf" (* <- lang_ru;; *);;
+	*);;
+
+main_characteristics_of_this_class_of_computer_systems_used_for_comparative_analysis => nrel_main_idtf: [Основные характеристики компьютерных систем данного класса, используемые для их сравнительного анализа] (* <- lang_ru;; *);;
+main_characteristics_of_this_class_of_computer_systems_used_for_comparative_analysis <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://main_characteristics_of_this_class_of_computer_systems_used_for_comparative_analysis.pdf" (* <- lang_ru;; *);;
+	*);;
+
+comparative_analysis_of_developed_intelligent_system => nrel_main_idtf: [Сравнительный  анализ разрабатываемой интеллектуальной системы] (* <- lang_ru;; *);;
+comparative_analysis_of_developed_intelligent_system <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://comparative_analysis_of_developed_intelligent_system.pdf" (* <- lang_ru;; *);;
+	*);;

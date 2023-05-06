@@ -1,0 +1,52 @@
+sc_node_role_relation -> rrel_residue;;
+rrel_residue => nrel_main_idtf:	[остаток'](* <- lang_ru;; *);	[residue'](* <- lang_en;; *);;
+
+rrel_residue <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(остаток')](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Остаток от деления-один из результатов операции деления с остатком. Образуется, если результат деления не может быть выражен целым числом.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+rrel_residue  <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(остаток')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Если остаток от деления равен 0, то это означает, что число делится нацело.](*<-lang_ru;;*);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(остаток')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Всегда по абсолютной величине меньше делителя.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(остаток')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Остаток не может быть выражен отрицательным числом.](*<-lang_ru;;*);;
+		*);;
+	*);;

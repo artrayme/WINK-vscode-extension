@@ -1,0 +1,58 @@
+sc_node_struct -> section_subject_domain_of_algebraic_polynomials;;
+
+section_subject_domain_of_algebraic_polynomials => nrel_main_idtf:
+    [Раздел. Предметная область алгебраических полиномов] (* <- lang_ru;; *);
+    [Section. Subject domain of algebraic polynomials] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_algebraic_polynomials <- nrel_system_identifier;;
+  
+section_subject_domain_of_algebraic_polynomials -> rrel_key_sc_element:
+    subject_domain_of_algebraic_polynomials;
+    concept_trinomial;
+    concept_monomial;
+    concept_polynomial;
+    concept_binomial;
+    nrel_substruction_of_monomials;
+    nrel_discriminant;
+    nrel_construction_of_a_polynomial_degree;
+    nrel_subtraction_of_polynomials;
+    nrel_division_of_monomials;
+    nrel_polynomial_multiplication_by_a_monomial;
+    nrel_addition_of_monomials;
+    nrel_addition_of_polynomial;
+    nrel_division_of_a_polynomial_by_a_polynomial;
+    nrel_division_of_a_polynomial_by_a_monomial;
+    nrel_multiplication_of_monomials;
+    nrel_multiplication_of_polynomial_on_polynomial;
+    nrel_the_construction_of_a_natural_power_monomials;;
+
+section_subject_domain_of_algebraic_polynomials = [*
+    subject_domain_of_algebraic_polynomials => nrel_main_idtf:
+        [Предметная область алгебраических полиномов] (* <- lang_ru;; *);
+        [Subject domain of algebraic polynomials] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_algebraic_polynomials -> rrel_maximum_studied_object_class:
+        concept_polynomial;;
+
+    subject_domain_of_algebraic_polynomials -> rrel_not_maximum_studied_object_class:
+        concept_trinomial;
+        concept_monomial;
+        concept_binomial;;
+
+    subject_domain_of_algebraic_polynomials -> rrel_explored_relation:
+        nrel_substruction_of_monomials;
+        nrel_discriminant;
+        nrel_construction_of_a_polynomial_degree;
+        nrel_subtraction_of_polynomials;
+        nrel_division_of_monomials;
+        nrel_polynomial_multiplication_by_a_monomial;
+        nrel_addition_of_monomials;
+        nrel_addition_of_polynomial;
+        nrel_division_of_a_polynomial_by_a_polynomial;
+        nrel_division_of_a_polynomial_by_a_monomial;
+        nrel_multiplication_of_monomials;
+        nrel_multiplication_of_polynomial_on_polynomial;
+        nrel_the_construction_of_a_natural_power_monomials;;
+*];;

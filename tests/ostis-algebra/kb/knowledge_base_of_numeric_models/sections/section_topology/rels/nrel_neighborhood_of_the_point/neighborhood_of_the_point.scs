@@ -1,0 +1,63 @@
+sc_node_norole_relation -> nrel_neighborhood_of_the_point;;
+
+nrel_neighborhood_of_the_point => nrel_main_idtf:
+[окрестность точки* ](* <- lang_ru;; *);  
+[neighborhood of the point* ](* <- lang_en;; *);;
+
+nrel_neighborhood_of_the_point <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(окрестность точки*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Окрестность точки – на числовой оси любой интервал (открытый промежуток), содержащий данную точку.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_neighborhood_of_the_point <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Пояснение(окрестность точки*)](*<- lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://neighborhood_of_the_point_explanation.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_neighborhood_of_the_point <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(n-мерное пространство*; точка)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В n-мерном пространстве окрестность точки – любая область, содержащая данную точку.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(метрическое пространство*; точка; число; радиус*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Окрестность точки А в метрическом пространстве – любая область, содержащая точку А. В частности все точки М, расстояние от которых до точки А меньше некоторого положительного числа b, образуют ее (т.е. точки А) сферическую окрестность радиуса b с центром в точке А.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+nrel_neighborhood_of_the_point <- binary_relation;;
+nrel_neighborhood_of_the_point <= nrel_first_domain:concept_point ;;
+nrel_neighborhood_of_the_point <= nrel_second_domain: concept_interval;;
+
+
+nrel_neighborhood_of_the_point -> rrel_example:	"file://neighborhood_of_the_point_example.png";;

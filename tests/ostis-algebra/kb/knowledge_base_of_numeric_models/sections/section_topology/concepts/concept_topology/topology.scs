@@ -1,0 +1,23 @@
+sc_node_not_relation -> concept_topology;;
+concept_topology => nrel_main_idtf:
+	[топология](*<-lang_ru;;*);
+	[topology](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_topology<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(топология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Топология — раздел математики, изучающий явление непрерывности и свойства пространств, которые остаются неизменными при непрерывных деформациях.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_space
+	};;

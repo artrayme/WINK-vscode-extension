@@ -1,0 +1,124 @@
+sc_node_not_relation->concept_first_order_differential_equations;;
+
+concept_first_order_differential_equations=>nrel_main_idtf:
+[диффенциальные уравнения первого порядка](*<-lang_ru;;*);
+[first order differential equations](*<-lang_en;;*);;
+
+concept_first_order_differential_equations<= nrel_subdividing:
+	...
+	(* 
+	->concept_first_order_differential_equation_with_multiple_variables;
+	concept_homogeneous_differential_equation_of_first_order;
+     concept_linear_differential_equation_of_first_order;;
+	*);;
+//определение
+concept_first_order_differential_equations<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дифференциальное уравнение первого порядка)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дифференциальным уравнением первого порядка называется уравнение вида F(x,y,y')=0, где x - независимая переменная, y(x) - неизвестная функция. ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(нормальная форма дифференциального уравнения первого порядка.)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Нормальной формой дифференциального уравнения первого порядка называется дифференциальное уравнение вида  y'(x)  = f (x, y(x)). ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(решение дифференциального уравнения первого порядка.)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция y = y(x) называется решением дифференциального уравнения F(x, y, y') = 0, если она непрерывно дифференцируема на (a,b) и F(x, y(x), y'(x)) ≡ 0 для всех x из (a,b). ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(частное решение дифференциального уравнения первого порядка.)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое конкретное решение y = y(x)  уравнения 1–го порядка, называется частным решением уравнения.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(дифференциальная форма дифференциального уравнения первого порядка.)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[M(x, y)dx + N(x, y)dy = 0.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// утверждения
+concept_first_order_differential_equations <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(общее решение дифференциального уравнения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Общее решение y=y(x,С) уравнения 1-го порядка содержат одну произвольную постоянную.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+concept_first_order_differential_equations <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Найти частное решение уравнения y'=2*x-y, при начальном условии y(0)=1.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_first_order_differential_equations<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение частного решения дифференциального уравнения первого порядка.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_first_order_differential_equations -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[x*y'=y; Начальное условие у(0)=0; Частное решение y=x. ](* <- lang_ru;; 	*);;
+		*);;
+	*);;

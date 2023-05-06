@@ -1,0 +1,30 @@
+sc_node_not_relation->concept_half_interval;; 
+
+concept_half_interval=>nrel_main_idtf:
+[полуинтервал](*<-lang_ru;;*);
+[half-interval](*<-lang_en;;*);;
+concept_half_interval<= nrel_using_constants: concept_number;concept_numerical_sequence;;
+
+concept_half_interval<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(полуинтервал)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://half_interval.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_half_interval-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://half_interval.png"(* <- lang_ru;;*);;
+		*);;
+	*);;

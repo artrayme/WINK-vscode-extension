@@ -1,0 +1,26 @@
+sc_node_not_relation -> concept_differential_topology;;
+concept_differential_topology => nrel_main_idtf:
+	[дифференциальная топология](*<-lang_ru;;*);
+	[differential topology](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_differential_topology<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(дифференциальная топология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Дифференциальная топология — раздел топологии о гладких многообразиях с точностью до диффеоморфизма и их включениях (размещениях) в других многообразиях.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_topology => nrel_inclusion: concept_differential_topology;;
+
+concept_differential_topology <= nrel_using_constants:
+	{
+	concept_topology;
+     concept_differentiable_function
+	};;

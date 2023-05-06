@@ -1,0 +1,73 @@
+sc_node_norole_relation->nrel_particular_solution_of_the_differential_equation;; 
+
+nrel_particular_solution_of_the_differential_equation => nrel_main_idtf:
+[частное решение дифференциального уравнения* ] (*<-lang_ru;;*);
+[particular solution of the differential equation* ] (*<-lang_en;;*);;
+
+nrel_particular_solution_of_the_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(частное решение дифференциального уравнения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://particular_solution_of_the_differential_equation3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+    
+
+nrel_particular_solution_of_the_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(общее решение дифференциального уравнения*; сумма'; однородное дифференциальное уравнение; неоднородное дифференциальное уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Зная общее решение однородного дифференциального уравнения и любое частное решение неоднородного уравнения, можно получить общее решение неоднородного уравнения в виде суммы общего решения однородного уравнения и частного решения неоднородного. (Эта теорема верна только для линейных дифференциальных уравнений.)]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//конкретные задачи
+nrel_particular_solution_of_the_differential_equation <- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://particular_solution_of_the_differential_equation2.html"   (* <- lang_ru;; 	*);;
+*);;
+*);;
+
+//классы задач и способы решения
+nrel_particular_solution_of_the_differential_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождении частного решения дифференциального уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_particular_solution_of_the_differential_equation  <- binary_relation;;
+
+nrel_particular_solution_of_the_differential_equation  => nrel_first_domain:
+concept_differential_equation;;
+
+nrel_particular_solution_of_the_differential_equation => nrel_second_domain: 
+concept_function;;
+

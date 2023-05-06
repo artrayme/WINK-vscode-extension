@@ -1,0 +1,103 @@
+sc_node_norole_relation->nrel_multiplication_of_complex_numbers;;
+
+nrel_multiplication_of_complex_numbers=>nrel_main_idtf:
+[умножение комплексных чисел* ](*<-lang_ru;;*);
+[кешенді сандар көбейту* ](*<-lang_kz;;*);
+[multiplication of complex numbers* ](*<-lang_en;;*);;
+
+// синонимы
+nrel_multiplication_of_complex_numbers=> nrel_idtf:[произведение комплексного числа на комплексное число* ](*<-lang_ru;;*);;
+
+nrel_multiplication_of_complex_numbers<- ternary_relation;;
+nrel_multiplication_of_complex_numbers => nrel_first_domain:concept_complex_number;;
+nrel_multiplication_of_complex_numbers => nrel_second_domain: concept_complex_number;;
+nrel_multiplication_of_complex_numbers => nrel_third_domain: concept_complex_number;;
+
+//определение
+nrel_multiplication_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение комплексных чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведением комплексных чисел z1 =х1 +i*y1 и z2=х2+i*y2 называется комплексное число, определяемое равенством z=z1*z2 =(x1*x2- у1*у2)+i(x1*y2+y1*x2 ). ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Опр.(умножение комплексных чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведением комплексных чисел, заданных в тринометрической форме, z1 = r1*(cos(φ1)+i*sin(φ1)) и z2=r2*(cos(φ2)+i*sin(φ2)) называется комплексное число, определяемое равенством z1*z2=r1*r2*(cos(φ1+φ2)+i*sin(φ1+φ2)).](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_multiplication_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(переместительный закон*; сочетательный закон*; распределительный закон*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://multiplication_of_complex_numbers1.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(возведение в степень*; множитель)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://multiplication_of_complex_numbers2.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+// конкретные задачи
+nrel_multiplication_of_complex_numbers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://multiplication_of_complex_numbers3.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_multiplication_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение произведения комплексных чисел](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+ nrel_multiplication_of_complex_numbers  -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		               [z1=3+5*i, z2=4+2*i. z1*z2=(3+5*i)*(4+2*i)=(12-10)+i*(6+20)=2+28*i]   (* <- lang_ru;;*);;
+		*);;
+	*);;

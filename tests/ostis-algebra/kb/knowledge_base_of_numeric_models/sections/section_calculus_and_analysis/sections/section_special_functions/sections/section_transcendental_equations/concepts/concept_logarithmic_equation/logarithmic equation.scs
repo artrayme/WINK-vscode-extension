@@ -1,0 +1,97 @@
+sc_node_not_relation->concept_logarithmic_equation;;
+concept_logarithmic_equation=> nrel_main_idtf :
+[логарифмическое уравнение](*<-lang_ru;;*);
+[logarithmic equation](*<-lang_en;;*);;
+
+concept_logarithmic_equation <= nrel_using_constants: concept_variable; nrel_logarithm;;
+
+//определение
+concept_logarithmic_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(логарифмическое уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					[Логарифмическое уравнение - это такое уравнение, в котором неизвестная стоит под знаком логарифма.] (* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+// утверждения
+concept_logarithmic_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение; основание логарифма; подлогарифмическое выражение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://logarithmic_equation1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(1-единица; положительное число; уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://logarithmic_equation3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(алгебраическая функция; уравнение; неравенство)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://logarithmic_equation2.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_logarithmic_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение корней логарифмического уравнения](* <- lang_ru;; *);;
+*);;
+*);;
+
+// конкретные задачи
+concept_logarithmic_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://logarithmic_equation4.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_logarithmic_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://logarithmic_equation5.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

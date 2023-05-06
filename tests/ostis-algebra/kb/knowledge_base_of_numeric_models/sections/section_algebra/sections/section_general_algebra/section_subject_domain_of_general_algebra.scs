@@ -1,0 +1,31 @@
+sc_node_struct -> section_subject_domain_of_general_algebra;;
+
+section_subject_domain_of_general_algebra => nrel_main_idtf:
+    [Раздел. Предметная область общей алгебры] (* <- lang_ru;; *);
+    [Section. Subject domain of general algebra] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_general_algebra <- nrel_system_identifier;;
+
+section_subject_domain_of_general_algebra => nrel_section_decomposition: {
+    section_subject_domain_of_commutative_algebra;
+    section_subject_domain_of_homological_algebra
+};;
+  
+section_subject_domain_of_general_algebra -> rrel_key_sc_element:
+    subject_domain_of_general_algebra;
+    concept_general_algebra;;
+
+section_subject_domain_of_general_algebra = [*
+    subject_domain_of_general_algebra => nrel_main_idtf:
+        [Предметная область общей алгебры] (* <- lang_ru;; *);
+        [Subject domain of general algebra] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_general_algebra => nrel_private_subject_domain:
+        subject_domain_of_commutative_algebra;
+        subject_domain_of_homological_algebra;;
+
+    subject_domain_of_general_algebra -> rrel_maximum_studied_object_class:
+        concept_general_algebra;;
+*];;

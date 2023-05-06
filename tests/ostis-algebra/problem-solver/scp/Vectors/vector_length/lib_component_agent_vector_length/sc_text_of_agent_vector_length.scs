@@ -1,0 +1,7 @@
+sc_text_of_agent_vector_length
+-> rrel_key_sc_element:
+	agent_vector_length;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_vector_length = [*^"file://agent_vector_length.scsi"*];;
+

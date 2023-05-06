@@ -1,0 +1,47 @@
+sc_node_not_relation->concept_parameter;;
+concept_parameter => nrel_main_idtf :
+[параметр](*<-lang_ru;;*);
+[parameter](*<-lang_en;;*);;
+
+// синонимы
+concept_parameter => nrel_idtf:[константа](*<-lang_ru;;*);;
+concept_parameter => nrel_idtf:[постоянная](*<-lang_ru;;*);;
+
+//определение
+concept_parameter <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(параметр)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Параметр - величина, входящая в формулы и выражения, значение которой является постоянным в пределах рассматриваемой задачи.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_parameter <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(параметр)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Под словом "параметр" подразумеваются коэффициенты, показатели и вообще все постоянные величины, входящие в уравнение кривой линии, в уравнение поверхности и в оба уравнения какой-либо кривой линии двоякой кривизны. При изменении параметра кривая или поверхность изменяет положение, вид или размеры или все вместе. ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_parameter -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[x2 + y2 = r2; величина r является параметром окружности.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,114 @@
+sc_node_not_relation->concept_differential_equation;; 
+
+concept_differential_equation=>nrel_main_idtf:
+[дифференциальное уравнение](*<-lang_ru;;*);
+[differential equation](*<-lang_en;;*);;
+
+// синонимы
+concept_differential_equation=> nrel_idtf:[Differentialgleichung](*<-lang_de;;*);;
+
+//разбиение
+concept_differential_equation <= nrel_subdividing:
+	...
+  (* 
+    -> concept_higher_order_equations ;;
+	->concept_first_order_differential_equations ;;
+	*);;
+
+//определение
+concept_differential_equation  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дифференциальное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дифференциальное уравнение - уравнение, связывающее значение производной функции с самой функцией, значениями назависимой переиенной,числами (параметрами) ](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+concept_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(порядок*; степень*; производная*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Порядок или степень дифференциального уравнения - наивысший порядок производных, входящих в него.] (*<-lang_ru;;*);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение, интеграл, интервал*,производная*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Решением (интегралом) дифференциального уравнения порядка n называется функция y(x), имеющая на некотором интервале (a, b) производные до порядка n включительно и удовлетворяющая этому уравнению.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение, интегрирование*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Процесс решения дифференциального уравнения называется интегрированием.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+concept_differential_equation <= nrel_using_constants: concept_differential; nrel_general_solution_of_the_differential_equation; nrel_particular_solution_of_the_differential_equation; nrel_special_solution_of_the_differential_equation;;
+
+// конкретные задачи
+concept_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[y'=cos(x)+sin(x); y"+cos(x)+sin(x).](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определения понядка  дифференциальных уравнений.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//пример
+concept_differential_equation-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[y'=cos(x)- уравнение первого порядка; y"+y'+y=0- уравнение высшего порядка.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

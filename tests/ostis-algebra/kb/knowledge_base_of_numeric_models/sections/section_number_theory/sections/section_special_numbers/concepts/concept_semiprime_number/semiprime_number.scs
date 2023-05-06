@@ -1,0 +1,73 @@
+sc_node_not_relation -> concept_semiprime_number;; 
+
+concept_semiprime_number => nrel_main_idtf:
+[полупростое число](*<-lang_ru;;*);
+[semiprime](*<-lang_en;;*);
+[жартылай жай сан](*<-lang_kz;;*);;
+
+concept_semiprime_number => nrel_idtf:[бипростое число](*<-lang_ru;;*);;
+concept_semiprime_number => nrel_idtf:[biprime](*<-lang_en;;*);;
+	
+//надмножество
+concept_number => nrel_inclusion: concept_semiprime_number;;
+
+//определения и пояснения
+concept_semiprime_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (полупростое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Полупростое число — число, представимое в виде произведения двух простых чисел.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+concept_semiprime_number <= nrel_using_constants:
+	{
+	concept_number;
+	rrel_product_of_multiplication;
+	concept_prime_number
+	};;
+	
+//утверждения
+concept_semiprime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(полупростое число; нечетное число; натуральное число; разложение*; сумма')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Каждое достаточно большое нечётное натуральное число можно разложить на сумму трёх полупростых чисел](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(полупростое число; возведение в степень*; простое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Число, получаемое при возведении любого простого числа во вторую степень, является полупростым.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(полупростое число; недостаточное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Все полупростые числа, кроме 6, — недостаточные.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_semiprime_number -> rrel_example : four; six; nine; ten; fourteen; fifteen; twenty_one; twenty_two; twenty_five; twenty_six; thirty_three; thirty_four; thirty_five; thirty_eight; thirty_nine; forty_six; forty_nine; fifty_one; fifty_five; fifty_seven; fifty_eight; sixty_two; sixty_five; sixty_nine; seventy_four;seventy_seven;;  

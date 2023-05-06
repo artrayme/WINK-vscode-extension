@@ -1,0 +1,30 @@
+sc_node_norole_relation->nrel_point_gap_function;;
+nrel_point_gap_function=> nrel_main_idtf :
+[точка разрыва функции* ] (* <- lang_ru;; *);
+[point gap function* ] (* <- lang_en;; *);; 
+
+nrel_point_gap_function <= nrel_subdividing:
+    ... 
+	(*
+	-> nrel_point_gap_function_of_the_first_kind;;
+	-> nrel_point_gap_function_of_the_second_kind;;
+	 
+	*);;
+//определение
+nrel_point_gap_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(точка разрыва функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Если функция f (x) не является непрерывной в точке x = a, то говорят, что f (x) имеет разрыв в этой точке, а сама точка называется точкой разрыва функции.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+//пример
+nrel_point_gap_function-> rrel_example :
+			[Функция f(x)=arctg(1/x) имеет одну точку разрыва x=0.](* <- lang_ru;; 	*);;

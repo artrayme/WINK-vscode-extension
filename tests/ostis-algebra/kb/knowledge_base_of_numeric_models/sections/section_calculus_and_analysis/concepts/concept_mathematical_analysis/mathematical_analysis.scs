@@ -1,0 +1,65 @@
+sc_node_not_relation -> concept_mathematical_analysis;; 
+
+concept_mathematical_analysis => nrel_main_idtf:
+[математический анализ](*<-lang_ru;;*);
+[mathematical analysis](*<-lang_en;;*);
+[математикалық талдау](*<-lang_kz;;*);;
+
+//разбиение
+concept_mathematical_analysis <= nrel_subdividing:
+	...
+	(* 	
+	-> concept_differential_calculus;;
+	-> concept_integral_calculus;;
+	*);;
+	
+//надмножество
+concept_higher_mathematics => nrel_inclusion: concept_mathematical_analysis;;
+
+//определения и пояснения
+concept_mathematical_analysis <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (математический анализ)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Математический анализ — совокупность разделов математики, соответствующих историческому разделу под наименованием «анализ бесконечно малых», объединяет дифференциальное и интегральное исчисления.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_mathematical_analysis <= nrel_using_constants:
+	{
+	concept_math;
+	concept_differential_calculus;
+	concept_integral_calculus
+	};;
+	
+//утверждения
+concept_mathematical_analysis <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(математический анализ; анализ; математика; алгебра; геометрия)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[На классическом математическом анализе основывается современный анализ, который рассматривается как одно из трёх основных направлений математики (наряду с алгеброй и геометрией).](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(математический анализ)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Математический анализ широко применяется в физике, информатике, статистике, технике, экономике, бизнесе, финансах, медицине, демографии и других областях, в которых для решения проблемы может быть построена математическая модель, и необходимо найти её оптимальное решение.](* <- lang_ru;; *);;
+		*);;
+	*);;

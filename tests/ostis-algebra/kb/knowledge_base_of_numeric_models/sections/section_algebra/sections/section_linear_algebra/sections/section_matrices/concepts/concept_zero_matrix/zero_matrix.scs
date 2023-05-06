@@ -1,0 +1,99 @@
+sc_node_not_relation->concept_zero_matrix;;
+
+concept_zero_matrix=>nrel_main_idtf:
+[нулевая матрица](*<-lang_ru;;*);
+[zero matrix](*<-lang_en;;*);;
+
+concept_zero_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(нулевая матрица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Нулевая матрица — это матрица, размера mхn, все элементы которой равны нулю.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_zero_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(ранг матрицы*; нуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Нулевая матрица, и только она, имеет ранг 0.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_zero_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нулевой столбец'; умножение*; вектор-столбец; вектор-строка)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Только нулевая матрица обладает свойством давать нулевой столбец при умножении справа на любой вектор-столбец, и аналогично для умножения на вектор-строки слева.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_zero_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; число; равенство*; матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение нулевой матрицы на любое число равно ей самой.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_zero_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма'; размер матрицы*; равенство*; матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма матрицы A и нулевой матрицы того же размера равна исходной матрице A.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_zero_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(разность'; размер матрицы*; равенство*; матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Разница матрицы A и нулевой матрицы того же размера равна исходной матрице A.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_zero_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(квадратная матрица; скалярная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадратная нулевая матрица является скалярной матрицей.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_zero_matrix-> rrel_example :
+	"file://zero_matrix.png";;

@@ -1,0 +1,7 @@
+sc_text_of_agent_stationing 
+-> rrel_key_sc_element:
+	agent_stationing;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_stationing = [*^"file://agent_stationing.scsi"*];;
+

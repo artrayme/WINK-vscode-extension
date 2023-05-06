@@ -1,0 +1,7 @@
+sc_text_of_agent_scalar_multiplication_of_vectors_for_2
+-> rrel_key_sc_element:
+	agent_scalar_multiplication_of_vectors_for_2;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_scalar_multiplication_of_vectors_for_2 = [*^"file://agent_scalar_multiplication_of_vectors_for_2.scsi"*];;
+

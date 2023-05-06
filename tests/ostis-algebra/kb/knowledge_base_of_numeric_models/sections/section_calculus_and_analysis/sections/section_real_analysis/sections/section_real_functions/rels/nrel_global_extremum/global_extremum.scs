@@ -1,0 +1,40 @@
+sc_node_norole_relation -> nrel_global_extremum;;
+
+nrel_global_extremum => nrel_main_idtf:
+[глобальный экстремум* ](* <- lang_ru;; *);  
+[global extremum* ](* <- lang_en;; *);;
+
+
+//определение
+nrel_global_extremum <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(глобальный экстремум*)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Глобальный экстремум - это точки наибольшего или наименьшего значения функции.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+nrel_global_extremum <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(точка; точка локального экстремума*; отрезок)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Глобальный экстремум может достигаться либо в точках локального экстремума, либо на концах отрезка.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+nrel_global_extremum <- binary_relation;;
+nrel_global_extremum <= nrel_first_domain: concept_function;;
+nrel_global_extremum <= nrel_second_domain:concept_number;;

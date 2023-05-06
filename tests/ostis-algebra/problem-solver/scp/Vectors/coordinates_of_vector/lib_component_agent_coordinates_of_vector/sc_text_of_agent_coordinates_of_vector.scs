@@ -1,0 +1,7 @@
+sc_text_of_agent_coordinates_of_vector
+-> rrel_key_sc_element:
+	agent_coordinates_of_vector;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_coordinates_of_vector = [*^"file://agent_coordinates_of_vector.scsi"*];;
+

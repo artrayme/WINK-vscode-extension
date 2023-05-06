@@ -1,0 +1,6 @@
+three_hundred_and_twenty=>nrel_main_idtf:
+[320](*<-lang_ru;;*);
+[320](*<-lang_en;;*);;
+
+concept_number -> three_hundred_and_twenty;;
+set_of_number -> three_hundred_and_twenty;;

@@ -1,0 +1,88 @@
+scp_program -> proc_factorial (*	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _number;;
+                -> rrel_2: rrel_out: _factor;;
+	*);;
+
+	-> rrel_operators: ... (*	
+		-> rrel_init: ..proc_factorial_operator1 (*
+		        <-contAdd;;
+                        ->rrel_1: rrel_assign: rrel_scp_var: _factor;;
+                        ->rrel_2: rrel_fixed: rrel_scp_const: [1];;
+			->rrel_3: rrel_fixed: rrel_scp_const: [0];;
+
+                 	=> nrel_goto: ..proc_factorial_operator2;;
+			*);;
+
+		-> ..proc_factorial_operator_check
+			(*
+                         <-ifEq;;
+                         -> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                         -> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+                      
+                         
+                       => nrel_then: ..proc_factorial_operator_return;;
+			=> nrel_else: ..proc_factorial_operator2;;
+                       
+                         *);;
+
+		 -> ..proc_factorial_operator2
+                         (*
+                         <-contAssign;;
+                         -> rrel_1: rrel_assign: rrel_scp_var: _nextFactor;;
+                         -> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+                      
+                         
+                       => nrel_goto: ..proc_factorial_operator3;;
+                       
+                         *);;
+		
+		-> ..proc_factorial_operator3
+                        (*
+                         <-ifEq;;
+                         ->rrel_1: rrel_fixed: rrel_scp_var: _nextFactor;;
+                         ->rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                         => nrel_then: ..proc_factorial_operator5;;
+                         => nrel_else: ..proc_factorial_operator4;;
+                        
+                       *);;
+
+		-> ..proc_factorial_operator4
+                        (*
+                         <-ifGr;;
+                         ->rrel_1: rrel_fixed: rrel_scp_var: _nextFactor;;
+                         ->rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                         => nrel_then: ..proc_factorial_operator_return;;
+                         => nrel_else: ..proc_factorial_operator5;;
+                        
+                       *);;
+                          
+                   -> ..proc_factorial_operator5
+                         (*
+                         <-contMult;;
+                         -> rrel_1: rrel_fixed: rrel_scp_var: _factor;;
+                         -> rrel_2: rrel_fixed: rrel_scp_var: _factor;;
+                         -> rrel_3: rrel_fixed: rrel_scp_var: _nextFactor;;
+                      
+                         
+                       => nrel_goto: ..proc_factorial_operator6;;
+                       
+                         *);;
+                    
+                    -> ..proc_factorial_operator6
+                       (*
+                        <- contAdd;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _nextFactor;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _nextFactor;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+                        
+                 	=> nrel_goto: ..proc_factorial_operator3;;
+                        *);;
+ 
+                -> ..proc_factorial_operator_return (*
+			<- return;;
+		*);;
+		
+	*);;
+*);;
+

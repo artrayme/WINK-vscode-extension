@@ -1,0 +1,102 @@
+sc_node_norole_relation->nrel_digital_root;; 
+
+nrel_digital_root=>nrel_main_idtf:
+[цифровой корень* ] (*<-lang_ru;;*);
+[digital root* ] (*<-lang_en;;*);;
+
+//синонимы
+nrel_digital_root=> nrel_idtf:[повторяющаяся сумма цифр* ](*<-lang_ru;;*);;
+nrel_digital_root=> nrel_idtf:[repeated digital sum* ](*<-lang_en;;*);;
+
+//определение 
+nrel_digital_root<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(цифровой корень*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровым корнем натурального числа называют одноразрядное число, получаемое при повторяющемся сложении его цифр. В каждой итерации сложения используется результат предыдущей итерации, пока не будет получено одноразрядное число.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+nrel_digital_root<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(цифровой корень*; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровой корень равен нулю тогда и только тогда, когда исходное число равно нулю.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(цифровой корень*; равенство* число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровой корень n равен n тогда и только тогда, когда n является числом от 0 до 9.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(цифровой корень*; меньше*; больше либо равно*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровой корень n меньше n тогда и только тогда, когда n больше либо равно 10.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(цифровой корень*; сумма'; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровой корень суммы двух чисел равен цифровому корню суммы цифровых корней этих чисел.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(цифровой корень*; разность'; число; остаток'; деление*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровой корень разности двух чисел равен остатку от целочисленного деления разности цифровых корней этих чисел на 9.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(цифровой корень*; произведение'; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровой корень произведения двух чисел равен цифровому корню произведения цифровых корней этих чисел.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//Домены
+nrel_digital_root => nrel_first_domain: concept_natural_number;;
+nrel_digital_root => nrel_second_domain: concept_natural_number;; 

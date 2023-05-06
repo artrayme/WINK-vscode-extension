@@ -1,0 +1,72 @@
+sc_node_norole_relation-> nrel_root_extract;;
+nrel_root_extract => nrel_main_idtf:	[извлечение корня* ](*<-lang_ru;;*);	[root extract* ](*<-lang_en;;*);;
+nrel_root_extract => nrel_idtf:	[возвести в дробную степень* ](*<-lang_ru;;*);;
+
+nrel_root_extract <- ternary_relation;;
+nrel_root_extract <= nrel_first_domain: concept_number;;
+nrel_root_extract <= nrel_second_domain: concept_number;;
+nrel_root_extract <= nrel_third_domain: concept_number;;
+
+nrel_root_extract <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(извлечение корня*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Извлечением корня называется нахождение значения корня.](*<-lang_ru;;*);;
+		*);
+			...
+		(*
+	      -> rrel_example:
+			[Извлечение корня есть нахождение основания степени по степени и ее показателю.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_root_extract <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(возведение в степень*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Опреация извлечения корня - обратная операция для операции возведение в степень.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(вещественное число; четное число; корень'; степень')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Корень n-й степени из вещественного числа a, в зависимости от чётности n и знака a, может иметь от 0 до 2 вещественных значений.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(отрицательное число; нечетное число; корень'; степень')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Корень нечётной степени из отрицательного числа — отрицательное число, однозначно определенное.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(положительное число; нечетное число; корень'; степень')](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Корень нечётной степени из положительного числа — положительное число, однозначно определенное.](*<-lang_ru;;*);;
+		*);;
+	*);;

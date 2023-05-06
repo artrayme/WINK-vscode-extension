@@ -1,0 +1,54 @@
+sc_node_role_relation->rrel_product_of_multiplication;; 
+rrel_product_of_multiplication=>nrel_main_idtf:
+[произведение'](*<-lang_ru;;*);
+[product_of_multiplication'](*<-lang_en;;*);
+[өнім'](*<-lang_kz;;*);;
+
+rrel_product_of_multiplication<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(произведение')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Произведение - число,которое получается в результате выполнения операции умножение.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+	
+rrel_product_of_multiplication <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множитель'; произведение')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[От перемены мест множителей произведение не меняется.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; сумма'; число; слагаемое' )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение суммы нескольких чисел на какое-нибудь число равно сумме произведений каждого слагаемого на это число.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; множитель'; число; слагаемое'; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если в произведении нескольких множителей хотя бы один из множителей равен нулю, то произведение равно нулю.](* <- lang_ru;; *);;
+		*);;
+	*);;

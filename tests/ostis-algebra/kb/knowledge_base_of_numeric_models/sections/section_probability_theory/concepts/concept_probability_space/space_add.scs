@@ -1,0 +1,9 @@
+sc_node_not_relation -> concept_space;; 
+
+concept_space => nrel_main_idtf:
+[пространство](*<-lang_ru;;*);
+[space](*<-lang_en;;*);
+[кеңістік](*<-lang_kz;;*);;
+
+concept_space => nrel_idtf:
+[математическое пространство](*<-lang_ru;;*);;

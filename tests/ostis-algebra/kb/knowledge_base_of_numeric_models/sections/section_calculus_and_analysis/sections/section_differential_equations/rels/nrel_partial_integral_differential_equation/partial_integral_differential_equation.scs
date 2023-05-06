@@ -1,0 +1,35 @@
+sc_node_norole_relation->nrel_partial_integral_differential_equation;;
+
+nrel_partial_integral_differential_equation=>nrel_main_idtf:
+[частный интеграл дифференциального уравнения* ] (*<-lang_ru;;*);
+[partial integral differential equation* ] (*<-lang_en;;*);;
+
+nrel_partial_integral_differential_equation => nrel_first_domain: concept_differential_equation;;
+nrel_partial_integral_differential_equation => nrel_second_domain: concept_expression;;
+
+nrel_partial_integral_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(частный интеграл дифференциального уравнения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Частный интеграл дифференциального уравнения – это общий интеграл при заданных значениях постоянных C1, C2, C3, ... , Cn.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_partial_integral_differential_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дифференциальное уравнение; постоянная'; общее решение*; уравнение; интеграл*; число; частное решение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Решение (интеграл) дифференциального уравнения n-го порядка, зависящее от n произвольных независимых постоянных, называется общим решением (интегралом) этого уравнения. Решение (интеграл), полученное при конкретных числовых значениях этих постоянных, называется частным решением (частным интегралом) дифференциального уравнения.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

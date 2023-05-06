@@ -1,0 +1,77 @@
+sc_node_not_relation->concept_non_periodic_decimal;;
+
+concept_non_periodic_decimal=>nrel_main_idtf:
+[непериодическая десятичная дробь](*<-lang_ru;;*);
+[біржолғы ондық](*<-lang_kz;;*);
+[non-periodic decimal](*<-lang_en;;*);;
+
+//определение
+concept_non_periodic_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(непериодическая десятичная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Если цифры после запятой в бесконечной десятичной дроби, не образуют повторяющихся групп, такая десятичной дробь называется непериодической.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_non_periodic_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(иррациональное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Значением непериодической десятичной дроби является иррациональное число.] (*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+concept_periodic_decimal<= nrel_using_constants: concept_number;concept_decimal;concept_infinite_decimal;;
+
+// конкретные задачи
+concept_non_periodic_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли дробь непериодической десятичной дробью : 0,090099... ;0,13(2).] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_non_periodic_decimal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение является ли дробь непериодической десятичной дробью .]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_non_periodic_decimal-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[0,090099000999... -  периодическая десятичная  дробь ](* <- lang_ru;; 	*);;
+		*);;
+	*);;

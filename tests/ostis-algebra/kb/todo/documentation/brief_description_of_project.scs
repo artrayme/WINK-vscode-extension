@@ -1,0 +1,71 @@
+brief_description_of_project => nrel_main_idtf: [Раздел. Краткая характеристика проекта] (* <- lang_ru;; *);;
+
+brief_description_of_project <= nrel_section_decomposition:
+{
+	design_goals;
+	objectives_of_project;
+	target_audience;
+	relevance_of_developed_system;
+	anticipated_project_success_criteria;
+	background_project;
+	original_project_data;
+	planned_date_for_completion_of_development
+};;
+
+
+design_goals => nrel_main_idtf: [Цели разработки] (* <- lang_ru;; *);;
+design_goals <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://design_goals.pdf" (* <- lang_ru;; *);;
+	*);;
+
+
+objectives_of_project => nrel_main_idtf: [Задачи проекта] (* <- lang_ru;; *);;
+objectives_of_project <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://objectives_of_project.pdf" (* <- lang_ru;; *);;
+	*);;
+
+target_audience => nrel_main_idtf: [Целевая аудитория] (* <- lang_ru;; *);;
+target_audience <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://target_audience.pdf" (* <- lang_ru;; *);;
+	*);;
+
+relevance_of_developed_system => nrel_main_idtf: [Актуальность разрабатываемой системы] (* <- lang_ru;; *);;
+relevance_of_developed_system <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://relevance_of_developed_system.pdf" (* <- lang_ru;; *);;
+	*);;
+
+anticipated_project_success_criteria => nrel_main_idtf: [Предполагаемые критерии успешности проекта] (* <- lang_ru;; *);;
+anticipated_project_success_criteria <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://anticipated_project_success_criteria.pdf" (* <- lang_ru;; *);;
+	*);;
+
+background_project => nrel_main_idtf: [Предпосылки реализации проекта] (* <- lang_ru;; *);;
+background_project <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://background_project.pdf" (* <- lang_ru;; *);;
+	*);;
+
+original_project_data => nrel_main_idtf: [Исходные данные проекта] (* <- lang_ru;; *);;
+original_project_data <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://original_project_data.pdf" (* <- lang_ru;; *);;
+	*);;
+
+planned_date_for_completion_of_development => nrel_main_idtf: [Ппланируемый срок завершения разработки] (* <- lang_ru;; *);;
+planned_date_for_completion_of_development <= nrel_sc_text_translation:	
+	...
+	(*
+	-> "file://planned_date_for_completion_of_development.pdf" (* <- lang_ru;; *);;
+	*);;

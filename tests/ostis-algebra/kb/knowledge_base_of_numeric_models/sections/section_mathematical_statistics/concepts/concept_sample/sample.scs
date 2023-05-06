@@ -1,0 +1,50 @@
+sc_node_not_relation -> concept_sample;;
+
+concept_sample => nrel_main_idtf:
+[выборка](*<-lang_ru;;*);
+[sample](*<-lang_en;;*);;
+
+concept_sample <- rrel_key_sc_element:
+    ...
+    (*
+	=> nrel_main_idtf: [Опр. (выборка)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://img.jpg"(*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (выборка)] (*<-lang_ru;;*);;
+	<-sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Любое подмножество генеральной совокупности называется выборкой.](*<-lang_ru;;*);;
+		*);;
+	*);;
+    concept_sample <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(выборкаж;репрезентативность* )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для высокой точности исследований выборка должна быть реперезентативной, то есть ее объекты должны достаточно хорошо отображать свойства генеральной совокупности.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+    	//разбиение
+    concept_sample <= nrel_subdividing:
+	...
+  	(* 
+    	->concept_representative_sample;;
+        ->concept_not_representative_sample;;
+	*);;
+

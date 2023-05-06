@@ -1,0 +1,106 @@
+sc_node_not_relation->concept_linear_inequality_in_one_variable;;
+
+concept_linear_inequality_in_one_variable=>nrel_main_idtf:
+[линейное неравенство с одной переменной](*<-lang_ru;;*);
+[linear inequality in one variable](*<-lang_en;;*);;
+
+//определение
+concept_linear_inequality_in_one_variable <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейное неравенство с одной переменной)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://linear_inequality_in_one_variable_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+
+concept_linear_inequality_in_one_variable<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(слогаемое, знак, неравенство*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Если из одной части неравенства перенести в другую слагаемое с противоположным знаком, то получится неравенство, равносильное данному:
+
+если x > y, то x – y > 0](* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*, умножить, разделить, положительное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если обе части неравенства с одной переменной умножить или разделить на одно и то же положительное число, то получится неравенство, равносильное данному:
+
+если x > y, то a · x > a · y,  при a > 0](* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство*, умножить, разделить, отрицательное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если обе части неравенства с одной переменной умножить или разделить на одно и то же отрицательное число, изменив при этом знак неравенства на противоположный, то получится неравенство, равносильное данному:
+
+если x > y, то –a · x < –a · y,  при a > 0](* <- lang_ru;; 	*);;
+*);;
+	*);;
+
+//используемые константы
+concept_linear_inequality_in_one_variable<= nrel_using_constants:concept_number;concept_variable;;
+
+
+// конкретные задачи
+concept_linear_inequality_in_one_variable<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Решить неравенства: 2х+3>6; 4x-7<5] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_linear_inequality_in_one_variable<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Решение линейных неравенств с одной переменной]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_linear_inequality_in_one_variable-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://linear_inequality_in_one_variable_2.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

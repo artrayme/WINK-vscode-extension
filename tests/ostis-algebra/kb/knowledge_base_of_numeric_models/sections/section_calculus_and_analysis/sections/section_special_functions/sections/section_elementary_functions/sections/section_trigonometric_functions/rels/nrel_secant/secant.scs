@@ -1,0 +1,39 @@
+sc_node_norole_relation -> nrel_secant;;
+
+nrel_secant => nrel_main_idtf:
+[секанс* ](* <- lang_ru;; *);  
+[secant* ](* <- lang_en;; *);;
+
+nrel_secant <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(секанс*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Секанс — тригонометрическая функция. Она определяется как sec(a)=1/cos(a).](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+nrel_secant <= nrel_inclusion:
+	concept_trigonometric_function;;
+	
+//утверждения
+nrel_secant <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(секанс*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В прямоугольном треугольнике равная отношению гипотенузы к катету, прилежащему к данному углу.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_secant <- binary_relation;;
+nrel_secant <= nrel_first_domain: nrel_angle_measure;;
+nrel_secant <= nrel_secantond_domain: concept_number;;

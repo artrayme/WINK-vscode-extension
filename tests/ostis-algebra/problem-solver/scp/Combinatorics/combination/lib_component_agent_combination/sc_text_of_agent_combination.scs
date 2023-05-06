@@ -1,0 +1,7 @@
+sc_text_of_agent_combination 
+-> rrel_key_sc_element:
+	agent_combination;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_combination = [*^"file://agent_combination.scsi"*];;
+

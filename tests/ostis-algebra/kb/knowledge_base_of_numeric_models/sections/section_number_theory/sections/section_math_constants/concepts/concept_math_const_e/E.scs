@@ -1,0 +1,60 @@
+concept_math_const_e=>nrel_main_idtf: [число е](*<-lang_ru;;*);	[number e](*<-lang_en;;*);;
+
+concept_math_const_e=>nrel_idtf:	[2,718](*<-lang_ru;;*);		[e](*<-lang_en;;*);;
+
+concept_math_const_e <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(число e)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[e — основание натурального логарифма, математическая константа, иррациональное и трансцендентное число. Иногда число e называют числом Эйлера или числом Непера. Обозначается строчной латинской буквой «e». е=2,718281828…](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_math_const_e <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(иррациональное число; трансцендентное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Число e иррационально и даже трансцендентно. ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_math_const_e <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(свойство числа е)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[(de^x)/(dx)=e^x](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+concept_math_const_e<-concept_number;;
+concept_math_const_e<-concept_irrational_number;;
+
+
+concept_math_const_e <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение значения функций.](* <- lang_ru;; *);;
+		*);;
+	*);;

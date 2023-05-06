@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/relation" idtf="nrel_exponential_factorial" shapeColor="0" id="54484728" parent="0" left="0" top="0" right="201" bottom="29" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="431.5" y="304.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="rrel_example" shapeColor="0" id="54484584" parent="0" left="0" top="0" right="105" bottom="29" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="364.5" y="365.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="nine" shapeColor="0" id="54483432" parent="0" left="0" top="0" right="39" bottom="29" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="544.5" y="419.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="three" shapeColor="0" id="54480264" parent="0" left="0" top="0" right="45" bottom="29" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="324.5" y="420.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="51858736" parent="0" id_b="54480264" id_e="54483432" b_x="324.5" b_y="420.5" e_x="544.5" e_y="419.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="51863944" parent="0" id_b="54484584" id_e="51863776" b_x="364.5" b_y="365.5" e_x="47" e_y="73" dotBBalance="0" dotEBalance="0.460334">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="51863776" parent="0" id_b="54484728" id_e="51858736" b_x="431.5" b_y="304.5" e_x="47" e_y="73" dotBBalance="0" dotEBalance="0.484258">
+            <points/>
+        </arc>
+    </staticSector>
+</GWF>

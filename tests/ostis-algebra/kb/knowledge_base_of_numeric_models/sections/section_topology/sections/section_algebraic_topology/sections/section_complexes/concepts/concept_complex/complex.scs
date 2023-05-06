@@ -1,0 +1,11 @@
+sc_node_not_relation -> concept_complex;;
+concept_complex => nrel_main_idtf:
+	[комплекс](*<-lang_ru;;*);
+	[complex](*<-lang_en;;*);;
+
+concept_algebraic_topology => nrel_inclusion: concept_complex;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_topology
+	};;

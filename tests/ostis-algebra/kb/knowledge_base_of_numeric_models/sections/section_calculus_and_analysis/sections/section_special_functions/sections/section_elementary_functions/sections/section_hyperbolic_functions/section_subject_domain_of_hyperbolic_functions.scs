@@ -1,0 +1,32 @@
+sc_node_struct -> section_subject_domain_of_hyperbolic_functions;;
+
+section_subject_domain_of_hyperbolic_functions => nrel_main_idtf:
+    [Раздел. Предметная область гиперболических функций] (* <- lang_ru;; *);
+    [Section. Subject domain of hyperbolic functions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_hyperbolic_functions <- nrel_system_identifier;;
+
+section_subject_domain_of_hyperbolic_functions -> rrel_key_sc_element:
+    subject_domain_of_hyperbolic_functions;
+    concept_hyperbolic_function;
+    nrel_ch;
+    nrel_cth;
+    nrel_sh;
+    nrel_th;;
+
+section_subject_domain_of_hyperbolic_functions = [*
+    subject_domain_of_hyperbolic_functions => nrel_main_idtf:
+        [Предметная область гиперболических функций] (* <- lang_ru;; *);
+        [Subject domain of hyperbolic functions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_hyperbolic_functions -> rrel_maximum_studied_object_class:
+        concept_hyperbolic_function;;
+
+    subject_domain_of_hyperbolic_functions -> rrel_explored_relation:
+        nrel_ch;
+        nrel_cth;
+        nrel_sh;
+        nrel_th;;
+*];;

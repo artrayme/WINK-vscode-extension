@@ -1,0 +1,27 @@
+ui_menu_file_for_factorization <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_factorization => nrel_main_idtf: 
+	[Разложить составное число на простые множители] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_factorization => nrel_main_idtf: 
+	[Request of finding factorization] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_factorization => ui_nrel_command_template:
+	[*
+		question_factorization _-> ._question_factorization_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._question_factorization_instance _<- question;;
+	*];;
+
+ui_menu_file_for_factorization => ui_nrel_command_lang_template: 
+	[Разложить составное число $ui_arg_1 на простые множители] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_factorization => ui_nrel_command_lang_template: 
+	[Request of finding factorization: $ui_arg_1 ] 
+	(* <- lang_en;; *);;
+

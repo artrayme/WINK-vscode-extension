@@ -1,0 +1,35 @@
+sc_node_struct -> section_subject_domain_of_algebra;;
+
+section_subject_domain_of_algebra => nrel_main_idtf:
+    [Раздел. Предметная область алгебры] (* <- lang_ru;; *);
+    [Section. Subject domain of algebra] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_algebra <- nrel_system_identifier;;
+
+section_subject_domain_of_algebra => nrel_section_decomposition: {
+    section_subject_domain_of_elementary_algebra;
+    section_subject_domain_of_linear_algebra;
+    section_subject_domain_of_quaternions_and_clifford_algebras;
+    section_subject_domain_of_general_algebra
+};;
+  
+section_subject_domain_of_algebra -> rrel_key_sc_element:
+    subject_domain_of_algebra;
+    concept_algebra;;
+
+section_subject_domain_of_algebra = [*
+    subject_domain_of_algebra => nrel_main_idtf:
+        [Предметная область алгебры] (* <- lang_ru;; *);
+        [Subject domain of algebra] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_algebra => nrel_private_subject_domain:
+        subject_domain_of_elementary_algebra;
+        subject_domain_of_linear_algebra;
+        subject_domain_of_quaternions_and_clifford_algebras;
+        subject_domain_of_general_algebra;;
+
+    subject_domain_of_algebra -> rrel_maximum_studied_object_class:
+        concept_algebra;;
+*];;

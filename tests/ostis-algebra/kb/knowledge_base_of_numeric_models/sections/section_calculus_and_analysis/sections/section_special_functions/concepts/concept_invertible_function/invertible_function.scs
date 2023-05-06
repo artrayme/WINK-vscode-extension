@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_invertible_function;;
+concept_invertible_function=> nrel_main_idtf :
+[обратимая функция] (* <- lang_ru;; *);
+[invertible function] (* <- lang_en;; *);; 
+
+//определение
+concept_invertible_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(обратимая функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция, которая принимает каждое своё значение в единственной точке области определения, называется обратимой.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://invertible_function1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+// утверждения
+concept_invertible_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(функция; прямая; ось ординат; график)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Теорема. Строго монотонная функция обратима.Функция является обратимой в том и только в том случае, если любая прямая, перпендикулярная оси ординат, имеет с ее графиком не более одной общей точки.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

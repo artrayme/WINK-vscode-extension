@@ -1,0 +1,41 @@
+sc_node_not_relation -> concept_algebraic_topology;;
+concept_algebraic_topology => nrel_main_idtf:
+	[алгебраическая топология](*<-lang_ru;;*);
+	[algebraic topology](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_algebraic_topology<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(алгебраическая топология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Алгебраическая топология - это раздел математики, который использует инструменты из абстрактной алгебры для изучения топологических пространств.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_topology => nrel_inclusion: concept_algebraic_topology;;
+
+//разбиение
+ concept_algebraic_topology<=nrel_subdividing:
+...
+(*
+     ->concept_homotopy_group;;
+     ->concept_homology;;
+     ->concept_cohomology;;
+     ->concept_manifold;;
+     ->concept_knot_theory;;
+     ->concept_complex;;
+*);;
+
+concept_algebraic_topology <= nrel_using_constants:
+	{
+	concept_topology;
+     concept_algebra;
+	concept_topological_space
+	};;
+
+concept_algebraic_topology -> rrel_example:	"file://torus.png";;

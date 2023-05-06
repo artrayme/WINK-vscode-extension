@@ -1,0 +1,73 @@
+sc_node_norole_relation-> nrel_the_line_integral_of_the_first_kind;;
+nrel_the_line_integral_of_the_first_kind=>nrel_main_idtf:
+[криволинейный интеграл первого рода* ](*<-lang_ru;;*);
+[the line integral of the first kind* ](*<-lang_en;;*);;
+
+nrel_the_line_integral_of_the_first_kind<= nrel_first_domain:
+concept_function;;
+
+nrel_the_line_integral_of_the_first_kind<= nrel_second_domain: 
+concept_number;;
+
+
+nrel_the_line_integral_of_the_first_kind<= nrel_using_constants: concept_interval; nrel_integral;;
+nrel_the_line_integral_of_the_first_kind<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(криволинейный интеграл первого рода*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_line_integral_of_the_first_kind.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_the_line_integral_of_the_first_kind <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(криволинейный интеграл первого рода*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_line_integral_of_the_first_kind1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_the_line_integral_of_the_first_kind<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://the_line_integral_of_the_first_kind2.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_the_line_integral_of_the_first_kind<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на вычисление криволинейного интеграла первого рода.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_the_line_integral_of_the_first_kind-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://the_line_integral_of_the_first_kind3.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);; 

@@ -1,0 +1,91 @@
+sc_node_not_relation->concept_exponential_equation;;
+concept_exponential_equation => nrel_main_idtf :
+[показательное уравнение](*<-lang_ru;;*);
+[exponential equation](*<-lang_en;;*);;
+
+concept_exponential_equation <= nrel_using_constants: concept_variable;;
+
+//определение
+concept_exponential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(показательное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					[Уравнение, которое содержит неизвестное в показателе степени, называется показательным уравнением.] (* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+"file://exponential_equation2.html"   (* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+// утверждения
+concept_exponential_equation  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(корень уравненмя)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://exponential_equation1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://exponential_equation3.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_exponential_equation <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение корней показательного уравнения](* <- lang_ru;; *);;
+*);;
+*);;
+
+// конкретные задачи
+concept_exponential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://exponential_equation4.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_exponential_equation -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://exponential_equation5.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;

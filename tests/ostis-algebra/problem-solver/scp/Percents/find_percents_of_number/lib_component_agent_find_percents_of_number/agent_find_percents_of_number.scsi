@@ -1,0 +1,361 @@
+agent_find_percents_of_number
+=> nrel_main_idtf:
+	[агентная scp-программа нахождения процента от числа] (* <- lang_ru;; *);
+	
+	[agent scp-program finding percents of number] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_find_percents_of_number 
+	(*
+	-> rrel_params: .agent_find_percents_of_number_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_find_percents_of_number_operatorset 
+		(*
+		-> rrel_init: .agent_find_percents_of_number_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_find_percents_of_number_operator2;;
+			*);;
+
+		-> .agent_find_percents_of_number_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_find_percents_of_number;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_find_percents_of_number_operator3;;
+		  	=> nrel_else: .agent_find_percents_of_number_operatorreturn;;
+			*);;
+		-> .agent_find_percents_of_number_operator3 
+                       (*
+                        <- printEl;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+                        =>nrel_goto: .agent_find_percents_of_number_operator4;;
+                        *);;
+                
+		-> .agent_find_percents_of_number_operator4
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_dividend;;
+
+			=> nrel_goto: .agent_find_percents_of_number_operator5;;
+			
+			*);;
+                     
+		->.agent_find_percents_of_number_operator5
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_find_percents_of_number_operator6;;
+			*);;  
+                
+                -> .agent_find_percents_of_number_operator6
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _param3;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc21;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_divider;;
+
+			=> nrel_goto: .agent_find_percents_of_number_operator7;;
+			
+			*);;
+                     
+                ->.agent_find_percents_of_number_operator7
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param3;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_find_percents_of_number_operator8;;
+			*);;  
+                    
+		-> .agent_find_percents_of_number_operator8 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_find_percents_of_number_operator9;;
+		 	*);;
+                 
+                -> .agent_find_percents_of_number_operator9
+			(*
+		 	<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+
+                 	=> nrel_goto: .agent_find_percents_of_number_operator10 ;;
+			
+                 	*);;
+
+		-> .agent_find_percents_of_number_operator10
+			(*
+		 	<- contDiv;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _answer1;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [100];;
+
+                 	=> nrel_goto: .agent_find_percents_of_number_operator11 ;;
+			
+                 	*);;
+
+		-> .agent_find_percents_of_number_operator11
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc8;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _answer1;;
+                        =>nrel_goto:  .agent_find_percents_of_number_operator12;;
+                        *);;
+
+                -> .agent_find_percents_of_number_operator12 
+                       (*
+                        <- printEl;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _answer1;;
+                        =>nrel_goto: .agent_find_percents_of_number_operator13;;
+                        *);;
+	
+		->.agent_find_percents_of_number_operator13
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_first_entered_element;;
+ 
+                        =>nrel_goto: .agent_find_percents_of_number_operator14;;
+                        *);;
+                           
+		->.agent_find_percents_of_number_operator14
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc16;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_second_entered_element;;
+ 
+                        =>nrel_goto: .agent_find_percents_of_number_operator15;;
+                        *);;
+
+		->.agent_find_percents_of_number_operator15
+                        (*
+                         <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc31;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_then: .agent_find_percents_of_number_operator16;;
+                        =>nrel_else: .agent_find_percents_of_number_operator17;;
+                        *);;
+
+		->  .agent_find_percents_of_number_operator16
+                        (*
+                         <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last;;
+
+                        => nrel_goto: .agent_find_percents_of_number_operator17;;
+                         *);;
+
+		->.agent_find_percents_of_number_operator17
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _answer1;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_goto: .agent_find_percents_of_number_operator18;;
+                        *);;
+                   
+		->.agent_find_percents_of_number_operator18
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: nrel_percentage;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: ..division;;
+ 
+                        =>nrel_goto: .agent_find_percents_of_number_operator19;;
+                        *);;
+                      
+		->.agent_find_percents_of_number_operator19
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+             		
+                        =>nrel_goto: .agent_find_percents_of_number_operator20;;
+                        *);;
+                             
+
+		->.agent_find_percents_of_number_operator20
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_first_entered_element;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_find_percents_of_number_operator21;;
+                        *);;
+
+		-> .agent_find_percents_of_number_operator21
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_first_entered_element;;
+
+				=> nrel_goto: .agent_find_percents_of_number_operator22;;
+				*);;
+			 
+                    
+		->.agent_find_percents_of_number_operator22
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_second_entered_element;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_find_percents_of_number_operator23;;
+                        *);;
+
+		-> .agent_find_percents_of_number_operator23
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_second_entered_element;;
+
+				=> nrel_goto: .agent_find_percents_of_number_operator24;;
+				*);;
+                    
+                      
+                ->.agent_find_percents_of_number_operator24
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..division;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                          ->rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+                        =>nrel_goto: .agent_find_percents_of_number_operator25;;
+                        *);;
+
+		->.agent_find_percents_of_number_operator25
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc25;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_result;;
+
+                        =>nrel_goto: .agent_find_percents_of_number_operator26;;
+                        *);;
+
+		->.agent_find_percents_of_number_operator26
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc26;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          
+                        =>nrel_goto: .agent_find_percents_of_number_operator27;;
+                        *);; 
+                    
+		->.agent_find_percents_of_number_operator27
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc27;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_percentage;;
+
+                        =>nrel_goto: .agent_find_percents_of_number_operatorgen_answer;;
+                        *);;
+
+		-> .agent_find_percents_of_number_operatorgen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc4;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_find_percents_of_number_operatorreturn;;
+			*);;     
+					
+		-> .agent_find_percents_of_number_operatorreturn 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

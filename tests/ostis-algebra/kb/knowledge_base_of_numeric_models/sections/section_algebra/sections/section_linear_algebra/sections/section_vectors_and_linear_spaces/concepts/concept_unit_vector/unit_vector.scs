@@ -1,0 +1,32 @@
+sc_node_not_relation->concept_unit_vector;;
+
+concept_unit_vector=>nrel_main_idtf:
+[единичный вектор](*<-lang_ru;;*);
+[unit vector](*<-lang_en;;*);;
+
+concept_unit_vector=> nrel_idtf:[орт](*<-lang_ru;;*);;
+
+concept_unit_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(единичный вектор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Единичный вектор - вектор, норма (длина) которого равна единице.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+concept_unit_vector-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[|a|=1](* <- lang_ru;; 	*);;
+		*);;
+	*);;

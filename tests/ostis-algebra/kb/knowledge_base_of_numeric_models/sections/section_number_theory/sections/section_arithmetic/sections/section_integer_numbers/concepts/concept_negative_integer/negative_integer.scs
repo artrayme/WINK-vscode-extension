@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_negative_integer;; 
+
+concept_negative_integer => nrel_main_idtf:
+[отрицательное целое число](*<-lang_ru;;*);
+[negative integer](*<-lang_en;;*);;
+	
+//надмножество
+concept_integer => nrel_inclusion: concept_negative_integer;;
+
+//определения и пояснения
+concept_negative_integer <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (отрицательное целое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Отрицательным целым числом называется целое число меньше нуля.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_negative_integer <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество; отрицательное целое число; ограничено сверху*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество отрицательных целых чисел ограничено сверху.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(отрицательное целое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Самое большое отрицательное целое число — -1.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество; отрицательное целое число; арифметическая прогрессия)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://negative_integer_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,71 @@
+sc_node_norole_relation -> nrel_multiplication;;
+
+nrel_multiplication => nrel_main_idtf:
+[умножение* ](* <- lang_ru;; *);  
+[multiplication* ](* <- lang_en;; *);
+[көбейту* ](* <- lang_kz;;*);;
+
+nrel_multiplication=>nrel_mathem_idtf: [⋅] (*<-lang_en;;*);;
+nrel_multiplication=>nrel_mathem_idtf: [×] (*<-lang_en;;*);;
+
+//определение
+nrel_multiplication <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(умножение*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Умножение - математическая операция сложения указанного количества одинаковых слагаемых.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+nrel_multiplication <= nrel_using_constants:
+	{
+	rrel_summand;
+	nrel_addition
+	};;
+	
+//утверждения
+nrel_multiplication <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(умножение*; отношение коммутативности)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Умножение обладает свойством коммутативности (переместительный закон): a*b = b*a.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(умножение*; отношение ассоциативности)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Умножение обладает свойством ассоциативности (сочетательный закон): a*(b*c) = (a*b)*c.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(умножение*; отношение дистрибутивности)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Умножение обладает свойством дистрибутивности (распределительный закон) : a*(b+c) = a*b + a*c.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_multiplication <- ternary_relation;;
+nrel_multiplication <= nrel_first_domain: concept_number;;
+nrel_multiplication <= nrel_second_domain: concept_number;;
+nrel_multiplication <= nrel_third_domain: concept_number;;

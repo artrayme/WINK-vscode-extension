@@ -1,0 +1,39 @@
+sc_node_norole_relation->nrel_fractional_derivative;;
+
+nrel_fractional_derivative=>nrel_main_idtf:
+[дробная производная* ](*<-lang_ru;;*);
+[fractional derivative* ](*<-lang_en;;*);;
+
+//определение
+nrel_fractional_derivative <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дробная производная*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://fractional_derivative.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+	
+nrel_fractional_derivative <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дробная производная*; линейность*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дробная производная линейна.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_fractional_derivative <- binary_relation;;
+nrel_fractional_derivative <= nrel_first_domain:  concept_function;;
+nrel_fractional_derivative <= nrel_second_domain: concept_function;;

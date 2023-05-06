@@ -1,0 +1,48 @@
+sc_node_not_relation -> concept_arithmetic_expression;; 
+
+concept_arithmetic_expression => nrel_main_idtf:
+[арифметическое выражение](*<-lang_ru;;*);
+[arithmetic expression](*<-lang_en;;*);;
+	
+//надмножество
+concept_expression => nrel_inclusion: concept_arithmetic_expression;;
+
+//определения и пояснения
+concept_arithmetic_expression <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (арифметическое выражение)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Арифметическое выражение - выражение, в котором операндами являются объекты, над которыми выполняются арифметические операции.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_arithmetic_expression <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(значение; арифметическое выражение; арифметическая операция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Значение арифметического выражения вычисляется в соответствии с приоритетом арифметических операций.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(арифметическое выражение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для изменения порядка вычисления арифметического выражения используются круглые скобки.](* <- lang_ru;; *);;
+		*);;
+	*);;

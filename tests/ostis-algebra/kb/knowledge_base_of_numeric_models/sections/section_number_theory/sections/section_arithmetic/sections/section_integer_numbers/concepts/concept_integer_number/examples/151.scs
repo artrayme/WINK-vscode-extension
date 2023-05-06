@@ -1,0 +1,6 @@
+one_hudred_and_fifty_one=>nrel_main_idtf:
+[151](*<-lang_ru;;*);
+[151](*<-lang_en;;*);;
+
+concept_number -> one_hudred_and_fifty_one;;
+set_of_number -> one_hudred_and_fifty_one;;

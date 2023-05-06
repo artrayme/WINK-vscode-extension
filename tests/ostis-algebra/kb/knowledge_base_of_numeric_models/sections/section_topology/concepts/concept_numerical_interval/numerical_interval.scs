@@ -1,0 +1,52 @@
+sc_node_not_relation->concept_numerical_interval;; 
+
+concept_numerical_interval=>nrel_main_idtf:
+[числовой промежуток](*<-lang_ru;;*);
+[numerical interval](*<-lang_en;;*);;
+
+concept_numerical_interval=> nrel_using_constants: concept_number;concept_numerical_sequence;;
+
+concept_numerical_interval<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(числовой промежуток)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Числовой промежуток - общее название для основных числовых множеств действительных чисел на числовых прямых интервала, отрезка, полуинтервала, луча.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+sc_node_not_relation->concept_infinite_number_interval;; 
+concept_infinite_number_interval=>nrel_main_idtf:
+[бесконечный числовой промежуток](*<-lang_ru;;*);
+[infinite number interval](*<-lang_en;;*);;
+
+sc_node_not_relation->concept_final_numerical_interval;; 
+concept_final_numerical_interval=>nrel_main_idtf:
+[конечный числовой промежуток](*<-lang_ru;;*);
+[final number interval](*<-lang_en;;*);;
+
+concept_numerical_interval<= nrel_subdividing:
+	...
+	(* 
+	-> concept_infinite_number_interval;;
+	-> concept_final_numerical_interval;;
+	*);;
+
+concept_infinite_number_interval<= nrel_subdividing:
+	...
+	(* 
+	-> concept_ray;;
+	-> concept_open_ray;;
+	*);;
+
+concept_final_numerical_interval<= nrel_subdividing:
+	...
+	(* 
+	-> concept_interval;;
+	-> concept_section;;
+     ->concept_half_interval;;
+	*);;

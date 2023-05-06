@@ -1,0 +1,76 @@
+sc_node_norole_relation->nrel_division_of_decimal_fraction;;
+
+nrel_division_of_decimal_fraction=>nrel_main_idtf:
+[деление десятичных дробей* ](*<-lang_ru;;*);
+[онды бөлімшесі* ](*<-lang_kz;;*);
+[division of decimal fraction* ](*<-lang_en;;*);;
+
+// синонимы
+nrel_division_of_decimal_fraction=> nrel_idtf:[деление десятичной дроби на десятичную дробь* ](*<-lang_ru;;*);;
+
+nrel_division_of_decimal_fraction => nrel_first_domain:concept_decimal;;
+nrel_division_of_decimal_fraction => nrel_second_domain: concept_decimal;;
+nrel_division_of_decimal_fraction => nrel_third_domain: concept_decimal;;
+
+//определение
+nrel_division_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(деление десятичных дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Деление определяется как действие, обратное умножению.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(метод деления десятичных дробей)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://division_of_decimal_fraction.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_division_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Найти частное от деления 0,45/2,5] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_division_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение деления десятичных дробей](* <- lang_ru;; *);;
+		*);;
+	*);;
+ nrel_division_of_decimal_fraction  -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		    [z1=0.04569 , z2=0.0006. z1/z2=0,04569/0.0006=76,15.]         (* <- lang_ru;;*);;
+		*);;
+	*);;

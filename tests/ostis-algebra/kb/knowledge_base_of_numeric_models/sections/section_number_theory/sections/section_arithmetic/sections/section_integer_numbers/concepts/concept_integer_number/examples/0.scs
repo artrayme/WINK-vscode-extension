@@ -1,0 +1,99 @@
+null=>nrel_main_idtf:
+[0](*<-lang_ru;;*);
+[0](*<-lang_en;;*);
+[0](*<-lang_kz;;*);;
+
+// синонимы
+null=> nrel_idtf:[ноль](*<-lang_ru;;*);;
+null=> nrel_idtf:[нуль](*<-lang_ru;;*);;
+null=> nrel_idtf:[null](*<-lang_en;;*);;
+null=> nrel_idtf:[нөл](*<-lang_kz;;*);;
+
+concept_number -> null;;
+set_of_number -> null;;
+
+//определение
+null <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(ноль)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[0 (ноль, нуль от лат. nullus — никакой) — целое число, разделяющее на числовой прямой положительные целые и отрицательные целые числа.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пояснение
+null <- rrel_key_sc_element:
+ ...
+    (*
+=> nrel_main_idtf: [Пояснение (ноль)] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Ноль — это нейтральный элемент для операции сложения. Умножение любого элемента множества на ноль дает ноль. Ноль не изменяет значения числа при прибавлении к нему.](* <- lang_ru;; 	*);;
+*);;
+*);;
+
+// утверждения
+null <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение натуральных чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Свойство числа 0 при сложении: а+0=а](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(умножение натуральных чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Свойство числа 0 при умножении: а⋅0=0](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(деление натуральных чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Свойство деления: 0:а=0](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(деление натуральных чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[На нуль делить нельзя! (Деление на нуль принципиально невыполнимо, так как в этом случае частное либо не существует, либо определено неоднозначно)](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(возведение в степень натуральных чисел*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://0.html"	(* <- lang_ru;; 	*);;
+		*);;
+	*);;

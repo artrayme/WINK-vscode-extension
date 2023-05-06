@@ -1,0 +1,56 @@
+sc_node_not_relation -> concept_imaginary_unit;;
+
+concept_imaginary_unit=>nrel_main_idtf:
+[imaginary unit](*<-lang_en;;*);
+[мнимая единица](*<-lang_ru;;*);;
+
+//определение 
+concept_imaginary_unit<-rrel_key_sc_element:
+...
+(*	
+	=>nrel_main_idtf:[Опр.(мнимая единица)](*<-lang_ru;;*);;
+   <-sc_explanation;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Мнимая единица — комплексное число, квадрат которого равен −1](*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//утверждения
+concept_imaginary_unit<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(мнимая единица)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [В математике, физике мнимая единица обозначается как латинская i или j](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(факториал*,гамма функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Факториал мнимой единицы i можно определить как значение гамма-функции от аргумента 1 + i.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(степень')](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://example.html"(*<-lang_ru;;*);;
+*);;
+*);;

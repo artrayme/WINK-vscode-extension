@@ -1,0 +1,60 @@
+sc_node_norole_relation->nrel_comparing_integers;;
+
+nrel_comparing_integers=>nrel_main_idtf:
+[сравнение целых чисел* ](*<-lang_ru;;*);
+[салыстыру бүтін* ](*<-lang_kz;;*);
+[comparing integers* ](*<-lang_en;;*);;
+
+nrel_comparing_integers=> nrel_idtf:[comparison of whole number* ](*<-lang_en;;*);;
+
+//определение
+nrel_comparing_integers <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(сравнение целых чисел*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Знаки < (меньше) и > (больше) похожи на стрелки и всегда указывают на меньшее число.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://comparing_integers_2.html"(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://comparing_integers_4.html"(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://comparing_integers_5.html"(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			"file://comparing_integers_3.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_comparing_integers <= nrel_using_constants: concept_integer;;
+
+// классы задач и способы решения
+nrel_comparing_integers  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на сравнение чисел положительных и отрицательных чисел.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+

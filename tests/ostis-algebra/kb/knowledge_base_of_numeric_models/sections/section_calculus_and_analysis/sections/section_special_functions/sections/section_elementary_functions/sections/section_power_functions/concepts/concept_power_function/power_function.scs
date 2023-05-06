@@ -1,0 +1,142 @@
+sc_node_not_relation -> concept_power_function;;
+concept_power_function=> nrel_main_idtf :
+[степенная функция] (* <- lang_ru;; *);
+[power function] (* <- lang_en;; *);; 
+
+concept_power_function <= nrel_subdividing:
+    ... 
+(*
+	->concept_power_function_with_positive_fractional_exponent;;
+	->concept_power_function_with_negative_fractional_exponent;;
+*);;
+
+sc_node_not_relation -> concept_power_function_with_positive_fractional_exponent;;
+concept_power_function_with_positive_fractional_exponent=> nrel_main_idtf :
+[степенная функция с положительным дробным показателем] (* <- lang_ru;; *);
+[power function with positive fractional exponent] (* <- lang_en;; *);; 
+
+sc_node_not_relation -> concept_power_function_with_negative_fractional_exponent;;
+concept_power_function_with_negative_fractional_exponent=> nrel_main_idtf :
+[степенная функция с отрицательным дробным показателем] (* <- lang_ru;; *);
+[power function with a negative fractional exponent] (* <- lang_en;; *);; 
+
+concept_power_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(степенная функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_power_function <= nrel_using_constants: concept_variable;;
+
+concept_power_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; область определения*; множество значений*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function1.html"(* <- lang_ru;; *);;
+		*);;
+	*); 
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; область определения*; множество значений*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function2.html"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; область определения*; множество значений*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function3.html"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; область определения*; множество значений*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function4.html"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; область определения*; множество значений*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function5.html"(* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(натуральное число; область определения*; множество значений*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function6.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+// конкретные задачи
+concept_power_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function7.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_power_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение является ли функция степенной.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_power_function -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://power_function8.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

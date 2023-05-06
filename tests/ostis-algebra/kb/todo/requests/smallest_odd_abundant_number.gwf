@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/attribute" idtf="rrel_smallest_odd_abundant_number" shapeColor="0" id="47783728" parent="41547168" left="0" top="0" right="210.391" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="719.114" y="138.527" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_abundant_number" shapeColor="0" id="47672640" parent="41547168" left="0" top="0" right="156.25" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="872.681" y="77.0676" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_odd_number" shapeColor="0" id="47685504" parent="41547168" left="0" top="0" right="124.484" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="702.681" y="267.068" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/general_node" idtf="" shapeColor="0" id="47724224" parent="41547168" x="865.681" y="177.068" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/var/pos" idtf="" shapeColor="0" id="41374064" parent="41547168" id_b="47783728" id_e="47784864" b_x="719.114" b_y="138.527" e_x="491.681" e_y="36.0676" dotBBalance="0" dotEBalance="0.432196">
+            <points/>
+        </arc>
+        <arc type="arc/var/pos" idtf="" shapeColor="0" id="47694048" parent="41547168" id_b="47685504" id_e="47724224" b_x="702.681" b_y="267.068" e_x="865.681" e_y="177.068" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/var/pos" idtf="" shapeColor="0" id="47692704" parent="41547168" id_b="47783728" id_e="47694048" b_x="719.114" b_y="138.527" e_x="491.681" e_y="36.0676" dotBBalance="0" dotEBalance="0.43635">
+            <points/>
+        </arc>
+        <arc type="arc/var/pos" idtf="" shapeColor="0" id="47784864" parent="41547168" id_b="47672640" id_e="47724224" b_x="872.681" b_y="77.0676" e_x="865.681" e_y="177.068" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <contour type="" idtf="Какое число является наименьшим нечётным избыточным числом?" shapeColor="0" id="41547168" parent="0" left="0" top="0" right="407.984" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10">
+            <points>
+                <point x="655.405" y="55.4054"/>
+                <point x="662.162" y="310.811"/>
+                <point x="1090.54" y="313.514"/>
+                <point x="1072.97" y="50"/>
+            </points>
+        </contour>
+        <node type="node/const/general_node" idtf="requests_to_the_system" shapeColor="0" id="42558592" parent="0" left="0" top="0" right="133.547" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="536.527" y="294.635" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="rrel_smallest_odd_abundant_number" shapeColor="0" id="35703360" parent="0" left="0" top="0" right="210.391" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="195" y="93" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_odd_number" shapeColor="0" id="42389200" parent="0" left="0" top="0" right="124.484" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="211" y="231" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="concept_abundant_number" shapeColor="0" id="30747184" parent="0" left="0" top="0" right="156.25" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="381" y="41" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="nine_hundred_and_forty_five" shapeColor="0" id="37557328" parent="0" left="0" top="0" right="168.219" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="374" y="141" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="46918112" parent="0" id_b="35703360" id_e="43567088" b_x="195" b_y="93" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.377456">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="47175936" parent="0" id_b="42558592" id_e="41547168" b_x="536.527" b_y="294.635" e_x="872.973" e_y="181.757" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="37703584" parent="0" id_b="35703360" id_e="45913456" b_x="195" b_y="93" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.43635">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="45913456" parent="0" id_b="42389200" id_e="37557328" b_x="211" b_y="231" e_x="374" e_y="141" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="43567088" parent="0" id_b="30747184" id_e="37557328" b_x="381" b_y="41" e_x="374" e_y="141" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+    </staticSector>
+</GWF>

@@ -1,0 +1,61 @@
+sc_node_norole_relation -> nrel_collinearity;;
+nrel_collinearity=>nrel_main_idtf:
+[коллинеарность* ](*<-lang_ru;;*);
+[collinearity* ](*<-lang_en;;*);;
+
+//определения и пояснения
+nrel_collinearity <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(коллинеарность*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Коллинеарность - отношение параллельности векторов: два ненулевых вектора называются коллинеарными, если они лежат на параллельных прямых или на одной прямой.](* <- lang_ru;; *);;
+		*);;
+*);;
+
+// утверждения и теоремы
+nrel_collinearity<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(коллинеарность*, рефлексивность*, симметричность*, транзитивность*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Коллинеарность - отношение эквивалентности, то есть оно рефлексивно, симметрично, транзитивно.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор, коллинеарность*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Нулевой вектор коллинеарен любому вектору.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор, коллинеарность*, произведение*, скаляр)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Скалярное произведение коллинеарных векторов равно произведению длин векторов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_collinearity<= nrel_using_constants: concept_vector;;
+
+//пример
+nrel_collinearity-> rrel_example :
+	[a||b (вектор a коллинеарен вектору b)](* <- lang_ru;; 	*);;

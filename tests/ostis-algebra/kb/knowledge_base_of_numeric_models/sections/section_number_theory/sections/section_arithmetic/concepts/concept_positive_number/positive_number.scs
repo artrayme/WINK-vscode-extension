@@ -1,0 +1,125 @@
+sc_node_not_relation -> concept_positive_number;;
+
+concept_positive_number => nrel_main_idtf :
+[положительное число] (* <- lang_ru;; *);
+[жағымды сан] (* <- lang_kz;; *);
+[positive number](* <-lang_en;; *);;
+
+// синонимы
+concept_positive_number => nrel_idtf:[Класс положительных чисел](*<-lang_ru;;*);;
+concept_positive_number => nrel_idtf:[Множество положительных чисел](*<-lang_ru;;*);;
+concept_positive_number => nrel_idtf:[Понятие положительного числа](*<-lang_ru;;*);;
+concept_positive_number => nrel_idtf:[Положительные числа](*<-lang_ru;;*);;
+
+//определение и пояснения
+concept_positive_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(положительное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Числа, которые соответствуют точкам координатной прямой, лежащим правее начала отсчета (правее 0) называю положительными.](* <- lang_ru;; 	*);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Числа со знаком плюс (без знака, кроме 0) называют положительными.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+    ...
+    (*
+	=> nrel_main_idtf: [Пояснение(положительное число)](* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+	(*
+	-> rrel_example:
+	[Любое положительное число больше любого отрицательного.](* <- lang_ru;; 	*);;
+	*);;
+	*);;
+
+
+
+// утверждения
+concept_positive_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(больше*; 0)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Всякое положительное число больше 0.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_positive_number <= nrel_using_constants: nrel_multiplication;nrel_division; nrel_comparison;nrel_addition;;
+
+//разбиение
+concept_positive_number <= nrel_subdividing:
+	...
+	(* 
+	-> concept_positive_fraction;;
+	-> concept_positive_integer;;
+	*);;
+
+
+// конкретные задачи
+concept_positive_number  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Чему равно произведение 3 и 1.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Сравнить два положительных числа 1 и 5]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Чему равен модуль числа l2l.]	(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Сложить два положительных числа: 6 и 9.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_positive_number  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение положительного числа.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_positive_number  -> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[1; 13; 9,2](* <- lang_ru;; 	*);;
+		*);;
+	*);;

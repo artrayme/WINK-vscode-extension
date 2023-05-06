@@ -1,0 +1,19 @@
+sc_node_not_relation->concept_inhomogeneous_linear_differential_equation;;
+concept_inhomogeneous_linear_differential_equation => nrel_main_idtf :
+[линейное неоднородное дифференциальное уравнение](*<-lang_ru;;*);
+[inhomogeneous linear differential equation](*<-lang_en;;*);;
+
+
+concept_inhomogeneous_linear_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейное неоднородное дифференциальное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Если в дифференециальном уравнении y'+P(x)*y=Q(x) правая часть Q(x) не равна нулю, то такое уравнение называется
+линейным неоднородным дифференциальным уравнением. P(x) и Q(x) - функции непрерывные на некотором промежутке a<x<b.](* <- lang_ru;; *);;
+		*);;
+*);;

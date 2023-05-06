@@ -1,0 +1,56 @@
+sc_node_not_relation->concept_decimal;;
+
+concept_decimal=>nrel_main_idtf:
+[десятичная дробь](*<-lang_ru;;*);
+[ондық](*<-lang_kz;;*);
+[decimal](*<-lang_en;;*);;
+
+//разбиение
+concept_decimal<= nrel_subdividing:
+	...
+	(* 
+	=>nrel_main_idtf:[По признаку конечности бесконечности](*<-lang_ru;;*);;
+	-> concept_finite_decimal;;
+	-> concept_infinite_decimal;;
+	*);;
+
+//определение
+concept_decimal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(десятичная  дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://decimal_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_decimal<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(действительное число, слагаемое)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://decimal_2.html" (*<-lang_ru;;*);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(действительной число, целое число, десятичная система счисления)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+"file://decimal_3.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+//используемые константы
+concept_decimal <= nrel_using_constants: concept_number;concept_decimal_number_system;;

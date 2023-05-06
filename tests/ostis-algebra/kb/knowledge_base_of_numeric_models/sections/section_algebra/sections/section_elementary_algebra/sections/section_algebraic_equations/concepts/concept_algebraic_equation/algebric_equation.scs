@@ -1,0 +1,84 @@
+sc_node_not_relation->concept_algebraic_equation;; 
+
+concept_algebraic_equation=>nrel_main_idtf:
+[алгебраическое уравнение](*<-lang_ru;;*);
+[algebraic equation](*<-lang_en;;*);;
+concept_algebraic_equation=>nrel_idtf:
+[полиномиальное уравнение](*<-lang_ru;;*);;
+
+concept_algebraic_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(алгебраическое уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://algebraic_equation.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Пояснение(степень алгебраического уравнения)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Степенью алгебраического уравнения называют степень многочлена P.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+   
+concept_algebraic_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равносильные уравнения)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Два алгебраических уравнения, имеющих одно и то же множество решений, называются равносильными.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_algebraic_equation<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://algebraic_equation1.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_algebraic_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение корней алгебраического уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_algebraic_equation-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://algebraic_equation2.html"(* <- lang_ru;;*);;
+		*);;
+	*);;

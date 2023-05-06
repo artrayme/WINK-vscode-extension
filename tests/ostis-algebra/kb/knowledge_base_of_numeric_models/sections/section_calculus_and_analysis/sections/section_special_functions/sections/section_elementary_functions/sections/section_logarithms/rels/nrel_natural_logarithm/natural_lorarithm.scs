@@ -1,0 +1,96 @@
+sc_node_norole_relation->nrel_natural_logarithm;;
+
+nrel_natural_logarithm=>nrel_main_idtf:
+[натуральный логарифм* ](*<-lang_ru;;*);
+[табиғи логарифмін* ](*<-lang_kz;;*);
+[natural logarithm* ](*<-lang_en;;*);;
+
+nrel_natural_logarithm  <= nrel_inclusion: nrel_logarithm ;;
+
+nrel_natural_logarithm<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(натуральный логарифм*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Натуральный логарифм — логарифм по основанию e.Принято его обозначать  ln(b).](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+   
+nrel_natural_logarithm<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение*; деление*; возведение в степень*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://natural_logarithm.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Знак натурального логарифма зависит от логарифмируемого числа: если оно больше 1, логарифм положителен, если оно между 0 и 1, то отрицателен. ]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_natural_logarithm => nrel_using_constants:  nrel_division;nrel_multiplication;;
+
+nrel_natural_logarithm<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Вычислите: ln(14).](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+nrel_natural_logarithm <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение натурального логарифма от заданного числа.](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_natural_logarithm => nrel_first_domain:
+concept_number;;
+
+nrel_natural_logarithm => nrel_second_domain: 
+concept_number;;
+
+nrel_natural_logarithm -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://natural_logarithm1.html"(* <- lang_ru;;*);;
+		*);;
+	*);;

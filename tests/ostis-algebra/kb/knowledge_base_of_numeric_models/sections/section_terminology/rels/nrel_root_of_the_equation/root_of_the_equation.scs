@@ -1,0 +1,70 @@
+sc_node_norole_relation->nrel_root_of_the_equation;; 
+
+nrel_root_of_the_equation=>nrel_main_idtf:
+[корень уравнения* ](*<-lang_ru;;*);
+[root of the equation* ](*<-lang_en;;*);;
+
+nrel_root_of_the_equation =>nrel_first_domain:concept_equation;;
+nrel_root_of_the_equation => nrel_second_domain: concept_number;;
+
+nrel_root_of_the_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(корень уравнения*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Значения неизвестных, при которых равенство Уравнения достигается, называются решениями или корнями данного уравнения.](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_root_of_the_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равносильное уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Равносильными называются уравнения, множества корней которых совпадают. Равносильными также считаются уравнения, которые не имею корней.] (* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Решить уравнение означает найти множество всех его решений (корней) или доказать, что корней нет.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_root_of_the_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Найти корень уравнения: 16+9*х=43](* <- lang_ru;; *);;
+*);;
+*);;
+
+nrel_root_of_the_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Нахождение корней уравнения](* <- lang_ru;; *);;
+*);;
+*);;

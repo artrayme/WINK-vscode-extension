@@ -1,0 +1,22 @@
+sc_node_struct -> section_subject_domain_of_quaternions_and_clifford_algebras;;
+
+section_subject_domain_of_quaternions_and_clifford_algebras => nrel_main_idtf:
+    [Раздел. Предметная область алгебры Клиффорда] (* <- lang_ru;; *);
+    [Section. Subject domain of quaternions and clifford algebras] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_quaternions_and_clifford_algebras <- nrel_system_identifier;;
+
+section_subject_domain_of_quaternions_and_clifford_algebras -> rrel_key_sc_element:
+    subject_domain_of_quaternions_and_clifford_algebras;
+    concept_hypercomplex_number;;
+
+section_subject_domain_of_quaternions_and_clifford_algebras = [*
+    subject_domain_of_quaternions_and_clifford_algebras => nrel_main_idtf:
+        [Предметная область алгебры Клиффорда] (* <- lang_ru;; *);
+        [Subject domain of quaternions and clifford algebras] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_quaternions_and_clifford_algebras -> rrel_not_maximum_studied_object_class:
+        concept_hypercomplex_number;;
+*];;

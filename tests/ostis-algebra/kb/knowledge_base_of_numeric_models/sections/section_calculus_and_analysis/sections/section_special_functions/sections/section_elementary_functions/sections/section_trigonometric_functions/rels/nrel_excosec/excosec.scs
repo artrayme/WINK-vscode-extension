@@ -1,0 +1,5 @@
+sc_node_norole_relation -> nrel_excosec;; 
+
+nrel_excosec => nrel_main_idtf:
+[экскосекант* ](*<-lang_ru;;*);
+[excosecant* ](*<-lang_en;;*);;

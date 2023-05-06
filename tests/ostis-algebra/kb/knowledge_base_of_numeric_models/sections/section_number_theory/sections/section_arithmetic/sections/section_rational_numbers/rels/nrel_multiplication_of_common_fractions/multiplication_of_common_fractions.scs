@@ -1,0 +1,94 @@
+sc_node_norole_relation->nrel_multiplication_of_common_fractions;; 
+
+nrel_multiplication_of_common_fractions=>nrel_main_idtf:
+[умножение обыкновенных дробей* ] (*<-lang_ru;;*);
+[фракцияларын көбейту* ] (*<-lang_kz;;*);
+[multiplication of common fractions* ] (*<-lang_en;;*);;
+// синонимы
+nrel_multiplication_of_common_fractions=>nrel_idtf:[произведение обыкновенных дробей* ] (*<-lang_ru;;*);;
+
+//определение и пояснения
+nrel_multiplication_of_common_fractions<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение обыкновенных дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Произведением дробей называется такая дробь, числитель которой равен произведению числителей исходных дробей, а знаменатель - произведению их знаменателей: (a/b)*(d/c)=(a*d)/(b*c)]	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+nrel_multiplication_of_common_fractions<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (умножение обыкновенных дробей* )]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Таким образом, чтобы умножить дробь на дробь, надо умножить числитель первой дроби на числитель второй и результат записать в числитель; а также перемножить знаменатели и результат записать в знаменатель.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (умножение обыкновенных дробей*  )]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При выполнении умножения по возможности следует сокращать. Сокращать можно только числа стоящие в числителе с числами, стоящими в знаменателе. Числитель с числителем и знаменатель со знаменателем сокращать нельзя.](* <- lang_ru;; *);;
+		*);;
+	*);;
+   
+
+//конкретные задачи
+ nrel_multiplication_of_common_fractions<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Умножение обыкновенных дробей : (3/7)*(2/6); (6/45)*(8/13).](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_multiplication_of_common_fractions<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение произведения обыкновенных дробей ](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_multiplication_of_common_fractions => nrel_first_domain:concept_common_fraction;;
+nrel_multiplication_of_common_fractions => nrel_second_domain: concept_common_fraction;;
+nrel_multiplication_of_common_fractions => nrel_third_domain: concept_common_fraction;;
+
+//пример
+ nrel_multiplication_of_common_fractions -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[(6/4)*(7/3)=(6*7)/(4*3)=42/12=7/2](* <- lang_ru;; 	*);;
+		*);;
+	*);;

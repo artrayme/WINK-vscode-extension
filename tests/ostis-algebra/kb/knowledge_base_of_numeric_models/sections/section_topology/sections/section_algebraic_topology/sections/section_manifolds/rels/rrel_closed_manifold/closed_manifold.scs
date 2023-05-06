@@ -1,0 +1,22 @@
+sc_node_role_relation -> rrel_closed_manifold ;;
+
+rrel_closed_manifold => nrel_main_idtf:	
+	[замкнутое многообразие'](* <- lang_ru;; *);  
+	[closed manifold'](* <- lang_en;; *);;
+
+rrel_closed_manifold => nrel_idtf: [closed'](*<-lang_en;; *);;
+
+rrel_closed_manifold <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(сумма')](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Замкнутое многообразие — компактное связное многообразие без края.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+rrel_closed_manifold -> rrel_example:	"file://sphere.png";;

@@ -1,0 +1,33 @@
+sc_node_not_relation -> concept_general_population;;
+
+concept_general_population => nrel_main_idtf:
+[генеральная совокупность](*<-lang_ru;;*);
+[general population](*<-lang_en;;*);;
+
+
+//определения и пояснения
+concept_general_population <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (генеральная совокупность)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Любое множество, подлежащее изучению в статистике, называется генеральной совокупностью.](*<-lang_ru;;*);;
+		*);;
+	*);;
+//утверждения
+concept_general_population <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(генеральная совокупность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В состав генеральной совокупности входят все объекты, которые планируется изучать.](* <- lang_ru;; *);;
+		*);;
+	*);;

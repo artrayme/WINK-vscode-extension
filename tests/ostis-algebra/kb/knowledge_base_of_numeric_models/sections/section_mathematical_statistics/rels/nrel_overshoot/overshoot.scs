@@ -1,0 +1,43 @@
+sc_node_role_relation -> rrel_overshoot;;
+
+rrel_overshoot => nrel_main_idtf:
+[выброс*](*<-lang_ru;;*);
+[overshoot*](*<-lang_en;;*);;
+
+rrel_overshoot <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(выброс')]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Выброс - это результат измерения отличающийся от общей выборки](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Утв. (выброс' )] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Выбросы могут возникать как из-за ошибки в измерениях, так и из-за необычной природы данных ](* <- lang_ru;; *);;
+		*);;
+	*);
+        ...
+	(*
+	=> nrel_main_idtf: [Утв. (выброс';распределение* )] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Выбросы могут быть частью распределения встречающейся очень редко ](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+rrel_overshoot -> rrel_example :
+			"file://o.png";;

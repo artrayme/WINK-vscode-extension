@@ -1,0 +1,49 @@
+sc_node_not_relation -> concept_arithmetic_operation;;
+
+concept_arithmetic_operation => nrel_main_idtf:
+[арифметическая операция](*<-lang_ru;;*);
+[arithmetic operation](*<-lang_en;;*);
+[Арифметикалык, операция](*<-lang_kz;;*);;
+
+//определение
+
+concept_arithmetic_operation <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(арифметическая операция)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Арифметическая операция - это вычислительная операция над числами.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+concept_arithmetic_operation <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(простейшее тригонометрическое уравнение; уравнение; синус*;  косинус*; тангенс* ; котангенс*; арифметический корень*'; логарифм*; коммутативность*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[У всех операций арифметики есть обратные: у сложения — вычитание, у умножения — деление, у возведения в степень — арифметический корень и логарифм. То, что у сложения и умножения по одной обратной операции, несмотря на их бинарность, объясняется их коммутативностью.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+concept_arithmetic_operation <= nrel_subdividing:
+	...
+	(* 
+	-> nrel_addition;;
+	-> nrel_subtraction;;
+	-> nrel_multiplication;;
+	-> nrel_division;;
+	-> nrel_exponentiation;;
+	-> nrel_logarithm;;
+	*);;
+

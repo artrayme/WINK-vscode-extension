@@ -1,0 +1,72 @@
+sc_node_not_relation -> concept_linear_algebra;; 
+
+concept_linear_algebra => nrel_main_idtf:
+[линейная алгебра](*<-lang_ru;;*);
+[linear algebra](*<-lang_en;;*);
+[cызықтық алгебра](*<-lang_kz;;*);;
+
+//разбиение
+concept_linear_algebra <= nrel_subdividing:
+	...
+	(* 
+	-> concept_vector;;
+	-> concept_matrix;;
+	-> concept_tensor_calculus;;
+	-> concept_invariant_theory;;
+	-> concept_eigenvalue;;
+	-> concept_linear_mapping;;
+	*);;
+	
+//надмножество
+concept_algebra => nrel_inclusion: concept_linear_algebra;;
+
+//определения и пояснения
+concept_linear_algebra <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (линейная алгебра)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Линейная алгебра — раздел алгебры, изучающий объекты линейной природы: векторные (или линейные) пространства, линейные отображения, системы линейных уравнений.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (линейная алгебра)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[ К линейной алгебре также относят теорию определителей, теорию матриц, теорию форм (например, квадратичных), теорию инвариантов, тензорное исчисление.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_linear_algebra <= nrel_using_constants:
+	{
+	concept_algebra;
+	concept_vector;
+	concept_matrix;
+	concept_linear_mappings;
+	concept_invariant_theory;
+	concept_tensor_calculus
+	};;
+	
+//утверждения
+concept_linear_algebra <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(линейная алгебра; общая алгебра; линейное пространоство; кольцо)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Линейная алгебра обобщена средствами общей алгебры, в частности, современное определение линейного (векторного) пространства опирается исключительно на абстрактные структуры, а многие результаты линейной алгебры обобщены на произвольные модули над кольцом.](* <- lang_ru;; *);;
+		*);;
+	*);;

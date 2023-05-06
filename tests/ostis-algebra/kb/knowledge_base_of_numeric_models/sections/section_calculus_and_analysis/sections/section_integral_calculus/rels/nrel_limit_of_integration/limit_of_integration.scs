@@ -1,0 +1,103 @@
+sc_node_norole_relation->nrel_limit_of_integration;; 
+
+nrel_limit_of_integration=>nrel_main_idtf:
+[предел интегрирования* ] (*<-lang_ru;;*);
+[limit of integration* ] (*<-lang_en;;*);;
+
+
+//разбиение
+nrel_limit_of_integration<= nrel_subdividing:
+	...
+  (* 
+    -> nrel_lower_limit_of_integration;;
+    -> nrel_upper_limit_of_integration;;
+	*);;
+
+//определение
+nrel_limit_of_integration<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(предел интегрирования*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Предел интегрирования - действительное число, являющееся границей отрезка, на котором задана интегрируемая функция.]	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//утверждения
+nrel_limit_of_integration<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(нижний предел интегрирования*; верхний предел интегрирования*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Предел интегрирования бывает верхний и нижний.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(определённый интеграл; знак)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При перестановке пределов интегрирования опредлённый интеграл изменяет знак на противоположный.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_limit_of_integration<= nrel_using_constants: nrel_border_segment; concept_real_number; nrel_integration; concept_function;;
+
+//домены
+nrel_limit_of_integration<= nrel_first_domain: concept_numerical_series;;
+nrel_limit_of_integration<= nrel_second_domain: concept_number;;
+
+//пример
+nrel_limit_of_integration-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://1.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+nrel_limit_of_integration<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и методы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение определённого интеграла.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+nrel_limit_of_integration<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://2.png"(* <- lang_ru;; *);;
+*);;
+*);;

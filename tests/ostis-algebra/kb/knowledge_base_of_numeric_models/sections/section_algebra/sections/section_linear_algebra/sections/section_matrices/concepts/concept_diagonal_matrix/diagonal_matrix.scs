@@ -1,0 +1,35 @@
+sc_node_not_relation->concept_diagonal_matrix;;
+
+concept_diagonal_matrix=>nrel_main_idtf:
+[диагональная матрица](*<-lang_ru;;*);
+[diagonal matrix](*<-lang_en;;*);;
+
+concept_diagonal_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(диагональная матрица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Диагональная матрица — квадратная матрица, все элементы которой, стоящие вне главной диагонали, равны нулю.]  (* <- lang_ru;; *);;
+		*);;
+*);;
+
+
+concept_diagonal_matrix-> rrel_example :
+	"file://image033.png";;
+
+concept_diagonal_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(элемент матрицы'; главная диагональ матрицы*; равентсво*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Диагональные элементы матрицы (т.е. элементы, стоящие на главной диагонали) могут также равняться нулю.](* <- lang_ru;; *);;
+		*);;
+	*);;

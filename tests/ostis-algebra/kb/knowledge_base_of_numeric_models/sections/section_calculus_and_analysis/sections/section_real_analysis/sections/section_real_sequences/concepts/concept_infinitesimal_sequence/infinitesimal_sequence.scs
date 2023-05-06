@@ -1,0 +1,70 @@
+sc_node_not_relation -> concept_infinitesimal_sequence;;
+concept_infinitesimal_sequence=> nrel_main_idtf :
+[бесконечно малая последовательность] (* <- lang_ru;; *);
+[infinitesimal sequence] (* <- lang_en;; *);; 
+
+//определение
+concept_infinitesimal_sequence<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(бесконечно малая последовательность)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://infinitesimal_sequence.html" (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+concept_infinitesimal_sequence<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(свойства бесконечно малых последовательностей*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinitesimal_sequence1.html"  (*<-lang_ru;;*);;
+		*);;
+	*);;
+concept_infinitesimal_sequence <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на определение: является ли последовательность бесконечно малой .](* <- lang_ru;; *);;
+*);;
+*);;
+concept_infinitesimal_sequence<= nrel_using_constants:concept_numerical_sequence;;
+
+// конкретные задачи
+concept_infinitesimal_sequence<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли последовательность 1/n бесконечно малой последовательностью. ]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_infinitesimal_sequence-> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Последовательность sin(n)/n бесконечно малая последовательность.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

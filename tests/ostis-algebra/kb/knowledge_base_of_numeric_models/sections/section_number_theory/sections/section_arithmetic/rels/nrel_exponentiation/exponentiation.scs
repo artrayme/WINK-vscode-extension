@@ -1,0 +1,84 @@
+sc_node_norole_relation->nrel_exponentiation;;
+
+nrel_exponentiation=>nrel_main_idtf:
+[возведение в степень* ](*<-lang_ru;;*);
+[exponentiation* ](*<-lang_en;;*);
+[дәрежелеу* ](*<-lang_kz;;*);;
+
+nrel_exponentiation=> nrel_idtf:[involution* ](*<-lang_en;;*);;
+
+//разбиение
+nrel_exponentiation <= nrel_subdividing:
+	...
+	(* 
+    -> nrel_exponentiation_of_natural_numbers;;
+    -> nrel_the_construction_of_a_natural_power_monomials;;
+	*);;
+
+//определение
+nrel_exponentiation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(возведение в степень*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://exponentiation_definition.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_exponentiation <= nrel_using_constants:
+	{
+	concept_number;
+	concept_arithmetic_operation;
+	nrel_multiplication;
+	rrel_base_of_the_power;
+	rrel_exponent
+	};;
+	
+//иерархия
+concept_arithmetic_operation => nrel_inclusion: nrel_exponentiation;;
+	
+nrel_exponentiation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; показатель степени')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое число, кроме нуля, в нулевой степени равно единице.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(возведение в степень*; степень'; показатель степени'; умножение*; основание степени')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При возведении степени в степень показатели степеней перемножаются, а основание остается прежним.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; показатель степени')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое число в первой степени равно самому себе.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+nrel_multiplying_fractions <- ternary_relation;;
+
+nrel_multiplying_fractions => nrel_first_domain: concept_number;;
+nrel_multiplying_fractions => nrel_second_domain: concept_number;;
+nrel_multiplying_fractions => nrel_third_domain: concept_number;;

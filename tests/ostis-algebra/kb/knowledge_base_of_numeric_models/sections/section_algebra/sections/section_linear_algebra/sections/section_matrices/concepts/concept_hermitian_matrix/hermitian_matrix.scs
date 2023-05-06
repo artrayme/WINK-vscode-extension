@@ -1,0 +1,74 @@
+sc_node_not_relation -> concept_hermitian_matrix;; 
+
+concept_hermitian_matrix => nrel_main_idtf:
+[эрмитова матрица](*<-lang_ru;;*);
+[hermitian matrix](*<-lang_en;;*);
+[эрмитова матрица](*<-lang_kz;;*);;
+
+concept_hermitian_matrix => nrel_idtf:[самосопряжённая матрица](*<-lang_ru;;*);;
+concept_hermitian_matrix => nrel_idtf:[self-adjoint matrix](*<-lang_en;;*);;
+	
+//надмножество
+concept_matrix => nrel_inclusion: concept_hermitian_matrix;;
+
+//определения и пояснения
+concept_hermitian_matrix <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (эрмитова матрица)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Эрмитова  матрица — квадратная матрица, элементы которой являются комплексными числами.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+concept_hermitian_matrix <= nrel_using_constants:
+	{
+	concept_matrix;
+	concept_square_matrix;
+	concept_complex_number
+	};;
+	
+//утверждения
+concept_hermitian_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эрмитова матрица; сумма')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма двух эрмитовых матриц является эрмитовой.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эрмитова матрица; нормальная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Эрмитова матрица является нормальной.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(эрмитова матрица; определитель матрицы*; вещественное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Определитель эрмитовой матрицы — вещественное число.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_hermitian_matrix -> rrel_example :
+		"file://concept_hermitian_matrix_example.png";;

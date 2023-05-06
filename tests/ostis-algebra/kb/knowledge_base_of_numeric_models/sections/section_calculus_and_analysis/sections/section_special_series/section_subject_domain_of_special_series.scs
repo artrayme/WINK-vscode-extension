@@ -1,0 +1,31 @@
+sc_node_struct -> section_subject_domain_of_special_series;;
+
+section_subject_domain_of_special_series => nrel_main_idtf:
+    [Раздел. Предметная область особых рядов] (* <- lang_ru;; *);
+    [Section. Subject domain of special series] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_special_series <- nrel_system_identifier;;
+
+section_subject_domain_of_special_series => nrel_section_decomposition: {
+    section_subject_domain_of_progressions
+};;
+  
+section_subject_domain_of_special_series -> rrel_key_sc_element:
+    subject_domain_of_special_series;
+    concept_natural_series;
+    concept_taylor_series;;
+
+section_subject_domain_of_special_series = [*
+    subject_domain_of_special_series => nrel_main_idtf:
+        [Предметная область особых рядов] (* <- lang_ru;; *);
+        [Subject domain of special series] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_special_series => nrel_private_subject_domain:
+        subject_domain_of_progressions;;
+
+    subject_domain_of_special_series -> rrel_not_maximum_studied_object_class:
+        concept_natural_series;
+        concept_taylor_series;;
+*];;

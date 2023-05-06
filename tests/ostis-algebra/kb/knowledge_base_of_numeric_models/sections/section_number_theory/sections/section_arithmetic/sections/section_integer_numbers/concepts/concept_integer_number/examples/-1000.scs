@@ -1,0 +1,6 @@
+minus_one_thousand=>nrel_main_idtf:
+[-1000](*<-lang_ru;;*);
+[-1000](*<-lang_en;;*);;
+
+concept_number -> minus_one_thousand;;
+set_of_number -> minus_one_thousand;;

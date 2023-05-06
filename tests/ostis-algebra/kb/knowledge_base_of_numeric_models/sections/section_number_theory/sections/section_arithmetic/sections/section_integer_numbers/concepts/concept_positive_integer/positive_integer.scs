@@ -1,0 +1,56 @@
+sc_node_not_relation -> concept_positive_integer;; 
+
+concept_positive_integer => nrel_main_idtf:
+[положительное целое число](*<-lang_ru;;*);
+[positive integer](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_positive_integer <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (положительное целое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Положительным целым числом называется целое число больше нуля.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_positive_integer <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество; положительное целое число; ограничено снизу*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество положительных целых чисел ограничено снизу.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(положительное целое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Самое малое положительное целое число — 1.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество; положительное целое число; арифметическая прогрессия)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://positive_integer_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);;

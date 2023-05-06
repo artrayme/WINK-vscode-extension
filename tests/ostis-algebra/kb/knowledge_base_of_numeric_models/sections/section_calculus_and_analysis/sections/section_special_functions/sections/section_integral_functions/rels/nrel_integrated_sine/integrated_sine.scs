@@ -1,0 +1,73 @@
+sc_node_norole_relation -> nrel_integrated_sine;;
+nrel_integrated_sine => nrel_main_idtf:	[интегральный синус* ](*<-lang_ru;;*);	[integrated sine* ](*<-lang_en;;*);;
+
+nrel_integrated_sine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(интегральный синус*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральный синус — специальная функция, определяемая интегралом. Обозначается как si x.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integrated_sine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(интегральный синус*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://integral_sin.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_function => nrel_inclusion: nrel_integrated_sine;;
+
+nrel_integrated_sine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(интегральный синус*; нечетная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральный синус — нечётная функция. Si (-x) = - Si x](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integrated_sine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(интегральный синус*; локальный экстремум*; число Пи)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральный синус имеет локальные экстремумы в точках x = +-pi, +-2pi, +-3pi, ...](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integrated_sine <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(интегральный синус*; асимптота*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://int_sin.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integrated_sine <- binary_relation;;
+nrel_integrated_sine <= nrel_first_domain:  concept_number;;
+nrel_integrated_sine <= nrel_second_domain: nrel_angle_measure;;

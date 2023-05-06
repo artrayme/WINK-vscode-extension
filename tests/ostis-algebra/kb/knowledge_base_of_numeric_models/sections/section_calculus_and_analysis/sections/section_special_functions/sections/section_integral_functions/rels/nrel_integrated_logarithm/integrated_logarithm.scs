@@ -1,0 +1,47 @@
+sc_node_norole_relation -> nrel_integrated_logarithm;;
+nrel_integrated_logarithm => nrel_main_idtf:	[интегральный логарифм* ](*<-lang_ru;;*);	[integrated logarithm* ](*<-lang_en;;*);;
+
+concept_function => nrel_inclusion: nrel_integrated_logarithm;;
+
+nrel_integrated_logarithm <- binary_relation;;
+nrel_integrated_logarithm <= nrel_first_domain:  concept_number;;
+nrel_integrated_logarithm <= nrel_second_domain: nrel_angle_measure;;
+
+nrel_integrated_logarithm <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(интегральный логарифм*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральный логарифм — специальная функция, определяемая интегралом. Обозначается как li x.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integrated_logarithm <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(интегральный логарифм*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://int_log.png"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_integrated_logarithm <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(интегральный логарифм*; интегральная показательная функция*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Интегральный логарифм и интегральная показательная функция связаны соотношением: li(x)= Ei(ln x).](* <- lang_ru;; *);;
+		*);;
+	*);;

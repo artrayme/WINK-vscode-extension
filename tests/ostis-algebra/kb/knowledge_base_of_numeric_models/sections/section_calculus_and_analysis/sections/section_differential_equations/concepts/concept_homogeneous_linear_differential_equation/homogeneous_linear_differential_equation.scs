@@ -1,0 +1,19 @@
+sc_node_not_relation->concept_homogeneous_linear_differential_equation;;
+concept_homogeneous_linear_differential_equation => nrel_main_idtf :
+[линейное однородное дифференциальное уравнение](*<-lang_ru;;*);
+[homogeneous linear differential equation](*<-lang_en;;*);;
+
+
+concept_homogeneous_linear_differential_equation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейное однородное дифференциальное уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Если в дифференециальном уравнении y'+P(x)*y=Q(x) правая часть Q(x) равна нулю, то такое уравнение называется
+линейным однородным дифференциальным уравнением. P(x) и Q(x) - функции непрерывные на некотором промежутке a<x<b.](* <- lang_ru;; *);;
+		*);;
+*);;

@@ -1,0 +1,99 @@
+sc_node_not_relation->concept_unit_matrix;;
+
+concept_unit_matrix=>nrel_main_idtf:
+[единичная матрица](*<-lang_ru;;*);
+[unit matrix](*<-lang_en;;*);;
+
+concept_unit_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(единичная матрица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Единичная матрица — квадратная матрица, элементы главной диагонали которой равны единице поля, а остальные равны нулю.]  (* <- lang_ru;; *);;
+		*);;
+*);;
+
+concept_unit_matrix -> rrel_example :
+	"file://unit_matrix1.png";;
+
+concept_unit_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(скалярная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Единичная матрица является частным случаем скалярной матрицы.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_unit_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(произведение'; равенство*; матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Произведение любой матрицы и единичной матрицы подходящего размера равно самой матрице.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_unit_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(квадратная матрица; матрица; размер матрицы*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Квадратная матрица в нулевой степени дает единичную матрицу того же размера.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_unit_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(обратная матрица*; матрица; умножение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При умножении матрицы на обратную ей тоже получается единичная матрица.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_unit_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(ортогональная матрица; умножение*; транспонированная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Единичная матрица получается при умножении ортогональной матрицы на её транспонированную матрицу.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_unit_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица; определитель матрицы*; равенство*; единица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Определитель единичной матрицы равен единице.](* <- lang_ru;; *);;
+		*);;
+	*);;

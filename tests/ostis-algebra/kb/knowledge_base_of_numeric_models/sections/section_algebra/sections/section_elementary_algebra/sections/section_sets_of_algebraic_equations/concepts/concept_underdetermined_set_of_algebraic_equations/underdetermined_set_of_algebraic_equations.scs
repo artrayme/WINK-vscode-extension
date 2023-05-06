@@ -1,0 +1,64 @@
+sc_node_not_relation -> concept_underdetermined_set_of_algebraic_equations;;
+
+//рус.-англ.
+concept_underdetermined_set_of_algebraic_equations => nrel_main_idtf:
+[недоопределённая система алгебраических уравнений](*<-lang_ru;;*);
+[underdetermined set of algebraic equations](*<-lang_en;;*);;
+
+
+
+//определение и пояснения
+concept_underdetermined_set_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(недоопределённая система алгебраических уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Недоопределённая система алгебраических уравнений - совместная система уравнений, которая имеет хотя бы два различных решения.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+//пример
+concept_underdetermined_set_of_algebraic_equations -> rrel_example:
+	...
+	(*
+<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	"file://underdetermined_set_of_algebraic_equations.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_underdetermined_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Решение недоопределённой системы алгебраических уравнений.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_underdetermined_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://underdetermined_set_of_algebraic_equations2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

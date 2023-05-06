@@ -1,0 +1,52 @@
+sc_node_not_relation->concept_algebraic_number;; 
+
+concept_algebraic_number=>nrel_main_idtf:
+[алгебраическое число](*<-lang_ru;;*);
+[алгебралық сандар](*<-lang_kz;;*);
+[algebraic number](*<-lang_en;;*);;
+
+concept_algebraic_number<= nrel_subdividing:
+	...
+  (* 
+    -> concept_integer_algebraic_number;;
+    -> concept_fractional_algebraic_number;;
+	*);;
+
+concept_algebraic_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(алгебраическое число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Алгебраическое число - число, которое может быть корнем многочлена с рациональными коэффициентами.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_algebraic_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число, алгебраическое число, трансцендентное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Комплексное число, не являющееся алгебраическим, называется трансцендентным.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(целое алгебраическое число, корень, многочлен, коэффициент, единица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Целыми алгебраическими числами называются корни многочленов с целыми коэффициентами и со старшим коэффициентом единица.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+ concept_algebraic_number-> rrel_example : i; nineteen;;

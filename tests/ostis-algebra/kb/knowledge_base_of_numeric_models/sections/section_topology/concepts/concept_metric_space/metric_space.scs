@@ -1,0 +1,87 @@
+sc_node_not_relation -> concept_metric_space;;
+
+concept_metric_space=> nrel_main_idtf:
+[метрическое пространство](*<-lang_ru;;*);
+[metric space](*<-lang_en;;*);
+[метрикалык, кен,істік](*<-lang_kz;;*);;
+
+//определение
+
+concept_metric_space <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(метрическое пространство)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Множество M называется метрическим пространством, если любой паре его элементов поставлено в соответствие неотрицательное число p(x,y) , называемое расстоянием между элементами x и y.](*<-lang_ru;;*);;
+		*);;	
+	*);;
+
+//пояснение
+concept_metric_space <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Пояснение.(метрическое пространство)](*<-lang_ru;;*);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://metric_space_explanation.html"(*<-lang_ru;;*);;
+		*);;	
+	*);;
+
+//утверждения
+
+concept_metric_space <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(множество)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Множество  X называется подлежащим множеством метрического пространства.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(точка метрического пространства*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Элементы множества  X называются точками метрического пространства.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.()](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Функция d называется метрикой.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(полное метрическое пространство*; последовательность*; сходимость*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Метрическое пространство называется полным, если любая фундаментальная последовательность в нём сходится к некоторому элементу этого пространства.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+
+concept_metric_space -> rrel_example :
+		"file://metric_space_example.html";;

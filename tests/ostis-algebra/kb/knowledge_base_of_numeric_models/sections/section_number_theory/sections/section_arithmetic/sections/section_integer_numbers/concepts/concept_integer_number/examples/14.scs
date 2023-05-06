@@ -1,0 +1,6 @@
+fourteen=>nrel_main_idtf:
+[14](*<-lang_ru;;*);
+[14](*<-lang_en;;*);;
+
+concept_number -> fourteen;;
+set_of_number -> fourteen;;

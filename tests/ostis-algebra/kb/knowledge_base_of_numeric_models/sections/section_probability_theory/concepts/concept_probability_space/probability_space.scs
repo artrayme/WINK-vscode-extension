@@ -1,0 +1,65 @@
+sc_node_not_relation -> concept_probability_space;; 
+
+concept_probability_space => nrel_main_idtf:
+[вероятностное пространство](*<-lang_ru;;*);
+[probability space](*<-lang_en;;*);
+[ықтималдылық кеңістік](*<-lang_kz;;*);;
+	
+//надмножество
+concept_space => nrel_inclusion: concept_probability_space;;
+
+//определения и пояснения
+concept_probability_space <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (вероятностное пространство)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://probability_space.png"(*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (вероятностное пространство)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Вероятностное пространство — это математическое пространство, моделирующее процесс реального мира (эксперимент), который может иметь некоторый случайный исход.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_probability_space <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вероятностное пространство; вероятность*; событие; объединение*; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В вероятностном пространстве можно говорить не только о вероятности некого одного случайного события, но и о вероятности события, являющегося объединением счётного числа случайных событий. ](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(мощность*; сигма-алгебра*; событие; вероятностное пространство; пространство элементарных событий)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://probability_space_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	//пример
+	concept_probability_space -> rrel_example :
+			"file://probability_space_example.png";;
+

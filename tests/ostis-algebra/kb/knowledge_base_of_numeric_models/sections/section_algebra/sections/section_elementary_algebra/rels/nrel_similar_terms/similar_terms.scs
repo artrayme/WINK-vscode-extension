@@ -1,0 +1,56 @@
+sc_node_norole_relation->nrel_similar_terms;; 
+
+nrel_similar_terms=>nrel_main_idtf:
+[подобные слагаемые* ](*<-lang_ru;;*);
+[similar terms* ](*<-lang_en;;*);;
+
+
+nrel_similar_terms<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(подобные слагаемые*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Слагаемые, имеющие одинаковую буквенную часть, называют подобными слагаемыми.](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(подобные слагаемые*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Подобные слагаемые могут отличаться только коэффициентами.](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_similar_terms<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(слагаемое; сложение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Чтобы сложить (или говорят: привести) подобные слагаемые, надо сложить их коэффициенты и результат умножить на общую буквенную часть.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_similar_terms-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Приведем подобные слагаемые в выражении 5*а+а-2*а. Решение: В данной сумме все слагаемые в выражении подобны, т.к. у них одинаковая буквенная часть а. Сложим коэффициенты: 5+1-2=4. Значит, 5*а+а-2а=4а.](* <- lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_similar_terms =>nrel_first_domain:rrel_summand;;
+nrel_similar_terms => nrel_second_domain: rrel_summand;;

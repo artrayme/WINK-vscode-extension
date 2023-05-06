@@ -1,0 +1,88 @@
+sc_node_struct -> section_subject_domain_of_rational_numbers;;
+
+section_subject_domain_of_rational_numbers => nrel_main_idtf:
+    [Раздел. Предметная область рациональных чисел] (* <- lang_ru;; *);
+    [Section. Subject domain of rational numbers] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_rational_numbers <- nrel_system_identifier;;
+  
+section_subject_domain_of_rational_numbers -> rrel_key_sc_element:
+    subject_domain_of_rational_numbers;
+    concept_negative_fraction;
+    concept_elementary_fraction;
+    concept_common_fraction;
+    concept_mixed_fraction;
+    concept_rational_number;
+    concept_positive_fraction;
+    concept_improper_fraction;
+    concept_proper_fraction;
+    rrel_denominator;
+    nrel_expansion_of_fraction;
+    nrel_division_of_mixed_fractions;
+    nrel_reducing_fractions;
+    nrel_subtraction_of_fractions;
+    nrel_subtraction_of_fractions_with_the_same_denominator;
+    nrel_subtraction_of_mixed_fractions;
+    nrel_subtraction_of_common_fractions;
+    nrel_addition_of_fractions;
+    nrel_addition_of_fractions_with_the_same_denominator;
+    nrel_addition_of_common_fractions;
+    nrel_percentage;
+    nrel_reduction_to_a_common_denominator;
+    rrel_numerator;
+    nrel_common_fraction_multiplication_by_a_natural_number;
+    nrel_mixed_fraction_multiplication_by_a_natural_number;
+    nrel_division_of_fractions;
+    nrel_multiplcation_of_mixed_fractions;
+    nrel_multiplying_fractions;
+    nrel_division_of_common_fraction_by_a_number;
+    nrel_comparison_of_fractions;
+    nrel_multiplication_of_common_fractions;
+    nrel_division_of_common_fractions;
+    nrel_addition_of_mixed_fractions;;
+
+section_subject_domain_of_rational_numbers = [*
+    subject_domain_of_rational_numbers => nrel_main_idtf:
+        [Предметная область рациональных чисел] (* <- lang_ru;; *);
+        [Subject domain of rational numbers] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_rational_numbers -> rrel_maximum_studied_object_class:
+        concept_rational_number;;
+        
+    subject_domain_of_rational_numbers -> rrel_not_maximum_studied_object_class:
+        concept_negative_fraction;
+        concept_elementary_fraction;
+        concept_common_fraction;
+        concept_mixed_fraction;
+        concept_positive_fraction;
+        concept_improper_fraction;
+        concept_proper_fraction;;
+
+    subject_domain_of_rational_numbers -> rrel_explored_relation:
+        rrel_denominator;
+        nrel_expansion_of_fraction;
+        nrel_division_of_mixed_fractions;
+        nrel_reducing_fractions;
+        nrel_subtraction_of_fractions;
+        nrel_subtraction_of_fractions_with_the_same_denominator;
+        nrel_subtraction_of_mixed_fractions;
+        nrel_subtraction_of_common_fractions;
+        nrel_addition_of_fractions;
+        nrel_addition_of_fractions_with_the_same_denominator;
+        nrel_addition_of_common_fractions;
+        nrel_percentage;
+        nrel_reduction_to_a_common_denominator;
+        rrel_numerator;
+        nrel_common_fraction_multiplication_by_a_natural_number;
+        nrel_mixed_fraction_multiplication_by_a_natural_number;
+        nrel_division_of_fractions;
+        nrel_multiplcation_of_mixed_fractions;
+        nrel_multiplying_fractions;
+        nrel_division_of_common_fraction_by_a_number;
+        nrel_comparison_of_fractions;
+        nrel_multiplication_of_common_fractions;
+        nrel_division_of_common_fractions;
+        nrel_addition_of_mixed_fractions;;
+*];;

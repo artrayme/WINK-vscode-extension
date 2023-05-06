@@ -1,0 +1,49 @@
+sc_node_not_relation->concept_trigonometric_inequality;;
+
+concept_trigonometric_inequality => nrel_main_idtf:
+[тригонометрическое неравенство](*<-lang_ru;;*);
+[тригонометриялық теңсіздік](*<-lang_kz;;*);
+[trigonometric inequality](*<-lang_en;;*);;
+
+//определение и пояснения
+concept_trigonometric_inequality <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(тригонометрическое неравенсвто)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Неравенство, в котором неизвестная переменная находится под знаком тригонометрической функции, называется тригонометрическим неравенством.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_trigonometric_inequality <= nrel_using_constants:
+	{
+	concept_noequality;
+	concept_variable;
+	concept_trigonometric_function
+	};;
+
+
+//надмножество
+concept_noequality => nrel_inclusion: concept_trigonometric_inequality;;	
+	
+//утверждения
+concept_trigonometric_inequality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тригонометрическое неравенство; тригонометрическая окружность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При решении тригонометрических неравенств вида f (x) ≥ 0 удобно использовать тригонометрическую окружность.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+	

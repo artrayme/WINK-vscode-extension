@@ -1,0 +1,65 @@
+sc_node_not_relation -> concept_integer_algebraic_number;; 
+
+concept_integer_algebraic_number => nrel_main_idtf:
+[целое алгебраическое число](*<-lang_ru;;*);
+[integer algebraic number](*<-lang_en;;*);
+[алгебралық бүтін](*<-lang_kz;;*);;
+
+//разбиение
+concept_integer_algebraic_number <= nrel_subdividing:
+	...
+	(* 
+	-> concept_gaussian_integer;;
+	-> concept_roots_of_unity;;
+	*);;
+
+	//надмножество
+concept_algebric_number => nrel_inclusion: concept_integer_algebraic_number;;
+	
+//определение
+concept_integer_algebraic_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (целое алгебраическое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Целыми алгебраическими числами называются комплексные (и в частности вещественные) корни многочленов с целыми коэффициентами и со старшим коэффициентом, равным единице.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+//используемые константы
+concept_integer_algebraic_number <= nrel_using_constants:
+	{
+	concept_complex_number;
+	concept_polynomial
+	};;
+	
+//утверждения
+concept_integer_algebraic_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сложение*; умножение*; целое алгебраическое число; кольцо)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[По отношению к сложению и умножению комплексных чисел, целые алгебраические числа образуют кольцо.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(Гауссовы целые числа; комплексные числа; вещественная часть'; мнимая часть'; целое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Гауссовы целые числа — это комплексные числа, у которых как вещественная, так и мнимая часть — целые члисла.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	

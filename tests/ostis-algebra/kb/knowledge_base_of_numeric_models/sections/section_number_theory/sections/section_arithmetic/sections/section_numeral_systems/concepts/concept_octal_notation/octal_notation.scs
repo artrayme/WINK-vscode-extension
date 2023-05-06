@@ -1,0 +1,106 @@
+sc_node_not_relation->concept_octal_notation;;
+
+concept_octal_notation=>nrel_main_idtf:
+[восьмеричная система счисления](*<-lang_ru;;*);
+[сегіздік жүйе](*<-lang_kz;;*);
+[octal notation](*<-lang_en;;*);;
+
+// синонимы
+concept_octal_notation=> nrel_idtf:[восьмеричное представление числа](*<-lang_ru;;*);;
+concept_octal_notation=> nrel_idtf:[восьмеричная запись числа](*<-lang_ru;;*);;
+
+//определение
+concept_octal_notation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(восьмеричная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Восьмеричной системой счисления называется система счисления с основанием 8.](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_octal_notation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (восьмеричная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для представления чисел в восьмеричй системе счисления используются цифры от 0 до 7](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_octal_notation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (восьмеричная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example:
+			"file://octal_notation_1.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_octal_notation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма*, натуральное число, цифра)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://octal_notation_2.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_octal_notation <= nrel_using_constants: concept_digit;rrel_basis;;
+
+// конкретные задачи
+concept_octal_notation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://octal_notation_3.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_octal_notation  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на перевод из восьмеричной системы счисления в двоичную.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_octal_notation -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://octal_notation_4.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

@@ -1,0 +1,50 @@
+sc_node_norole_relation -> nrel_sample_size;;
+
+nrel_sample_size => nrel_main_idtf:
+[объем выборки*](*<-lang_ru;;*);
+[sample size*](*<-lang_en;;*);;
+
+
+nrel_sample_size <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(обьем выборки*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Объём выборки — число случаев, включённых в выборочную совокупность. ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Утв. (Объём выборки *)] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Выборки можно условно разделить на большие и малые, так как в математической статистике используются различные подходы в зависимости от объёма выборки. ](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Утв. (Объём выборки; число *)] (*<-lang_ru;;*);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Считается, что выборки объёма больше 30 можно отнести к большим.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+
+
+
+nrel_sample_size <- binary_relation;;
+nrel_sample_size => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_sample_size => nrel_first_domain: concept_sample;;
+nrel_sample_size => nrel_second_domain: concept_number;;

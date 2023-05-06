@@ -1,0 +1,122 @@
+sc_node_not_relation->concept_complex_number;;
+
+concept_complex_number=>nrel_main_idtf:
+[комплексное число](*<-lang_ru;;*);
+[күрделі сан](*<-lang_kz;;*);
+[complex number](*<-lang_en;;*);;
+
+concept_complex_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(компллексное число)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Комплексным числом называется выражение вида a+ib, где a и b – любые действительные числа, i – специальное число, которое называется мнимой единицей. ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(действительная часть комплексного числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Действительное число a называется действительной частью комплексного числа z, действительная часть обозначается a = Re z. ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(мнимая часть комплексного числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Действительное число b называется мнимой частью комплексного числа z, мнимая часть обозначается b = Im z. ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(аргумент комплексного числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Угол  φ (в радианах) радиус-вектора точки, соответствующей комплексному числу z, называется аргументом комплексного числа z и обозначается Arg(z).](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(модуль комплексного числа)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Модулем (абсолютной величиной) комплексного числа называется длина радиус-вектора соответствующей точки комплексной плоскости (или, что то же, расстояние между точкой комплексной плоскости, соответствующей этому числу, и началом координат)..](* <- lang_ru;; *);;
+		*);;
+	*);;
+//используемые константы
+concept_complex_number <= nrel_using_constants: concept_modulus_of_complex_number;concept_argument_of_a_complex_number;;
+
+concept_complex_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; мнимое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Комплексное число 0+ bi  называется чисто мнимым числом. Запись bi означает то же самое, что и  0+ bi.](* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(действительное число; комплексное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Действительное число  а  может быть также записано в форме комплексного числа:  a+ 0*i  или  a – 0*i.  Например, записи  5 + 0*i  и  5 – 0*i  означают одно и то же число  5.](* <- lang_ru;; *);;
+		*);;
+	*); 
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число; равенство*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Два комплексных числа  a+ bi и c+ di считаются равными, если  a= c и b= d. В противном случае комплексные числа не равны.](* <- lang_ru;; *);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число; тринометрическая форма)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любое комплексное число (кроме нуля)  z=a+b*i   можно записать в тригонометрической форме: z=|z|*(cos(φ)+i*sin(φ)), где |z| – это модуль комплексного числа, а φ – аргумент комплексного числа.](* <- lang_ru;; *);;
+		*);;
+*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(комплексное число; показательная форма)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://complex_number1.html" (* <- lang_ru;; *);;
+		*);;
+*);;

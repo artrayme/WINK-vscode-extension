@@ -1,0 +1,28 @@
+ui_menu_file_for_parity_check <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_parity_check => nrel_main_idtf: 
+	[Проверить принадлежность числа к множеству чётных/нечётных чисел] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_parity_check => nrel_main_idtf: 
+	[Request of parity check number] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_parity_check => ui_nrel_command_template:
+	[*
+		question_parity_check _-> ._question_parity_check_instance
+			(*
+			_-> ui_arg_1;;
+
+			*);;
+		._question_parity_check_instance _<- question;;
+	*];;
+
+ui_menu_file_for_parity_check => ui_nrel_command_lang_template: 
+	[Проверить принадлежность числа $ui_arg_1 к множеству чётных/нечётных чисел] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_parity_check => ui_nrel_command_lang_template: 
+	[Request parity check number: $ui_arg_1  ] 
+	(* <- lang_en;; *);;
+

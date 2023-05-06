@@ -1,0 +1,48 @@
+sc_agent_coordinates_of_vector
+=> nrel_main_idtf:
+	[sc-агент нахождения координат вектора] (* <- lang_ru;; *);
+	[sc-agent of finding coordinates of vector] (* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_coordinates_of_vector_condition => ..sc_agent_coordinates_of_vector_result);
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_coordinates_of_vector
+	};
+
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_coordinates_of_vector
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_coordinates_of_vector
+		};;
+	-> sc_agent_coordinates_of_vector_scp    
+		(* <- active_sc_agent;; *);; 
+	*);;
+
+..sc_agent_coordinates_of_vector
+= [*
+	question_coordinates_of_vector _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter;;
+*];;
+
+..sc_agent_coordinates_of_vector_result
+= [*
+	question_coordinates_of_vector _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter;;
+*];;

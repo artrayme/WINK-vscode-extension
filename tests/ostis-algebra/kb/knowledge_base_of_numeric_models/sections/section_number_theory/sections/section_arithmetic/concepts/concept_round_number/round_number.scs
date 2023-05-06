@@ -1,0 +1,48 @@
+sc_node_not_relation -> concept_round_number;;
+
+concept_round_number =>nrel_main_idtf:
+[круглое число](*<-lang_ru;;*);
+[round number](*<-lang_en;;*);;
+
+concept_number => nrel_inclusion: concept_round_number;;
+
+concept_round_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (круглое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Круглое число — это такое число, которое в записи оканчиваются цифрой 0.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_round_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(круглое число; позиционная система счисления; степень'; основание')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Круглыми числами относительно некоторой позиционной системы счисления называют степени её основания.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_round_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(круглое число; позиционная система счисления; нуль; равенство*; основание')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[В позиционной системы счисления круглые числа записываются как единица с последующими нулями. Количество нулей справа от единицы равно показателю степени основания.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_round_number -> rrel_example: ten; twenty;;

@@ -1,0 +1,486 @@
+agent_factorization
+=> nrel_main_idtf:
+	[агентная scp-программа нахождения разложения составного числа на множители] (* <- lang_ru;; *);
+	
+	[agent scp-program taking of factorization] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_factorization
+	(*
+	-> rrel_params: .agent_factorization_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_factorization_operator_set 
+		(*
+		-> rrel_init: .agent_factorization_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_factorization_operator2;;
+			*);;
+
+		-> .agent_factorization_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_factorization;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_factorization_operator3;;
+		  	=> nrel_else: .agent_factorization_operator_return;;
+			*);;
+                 
+		-> .agent_factorization_operator3 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+                      
+                      
+			=> nrel_then: .agent_factorization_operator3A1;;
+			=> nrel_else: .agent_factorization_operator_return;;
+			*);;
+
+                     
+             
+                  ->.agent_factorization_operator3A1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_factorization_operator3B;;
+			*);;  
+                   
+                    
+		-> .agent_factorization_operator3B 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_factorization_operator10A;;
+		 	*);;
+
+		-> .agent_factorization_operator10A
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const:  ..factorization;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			
+
+			=> nrel_then: .agent_factorization_operator10B;;
+			=> nrel_else:  .agent_factorization_operator10C;;
+			*);;
+
+		->.agent_factorization_operator10B
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _smth;;
+
+			=> nrel_goto: .agent_factorization_operator10A;;
+			*);;
+
+		-> .agent_factorization_operator10C
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const:  ..factorization;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc200;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1100;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_factorization;; 
+
+			=>nrel_then: .agent_factorization_operator10D;;
+			=> nrel_else: .agent_factorization_operator3B1;;
+			*);;
+		->.agent_factorization_operator10D
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _smth1;;
+
+			=> nrel_goto: .agent_factorization_operator10C;;
+			*);;
+                 
+
+
+                 -> .agent_factorization_operator3B1 
+                       (*
+ 			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _numberforcheck;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [0];;
+
+                        =>nrel_goto: .agent_factorization_operator3BA;;
+			*);;
+		-> .agent_factorization_operator3BA
+                       (*
+ 			<- contAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _number;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+
+                        =>nrel_goto: .agent_factorization_operator3BA1;;
+			*);;
+
+		-> .agent_factorization_operator3BA1
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _check;;
+                        -> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+			
+
+                        =>nrel_goto: .agent_factorization_operator3B2;;
+			*);;
+		
+
+		
+
+                -> .agent_factorization_operator3B2
+                      (*
+                       <- call;;
+                       -> rrel_1: rrel_fixed: rrel_scp_const: proc_check_prime_number;;
+		       -> rrel_2: rrel_fixed: rrel_scp_const: .agent_factorization_operator5A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _numberforcheck;;
+				-> rrel_2: rrel_fixed: rrel_scp_var: _check;;
+                              	*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_factorization_operator3B3;;  
+			*);;		
+		
+		-> .agent_of_factorization_operator3B3
+			(*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+		
+			=> nrel_goto: .agent_factorization_operator4A;;			
+			*);;
+
+                        
+                 
+                 -> .agent_factorization_operator4A
+			(*
+		 	<- ifEq;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: _check;;
+                        -> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+                       
+                 	=> nrel_then: .agent_factorization_operator10;;
+			=> nrel_else: .agent_factorization_operator_prime_number;;
+                 	*);;
+
+		-> .agent_factorization_operator10
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const:  ..factorization;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc20;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc110;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_factorization;;
+
+			=> nrel_goto: .agent_factorization_operator11;;
+                        *);;
+
+               -> .agent_factorization_operator11
+			(*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_const:  ..factorization;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc20;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc110;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_factorization;;
+
+                        -> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_factorization_operator12;;
+			*);;
+
+		-> .agent_factorization_operator12
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc9;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: ..factorization;;
+                        =>nrel_goto: .agent_factorization_operator13;;
+                        *);;
+
+		-> .agent_factorization_operator13
+                       (*
+                        <- genElStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc9;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: nrel_factorization;;
+                        =>nrel_goto:   .agent_factorization_operator4B;;
+                        *);;
+
+
+                -> .agent_factorization_operator4B
+                     (*
+                      <- contAdd;;
+                      -> rrel_1: rrel_assign: rrel_scp_var: _delitel;;
+                      -> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+		      -> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+                      => nrel_goto: .agent_factorization_operator4BD;;
+			*);;
+		-> .agent_factorization_operator4BD
+                     (*
+                      <- contAdd;;
+                      -> rrel_1: rrel_assign: rrel_scp_var: _factor;;
+                      -> rrel_2: rrel_fixed: rrel_scp_const: [42];;
+		      -> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+                      => nrel_goto: .agent_factorization_operator4B1;;
+			*);;
+		
+
+		-> .agent_factorization_operator4B1
+			(*
+			<- call;;
+                       -> rrel_1: rrel_fixed: rrel_scp_const: proc_set_primer_number;;
+		       -> rrel_2: rrel_fixed: rrel_scp_const: .agent_factorization_operator6A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _delitel;;
+				-> rrel_2: rrel_fixed: rrel_scp_var: _factor;;
+                              *);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_factorization_operator4B2;;
+			*);;
+
+		-> .agent_of_factorization_operator4B2
+			(*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+		
+			=> nrel_goto: .agent_factorization_operator4B3;;			
+			*);; 
+		-> .agent_factorization_operator4B3
+			(*
+			<- contDivRem;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _remainder;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _factor;;
+
+                        => nrel_goto: .agent_factorization_operator4B4;;
+			*);;
+
+		-> .agent_factorization_operator4B4
+			(*
+		 	<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _remainder;;
+                        -> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+                        
+                 	=> nrel_then: .agent_factorization_operator4BA;;
+                        => nrel_else: .agent_factorization_operator4B5;;
+			
+                 	*);;
+
+		-> .agent_factorization_operator4BA
+			(*
+			<- contDivInt;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _integer;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _factor;;
+
+                        => nrel_goto: .agent_factorization_operator4BA2;;
+			*);;
+
+		->.agent_factorization_operator4BA1
+			(*
+			<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _integer;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+
+                         => nrel_then: .agent_factorization_operator_gen_answer;;
+			=> nrel_else: .agent_factorization_operator4B;;
+
+                        *);;
+
+                -> .agent_factorization_operator4BA2
+                         (*
+                          <- contAdd;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _integer;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [0];;
+
+			=> nrel_goto: .agent_factorization_operator4C;;
+                         *);;
+		
+
+		-> .agent_factorization_operator4B5
+			(*
+			<- contAdd;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _delitel;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _delitel;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_goto: .agent_factorization_operator4B1;;
+                        *);;
+
+
+		-> .agent_factorization_operator4C
+			(*
+			<- searchSetStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..factorization;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1000;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _crat;;
+
+			-> rrel_set_3: rrel_assign: rrel_scp_var: _set;;
+
+                        => nrel_then: .agent_factorization_operator4CAB1;;
+			=> nrel_else: .agent_factorization_operator4C1;;
+			*);;
+
+		->.agent_factorization_operator4CAB1
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _set;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1001;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _crat1;;
+
+			=> nrel_then: .agent_factorization_operator4CABC;;
+			=> nrel_else: .agent_factorization_operator4C1;;
+			*);;
+
+		->.agent_factorization_operator4CABC
+			(*
+			<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _crat1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _factor;;
+
+                         => nrel_then: .agent_factorization_operator4CA2;;
+			=> nrel_else: .agent_factorization_operator4CAB2;;
+
+                        *);;
+
+		-> .agent_factorization_operator4CAB2
+			(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _arc1001;;
+
+			=> nrel_goto: .agent_factorization_operator4CAB1;;
+			*);;
+		
+		-> .agent_factorization_operator4CA2
+			(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..factorization;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1090;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var:  _crat1;;
+
+			=> nrel_goto: .agent_factorization_operator4CA3;;
+			*);;
+
+		-> .agent_factorization_operator4CA3
+			(*
+                        <- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+                        -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc1090;;
+
+			=> nrel_goto: .agent_factorization_operator4BA1;;
+			*);;
+			
+		-> .agent_factorization_operator4C1
+			(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: ..factorization;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _factor;;
+
+                        => nrel_goto: .agent_factorization_operator4C2;;
+			*);;
+
+		-> .agent_factorization_operator4C2
+			(*
+			<- searchSetStr3;;
+                        -> rrel_1: rrel_fixed: rrel_scp_const: ..factorization;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+                        -> rrel_3: rrel_assign: rrel_scp_var: _fsmth;;
+
+                        -> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+                        -> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_factorization_operator4BA1;;
+			*);;
+
+		-> .agent_factorization_operator_prime_number
+			(*
+			<- genElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc10;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: [простое число нельзя разложить на множители];;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc29;;
+			-> rrel_5: rrek_fixed: rrel_scp_const: nrel_sc_text_translation;;
+			
+
+                         => nrel_goto: .agent_factorization_operator_prime_number1;;
+			*);;
+
+		-> .agent_factorization_operator_prime_number1
+ 			(*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+		  	-> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc10;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc29;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_sc_text_translation;;
+			
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_goto: .agent_factorization_operator_prime_number2;;
+			*);;
+
+		-> .agent_factorization_operator_prime_number2
+			(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+
+                        => nrel_goto: .agent_factorization_operator_prime_number3;;
+			*);;
+
+		-> .agent_factorization_operator_prime_number3
+			(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+                        -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+                        -> rrel_3: rrel_fixed: rrel_scp_const: nrel_sc_text_translation;;
+
+                        => nrel_goto: .agent_factorization_operator_gen_answer;;
+			*);;
+		
+		-> .agent_factorization_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc10;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_factorization_operator_return;;
+			*);;     
+					
+		-> .agent_factorization_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;

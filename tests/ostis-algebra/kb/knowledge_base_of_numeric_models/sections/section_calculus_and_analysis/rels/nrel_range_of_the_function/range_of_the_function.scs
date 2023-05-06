@@ -1,0 +1,53 @@
+sc_node_norole_relation -> nrel_range_of_the_function;;
+nrel_range_of_the_function => nrel_main_idtf :
+[область значений функции* ] (* <- lang_ru;; *);
+[range of the function* ] (* <- lang_en;; *);;
+
+nrel_range_of_the_function => nrel_idtf : [множество значений функции* ] (* <- lang_ru;; *);;
+
+nrel_range_of_the_function => nrel_first_domain:
+concept_function;;
+
+nrel_range_of_the_function => nrel_second_domain: 
+concept_set_numbers;;
+
+nrel_range_of_the_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(область значений функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			[Областью значений функции y = f(x) называется множество всех значений функции, которые она принимает при переборе всех x из области определения x∈D(f).] (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(область значений функции*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+				...
+		(*
+		-> rrel_example: 
+			[Область значений функции обозначают как E(f).] (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_range_of_the_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(область определения функции*; функция; интервал; множество значений)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Область значений функции и множество значений функции - это не одно и то же. Эти понятия будем считать эквивалентными, если интервал X при нахождении множества значений функции y = f(x) совпадает с областью определения функции.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+nrel_range_of_the_function -> rrel_example :
+"file://range_of_the_function1.html"   (* <- lang_ru;; 	*);;

@@ -1,0 +1,35 @@
+sc_node_not_relation->concept_square_matrix;;
+
+concept_square_matrix=>nrel_main_idtf:
+[квадратная матрица](*<-lang_ru;;*);
+[square matrix](*<-lang_en;;*);;
+
+concept_square_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(квадратная матрица)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Квадратная матрица — это матрица, у которой число строк и столбцов совпадают, и это число называется порядком матрицы.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+concept_square_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(матрица; порядок матрицы*; сложение*; умножение*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любые две квадратные матрицы одинакового порядка можно складывать и умножать.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_square_matrix -> rrel_example :
+	"file://square_matrix.png";;

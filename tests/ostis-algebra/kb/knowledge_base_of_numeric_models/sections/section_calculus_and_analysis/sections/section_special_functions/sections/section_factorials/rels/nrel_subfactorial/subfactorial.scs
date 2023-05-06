@@ -1,0 +1,52 @@
+sc_node_norole_relation->nrel_subfactorial;;
+
+nrel_subfactorial=>nrel_main_idtf:
+[субфакториал* ](*<-lang_ru;;*);
+[subfactorial* ](*<-lang_en;;*);;
+
+
+//определение
+nrel_subfactorial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(субфакториал*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Субфакториал числа n (обозначение: !n) определяется как количество беспорядков порядка n, то есть перестановок порядка n без неподвижных точек.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//утверждения
+	
+nrel_subfactorial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(субфакториал*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://subfactorial1.html"(*<-lang_ru;;*);;
+		*);;
+	*);
+		... 
+	(*
+	=> nrel_main_idtf: [Утв.(субфакториал*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://subfactorial2.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//домены	
+nrel_subfactorial <- binary_relation;;
+nrel_subfactorial <= nrel_first_domain:  concept_number;;
+nrel_subfactorial <= nrel_second_domain: concept_number;;

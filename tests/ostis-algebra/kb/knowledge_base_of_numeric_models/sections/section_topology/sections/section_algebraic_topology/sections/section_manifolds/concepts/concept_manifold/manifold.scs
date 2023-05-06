@@ -1,0 +1,25 @@
+sc_node_not_relation -> concept_manifold;;
+concept_manifold => nrel_main_idtf:
+	[многообразие](*<-lang_ru;;*);
+	[manifold](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_manifold<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(многообразие)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+     [Многообразие — топологическое пространство , которое локально напоминает евклидово пространство рядом с каждой точкой.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_topology => nrel_inclusion: concept_manifold;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_topological_space
+	};;

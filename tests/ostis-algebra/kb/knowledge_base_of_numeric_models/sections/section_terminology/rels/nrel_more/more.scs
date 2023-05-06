@@ -1,0 +1,43 @@
+sc_node_norole_relation->nrel_more;;
+
+nrel_more=>nrel_main_idtf:
+[больше* ](*<-lang_ru;;*);
+[more* ](*<-lang_en;;*);;
+
+nrel_more => nrel_mathem_idtf: [>] (*<-lang_en;;*);;
+
+
+//определение
+nrel_more <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(больше*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Больше - операция, которая показывает, что одно выражение/число больше другого по значению.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+nrel_more <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(больше*; число; вычитание*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Чтобы показать что число а больше числа b, необходимо вычесть из числа a число b. Если результат вычитания будет положительным, то число a больше числа b.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//домены	
+nrel_more <- binary_relation;;
+nrel_more <= nrel_first_domain:  concept_number;;
+nrel_more <= nrel_second_domain: concept_number;;

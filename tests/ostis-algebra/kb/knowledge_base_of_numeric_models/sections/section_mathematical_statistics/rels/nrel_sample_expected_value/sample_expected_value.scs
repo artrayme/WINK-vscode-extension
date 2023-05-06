@@ -1,0 +1,42 @@
+sc_node_norole_relation ->  nrel_sample_expected_value;;
+
+nrel_sample_expected_value => nrel_main_idtf:
+[выборочное среднее значение*](*<-lang_ru;;*);
+[sample expected value*](*<-lang_en;;*);;
+
+//определение
+nrel_sample_expected_value <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(выборочное среднее значение*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Среднее значение выборки-это среднее значение значений переменной в выборке, которое представляет собой сумму этих значений, деленную на количество значений.](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Утв. (выборочное среднее значение* )] (*<-lang_ru;;*);;
+	<-sc_statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://среднее.png";;
+		*);;
+	*);;
+
+
+
+
+
+
+nrel_sample_expected_value <- binary_relation;;
+nrel_sample_expected_value => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_sample_expected_value => nrel_first_domain: concept_sample;;
+nrel_sample_expected_value => nrel_second_domain: concept_number;;
+
+

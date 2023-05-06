@@ -1,0 +1,37 @@
+sc_node_norole_relation -> nrel_amicable_number;; 
+
+nrel_amicable_number =>nrel_main_idtf:
+[дружественное число* ](*<-lang_ru;;*);
+[amicable number* ](*<-lang_en;;*);;
+
+nrel_amicable_number <= nrel_using_constants: concept_number;concept_perfect_number;;
+
+nrel_amicable_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дружественное число*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дружественные числа - два различных натуральных числа, для которых сумма всех собственных делителей первого числа равна второму числу и наоборот, сумма всех собственных делителей второго числа равна первому числу.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_amicable_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(совершенное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Частным случаем дружественных чисел считаются совершенные числа: каждое совершенное число дружественно себе.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_amicable_number <- binary_relation;;
+nrel_amicable_number <= nrel_first_domain: concept_number;;
+nrel_amicable_number <= nrel_second_domain: concept_number;;

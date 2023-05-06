@@ -1,0 +1,111 @@
+sc_node_struct -> section_subject_domain_of_arithmetic;;
+
+section_subject_domain_of_arithmetic => nrel_main_idtf:
+    [Раздел. Предметная область арифметики] (* <- lang_ru;; *);
+    [Section. Subject domain of arithmetic] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_arithmetic <- nrel_system_identifier;;
+
+section_subject_domain_of_arithmetic => nrel_section_decomposition: {
+    section_subject_domain_of_integer_numbers;
+    section_subject_domain_of_real_numbers;
+    section_subject_domain_of_numeral_systems;
+    section_subject_domain_of_rational_numbers;
+    section_subject_domain_of_natural_numbers
+};;
+  
+section_subject_domain_of_arithmetic -> rrel_key_sc_element:
+    subject_domain_of_arithmetic;
+    concept_round_number;
+    concept_arithmetic_expression;
+    concept_arithmetic_operation;
+    concept_arithmetic;
+    concept_negative_number;
+    concept_positive_number;
+    rrel_base_of_the_power;
+    rrel_multiplier;
+    nrel_rounding;
+    rrel_divider;
+    nrel_exponentiation;
+    rrel_sum;
+    rrel_difference;
+    nrel_middle_harmonic;
+    rrel_product_of_multiplication;
+    rrel_exponent;
+    nrel_inverse_number;
+    nrel_addition;
+    nrel_opposite_number;
+    nrel_multiplication;
+    nrel_subtraction;
+    nrel_middle_square;
+    rrel_minuend;
+    rrel_summand;
+    nrel_division;
+    rrel_quotient;
+    rrel_power;
+    nrel_arithmetic_average;
+    rrel_dividend;
+    rrel_subtrahend;
+    nrel_geometric_average;
+    nrel_digital_root;
+    rrel_radicand;
+    rrel_index_root;
+    rrel_root;
+    nrel_root_extract;;
+
+section_subject_domain_of_arithmetic = [*
+    subject_domain_of_arithmetic => nrel_main_idtf:
+        [Предметная область арифметики] (* <- lang_ru;; *);
+        [Subject domain of arithmetic] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_arithmetic => nrel_private_subject_domain:
+        subject_domain_of_integer_numbers;
+        subject_domain_of_real_numbers;
+        subject_domain_of_numeral_systems;
+        subject_domain_of_rational_numbers;
+        subject_domain_of_natural_numbers;;
+
+    subject_domain_of_arithmetic -> rrel_maximum_studied_object_class:
+        concept_arithmetic_expression;
+        concept_arithmetic_operation;
+        concept_arithmetic;;
+        
+    subject_domain_of_arithmetic -> rrel_not_maximum_studied_object_class:
+        concept_round_number;
+        concept_negative_number;
+        concept_positive_number;;
+
+    subject_domain_of_arithmetic -> rrel_explored_relation:
+        rrel_base_of_the_power;
+        rrel_multiplier;
+        nrel_rounding;
+        rrel_divider;
+        nrel_exponentiation;
+        rrel_sum;
+        rrel_difference;
+        nrel_middle_harmonic;
+        rrel_product_of_multiplication;
+        rrel_exponent;
+        nrel_inverse_number;
+        nrel_addition;
+        nrel_opposite_number;
+        nrel_multiplication;
+        nrel_subtraction;
+        nrel_middle_square;
+        rrel_minuend;
+        rrel_summand;
+        nrel_division;
+        rrel_quotient;
+        rrel_power;
+        nrel_arithmetic_average;
+        rrel_dividend;
+        rrel_subtrahend;
+        nrel_geometric_average;
+        nrel_digital_root;
+        rrel_radicand;
+        rrel_index_root;
+        rrel_root;
+        nrel_root_extract;;
+*];;

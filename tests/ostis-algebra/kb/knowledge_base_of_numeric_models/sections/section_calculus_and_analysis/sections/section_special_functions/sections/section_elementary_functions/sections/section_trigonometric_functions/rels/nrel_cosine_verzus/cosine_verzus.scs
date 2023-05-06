@@ -1,0 +1,5 @@
+sc_node_norole_relation -> nrel_cosine_verzus;; 
+
+nrel_cosine_verzus => nrel_main_idtf:
+[косинус-верзус* ](*<-lang_ru;;*);
+[versed cosine* ](*<-lang_en;;*);;

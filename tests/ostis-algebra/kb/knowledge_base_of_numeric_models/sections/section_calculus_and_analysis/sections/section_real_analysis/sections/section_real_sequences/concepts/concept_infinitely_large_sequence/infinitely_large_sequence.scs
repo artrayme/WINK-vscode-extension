@@ -1,0 +1,70 @@
+sc_node_not_relation -> concept_infinitely_large_sequence;;
+concept_infinitely_large_sequence=> nrel_main_idtf :
+[бесконечно большая последовательность] (* <- lang_ru;; *);
+[infinitely large sequence] (* <- lang_en;; *);; 
+
+//определение
+concept_infinitely_large_sequence<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(бесконечно большая последовательность)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://infinitely_large_sequence.html" (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+concept_infinitely_large_sequence<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(свойства бесконечно больших последовательностей*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinitely_large_sequence1.html"  (*<-lang_ru;;*);;
+		*);;
+	*);;
+concept_infinitely_large_sequence <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на определение: является ли последовательность бесконечно большой .](* <- lang_ru;; *);;
+*);;
+*);;
+concept_infinitely_large_sequence<= nrel_using_constants:concept_numerical_sequence;;
+
+// конкретные задачи
+concept_infinitely_large_sequence<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли последовательность n+1/2 бесконечно большой последовательностью. ]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_infinitely_large_sequence-> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Последовательность n/3 бесконечно большая последовательность.](* <- lang_ru;; 	*);;
+		*);;
+	*);;

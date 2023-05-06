@@ -1,0 +1,57 @@
+sc_node_norole_relation->nrel_primorial;; 
+nrel_primorial=>nrel_main_idtf:	[праймориал* ] (*<-lang_ru;;*);	[primorial* ] (*<-lang_en;;*);	[прайморлық* ] (*<-lang_kz;;*);;
+nrel_primorial=> nrel_idtf:[примориал* ](*<-lang_ru;;*);;
+
+nrel_primorial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(праймориал*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://primorial.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+nrel_primorial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(праймориал*, пустое произведение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Праймориал нуля является пустым произведением и считается равным единице.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(праймориал*; область определения*; натуральное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Область определения праймориала — множество натуральных чисел.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(праймориал*; возрастающая функция; область определения*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Праймориал возрастает на всей области определения.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_primorial => nrel_first_domain: concept_natural_number;;
+nrel_primorial => nrel_second_domain: concept_natural_number;; 

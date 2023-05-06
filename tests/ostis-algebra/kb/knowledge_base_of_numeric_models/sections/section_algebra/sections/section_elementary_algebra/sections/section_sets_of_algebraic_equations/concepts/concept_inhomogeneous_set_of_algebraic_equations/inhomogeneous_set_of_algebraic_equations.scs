@@ -1,0 +1,61 @@
+sc_node_not_relation -> concept_inhomogeneous_set_of_algebraic_equations;;
+
+concept_inhomogeneous_set_of_algebraic_equations => nrel_main_idtf:
+[неоднородная система алгебраических уравнений](*<-lang_ru;;*);
+[inhomogeneous set of algebraic equations](*<-lang_en;;*);;
+
+//определение и пояснения
+concept_inhomogeneous_set_of_algebraic_equations <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр.(неоднородная система алгебраических уравнений)]  (* <- lang_ru;; *);;
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Неоднородная система алгебраических уравнений - система уравнений, в которой все её свободные члены одновременно не могут быть равны нулю.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+//пример
+concept_inhomogeneous_set_of_algebraic_equations -> rrel_example:
+	...
+	(*
+<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	"file://inhomogeneous_set_of_algebraic_equations.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_inhomogeneous_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Решение неоднородной системы алгебраических уравнений.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_inhomogeneous_set_of_algebraic_equations <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://inhomogeneous_set_of_algebraic_equations2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

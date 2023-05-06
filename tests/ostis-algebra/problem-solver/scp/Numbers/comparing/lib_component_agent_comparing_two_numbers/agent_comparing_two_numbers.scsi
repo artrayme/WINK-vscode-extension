@@ -1,0 +1,306 @@
+agent_comparing_two_numbers
+=> nrel_main_idtf:
+	[агентная scp-программа сравнения двух чисел] (* <- lang_ru;; *);
+	
+	[agent scp-program comparing two numbers] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_comparing_two_numbers 
+	(*
+	-> rrel_params: .agent_comparing_two_numbers_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_comparing_two_numbers_operator_set 
+		(*
+		-> rrel_init: .agent_comparing_two_numbers_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_comparing_two_numbers_operator2;;
+			*);;
+
+		-> .agent_comparing_two_numbers_operator2
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_comparing_two_numbers;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_comparing_two_numbers_operator3;;
+		  	=> nrel_else: .agent_comparing_two_numbers_operator_return;;
+			*);;
+
+		-> .agent_comparing_two_numbers_operator3
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_first_number;;
+
+			=> nrel_goto: .agent_comparing_two_numbers_operator3A3;;
+			*);;
+                     
+                  ->.agent_comparing_two_numbers_operator3A3
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param2;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_comparing_two_numbers_operator_for_param2_1;;
+			*);;  
+
+		-> .agent_comparing_two_numbers_operator_for_param2_1
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _param3;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_second_number;;
+
+			=> nrel_goto: .agent_comparing_two_numbers_operator_for_param2_2;;
+			*);;
+                     
+		->.agent_comparing_two_numbers_operator_for_param2_2
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param3;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_comparing_two_numbers_operator3B;;
+			*);;
+
+		-> .agent_comparing_two_numbers_operator3B 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_comparing_two_numbers_operator4A;;
+		 	*);;
+
+		-> .agent_comparing_two_numbers_operator4A
+			(*
+		 	<- ifEq;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+                        
+                 	=> nrel_then: .agent_comparing_two_numbers_operator4B;;
+                        => nrel_else: .agent_comparing_two_numbers_operator4C;;
+                 	*);;
+
+		-> .agent_comparing_two_numbers_operator4B
+			(*
+			<- contMult;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _number11;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+
+			=> nrel_goto: .agent_comparing_two_numbers_operator001;;
+			*);;
+
+		-> .agent_comparing_two_numbers_operator4C
+			(*
+		 	<- ifGr;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number1;;
+
+			 => nrel_then: .agent_comparing_two_numbers_operator002;;
+                         => nrel_else: .agent_comparing_two_numbers_operator003;;
+                 	*);;
+
+
+
+
+
+
+
+			->.agent_comparing_two_numbers_operator001
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                          -> rrel_2: rrel_assign: rrel_edge: rrel_const: rrel_scp_var: _arc001;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number11;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc002;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_equality;;
+ 
+                        =>nrel_goto: .agent_comparing_two_numbers_operator004;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator002
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc001;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc002;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_more;;
+ 
+                        =>nrel_goto: .agent_comparing_two_numbers_operator005;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator003
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: _number;;
+                          -> rrel_2: rrel_assign: rrel_common: rrel_const: rrel_scp_var: _arc001;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc002;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: nrel_less;;
+ 
+                        =>nrel_goto: .agent_comparing_two_numbers_operator006;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator004
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0001;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_equality;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator004_1;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator004_1
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0002;;
+                          -> rrel_3: rrel_fixed: rrel_edge: rrel_const: rrel_scp_var: _arc001;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator004_2;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator004_2
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0003;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number11;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator009;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator005
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0001;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_more;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator007;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator006
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0001;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_less;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator007;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator007
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0002;;
+                          -> rrel_3: rrel_fixed: rrel_common: rrel_const: rrel_scp_var: _arc001;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator008;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator008
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0003;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator009;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator009
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0004;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc002;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator010;;
+                        *);;
+
+			->.agent_comparing_two_numbers_operator010
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc0005;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+                          
+                        =>nrel_goto: .agent_comparing_two_numbers_operator_gen_answer;;
+                        *);;
+
+
+
+
+
+
+	
+
+		-> .agent_comparing_two_numbers_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc4;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_comparing_two_numbers_operator_return;;
+			*);;     
+					
+		-> .agent_comparing_two_numbers_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

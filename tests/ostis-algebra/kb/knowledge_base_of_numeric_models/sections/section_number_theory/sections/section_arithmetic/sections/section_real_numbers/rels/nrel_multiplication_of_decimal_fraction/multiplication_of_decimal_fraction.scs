@@ -1,0 +1,89 @@
+sc_node_norole_relation->nrel_multiplication_of_decimal_fraction;;
+
+nrel_multiplication_of_decimal_fraction=>nrel_main_idtf:
+[умножение десятичных дробей* ](*<-lang_ru;;*);
+[онды көбейту* ](*<-lang_kz;;*);
+[multiplication of decimal fraction* ](*<-lang_en;;*);;
+
+// синонимы
+nrel_multiplication_of_decimal_fraction=> nrel_idtf:[произведение десятичных дробей* ](*<-lang_ru;;*);;
+
+nrel_multiplication_of_decimal_fraction => nrel_first_domain:concept_decimal;;
+nrel_multiplication_of_decimal_fraction => nrel_second_domain: concept_decimal;;
+nrel_multiplication_of_decimal_fraction => nrel_third_domain: concept_decimal;;
+
+//определение
+nrel_multiplication_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение десятичных дробей*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Умножение десятичных дробей производится так же, как и умножение натуральных чисел, по тем же правилам, но в произведении ставится запятая по сумме разрядов множителей в дробной части, считая справа налево (сумма разрядов множителей — это количество разрядов после запятой у множителей, вместе взятых). ](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Пояснение(метод умножения десятичных дробей)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://multiplication_of_decimal_fraction.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_multiplication_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(переместительный закон*; сочетательный закон*; распределительный закон*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для умножения десятичных дробей, как и для умножения натуральных чисел выполняются переместительный, сочетательный и рапсределительный законы.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// конкретные задачи
+nrel_multiplication_of_decimal_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Найдите произвдение выражения 1,25*2,8] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+nrel_multiplication_of_complex_numbers<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на нахождение произведения десятичных дробей](* <- lang_ru;; *);;
+		*);;
+	*);;
+ nrel_multiplication_of_complex_numbers  -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		               [z1=2,5 ,  z2=4,25. z1*z2= 2,5*4,25=9,25]   (* <- lang_ru;;*);;
+		*);;
+	*);;

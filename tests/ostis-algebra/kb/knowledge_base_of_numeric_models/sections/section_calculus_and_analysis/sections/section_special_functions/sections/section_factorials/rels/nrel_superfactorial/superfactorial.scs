@@ -1,0 +1,39 @@
+sc_node_norole_relation->nrel_superfactorial;; 
+
+nrel_superfactorial=>nrel_main_idtf:
+[суперфакториал* ] (*<-lang_ru;;*);
+[superfactorial* ] (*<-lang_en;;*);;
+
+//определение 
+nrel_superfactorial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(суперфакториал*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Суперфакториалом называется произведение первых n факториалов.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+nrel_superfactorial<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(суперфакториал*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://superfactorial_statement.gif"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+//Домены
+nrel_superfactorial => nrel_first_domain: concept_natural_number;;
+nrel_superfactorial => nrel_second_domain: concept_natural_number;; 

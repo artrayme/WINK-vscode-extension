@@ -1,0 +1,92 @@
+sc_node_not_relation -> concept_linear_function;;
+concept_linear_function=> nrel_main_idtf :
+[линейная функция] (* <- lang_ru;; *);
+[linear function] (* <- lang_en;; *);; 
+
+//используемые константы
+concept_linear_function <= nrel_using_constants: concept_variable ;;
+
+//определение
+concept_linear_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(линейная функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Линейная функция — функция вида y =kx+b](* <- lang_ru;;*);;
+		*);;
+	*);;
+
+// утверждения
+concept_linear_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(приращение функции*; приращение аргумента)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Основное свойство линейных функций: приращение функции пропорционально приращению аргумента. То есть функция является обобщением прямой пропорциональности.](* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(угловой коэффициент прямой; ось абсцисс)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://linear_function1.html"   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и способы решения
+concept_linear_function <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на углового коэффициента.](* <- lang_ru;; *);;
+*);
+...
+(*
+-> rrel_example:
+[Задачи на находения уравнения прямой.](* <- lang_ru;; *);;
+*);;
+*);;
+
+// конкретные задачи
+concept_linear_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Чему равен линейный коэффициент функции y=12x +6](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_linear_function-> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[y=5x–3](* <- lang_ru;; *);;
+		*);;
+	*);;

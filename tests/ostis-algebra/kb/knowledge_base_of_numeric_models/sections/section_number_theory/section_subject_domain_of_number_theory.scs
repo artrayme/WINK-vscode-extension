@@ -1,0 +1,43 @@
+sc_node_struct -> section_subject_domain_of_number_theory;;
+
+section_subject_domain_of_number_theory => nrel_main_idtf:
+    [Раздел. Предметная область теории чисел] (* <- lang_ru;; *);
+    [Section. Subject domain of number theory] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_number_theory <- nrel_system_identifier;;
+
+section_subject_domain_of_number_theory => nrel_section_decomposition: {
+    section_subject_domain_of_elementary_number_theory;
+    section_subject_domain_of_arithmetic;
+    section_subject_domain_of_analytic_number_theory;
+    section_subject_domain_of_special_numbers;
+    section_subject_domain_of_math_constants;
+    section_subject_domain_of_algebraic_number_theory
+};;
+  
+section_subject_domain_of_number_theory -> rrel_key_sc_element:
+    subject_domain_of_number_theory;
+    concept_number;
+    concept_numerical_sequence;
+    concept_numerical_expression;;
+
+section_subject_domain_of_number_theory = [*
+    subject_domain_of_number_theory => nrel_main_idtf:
+        [Предметная область теории чисел] (* <- lang_ru;; *);
+        [Subject domain of number theory] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_number_theory => nrel_private_subject_domain:
+        subject_domain_of_elementary_number_theory;
+        subject_domain_of_arithmetic;
+        subject_domain_of_analytic_number_theory;
+        subject_domain_of_special_numbers;
+        subject_domain_of_math_constants;
+        subject_domain_of_algebraic_number_theory;;
+
+    subject_domain_of_number_theory -> rrel_maximum_studied_object_class:
+        concept_number;
+        concept_numerical_sequence;
+        concept_numerical_expression;;
+*];;

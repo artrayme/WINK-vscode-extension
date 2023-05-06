@@ -1,0 +1,5 @@
+sc_node_not_relation -> concept_quartic_function;; 
+
+concept_quartic_function => nrel_main_idtf:
+[функция полинома 4-ой степени](*<-lang_ru;;*);
+[quartic function](*<-lang_en;;*);;

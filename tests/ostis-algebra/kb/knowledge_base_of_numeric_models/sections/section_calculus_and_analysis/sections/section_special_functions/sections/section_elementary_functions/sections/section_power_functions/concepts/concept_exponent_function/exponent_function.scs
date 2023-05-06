@@ -1,0 +1,54 @@
+sc_node_not_relation -> concept_exponent_function;;
+
+concept_exponent_function => nrel_main_idtf:
+[экспоненциальная функция](*<-lang_ru;;*);
+[exponent function](*<-lang_en;;*);;
+
+//надмножество
+concept_exponential_function => nrel_inclusion: concept_exponent_function;;
+
+//определение и пояснения
+concept_exponent_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (экспоненциальная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Экспоненциальная функция — это функция f(x)=exp(x)=e^x, где e - число Эйлера.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_exponent_function <= nrel_using_constants:
+	{
+	concept_function;
+	concept_math_const_euler
+	};;	
+	
+//утверждения
+concept_exponent_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(экспоненциальная функция; предел*; ряд Тэйлора)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Экспоненциальная функция может быть определена через ряд Тейлора или предел.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Утв.(обратная функция*; экспоненциальная функция; натуральный логарифм)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+	...
+		(*
+		-> rrel_definition:
+			[Обратная функция к экспоненциальной функции — натуральный логарифм.](*<-lang_ru;;*);;
+		*);;
+	*);;

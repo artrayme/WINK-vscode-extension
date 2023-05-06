@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_negative_fraction;; 
+
+concept_negative_fraction => nrel_main_idtf:
+[отрицательное дробное число](*<-lang_ru;;*);
+[negative fraction](*<-lang_en;;*);;
+	
+//надмножество
+concept_fraction => nrel_inclusion: concept_negative_fraction;;
+
+//определения и пояснения
+concept_negative_fraction <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (отрицательное дробное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Отрицательным дробным числом называется дробное число меньше нуля.](*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf: [Пояснение (отрицательное дробное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Дробное число является отрицательным, если его числитель и знаменатель имеют разный знак.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_negative_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(множество; отрицательное дробное число; ограничено сверху*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Множество отрицательных дробных чисел ограничено сверху.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(отрицательное дробное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Не существует самого большого отрицательного дробного числа.](* <- lang_ru;; *);;
+		*);;
+	*);;

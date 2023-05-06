@@ -1,0 +1,48 @@
+sc_node_not_relation -> concept_differentiable_function;;
+
+concept_differentiable_function=>nrel_main_idtf:
+[differentiable function](*<-lang_en;;*);
+[дифференцируемая функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_differentiable_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(дифференцируемая функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Дифференцируемая  функция — это функция, у которой существует дифференциал ](*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//надмножество
+concept_function=>nrel_inclusion : concept_differentiable_function;;
+
+//утверждения
+concept_differentiable_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(вещественная точка)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Функция f(x) = x^2 определена и дифференцируема в любой вещественной точке ](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(множество; дифференцируемая функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Дифференцируемая на некотором множестве функция — это функция, дифференцируемая в каждой точке данного множества.](*<-lang_ru;;*);;
+*);;
+*);;

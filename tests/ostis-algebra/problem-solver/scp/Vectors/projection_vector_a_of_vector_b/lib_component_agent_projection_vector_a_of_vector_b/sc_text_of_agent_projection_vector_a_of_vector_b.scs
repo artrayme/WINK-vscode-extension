@@ -1,0 +1,7 @@
+sc_text_of_agent_projection_vector_a_of_vector_b
+-> rrel_key_sc_element:
+	agent_projection_vector_a_of_vector_b;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_projection_vector_a_of_vector_b = [*^"file://agent_projection_vector_a_of_vector_b.scsi"*];;
+

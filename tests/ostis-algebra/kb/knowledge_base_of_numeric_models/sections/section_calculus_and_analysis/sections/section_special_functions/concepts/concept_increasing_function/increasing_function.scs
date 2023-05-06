@@ -1,0 +1,69 @@
+sc_node_not_relation ->concept_increasing_function;;
+
+concept_increasing_function=>nrel_main_idtf:
+[increasing function](*<-lang_en;;*);
+[возрастащая функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_increasing_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(возрастающая функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Функция называется возрастающей если большему значению аргумента соответствует большее значение функции .](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=> nrel_main_idtf: [Пояснение (возрастающая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+	"file://increasing_function.html"(*<-lang_ru;;*);;
+*);;
+*);;
+
+//надмножество
+concept_function=>nrel_inclusion : concept_increasing_function;;
+
+//утверждения
+concept_increasing_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(производная*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     "file://increasing_function_2.html"(*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(экспонента; числовая прямая)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Экспонента f(x) = e^x возрастает на всей числовой прямой.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(стационарная точка)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+      "file://increasing_function_3.html"(*<-lang_ru;;*);;
+*);;
+*);;

@@ -1,0 +1,47 @@
+sc_node_role_relation->rrel_summand;; 
+rrel_summand=>nrel_main_idtf:	[слагаемое'](*<-lang_ru;;*);	[summand'](*<-lang_en;;*);	[доғарады'](*<-lang_kz;;*);;
+
+rrel_summand => nrel_idtf: [addend'](*<-lang_en;;*);;
+
+rrel_summand<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(слагаемое')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example: 
+			[Слагаемым называется число, которое складывается с другим в операции сложения.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+rrel_summand <= nrel_using_constants:
+	{
+	concept_number;
+	nrel_addition
+	};;
+	
+rrel_summand <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(слагаемое'; сумма'; число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Суммой чисел является число, содержащее столько единиц, сколько их во всех слагаемых.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма'; слагаемое'; расположение*; выражение;)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Сумма слагаемых не зависит от их расположения в выражении.](* <- lang_ru;; *);;
+		*);;
+	*);;

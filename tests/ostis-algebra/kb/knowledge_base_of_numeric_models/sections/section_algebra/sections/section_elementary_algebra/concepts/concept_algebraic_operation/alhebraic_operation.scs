@@ -1,0 +1,58 @@
+sc_node_not_relation -> concept_algebraic_operation;;
+concept_algebraic_operation => nrel_main_idtf:
+	[алгебраическая операция](*<-lang_ru;;*);
+	[algebraic operation](*<-lang_en;;*);
+	[алгебралық операция](*<-lang_kz;;*);;
+
+//определения и пояснения
+ concept_algebraic_operation<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(алгебраическая операция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Алгебраическая операция - операция обычной алгебры, т.е. арифметические действия сложения, вычитания, умножения и деления,возведения в степень ,логарифмирование ,тетрация.](*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//разбиение
+ concept_algebraic_operation<=nrel_subdividing:
+...
+(*
+->nrel_subtraction;;
+->nrel_division;;
+->nrel_exponentiation;;
+->nrel_logarithm;;
+->nrel_subdividing;;
+->nrel_multiplication;;
+->nrel_tetration;;
+*);;
+
+//утверждения
+ concept_algebraic_operation<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(сложение*,вычитание*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Сложение и вычитание являются элементарными арифметическими операциями.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(сложение*,вычитание*,умножение*,деление*,возведение в степень*,логарифмирование*,тетрация*)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Cложение и вычитание относят к операциям первой ступени; умножение и деление — к операциям второй ступени; возведение в степень, извлечение корня и логарифмирование — к операциям третьей ступени; тетрация  является редко используемыми операциями четвёртой ступен](*<-lang_ru;;*);;
+*);;
+*);;

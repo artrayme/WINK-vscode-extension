@@ -1,0 +1,7 @@
+sc_text_of_agent_comparing_two_numbers 
+-> rrel_key_sc_element:
+	agent_comparing_two_numbers;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_comparing_two_numbers = [*^"file://agent_comparing_two_numbers.scsi"*];;
+

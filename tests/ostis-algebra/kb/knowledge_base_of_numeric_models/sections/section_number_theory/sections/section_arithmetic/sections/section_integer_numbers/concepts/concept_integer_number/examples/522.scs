@@ -1,0 +1,6 @@
+five_hundred_and_twenty_two=>nrel_main_idtf:
+[522](*<-lang_ru;;*);
+[522](*<-lang_en;;*);;
+
+concept_number -> five_hundred_and_twenty_two;;
+set_of_number -> five_hundred_and_twenty_two;;

@@ -1,0 +1,26 @@
+sc_node_struct -> section_subject_domain_of_algebraic_expressions;;
+
+section_subject_domain_of_algebraic_expressions => nrel_main_idtf:
+    [Раздел. Предметная область алгебраических выражений] (* <- lang_ru;; *);
+    [Section. Subject domain of algebraic expressions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_algebraic_expressions <- nrel_system_identifier;;
+  
+section_subject_domain_of_algebraic_expressions -> rrel_key_sc_element:
+    subject_domain_of_algebraic_expressions;
+    concept_algebraic_expession;
+    concept_rational_algebraic_expression;;
+ 
+section_subject_domain_of_algebraic_expressions = [*
+    subject_domain_of_algebraic_expressions => nrel_main_idtf:
+        [Предметная область алгебраических выражений] (* <- lang_ru;; *);
+        [Subject domain of algebraic expressions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_algebraic_expressions -> rrel_maximum_studied_object_class:
+        concept_algebraic_expession;;
+
+    subject_domain_of_algebraic_expressions -> rrel_not_maximum_studied_object_class:
+        concept_rational_algebraic_expression;;
+*];;

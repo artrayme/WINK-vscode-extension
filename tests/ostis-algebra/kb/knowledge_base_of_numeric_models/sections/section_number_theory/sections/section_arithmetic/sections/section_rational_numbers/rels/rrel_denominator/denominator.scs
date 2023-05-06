@@ -1,0 +1,30 @@
+sc_node_role_relation->rrel_denominator;; 
+rrel_denominator=>nrel_main_idtf:	[знаменатель'](*<-lang_ru;;*);	[denominator'](*<-lang_en;;*);;
+
+rrel_denominator <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(знаменатель')]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Знаменатель - математическое выражение, стоящее под знаком обыкновенной дроби.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+rrel_denominator <- rrel_key_sc_element:
+     ...
+    (*
+=> nrel_main_idtf: [Пояснение(знаменатель')] (* <- lang_ru;; *);;
+<- sc_explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+	[Число, являющееся делителем в дроби.] (* <- lang_ru;; *);;
+*);;
+*);;
+
+rrel_denominator<= nrel_using_constants: concept_expression;;

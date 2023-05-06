@@ -1,0 +1,43 @@
+sc_node_norole_relation->nrel_not_equal;;
+
+nrel_not_equal=>nrel_main_idtf:
+[неравно* ](*<-lang_ru;;*);
+[not equal* ](*<-lang_en;;*);;
+
+nrel_not_equal => nrel_mathem_idtf: [≠] (*<-lang_en;;*);;
+nrel_not_equal => nrel_mathem_idtf: [<>] (*<-lang_en;;*);;
+
+//определение
+nrel_not_equal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(неравно*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Два выражения не равны, когда они имеют неидентичные значения.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+
+
+//утверждения
+nrel_not_equal <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравно*; число; вычитание*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Если разность чисел a и b не равна 0, это значит, что числа a и b не равны.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//домены	
+nrel_not_equal <- binary_relation;;
+nrel_not_equal <= nrel_first_domain:  concept_number;;
+nrel_not_equal <= nrel_second_domain: concept_number;;

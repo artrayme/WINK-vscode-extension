@@ -1,0 +1,6 @@
+four_hundred_and_nineteen=>nrel_main_idtf:
+[419](*<-lang_ru;;*);
+[419](*<-lang_en;;*);;
+
+concept_number -> four_hundred_and_nineteen;;
+set_of_number -> four_hundred_and_nineteen;;

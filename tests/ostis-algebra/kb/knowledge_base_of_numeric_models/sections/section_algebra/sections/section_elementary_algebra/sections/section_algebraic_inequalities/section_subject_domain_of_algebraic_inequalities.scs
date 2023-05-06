@@ -1,0 +1,28 @@
+sc_node_struct -> section_subject_domain_of_algebraic_inequalities;;
+
+section_subject_domain_of_algebraic_inequalities => nrel_main_idtf:
+    [Раздел. Предметная область алгебраических неравенств] (* <- lang_ru;; *);
+    [Section. Subject domain of algebraic inequalities] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_algebraic_inequalities <- nrel_system_identifier;;
+
+section_subject_domain_of_algebraic_inequalities -> rrel_key_sc_element:
+    subject_domain_of_algebraic_inequalities;
+    concept_irrational_inequality;
+    concept_linear_inequality_in_one_variable;
+    concept_quadratic_inequality;
+    concept_fractional_linear_inequalities;;
+
+section_subject_domain_of_algebraic_inequalities = [*
+    subject_domain_of_algebraic_inequalities => nrel_main_idtf:
+        [Предметная область алгебраических неравенств] (* <- lang_ru;; *);
+        [Subject domain of algebraic inequalities] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_algebraic_inequalities -> rrel_not_maximum_studied_object_class:
+        concept_irrational_inequality;
+        concept_linear_inequality_in_one_variable;
+        concept_quadratic_inequality;
+        concept_fractional_linear_inequalities;;
+*];;

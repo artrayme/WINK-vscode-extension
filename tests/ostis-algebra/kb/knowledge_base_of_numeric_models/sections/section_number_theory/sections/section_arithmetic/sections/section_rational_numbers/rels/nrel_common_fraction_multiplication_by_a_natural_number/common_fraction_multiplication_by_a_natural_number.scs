@@ -1,0 +1,72 @@
+sc_node_norole_relation->nrel_common_fraction_multiplication_by_a_natural_number;; 
+
+nrel_common_fraction_multiplication_by_a_natural_number=>nrel_main_idtf:
+[умножение дроби на натуральное число* ] (*<-lang_ru;;*);
+[табиғи саны бойынша фракциясы көбейту* ] (*<-lang_kz;;*);
+[common fraction multiplication by a natural number* ] (*<-lang_en;;*);;
+// синонимы
+nrel_common_fraction_multiplication_by_a_natural_number=>nrel_idtf:[произведение дроби и натурального числа* ] (*<-lang_ru;;*);;
+
+
+//определение и пояснения
+nrel_common_fraction_multiplication_by_a_natural_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(умножение дроби на натуральное число*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[При умножении дроби на натуральное число, мы должны ее числитель умножить на это число, а знаменатель оставить без изменения.]	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+//конкретные задачи
+ nrel_common_fraction_multiplication_by_a_natural_number<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Умножение обыкновенной дроби на натуральное число: 3*(2/6); 6*(8/13).](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_common_fraction_multiplication_by_a_natural_number<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение произведения обыкновенной дроби и натурального числа ](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_common_fraction_multiplication_by_a_natural_number => nrel_first_domain:concept_number;;
+nrel_common_fraction_multiplication_by_a_natural_number => nrel_second_domain: concept_common_fraction;;
+nrel_common_fraction_multiplication_by_a_natural_number => nrel_third_domain: concept_mixed_fraction;;
+
+//пример
+ nrel_common_fraction_multiplication_by_a_natural_number -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[(6/4)*7=(6*7)/4=42/4=10(1/2)](* <- lang_ru;; 	*);;
+		*);;
+	*);;

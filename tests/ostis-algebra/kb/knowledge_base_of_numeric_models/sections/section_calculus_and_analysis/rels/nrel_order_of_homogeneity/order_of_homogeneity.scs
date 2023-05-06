@@ -1,0 +1,61 @@
+sc_node_norole_relation ->  nrel_order_of_homogeneity;;
+
+nrel_order_of_homogeneity => nrel_main_idtf:
+[порядок однородности* ](*<-lang_ru;;*);
+[order of homogeneity* ](*<-lang_en;;*);
+[біркелкілік тәртібі* ](*<-lang_kz;;*);;
+
+nrel_order_of_homogeneity <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(порядок однородности*)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			"file://defenition.html"(*<-lang_ru;;*);;
+		*);;	
+	*);;
+
+
+//утверждения
+
+nrel_order_of_homogeneity <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(однородная функция; интеграл*; переменная; нуль)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			"file://statement.png"(*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(однородная функция; умножение*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			"file://statement_2.html"(*<-lang_ru;;*);;
+		*);;
+	*);
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(однородная функция; логарифм*; модуль*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Логарифм однородной функции нулевого порядка или логарифм модуля однородной функции нулевого порядка является однородной функцией нулевого порядка.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_order_of_homogeneity <- binary_relation;;
+nrel_order_of_homogeneity <= nrel_first_domain: concept_homogeneous_function;;
+nrel_order_of_homogeneity <= nrel_second_domain: concept_number;;

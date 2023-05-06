@@ -1,0 +1,6 @@
+two_hundred_and_fifty_six=>nrel_main_idtf:
+[256](*<-lang_ru;;*);
+[256](*<-lang_en;;*);;
+
+concept_number -> two_hundred_and_fifty_six;;
+set_of_number -> two_hundred_and_fifty_six;;

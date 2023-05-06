@@ -1,0 +1,35 @@
+sc_node_norole_relation ->  nrel_sample_range;;
+
+nrel_sample_range => nrel_main_idtf:
+[размах*](*<-lang_ru;;*);
+[sample range*](*<-lang_en;;*);;
+
+
+nrel_sample_range <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(размах*)]  (* <- lang_ru;; *);;
+	<- sc_definition;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		[Размах — разность между наибольшим и наименьшим элементами выборки](* <- lang_ru;; *);;
+		*);;
+	*);
+    ...
+	(*
+	=> nrel_main_idtf: [Опр. (стандартное отклонение* )] (*<-lang_ru;;*);;
+	<- sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://f.png";;
+		*);;
+	*);;
+
+nrel_sample_range <- binary_relation;;
+nrel_sample_range => nrel_definitional_domain: concept_number; concept_sample;;
+nrel_sample_range => nrel_first_domain: concept_sample;;
+nrel_sample_range => nrel_second_domain: concept_number;;

@@ -1,0 +1,54 @@
+sc_node_norole_relation -> nrel_subtraction;;
+
+nrel_subtraction=> nrel_main_idtf:
+[вычитание* ](* <- lang_ru;; *);  
+[subtraction* ](* <- lang_en;; *);;
+
+nrel_subtraction => nrel_mathem_idtf: [- ] (*<-lang_en;;*);;
+
+
+
+//определение
+nrel_subtraction<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Опр.(вычитание*)](*<- lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Вычитание - одна из четырёх арифметических операций; операция, обратная сложению. ](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//утверждения
+
+nrel_subtraction <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(натуральное число)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Результат вычитания не всегда является определённым для множества натуральных чисел.](*<-lang_ru;;*);;
+		*);;
+	*);
+...
+	(*
+	=> nrel_main_idtf:[Утв.(отрицательное число,сложение*)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[При наличии отрицательных чисел, вычитание удобно рассматривать  как разновидность сложения,например : 5+(-2)=3.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+nrel_subtraction <- ternary_relation;;
+nrel_subtraction <= nrel_first_domain: concept_number;;
+nrel_subtraction <= nrel_second_domain: concept_number;;
+nrel_subtraction<= nrel_third_domain: concept_number;;

@@ -1,0 +1,7 @@
+sc_text_of_agent_orthogonality_of_vectors
+-> rrel_key_sc_element:
+	agent_orthogonality_of_vectors;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_orthogonality_of_vectors = [*^"file://agent_orthogonality_of_vectors.scsi"*];;
+

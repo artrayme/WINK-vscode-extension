@@ -1,0 +1,59 @@
+sc_node_not_relation->concept_hexadecimal_notation;;
+
+concept_hexadecimal_notation=>nrel_main_idtf:
+[шестнадцатеричная система счисления](*<-lang_ru;;*);
+[оналтылық жүйе](*<-lang_kz;;*);
+[hexadecimal notation](*<-lang_en;;*);;
+
+// синонимы
+concept_hexadecimal_notation=> nrel_idtf:[шестнадцатеричное представление числа](*<-lang_ru;;*);;
+concept_hexadecimal_notation=> nrel_idtf:[шестнадцатеричная запись числа](*<-lang_ru;;*);;
+
+//определение
+concept_hexadecimal_notation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(шестнадцатеричная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Шестнадцатеричная система счисления— позиционная система счисления по целочисленному основанию 16.](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_hexadecimal_notation <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (шестнадцатеричная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Обычно в качестве шестнадцатеричных цифр используются десятичные цифры от 0 до 9 и латинские буквы от A до F ,то есть (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F).](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_hexadecimal_notation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(сумма*, система счисления, цифра )] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://hexadecimal_notation_1.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_hexadecimal_notation <= nrel_using_constants: concept_digit;rrel_basis;;
+
+
+
+//пример
+concept_hexadecimal_notation -> rrel_example :
+			"file://hexadecimal_notation_3.html";;

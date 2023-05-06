@@ -1,0 +1,353 @@
+agent_extraction_of_root
+=> nrel_main_idtf:
+	[агентная scp-программа извлечения корня из числа] (* <- lang_ru;; *);
+	
+	[agent scp-program extracting root of a number] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_extraction_of_root
+	(*
+	-> rrel_params: .agent_extraction_of_root_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_extraction_of_root_operator_set 
+		(*
+		-> rrel_init: .agent_extraction_of_root_operator1 
+			(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _question;;
+
+			=> nrel_goto: .agent_extraction_of_root_operator2;;
+			*);;
+
+		-> .agent_extraction_of_root_operator2 
+			(*
+		  	<- searchElStr3;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: question_extraction_of_root;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _question;;
+
+		  	=> nrel_then: .agent_extraction_of_root_operator3;;
+		  	=> nrel_else: .agent_extraction_of_root_operator_return;;
+			*);;
+                 
+		-> .agent_extraction_of_root_operator3 
+			(*
+			<- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_basis;;
+                      
+			=> nrel_then: .agent_extraction_of_root_operator3A1;;
+			=> nrel_else: .agent_extraction_of_root_operator_return;;
+			*);;
+
+                     
+             
+                  ->.agent_extraction_of_root_operator3A1
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc3;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_extraction_of_root_operator3A2;;
+			*);;  
+                   ->.agent_extraction_of_root_operator3A2
+                       (*
+                         <- searchElStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+                        -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc6;;
+                        -> rrel_5: rrel_fixed: rrel_scp_const: rrel_index_root;;
+                      
+			=> nrel_then: .agent_extraction_of_root_operator3A3;;
+			=> nrel_else: .agent_extraction_of_root_operator_return;;
+			*);;
+
+                 ->.agent_extraction_of_root_operator3A3
+                        (*
+		  	<- searchElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc7;;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _number1;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc8;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_main_idtf;;
+
+		  	=> nrel_goto: .agent_extraction_of_root_operator5;;
+			*);;
+
+		-> .agent_extraction_of_root_operator5
+			(*
+		 	<- contDiv;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer1;;
+                        -> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+
+                 	=> nrel_goto: .agent_extraction_of_root_operator6 ;;
+			
+                 	*);;                    
+
+
+		-> .agent_extraction_of_root_operator6
+			(*
+		 	<- contPow;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _answer2;;
+                        -> rrel_2: rrel_fixed: rrel_scp_var: _number;;
+                        -> rrel_3: rrel_fixed: rrel_scp_var: _answer1;;
+                       
+                 	=> nrel_goto: .agent_extraction_of_root_operator7;;
+			
+                 	*);;
+
+
+		-> .agent_extraction_of_root_operator7 
+			(*
+		 	<- genEl;;
+		 	-> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+
+		 	=> nrel_goto: .agent_extraction_of_root_operator001;;
+		 	*);;
+                 
+		
+
+
+
+
+		->.agent_extraction_of_root_operator001
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_basis;;
+ 
+                        =>nrel_goto: .agent_extraction_of_root_operator002;;
+                        *);;
+                           
+                   ->.agent_extraction_of_root_operator002
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc16;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _number1;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_index_root;;
+ 
+                        =>nrel_goto: .agent_extraction_of_root_operator003;;
+                        *);;
+
+                     ->.agent_extraction_of_root_operator003
+                        (*
+                         <-searchElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc30;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _last;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc31;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_then: .agent_extraction_of_root_operator004;;
+                        =>nrel_else: .agent_extraction_of_root_operator005;;
+                        *);;
+
+                    ->  .agent_extraction_of_root_operator004
+                        (*
+                         <- eraseEl;;
+                         -> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _last;;
+
+                        => nrel_goto: .agent_extraction_of_root_operator005;;
+                         *);;
+
+                    ->.agent_extraction_of_root_operator005
+                        (*
+                         <-genElStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_fixed: rrel_scp_var: _answer2;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                        =>nrel_goto: .agent_extraction_of_root_operator006;;
+                        *);;
+                   
+                      ->.agent_extraction_of_root_operator006
+                        (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: nrel_root_extract;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: ..extraction_of_root;;
+ 
+                        =>nrel_goto: .agent_extraction_of_root_operator007;;
+                        *);;
+                      
+                       ->.agent_extraction_of_root_operator007
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+             		
+                        =>nrel_goto: .agent_extraction_of_root_operator008;;
+                        *);;
+                             
+
+                       ->.agent_extraction_of_root_operator008
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_basis;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_extraction_of_root_operator009;;
+                        *);;
+
+			-> .agent_extraction_of_root_operator009
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_basis;;
+
+				=> nrel_goto: .agent_extraction_of_root_operator010;;
+				*);;
+			 
+                    
+                        ->.agent_extraction_of_root_operator010
+                       (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+			  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+			  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_index_root;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+                          
+                        =>nrel_goto: .agent_extraction_of_root_operator011;;
+                        *);;
+
+			-> .agent_extraction_of_root_operator011
+				(*
+				<- genElStr3;;
+				-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+				-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc35;;
+				-> rrel_3: rrel_fixed: rrel_scp_const: rrel_index_root;;
+
+				=> nrel_goto: .agent_extraction_of_root_operator012;;
+				*);;
+                    
+                      
+                       ->.agent_extraction_of_root_operator012
+                        (*
+                         <-searchSetStr5;;
+                          -> rrel_1: rrel_fixed: rrel_scp_const: rrel_node: ..extraction_of_root;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+                          -> rrel_3: rrel_assign: rrel_scp_var: _smth;;
+                          -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc18;; 
+                          -> rrel_5: rrel_fixed: rrel_scp_const: rrel_result;;
+ 
+                          ->rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;
+                          ->rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+
+                        =>nrel_goto: .agent_extraction_of_root_operator013;;
+                        *);;
+
+                         ->.agent_extraction_of_root_operator013
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc25;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: rrel_result;;
+
+                        =>nrel_goto: .agent_extraction_of_root_operator014;;
+                        *);;
+
+                       ->.agent_extraction_of_root_operator014
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc26;;
+                          -> rrel_3: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc19;;
+                          
+                        =>nrel_goto: .agent_extraction_of_root_operator015;;
+                        *);; 
+                    
+                      ->.agent_extraction_of_root_operator015
+                       (*
+                         <-genElStr3;;
+                          -> rrel_1: rrel_fixed: rrel_scp_var: rrel_node: _answer;;
+                          -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc27;;
+                          -> rrel_3: rrel_fixed: rrel_scp_const: nrel_root_extract;;
+
+                        =>nrel_goto: .agent_extraction_of_root_operator_gen_answer;;
+                        *);;
+
+
+
+
+
+
+
+		-> .agent_extraction_of_root_operator_gen_answer 
+			(*
+		  	<- genElStr5;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _question;;
+		  	-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc10;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+		  	=> nrel_goto: .agent_extraction_of_root_operator_return;;
+			*);;     
+					
+		-> .agent_extraction_of_root_operator_return 
+			(*
+		  	<- return;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

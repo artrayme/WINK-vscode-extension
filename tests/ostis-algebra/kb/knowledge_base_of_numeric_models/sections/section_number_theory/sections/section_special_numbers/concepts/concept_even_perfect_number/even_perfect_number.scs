@@ -1,0 +1,79 @@
+sc_node_not_relation -> concept_even_perfect_number;; 
+
+concept_even_perfect_number => nrel_main_idtf:
+[четное совершенное число](*<-lang_ru;;*);
+[even perfect number](*<-lang_en;;*);;
+
+
+//определения и пояснения
+concept_even_perfect_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (четное совершенное число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Четное совершенное число — совершенное число, которое делится на 2 без остатка.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_even_perfect_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(число; четное совершенное число; простое число; простое число Мерсенна)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://even_perfect_number_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(четное совершенное число; десятичная система счисления)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Все чётные совершенные числа, кроме 6 и 496, заканчиваются в десятичной записи на 16, 28, 36, 56 или 76.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(цифровой корень*; четное совершенное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Цифровой корень любого четного совершенного числа (кроме 6) равен 1.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(четное совершенное число; бесконечность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Неизвестно, равно ли количество четных совершенных чисел бесконечности.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(четное совершенное число; сумма'; нечетное число; возведение в степень*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Все чётные совершенные числа (кроме 6) являются суммой последовательных нечётных натуральных чисел, возведённых в степень 3.](* <- lang_ru;; *);;
+		*);;
+	*);;

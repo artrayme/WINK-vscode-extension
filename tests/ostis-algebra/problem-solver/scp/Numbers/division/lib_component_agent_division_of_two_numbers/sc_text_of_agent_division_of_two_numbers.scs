@@ -1,0 +1,7 @@
+sc_text_of_agent_division_of_two_numbers 
+-> rrel_key_sc_element:
+	agent_division_of_two_numbers;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_division_of_two_numbers = [*^"file://agent_division_of_two_numbers.scsi"*];;
+

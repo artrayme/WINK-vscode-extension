@@ -1,0 +1,28 @@
+sc_node_struct -> section_subject_domain_of_progressions;;
+
+section_subject_domain_of_progressions => nrel_main_idtf:
+    [Раздел. Предметная область прогрессий] (* <- lang_ru;; *);
+    [Section. Subject domain of progressions] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_progressions <- nrel_system_identifier;;
+  
+section_subject_domain_of_progressions -> rrel_key_sc_element:
+    subject_domain_of_progressions;
+    concept_progression;
+    concept_geometric_progression;
+    concept_arithmetical_progression;;
+
+section_subject_domain_of_progressions = [*
+    subject_domain_of_progressions => nrel_main_idtf:
+        [Предметная область прогрессий] (* <- lang_ru;; *);
+        [Subject domain of progressions] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_progressions -> rrel_maximum_studied_object_class:
+        concept_progression;;
+
+    subject_domain_of_progressions -> rrel_not_maximum_studied_object_class:
+        concept_geometric_progression;
+        concept_arithmetical_progression;;
+*];;

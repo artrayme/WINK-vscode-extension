@@ -1,0 +1,73 @@
+sc_node_norole_relation-> nrel_arccotangent;;
+
+nrel_arccotangent=>nrel_main_idtf:
+[арккотангенс* ](*<-lang_ru;;*);
+[arccotangent* ](*<-lang_en;;*);
+[арктангенс* ](*<-lang_kz;;*);;
+
+//синонимы
+nrel_arccotangent => nrel_idtf:[arcctg* ](*<-lang_en;;*);;
+
+//определение
+nrel_arccotangent<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Опр.(арккотангенс*)](*<-lang_ru;;*);;
+<-sc_explanation;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_examole:
+[Арккотангенсом a называется такой угол,тангенс которого равен a](*<-lang_ru;;*);;
+*);;
+*);;
+
+//используемые константы
+nrel_arccotangent<=nrel_using_constants:concept_angle;nrel_tangent;concept_number;;
+
+
+//надмножество
+concept_trigonometric_function => nrel_inclusion: nrel_arccotangent;;
+
+//утверждения
+	
+nrel_arccotangent <- rrel_key_sc_element:
+... 
+(*
+=> nrel_main_idtf: [Утв.(арккотангенс*; действительное число; область определения*)] (* <- lang_ru;; *);;
+<- sc_statement;;
+<= nrel_sc_text_translation: 
+...
+(*
+-> rrel_example: 
+	[Областью определения арккотангенса яляется промежуток от 0 до Pi.](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(арккотангенс*; область значений*; промежуток)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Областью значений арккотангенса являются все действительные числа .](* <- lang_ru;; *);;
+		*);;
+	*);
+...
+(*
+	=> nrel_main_idtf: [Утв.(арккотангенс*; убывающая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Арккотангенс является строго убывающей функцией.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+///домены
+nrel_arccotangent <- binary_relation;;
+nrel_arccotangent <= nrel_first_domain:  concept_number;;
+nrel_arccotangent <= nrel_second_domain: nrel_angle_measure;;

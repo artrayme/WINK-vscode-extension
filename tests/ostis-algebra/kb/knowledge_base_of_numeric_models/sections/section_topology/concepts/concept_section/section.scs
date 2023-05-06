@@ -1,0 +1,31 @@
+sc_node_not_relation->concept_section;; 
+
+concept_section=>nrel_main_idtf:
+[отрезок](*<-lang_ru;;*);
+[section](*<-lang_en;;*);;
+
+concept_section=> nrel_using_constants: concept_number;concept_numerical_sequence;;
+
+concept_section<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(отрезок)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://section.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_section-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://section.png"(* <- lang_ru;;*);;
+		*);;
+	*);;

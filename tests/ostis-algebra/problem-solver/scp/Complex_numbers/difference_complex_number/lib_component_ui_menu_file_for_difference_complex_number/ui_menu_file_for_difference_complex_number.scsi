@@ -1,0 +1,29 @@
+ui_menu_file_for_difference_complex_number <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_difference_complex_number => nrel_main_idtf: 
+	[Найти разность 2-х комплексных чисел] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_difference_complex_number => nrel_main_idtf: 
+	[Request finding of difference complex number] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_difference_complex_number => ui_nrel_command_template:
+	[*
+		question_difference_complex_number _-> ._question_difference_complex_number_instance
+			(*
+			_-> rrel_number1:: ui_arg_1;;
+			_-> rrel_number2:: ui_arg_2;;
+
+			*);;
+		._question_difference_complex_number_instance _<- question;;
+	*];;
+
+ui_menu_file_for_difference_complex_number => ui_nrel_command_lang_template: 
+	[Найти разность 2-х комплексных чисел: $ui_arg_1 и $ui_arg_2] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_difference_complex_number => ui_nrel_command_lang_template: 
+	[Request difference complex number : $ui_arg_1 and $ui_arg_2] 
+	(* <- lang_en;; *);;
+

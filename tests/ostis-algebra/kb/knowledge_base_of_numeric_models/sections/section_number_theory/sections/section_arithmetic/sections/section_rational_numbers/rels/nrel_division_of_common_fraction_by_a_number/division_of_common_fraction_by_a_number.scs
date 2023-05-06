@@ -1,0 +1,69 @@
+sc_node_norole_relation->nrel_division_of_common_fraction_by_a_number;; 
+
+nrel_division_of_common_fraction_by_a_number=>nrel_main_idtf:
+[деление обыкновенной дроби на число* ] (*<-lang_ru;;*);
+[ортақ фракциясының саны бойынша бөлу* ] (*<-lang_kz;;*);
+[division of common fraction by a number* ] (*<-lang_en;;*);;
+
+//определение и пояснения
+nrel_division_of_common_fraction_by_a_number<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(деление обыкновенной дроби на число*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	[Чтобы разделить дробь на натуральное число.Нужно представить натуральное число в виде неправильной дроби с числителем, равным самому числу, а знаменатель равным единице.
+Затем призводим деление по правилу деления дроби на дробь.]	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//конкретные задачи
+ nrel_division_of_common_fraction_by_a_number<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+[Разделить обыкновенную дробь на число : (3/7):2; (6/45):8.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//классы задач и способы решения
+ nrel_division_of_common_fraction_by_a_number<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение деления обыкновенной дроби на число ](* <- lang_ru;; *);;
+*);;
+*);;
+
+//Домены
+nrel_division_of_common_fraction_by_a_number => nrel_first_domain:concept_common_fraction;;
+nrel_division_of_common_fraction_by_a_number => nrel_second_domain: concept_number;;
+nrel_division_of_common_fraction_by_a_number => nrel_third_domain: concept_common_fraction;;
+
+//пример
+ nrel_division_of_common_fraction_by_a_number -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[(6/4):7=(6/4)*(1/7)=(6*1)/(4*7)=6/28=3/14](* <- lang_ru;; 	*);;
+		*);;
+	*);;

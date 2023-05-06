@@ -1,0 +1,52 @@
+sc_node_norole_relation -> nrel_arithmetic_average;;
+
+nrel_arithmetic_average=>nrel_main_idtf:
+[среднее арифметическое* ](*<-lang_ru;;*);
+[орташа* ](*<-lang_kz;;*);
+[arithmetic average* ](*<-lang_en;;*);;
+
+nrel_arithmetic_average => nrel_idtf:	[средняя арифметическая величина* ](*<-lang_ru;;*);;
+
+nrel_arithmetic_average <- ternary_relation;;
+nrel_arithmetic_average => nrel_first_domain: concept_number;;
+nrel_arithmetic_average => nrel_second_domain: concept_number;;
+nrel_arithmetic_average => nrel_third_domain: concept_number;;
+
+nrel_arithmetic_average<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(среднее арифметическое*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Среднее арифметическое нескольких величин — это отношение суммы величин к их количеству.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_arithmetic_average<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (среднее арифметическое*)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Среднее арифметическое — это среднее число, которое получается, если сложить несколько чисел и разделить результат на количество этих чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+nrel_arithmetic_average <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(мода*; медиана*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Существуют виды средних величин — мода и медиана.](* <- lang_ru;; *);;
+		*);;
+	*);;

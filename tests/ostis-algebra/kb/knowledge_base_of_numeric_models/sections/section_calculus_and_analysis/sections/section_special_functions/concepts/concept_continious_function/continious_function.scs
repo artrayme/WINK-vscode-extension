@@ -1,0 +1,47 @@
+sc_node_not_relation -> concept_continious_function;;
+
+concept_continious_function=>nrel_main_idtf:
+[continious function](*<-lang_en;;*);
+[непрерывная функция](*<-lang_ru;;*);;
+
+//определения и пояснения
+concept_continious_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(непрерывная функция)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Непрерывная функция - функция,у которой малые изменения аргумента приводят к малым изменениям значения функции. ](*<-lang_ru;;*);;
+*);;
+*);;
+
+//надмножество
+concept_function=>nrel_inclusion : concept_continious_function;;
+
+//утверждения
+concept_continious_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(множество)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Функция f непрерывна на множестве E, если она непрерывна в каждой точке данного множества. ](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=>nrel_main_idtf:[Утв.(предел*,множество)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Функция f непрерывна в точке x, предельной для множества D, если f имеет предел в точке x, и этот предел совпадает со значением функции f(x)..](*<-lang_ru;;*);;
+*);;
+*);;

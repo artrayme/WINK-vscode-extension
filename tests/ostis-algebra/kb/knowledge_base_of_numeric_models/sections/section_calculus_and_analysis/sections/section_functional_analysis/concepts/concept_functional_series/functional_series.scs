@@ -1,0 +1,66 @@
+sc_node_not_relation->concept_functional_series;; 
+
+concept_functional_series=>nrel_main_idtf:
+[функциональный ряд](*<-lang_ru;;*);
+[functional series](*<-lang_en;;*);;
+
+//определения и пояснения
+concept_functional_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(функциональный ряд)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функциональный ряд — ряд, каждым членом которого, в отличие от числового ряда, является не число, а функция.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+
+//используемые константы
+ concept_functional_series<= nrel_using_constants: concept_number; concept_function;;
+
+//пример
+ concept_functional_series-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://functional_series.png"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_functional_series<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Определение области сходимости функционального ряда.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_functional_series<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://functional_series2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

@@ -1,0 +1,64 @@
+sc_node_not_relation -> concept_number;;																	
+concept_number => nrel_main_idtf :	[число] (* <- lang_ru;; *);	[сан] (* <- lang_kz;; *);	[number](*<-lang_en;;*);;
+concept_number => nrel_idtf:	[класс чисел](*<-lang_ru;;*);	[множество чисел](*<-lang_ru;;*);	[понятие числа](*<-lang_ru;;*);;
+
+concept_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(число)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Число — основное понятие математики, используемое для количественной характеристики, сравнения, нумерации объектов и их частей.](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+
+// утверждения
+concept_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(равенство*; 0-нуль; обратное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Для любого числа, не равного нулю, существует обратное число.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+
+concept_number <= nrel_subdividing:
+...
+(*
+	-> concept_natural_number; concept_complex_number;  concept_perfect_number; concept_algebraic_number; concept_real_number; concept_complex_mating_number;;
+*);;
+
+concept_number <= nrel_subdividing:
+...
+(* 	
+	=>nrel_main_idtf:[По признаку положения на числовой оси](*<-lang_ru;;*);;
+		-> concept_negative_number;;
+		-> concept_positive_number;;
+		-> null;;
+*);;
+
+
+concept_number <= nrel_subdividing:
+    ... 
+	(*
+	=>nrel_main_idtf:[По признаку четности и нечетности](*<-lang_ru;;*);;
+		-> concept_even_number;;
+		-> concept_odd_number;;
+	*);;
+
+concept_number <= nrel_subdividing:
+	...
+	(* 
+	-> concept_prime_number;;
+	-> concept_composite_number;;
+	*);;

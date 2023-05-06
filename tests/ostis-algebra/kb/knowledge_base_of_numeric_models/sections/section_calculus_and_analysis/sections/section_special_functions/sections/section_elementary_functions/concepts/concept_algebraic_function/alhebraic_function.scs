@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_algebraic_function;; 
+concept_algebraic_function=> nrel_main_idtf:
+	[алгебраическая функция](*<-lang_ru;;*);
+	[algebraic function](*<-lang_en;;*);
+	[алгебралық функциясы](*<-lang_kz;;*);;
+
+//определения и пояснения
+concept_algebraic_function<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(алгебраическая функция)](*<-lang_ru;;*);;
+   <-sc_explanation;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+      [Алгебраическая функция — элементарная функция, которая в окрестности каждой точки области определения может быть неявно задана с помощью алгебраического уравнения.](*<-lang_ru;;*);;
+*);;
+*);
+...
+(*
+=> nrel_main_idtf: [Пояснение (алгебраическая функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+[Функция называется алгебраической, если она является алгебраической в каждой точке области определения.](*<-lang_ru;;*);;
+*);;
+*);;
+
+
+//используемые константы
+concept_algebraic_function<=nrel_using_constants:concept_elementary_function;concept_function;nrel_domain_of_the_function;;
+
+
+//разбиение
+concept_algebraic_function<=nrel_subdividing:
+...
+(*
+->concept_power_function;;
+->concept_rational_function;;
+*);;
+//надмножество
+concept_function=>nrel_inclusion :concept_algebraic_function;;
+
+//утверждения
+concept_algebraic_function<-rrel_key_sc_element:
+...
+(*
+=>nrel_main_idtf:[Утв.(аналитическая функция)](*<-lang_ru;;*);;
+<-sc_statement;;
+<=nrel_sc_text_translation:
+...
+(*
+->rrel_example:
+     [Если функция является алгебраической в точке, то она является и аналитической в данной точке](*<-lang_ru;;*);;
+*);;
+*);;

@@ -1,0 +1,87 @@
+sc_node_not_relation->concept_improper_fraction;;
+
+concept_improper_fraction=>nrel_main_idtf:
+[неправильная дробь](*<-lang_ru;;*);
+[дұрыс фракциясын](*<-lang_kz;;*);
+[improper fraction](*<-lang_en;;*);;
+
+//определение
+concept_improper_fraction <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(неправильная дробь)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Дробь, в которой числитель больше знаменателя, называют неправильной дробью](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_improper_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неправильная дробь, 1-единица, целое число, обыкновенная дробь, знаменатель)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Всякое отличное от нуля целое число можно представить в виде неправильной обыкновенной дроби со знаменателем 1.] (*<-lang_ru;;*);;
+		*);;
+	*);
+... 
+	(*
+	=> nrel_main_idtf: [Утв.(неправильная дробь, 1-единица, модуль)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				[Модуль неправильной дроби больше единицы или равен единице.] (*<-lang_ru;;*);;
+		*);;
+	*);;
+//используемые константы
+concept_improper_fraction <= nrel_using_constants: concept_number;rrel_denominator;rrel_numerator;;
+
+// конкретные задачи
+concept_improper_fraction<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли дробь неправильной : 3/4; 4/3; 8/7.] (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_improper_fraction  <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Задачи на определение является ли дробь непральной .]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_improper_fraction -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[4/3 - неправильная дробь ](* <- lang_ru;; 	*);;
+		*);;
+	*);;

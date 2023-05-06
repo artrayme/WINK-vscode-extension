@@ -1,0 +1,46 @@
+sc_node_not_relation -> concept_objective_function;;
+
+concept_objective_function => nrel_main_idtf:
+[целевая функция](*<-lang_ru;;*);
+[objective function](*<-lang_en;;*);
+[объективті функциясы](*<-lang_kz;;*);;
+
+//определение
+concept_objective_function <- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:[Опр.(целевая функция)](*<-lang_ru;;*);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation:
+			...
+		(*
+	      -> rrel_example:
+			[Целевая функция — вещественная или целочисленная функция нескольких переменных, подлежащая оптимизации (минимизации или максимизации) в целях решения некоторой оптимизационной задачи.](*<-lang_ru;;*);;
+		*);;	
+	*);;
+
+
+//утверждения
+concept_objective_function<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:[Утв.(аргумент'; множество)](*<-lang_ru;;*);;
+	<-sc_statement;;
+	<=nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Аргументы целевой функции могут задаваться на произвольных множествах.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_objective_function <= nrel_subdividing:
+	...
+	(* 
+	-> concept_linear_objective_function;;
+	-> concept_nonlinear_objective_function;;
+	-> concept_convex_objective_function;;
+	-> concept_quadratic_objective_function;;
+	*);;
+
+concept_objective_function<= nrel_inclusion: concept_function;;

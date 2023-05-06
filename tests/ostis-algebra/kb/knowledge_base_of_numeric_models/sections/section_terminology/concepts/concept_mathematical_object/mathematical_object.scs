@@ -1,0 +1,59 @@
+sc_node_not_relation -> concept_mathematical_object;; 
+
+concept_mathematical_object => nrel_main_idtf:
+[математический объект](*<-lang_ru;;*);
+[mathematical object](*<-lang_en;;*);;
+	
+//надмножество
+abstract_essence => nrel_inclusion: concept_mathematical_object;;
+
+//определения и пояснения
+concept_mathematical_object <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (математический объект)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Математический объект — абстрактный объект, определяемый и изучаемый в математике.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_mathematical_object <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(математический объект; аксиома')] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[При определении математического объекта задаются его название и перечень свойств (обычно в виде списка аксиом).](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(математический объект)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Любой математический объект, свойства которого непротиворечивы, считается допустимым и существующим.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(математический объект, реальная сущность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Происхождение математических объектов может быть различным: идеализация объекта реального мира, дополнение другого математического объекта, выявление подмножества другого математического объекта.](* <- lang_ru;; *);;
+		*);;
+	*);;

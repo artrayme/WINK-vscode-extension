@@ -1,0 +1,65 @@
+sc_node_not_relation->concept_antihermitian_matrix;;
+
+concept_antihermitian_matrix => nrel_main_idtf:
+[антиэрмитова матрица](*<-lang_ru;;*);
+[anti Hermitian matrix](*<-lang_en;;*);
+[жартылай жай сан](*<-lang_kz;;*);;
+
+concept_antihermitian_matrix => nrel_idtf:[косоэрмитовая матрица](*<-lang_ru;;*);;
+concept_antihermitian_matrix => nrel_idtf:[skew matrix](*<-lang_en;;*);;
+	
+//надмножество
+concept_matrix => nrel_inclusion: concept_antihermitian_matrix;;
+
+//определения и пояснения
+concept_antihermitian_matrix <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (антиэрмитова матрица)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Антиэрмитова матрица - квадратная матрица, эрмитово сопряжение которой меняет знак исходной матрицы.](*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+//используемые константы
+concept_antihermitian_matrix <= nrel_using_constants:
+	{
+	concept_matrix;
+	concept_square_matrix;
+	concept_sign;
+	nrel_hermitian_conjugation
+	};;
+	
+//утверждения
+concept_antihermitian_matrix <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(антиэрмитова матрица; нормальная матрица)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Антиэрмитовы матрицы являются нормальными.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(антиэрмитова матрица; собственное число матрицы*; мнимое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Собственные числа антиэрмитовой матрицы либо нулевые, либо чисто мнимые.](* <- lang_ru;; *);;
+		*);;
+	*);;
+	
+//пример
+concept_antihermitian_matrix -> rrel_example :
+		"file://antihermitian_matrix_example.png";;
+

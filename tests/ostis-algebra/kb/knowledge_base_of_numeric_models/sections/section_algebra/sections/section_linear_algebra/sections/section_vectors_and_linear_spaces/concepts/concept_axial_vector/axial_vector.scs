@@ -1,0 +1,33 @@
+sc_node_not_relation->concept_axial_vector;;
+
+concept_axial_vector=>nrel_main_idtf:
+[аксиальный вектор](*<-lang_ru;;*);
+[axial vector](*<-lang_en;;*);;
+
+concept_axial_vector=>nrel_idtf: [псевдовектор](*<-lang_ru;;*);;
+
+concept_axial_vector <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(аксиальный вектор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Аксиальный вектор — величина, компоненты которой преобразуются как вектор при поворотах системы координат, но меняющие свой знак противоположно тому, как ведут себя компоненты вектора при любой инверсии (обращении знака) координат.](* <- lang_ru;; 	*);;
+		*);;
+*);
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(аксиальный вектор)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Псевдовектор меняет направление на противоположное при сохранении абсолютной величины (домножается на минус единицу) при любой инверсии координатной системы.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_axial_vector-> rrel_example :[H=rotA](* <- lang_ru;; 	*);;

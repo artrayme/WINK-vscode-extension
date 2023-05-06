@@ -1,0 +1,104 @@
+sc_node_not_relation->concept_binary_number_system;;
+
+concept_binary_number_system=>nrel_main_idtf:
+[двоичная система счисления](*<-lang_ru;;*);
+[екілік жүйесі](*<-lang_kz;;*);
+[binary number system](*<-lang_en;;*);;
+
+// синонимы
+concept_binary_number_system=> nrel_idtf:[двоичное представление числа](*<-lang_ru;;*);;
+concept_binary_number_system=> nrel_idtf:[двоичная запись числа](*<-lang_ru;;*);;
+
+//определение
+concept_binary_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(двоичная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Двоичная система счисления — позиционная система счисления с основанием 2](* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_binary_number_system<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (двоичная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://binary_number_system_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_binary_number_system <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (двоичная система счисления)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example:
+			"file://binary_number_system_2.html" (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//утверждения
+concept_binary_number_system<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(система счисления,цифра, десятичная система счисления)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://binary_number_system_3.html" (*<-lang_ru;;*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(система счисления,цифра, десятичная система счисления, дробное число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://binary_number_system_4.html" (*<-lang_ru;;*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(система счисления,цифра, десятичная система счисления, метод Горнера)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://binary_number_system_5.html" (*<-lang_ru;;*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(система счисления,цифра, десятичная система счисления, дробные числа, метод Горнера)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+				"file://binary_number_system_6.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+
+//используемые константы
+concept_binary_number_system <= nrel_using_constants: concept_digit;rrel_basis;;
+
+//пример
+concept_binary_number_system -> rrel_example :
+			"file://binary_number_system_8.html";;
+

@@ -1,0 +1,72 @@
+sc_node_not_relation -> concept_infinitesimal_function;;
+concept_infinitesimal_function=> nrel_main_idtf :
+[бесконечно малая функция] (* <- lang_ru;; *);
+[infinitesimal function] (* <- lang_en;; *);; 
+
+concept_infinitesimal_function -> concept_infinitesimal_function_of_order_k;;
+
+//определение
+concept_infinitesimal_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(бесконечно малая функция)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Функция называется бесконечно малой в окрестности точки x0, если limf(x)=0 при x→x0](* <- lang_ru;; 	*);;
+		*);;
+	*);;
+concept_infinitesimal_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(свойства бесконечно малых функций*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://infinitesimal_function.html" (*<-lang_ru;;*);;
+		*);;
+	*);;
+concept_infinitesimal_function <- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на определение: является ли функции бесконечном малая в окрестности заданной точки.](* <- lang_ru;; *);;
+*);;
+*);;
+concept_infinitesimal_function<= nrel_using_constants:concept_function;;
+
+// конкретные задачи
+concept_infinitesimal_function<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Является ли функция f(x)=(3+x)/x бесконечно малой функцией в окрестности точки x=-3. ]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//пример
+concept_infinitesimal_function-> rrel_example :
+...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[f(x)=1/x бесконечно малая функция при x→∞](* <- lang_ru;; 	*);;
+		*);;
+	*);;

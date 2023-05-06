@@ -1,0 +1,48 @@
+sc_node_not_relation -> concept_piecewise_function;;
+concept_piecewise_function => nrel_main_idtf:
+[кусочная функция](*<-lang_ru;;*);
+[piecewise function](*<-lang_en;;*);
+[кусочно функциясы](*<-lang_kz;;*);;
+
+concept_piecewise_function => nrel_idtf:[кусочно-заданная функция](*<-lang_ru;;*);;
+
+concept_function => nrel_inclusion: concept_piecewise_function;;
+
+concept_piecewise_function <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (кусочная функция)] (*<-lang_ru;;*);;
+	<-sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Кусочно-заданная функция — функция, определённая на множестве вещественных чисел, заданная на каждом из интервалов, составляющих область определения, отдельной формулой.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_piecewise_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(кусочная функция; область определения*; входящая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Выражения, определяющие кусочную функцию на каждой составляющей области определения, назоваются входящими функциями.](*<-lang_ru;;*);;
+		*);;
+	*);;
+
+concept_piecewise_function <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(кусочная функция; область определения*; входящая функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;	
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Для того чтобы вычислить значение кусочной функции в заданной точке,необходимо, во-первых, определить, какой составляющей области определения принадлежит эта точка, а, во-вторых, найти значение входящей функции на этой составляющей.](*<-lang_ru;;*);;
+		*);;
+	*);;

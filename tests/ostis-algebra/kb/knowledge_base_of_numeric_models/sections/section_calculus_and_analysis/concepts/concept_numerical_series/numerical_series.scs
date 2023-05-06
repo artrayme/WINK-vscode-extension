@@ -1,0 +1,79 @@
+sc_node_not_relation->concept_numerical_series;; 
+
+concept_numerical_series=>nrel_main_idtf:
+[числовой ряд](*<-lang_ru;;*);
+[натурал қатар](*<-lang_kz;;*);
+[numerical series](*<-lang_en;;*);;
+
+//синонимы
+concept_numerical_series=> nrel_idtf:[числовая последовательность](*<-lang_ru;;*);;
+
+//разбиение
+concept_numerical_series <= nrel_subdividing:
+...
+  (*
+	-> concept_real_numerical_series;;
+	-> concept_complex_numerical_series;;
+	-> concept_natural_series;;
+	*);;
+
+//определения и пояснения
+concept_numerical_series <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(числовой ряд)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Числовой ряд — это числовая последовательность, рассматриваемая вместе с другой последовательностью, которая называется последовательностью частичных сумм (ряда).](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+//утверждения
+
+//используемые константы
+ concept_numerical_series<= nrel_using_constants: concept_sequence; concept_numerical_sequence;;
+//пример
+ concept_numerical_series -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+	"file://numerical_series.jpg"(* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+//классы задач и методы решения
+concept_numerical_series<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Исследование числового ряда на сходимость.](* <- lang_ru;; *);;
+*);;
+*);;
+
+//конкретные задачи
+concept_numerical_series<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+
+(*
+-> rrel_example:
+"file://numerical_series2.jpg"(* <- lang_ru;; *);;
+*);;
+*);;

@@ -1,0 +1,80 @@
+sc_node_struct -> section_subject_domain_of_matrices;;
+
+section_subject_domain_of_matrices => nrel_main_idtf:
+    [Раздел. Предметная область матриц] (* <- lang_ru;; *);
+    [Section. Subject domain of matrices] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_matrices <- nrel_system_identifier;;
+  
+section_subject_domain_of_matrices -> rrel_key_sc_element:
+    subject_domain_of_matrices;
+    concept_orthogonal_matrix;
+    concept_unitary_matrix;
+    concept_matrix;
+    concept_diagonal_matrix;
+    concept_hermitian_matrix;
+    concept_antihermitian_matrix;
+    concept_square_matrix;
+    concept_symmetric_matrix;
+    concept_zero_matrix;
+    concept_unit_matrix;
+    nrel_secondary_diagonal_matrix;
+    nrel_division_of_the_matrix_by_the_number;
+    nrel_trace_of_the_matrix;
+    nrel_permanent;
+    nrel_rank_of_the_matrix;
+    nrel_transpose;
+    nrel_matrix_multiplication;
+    rrel_element_of_the_matrix;
+    nrel_addition_of_matrices;
+    nrel_equivalent_matrix;
+    nrel_subtraction_of_matrices;
+    nrel_wronskian;
+    nrel_matrix_multiplication_on_number;
+    nrel_determinant;
+    nrel_main_diagonal_of_the_matrix;
+    nrel_elementary_transformations;
+    nrel_hermitian_conjugate_matrix;
+    nrel_inverse_matrix;;
+
+section_subject_domain_of_matrices = [*
+    subject_domain_of_matrices => nrel_main_idtf:
+        [Предметная область матриц] (* <- lang_ru;; *);
+        [Subject domain of matrices] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_matrices -> rrel_maximum_studied_object_class:
+        concept_matrix;;
+
+    subject_domain_of_matrices -> rrel_not_maximum_studied_object_class:
+        concept_orthogonal_matrix;
+        concept_unitary_matrix;
+        concept_diagonal_matrix;
+        concept_hermitian_matrix;
+        concept_antihermitian_matrix;
+        concept_square_matrix;
+        concept_symmetric_matrix;
+        concept_zero_matrix;
+        concept_unit_matrix;;
+
+    subject_domain_of_matrices -> rrel_explored_relation:
+        nrel_secondary_diagonal_matrix;
+        nrel_division_of_the_matrix_by_the_number;
+        nrel_trace_of_the_matrix;
+        nrel_permanent;
+        nrel_rank_of_the_matrix;
+        nrel_transpose;
+        nrel_matrix_multiplication;
+        rrel_element_of_the_matrix;
+        nrel_addition_of_matrices;
+        nrel_equivalent_matrix;
+        nrel_subtraction_of_matrices;
+        nrel_wronskian;
+        nrel_matrix_multiplication_on_number;
+        nrel_determinant;
+        nrel_main_diagonal_of_the_matrix;
+        nrel_elementary_transformations;
+        nrel_hermitian_conjugate_matrix;
+        nrel_inverse_matrix;;
+*];;

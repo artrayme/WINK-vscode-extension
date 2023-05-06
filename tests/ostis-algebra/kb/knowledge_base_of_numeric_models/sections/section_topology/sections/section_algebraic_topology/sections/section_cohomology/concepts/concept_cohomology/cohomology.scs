@@ -1,0 +1,26 @@
+sc_node_not_relation -> concept_cohomology;;
+concept_cohomology => nrel_main_idtf:
+	[когомология](*<-lang_ru;;*);
+	[cohomology](*<-lang_en;;*);;
+
+//определения и пояснения
+ concept_cohomology<-rrel_key_sc_element:
+...
+(*
+   =>nrel_main_idtf:[Опр.(когомология)](*<-lang_ru;;*);;
+   <-sc_definition;;
+   <=nrel_sc_text_translation:
+...
+(* 
+->rrel_example:
+     [Когомология — метод приписывания пространству более богатых алгебраических инвариантов, чем гомологии.](*<-lang_ru;;*);;
+*);;
+*);;
+
+concept_algebraic_topology => nrel_inclusion: concept_cohomology;;
+
+concept_elementary_algebra <= nrel_using_constants:
+	{
+	concept_space;
+	concept_homology
+	};;

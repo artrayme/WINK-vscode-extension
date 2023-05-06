@@ -1,0 +1,46 @@
+sc_node_not_relation -> concept_differential_operator_nabla;;
+
+concept_differential_operator_nabla=> nrel_main_idtf :
+[дифференциальный оператор набла] (* <- lang_ru;; *);
+[differential operator nabla](*<-lang_en;;*);;
+
+concept_differential_operator_nabla => nrel_idtf:[набла](*<-lang_ru;;*);;
+concept_differential_operator_nabla => nrel_idtf:[оператор набла](*<-lang_ru;;*);;
+concept_differential_operator_nabla => nrel_idtf:[оператор Гамильтона](*<-lang_ru;;*);;
+
+concept_differential_operator_nabla <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(дифференциальный оператор набла)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Оператор набла  — векторный дифференциальный оператор, компоненты которого являются частными производными по координатам. Обозначается символом ∇.]   (* <- lang_ru;; 	*);;
+		*);;
+	*);;
+
+concept_differential_operator_nabla <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(скалярная функция; оператор градиента)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Иногда (особенно когда речь идет только о применении к скалярным функциям), оператор набла называют оператором градиента, каковым он в применении к скалярным функциям (полям) и является.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(скалярная функция; векторная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+[Оператор набла приобретает смысл в сочетании со скалярной или векторной функцией, к которой он применяется.]  (* <- lang_ru;; 	*);;
+		*);;
+	*);;

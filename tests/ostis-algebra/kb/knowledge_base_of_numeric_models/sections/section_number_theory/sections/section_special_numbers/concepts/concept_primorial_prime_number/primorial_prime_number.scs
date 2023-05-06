@@ -1,0 +1,49 @@
+sc_node_not_relation -> concept_primorial_prime_number;; 
+
+concept_primorial_prime_number => nrel_main_idtf:
+[праймориальное простое число](*<-lang_ru;;*);
+[primorial prime](*<-lang_en;;*);
+[прайморлық жай сан](*<-lang_kz;;*);;
+	
+//надмножество
+concept_prime_number => nrel_inclusion: concept_primorial_prime_number;;
+
+//определения и пояснения
+concept_primorial_prime_number <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (праймориальное простое число)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://primorial_prime_number.html"(*<-lang_ru;;*);;
+		*);;
+	*);;
+	
+	
+//утверждения
+concept_primorial_prime_number <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(праймориальное простое число)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://primorial_prime_number_statement.html"(* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(праймориальное простое число; число; бесконечноть)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Открытой проблемой остается конечно или бесконечно число праймориальных простых чисел.](* <- lang_ru;; *);;
+		*);;
+	*);;

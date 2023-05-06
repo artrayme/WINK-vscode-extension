@@ -1,0 +1,48 @@
+sc_node_norole_relation->nrel_indentity;;
+
+nrel_indentity=>nrel_main_idtf:
+[тождество* ](*<-lang_ru;;*);
+[identity* ](*<-lang_en;;*);;
+
+//определение
+nrel_indentity <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(тождество*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тождество — это равенство двух отличных по записи, но имеющих одинаковое значение, выражений, при любых переменных из их области определения.](* <- lang_ru;; *);;
+		*);;
+	*);;
+nrel_identity <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение (тождество*)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://identity_1.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//Домены
+nrel_indentity => nrel_first_domain:concept_variable;;
+nrel_indentity => nrel_second_domain: concept_number;;
+
+
+//пример
+nrel_indentity -> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://identity_2.html"(* <- lang_ru;; 	*);;
+		*);;
+	*);;

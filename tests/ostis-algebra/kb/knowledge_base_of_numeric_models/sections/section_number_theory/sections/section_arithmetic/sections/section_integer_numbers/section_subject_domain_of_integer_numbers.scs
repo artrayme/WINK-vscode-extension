@@ -1,0 +1,40 @@
+sc_node_struct -> section_subject_domain_of_integer_numbers;;
+
+section_subject_domain_of_integer_numbers => nrel_main_idtf:
+    [Раздел. Предметная область целых чисел] (* <- lang_ru;; *);
+    [Section. Subject domain of integer numbers] (* <- lang_en;; *);
+<- non_atomic_section;;
+
+section_subject_domain_of_integer_numbers <- nrel_system_identifier;;
+
+section_subject_domain_of_integer_numbers -> rrel_key_sc_element:
+    subject_domain_of_integer_numbers;
+    concept_negative_integer;
+    concept_integer_number;
+    concept_positive_integer;
+    rrel_residue;
+    nrel_comparing_integers;
+    nrel_division_of_integers;
+    nrel_multiplication_of_integers;
+    nrel_addition_of_integers;;
+
+section_subject_domain_of_integer_numbers = [*
+    subject_domain_of_integer_numbers => nrel_main_idtf:
+        [Предметная область целых чисел] (* <- lang_ru;; *);
+        [Subject domain of integer numbers] (* <- lang_en;; *);
+    <- subject_domain;;
+
+    subject_domain_of_integer_numbers -> rrel_maximum_studied_object_class:
+        concept_integer_number;;
+
+    subject_domain_of_integer_numbers -> rrel_not_maximum_studied_object_class:
+        concept_negative_integer;
+        concept_positive_integer;;
+
+    subject_domain_of_integer_numbers -> rrel_explored_relation:
+        rrel_residue;
+        nrel_comparing_integers;
+        nrel_division_of_integers;
+        nrel_multiplication_of_integers;
+        nrel_addition_of_integers;;
+*];;

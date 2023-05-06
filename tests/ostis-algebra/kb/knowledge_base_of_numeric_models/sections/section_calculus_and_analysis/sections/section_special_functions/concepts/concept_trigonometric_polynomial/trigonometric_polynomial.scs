@@ -1,0 +1,70 @@
+sc_node_not_relation -> concept_trigonometric_polynomial;;
+concept_trigonometric_polynomial => nrel_main_idtf:	[тригонометрический многочлен](*<-lang_ru;;*);	[trigonometric polynomial](*<-lang_en;;*);;
+concept_trigonometric_polynomial => nrel_idtf:	[тригонометрический полином](*<-lang_ru;;*);;
+
+concept_function => nrel_inclusion: concept_trigonometric_polynomial;;
+
+concept_trigonometric_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(тригонометрический многочлен)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тригонометрический многочлен — функция вещественного аргумента, которая является конечной тригонометрической суммой.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_trigonometric_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(тригонометрический многочлен)]  (* <- lang_ru;; *);;
+	<- sc_defenition;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://P9mDuHQvM8s.jpg"(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_trigonometric_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тригонометрический многочлен; функция; дифференциальное уравнение)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тригонометрические многочлены являются важнейшим средством приближения функций, используются для интерполяции и решения дифференциальных уравнений.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_trigonometric_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тригонометрический многочлен; частичная сумма'; ряд Фурье)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тригонометрический многочлен является частичной суммой ряда Фурье.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_trigonometric_polynomial <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(тригонометрический многочлен; теорема Вейерштрасса; непрерывная функция)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Согласно теореме Вейерштрасса для любой непрерывной на круге функции существует последовательность тригонометрических многочленов, которая к ней равномерно сходится.]	(* <- lang_ru;; *);;
+		*);;
+	*);;

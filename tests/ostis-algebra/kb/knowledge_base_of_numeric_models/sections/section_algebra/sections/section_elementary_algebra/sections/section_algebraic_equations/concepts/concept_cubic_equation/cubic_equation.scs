@@ -1,0 +1,72 @@
+sc_node_not_relation->concept_cubic_equation;; 
+
+concept_cubic_equation=>nrel_main_idtf:
+[кубическое уравнение](*<-lang_ru;;*);
+[cubic equation](*<-lang_en;;*);;
+
+concept_cubic_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(кубическое уравнение)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://cubic_equation.html"(* <- lang_ru;; *);;
+		*);;
+	*);;
+concept_cubic_equation<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(дискриминант*)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://cubic_equation1.html"
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_cubic_equation<= nrel_using_constants:  nrel_discriminant;;
+
+concept_cubic_equation<- rrel_key_sc_element:
+...
+
+(*
+=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+<- sc_task;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+"file://cubic_equation2.html"(* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_cubic_equation<- rrel_key_sc_element:
+...
+(*
+=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+<- sc_task;;
+<=
+nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[Задачи на нахождение корней кубического уравнения.](* <- lang_ru;; *);;
+*);;
+*);;
+
+concept_cubic_equation-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://cubic_equation3.html"(* <- lang_ru;;*);;
+		*);;
+	*);;

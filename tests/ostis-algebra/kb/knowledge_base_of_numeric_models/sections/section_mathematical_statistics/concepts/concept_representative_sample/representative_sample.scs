@@ -1,0 +1,23 @@
+sc_node_not_relation -> concept_representative_sample;;
+
+concept_representative_sample => nrel_main_idtf:
+[репрезентативная выборка](*<-lang_ru;;*);
+[represantative sample](*<-lang_en;;*);;
+
+
+concept_sample => nrel_inclusion: concept_representative_sample;;
+
+concept_representative_sample <- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf: [Опр. (репрезентативная выборка)] (*<-lang_ru;;*);;
+	<-sc_definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_definition:
+			[Репрезентативная выборка -- это выборка представляющая основные свойства генеральной совокупности](*<-lang_ru;;*);;
+		*);;
+	*);;
+    concept_representative_sample -> rrel_example :
+            [Пример: если в городе проживает 100000 человек, половина из которых мужчины и половина женщины, то выборка 1000 человек из которых 10 мужчин и 990 женщин не будет репрезентативной. Следовательно, построенный на ее основе опрос общественного мнения приведет к фальсификации результатов.] (*<-lang_ru;;*);;

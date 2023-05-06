@@ -1,0 +1,57 @@
+sc_node_not_relation -> concept_right_handed_vectors;;
+
+concept_right_handed_vectors=>nrel_main_idtf:
+[правая тройка векторов] (*<-lang_ru;;*);
+[right-handed vectors] (*<-lang_en;;*);;
+
+concept_right_handed_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(правая тройка векторов)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тройка векторов a, b и c называется правой, если поворот от вектора a к вектору b , видимый с конца третьего вектора c, осуществляется против хода часовой стрелки.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_right_handed_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(правая тройка векторов)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тройка некомпланарных векторов называется правой, если эти векторы, отложенные от одной точки, располагаются так, как расположены соответственно большой, указательный и средний пальцы правой руки.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_right_handed_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Пояснение(правая тройка векторов)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Правой тройкой векторов назовем тройку векторов.](* <- lang_ru;; 	*);;
+		*);;
+*);;
+
+concept_right_handed_vectors <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(вектор; ориентированный вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Все правые тройки векторов называются одинаково ориентированными.](* <- lang_ru;; *);;
+		*);;
+	*);;

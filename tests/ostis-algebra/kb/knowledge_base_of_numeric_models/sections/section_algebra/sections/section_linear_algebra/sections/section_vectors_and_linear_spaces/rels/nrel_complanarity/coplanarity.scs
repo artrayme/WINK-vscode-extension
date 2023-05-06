@@ -1,0 +1,63 @@
+sc_node_norole_relation->nrel_complanarity;;
+
+nrel_complanarity=>nrel_main_idtf:
+[компланарность* ](*<-lang_ru;;*);
+[coplanarity* ](*<-lang_en;;*);
+[компланарность* ](*<-lang_kz;;*);;
+
+//определение
+nrel_complanarity <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(компланарность*;)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Три вектора (или большее число) называются компланарными, если они, будучи приведенными к общему началу, лежат в одной плоскости.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//используемые константы
+nrel_complanarity <= nrel_using_constants:
+	{
+	concept_plane;
+	concept_vector
+	};;
+	
+//утверждения
+nrel_complanarity <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(компланарность*; вектор; нулевой вектор)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если хотя бы один из трёх векторов — нулевой, то три вектора тоже считаются компланарными.](* <- lang_ru;; *);;
+		*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(компланарность*; вектор; коллинеарность)] (* <- lang_ru;; *);;
+	<- sc_statement;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Тройка векторов, содержащая пару коллинеарных векторов, компланарна.](* <- lang_ru;; *);;
+		*);;
+	*);;
+
+
+	
+//домены	
+nrel_complanarity <- ternary_relation;;
+nrel_complanarity <= nrel_first_domain:  concept_vector;;
+nrel_complanarity <= nrel_second_domain: concept_vector;;
+nrel_complanarity <= nrel_third_domain: concept_vector;;
+
+nrel_complanarity -> rrel_example :
+		"file://coplanarity_example.png";;

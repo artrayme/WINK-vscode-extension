@@ -1,0 +1,92 @@
+sc_node_not_relation->concept_quadratic_inequality;;
+
+concept_quadratic_inequality=>nrel_main_idtf:
+[квадратное неравенство](*<-lang_ru;;*);
+[quadratic inequality](*<-lang_en;;*);;
+
+//определение
+concept_quadratic_inequality <- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Опр.(квадратное неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://quadratic_inequality_1.html"	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+concept_quadratic_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.( неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+		"file://quadratic_inequality_2.jpg"		(* <- lang_ru;; 	*);;
+*);;
+	*);
+	... 
+	(*
+	=> nrel_main_idtf: [Утв.(неравенство)]  (* <- lang_ru;; *);;
+	<- sc_explanation;; 
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Если требуется найти числовой промежуток, на котором квадратный трехчлен  больше нуля, то это числовой промежуток находится там, где парабола лежит выше оси ОХ.
+
+Если требуется найти числовой промежуток, на котором квадратный трехчлен  меньше нуля, то это числовой промежуток, где парабола лежит ниже оси ОХ.
+
+Если квадратное неравенство нестрогое, то корни входят в числовой промежуток, если строгое - не входят.](* <- lang_ru;; 	*);;
+*);;
+	*);;
+	
+	
+//используемые константы
+concept_quadratic_inequality<= nrel_using_constants:concept_number;concept_variable;;
+
+
+// конкретные задачи
+concept_quadratic_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Конкретные задачи] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			"file://quadratic_inequality_3.html"	 (* <- lang_ru;; *);;
+		*);;
+	*);;
+
+// классы задач и способы решения
+concept_quadratic_inequality<- rrel_key_sc_element:
+	... 
+	(*
+	=> nrel_main_idtf: [Классы задач и способы решения] (* <- lang_ru;; *);;
+	<- sc_task;;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+			[Решиние квадратных неравенств.]	(* <- lang_ru;; *);;
+		*);;
+	*);;
+
+//пример
+concept_quadratic_inequality-> rrel_example :
+	...
+	(* 
+<= nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+					"file://quadratic_inequality_4.jpg"	(* <- lang_ru;; 	*);;
+		*);;
+	*);;
