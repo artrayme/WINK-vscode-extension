@@ -13,7 +13,7 @@ import {
     SemanticID,
     renderConcepts,
     renderInstances,
-    renderRelations,
+    renderRelations, PipelineInit,
 } from "kb-generator-ts";
 import vscode from "vscode";
 
@@ -32,7 +32,7 @@ export const genScs = async (keywords?: Map<string, string>, SemanticIDs?: Seman
     });
     const languages: string[] = [`en`, `ru`];
     const mainCollector = new BatchEntityCollector(
-        // @ts-ignore
+        new PipelineInit(),
         languages,
         wdk,
         keywords,
