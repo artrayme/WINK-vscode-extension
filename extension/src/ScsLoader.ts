@@ -2,14 +2,25 @@ import * as vscode from 'vscode';
 
 import {ScAddr, ScClient, ScTemplate, ScType} from 'ts-sc-client-ws';
 import {createTechnicalWinkId} from "./Utils";
+import {convertOldGwfToNew} from "./Old2NewScgConverter";
+import {gwfToScs} from "kb-generator-ts";
+
+export type WinkID = string;
+
+export enum LoadMode {
+    Preview,
+    Save
+}
 
 export class ScsLoader {
-    loadedScs: Map<vscode.Uri, { id: string; text: string }> = new Map;
+    loadedScs: Map<vscode.Uri, { id: WinkID; mode: LoadMode, text: string }> = new Map();
     scClient: ScClient;
 
-    constructor(client: ScClient) { this.scClient = client; }
+    constructor(client: ScClient) {
+        this.scClient = client;
+    }
 
-    async loadScs(filenames: vscode.Uri[]): Promise<string[]> {
+    async loadScs(filenames: vscode.Uri[], loadMode: LoadMode = LoadMode.Preview): Promise<string[]> {
         const result: string[] = [];
 
         for (const filename of filenames) {
@@ -18,17 +29,25 @@ export class ScsLoader {
             const doc = await vscode.workspace.openTextDocument(filename);
             let preparedScs: { id: string, text: string };
             if (filename.path.endsWith('.gwf')) {
-                // const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
-                // const scsText: string = convertGwfToScs(gwfInNewFormat);
-                // preparedScs = this.wrapScs(scsText);
+                const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
+                gwfToScs(gwfInNewFormat,
+                    (scs) => {
+                        preparedScs = this.wrapScs(scs);
+                    },
+                    (error) => {
+                        vscode.window.showErrorMessage(`Problem with GWF "${filename.path}": ${error}`);
+                        preparedScs = undefined;
+                    }
+                );
             } else {
                 preparedScs = this.wrapScs(doc.getText());
             }
-            const isCreated = await this.scClient.createElementsBySCs([preparedScs.text]);
+            if (!preparedScs) continue;
 
+            const isCreated = await this.scClient.createElementsBySCs([preparedScs.text]);
             if (isCreated) {
                 vscode.window.showInformationMessage(doc.fileName);
-                this.loadedScs.set(filename, preparedScs);
+                this.loadedScs.set(filename, {id: preparedScs.id, mode: loadMode, text: preparedScs.text});
                 result.push(preparedScs.id);
             } else {
                 vscode.window.showErrorMessage(doc.fileName);
@@ -70,21 +89,24 @@ export class ScsLoader {
         return result;
     }
 
-    public async unloadAll() {
+    public async unloadAll(loadMode: LoadMode = LoadMode.Preview) {
         const allIdtfs = this.loadedScs.values();
         const foundAddrs = new Set<number>();
         for (const scsIdtf of allIdtfs) {
-            const contourAddr = (await this.scClient.resolveKeynodes([{id: scsIdtf.id, type: ScType.Node}]))[scsIdtf.id];
-            const temp = await this.findElementsInContour(contourAddr);
-            temp.forEach(element => {
-                foundAddrs.add(element);
-            });
+            if (scsIdtf.mode == loadMode) {
+                const contourAddr = (await this.scClient.resolveKeynodes([{
+                    id: scsIdtf.id,
+                    type: ScType.Node
+                }]))[scsIdtf.id];
+                const temp = await this.findElementsInContour(contourAddr);
+                temp.forEach(element => {
+                    foundAddrs.add(element);
+                });
+            }
         }
         await this.scClient.deleteElements(Array.from(foundAddrs).map(e => new ScAddr(e)));
         return foundAddrs;
     }
-
-
 
     private async findElementsInContour(contourNode: ScAddr) {
         const unloadingTemplate1 = new ScTemplate().triple(

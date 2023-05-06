@@ -82,13 +82,23 @@
         "category": "SCs"
       },
       {
+        "command": "scs.preview",
+        "title": "Temporary load current SCs to the connected sc-machine",
+        "category": "SCs"
+      },
+      {
         "command": "scs.unload",
         "title": "Delete current SCs from the connected sc-machine",
         "category": "SCs"
       },
       {
         "command": "scs.uploadAll",
-        "title": "Save all SCs files from the open project in sc-machine",
+        "title": "Save all SCs files from the current project in sc-machine",
+        "category": "SCs"
+      },
+      {
+        "command": "scs.previewAll",
+        "title": "Temporary load all SCs files from the current project in sc-machine",
         "category": "SCs"
       },
       {
@@ -119,7 +129,7 @@
     ],
     "keybindings": [
       {
-        "command": "scs.upload",
+        "command": "scs.preview",
         "key": "f5",
         "when": "editorTextFocus"
       }
@@ -129,6 +139,16 @@
         {
           "when": "resourceLangId == gwf",
           "command": "gwf.toScs",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == scs",
+          "command": "scs.preview",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == scs",
+          "command": "scs.upload",
           "group": "navigation"
         }
       ]

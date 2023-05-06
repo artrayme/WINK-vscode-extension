@@ -6,7 +6,7 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
 import {ExtensionContext, workspace} from 'vscode';
-import {ScsLoader} from './ScsLoader';
+import {LoadMode, ScsLoader} from './ScsLoader';
 import {ConnectionManager} from './ConnectionManager';
 
 import {LanguageClient, LanguageClientOptions, ServerOptions, TransportKind} from 'vscode-languageclient';
@@ -37,7 +37,7 @@ const onCommandScsDisconnect = async () => {
     vscode.window.showInformationMessage("You're now disconnected from sc-machine.")
 };
 
-const onCommandUpload = async () => {
+const onCommandUpload = async (loadMode: LoadMode) => {
     if (connectionManager.client == undefined) {
         vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
         return;
@@ -56,7 +56,7 @@ const onCommandUpload = async () => {
     const editor = vscode.window.activeTextEditor;
 
     if (editor) {
-        const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0];
+        const loadedScs = (await scsLoader.loadScs([editor.document.uri], loadMode))[0];
         vscode.window.showInformationMessage(loadedScs);
         if (loadedScs.length > 0) {
             panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
@@ -65,7 +65,7 @@ const onCommandUpload = async () => {
     }
 };
 
-const onCommandUploadAll = async () => {
+const onCommandUploadAll = async (loadMode: LoadMode) => {
     if (connectionManager.client == undefined) {
         vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
         return;
@@ -84,7 +84,7 @@ const onCommandUploadAll = async () => {
 
     const allScsFiles = await vscode.workspace.findFiles("**/*.scs");
     if (allScsFiles) {
-        const loadedScs = (await scsLoader.loadScs(allScsFiles));
+        const loadedScs = (await scsLoader.loadScs(allScsFiles, loadMode));
         if (loadedScs.length > 0) {
             // ToDo fix link
             panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
@@ -238,11 +238,27 @@ export async function activate(context: ExtensionContext) {
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.upload', onCommandUpload)
+        vscode.commands.registerCommand('scs.preview', async () => {
+            await onCommandUpload(LoadMode.Preview)
+        })
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.uploadAll', onCommandUploadAll)
+        vscode.commands.registerCommand('scs.previewAll', async () => {
+            await onCommandUploadAll(LoadMode.Preview)
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.upload', async () => {
+            await onCommandUpload(LoadMode.Save)
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.uploadAll', async () => {
+            await onCommandUploadAll(LoadMode.Save)
+        })
     );
 
     context.subscriptions.push(
@@ -268,8 +284,12 @@ export async function activate(context: ExtensionContext) {
 }
 
 export function deactivate(): Thenable<void> {
-    if (!client) {
+    return scsLoader.unloadAll(LoadMode.Preview).then(() => {
+        if (!client) {
+            return undefined;
+        }
+        return client.stop();
+    }).catch(() => {
         return undefined;
-    }
-    return client.stop();
+    });
 }
