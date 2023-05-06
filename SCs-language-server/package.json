@@ -13,11 +13,8 @@
 		"url": "https://github.com/artrayme/WINK-vscode-extension"
 	},
 	"dependencies": {
-		"@types/node": "^16.11.7",
 		"antlr4": "^4.11.2",
-		"antlr4ts": "0.5.0-alpha.4",
 		"ts-sc-client-ws": "0.3.3",
-		"typescript": "^4.5.5",
 		"vscode-languageserver": "^5.1.0-next.5"
 	},
 	"scripts": {
@@ -26,6 +23,8 @@
 		"generate-grammar:fix": "echo \"ANTLR still didn't fix their ESM-style exports and/or their TS target!\" && sed -i '' -e \"s/^class/export class/g\" ./src/syntax/scsParser.js && echo \"Patching it up with regexp magic for now...\""
 	},
 	"devDependencies": {
-		"@types/antlr4": "^4.11.2"
+		"@types/antlr4": "^4.11.2",
+		"@types/node": "^16.11.7",
+		"typescript": "^4.5.5"
 	}
 }
