@@ -11,12 +11,183 @@ import {ConnectionManager} from './ConnectionManager';
 
 import {LanguageClient, LanguageClientOptions, ServerOptions, TransportKind} from 'vscode-languageclient';
 import {SearcherByTemplate} from "./SearcherByTemplate";
-import {genScs} from './ScsGenerator';
+import {genScs, saveGeneratedBase} from './ScsGenerator';
+
+import {gwfToScs} from "kb-generator-ts"
 
 let client: LanguageClient;
 let scMachineUrl = "ws://localhost:8090";
 let scsLoader: ScsLoader;
 let scsSearcher: SearcherByTemplate;
+let connectionManager: ConnectionManager;
+
+const onCommandScsConnect = async () => {
+    scMachineUrl = await vscode.window.showInputBox({
+        placeHolder: "Enter sc-machine url. For example, ws://localhost:8090"
+    });
+    await connectionManager.connect(scMachineUrl);
+    scsLoader.scClient = connectionManager.client;
+    scsSearcher.scClient = connectionManager.client;
+};
+
+const onCommandScsDisconnect = async () => {
+    await connectionManager.disconnect();
+    scsLoader.scClient = undefined;
+    scsSearcher.scClient = undefined;
+    vscode.window.showInformationMessage("You're now disconnected from sc-machine.")
+};
+
+const onCommandUpload = async () => {
+    if (connectionManager.client == undefined) {
+        vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+        return;
+    }
+    // Create and show a new webview
+    const panel = vscode.window.createWebviewPanel(
+        'scsLoad', // Identifies the type of the webview. Used internally
+        'SCs', // Title of the panel displayed to the user
+        vscode.ViewColumn.Beside,
+        {   // params to unlock sc-web scripts
+            enableScripts: true,
+            enableFindWidget: true,
+            enableCommandUris: true,
+        }
+    );
+    const editor = vscode.window.activeTextEditor;
+
+    if (editor) {
+        const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0];
+        vscode.window.showInformationMessage(loadedScs);
+        if (loadedScs.length > 0) {
+            panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
+            panel.title = loadedScs;
+        }
+    }
+};
+
+const onCommandUploadAll = async () => {
+    if (connectionManager.client == undefined) {
+        vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+        return;
+    }
+    // Create and show a new webview
+    const panel = vscode.window.createWebviewPanel(
+        'scsLoad', // Identifies the type of the webview. Used internally
+        'SCs', // Title of the panel displayed to the user
+        vscode.ViewColumn.Beside,
+        {   // params to unlock sc-web scripts
+            enableScripts: true,
+            enableFindWidget: true,
+            enableCommandUris: true,
+        }
+    );
+
+    const allScsFiles = await vscode.workspace.findFiles("**/*.scs");
+    if (allScsFiles) {
+        const loadedScs = (await scsLoader.loadScs(allScsFiles));
+        if (loadedScs.length > 0) {
+            // ToDo fix link
+            panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
+        }
+    }
+};
+
+const onCommandUnload = async () => {
+    if (connectionManager.client == undefined) {
+        vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+        return;
+    }
+    const editor = vscode.window.activeTextEditor;
+    if (editor) {
+        const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
+        if (unloadedScs.idtf) {
+            vscode.window.showInformationMessage(`Successfully deleted ${unloadedScs.idtf}`);
+            vscode.window.tabGroups.all
+                .flatMap(({tabs}) => tabs)
+                .filter(document => document.label === unloadedScs.idtf)
+                .forEach(label => {
+                    vscode.window.tabGroups.close(label);
+                });
+        } else {
+            vscode.window.showErrorMessage(unloadedScs.errorMsg);
+        }
+    }
+};
+
+const onCommandUnloadAll = async () => {
+    if (connectionManager.client == undefined) {
+        vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+        return;
+    }
+    const allProjectDocuments = vscode.workspace.textDocuments.map(document => document.uri);
+    if (allProjectDocuments) {
+        const unloadedScs = (await scsLoader.unloadAll());
+        if (unloadedScs) {
+            vscode.window.showInformationMessage("All successfully unloaded");
+        } else {
+            vscode.window.showErrorMessage("Nothing to unload");
+        }
+    }
+};
+
+const onCommandScsFindByTemplate = async () => {
+    if (connectionManager.client == undefined) {
+        vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
+        return;
+    }
+    // Create and show a new webview
+    const panel = vscode.window.createWebviewPanel(
+        'scsFind', // Identifies the type of the webview. Used internally
+        'Found', // Title of the panel displayed to the user
+        vscode.ViewColumn.Beside,
+        {   // params to unlock sc-web scripts
+            enableScripts: true,
+            enableFindWidget: true,
+            enableCommandUris: true,
+        }
+    );
+    const editor = vscode.window.activeTextEditor;
+
+    if (editor) {
+        const itdfOfSearchingResults = await scsSearcher.findByScsTemplate(editor.document.getText());
+        vscode.window.showInformationMessage(itdfOfSearchingResults);
+        panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${itdfOfSearchingResults}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
+        panel.title = itdfOfSearchingResults;
+    }
+};
+
+const onCommandScsGenScs = async () => {
+    const entityName = await vscode.window.showInputBox({
+        title: "Gen SCs by entity name",
+        prompt: "Human, Apple, Q2"
+    });
+    const generationResults = await genScs(new Map([[entityName, `en`]]))
+    const wsPath = vscode.workspace.workspaceFolders[0].uri.fsPath; // gets the path of the first workspace folder
+    const wsEdit = new vscode.WorkspaceEdit();
+    await saveGeneratedBase(generationResults, wsPath, wsEdit)
+    vscode.window.showInformationMessage("Generation completed successfully")
+};
+
+const onCommandGwfToScs = async () => {
+    const editor = vscode.window.activeTextEditor;
+    const gwfXml = (await vscode.workspace.openTextDocument(editor.document.uri)).getText();
+    if (editor) {
+        gwfToScs(gwfXml,
+            (scs) => {
+                vscode.workspace.openTextDocument({
+                    content: scs,
+                    language: "scs"
+                }).then((document) => {
+                    vscode.window.showTextDocument(document, vscode.ViewColumn.Beside)
+                })
+            },
+            (error) => {
+                vscode.window.showErrorMessage(`Problem with GWF: ${error}`);
+            }
+        );
+
+    }
+};
 
 export async function activate(context: ExtensionContext) {
     // The server is implemented in node
@@ -35,8 +206,8 @@ export async function activate(context: ExtensionContext) {
     const clientOptions: LanguageClientOptions = {
         documentSelector: ['scs', 'scsi'],
         synchronize: {
-        fileEvents: [workspace.createFileSystemWatcher('**/.clientrc'), workspace.createFileSystemWatcher('**/*.scs')]
-        },
+            fileEvents: [workspace.createFileSystemWatcher('**/.clientrc'), workspace.createFileSystemWatcher('**/*.scs')]
+        }
     };
 
     // Create the language client and start the client.
@@ -47,226 +218,51 @@ export async function activate(context: ExtensionContext) {
         clientOptions
     );
 
+    // INIT
     client.start();
-    let conn = new ConnectionManager(client);
-    await conn.connect(scMachineUrl);
-    scsLoader = new ScsLoader(conn.client);
-    scsSearcher = new SearcherByTemplate(conn.client);
-    context.subscriptions.push(conn.statusBarItem);
+    await client.onReady(); // fix: extension failures in case of long LSP startup time
+    connectionManager = new ConnectionManager(client);
+    await connectionManager.connect(scMachineUrl);
+    scsLoader = new ScsLoader(connectionManager.client);
+    scsSearcher = new SearcherByTemplate(connectionManager.client);
+
+    // SUBSCRIPTIONS
+    context.subscriptions.push(connectionManager.statusBarItem);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.connect', async () => {
-            scMachineUrl = await vscode.window.showInputBox({
-                placeHolder: "Enter sc-machine url. For example, ws://localhost:8090"
-            });
-            await conn.connect(scMachineUrl);
-            scsLoader.scClient = conn.client;
-            scsSearcher.scClient = conn.client;
-        })
+        vscode.commands.registerCommand('scs.connect', onCommandScsConnect)
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.disconnect', async () => {
-            conn.disconnect();
-            scsLoader.scClient = undefined;
-            scsSearcher.scClient = undefined;
-            vscode.window.showInformationMessage("You're now disconnected from sc-machine.")
-        })
+        vscode.commands.registerCommand('scs.disconnect', onCommandScsDisconnect)
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.upload', async () => {
-            if (conn.client == undefined) {
-                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
-                return;
-            }
-            // Create and show a new webview
-            const panel = vscode.window.createWebviewPanel(
-                'scsLoad', // Identifies the type of the webview. Used internally
-                'SCs', // Title of the panel displayed to the user
-                vscode.ViewColumn.Beside,
-                {   // params to unlock sc-web scripts
-                    enableScripts: true,
-                    enableFindWidget: true,
-                    enableCommandUris: true,
-                }
-            );
-            const editor = vscode.window.activeTextEditor;
-
-            if (editor) {
-                const loadedScs = (await scsLoader.loadScs([editor.document.uri]))[0];
-                vscode.window.showInformationMessage(loadedScs);
-                if (loadedScs.length > 0) {
-                    panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
-                    panel.title = loadedScs;
-                }
-            }
-        })
-    );
-    context.subscriptions.push(
-        vscode.commands.registerCommand('scs.uploadAll', async () => {
-            if (conn.client == undefined) {
-                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
-                return;
-            }
-            // Create and show a new webview
-            const panel = vscode.window.createWebviewPanel(
-                'scsLoad', // Identifies the type of the webview. Used internally
-                'SCs', // Title of the panel displayed to the user
-                vscode.ViewColumn.Beside,
-                {   // params to unlock sc-web scripts
-                    enableScripts: true,
-                    enableFindWidget: true,
-                    enableCommandUris: true,
-                }
-            );
-
-            const allScsFiles = await vscode.workspace.findFiles("**/*.scs");
-            if (allScsFiles) {
-                const loadedScs = (await scsLoader.loadScs(allScsFiles));
-                if (loadedScs.length > 0) {
-                    // ToDo fix link
-                    panel.webview.html = `<iframe src="http://localhost:8000?sys_id=unknowntechnicalid&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
-                }
-            }
-        })
+        vscode.commands.registerCommand('scs.upload', onCommandUpload)
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.unload', async () => {
-            if (conn.client == undefined) {
-                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
-                return;
-            }
-            const editor = vscode.window.activeTextEditor;
-            if (editor) {
-                const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
-                if (unloadedScs.idtf) {
-
-                    vscode.window.showInformationMessage(`Successfully deleted ${unloadedScs.idtf}`);
-                    vscode.window.tabGroups.all
-                        .flatMap(({tabs}) => tabs)
-                        .filter(document => document.label === unloadedScs.idtf)
-                        .forEach(label => {
-                            vscode.window.tabGroups.close(label);
-                        });
-                } else {
-                    vscode.window.showErrorMessage(unloadedScs.errorMsg);
-                }
-            }
-        })
+        vscode.commands.registerCommand('scs.uploadAll', onCommandUploadAll)
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.unloadAll', async () => {
-            if (conn.client == undefined) {
-                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
-                return;
-            }
-            const allProjectDocuments = vscode.workspace.textDocuments.map(document => document.uri);
-            if (allProjectDocuments) {
-                const unloadedScs = (await scsLoader.unloadAll());
-                if (unloadedScs) {
-                    vscode.window.showInformationMessage("All successfully unloaded");
-                } else {
-                    vscode.window.showErrorMessage("Nothing to unload");
-                }
-            }
-        })
+        vscode.commands.registerCommand('scs.unload', onCommandUnload)
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('scs.findByTemplate', async () => {
-            if (conn.client == undefined) {
-                vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
-                return;
-            }
-            // Create and show a new webview
-            const panel = vscode.window.createWebviewPanel(
-                'scsFind', // Identifies the type of the webview. Used internally
-                'Found', // Title of the panel displayed to the user
-                vscode.ViewColumn.Beside,
-                {   // params to unlock sc-web scripts
-                    enableScripts: true,
-                    enableFindWidget: true,
-                    enableCommandUris: true,
-                }
-            );
-            const editor = vscode.window.activeTextEditor;
-
-            if (editor) {
-                const itdfOfSearchingResults = await scsSearcher.findByScsTemplate(editor.document.getText());
-                vscode.window.showInformationMessage(itdfOfSearchingResults);
-                panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${itdfOfSearchingResults}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
-                panel.title = itdfOfSearchingResults;
-            }
-        })
-    );
-    //new Map([[`human`, `en`], [`Sport`, `en`]]),
-
-    context.subscriptions.push(
-        vscode.commands.registerCommand('scs.genScs', async () => {
-            const entityName = await vscode.window.showInputBox({
-                title: "Gen SCs by entity name",
-                prompt: "qwe"
-            });
-            const generationResults = await genScs(new Map([[entityName, `en`]]))
-            const wsEdit = new vscode.WorkspaceEdit();
-            const wsPath = vscode.workspace.workspaceFolders[0].uri.fsPath; // gets the path of the first workspace folder
-
-            const conceptsFolder = (wsPath + '/concepts/');
-            const relationsFolder = (wsPath + '/relations/');
-            const instancesFolder = (wsPath + '/instances/');
-
-            for (const [filename, scs] of generationResults.concepts) {
-                const fullFileUri = vscode.Uri.file(conceptsFolder + filename + '.scs')
-                wsEdit.createFile(fullFileUri, {ignoreIfExists: true});
-                const writeData = Buffer.from(scs, 'utf8');
-                await vscode.workspace.fs.writeFile(fullFileUri, writeData);
-            }
-
-            for (const [filename, scs] of generationResults.relations) {
-                const fullFileUri = vscode.Uri.file(relationsFolder + filename + '.scs')
-                wsEdit.createFile(fullFileUri, {ignoreIfExists: true});
-                const writeData = Buffer.from(scs, 'utf8');
-                await vscode.workspace.fs.writeFile(fullFileUri, writeData);
-            }
-
-            for (const [filename, scs] of generationResults.instances) {
-                const fullFileUri = vscode.Uri.file(instancesFolder + filename + '.scs')
-                wsEdit.createFile(fullFileUri, {ignoreIfExists: true});
-                const writeData = Buffer.from(scs, 'utf8');
-                await vscode.workspace.fs.writeFile(fullFileUri, writeData);
-            }
-
-            vscode.workspace.applyEdit(wsEdit);
-            vscode.window.showInformationMessage("Generation completed successfully")
-        })
+        vscode.commands.registerCommand('scs.unloadAll', onCommandUnloadAll)
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('gwf.toScs', async () => {
+        vscode.commands.registerCommand('scs.findByTemplate', onCommandScsFindByTemplate)
+    );
 
-            const editor = vscode.window.activeTextEditor;
-            const gwfXml = await (await vscode.workspace.openTextDocument(editor.document.uri)).getText();
+    context.subscriptions.push(
+        vscode.commands.registerCommand('scs.genScs', onCommandScsGenScs)
+    );
 
-            if (editor) {
-                gwfToScs(gwfXml,
-                    (scs) => {
-                        vscode.workspace.openTextDocument({
-                            content: scs,
-                            language: "scs"
-                        }).then((document) => {
-                            vscode.window.showTextDocument(document, vscode.ViewColumn.Beside)
-                        })
-                    },
-                    (error) => {
-                        vscode.window.showErrorMessage(`Problem with GWF: ${error}`);
-                    }
-                );
-
-            }
-        })
+    context.subscriptions.push(
+        vscode.commands.registerCommand('gwf.toScs', onCommandGwfToScs)
     );
 
 }

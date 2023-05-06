@@ -2,9 +2,6 @@ import * as vscode from 'vscode';
 
 import {ScAddr, ScClient, ScTemplate, ScType} from 'ts-sc-client-ws';
 import {createTechnicalWinkId} from "./Utils";
-import {convertOldGwfToNew} from "./Old2NewScgConverter";
-import {convertGwfToScs} from "./Scg2ScsConverterOld";
-// import {convertGwfToScs} from "./Scg2ScsConverter";
 
 export class ScsLoader {
     loadedScs: Map<vscode.Uri, { id: string; text: string }> = new Map;
@@ -21,9 +18,9 @@ export class ScsLoader {
             const doc = await vscode.workspace.openTextDocument(filename);
             let preparedScs: { id: string, text: string };
             if (filename.path.endsWith('.gwf')) {
-                const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
-                const scsText: string = convertGwfToScs(gwfInNewFormat);
-                preparedScs = this.wrapScs(scsText);
+                // const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
+                // const scsText: string = convertGwfToScs(gwfInNewFormat);
+                // preparedScs = this.wrapScs(scsText);
             } else {
                 preparedScs = this.wrapScs(doc.getText());
             }
