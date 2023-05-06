@@ -27,12 +27,12 @@ export class ConnectionManager {
     async connect(url: string) {
         await this.disconnect();
         await this.test(url);
-        while (this.status == undefined);
+        while (this.status == undefined) ;
         if (this.status == HealthcheckStatus.OK) {
             this.client = new ScClient(url);
             this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
                 settings:
-                    { scMachineUrl: url, onlineMode: true }
+                    {scMachineUrl: url, onlineMode: true}
             });
             vscode.window.showInformationMessage('Connection with sc-server established successfully.');
             this.statusBarItem.text = url;
@@ -73,7 +73,7 @@ export class ConnectionManager {
             //send LSP server to offline mode if connection is known to be broken
             this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
                 settings:
-                    { scMachineUrl: '', onlineMode: false }
+                    {scMachineUrl: '', onlineMode: false}
             });
             this.status = HealthcheckStatus.FAIL;
         }
