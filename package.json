@@ -16,6 +16,10 @@
   "engines": {
     "vscode": "^1.67.0"
   },
+  "activationEvents": [
+	  "onLanguage:scs",
+	  "onLanguage:gwf"
+  ],
   "main": "./extension/out/extension",
   "contributes": {
     "languages": [
