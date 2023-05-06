@@ -17,8 +17,8 @@
     "vscode": "^1.67.0"
   },
   "activationEvents": [
-	  "onLanguage:scs",
-	  "onLanguage:gwf"
+    "onLanguage:scs",
+    "onLanguage:gwf"
   ],
   "main": "./extension/out/extension",
   "contributes": {
@@ -102,13 +102,13 @@
         "command": "scs.unload",
         "title": "Delete current SCs from the connected sc-machine",
         "category": "SCs",
-        "icon":"$(remove)"
+        "icon": "$(remove)"
       },
       {
         "command": "scs.uploadAll",
         "title": "Save all SCs files from the current project in sc-machine",
         "category": "SCs",
-        "icon":"$(save-all)"
+        "icon": "$(save-all)"
       },
       {
         "command": "scs.previewAll",
@@ -119,7 +119,7 @@
         "command": "scs.unloadAll",
         "title": "Delete all SCs from the connected sc-machine",
         "category": "SCs",
-        "icon":"$(clear-all)"
+        "icon": "$(clear-all)"
       },
       {
         "command": "scs.findByTemplate",
@@ -149,7 +149,7 @@
     ],
     "menus": {
       "editor/title": [
-       {
+        {
           "when": "resourceLangId == gwf",
           "command": "gwf.toScs",
           "group": "navigation"
@@ -173,7 +173,7 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "cd extension && npm run update-vscode && cd .. && npm run compile",
+    "vscode:prepublish": "npm run compile",
     "compile:client": "tsc -p ./extension/tsconfig.json",
     "compile:server": "cd ./SCs-language-server && npm run compile",
     "watch:client": "tsc -w -p ./extension/tsconfig.json",
