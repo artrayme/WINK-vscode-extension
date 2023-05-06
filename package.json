@@ -33,6 +33,10 @@
       },
       {
         "id": "gwf",
+        "aliases": [
+          "gwf",
+          "xml"
+        ],
         "extensions": [
           ".gwf"
         ]
@@ -69,32 +73,38 @@
       {
         "command": "scs.connect",
         "title": "Connect to the running sc-machine",
-        "category": "SCs"
+        "category": "SCs",
+        "icon": "$(debug-disconnect)"
       },
       {
         "command": "scs.disconnect",
         "title": "Disconnect from the connected sc-machine",
-        "category": "SCs"
+        "category": "SCs",
+        "icon": "$(debug-disconnect)"
       },
       {
         "command": "scs.upload",
         "title": "Save current SCs to the connected sc-machine",
-        "category": "SCs"
+        "category": "SCs",
+        "icon": "$(save)"
       },
       {
         "command": "scs.preview",
         "title": "Temporary load current SCs to the connected sc-machine",
-        "category": "SCs"
+        "category": "SCs",
+        "icon": "$(open-preview)"
       },
       {
         "command": "scs.unload",
         "title": "Delete current SCs from the connected sc-machine",
-        "category": "SCs"
+        "category": "SCs",
+        "icon":"$(remove)"
       },
       {
         "command": "scs.uploadAll",
         "title": "Save all SCs files from the current project in sc-machine",
-        "category": "SCs"
+        "category": "SCs",
+        "icon":"$(save-all)"
       },
       {
         "command": "scs.previewAll",
@@ -104,27 +114,26 @@
       {
         "command": "scs.unloadAll",
         "title": "Delete all SCs from the connected sc-machine",
-        "category": "SCs"
+        "category": "SCs",
+        "icon":"$(clear-all)"
       },
       {
         "command": "scs.findByTemplate",
         "title": "Find all constructions by scs-template",
-        "category": "SCs"
-      },
-      {
-        "command": "scs.gwf2scs",
-        "title": "Convert GWF file to SCs",
-        "category": "SCs"
+        "category": "SCs",
+        "icon": "$(search)"
       },
       {
         "command": "scs.genScs",
         "title": "Generate Scs by entity name",
-        "category": "SCs"
+        "category": "SCs",
+        "icon": "$(settings-gear)"
       },
       {
         "command": "gwf.toScs",
         "title": "Convert GWF to SCs",
-        "category": "SCs"
+        "category": "SCs",
+        "icon": "$(open-preview)"
       }
     ],
     "keybindings": [
@@ -136,7 +145,7 @@
     ],
     "menus": {
       "editor/title": [
-        {
+       {
           "when": "resourceLangId == gwf",
           "command": "gwf.toScs",
           "group": "navigation"
@@ -149,6 +158,11 @@
         {
           "when": "resourceLangId == scs",
           "command": "scs.upload",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == scs",
+          "command": "scs.findByTemplate",
           "group": "navigation"
         }
       ]
@@ -175,7 +189,6 @@
     "typescript": "^4.7.7"
   },
   "dependencies": {
-    "@types/websocket": "^1.0.5",
     "dom-parser": "^0.1.6"
   }
 }
