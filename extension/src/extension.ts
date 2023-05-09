@@ -188,9 +188,10 @@ const onCommandScsGenScs = async () => {
 
 const onCommandGwfToScs = async () => {
     const editor = vscode.window.activeTextEditor;
-    const gwfXml = (await vscode.workspace.openTextDocument(editor.document.uri)).getText();
     if (editor) {
-        gwfToScs(gwfXml,
+        const gwfXml = (await vscode.workspace.openTextDocument(editor.document.uri)).getText();
+        const newXml = convertOldGwfToNew(gwfXml);
+        gwfToScs(newXml,
             (scs) => {
                 vscode.workspace.openTextDocument({
                     content: scs,
