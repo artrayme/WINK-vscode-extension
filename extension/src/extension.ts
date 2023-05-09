@@ -171,9 +171,15 @@ const onCommandScsFindByTemplate = async () => {
 const onCommandScsGenScs = async () => {
     const entityName = await vscode.window.showInputBox({
         title: "Gen SCs by entity name",
-        prompt: "Human, Apple, Q2"
+        prompt: "For example, 'Human; Carl Linnaeus; Q2'"
     });
-    const generationResults = await genScs(new Map([[entityName, `en`]]))
+    if (!entityName) return;
+    const entities = entityName.split(';');
+    const inputMap = new Map<string, string>();
+    for (let i = 0; i < entities.length; i++) {
+        inputMap.set(entities[i].trim(), `en`)
+    }
+    const generationResults = await genScs(inputMap)
     const wsPath = vscode.workspace.workspaceFolders[0].uri.fsPath; // gets the path of the first workspace folder
     const wsEdit = new vscode.WorkspaceEdit();
     await saveGeneratedBase(generationResults, wsPath, wsEdit)
