@@ -208,6 +208,36 @@ const onCommandGwfToScs = async () => {
     }
 };
 
+const convertOldGwfFilesToNewFormat = async () => {
+    const gwfFilesUris = await vscode.workspace.findFiles('**/*.gwf');
+    const oldGwfs: Uri[] = [];
+    for (let i = 0; i < gwfFilesUris.length; i++) {
+        const gwfXml = (await vscode.workspace.openTextDocument(gwfFilesUris[i])).getText();
+        if (isOldGwf(gwfXml)) {
+            oldGwfs.push(gwfFilesUris[i]);
+        }
+    }
+
+    if (oldGwfs.length > 0) {
+        vscode.window.showInformationMessage(`You have ${oldGwfs.length} .gwf files in the old format. Would you like to convert them to the new format? Note: the new format cannot be opened in KBE version 3.1 and below. `, 'Yes', 'No')
+            .then(async (selection) => {
+                if (selection === 'Yes') {
+                    for (let i = 0; i < oldGwfs.length; i++) {
+                        const gwfXml = (await vscode.workspace.openTextDocument(gwfFilesUris[i])).getText();
+                        const newGwfXml = convertOldGwfToNew(gwfXml);
+                        const writeData = Buffer.from(newGwfXml, 'utf8');
+                        await vscode.workspace.fs.writeFile(oldGwfs[i], writeData);
+                    }
+                    vscode.window.showInformationMessage(`Converted successfully`)
+                }
+            });
+    }
+}
+const userTips = async () => {
+    return; // ToDo tests
+    await convertOldGwfFilesToNewFormat();
+};
+
 export async function activate(context: ExtensionContext) {
     // The server is implemented in node
     const serverModule = context.asAbsolutePath(
@@ -301,6 +331,7 @@ export async function activate(context: ExtensionContext) {
         vscode.commands.registerCommand('gwf.toScs', onCommandGwfToScs)
     );
 
+    await userTips();
 }
 
 export function deactivate(): Thenable<void> {
