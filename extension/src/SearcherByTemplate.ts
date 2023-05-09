@@ -1,11 +1,5 @@
 import {ScAddr, ScClient, ScConstruction, ScType} from 'ts-sc-client-ws';
 import {createTechnicalWinkId} from "./Utils";
-// import {convertOldGwfToNew} from "./Old2NewScgConverter";
-// import {convertGwfToScs} from "./Scg2ScsConverterOld";
-// import {convertGwfToScs} from "./Scg2ScsConverter";
-
-// const scClient = new ScClient('ws://localhost:8090');
-
 export class SearcherByTemplate {
     scClient: ScClient;
 
