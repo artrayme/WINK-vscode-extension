@@ -5,7 +5,7 @@
 
 import * as path from 'path';
 import * as vscode from 'vscode';
-import {ExtensionContext, workspace} from 'vscode';
+import {ExtensionContext, Uri, workspace} from 'vscode';
 import {LoadedScs, LoadMode, ScsLoader} from './ScsLoader';
 import {ConnectionManager} from './ConnectionManager';
 
@@ -14,7 +14,8 @@ import {SearcherByTemplate} from "./SearcherByTemplate";
 import {genScs, saveGeneratedBase} from './ScsGenerator';
 
 import {gwfToScs} from "kb-generator-ts"
-
+import {convertOldGwfToNew, isOldGwf} from "./Old2NewScgConverter";
+``
 let client: LanguageClient;
 let scMachineUrl = "ws://localhost:8090";
 let scsLoader: ScsLoader;
@@ -42,25 +43,33 @@ const onCommandUpload = async (loadMode: LoadMode) => {
         vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
         return;
     }
-    // Create and show a new webview
-    const panel = vscode.window.createWebviewPanel(
-        'scsLoad', // Identifies the type of the webview. Used internally
-        'SCs', // Title of the panel displayed to the user
-        vscode.ViewColumn.Beside,
-        {   // params to unlock sc-web scripts
-            enableScripts: true,
-            enableFindWidget: true,
-            enableCommandUris: true,
-        }
-    );
     const editor = vscode.window.activeTextEditor;
 
     if (editor) {
         const loadedScs = (await scsLoader.loadScs([editor.document.uri], loadMode))[0];
-        vscode.window.showInformationMessage(loadedScs);
-        if (loadedScs.length > 0) {
+        if (loadedScs && loadedScs.length > 0) {
+            // Create and show a new webview
+            const panel = vscode.window.createWebviewPanel(
+                'scsLoad', // Identifies the type of the webview. Used internally
+                'SCs', // Title of the panel displayed to the user
+                vscode.ViewColumn.Beside,
+                {   // params to unlock sc-web scripts
+                    enableScripts: true,
+                    enableFindWidget: true,
+                    enableCommandUris: true,
+                }
+            );
+            if (loadMode == LoadMode.Preview) {
+                panel.onDidDispose(() => {
+                    scsLoader.unloadScs([editor.document.uri]);
+                })
+            }
+            vscode.window.showInformationMessage(loadedScs);
             panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
             panel.title = loadedScs;
+        }
+        else{
+            vscode.window.showErrorMessage(`Error`);
         }
     }
 };
