@@ -208,7 +208,7 @@
     "compile:server": "cd ./SCs-language-server && npm run compile",
     "watch:client": "tsc -w -p ./extension/tsconfig.json",
     "watch:server": "tsc -w -p ./SCs-language-server/tsconfig.json",
-    "compile": "npm run compile:client",
+    "compile": "npm run compile:client && npm run compile:server",
     "lint": "eslint ./extension/src ./SCs-language-server/src --ext .ts,.tsx",
     "postinstall": "cd extension && npm install && cd ../SCs-language-server && npm install && cd ..",
     "test": "sh ./scripts/e2e.sh"
