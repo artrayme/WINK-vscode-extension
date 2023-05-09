@@ -144,7 +144,7 @@
       {
         "command": "scs.preview",
         "key": "f5",
-        "when": "editorTextFocus"
+        "when": "resourceLangId == scs || resourceLangId == gwf"
       }
     ],
     "viewsWelcome": [
