@@ -147,7 +147,37 @@
         "when": "editorTextFocus"
       }
     ],
+    "viewsWelcome": [
+      {
+        "view": "loadedFiles",
+        "contents": "No loaded files yet.\nStart by uploading files with F5 or\n [Upload all project](command:scs.uploadAll)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "scsLoader",
+          "title": "Loaded files manager",
+          "icon": "$(clippy)"
+        }
+      ]
+    },
+    "views": {
+      "scsLoader": [
+        {
+          "id": "loadedFiles",
+          "name": "Loaded files",
+          "visibility": "visible"
+        }
+      ]
+    },
     "menus": {
+      "view/item/context": [
+        {
+          "command": "scs.unload",
+          "when": "view == loadedFiles"
+        }
+      ],
       "editor/title": [
         {
           "when": "resourceLangId == gwf",

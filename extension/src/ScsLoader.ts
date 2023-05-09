@@ -12,8 +12,8 @@ export enum LoadMode {
     Save
 }
 
-export class ScsLoader {
-    loadedScs: Map<vscode.Uri, { id: WinkID; mode: LoadMode, text: string }> = new Map();
+export class ScsLoader implements vscode.TreeDataProvider<LoadedScs> {
+    loadedScs: Map<vscode.Uri, LoadedScs> = new Map();
     scClient: ScClient;
 
     constructor(client: ScClient) {
@@ -22,7 +22,6 @@ export class ScsLoader {
 
     async loadScs(filenames: vscode.Uri[], loadMode: LoadMode = LoadMode.Preview): Promise<string[]> {
         const result: string[] = [];
-
         for (const filename of filenames) {
             const exists = this.loadedScs.has(filename);
             if (exists) await this.unloadScs([filename]);
@@ -46,11 +45,12 @@ export class ScsLoader {
 
             const isCreated = await this.scClient.createElementsBySCs([preparedScs.text]);
             if (isCreated) {
-                vscode.window.showInformationMessage(doc.fileName);
-                this.loadedScs.set(filename, {id: preparedScs.id, mode: loadMode, text: preparedScs.text});
+                vscode.window.showInformationMessage("Loading completed successfully");
+                this.loadedScs.set(filename, new LoadedScs(filename, {id: preparedScs.id, mode: loadMode, text: preparedScs.text}));
+                this.refresh();
                 result.push(preparedScs.id);
             } else {
-                vscode.window.showErrorMessage(doc.fileName);
+                vscode.window.showErrorMessage("Loading failed");
                 result.push("");
             }
         }
@@ -63,11 +63,13 @@ export class ScsLoader {
         return {id: technicalIdtf, text: resultSCs};
     }
 
-    async unloadScs(filenames: vscode.Uri[]) {
+    async unloadScs(filenames: vscode.Uri[]): Promise<{ idtf: string, errorMsg: string }[]> {
         const result = new Array<{ idtf: string, errorMsg: string }>();
         for (const filename of filenames) {
             if (this.loadedScs.has(filename)) {
                 const contourNodeIdtf = this.loadedScs.get(filename).id;
+                this.loadedScs.delete(filename);
+                this.refresh();
                 const contourAddr = (await this.scClient.resolveKeynodes([{
                     id: contourNodeIdtf,
                     type: ScType.Node
@@ -89,7 +91,7 @@ export class ScsLoader {
         return result;
     }
 
-    public async unloadAll(loadMode: LoadMode = LoadMode.Preview) {
+    public async unloadAll(loadMode: LoadMode = LoadMode.Preview): Promise<Set<number>> {
         const allIdtfs = this.loadedScs.values();
         const foundAddrs = new Set<number>();
         for (const scsIdtf of allIdtfs) {
@@ -105,6 +107,8 @@ export class ScsLoader {
             }
         }
         await this.scClient.deleteElements(Array.from(foundAddrs).map(e => new ScAddr(e)));
+        this.loadedScs.clear();
+        this.refresh();
         return foundAddrs;
     }
 
@@ -138,5 +142,40 @@ export class ScsLoader {
                 foundAddrs.add(addr3.value);
             }));
         return foundAddrs;
+    }
+
+    private _onDidChangeTreeData: vscode.EventEmitter<LoadedScs | undefined | void> = new vscode.EventEmitter<LoadedScs | undefined | void>();
+    readonly onDidChangeTreeData: vscode.Event<LoadedScs | undefined | void> = this._onDidChangeTreeData.event;
+
+    refresh(): void {
+      this._onDidChangeTreeData.fire();
+    }
+
+    getTreeItem(element: LoadedScs): vscode.TreeItem {
+      return element;
+    }
+
+    getChildren(_element?: LoadedScs): Thenable<LoadedScs[]> {
+      let ret_value = new Array<LoadedScs>();
+      for (const i of this.loadedScs.values()) {
+          ret_value.push(i);
+      }
+      return Promise.resolve(ret_value);
+    }
+
+}
+
+export class LoadedScs extends vscode.TreeItem {
+    id: WinkID;
+    mode: LoadMode;
+    text: string;
+    filename: vscode.Uri;
+
+    constructor(filename: vscode.Uri, info: {id: WinkID, mode: LoadMode, text: string}) {
+        super(filename, vscode.TreeItemCollapsibleState.None);
+        this.id = info.id;
+        this.mode = info.mode;
+        this.filename = filename;
+        this.text = info.text;
     }
 }

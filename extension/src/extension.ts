@@ -6,7 +6,7 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
 import {ExtensionContext, workspace} from 'vscode';
-import {LoadMode, ScsLoader} from './ScsLoader';
+import {LoadedScs, LoadMode, ScsLoader} from './ScsLoader';
 import {ConnectionManager} from './ConnectionManager';
 
 import {LanguageClient, LanguageClientOptions, ServerOptions, TransportKind} from 'vscode-languageclient';
@@ -92,25 +92,28 @@ const onCommandUploadAll = async (loadMode: LoadMode) => {
     }
 };
 
-const onCommandUnload = async () => {
+const onCommandUnload = async (scsFile: LoadedScs) => {
     if (connectionManager.client == undefined) {
         vscode.window.showErrorMessage("Unable to perform operation. Connect to sc-machine.");
         return;
     }
     const editor = vscode.window.activeTextEditor;
-    if (editor) {
-        const unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
-        if (unloadedScs.idtf) {
-            vscode.window.showInformationMessage(`Successfully deleted ${unloadedScs.idtf}`);
-            vscode.window.tabGroups.all
-                .flatMap(({tabs}) => tabs)
-                .filter(document => document.label === unloadedScs.idtf)
-                .forEach(label => {
-                    vscode.window.tabGroups.close(label);
-                });
-        } else {
-            vscode.window.showErrorMessage(unloadedScs.errorMsg);
-        }
+    let unloadedScs: { idtf: string, errorMsg: string };
+    if (scsFile != undefined) {
+        unloadedScs = (await scsLoader.unloadScs([scsFile.filename]))[0];
+    } else if (editor) {
+        unloadedScs = (await scsLoader.unloadScs([editor.document.uri]))[0];
+    }
+    if (unloadedScs.idtf) {
+        vscode.window.showInformationMessage(`Successfully deleted ${unloadedScs.idtf}`);
+        vscode.window.tabGroups.all
+            .flatMap(({tabs}) => tabs)
+            .filter(document => document.label === unloadedScs.idtf)
+            .forEach(label => {
+                vscode.window.tabGroups.close(label);
+            });
+    } else {
+        vscode.window.showErrorMessage(unloadedScs.errorMsg);
     }
 };
 
@@ -225,6 +228,7 @@ export async function activate(context: ExtensionContext) {
     await connectionManager.connect(scMachineUrl);
     scsLoader = new ScsLoader(connectionManager.client);
     scsSearcher = new SearcherByTemplate(connectionManager.client);
+    vscode.window.registerTreeDataProvider('loadedFiles', scsLoader);
 
     // SUBSCRIPTIONS
     context.subscriptions.push(connectionManager.statusBarItem);
