@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 import {ScAddr, ScClient, ScTemplate, ScType} from 'ts-sc-client-ws';
 import {createTechnicalWinkId} from "./Utils";
 import {convertOldGwfToNew} from "./Old2NewScgConverter";
-import {gwfToScs} from "kb-generator-ts";
+import {gwfToScsAsync} from "kb-generator-ts";
 
 export type WinkID = string;
 
@@ -29,15 +29,8 @@ export class ScsLoader implements vscode.TreeDataProvider<LoadedScs> {
             let preparedScs: { id: string, text: string };
             if (filename.path.endsWith('.gwf')) {
                 const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
-                gwfToScs(gwfInNewFormat,
-                    (scs) => {
-                        preparedScs = this.wrapScs(scs);
-                    },
-                    (error) => {
-                        vscode.window.showErrorMessage(`Problem with GWF "${filename.path}": ${error}`);
-                        preparedScs = undefined;
-                    }
-                );
+                const resultScs = await gwfToScsAsync(gwfInNewFormat);
+                preparedScs = this.wrapScs(resultScs);
             } else {
                 preparedScs = this.wrapScs(doc.getText());
             }
