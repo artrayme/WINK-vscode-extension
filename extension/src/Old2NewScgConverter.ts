@@ -59,7 +59,7 @@ const updateTags = (elem: Document) => {
 
     const buses = elem.getElementsByTagName("bus");
     for (let i = 0; i < buses.length; i++) {
-        if (contours[i].getAttribute("type") === "")
+        if (buses[i].getAttribute("type") === "")
             buses[i].setAttribute("type", dictionary.get(buses[i].getAttribute("type")));
     }
 
