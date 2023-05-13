@@ -150,7 +150,7 @@
     "viewsWelcome": [
       {
         "view": "loadedFiles",
-        "contents": "No loaded files yet.\nStart by uploading files with F5 or\n [Upload all project](command:scs.uploadAll)"
+        "contents": "No loaded files yet.\nStart by uploading files with F5 or\n [Upload all project](command:scs.previewAll)"
       }
     ],
     "viewsContainers": {
