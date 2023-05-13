@@ -12,48 +12,95 @@ export enum LoadMode {
     Save
 }
 
-export class ScsLoader implements vscode.TreeDataProvider<LoadedScs> {
-    loadedScs: Map<vscode.Uri, LoadedScs> = new Map();
+export class ScsLoader implements vscode.TreeDataProvider<LoadedScsTreeElement> {
+    loadedScs: Map<vscode.Uri, LoadedScsTreeElement> = new Map();
     scClient: ScClient;
 
     constructor(client: ScClient) {
         this.scClient = client;
     }
 
-    async loadScs(filenames: vscode.Uri[], loadMode: LoadMode = LoadMode.Preview): Promise<string[]> {
-        const result: string[] = [];
-        for (const filename of filenames) {
-            const exists = this.loadedScs.has(filename);
-            if (exists) await this.unloadScs([filename]);
-            const doc = await vscode.workspace.openTextDocument(filename);
-            let preparedScs: { id: string, text: string };
-            if (filename.path.endsWith('.gwf')) {
-                const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
-                const resultScs = await gwfToScsAsync(gwfInNewFormat);
-                preparedScs = this.wrapScs(resultScs);
-            } else {
-                preparedScs = this.wrapScs(doc.getText());
-            }
-            if (!preparedScs) continue;
 
-            const isCreated = await this.scClient.createElementsBySCs([preparedScs.text]);
-            if (isCreated) {
-                vscode.window.showInformationMessage("Loading completed successfully");
-                this.loadedScs.set(filename, new LoadedScs(filename, {id: preparedScs.id, mode: loadMode, text: preparedScs.text}));
-                this.refresh();
-                result.push(preparedScs.id);
-            } else {
-                vscode.window.showErrorMessage("Loading failed");
-                result.push("");
+    // I don't know if this code works
+    // Just tried to make scs loading faster
+    // the old version of logic saved files one-by-one by separated requests
+    // but it takes much more time comparing of one big request.
+    // Unfortunately, the sc-machine has dummy error handling for multiple scs texts in a single request
+    // Current behaviour: if one of the files has an error, sc-machine rises an exception and stops processing
+    // Ideal behaviour: sc-machine should return an array of {boolean, errorText}.
+    //                  In other words, it should ignore errors, but provide a rich description in response
+    async loadScs(filenames: vscode.Uri[], loadMode: LoadMode = LoadMode.Preview): Promise<ScsLoadingResult[]> {
+        const chunkSize = 100;
+        const result: ScsLoadingResult[] = [];
+
+        for (let i = 0; i < filenames.length; i += chunkSize) {
+            const partOfFilenames = filenames.slice(i, i + chunkSize)
+
+            const scsToLoad: { filePath: vscode.Uri, winkId: WinkID, scsText: string }[] = [];
+            for (const filename of partOfFilenames) {
+                const exists = this.loadedScs.has(filename);
+                if (exists) await this.unloadScs([filename]);
+                const doc = await vscode.workspace.openTextDocument(filename);
+                if (filename.path.endsWith('.gwf')) {
+                    const gwfInNewFormat: string = convertOldGwfToNew(doc.getText());
+                    const resultScs = await gwfToScsAsync(gwfInNewFormat);
+                    scsToLoad.push({filePath: filename, ...this.wrapScs(resultScs)})
+                } else {
+                    scsToLoad.push({filePath: filename, ...this.wrapScs(doc.getText())})
+                }
             }
+
+            await this.scClient.createElementsBySCs(scsToLoad.map(e => e.scsText))
+                // if saved without errors -- just add all to the result
+                .then(
+                    (creationResults)=>{
+                        for (let j = 0; j < creationResults.length; j++) {
+                            const currentScsToLoad = scsToLoad[i*chunkSize+j]
+                            result.push({...currentScsToLoad, errorText: ""})
+                            this.loadedScs.set(currentScsToLoad.filePath, new LoadedScsTreeElement(currentScsToLoad.filePath, {
+                                id: currentScsToLoad.winkId,
+                                mode: loadMode,
+                                text: currentScsToLoad.scsText
+                            }));
+                        }
+                    }
+                )
+                .catch(
+                // if we have an error in scs, then try to load all files from the current chunk one-by-one
+                // not very fast, but it helps to load the whole project, even with errors
+                async ()=>{
+                    for (let j = 0; j < partOfFilenames.length; j++) {
+                        const doc2 = await vscode.workspace.openTextDocument(partOfFilenames[j]);
+                        const currentCreationResult = (await this.scClient.createElementsBySCs([doc2.getText()]))[0]
+                        const currentScsToLoad = scsToLoad[i*chunkSize+j]
+                        this.processLoadingResults(currentCreationResult, result, currentScsToLoad, loadMode, scsToLoad, j);
+                    }
+                }
+            );
+
         }
+
+        this.refresh();
         return result;
     }
 
-    private wrapScs(text: string): { id: string; text: string } {
+    private processLoadingResults(currentCreationResult: boolean, result: ScsLoadingResult[], currentScsToLoad: { filePath: vscode.Uri; winkId: WinkID; scsText: string }, loadMode: LoadMode, scsToLoad: { filePath: vscode.Uri; winkId: WinkID; scsText: string }[], j: number) {
+        if (currentCreationResult) {
+            result.push({...currentScsToLoad, errorText: ""})
+            this.loadedScs.set(currentScsToLoad.filePath, new LoadedScsTreeElement(currentScsToLoad.filePath, {
+                id: currentScsToLoad.winkId,
+                mode: loadMode,
+                text: currentScsToLoad.scsText
+            }));
+        } else {
+            result.push({...scsToLoad[j], errorText: `Loading failed`})
+        }
+    }
+
+    private wrapScs(text: string): { winkId: WinkID; scsText: string } {
         const technicalIdtf = createTechnicalWinkId();
-        const resultSCs = technicalIdtf + " = [* " + text + " *];;";
-        return {id: technicalIdtf, text: resultSCs};
+        const resultSCs: WinkID = technicalIdtf + " = [* " + text + " *];;";
+        return {winkId: technicalIdtf, scsText: resultSCs};
     }
 
     async unloadScs(filenames: vscode.Uri[]): Promise<{ idtf: string, errorMsg: string }[]> {
@@ -137,38 +184,47 @@ export class ScsLoader implements vscode.TreeDataProvider<LoadedScs> {
         return foundAddrs;
     }
 
-    private _onDidChangeTreeData: vscode.EventEmitter<LoadedScs | undefined | void> = new vscode.EventEmitter<LoadedScs | undefined | void>();
-    readonly onDidChangeTreeData: vscode.Event<LoadedScs | undefined | void> = this._onDidChangeTreeData.event;
+    private _onDidChangeTreeData: vscode.EventEmitter<LoadedScsTreeElement | undefined | void> = new vscode.EventEmitter<LoadedScsTreeElement | undefined | void>();
+    readonly onDidChangeTreeData: vscode.Event<LoadedScsTreeElement | undefined | void> = this._onDidChangeTreeData.event;
 
     refresh(): void {
-      this._onDidChangeTreeData.fire();
+        this._onDidChangeTreeData.fire();
     }
 
-    getTreeItem(element: LoadedScs): vscode.TreeItem {
-      return element;
+    getTreeItem(element: LoadedScsTreeElement): vscode.TreeItem {
+        return element;
     }
 
-    getChildren(_element?: LoadedScs): Thenable<LoadedScs[]> {
-      let ret_value = new Array<LoadedScs>();
-      for (const i of this.loadedScs.values()) {
-          ret_value.push(i);
-      }
-      return Promise.resolve(ret_value);
+    getChildren(_element?: LoadedScsTreeElement): Thenable<LoadedScsTreeElement[]> {
+        let ret_value = new Array<LoadedScsTreeElement>();
+        for (const i of this.loadedScs.values()) {
+            ret_value.push(i);
+        }
+        return Promise.resolve(ret_value);
     }
 
 }
 
-export class LoadedScs extends vscode.TreeItem {
+export class LoadedScsTreeElement extends vscode.TreeItem {
     id: WinkID;
     mode: LoadMode;
     text: string;
     filename: vscode.Uri;
 
-    constructor(filename: vscode.Uri, info: {id: WinkID, mode: LoadMode, text: string}) {
+    constructor(filename: vscode.Uri, info: { id: WinkID, mode: LoadMode, text: string }) {
         super(filename, vscode.TreeItemCollapsibleState.None);
         this.id = info.id;
         this.mode = info.mode;
         this.filename = filename;
         this.text = info.text;
+    }
+}
+
+export class ScsLoadingResult {
+    constructor(
+        readonly filePath: vscode.Uri,
+        readonly winkId: WinkID,
+        readonly errorText: string
+    ) {
     }
 }
