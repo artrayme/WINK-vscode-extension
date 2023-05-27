@@ -40,13 +40,14 @@ export class ScsLoader implements vscode.TreeDataProvider<LoadedScs> {
             if (isCreated) {
                 vscode.window.showInformationMessage("Loading completed successfully");
                 this.loadedScs.set(filename, new LoadedScs(filename, {id: preparedScs.id, mode: loadMode, text: preparedScs.text}));
-                this.refresh();
                 result.push(preparedScs.id);
             } else {
                 vscode.window.showErrorMessage("Loading failed");
                 result.push("");
             }
         }
+        this.refresh();
+
         return result;
     }
 
