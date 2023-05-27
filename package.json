@@ -1,17 +1,21 @@
 {
   "name": "wink-vscode-extension",
   "description": "Extension for SCs language support",
-  "author": "Microsoft Corporation",
+  "author": "Vasileuski Artsemi, Diana Makarenko, Julia Moroshchuk, Pavel Nasevich, Vasily Horoshavin",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/artrayme/WINK-vscode-extension"
   },
   "publisher": "artrayme",
-  "categories": [],
+  "categories": ["Programming Languages", "Language Packs", "Education"],
   "keywords": [
-    "multi-root ready"
+    "OSTIS",
+    "SC",
+    "SCs",
+    "SCg",
+    "WINK"
   ],
   "engines": {
     "vscode": "^1.67.0"
