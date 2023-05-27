@@ -15,6 +15,7 @@ import {genScs, saveGeneratedBase} from './ScsGenerator';
 
 import {gwfToScs} from "kb-generator-ts"
 import {convertOldGwfToNew, isOldGwf} from "./Old2NewScgConverter";
+
 ``
 let client: LanguageClient;
 let scMachineUrl = "ws://localhost:8090";
@@ -67,8 +68,7 @@ const onCommandUpload = async (loadMode: LoadMode) => {
             vscode.window.showInformationMessage(loadedScs);
             panel.webview.html = `<iframe src="http://localhost:8000?sys_id=${loadedScs}&scg_structure_view_only=true" height="1000" width="100%" title="SCs"></iframe>`;
             panel.title = loadedScs;
-        }
-        else{
+        } else {
             vscode.window.showErrorMessage(`Error`);
         }
     }
@@ -266,18 +266,20 @@ export async function activate(context: ExtensionContext) {
         serverOptions,
         clientOptions
     );
-
-    // INIT
     client.start();
-    await client.onReady(); // fix: extension failures in case of long LSP startup time
+    vscode.window.showInformationMessage(`Indexing the project...`)
+    client.onReady().then(() => {
+        vscode.window.showInformationMessage(`Indexing finished successfully. Now all features are available!`)
+    })
+    // INIT
     connectionManager = new ConnectionManager(client);
     await connectionManager.connect(scMachineUrl);
     scsLoader = new ScsLoader(connectionManager.client);
     scsSearcher = new SearcherByTemplate(connectionManager.client);
     vscode.window.registerTreeDataProvider('loadedFiles', scsLoader);
+    context.subscriptions.push(connectionManager.statusBarItem);
 
     // SUBSCRIPTIONS
-    context.subscriptions.push(connectionManager.statusBarItem);
 
     context.subscriptions.push(
         vscode.commands.registerCommand('scs.connect', onCommandScsConnect)

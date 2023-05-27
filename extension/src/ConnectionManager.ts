@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-import { WebSocket } from "ws";
-import { ScClient } from 'ts-sc-client-ws';
-import { DidChangeConfigurationNotification, LanguageClient } from 'vscode-languageclient';
+import {WebSocket} from "ws";
+import {ScClient} from 'ts-sc-client-ws';
+import {DidChangeConfigurationNotification, LanguageClient} from 'vscode-languageclient';
 
 export enum HealthcheckStatus {
     OK = 0,
@@ -22,7 +22,9 @@ export class ConnectionManager {
         this._statusBarItem.command = "scs.connect";
     }
 
-    get statusBarItem() { return this._statusBarItem; }
+    get statusBarItem() {
+        return this._statusBarItem;
+    }
 
     async connect(url: string) {
         await this.disconnect();
@@ -30,10 +32,12 @@ export class ConnectionManager {
         while (this.status == undefined) ;
         if (this.status == HealthcheckStatus.OK) {
             this.client = new ScClient(url);
-            this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
-                settings:
-                    {scMachineUrl: url, onlineMode: true}
-            });
+            this.lsp_client.onReady().then(() => {
+                this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
+                    settings:
+                        {scMachineUrl: url, onlineMode: true}
+                });
+            })
             vscode.window.showInformationMessage('Connection with sc-server established successfully.');
             this.statusBarItem.text = url;
         } else {
@@ -71,10 +75,12 @@ export class ConnectionManager {
         } catch (e) {
             vscode.window.showErrorMessage(e.message);
             //send LSP server to offline mode if connection is known to be broken
-            this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
-                settings:
-                    {scMachineUrl: '', onlineMode: false}
-            });
+            this.lsp_client.onReady().then(() => {
+                this.lsp_client.sendNotification(DidChangeConfigurationNotification.type, {
+                    settings:
+                        {scMachineUrl: '', onlineMode: false}
+                });
+            })
             this.status = HealthcheckStatus.FAIL;
         }
     }
@@ -85,6 +91,7 @@ function delay(time: number): Promise<void> {
         setTimeout(resolve, time);
     });
 }
+
 // function waitForOpenConnection(socket: WebSocket): Promise<void> {
 //     return new Promise<void>((resolve, reject) => {
 //         const maxNumberOfAttempts = 5;
